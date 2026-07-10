@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Cambridge AS Level Sport & PE | Simply Sport Science</title>
+<meta name="description" content="The complete Cambridge International AS Level Sport & Physical Education (8386) course hub. Specification-aligned lessons, key terms, practice checks and teacher resources."/>
+<style>
+  :root{
+    --purple:#6B21D4;--purple-dark:#4C1397;--purple-light:#9B59E8;
+    --pink:#C026D3;--gold:#F59E0B;--gold-light:#FCD34D;--cyan:#22D3EE;
+    --navy:#0F172A;--navy-mid:#1A2540;--navy-card:#162032;
+    --white:#FFFFFF;--grey:#94A3B8;--grey-light:#CBD5E1;
+    --green:#10B981;--border:#2D3F5E;--orange:#F97316;
+    --cam:#1D4ED8;--cam-dark:#1E3A8A;--cam-light:#93C5FD;--cam-orange:#F97316;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--navy);color:var(--white);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;}
+  nav{background:rgba(15,23,42,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px;}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+  .logo-circle{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--pink),var(--gold));display:flex;align-items:center;justify-content:center;box-shadow:0 0 18px rgba(107,33,212,0.5);font-size:20px;}
+  .logo-tagline{font-size:9px;color:var(--gold);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;}
+  .logo-name{font-size:14px;font-weight:900;}
+  .logo-name .c1{color:var(--cyan);}.logo-name .c2{color:var(--white);}
+  .nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+  .nav-links a{color:var(--grey-light);text-decoration:none;font-size:13px;font-weight:600;padding:7px 11px;border-radius:7px;transition:all 0.2s;white-space:nowrap;}
+  .nav-links a:hover{color:var(--white);background:rgba(107,33,212,0.25);}
+  .nav-cta{background:linear-gradient(135deg,var(--purple),var(--pink))!important;color:var(--white)!important;padding:8px 18px!important;border-radius:8px!important;margin-left:6px;}
+  .breadcrumb{font-size:12px;color:var(--grey);padding:10px 24px;background:var(--navy-mid);border-bottom:1px solid var(--border);}
+  .breadcrumb a{color:var(--grey-light);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--cyan);}
+  .breadcrumb span{color:var(--cam-light);margin:0 6px;}
+  .hub-hero{background:linear-gradient(160deg,#0F172A 0%,#0d1635 50%,#0a1530 100%);padding:56px 24px 48px;position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
+  .hub-hero::before{content:'';position:absolute;top:-100px;right:-80px;width:600px;height:600px;background:radial-gradient(circle,rgba(29,78,216,0.14) 0%,transparent 70%);pointer-events:none;}
+  .hub-hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;position:relative;}
+  .hub-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(29,78,216,0.15);border:1px solid rgba(29,78,216,0.4);color:var(--cam-light);font-size:11px;font-weight:700;letter-spacing:2px;padding:6px 14px;border-radius:99px;margin-bottom:16px;text-transform:uppercase;}
+  .hub-hero h1{font-size:clamp(22px,4vw,42px);font-weight:900;line-height:1.1;margin-bottom:8px;}
+  .hub-hero h1 em{font-style:normal;color:var(--cam-light);}
+  .hub-spec-ref{font-size:11px;color:var(--cam-orange);font-weight:700;letter-spacing:1px;margin-bottom:10px;text-transform:uppercase;}
+  .hub-sub{font-size:14px;color:var(--grey-light);line-height:1.7;max-width:580px;margin-bottom:24px;}
+  .hub-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
+  .tag{display:inline-block;font-size:11px;font-weight:700;padding:4px 12px;border-radius:99px;}
+  .tag-cam{background:rgba(29,78,216,0.2);color:var(--cam-light);border:1px solid rgba(29,78,216,0.4);}
+  .tag-green{background:rgba(16,185,129,0.2);color:var(--green);border:1px solid rgba(16,185,129,0.4);}
+  .tag-orange{background:rgba(249,115,22,0.2);color:var(--cam-orange);border:1px solid rgba(249,115,22,0.4);}
+  .tag-grey{background:rgba(148,163,184,0.15);color:var(--grey-light);border:1px solid rgba(148,163,184,0.3);}
+  .hub-btns{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn-cam{background:linear-gradient(135deg,var(--cam-dark),var(--cam));color:var(--white);border:none;border-radius:9px;padding:13px 24px;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 4px 20px rgba(29,78,216,0.35);transition:all 0.2s;}
+  .btn-cam:hover{transform:translateY(-2px);}
+  .btn-ghost{background:transparent;color:var(--grey-light);border:1px solid var(--border);border-radius:9px;padding:13px 24px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.2s;}
+  .btn-ghost:hover{border-color:var(--cam-light);color:var(--cam-light);}
+  .hub-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;min-width:200px;}
+  .hub-stat{background:rgba(29,78,216,0.1);border:1px solid rgba(29,78,216,0.25);border-radius:12px;padding:16px;text-align:center;}
+  .hub-stat-val{font-size:26px;font-weight:900;color:var(--cam-light);}
+  .hub-stat-label{font-size:10px;color:var(--grey);text-transform:uppercase;letter-spacing:1px;margin-top:2px;}
+  .tabs-bar{background:var(--navy-mid);border-bottom:1px solid var(--border);padding:0 24px;position:sticky;top:66px;z-index:90;}
+  .tabs-inner{max-width:1100px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;}
+  .tab{background:transparent;border:none;color:var(--grey);font-size:13px;font-weight:600;padding:16px 14px;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.2s;}
+  .tab:hover{color:var(--white);}
+  .tab.active{color:var(--cam-light);border-bottom-color:var(--cam);}
+  .tab-content{display:none;}
+  .tab-content.active{display:block;}
+  .page-inner{max-width:1100px;margin:0 auto;padding:40px 24px;}
+  .section-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .section-title{font-size:clamp(18px,3vw,24px);font-weight:900;margin-bottom:8px;}
+  .section-sub{color:var(--grey-light);font-size:13px;line-height:1.6;margin-bottom:28px;}
+  .divider{width:48px;height:3px;background:linear-gradient(90deg,var(--cam),var(--cam-orange));border-radius:2px;margin-bottom:28px;}
+  .overview-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-bottom:40px;}
+  .spec-note{background:rgba(29,78,216,0.08);border:1px solid rgba(29,78,216,0.25);border-radius:12px;padding:24px;margin-bottom:14px;}
+  .spec-note h4{font-size:14px;font-weight:800;color:var(--cam-light);margin-bottom:12px;}
+  .spec-note p{font-size:13px;color:var(--grey-light);line-height:1.7;margin-bottom:10px;}
+  .spec-note ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+  .spec-note ul li{display:flex;gap:8px;font-size:13px;color:var(--grey-light);}
+  .spec-note ul li::before{content:'→';color:var(--cam-light);flex-shrink:0;}
+  .sidebar-cards{display:flex;flex-direction:column;gap:12px;}
+  .side-card{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:18px;}
+  .side-card h5{font-size:12px;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;}
+  .side-card ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+  .side-card ul li{font-size:12px;color:var(--grey-light);display:flex;gap:7px;align-items:flex-start;}
+  .side-card ul li::before{content:'◆';color:var(--cam-light);font-size:8px;flex-shrink:0;margin-top:4px;}
+  .units-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-bottom:40px;}
+  .unit-card{background:var(--navy-card);border-radius:14px;overflow:hidden;border:1px solid var(--border);transition:all 0.25s;}
+  .unit-card:hover{transform:translateY(-3px);}
+  .unit-header{padding:22px;border-bottom:1px solid var(--border);}
+  .unit-header-top{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+  .unit-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+  .unit-num{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;}
+  .unit-name{font-size:15px;font-weight:900;}
+  .unit-desc{font-size:12px;color:var(--grey-light);line-height:1.6;}
+  .unit-body{padding:18px;}
+  .topic-list{list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+  .topic-item{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--grey-light);padding:7px 10px;background:rgba(255,255,255,0.03);border-radius:7px;border:1px solid rgba(255,255,255,0.05);cursor:pointer;transition:all 0.15s;text-decoration:none;}
+  .topic-item:hover{background:rgba(29,78,216,0.12);border-color:rgba(29,78,216,0.35);color:var(--white);}
+  .topic-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+  .topic-status{margin-left:auto;font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;}
+  .status-live{background:rgba(16,185,129,0.2);color:var(--green);border:1px solid rgba(16,185,129,0.35);}
+  .status-soon{background:rgba(148,163,184,0.15);color:var(--grey);border:1px solid rgba(148,163,184,0.3);}
+  .unit-footer{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--grey);}
+  .unit-btn{display:block;text-align:center;padding:10px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:opacity 0.2s;width:100%;margin-top:12px;}
+  .unit-btn:hover{opacity:0.85;}
+  .cmd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:40px;}
+  .cmd-card{background:var(--navy-card);border:1px solid var(--border);border-radius:10px;padding:14px;}
+  .cmd-word{font-size:14px;font-weight:800;color:var(--cam-light);margin-bottom:4px;}
+  .cmd-def{font-size:11px;color:var(--grey-light);line-height:1.5;}
+  .assessment-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-bottom:32px;}
+  .assess-card{background:var(--navy-card);border-radius:12px;padding:22px;border:1px solid var(--border);}
+  .assess-card h4{font-size:15px;font-weight:800;margin-bottom:8px;}
+  .assess-card p{font-size:12px;color:var(--grey-light);line-height:1.6;margin-bottom:10px;}
+  .assess-card ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+  .assess-card ul li{font-size:12px;color:var(--grey-light);display:flex;gap:8px;}
+  .assess-card ul li::before{content:'→';color:var(--cam-light);flex-shrink:0;}
+  .assess-label{display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:99px;margin-bottom:12px;}
+  .resources-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:40px;}
+  .res-card{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:20px;cursor:pointer;transition:all 0.2s;}
+  .res-card:hover{border-color:var(--cam-light);transform:translateY(-2px);}
+  .res-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:12px;}
+  .res-card h4{font-size:13px;font-weight:800;margin-bottom:5px;}
+  .res-card p{font-size:11px;color:var(--grey-light);line-height:1.5;}
+  .res-tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-top:8px;}
+  .teacher-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:32px;}
+  .teacher-card{background:var(--navy-card);border:1px solid rgba(249,115,22,0.25);border-radius:12px;padding:22px;cursor:pointer;transition:all 0.2s;}
+  .teacher-card:hover{border-color:var(--cam-orange);transform:translateY(-2px);}
+  .teacher-icon{font-size:28px;margin-bottom:12px;}
+  .teacher-card h4{font-size:14px;font-weight:800;margin-bottom:6px;}
+  .teacher-card p{font-size:12px;color:var(--grey-light);line-height:1.5;}
+  .teacher-tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-top:8px;background:rgba(249,115,22,0.15);color:var(--cam-orange);border:1px solid rgba(249,115,22,0.3);}
+  .hub-footer{background:#080E1C;border-top:1px solid var(--border);padding:32px 24px;text-align:center;}
+  .hub-footer p{font-size:12px;color:var(--grey);}
+  .hub-footer a{color:var(--cam-light);text-decoration:none;}
+  @media(max-width:900px){.hub-hero-inner{grid-template-columns:1fr;}.hub-stats{display:none;}.overview-grid{grid-template-columns:1fr;}}
+  @media(max-width:640px){.nav-links{display:none;}.hub-hero{padding:40px 16px 36px;}.page-inner{padding:28px 16px;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-circle">🏃</div>
+      <div>
+        <div class="logo-tagline">Sport Science Sorted</div>
+        <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#courses">Course Hubs</a></li>
+      <li><a href="student-hub.html">Student Hub</a></li>
+      <li><a href="teacher-hub.html">Teacher Hub</a></li>
+      <li><a href="az-library.html">A–Z Library</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="student-hub.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="breadcrumb">
+  <div style="max-width:1100px;margin:0 auto;">
+    <a href="index.html">Home</a><span>›</span><a href="index.html#courses">Course Hubs</a><span>›</span>Cambridge AS Level Sport &amp; PE
+  </div>
+</div>
+<div class="hub-hero">
+  <div class="hub-hero-inner">
+    <div>
+      <div class="hub-badge">📐 Cambridge International</div>
+      <div class="hub-spec-ref">Specification 8386</div>
+      <h1>Cambridge International AS Level<br/><em>Sport &amp; Physical Education</em></h1>
+      <p class="hub-sub">The complete course hub for Cambridge International AS Level Sport &amp; Physical Education (8386) — structured around the official specification with lessons, key terms, practice checks and teacher delivery resources.</p>
+      <div class="hub-tags">
+        <span class="tag tag-cam">Cambridge 8386</span>
+        <span class="tag tag-green">● Live</span>
+        <span class="tag tag-orange">AS Level</span>
+        <span class="tag tag-grey">4 Components</span>
+        <span class="tag tag-grey">Practical Performance</span>
+      </div>
+      <div class="hub-btns">
+        <a href="#" class="btn-cam" onclick="switchTab('topics',document.querySelectorAll('.tab')[1]);return false;">Start Learning →</a>
+        <a href="#" class="btn-ghost" onclick="switchTab('teacher',document.querySelectorAll('.tab')[5]);return false;">Teacher Resources</a>
+      </div>
+    </div>
+    <div class="hub-stats">
+      <div class="hub-stat"><div class="hub-stat-val">4</div><div class="hub-stat-label">Components</div></div>
+      <div class="hub-stat"><div class="hub-stat-val">11+</div><div class="hub-stat-label">Topic Areas</div></div>
+      <div class="hub-stat"><div class="hub-stat-val">15+</div><div class="hub-stat-label">Practice Checks</div></div>
+      <div class="hub-stat"><div class="hub-stat-val">8386</div><div class="hub-stat-label">Specification</div></div>
+    </div>
+  </div>
+</div>
+<div class="tabs-bar">
+  <div class="tabs-inner">
+    <button class="tab active" onclick="switchTab('overview',this)">Course Overview</button>
+    <button class="tab" onclick="switchTab('topics',this)">Topic Library</button>
+    <button class="tab" onclick="switchTab('assessment',this)">Assessment</button>
+    <button class="tab" onclick="switchTab('command',this)">Command Words</button>
+    <button class="tab" onclick="switchTab('resources',this)">Resources</button>
+    <button class="tab" onclick="switchTab('teacher',this)">Teacher Hub</button>
+  </div>
+</div>
+
+<div id="tab-overview" class="tab-content active">
+  <div class="page-inner">
+    <div class="overview-grid">
+      <div>
+        <span class="section-label">About This Course</span>
+        <h2 class="section-title">Cambridge International AS Level Sport &amp; PE (8386)</h2>
+        <div class="divider"></div>
+        <div class="spec-note">
+          <h4>📐 Specification Structure</h4>
+          <p>Cambridge International AS Level Sport &amp; Physical Education (8386) is organised across four assessment components covering the scientific, tactical and practical dimensions of sport.</p>
+          <ul>
+            <li>Component 1 — Anatomy and Physiology</li>
+            <li>Component 2 — Movement Skills and Tactics</li>
+            <li>Component 3 — Sport and Physical Activity in Society</li>
+            <li>Component 4 — Practical Performance (internally assessed)</li>
+          </ul>
+        </div>
+        <div class="spec-note" style="margin-top:14px;">
+          <h4>🎯 What Simply Sport Science Provides</h4>
+          <ul>
+            <li>Lesson pages for all major specification topic areas</li>
+            <li>Cambridge command word guidance with exam application</li>
+            <li>Practice checks linked to assessment objectives</li>
+            <li>Downloadable PDFs and Canva/PowerPoint presentations</li>
+            <li>Embedded YouTube video lessons for key topics</li>
+            <li>Teacher notes, lesson starters and delivery sequences</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sidebar-cards">
+        <div class="side-card">
+          <h5>Key Course Details</h5>
+          <ul>
+            <li>Qualification: Cambridge International AS Level</li>
+            <li>Specification: 8386</li>
+            <li>Assessment: Written papers + Practical</li>
+            <li>Provider: Cambridge Assessment International Education</li>
+          </ul>
+        </div>
+        <div class="side-card">
+          <h5>Assessment Objectives</h5>
+          <ul>
+            <li>AO1: Knowledge &amp; understanding</li>
+            <li>AO2: Application of knowledge</li>
+            <li>AO3: Analysis &amp; evaluation</li>
+            <li>AO4: Practical performance</li>
+          </ul>
+        </div>
+        <div class="side-card">
+          <h5>Cambridge Command Words</h5>
+          <ul>
+            <li>Define · Describe · Explain</li>
+            <li>Analyse · Evaluate · Assess</li>
+            <li>Identify · Outline · Discuss</li>
+            <li>Compare · Justify · Suggest</li>
+          </ul>
+        </div>
+        <a href="#" class="btn-cam" style="text-align:center;display:block;" onclick="switchTab('topics',document.querySelectorAll('.tab')[1]);return false;">Go to Topic Library →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-topics" class="tab-content">
+  <div class="page-inner">
+    <span class="section-label">Topic Library</span>
+    <h2 class="section-title">All Components. All Topics. Covered.</h2>
+    <p class="section-sub">Select a component to explore all topics, lessons, key terms and practice checks.</p>
+    <div class="divider"></div>
+    <div class="units-grid">
+      <div class="unit-card" style="border-color:rgba(29,78,216,0.4);">
+        <div class="unit-header" style="background:rgba(29,78,216,0.07);">
+          <div class="unit-header-top">
+            <div class="unit-icon" style="background:rgba(29,78,216,0.2);">🫁</div>
+            <div><div class="unit-num" style="color:var(--cam-light);">Component 1</div><div class="unit-name">Anatomy &amp; Physiology</div></div>
+          </div>
+          <div class="unit-desc">Body systems relevant to sport. Cardiovascular, respiratory, musculoskeletal, energy systems and exercise physiology.</div>
+        </div>
+        <div class="unit-body">
+          <ul class="topic-list">
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cam-light);"></span>The Cardiovascular System<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cam-light);"></span>The Respiratory System<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cam-light);"></span>The Musculoskeletal System<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cam-light);"></span>Energy Systems &amp; EPOC<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cam-light);"></span>Fatigue &amp; Recovery<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cam-light);"></span>Levers in the Body<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cam-light);"></span>Training Principles &amp; Design<span class="topic-status status-live">Live</span></a>
+          </ul>
+          <div class="unit-footer"><span>7 topics · 7 live</span><span style="color:var(--cam-light);">✅ Practice checks</span></div>
+          <button class="unit-btn" style="background:linear-gradient(135deg,var(--cam-dark),var(--cam));color:var(--white);">Explore Component 1 →</button>
+        </div>
+      </div>
+      <div class="unit-card" style="border-color:rgba(34,211,238,0.3);">
+        <div class="unit-header" style="background:rgba(34,211,238,0.05);">
+          <div class="unit-header-top">
+            <div class="unit-icon" style="background:rgba(34,211,238,0.15);">🏃</div>
+            <div><div class="unit-num" style="color:var(--cyan);">Component 2</div><div class="unit-name">Movement Skills &amp; Tactics</div></div>
+          </div>
+          <div class="unit-desc">Skill acquisition, motor learning, tactical awareness, performance analysis and the psychology of skill execution.</div>
+        </div>
+        <div class="unit-body">
+          <ul class="topic-list">
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cyan);"></span>Phases of Movement<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cyan);"></span>Skill Classification<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cyan);"></span>Information Processing<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cyan);"></span>Skill Execution &amp; Attentional Focus<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cyan);"></span>Theories of Learning<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cyan);"></span>Social Learning Theory<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--grey);"></span>Tactical Awareness &amp; Decision Making<span class="topic-status status-soon">Soon</span></a>
+          </ul>
+          <div class="unit-footer"><span>7 topics · 6 live</span><span style="color:var(--cyan);">✅ Practice checks</span></div>
+          <button class="unit-btn" style="background:linear-gradient(135deg,#0E7490,var(--cyan));color:#000;">Explore Component 2 →</button>
+        </div>
+      </div>
+      <div class="unit-card" style="border-color:rgba(249,115,22,0.3);">
+        <div class="unit-header" style="background:rgba(249,115,22,0.05);">
+          <div class="unit-header-top">
+            <div class="unit-icon" style="background:rgba(249,115,22,0.15);">🌍</div>
+            <div><div class="unit-num" style="color:var(--cam-orange);">Component 3</div><div class="unit-name">Sport &amp; Physical Activity in Society</div></div>
+          </div>
+          <div class="unit-desc">Sociocultural, historical and ethical dimensions of sport. Participation, inclusion, commercialisation, media and ethics.</div>
+        </div>
+        <div class="unit-body">
+          <ul class="topic-list">
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cam-orange);"></span>Personality &amp; Motivation<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cam-orange);"></span>Participation &amp; Barriers<span class="topic-status status-soon">Soon</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cam-orange);"></span>Ethics &amp; Deviance in Sport<span class="topic-status status-soon">Soon</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cam-orange);"></span>Commercialisation &amp; Media<span class="topic-status status-soon">Soon</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cam-orange);"></span>Sport Development &amp; Policy<span class="topic-status status-soon">Soon</span></a>
+          </ul>
+          <div class="unit-footer"><span>5 topics · 1 live</span><span style="color:var(--cam-orange);">✅ Practice checks</span></div>
+          <button class="unit-btn" style="background:linear-gradient(135deg,#9A3412,var(--cam-orange));color:var(--white);">Explore Component 3 →</button>
+        </div>
+      </div>
+      <div class="unit-card" style="border-color:rgba(16,185,129,0.3);">
+        <div class="unit-header" style="background:rgba(16,185,129,0.05);">
+          <div class="unit-header-top">
+            <div class="unit-icon" style="background:rgba(16,185,129,0.15);">🏅</div>
+            <div><div class="unit-num" style="color:var(--green);">Component 4</div><div class="unit-name">Practical Performance</div></div>
+          </div>
+          <div class="unit-desc">Internally assessed practical component demonstrating performance skills in a chosen sport or physical activity.</div>
+        </div>
+        <div class="unit-body">
+          <ul class="topic-list">
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--green);"></span>Performance Skills &amp; Assessment Criteria<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--green);"></span>Linking Theory to Practice<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--green);"></span>Performance Analysis &amp; Reflection<span class="topic-status status-soon">Soon</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--green);"></span>Coaching &amp; Observation Support<span class="topic-status status-soon">Soon</span></a>
+          </ul>
+          <div class="unit-footer"><span>4 topics · 2 live</span><span style="color:var(--green);">Internally Assessed</span></div>
+          <button class="unit-btn" style="background:linear-gradient(135deg,#065F46,var(--green));color:var(--white);">Explore Component 4 →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-assessment" class="tab-content">
+  <div class="page-inner">
+    <span class="section-label">Assessment Structure</span>
+    <h2 class="section-title">How Cambridge AS Level Sport &amp; PE Is Assessed</h2>
+    <p class="section-sub">Understanding the assessment structure helps you focus your revision in the right areas from the start.</p>
+    <div class="divider"></div>
+    <div class="assessment-grid">
+      <div class="assess-card" style="border-color:rgba(29,78,216,0.35);">
+        <span class="assess-label" style="background:rgba(29,78,216,0.15);color:var(--cam-light);border:1px solid rgba(29,78,216,0.35);">Paper 1 · Written</span>
+        <h4>Anatomy, Physiology &amp; Biomechanics</h4>
+        <p>Structured and extended response questions covering Component 1. Tests knowledge, application and analysis.</p>
+        <ul><li>Short answer and extended response questions</li><li>Data interpretation and analysis</li><li>Applied scenario-based questions</li><li>Tests AO1, AO2 and AO3</li></ul>
+      </div>
+      <div class="assess-card" style="border-color:rgba(34,211,238,0.3);">
+        <span class="assess-label" style="background:rgba(34,211,238,0.15);color:var(--cyan);border:1px solid rgba(34,211,238,0.35);">Paper 2 · Written</span>
+        <h4>Skills, Tactics &amp; Sport in Society</h4>
+        <p>Covers Component 2 and 3. Tests skill acquisition, motor learning and sociocultural dimensions of sport.</p>
+        <ul><li>Short answer and extended response</li><li>Case study and scenario-based analysis</li><li>Discussion and evaluation questions</li><li>Tests AO1, AO2 and AO3</li></ul>
+      </div>
+      <div class="assess-card" style="border-color:rgba(16,185,129,0.3);">
+        <span class="assess-label" style="background:rgba(16,185,129,0.15);color:var(--green);border:1px solid rgba(16,185,129,0.35);">Component 4 · Practical</span>
+        <h4>Practical Performance (Internal)</h4>
+        <p>Performance in a chosen sport, assessed by the teacher and moderated externally by Cambridge.</p>
+        <ul><li>Performance in a chosen sport or activity</li><li>Assessment against Cambridge criteria</li><li>Internally assessed, externally moderated</li><li>Links theory to practice across all components</li></ul>
+      </div>
+      <div class="assess-card" style="border-color:rgba(245,158,11,0.3);">
+        <span class="assess-label" style="background:rgba(245,158,11,0.15);color:var(--gold);border:1px solid rgba(245,158,11,0.35);">Assessment Objectives</span>
+        <h4>What Examiners Are Looking For</h4>
+        <p>Four objectives assessed across all components. Understanding what each requires helps you structure answers.</p>
+        <ul><li>AO1: Recall and state accurate knowledge</li><li>AO2: Apply knowledge to sport contexts</li><li>AO3: Analyse, evaluate and discuss critically</li><li>AO4: Demonstrate practical performance</li></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-command" class="tab-content">
+  <div class="page-inner">
+    <span class="section-label">Cambridge Command Words</span>
+    <h2 class="section-title">Know Exactly What Every Question Is Asking</h2>
+    <p class="section-sub">Cambridge examiners use specific command words. Using the wrong approach is one of the most common reasons students lose marks.</p>
+    <div class="divider"></div>
+    <div class="cmd-grid">
+      <div class="cmd-card"><div class="cmd-word">Define</div><div class="cmd-def">Give the precise meaning of a word, phrase or physical quantity.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Describe</div><div class="cmd-def">State the points of a topic. Give factual detail without explanation or evaluation.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Explain</div><div class="cmd-def">Set out purposes or reasons. Make relationships between points clear. Answer why or how.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Identify</div><div class="cmd-def">Name or otherwise characterise a feature, fact or point clearly and concisely.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Outline</div><div class="cmd-def">Set out the main points without going into depth or detail. Give a summary.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Analyse</div><div class="cmd-def">Examine in detail to show meaning, identify elements and the relationships between them.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Evaluate</div><div class="cmd-def">Judge or calculate the quality, importance or value of something. Reach a conclusion.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Assess</div><div class="cmd-def">Make an informed judgement about the value of something, backed by evidence.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Discuss</div><div class="cmd-def">Write about the topic considering different ideas and viewpoints. Include evidence.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Compare</div><div class="cmd-def">Identify and comment on similarities and differences between two or more things.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Justify</div><div class="cmd-def">Give reasons for a conclusion, decision or point of view using evidence or logic.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Suggest</div><div class="cmd-def">Apply your knowledge to put forward a reasoned possibility in an unfamiliar context.</div></div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-resources" class="tab-content">
+  <div class="page-inner">
+    <span class="section-label">Cambridge AS Level Resources</span>
+    <h2 class="section-title">Everything You Need in One Place</h2>
+    <p class="section-sub">Lesson content, videos, downloadable PDFs and revision tools — all aligned to Cambridge 8386.</p>
+    <div class="divider"></div>
+    <div class="resources-row">
+      <div class="res-card"><div class="res-icon" style="background:rgba(239,68,68,0.15);">▶️</div><h4>YouTube Video Lessons</h4><p>Video explanations covering all four components.</p><span class="res-tag" style="background:rgba(239,68,68,0.15);color:#F87171;">40+ Videos</span></div>
+      <div class="res-card"><div class="res-icon" style="background:rgba(29,78,216,0.15);">📄</div><h4>Revision PDFs</h4><p>Downloadable revision guides for each Cambridge AS Level component.</p><span class="res-tag" style="background:rgba(29,78,216,0.15);color:var(--cam-light);">PDF Downloads</span></div>
+      <div class="res-card"><div class="res-icon" style="background:rgba(245,158,11,0.15);">🖥️</div><h4>Lesson Presentations</h4><p>Canva and PowerPoint presentations for every topic.</p><span class="res-tag" style="background:rgba(245,158,11,0.15);color:var(--gold);">Canva &amp; PowerPoint</span></div>
+      <div class="res-card"><div class="res-icon" style="background:rgba(16,185,129,0.15);">✅</div><h4>Practice Checks</h4><p>Topic-specific retrieval practice with instant feedback and Cambridge command word guidance.</p><span class="res-tag" style="background:rgba(16,185,129,0.15);color:var(--green);">Interactive</span></div>
+      <div class="res-card"><div class="res-icon" style="background:rgba(107,33,212,0.15);">🎙️</div><h4>Podcast Episodes</h4><p>Cambridge AS Level topics in audio format.</p><span class="res-tag" style="background:rgba(107,33,212,0.15);color:var(--purple-light);">Spotify &amp; Apple</span></div>
+      <div class="res-card"><div class="res-icon" style="background:rgba(249,115,22,0.15);">🔤</div><h4>A–Z Key Terms</h4><p>Every Cambridge 8386 key term explained with definitions and component tags.</p><span class="res-tag" style="background:rgba(249,115,22,0.15);color:var(--cam-orange);">Cambridge Tagged</span></div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-teacher" class="tab-content">
+  <div class="page-inner">
+    <span class="section-label">Teacher Delivery Resources</span>
+    <h2 class="section-title">Cambridge AS Level Teacher Hub</h2>
+    <p class="section-sub">Lesson sequences, delivery notes, discussion prompts and assessment guidance — all aligned to Cambridge 8386.</p>
+    <div class="divider"></div>
+    <div class="teacher-grid">
+      <div class="teacher-card"><div class="teacher-icon">📝</div><h4>Lesson Sequences</h4><p>Suggested lesson order for all four components with timing and specification references.</p><span class="teacher-tag">Download Available</span></div>
+      <div class="teacher-card"><div class="teacher-icon">💡</div><h4>Lesson Starters</h4><p>Ready-to-use retrieval starters for every Cambridge AS Level topic.</p><span class="teacher-tag">Download Available</span></div>
+      <div class="teacher-card"><div class="teacher-icon">👁️</div><h4>Teacher Notes</h4><p>Delivery notes covering common misconceptions, differentiation strategies and extension ideas.</p><span class="teacher-tag">Coming Soon</span></div>
+      <div class="teacher-card"><div class="teacher-icon">💬</div><h4>Discussion Prompts</h4><p>Structured questioning linked to Cambridge command words and assessment objectives.</p><span class="teacher-tag">Coming Soon</span></div>
+      <div class="teacher-card"><div class="teacher-icon">🏅</div><h4>Practical Assessment Guide</h4><p>Support for delivering Component 4 including assessment criteria and moderation guidance.</p><span class="teacher-tag">Download Available</span></div>
+      <div class="teacher-card"><div class="teacher-icon">📊</div><h4>Specification Tracker</h4><p>Map your teaching against the Cambridge 8386 specification and identify coverage gaps.</p><span class="teacher-tag">Coming Soon</span></div>
+      <div class="teacher-card"><div class="teacher-icon">🎯</div><h4>Exam Preparation</h4><p>Command word guides and mark scheme awareness for Paper 1 and Paper 2.</p><span class="teacher-tag">Coming Soon</span></div>
+      <div class="teacher-card"><div class="teacher-icon">🖥️</div><h4>Lesson Presentations</h4><p>Canva and PowerPoint presentations for every topic — ready to display in class.</p><span class="teacher-tag">Download Available</span></div>
+    </div>
+    <div style="background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.25);border-radius:12px;padding:24px;text-align:center;">
+      <p style="font-size:14px;color:var(--grey-light);margin-bottom:14px;">Want full access to all Cambridge 8386 teacher resources?</p>
+      <a href="teacher-hub.html" class="btn-cam">Go to Teacher Hub →</a>
+    </div>
+  </div>
+</div>
+
+<div class="hub-footer">
+  <p>Simply Sport Science · <a href="index.html">Home</a> · <a href="index.html#courses">Course Hubs</a> · <a href="az-library.html">A–Z Library</a> · simplysportscience.co.uk</p>
+</div>
+<script>
+function switchTab(id,btn){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  if(btn&&btn.classList)btn.classList.add('active');
+}
+</script>
+</body>
+</html>
