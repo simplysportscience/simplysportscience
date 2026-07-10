@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sport Science A–Z Library | Simply Sport Science</title>
+<meta name="description" content="The most comprehensive sport science A–Z glossary online. Thousands of terms covering IB Sport Science, A Level PE, BTEC Sport, GCSE PE and General Sport Science — all defined and course-tagged."/>
+<style>
+  :root{
+    --purple:#6B21D4;--purple-dark:#4C1397;--purple-light:#9B59E8;
+    --pink:#C026D3;--gold:#F59E0B;--gold-light:#FCD34D;--cyan:#22D3EE;
+    --navy:#0F172A;--navy-mid:#1A2540;--navy-card:#162032;
+    --white:#FFFFFF;--grey:#94A3B8;--grey-light:#CBD5E1;
+    --green:#10B981;--border:#2D3F5E;
+    --ib:#2979FF;--cam:#1D4ED8;--btec:#16A34A;--gcse:#F97316;--gen:#8B5CF6;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--navy);color:var(--white);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;}
+
+  nav{background:rgba(15,23,42,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px;}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+  .logo-circle{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--pink),var(--gold));display:flex;align-items:center;justify-content:center;box-shadow:0 0 18px rgba(107,33,212,0.5);font-size:20px;}
+  .logo-tagline{font-size:9px;color:var(--gold);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;}
+  .logo-name{font-size:14px;font-weight:900;}
+  .logo-name .c1{color:var(--cyan);}.logo-name .c2{color:var(--white);}
+  .nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+  .nav-links a{color:var(--grey-light);text-decoration:none;font-size:13px;font-weight:600;padding:7px 11px;border-radius:7px;transition:all 0.2s;white-space:nowrap;}
+  .nav-links a:hover{color:var(--white);background:rgba(107,33,212,0.25);}
+  .nav-cta{background:linear-gradient(135deg,var(--purple),var(--pink))!important;color:var(--white)!important;padding:8px 18px!important;border-radius:8px!important;margin-left:6px;}
+
+  .breadcrumb{font-size:12px;color:var(--grey);padding:10px 24px;background:var(--navy-mid);border-bottom:1px solid var(--border);}
+  .breadcrumb a{color:var(--grey-light);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--cyan);}
+  .breadcrumb span{color:var(--purple-light);margin:0 6px;}
+
+  /* HERO */
+  .az-hero{background:linear-gradient(160deg,#0F172A 0%,#1a0a2e 50%,#0F172A 100%);padding:48px 24px 40px;text-align:center;position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
+  .az-hero::before{content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(circle,rgba(107,33,212,0.18) 0%,transparent 70%);pointer-events:none;}
+  .az-hero h1{font-size:clamp(26px,5vw,48px);font-weight:900;margin-bottom:10px;position:relative;}
+  .az-hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--purple-light),var(--pink),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .az-hero p{color:var(--grey-light);font-size:14px;max-width:580px;margin:0 auto 24px;line-height:1.7;position:relative;}
+  .az-count{display:inline-flex;gap:20px;background:rgba(107,33,212,0.15);border:1px solid rgba(107,33,212,0.35);border-radius:99px;padding:10px 24px;margin-bottom:28px;position:relative;}
+  .az-count-item{text-align:center;}
+  .az-count-val{font-size:18px;font-weight:900;color:var(--gold);}
+  .az-count-label{font-size:10px;color:var(--grey);text-transform:uppercase;letter-spacing:1px;}
+
+  /* COLOUR KEY */
+  .colour-key{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:0;position:relative;}
+  .key-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--grey-light);}
+  .key-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0;}
+
+  /* SEARCH & FILTERS */
+  .controls{background:var(--navy-mid);border-bottom:1px solid var(--border);padding:16px 24px;position:sticky;top:66px;z-index:90;}
+  .controls-inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:12px;}
+  .search-row{display:flex;gap:10px;}
+  .search-box{flex:1;background:var(--navy-card);border:1px solid var(--border);color:var(--white);padding:11px 16px;border-radius:9px;font-size:14px;outline:none;transition:border-color 0.2s;}
+  .search-box::placeholder{color:var(--grey);}
+  .search-box:focus{border-color:var(--purple-light);}
+  .filter-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
+  .filter-label{font-size:11px;color:var(--grey);font-weight:600;white-space:nowrap;}
+  .filter-btn{padding:5px 12px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--grey-light);font-size:11px;font-weight:700;cursor:pointer;transition:all 0.15s;white-space:nowrap;}
+  .filter-btn:hover{border-color:var(--purple-light);color:var(--white);}
+  .filter-btn.active-all{background:rgba(107,33,212,0.25);border-color:var(--purple);color:var(--white);}
+  .filter-btn.active-ib{background:rgba(41,121,255,0.2);border-color:var(--ib);color:#93C5FD;}
+  .filter-btn.active-cam{background:rgba(29,78,216,0.2);border-color:var(--cam);color:#BAE6FD;}
+  .filter-btn.active-btec{background:rgba(22,163,74,0.2);border-color:var(--btec);color:#86EFAC;}
+  .filter-btn.active-gcse{background:rgba(249,115,22,0.2);border-color:var(--gcse);color:#FDBA74;}
+  .filter-btn.active-gen{background:rgba(139,92,246,0.2);border-color:var(--gen);color:#C4B5FD;}
+
+  /* A-Z JUMP NAV */
+  .az-jump{background:var(--navy);border-bottom:1px solid var(--border);padding:10px 24px;position:sticky;top:155px;z-index:89;overflow-x:auto;}
+  .az-jump-inner{max-width:1200px;margin:0 auto;display:flex;gap:4px;min-width:max-content;}
+  .az-jump a{width:30px;height:30px;border-radius:6px;background:rgba(107,33,212,0.15);border:1px solid rgba(107,33,212,0.3);color:var(--purple-light);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;text-decoration:none;transition:all 0.15s;flex-shrink:0;}
+  .az-jump a:hover{background:var(--purple);color:var(--white);}
+  .az-jump a.has-results{background:rgba(107,33,212,0.25);border-color:rgba(107,33,212,0.5);}
+
+  /* MAIN CONTENT */
+  .az-main{max-width:1200px;margin:0 auto;padding:32px 24px;}
+  .letter-section{margin-bottom:40px;}
+  .letter-heading{display:flex;align-items:center;gap:14px;margin-bottom:16px;}
+  .letter-char{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--purple),var(--pink));display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;box-shadow:0 4px 16px rgba(107,33,212,0.35);flex-shrink:0;}
+  .letter-meta{font-size:12px;color:var(--grey);}
+  .terms-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:8px;}
+  .term-card{background:var(--navy-card);border:1px solid var(--border);border-radius:9px;padding:12px 14px;display:flex;flex-direction:column;gap:6px;transition:border-color 0.15s;cursor:pointer;}
+  .term-card:hover{border-color:var(--purple-light);}
+  .term-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
+  .term-name{font-size:13px;font-weight:800;color:var(--white);line-height:1.3;}
+  .term-tags{display:flex;gap:4px;flex-wrap:wrap;flex-shrink:0;}
+  .ctag{font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;}
+  .ctag-ib{background:rgba(41,121,255,0.2);color:#93C5FD;border:1px solid rgba(41,121,255,0.35);}
+  .ctag-cam{background:rgba(29,78,216,0.2);color:#BAE6FD;border:1px solid rgba(29,78,216,0.35);}
+  .ctag-btec{background:rgba(22,163,74,0.2);color:#86EFAC;border:1px solid rgba(22,163,74,0.35);}
+  .ctag-gcse{background:rgba(249,115,22,0.2);color:#FDBA74;border:1px solid rgba(249,115,22,0.35);}
+  .ctag-gen{background:rgba(139,92,246,0.2);color:#C4B5FD;border:1px solid rgba(139,92,246,0.35);}
+  .term-def{font-size:12px;color:var(--grey-light);line-height:1.5;}
+  .no-results{text-align:center;padding:60px 20px;color:var(--grey);}
+  .no-results h3{font-size:18px;font-weight:800;margin-bottom:8px;color:var(--white);}
+  .results-count{font-size:12px;color:var(--grey);margin-bottom:20px;}
+
+  .hub-footer{background:#080E1C;border-top:1px solid var(--border);padding:32px 24px;text-align:center;margin-top:40px;}
+  .hub-footer p{font-size:12px;color:var(--grey);}
+  .hub-footer a{color:var(--purple-light);text-decoration:none;}
+
+  @media(max-width:640px){
+    .nav-links{display:none;}
+    .az-hero{padding:36px 16px 32px;}
+    .az-main{padding:24px 16px;}
+    .controls{padding:12px 16px;}
+    .terms-grid{grid-template-columns:1fr;}
+    .az-jump{top:130px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-circle">🏃</div>
+      <div>
+        <div class="logo-tagline">Sport Science Sorted</div>
+        <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Course Hubs</a></li>
+      <li><a href="#">Student Hub</a></li>
+      <li><a href="#">Teacher Hub</a></li>
+      <li><a href="#">A–Z Library</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><a href="#" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div style="max-width:1200px;margin:0 auto;">
+    <a href="index.html">Home</a>
+    <span>›</span>
+    A–Z Sport Science Library
+  </div>
+</div>
+
+<div class="az-hero">
+  <h1>Sport Science <em>A–Z Library</em></h1>
+  <p>The most comprehensive sport science glossary online. Every term defined, course-tagged and searchable — covering IB Sport Science, A Level PE, BTEC Sport, GCSE PE and General Sport Science.</p>
+  <div class="az-count">
+    <div class="az-count-item"><div class="az-count-val" id="totalCount">—</div><div class="az-count-label">Total Terms</div></div>
+    <div class="az-count-item"><div class="az-count-val">A–Z</div><div class="az-count-label">All Letters</div></div>
+    <div class="az-count-item"><div class="az-count-val">5</div><div class="az-count-label">Course Tags</div></div>
+  </div>
+  <div class="colour-key">
+    <div class="key-item"><div class="key-dot" style="background:#2979FF;"></div>IB Sport Science</div>
+    <div class="key-item"><div class="key-dot" style="background:#1D4ED8;"></div>A Level / Cambridge</div>
+    <div class="key-item"><div class="key-dot" style="background:#16A34A;"></div>BTEC Sport</div>
+    <div class="key-item"><div class="key-dot" style="background:#F97316;"></div>GCSE PE</div>
+    <div class="key-item"><div class="key-dot" style="background:#8B5CF6;"></div>General Sport Science</div>
+  </div>
+</div>
+
+<div class="controls">
+  <div class="controls-inner">
+    <div class="search-row">
+      <input class="search-box" id="searchBox" type="text" placeholder="Search any sport science term, definition or concept..."/>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Filter by course:</span>
+      <button class="filter-btn active-all" id="btn-all" onclick="setFilter('all',this)">All Terms</button>
+      <button class="filter-btn" id="btn-ib" onclick="setFilter('ib',this)">IB Sport Science</button>
+      <button class="filter-btn" id="btn-cam" onclick="setFilter('cam',this)">A Level / Cambridge</button>
+      <button class="filter-btn" id="btn-btec" onclick="setFilter('btec',this)">BTEC Sport</button>
+      <button class="filter-btn" id="btn-gcse" onclick="setFilter('gcse',this)">GCSE PE</button>
+      <button class="filter-btn" id="btn-gen" onclick="setFilter('gen',this)">General Sport Science</button>
+    </div>
+  </div>
+</div>
+
+<div class="az-jump">
+  <div class="az-jump-inner" id="azJumpNav"></div>
+</div>
+
+<div class="az-main">
+  <div class="results-count" id="resultsCount"></div>
+  <div id="azContent"></div>
+</div>
+
+<div class="hub-footer">
+  <p>Simply Sport Science · <a href="index.html">Home</a> · <a href="#">Course Hubs</a> · A–Z Library · simplysportscience.co.uk</p>
+</div>
+
+<script>
+// Course tag shortcodes
+const IB="ib", CAM="cam", BTEC="btec", GCSE="gcse", GEN="gen";
+
+// ═══════════════════════════════════════════
+// THE MASTER TERMS DATABASE
+// ═══════════════════════════════════════════
+const terms = [
+  // ── A ──
+  {t:"Abduction",c:[GEN,IB,CAM,GCSE],d:"Movement of a limb away from the midline of the body, e.g. raising the arm to the side."},
+  {t:"Acceleration",c:[GEN,IB,CAM],d:"The rate of change of velocity over time; measured in metres per second squared (m/s²)."},
+  {t:"Acclimatisation",c:[IB,GEN],d:"Physiological adaptation to environmental changes such as altitude or heat over days or weeks."},
+  {t:"Acetylcholine",c:[IB,GEN],d:"Neurotransmitter released at neuromuscular junctions that triggers muscle contraction."},
+  {t:"Acid-Base Balance",c:[IB,GEN],d:"Regulation of pH levels in the blood and tissues, crucial during high-intensity exercise."},
+  {t:"Actin",c:[IB,GEN],d:"Thin contractile protein filament in muscle fibres that interacts with myosin to produce movement."},
+  {t:"Action Potential",c:[IB,GEN],d:"Electrical signal that travels along a nerve or muscle fibre, triggering contraction or signal transmission."},
+  {t:"Active Recovery",c:[GEN,IB,BTEC],d:"Low-intensity exercise performed after training to promote blood flow and reduce DOMS."},
+  {t:"Active Stretching",c:[GEN,GCSE,BTEC],d:"Stretching a muscle by contracting the opposing muscle group without external assistance."},
+  {t:"Acute Exercise Response",c:[IB,CAM,GEN],d:"Immediate short-term physiological changes that occur during a single bout of exercise."},
+  {t:"Adenosine Diphosphate (ADP)",c:[IB,CAM,GEN],d:"Molecule formed when ATP loses one phosphate group during energy release; resynthesised back to ATP."},
+  {t:"Adenosine Triphosphate (ATP)",c:[IB,CAM,GCSE,BTEC,GEN],d:"The universal energy currency of the cell; must be resynthesised continuously during exercise."},
+  {t:"Adipose Tissue",c:[IB,GEN,BTEC],d:"Connective tissue that stores fat (triacylglycerol) and serves as an energy reserve and insulation."},
+  {t:"Adrenal Gland",c:[IB,GEN],d:"Endocrine gland situated above the kidneys; releases adrenaline, noradrenaline and cortisol."},
+  {t:"Adrenaline (Epinephrine)",c:[IB,CAM,GCSE,GEN],d:"Hormone released by the adrenal medulla in response to stress or exercise; increases heart rate and prepares the body for action."},
+  {t:"Aerobic Capacity",c:[IB,CAM,GCSE,BTEC,GEN],d:"The maximum ability of the body to take in, transport and utilise oxygen during sustained exercise."},
+  {t:"Aerobic Energy System",c:[IB,CAM,GCSE,BTEC,GEN],d:"Energy pathway using oxygen to produce ATP via the Krebs cycle and electron transport chain; dominant in endurance activities."},
+  {t:"Aerobic Threshold",c:[IB,GEN],d:"Exercise intensity at which the aerobic energy system becomes the primary source of ATP production."},
+  {t:"Aerodynamics",c:[IB,GEN],d:"The study of how air resistance and drag affect moving objects, including athletes and sports equipment."},
+  {t:"Agility",c:[GEN,GCSE,BTEC,CAM],d:"The ability to change direction quickly and accurately while maintaining control and balance."},
+  {t:"Agonist",c:[IB,CAM,GCSE,BTEC,GEN],d:"The prime mover muscle that contracts concentrically to produce a movement at a joint."},
+  {t:"Alactic System",c:[IB,GEN],d:"The ATP-PCr energy pathway; produces energy without lactic acid for very short, maximal efforts."},
+  {t:"Alveoli",c:[IB,CAM,GCSE,GEN],d:"Tiny air sacs in the lungs where gas exchange between air and blood takes place."},
+  {t:"Amino Acids",c:[IB,GEN,BTEC],d:"The building blocks of proteins; essential for muscle repair, enzyme production and hormone synthesis."},
+  {t:"Anaerobic Capacity",c:[IB,GEN],d:"The total amount of energy that can be produced by the anaerobic energy systems."},
+  {t:"Anaerobic Glycolysis",c:[IB,CAM,GCSE,GEN],d:"Breakdown of glucose to pyruvate producing ATP without oxygen; generates lactate as a by-product."},
+  {t:"Anaerobic Threshold",c:[IB,GEN],d:"The exercise intensity at which lactate begins to accumulate in the blood faster than it can be cleared."},
+  {t:"Angular Momentum",c:[IB,GEN],d:"The quantity of rotation of a body; product of moment of inertia and angular velocity."},
+  {t:"Angular Motion",c:[IB,GEN],d:"Movement of a body around a fixed point or axis, described in terms of angular displacement and velocity."},
+  {t:"Angular Velocity",c:[IB,GEN],d:"The rate of rotation of a body; measured in radians per second."},
+  {t:"Antagonist",c:[IB,CAM,GCSE,BTEC,GEN],d:"The muscle that opposes the agonist by relaxing and lengthening during a movement."},
+  {t:"Anticipatory Rise",c:[IB,GEN],d:"Increase in heart rate before exercise begins due to sympathetic nervous system activation."},
+  {t:"Anxiety",c:[IB,CAM,GCSE,BTEC,GEN],d:"A negative emotional state characterised by worry, apprehension and increased arousal before performance."},
+  {t:"Aorta",c:[IB,CAM,GEN],d:"The largest artery in the body; carries oxygenated blood from the left ventricle to the systemic circulation."},
+  {t:"Appendicular Skeleton",c:[IB,GEN],d:"The part of the skeleton that includes the limbs, shoulder girdle and pelvic girdle."},
+  {t:"Arousal",c:[IB,CAM,GCSE,BTEC,GEN],d:"A physiological and psychological state of alertness and readiness; affects sport performance."},
+  {t:"Arteriole",c:[IB,GEN],d:"Small blood vessel branching from an artery that controls blood flow to capillary beds."},
+  {t:"Artery",c:[IB,CAM,GCSE,GEN],d:"Blood vessel that carries oxygenated blood away from the heart to the body tissues."},
+  {t:"Articular Cartilage",c:[IB,CAM,GEN],d:"Smooth hyaline cartilage covering the ends of bones at synovial joints, reducing friction."},
+  {t:"Atrial Fibrillation",c:[IB,GEN],d:"An irregular heart rhythm where the atria beat chaotically and out of synchrony with the ventricles."},
+  {t:"Atrioventricular Node (AVN)",c:[IB,GEN],d:"Electrical relay node in the heart that delays the impulse between the atria and ventricles."},
+  {t:"Atrophy",c:[IB,GEN,BTEC],d:"The wasting or reduction in size of muscle tissue due to disease, injury or disuse."},
+  {t:"Attribution Theory",c:[IB,CAM,GCSE,GEN],d:"A framework explaining how athletes attribute the causes of their success and failure to internal or external factors."},
+  {t:"Autogenic Inhibition",c:[IB,GEN],d:"Protective reflex mediated by Golgi tendon organs that causes a muscle to relax when tension becomes too high."},
+  {t:"Axial Skeleton",c:[IB,GEN],d:"The central core of the skeleton comprising the skull, vertebral column, sternum and ribs."},
+  {t:"Axon",c:[IB,GEN],d:"Long extension of a neuron that conducts electrical impulses away from the cell body."},
+
+  // ── B ──
+  {t:"Balance",c:[GEN,GCSE,BTEC,CAM],d:"The ability to maintain equilibrium, either statically (still) or dynamically (during movement)."},
+  {t:"Ballistic Stretching",c:[GEN,BTEC],d:"A stretching technique using bouncing or jerking movements to force a muscle beyond its normal range."},
+  {t:"Basal Metabolic Rate (BMR)",c:[IB,GEN,BTEC],d:"The minimum energy required by the body at complete rest to maintain vital physiological functions."},
+  {t:"Beta-Oxidation",c:[IB,GEN],d:"Metabolic process by which fatty acids are broken down in the mitochondria to produce acetyl-CoA for the Krebs cycle."},
+  {t:"Bicarbonate Buffering",c:[IB,GEN],d:"A chemical system in the blood that neutralises excess hydrogen ions produced during anaerobic exercise."},
+  {t:"Bilateral Transfer",c:[CAM,GEN],d:"Transfer of a motor skill learned on one side of the body to the other side."},
+  {t:"Blood Doping",c:[IB,GEN],d:"Illegal practice of increasing red blood cell concentration to enhance oxygen delivery to muscles."},
+  {t:"Blood Lactate",c:[IB,GEN,BTEC],d:"Lactate produced in the blood as a by-product of anaerobic glycolysis; measured to assess exercise intensity."},
+  {t:"Blood Pressure",c:[IB,CAM,GCSE,BTEC,GEN],d:"The force exerted by blood against vessel walls; measured as systolic over diastolic (e.g. 120/80 mmHg)."},
+  {t:"Blood Redistribution",c:[IB,CAM,GEN],d:"The process by which blood is directed away from inactive organs towards working muscles during exercise via vasoconstriction and vasodilation."},
+  {t:"Blood Viscosity",c:[IB,GEN],d:"The thickness and stickiness of blood; increased viscosity reduces flow rate through vessels."},
+  {t:"Body Composition",c:[IB,CAM,GCSE,BTEC,GEN],d:"The proportion of fat mass to fat-free (lean) mass in the body, typically assessed by skinfold or DXA."},
+  {t:"Body Mass Index (BMI)",c:[GEN,GCSE,BTEC],d:"A measure of body weight relative to height (kg/m²) used as a general indicator of healthy weight."},
+  {t:"Bone Density",c:[IB,GEN,BTEC],d:"The amount of mineral matter per unit volume of bone; reduced by disuse and increased by weight-bearing exercise."},
+  {t:"Bone Remodelling",c:[IB,GEN],d:"Continuous process of bone formation and resorption that allows bones to adapt to mechanical loading."},
+  {t:"Brachial Artery",c:[IB,GEN],d:"The major artery of the upper arm, commonly used to measure blood pressure."},
+  {t:"Bradycardia",c:[IB,GEN,BTEC],d:"A resting heart rate below 60 beats per minute; often seen as a training adaptation in endurance athletes."},
+  {t:"Breathing Rate",c:[IB,CAM,GCSE,BTEC,GEN],d:"The number of breaths taken per minute; increases proportionally with exercise intensity."},
+  {t:"Buffer",c:[IB,GEN],d:"A chemical that resists changes in pH, such as bicarbonate that neutralises lactic acid in the blood."},
+  {t:"Bursa",c:[IB,GEN],d:"A fluid-filled sac near joints that reduces friction between tendons and bones."},
+
+  // ── C ──
+  {t:"Capillary",c:[IB,CAM,GCSE,GEN],d:"The smallest blood vessels where gas, nutrient and waste exchange between blood and tissues occurs."},
+  {t:"Capillarisation",c:[IB,GEN,BTEC],d:"The increase in capillary density within muscle tissue as a training adaptation, improving oxygen delivery."},
+  {t:"Carbohydrate",c:[IB,CAM,GCSE,BTEC,GEN],d:"Primary fuel source for high-intensity exercise; stored as glycogen in the muscles and liver."},
+  {t:"Carbon Dioxide (CO₂)",c:[IB,CAM,GCSE,GEN],d:"Metabolic waste product of aerobic respiration; transported to the lungs for exhalation."},
+  {t:"Cardiac Hypertrophy",c:[IB,CAM,GEN,BTEC],d:"Enlargement of the heart muscle as an adaptation to endurance training; increases stroke volume."},
+  {t:"Cardiac Output",c:[IB,CAM,GCSE,BTEC,GEN],d:"Volume of blood pumped by the heart per minute; cardiac output = heart rate × stroke volume."},
+  {t:"Cardiovascular Drift",c:[IB,GEN],d:"Progressive increase in heart rate during prolonged exercise at constant intensity due to fluid loss and blood redistribution."},
+  {t:"Cartilage",c:[IB,CAM,GCSE,GEN],d:"Firm, flexible connective tissue found at joint surfaces, in the nose and ears; lacks blood supply."},
+  {t:"Catastrophe Theory",c:[IB,CAM,GEN],d:"A model proposing that performance deteriorates dramatically when high cognitive anxiety combines with high physiological arousal."},
+  {t:"Centre of Gravity",c:[IB,GEN,CAM],d:"The point at which the total weight of a body appears to act; crucial for balance and stability in sport."},
+  {t:"Chemoreceptor",c:[IB,GEN],d:"Sensory receptor that detects changes in blood chemical composition, particularly CO₂, O₂ and pH."},
+  {t:"Chronic Adaptation",c:[IB,CAM,GCSE,BTEC,GEN],d:"Long-term physiological changes that result from consistent, repeated exercise training over weeks and months."},
+  {t:"Circumduction",c:[IB,CAM,GCSE,GEN],d:"A circular movement at a joint combining flexion, abduction, extension and adduction in sequence."},
+  {t:"Closed Loop Control",c:[CAM,GEN,IB],d:"A motor control system using sensory feedback to detect and correct movement errors during execution."},
+  {t:"Closed Skill",c:[CAM,GCSE,BTEC,GEN],d:"A motor skill performed in a stable, predictable environment where the performer controls the pace."},
+  {t:"Coaching",c:[GEN,BTEC,CAM],d:"The process of guiding athletes to improve performance through instruction, feedback and planning."},
+  {t:"Coactivation",c:[IB,GEN],d:"Simultaneous activation of agonist and antagonist muscles to stabilise a joint during movement."},
+  {t:"Coefficient of Friction",c:[IB,GEN],d:"A measure of the resistance between two surfaces in contact; affects traction in sport."},
+  {t:"Cognitive Anxiety",c:[IB,CAM,GEN],d:"The mental component of anxiety; characterised by negative thoughts and worry about performance outcome."},
+  {t:"Command Style",c:[CAM,BTEC,GEN],d:"A teaching and coaching style where the instructor makes all decisions and athletes follow instructions."},
+  {t:"Concentric Contraction",c:[IB,CAM,GCSE,BTEC,GEN],d:"A type of isotonic muscle contraction where the muscle shortens as it generates force."},
+  {t:"Condyloid Joint",c:[IB,CAM,GCSE,GEN],d:"A synovial joint permitting movement in two planes; e.g. the wrist joint."},
+  {t:"Connective Tissue",c:[IB,GEN],d:"Tissue that supports, connects or separates different types of tissues and organs in the body."},
+  {t:"Continuity of Training",c:[GEN,BTEC],d:"The principle that training must be maintained consistently to preserve adaptations and prevent detraining."},
+  {t:"Continuous Training",c:[GCSE,CAM,BTEC,GEN],d:"A training method involving sustained, moderate-to-high intensity exercise without rest intervals."},
+  {t:"Cool Down",c:[GEN,GCSE,BTEC],d:"Low-intensity exercise performed after the main session to gradually return physiological systems to rest."},
+  {t:"Coordination",c:[GEN,GCSE,BTEC,CAM],d:"The ability to use different parts of the body together smoothly and efficiently to perform a skill."},
+  {t:"Coronary Artery",c:[IB,GEN],d:"Blood vessel supplying oxygenated blood to the heart muscle itself."},
+  {t:"Cortisol",c:[IB,GEN],d:"Stress hormone released by the adrenal cortex; has catabolic effects on muscle if chronically elevated."},
+  {t:"Creatine Phosphate (PCr)",c:[IB,CAM,GCSE,GEN],d:"High-energy phosphate compound stored in muscles; rapidly resynthesises ATP during short, maximal exercise."},
+  {t:"Cross-Training",c:[GEN,BTEC],d:"Training in multiple exercise modes to improve overall fitness and reduce the risk of overuse injury."},
+  {t:"Crossbridge Cycle",c:[IB,GEN],d:"The sequence of events by which myosin heads attach to actin, pull and detach to generate muscle force."},
+
+  // ── D ──
+  {t:"Dead Space",c:[IB,GEN],d:"The volume of air in the conducting airways that does not participate in gas exchange; approximately 150ml."},
+  {t:"Decision Making",c:[CAM,IB,GEN],d:"The cognitive process of selecting the most appropriate response from a range of possible actions during sport performance."},
+  {t:"Dehydration",c:[IB,CAM,GCSE,BTEC,GEN],d:"A deficit of body water that impairs physiological function; as little as 2% loss can reduce performance."},
+  {t:"Delayed Onset Muscle Soreness (DOMS)",c:[IB,GEN,BTEC,GCSE],d:"Muscle pain and stiffness experienced 24–72 hours after unaccustomed or eccentric exercise."},
+  {t:"Depression (joint movement)",c:[IB,CAM,GEN],d:"A downward movement at a joint, such as lowering the shoulder girdle."},
+  {t:"Detraining",c:[IB,GEN,BTEC],d:"The partial or complete reversal of training adaptations that results from cessation of exercise."},
+  {t:"Diastolic Blood Pressure",c:[IB,CAM,GEN,BTEC],d:"The pressure in the arteries when the heart is relaxing between beats; the lower of the two blood pressure values."},
+  {t:"Diffusion",c:[IB,CAM,GCSE,GEN],d:"The movement of molecules from a region of high concentration to low concentration across a membrane."},
+  {t:"Distributed Practice",c:[CAM,GEN],d:"A practice schedule with rest intervals between sessions or trials; often superior for skill retention."},
+  {t:"Diuretic",c:[IB,GEN],d:"A substance that increases urine production; can cause dehydration and electrolyte imbalances."},
+  {t:"Dominant Response",c:[CAM,GEN],d:"The most well-learned or habitual response to a stimulus; central to Hull's drive theory of arousal."},
+  {t:"Dorsiflexion",c:[IB,CAM,GCSE,GEN],d:"Movement of the foot upward, decreasing the angle at the ankle joint."},
+  {t:"Drag",c:[IB,GEN],d:"A resistive force acting on a body moving through a fluid (air or water) that opposes motion."},
+  {t:"Drive Theory",c:[IB,CAM,GEN],d:"Psychological theory proposing a linear relationship between arousal level and performance quality."},
+  {t:"Duration (training principle)",c:[GEN,GCSE,BTEC,CAM],d:"The length of time of each training session; adjusted to achieve appropriate overload."},
+  {t:"Dynamic Flexibility",c:[GEN,BTEC,GCSE],d:"The range of motion achieved during active movement; reflects the ability to use flexibility in sport."},
+  {t:"Dynamic Stretching",c:[GEN,BTEC,GCSE],d:"Stretching through controlled movements that take joints through their full range of motion; ideal for warm-up."},
+  {t:"Dynamometer",c:[IB,GEN,BTEC],d:"An instrument used to measure muscular strength or force output."},
+
+  // ── E ──
+  {t:"Eccentric Contraction",c:[IB,CAM,GCSE,BTEC,GEN],d:"A muscle contraction where the muscle lengthens under tension; acts as a brake during movement."},
+  {t:"Effector",c:[IB,CAM,GEN],d:"A muscle or gland that receives a motor signal and produces a response; the output organ of the nervous system."},
+  {t:"Ejection Fraction",c:[IB,GEN],d:"The percentage of blood ejected from a ventricle with each contraction; normally around 55–70%."},
+  {t:"Elastic Energy",c:[IB,GEN],d:"Energy stored in stretched tendons and muscles during the eccentric phase, released during the subsequent concentric phase."},
+  {t:"Electron Transport Chain",c:[IB,GEN],d:"The final stage of aerobic metabolism; produces the majority of ATP by transferring electrons to oxygen."},
+  {t:"Elevation (joint movement)",c:[IB,CAM,GEN],d:"An upward movement at a joint, such as shrugging the shoulders."},
+  {t:"Electrolytes",c:[IB,GEN,BTEC],d:"Minerals in the blood and fluids (sodium, potassium, chloride) that maintain fluid balance and nerve function."},
+  {t:"Electromyography (EMG)",c:[IB,GEN],d:"A technique measuring the electrical activity of muscles during contraction, used in sports science research."},
+  {t:"Endocrine System",c:[IB,CAM,GEN],d:"The system of glands that secrete hormones directly into the bloodstream to regulate body functions."},
+  {t:"Endurance",c:[GEN,GCSE,BTEC,CAM,IB],d:"The ability to sustain a physical activity over a prolonged period; includes cardiovascular and muscular endurance."},
+  {t:"Energy Balance",c:[IB,GEN,BTEC],d:"The relationship between energy intake (food) and energy expenditure (activity); determines body weight changes."},
+  {t:"Energy Systems",c:[IB,CAM,GCSE,BTEC,GEN],d:"The three metabolic pathways (ATP-PCr, glycolytic, aerobic) that produce ATP for muscle contraction."},
+  {t:"EPOC (Excess Post-exercise Oxygen Consumption)",c:[IB,CAM,GCSE,GEN],d:"Elevated oxygen consumption following exercise to restore the body to its pre-exercise state."},
+  {t:"Erythrocytes",c:[IB,GEN],d:"Red blood cells that contain haemoglobin and transport oxygen around the body."},
+  {t:"Evaluation",c:[IB,GEN,BTEC],d:"Critical assessment of findings, methods or strategies, including identification of limitations and suggestions for improvement."},
+  {t:"Eversion",c:[IB,CAM,GEN],d:"Outward rotation of the sole of the foot away from the midline."},
+  {t:"Exercise Intensity",c:[IB,CAM,GCSE,BTEC,GEN],d:"The level of effort or physiological demand of a physical activity, often expressed as a percentage of VO₂max or HRmax."},
+  {t:"Exercise Physiology",c:[IB,CAM,GEN,BTEC],d:"The scientific study of how the body responds and adapts to physical exercise and training."},
+  {t:"Extension",c:[IB,CAM,GCSE,BTEC,GEN],d:"A movement that increases the angle at a joint; opposite of flexion."},
+  {t:"External Feedback",c:[CAM,GEN],d:"Information about performance provided by an outside source such as a coach, video or sensor."},
+  {t:"External Rotation",c:[IB,CAM,GEN],d:"Rotation of a limb away from the midline of the body around its long axis."},
+
+  // ── F ──
+  {t:"Fast-Twitch Fibres (Type II)",c:[IB,CAM,GCSE,BTEC,GEN],d:"Muscle fibres that generate high force rapidly but fatigue quickly; recruited for speed and power activities."},
+  {t:"Fat (Lipid)",c:[IB,GEN,BTEC],d:"A macronutrient and stored energy source; primary fuel for low-to-moderate intensity, prolonged exercise."},
+  {t:"Fatigue",c:[IB,CAM,GCSE,BTEC,GEN],d:"The temporary inability to maintain an expected power output or force; can be central or peripheral in origin."},
+  {t:"Feedback",c:[IB,CAM,GCSE,BTEC,GEN],d:"Information received by an athlete about their performance; used to make corrections and improvements."},
+  {t:"Fick Principle",c:[IB,GEN],d:"States that oxygen consumption equals cardiac output multiplied by the arteriovenous oxygen difference (a-vO₂ diff)."},
+  {t:"First-Class Lever",c:[IB,CAM,GCSE,GEN],d:"A lever where the fulcrum lies between the effort and the load, e.g. neck nodding."},
+  {t:"Fitness Testing",c:[GEN,GCSE,BTEC,CAM],d:"The systematic measurement of physical fitness components to assess current status and monitor training progress."},
+  {t:"FITT Principle",c:[GEN,GCSE,BTEC,CAM],d:"Training framework based on Frequency, Intensity, Time and Type of exercise used to design programmes."},
+  {t:"Fixed Practice",c:[CAM,GEN],d:"A practice method where the same skill is repeatedly rehearsed without variation; suits closed skills."},
+  {t:"Flexibility",c:[GEN,GCSE,BTEC,CAM,IB],d:"The range of motion available at a joint or series of joints; influenced by muscle length and joint structure."},
+  {t:"Flexion",c:[IB,CAM,GCSE,BTEC,GEN],d:"A movement that decreases the angle at a joint, e.g. bending the elbow."},
+  {t:"Fluid Mechanics",c:[IB,GEN],d:"The branch of physics studying how fluids (air and water) exert forces on moving bodies in sport."},
+  {t:"Force",c:[IB,GEN,CAM],d:"A push or pull that can change the state of motion of a body; measured in Newtons (N)."},
+  {t:"Force-Velocity Relationship",c:[IB,GEN],d:"The inverse relationship between the speed of muscle shortening and the force a muscle can produce."},
+  {t:"Fracture",c:[GEN,BTEC],d:"A break or crack in a bone caused by excessive force, repetitive stress or osteoporosis."},
+  {t:"Free Body Diagram",c:[IB,GEN],d:"A diagram showing all forces acting on an object in a sporting movement."},
+  {t:"Free Radical",c:[IB,GEN],d:"Unstable molecule produced during metabolism and exercise that can cause oxidative damage to cells."},
+  {t:"Frequency (training principle)",c:[GEN,GCSE,BTEC,CAM],d:"How often training sessions occur per week; a key FITT variable in programme design."},
+  {t:"Friction",c:[IB,GEN],d:"A resistive force between two surfaces in contact that opposes relative motion."},
+  {t:"Frontal Plane",c:[IB,CAM,GEN],d:"The vertical plane dividing the body into front (anterior) and back (posterior) halves; site of abduction and adduction."},
+  {t:"Fulcrum",c:[IB,CAM,GCSE,GEN],d:"The pivot point of a lever system; in the body, this is a joint."},
+  {t:"Functional Overreaching",c:[IB,GEN],d:"A short-term state of accumulated fatigue with performance decline, followed by supercompensation after recovery."},
+
+  // ── G ──
+  {t:"Gas Exchange",c:[IB,CAM,GCSE,GEN],d:"The process of oxygen moving from air into the blood and carbon dioxide moving from blood into the air, occurring at the alveoli."},
+  {t:"Gestalt",c:[GEN,CAM],d:"A psychological concept referring to perceiving patterns as unified wholes rather than separate parts; applied to skill perception."},
+  {t:"Ghrelin",c:[IB,GEN],d:"Hunger-stimulating hormone released by the stomach; elevated after intense exercise."},
+  {t:"Glucagon",c:[IB,GEN],d:"Pancreatic hormone that raises blood glucose by stimulating glycogenolysis and gluconeogenesis."},
+  {t:"Gluconeogenesis",c:[IB,GEN],d:"The synthesis of glucose from non-carbohydrate sources (amino acids, lactate, glycerol) in the liver."},
+  {t:"Glucose",c:[IB,CAM,GCSE,GEN],d:"A simple sugar and primary fuel source that enters glycolysis for ATP production during exercise."},
+  {t:"Glycaemic Index (GI)",c:[IB,GEN,BTEC],d:"A ranking of carbohydrate foods based on how quickly they raise blood glucose levels."},
+  {t:"Glycogen",c:[IB,CAM,GCSE,BTEC,GEN],d:"The storage form of glucose in the liver and skeletal muscles; the primary fuel for moderate-to-high intensity exercise."},
+  {t:"Glycogen Loading",c:[IB,GEN],d:"A nutritional strategy maximising muscle glycogen stores before endurance events through dietary manipulation."},
+  {t:"Glycogenolysis",c:[IB,GEN],d:"The breakdown of glycogen into glucose for use in energy production during exercise."},
+  {t:"Glycolysis",c:[IB,CAM,GCSE,GEN],d:"The metabolic breakdown of glucose to pyruvate in the cytoplasm, producing 2 net ATP; can occur with or without oxygen."},
+  {t:"Goal Setting",c:[IB,CAM,GCSE,BTEC,GEN],d:"The process of establishing specific, measurable targets to direct motivation and focus in sport."},
+  {t:"Golgi Tendon Organ (GTO)",c:[IB,GEN],d:"Proprioceptor in tendons that detects muscle tension and triggers autogenic inhibition to prevent injury."},
+  {t:"Ground Reaction Force",c:[IB,GEN],d:"The force exerted by the ground on a body in contact with it; equal and opposite to the force exerted by the body."},
+  {t:"Group Cohesion",c:[GEN,BTEC,CAM],d:"The tendency of a sports team to stick together and remain united in pursuit of common goals."},
+  {t:"Growth Hormone",c:[IB,GEN],d:"Hormone secreted by the anterior pituitary; stimulates tissue growth, protein synthesis and fat metabolism."},
+  {t:"Guidance",c:[CAM,GEN,BTEC],d:"Methods used to help learners understand and acquire motor skills, including manual, mechanical and visual forms."},
+
+  // ── H ──
+  {t:"Haematocrit",c:[IB,GEN],d:"The percentage of blood volume occupied by red blood cells; elevated at altitude or through blood doping."},
+  {t:"Haemoglobin",c:[IB,CAM,GCSE,GEN],d:"The protein in red blood cells that carries oxygen; each molecule can bind four oxygen molecules."},
+  {t:"Heart Rate",c:[IB,CAM,GCSE,BTEC,GEN],d:"The number of times the heart beats per minute; increases linearly with exercise intensity."},
+  {t:"Heart Rate Reserve",c:[IB,GEN,BTEC],d:"The difference between maximum heart rate and resting heart rate; used to calculate training zones."},
+  {t:"Heat Acclimatisation",c:[IB,GEN],d:"Physiological adaptations to exercising in hot conditions, including increased plasma volume and improved sweating."},
+  {t:"Homeostasis",c:[IB,CAM,GCSE,GEN],d:"The maintenance of a stable internal environment despite external changes; regulated by negative feedback."},
+  {t:"Hormone",c:[IB,CAM,GEN],d:"Chemical messenger secreted by an endocrine gland into the blood to regulate target organ activity."},
+  {t:"Huffman's Model",c:[GEN],d:"A coaching model distinguishing between process, performance and outcome goals."},
+  {t:"Hypertension",c:[IB,GEN,BTEC],d:"Persistently elevated blood pressure (above 140/90 mmHg); a major risk factor for cardiovascular disease."},
+  {t:"Hypertrophy",c:[IB,CAM,GCSE,BTEC,GEN],d:"An increase in the size of muscle fibres as a training adaptation to resistance exercise."},
+  {t:"Hyperventilation",c:[IB,GEN],d:"Excessively rapid or deep breathing that lowers CO₂ levels in the blood and can cause dizziness."},
+  {t:"Hypoglycaemia",c:[IB,GEN],d:"Abnormally low blood glucose levels; can cause fatigue, confusion and impaired performance during prolonged exercise."},
+  {t:"Hypothalamus",c:[IB,GEN],d:"Brain region that controls thermoregulation, hunger, thirst and the release of many hormones via the pituitary gland."},
+
+  // ── I ──
+  {t:"Imagery",c:[IB,CAM,GEN],d:"A mental skill technique using vivid mental rehearsal to improve performance and manage anxiety."},
+  {t:"Impulse",c:[IB,GEN],d:"The product of force and time; equal to the change in momentum of an object."},
+  {t:"Individualisation",c:[GEN,BTEC,IB],d:"A training principle stating that programmes should be tailored to the specific needs, abilities and goals of each athlete."},
+  {t:"Inertia",c:[IB,GEN],d:"The resistance of a body to changes in its state of rest or motion; proportional to mass (Newton's first law)."},
+  {t:"Information Processing Model",c:[CAM,GEN],d:"A model of skill performance involving input, decision-making, output and feedback stages."},
+  {t:"Inhibition",c:[IB,GEN],d:"Suppression of neural activity in the motor system; used to prevent unwanted muscle contractions."},
+  {t:"Insertion (muscle)",c:[IB,CAM,GEN],d:"The end of a muscle attached to the bone that moves when the muscle contracts."},
+  {t:"Insulin",c:[IB,GEN,BTEC],d:"Pancreatic hormone that lowers blood glucose by promoting uptake into cells; important in nutrition for athletes."},
+  {t:"Insulin Sensitivity",c:[IB,GEN],d:"The degree to which cells respond to insulin; improved by regular aerobic exercise."},
+  {t:"Intensity (training principle)",c:[GEN,GCSE,BTEC,CAM,IB],d:"The level of effort in a training session; a key FITT variable that determines the physiological stimulus for adaptation."},
+  {t:"Internal Feedback",c:[CAM,GEN],d:"Sensory information from within the body (proprioception, kinaesthesis) used to monitor and adjust movement."},
+  {t:"Internal Rotation",c:[IB,CAM,GEN],d:"Rotation of a limb towards the midline of the body around its long axis."},
+  {t:"Interval Training",c:[GEN,GCSE,BTEC,CAM,IB],d:"A training method alternating periods of high-intensity exercise with recovery periods."},
+  {t:"Inversion",c:[IB,CAM,GEN],d:"Inward rotation of the sole of the foot towards the midline."},
+  {t:"Inverted-U Hypothesis",c:[IB,CAM,GCSE,GEN],d:"Yerkes-Dodson model proposing that performance improves with increasing arousal up to an optimal point, then declines."},
+  {t:"Isokinetic Contraction",c:[IB,GEN,BTEC],d:"A muscle contraction at a constant velocity through the full range of motion, typically requiring specialist equipment."},
+  {t:"Isometric Contraction",c:[IB,CAM,GCSE,GEN],d:"A muscle contraction where tension is produced but there is no change in muscle length or joint angle."},
+  {t:"Isotonic Contraction",c:[IB,CAM,GCSE,GEN],d:"A muscle contraction producing movement; includes both concentric and eccentric contractions."},
+
+  // ── J ──
+  {t:"Joint",c:[IB,CAM,GCSE,BTEC,GEN],d:"The point at which two or more bones meet; classified by structure and movement type."},
+  {t:"Joint Capsule",c:[IB,CAM,GEN],d:"The fibrous sleeve surrounding a synovial joint that provides stability and contains synovial fluid."},
+  {t:"Joint Stability",c:[GEN,BTEC,CAM],d:"The ability of a joint to resist displacement from its normal position, maintained by bones, ligaments and muscles."},
+
+  // ── K ──
+  {t:"Kinaesthesia",c:[IB,CAM,GEN],d:"Awareness of body position, movement and muscular effort derived from proprioceptive sensory information."},
+  {t:"Kinetic Energy",c:[IB,GEN],d:"Energy possessed by a body due to its motion; KE = ½mv²."},
+  {t:"Krebs Cycle",c:[IB,CAM,GCSE,GEN],d:"A series of chemical reactions in the mitochondria that produce hydrogen carriers (NADH, FADH₂) for ATP synthesis."},
+  {t:"Knowledge of Performance (KP)",c:[CAM,GEN],d:"Feedback about the quality and pattern of the movement itself, rather than the outcome."},
+  {t:"Knowledge of Results (KR)",c:[CAM,GEN],d:"Feedback about the outcome of a movement, such as whether a shot went in or how far a throw travelled."},
+  {t:"Kyphosis",c:[IB,GEN,BTEC],d:"Excessive outward curvature of the thoracic spine (hunched back posture); can be worsened by poor training."},
+
+  // ── L ──
+  {t:"Lactate",c:[IB,CAM,GCSE,GEN],d:"A by-product of anaerobic glycolysis; at high intensities it accumulates faster than it can be cleared."},
+  {t:"Lactate Inflection Point",c:[IB,GEN],d:"The exercise intensity at which blood lactate begins to accumulate exponentially; also called the anaerobic threshold."},
+  {t:"Lactate Threshold",c:[IB,CAM,GCSE,BTEC,GEN],d:"The exercise intensity at which blood lactate begins to rise above resting levels; a key endurance performance marker."},
+  {t:"Lateral Flexion",c:[IB,CAM,GEN],d:"A sideways bending movement of the spine away from the midline."},
+  {t:"Law of Acceleration",c:[IB,GEN],d:"Newton's second law: the acceleration of a body is proportional to the net force applied and inversely proportional to its mass (F=ma)."},
+  {t:"Law of Inertia",c:[IB,GEN],d:"Newton's first law: a body remains at rest or in uniform motion unless acted upon by an external force."},
+  {t:"Law of Reaction",c:[IB,GEN],d:"Newton's third law: for every action there is an equal and opposite reaction."},
+  {t:"Leadership",c:[GEN,BTEC,CAM],d:"The process of influencing others towards goal achievement in a sport or team context."},
+  {t:"Lean Body Mass",c:[IB,GEN,BTEC],d:"Total body mass minus fat mass; includes muscle, bone, organs and connective tissue."},
+  {t:"Leptin",c:[IB,GEN],d:"Hormone secreted by fat cells that suppresses appetite and regulates energy balance."},
+  {t:"Levers",c:[IB,CAM,GCSE,GEN],d:"Simple mechanical systems used to transmit and amplify force; the body uses bone-joint-muscle levers to produce movement."},
+  {t:"Ligament",c:[IB,CAM,GCSE,BTEC,GEN],d:"Dense connective tissue connecting bone to bone across a joint, providing structural stability."},
+  {t:"Linear Motion",c:[IB,GEN],d:"Movement of a body in a straight or curved line where all parts move the same distance in the same direction."},
+  {t:"Lipase",c:[IB,GEN],d:"An enzyme that breaks down triglycerides into fatty acids and glycerol for energy use."},
+  {t:"Load (lever)",c:[IB,CAM,GCSE,GEN],d:"The resistance overcome in a lever system; in the body this is typically the weight of a body segment or external object."},
+  {t:"Long-Term Athletic Development (LTAD)",c:[GEN,BTEC],d:"A framework for planning athlete development from childhood through to senior competition."},
+  {t:"Lordosis",c:[IB,GEN,BTEC],d:"Excessive inward curvature of the lumbar spine (swayback); can be related to muscular imbalances."},
+
+  // ── M ──
+  {t:"Macronutrient",c:[IB,GEN,BTEC],d:"The major categories of nutrients needed in large amounts: carbohydrates, proteins and fats."},
+  {t:"Magnus Effect",c:[IB,GEN],d:"The aerodynamic effect producing a curved flight path when a spinning ball moves through air."},
+  {t:"Massed Practice",c:[CAM,GEN],d:"A practice schedule with little or no rest between trials; suitable for simple, discrete skills."},
+  {t:"Maximum Heart Rate (HRmax)",c:[IB,CAM,GCSE,BTEC,GEN],d:"The highest heart rate achievable during maximal exercise, approximately 220 minus age."},
+  {t:"Maximum Oxygen Uptake",c:[IB,CAM,GCSE,BTEC,GEN],d:"See VO₂ max; the gold-standard measure of cardiovascular fitness."},
+  {t:"Mechanoreceptor",c:[IB,GEN],d:"Sensory receptor that responds to mechanical stimuli such as pressure, stretch or vibration."},
+  {t:"Mental Toughness",c:[GEN,BTEC],d:"A psychological attribute enabling athletes to cope consistently with demands of sport regardless of conditions."},
+  {t:"Mesocycle",c:[IB,GEN,BTEC],d:"A medium-term training block within a periodised plan, typically lasting 4–6 weeks."},
+  {t:"Metabolism",c:[IB,CAM,GCSE,BTEC,GEN],d:"All chemical processes in the body used to maintain life, including energy production and utilisation."},
+  {t:"Microcycle",c:[IB,GEN,BTEC],d:"The shortest training cycle in a periodised plan, usually one week in duration."},
+  {t:"Micronutrient",c:[IB,GEN,BTEC],d:"Vitamins and minerals needed in small quantities for normal physiological function."},
+  {t:"Minute Ventilation",c:[IB,GEN],d:"The total volume of air breathed per minute; equals tidal volume × breathing rate."},
+  {t:"Mitochondria",c:[IB,CAM,GCSE,GEN],d:"Organelles within cells where aerobic ATP production (Krebs cycle and electron transport chain) takes place."},
+  {t:"Momentum",c:[IB,GEN],d:"The product of an object's mass and velocity; a key concept in contact sports and collision analysis."},
+  {t:"Morale",c:[GEN,BTEC],d:"The level of confidence, enthusiasm and discipline within a team or group."},
+  {t:"Motivation",c:[IB,CAM,GCSE,BTEC,GEN],d:"The internal and external factors that initiate, direct and sustain behaviour towards a goal."},
+  {t:"Motor Learning",c:[IB,CAM,GEN],d:"A relatively permanent change in motor behaviour resulting from practice or experience."},
+  {t:"Motor Neuron",c:[IB,CAM,GEN],d:"A nerve cell that transmits electrical signals from the central nervous system to muscle fibres."},
+  {t:"Motor Programme",c:[CAM,GEN],d:"A pre-structured motor plan stored in memory that can be retrieved and executed to control movement."},
+  {t:"Motor Unit",c:[IB,CAM,GEN],d:"A motor neuron and all the muscle fibres it innervates; the basic functional unit of muscle contraction."},
+  {t:"Muscle Fibre",c:[IB,CAM,GCSE,GEN],d:"An individual muscle cell; contains myofibrils made up of actin and myosin filaments."},
+  {t:"Muscle Spindle",c:[IB,GEN],d:"A proprioceptor within muscle that detects changes in muscle length and triggers the stretch reflex."},
+  {t:"Myelin Sheath",c:[IB,GEN],d:"A fatty insulating layer around nerve axons that increases the speed of electrical impulse transmission."},
+  {t:"Myofibril",c:[IB,GEN],d:"The contractile unit within a muscle fibre, composed of repeating sarcomeres containing actin and myosin."},
+  {t:"Myoglobin",c:[IB,CAM,GEN],d:"An oxygen-binding protein in muscle cells that stores oxygen and releases it during intense exercise."},
+  {t:"Myosin",c:[IB,GEN],d:"Thick contractile protein filament in muscle that interacts with actin to produce force and movement."},
+
+  // ── N ──
+  {t:"Negative Feedback",c:[IB,CAM,GEN],d:"A homeostatic mechanism where the body responds to a change by triggering a response that reverses that change."},
+  {t:"Negative Transfer",c:[CAM,GEN],d:"The harmful effect a previously learned skill has on the learning or performance of a new skill."},
+  {t:"Nerve Impulse",c:[IB,CAM,GEN],d:"An electrical signal travelling along a neuron, resulting from changes in membrane permeability to ions."},
+  {t:"Neuromuscular Efficiency",c:[IB,GEN],d:"The ability of the nervous system to effectively recruit muscle fibres during movement."},
+  {t:"Neuromuscular Junction",c:[IB,GEN],d:"The synapse between a motor neuron and a muscle fibre where acetylcholine triggers muscle contraction."},
+  {t:"Neurotransmitter",c:[IB,GEN],d:"A chemical messenger released at synapses that transmits signals between neurons or to target cells."},
+  {t:"Newton's Laws of Motion",c:[IB,CAM,GEN],d:"Three fundamental laws (inertia, acceleration, action-reaction) applied to analyse human movement in sport."},
+  {t:"Nutrition",c:[IB,CAM,GCSE,BTEC,GEN],d:"The process of consuming and utilising food and drink to support health, performance and recovery."},
+
+  // ── O ──
+  {t:"Obesity",c:[IB,GEN,BTEC],d:"A condition of excessive body fat (BMI > 30) associated with increased risk of chronic disease and reduced performance."},
+  {t:"Open Loop Control",c:[CAM,GEN],d:"A motor control system that executes movement without using sensory feedback; used for fast, pre-planned actions."},
+  {t:"Open Skill",c:[CAM,GCSE,BTEC,GEN],d:"A motor skill performed in an unpredictable, changing environment where the performer must adapt continually."},
+  {t:"Optimum Arousal",c:[IB,CAM,GEN],d:"The level of physiological and psychological activation at which an individual performs best."},
+  {t:"Origin (muscle)",c:[IB,CAM,GEN],d:"The proximal attachment of a muscle; the end attached to the bone that remains stationary during movement."},
+  {t:"Osmosis",c:[IB,GEN],d:"The movement of water across a semi-permeable membrane from a region of low to high solute concentration."},
+  {t:"Osteoporosis",c:[IB,GEN,BTEC],d:"A condition of low bone density and strength, increasing fracture risk; often preventable through weight-bearing exercise."},
+  {t:"Overload",c:[GEN,GCSE,BTEC,CAM,IB],d:"A training principle requiring the body to be stressed beyond its current capacity to stimulate physiological adaptation."},
+  {t:"Overtraining",c:[IB,GEN,BTEC],d:"A chronic condition of accumulated training fatigue where performance deteriorates despite continued training."},
+  {t:"Oxidative Phosphorylation",c:[IB,GEN],d:"The ATP-producing process in the mitochondria driven by the electron transport chain and oxygen."},
+  {t:"Oxygen Debt",c:[IB,CAM,GCSE,GEN],d:"An outdated term for EPOC; the elevated oxygen consumption after exercise to restore metabolic homeostasis."},
+  {t:"Oxygen Dissociation Curve",c:[IB,GEN],d:"A graph showing how haemoglobin saturation changes with partial pressure of oxygen; shifted by temperature, pH and CO₂."},
+
+  // ── P ──
+  {t:"Pacinian Corpuscle",c:[IB,GEN],d:"A mechanoreceptor sensitive to deep pressure and high-frequency vibration, found in joints and tendons."},
+  {t:"Parasympathetic Nervous System",c:[IB,GEN],d:"The division of the autonomic nervous system that promotes rest and recovery; reduces heart rate at rest."},
+  {t:"Partial Pressure",c:[IB,GEN],d:"The pressure exerted by one gas in a mixture; drives diffusion of oxygen from alveoli to blood."},
+  {t:"Passive Stretching",c:[GEN,BTEC,GCSE],d:"Stretching using an external force (partner or apparatus) to move a joint beyond its normal range."},
+  {t:"Peak Flow",c:[IB,GEN],d:"The maximum flow rate of exhaled air from the lungs; used to assess respiratory capacity."},
+  {t:"Peer Assessment",c:[GEN,BTEC],d:"Evaluation of a learner's performance by a fellow student using agreed criteria."},
+  {t:"Perception",c:[IB,CAM,GEN],d:"The process of interpreting sensory information to make decisions about appropriate movement responses."},
+  {t:"Perfusion",c:[IB,GEN],d:"The passage of blood through the capillaries to supply tissues with oxygen and nutrients."},
+  {t:"Periodisation",c:[IB,GEN,BTEC,CAM],d:"The systematic planning of training into phases (macrocycles, mesocycles, microcycles) to optimise performance at key times."},
+  {t:"Peripheral Fatigue",c:[IB,GEN],d:"Fatigue originating in the muscles themselves, due to metabolite accumulation or substrate depletion."},
+  {t:"Peristalsis",c:[IB,GEN],d:"Wave-like muscular contractions that propel food through the digestive tract."},
+  {t:"Personality",c:[IB,CAM,GCSE,GEN],d:"The stable pattern of thoughts, emotions and behaviours that characterise an individual; influences sport participation and performance."},
+  {t:"Phosphocreatine (PCr)",c:[IB,CAM,GCSE,GEN],d:"High-energy compound stored in muscle that rapidly donates a phosphate to ADP to regenerate ATP during maximal efforts."},
+  {t:"Physiological Cross-Sectional Area",c:[IB,GEN],d:"A measure of muscle size proportional to force-generating capacity; larger cross-section produces greater force."},
+  {t:"Planes of Movement",c:[IB,CAM,GEN],d:"Three reference planes (sagittal, frontal, transverse) used to describe the direction of body movements."},
+  {t:"Plantar Flexion",c:[IB,CAM,GCSE,GEN],d:"Movement of the foot downward, increasing the angle at the ankle joint (pointing the toes)."},
+  {t:"Plasma",c:[IB,CAM,GEN],d:"The liquid component of blood in which blood cells, nutrients, hormones and waste products are transported."},
+  {t:"Plasma Volume",c:[IB,GEN],d:"The volume of plasma in the blood; increases with aerobic training, reducing relative blood viscosity."},
+  {t:"Platelets",c:[IB,GEN],d:"Small blood cells that aggregate at injury sites to initiate blood clotting and prevent excessive bleeding."},
+  {t:"Plyometric Training",c:[GEN,GCSE,BTEC,IB],d:"Training using explosive stretch-shortening cycles (e.g. depth jumps) to develop muscular power."},
+  {t:"Positive Transfer",c:[CAM,GEN],d:"The beneficial effect of a previously learned skill on the learning or performance of a new similar skill."},
+  {t:"Posture",c:[GEN,BTEC,IB],d:"The alignment of body segments relative to each other and to gravity during static and dynamic activities."},
+  {t:"Power",c:[GEN,GCSE,BTEC,CAM,IB],d:"The rate of doing work; power = force × velocity; essential in explosive sports activities."},
+  {t:"Practice",c:[CAM,GEN,BTEC],d:"Repeated performance of a skill or activity aimed at improvement; a central component of motor learning."},
+  {t:"Principle of Progression",c:[GEN,GCSE,BTEC,CAM],d:"The training principle that overload must be increased gradually over time to continue producing adaptation."},
+  {t:"Pronation",c:[IB,CAM,GEN],d:"Rotation of the forearm so the palm faces downward; also used to describe inward foot rolling."},
+  {t:"Proprioception",c:[IB,CAM,GEN],d:"The body's ability to sense its own position, movement and forces acting upon it through sensory receptors."},
+  {t:"Protein",c:[IB,CAM,GCSE,BTEC,GEN],d:"Macronutrient made of amino acids; essential for muscle repair, enzyme function and immune system support."},
+  {t:"Psychological Skills Training (PST)",c:[IB,GEN],d:"Systematic practice of mental techniques (imagery, self-talk, relaxation) to optimise sport performance."},
+  {t:"Pulmonary Ventilation",c:[IB,CAM,GCSE,GEN],d:"The process of moving air into and out of the lungs via inspiration and expiration."},
+  {t:"Pulse Rate",c:[GEN,GCSE,BTEC],d:"The number of times the pulse can be felt per minute; equivalent to heart rate in healthy individuals."},
+  {t:"Pyruvate",c:[IB,GEN],d:"The end product of glycolysis; converted to acetyl-CoA (aerobic) or lactate (anaerobic) depending on oxygen availability."},
+
+  // ── Q ──
+  {t:"Qualitative Analysis",c:[IB,CAM,GEN],d:"Descriptive, non-numerical analysis of movement or performance based on observation."},
+  {t:"Quantitative Analysis",c:[IB,GEN],d:"Numerical, measurable analysis of performance using data such as speed, force or heart rate."},
+
+  // ── R ──
+  {t:"Radiation",c:[IB,GEN],d:"A mechanism of heat loss in which thermal energy is emitted from the body surface as infrared radiation."},
+  {t:"Range of Motion (ROM)",c:[GEN,GCSE,BTEC,IB],d:"The full extent of movement possible at a joint; measured in degrees using a goniometer."},
+  {t:"Rating of Perceived Exertion (RPE)",c:[IB,GEN,BTEC],d:"A subjective scale used to quantify the perceived difficulty of exercise; Borg scale is most commonly used."},
+  {t:"Reaction Time",c:[GEN,GCSE,BTEC,CAM],d:"The time between a stimulus and the initiation of a movement response."},
+  {t:"Recovery",c:[GEN,GCSE,BTEC,CAM,IB],d:"The period between training sessions or exercise bouts during which the body repairs and adapts."},
+  {t:"Reflex",c:[IB,CAM,GEN],d:"An automatic, involuntary motor response to a sensory stimulus mediated by the spinal cord."},
+  {t:"Rehabilitation",c:[GEN,BTEC,IB],d:"The process of restoring function after injury through progressive exercise and therapy."},
+  {t:"Relative Strength",c:[IB,GEN,BTEC],d:"Strength expressed relative to body mass; allows comparison of strength between individuals of different sizes."},
+  {t:"Relaxation Techniques",c:[IB,GEN],d:"Strategies such as progressive muscle relaxation and deep breathing used to reduce somatic and cognitive anxiety."},
+  {t:"Resistance Training",c:[GEN,GCSE,BTEC,IB],d:"Exercise using external resistance (weights, bands) to improve muscular strength, power or endurance."},
+  {t:"Respiratory Exchange Ratio (RER)",c:[IB,GEN],d:"The ratio of CO₂ produced to O₂ consumed; indicates the fuel source being used during exercise."},
+  {t:"Resting Heart Rate",c:[IB,CAM,GCSE,BTEC,GEN],d:"Heart rate measured at complete rest; typically 60–80 bpm; decreases with aerobic training."},
+  {t:"Reversibility",c:[GEN,GCSE,BTEC,CAM,IB],d:"The training principle that adaptations are lost if training stops; use it or lose it."},
+  {t:"RICE (Rest, Ice, Compression, Elevation)",c:[GEN,GCSE,BTEC],d:"A first aid protocol for managing acute soft tissue injuries."},
+  {t:"Rotation",c:[IB,CAM,GEN],d:"Turning movement of a bone around its own longitudinal axis."},
+
+  // ── S ──
+  {t:"Sagittal Plane",c:[IB,CAM,GEN],d:"The vertical plane dividing the body into left and right halves; site of flexion and extension movements."},
+  {t:"Sarcomere",c:[IB,GEN],d:"The basic contractile unit of a myofibril; bounded by Z-lines and containing overlapping actin and myosin filaments."},
+  {t:"Schema Theory",c:[CAM,GEN],d:"Schmidt's theory proposing that motor programmes are generalised movement schemas stored in memory."},
+  {t:"Second-Class Lever",c:[IB,CAM,GCSE,GEN],d:"A lever where the load is between the fulcrum and the effort, e.g. standing on tiptoe."},
+  {t:"Self-Efficacy",c:[IB,CAM,GEN],d:"An individual's belief in their own ability to succeed in a specific situation or task; central to Bandura's theory."},
+  {t:"Self-Talk",c:[IB,GEN],d:"A psychological technique using internal verbal cues to regulate thoughts, emotions and performance."},
+  {t:"Sensory Cortex",c:[IB,GEN],d:"The area of the brain that processes incoming sensory information from the body and environment."},
+  {t:"Sidedness",c:[GEN,CAM],d:"Preference for using one side of the body (dominant hand/foot) during skill performance."},
+  {t:"Simple Reaction Time",c:[CAM,GEN],d:"The time to respond to a single predictable stimulus with a single pre-planned response."},
+  {t:"Sinoatrial Node (SAN)",c:[IB,CAM,GEN],d:"The heart's natural pacemaker located in the right atrium; initiates each cardiac cycle."},
+  {t:"Skeletal Muscle",c:[IB,CAM,GCSE,GEN],d:"Voluntary, striated muscle attached to the skeleton that produces movement when it contracts."},
+  {t:"Skill",c:[CAM,GCSE,GEN],d:"A learned ability to perform a task with efficiency, consistency and minimal error."},
+  {t:"Sliding Filament Theory",c:[IB,CAM,GCSE,GEN],d:"The mechanism of muscle contraction where actin filaments slide over myosin filaments to shorten the sarcomere."},
+  {t:"Slow-Twitch Fibres (Type I)",c:[IB,CAM,GCSE,BTEC,GEN],d:"Muscle fibres with high oxidative capacity and resistance to fatigue; dominant in endurance activities."},
+  {t:"SMART Goals",c:[GEN,GCSE,BTEC,CAM],d:"A goal-setting framework: Specific, Measurable, Achievable, Relevant and Time-bound."},
+  {t:"Somatic Anxiety",c:[IB,CAM,GEN],d:"The physiological component of anxiety perceived by the athlete, such as increased heart rate and muscle tension."},
+  {t:"Specificity",c:[GEN,GCSE,BTEC,CAM,IB],d:"The training principle that adaptations are specific to the type, intensity and muscles used in training."},
+  {t:"Speed",c:[GEN,GCSE,BTEC,CAM],d:"The rate of motion; distance covered per unit of time; a key component of athletic performance."},
+  {t:"Sprain",c:[GEN,BTEC,GCSE],d:"An injury to a ligament caused by excessive stretching or tearing at a joint."},
+  {t:"Stabiliser",c:[IB,CAM,GEN],d:"A muscle that contracts to fix or stabilise a joint, allowing the prime mover to work effectively."},
+  {t:"Stages of Learning",c:[CAM,GEN],d:"Fitts and Posner's three-stage model: cognitive, associative and autonomous phases of skill development."},
+  {t:"Static Flexibility",c:[GEN,BTEC,GCSE],d:"The range of motion at a joint measured in a stationary position without movement."},
+  {t:"Static Stretching",c:[GEN,GCSE,BTEC],d:"Slowly extending a muscle to the point of mild tension and holding for 20–30 seconds."},
+  {t:"Strain",c:[GEN,BTEC,GCSE],d:"An injury to a muscle or tendon caused by overstretching or tearing."},
+  {t:"Strength",c:[GEN,GCSE,BTEC,CAM,IB],d:"The maximum force a muscle or group of muscles can exert in a single maximal contraction."},
+  {t:"Stress",c:[IB,CAM,GEN,BTEC],d:"A state of physical or psychological strain caused by adverse stimuli; affects performance and recovery."},
+  {t:"Stretch Reflex",c:[IB,GEN],d:"An involuntary contraction of a muscle triggered by rapid elongation; mediated by muscle spindles."},
+  {t:"Stretch-Shortening Cycle (SSC)",c:[IB,GEN],d:"A combination of eccentric (pre-stretch) and concentric phases that enhances force production through elastic energy storage."},
+  {t:"Stroke Volume",c:[IB,CAM,GCSE,BTEC,GEN],d:"The volume of blood ejected by the left ventricle with each heartbeat; increases with aerobic training."},
+  {t:"Substrate",c:[IB,GEN],d:"A molecule used as an energy source in metabolic reactions; includes glucose, fatty acids and amino acids."},
+  {t:"Supercompensation",c:[IB,GEN,BTEC],d:"The process by which the body adapts beyond its previous fitness level following adequate recovery from overload."},
+  {t:"Supination",c:[IB,CAM,GEN],d:"Rotation of the forearm so the palm faces upward; opposite of pronation."},
+  {t:"Sympathetic Nervous System",c:[IB,GEN],d:"The division of the autonomic nervous system that prepares the body for exercise and stress; fight-or-flight response."},
+  {t:"Synovial Fluid",c:[IB,CAM,GCSE,GEN],d:"Lubricating fluid secreted within a synovial joint to reduce friction and nourish articular cartilage."},
+  {t:"Synovial Joint",c:[IB,CAM,GCSE,GEN],d:"A freely movable joint with a joint cavity filled with synovial fluid; includes hinge, ball-and-socket and pivot joints."},
+  {t:"Systolic Blood Pressure",c:[IB,CAM,GEN,BTEC],d:"Blood pressure during ventricular contraction; the higher of the two blood pressure measurements."},
+
+  // ── T ──
+  {t:"Tachycardia",c:[IB,GEN],d:"An elevated heart rate above 100 bpm at rest; may indicate dehydration, illness or overtraining."},
+  {t:"Tapering",c:[IB,GEN,BTEC],d:"A period of reduced training volume before competition to allow full recovery and peak performance."},
+  {t:"Tendon",c:[IB,CAM,GCSE,BTEC,GEN],d:"A fibrous connective tissue connecting muscle to bone; transmits the force of muscle contraction to produce joint movement."},
+  {t:"Testosterone",c:[IB,GEN],d:"An anabolic steroid hormone that promotes muscle protein synthesis, bone density and red blood cell production."},
+  {t:"Thermoregulation",c:[IB,CAM,GEN],d:"The maintenance of core body temperature within a narrow range through physiological mechanisms including sweating and vasodilation."},
+  {t:"Third-Class Lever",c:[IB,CAM,GCSE,GEN],d:"The most common lever in the body; effort is between the fulcrum and load, e.g. biceps curl."},
+  {t:"Thoracic Cavity",c:[IB,GEN],d:"The chest cavity enclosed by the ribs, sternum and diaphragm that contains the heart and lungs."},
+  {t:"Tidal Volume",c:[IB,CAM,GEN],d:"The volume of air inhaled or exhaled in a single normal breath; increases during exercise."},
+  {t:"Training Load",c:[IB,GEN,BTEC],d:"The total stress placed on the body from training, combining volume, intensity and frequency."},
+  {t:"Training Principle",c:[GEN,GCSE,BTEC,CAM,IB],d:"A scientific guideline for designing effective training programmes, including specificity, overload, progression and reversibility."},
+  {t:"Transfer of Learning",c:[CAM,GEN],d:"The influence a previously learned skill has (positive or negative) on learning a new skill."},
+  {t:"Transverse Plane",c:[IB,CAM,GEN],d:"The horizontal plane dividing the body into upper and lower halves; site of rotational movements."},
+  {t:"Triglyceride",c:[IB,GEN,BTEC],d:"The storage form of fat in adipose tissue; broken down by lipase into fatty acids and glycerol for energy."},
+  {t:"Type 2 Diabetes",c:[IB,GEN,BTEC],d:"A metabolic condition characterised by insulin resistance and elevated blood glucose; strongly associated with inactivity."},
+
+  // ── U ──
+  {t:"Undulating Periodisation",c:[IB,GEN],d:"A periodisation model that varies training variables (volume, intensity) frequently, even within a week."},
+  {t:"Urea",c:[IB,GEN],d:"The waste product of amino acid deamination; transported via blood to the kidneys for excretion in urine."},
+  {t:"Urine",c:[IB,GEN],d:"Fluid produced by the kidneys to excrete metabolic waste products including urea, creatinine and excess salts."},
+
+  // ── V ──
+  {t:"Vasoconstriction",c:[IB,CAM,GEN],d:"Narrowing of blood vessel diameter, reducing blood flow to inactive organs during exercise."},
+  {t:"Vasodilation",c:[IB,CAM,GEN,GCSE],d:"Widening of blood vessel diameter, increasing blood flow to active muscles during exercise."},
+  {t:"Vein",c:[IB,CAM,GCSE,GEN],d:"Blood vessel that carries deoxygenated blood from the body tissues back to the heart."},
+  {t:"Velocity",c:[IB,GEN],d:"The rate of change of displacement in a specified direction; a vector quantity measured in m/s."},
+  {t:"Ventilation",c:[IB,CAM,GCSE,GEN],d:"The mechanical process of moving air into (inspiration) and out of (expiration) the lungs."},
+  {t:"Venous Return",c:[IB,CAM,GEN],d:"The volume of blood returning to the right atrium via the veins; increased by the muscle pump during exercise."},
+  {t:"Viscoelasticity",c:[IB,GEN],d:"The property of soft tissues (tendons, ligaments) allowing both elastic and viscous deformation under force."},
+  {t:"Visual Imagery",c:[IB,CAM,GEN],d:"A mental rehearsal technique where athletes mentally simulate sport performance to enhance skill and reduce anxiety."},
+  {t:"Vitamins",c:[IB,GEN,BTEC],d:"Organic micronutrients required in small amounts for normal metabolic function; classified as water-soluble or fat-soluble."},
+  {t:"VO₂ Max",c:[IB,CAM,GCSE,BTEC,GEN],d:"Maximal oxygen uptake; the maximum rate at which the body can consume oxygen during incremental exercise; the gold standard of aerobic fitness."},
+  {t:"VO₂ at Lactate Threshold",c:[IB,GEN],d:"The VO₂ value at which blood lactate begins to accumulate; a more practical predictor of endurance performance than VO₂ max alone."},
+  {t:"Volume (training)",c:[GEN,GCSE,BTEC,CAM,IB],d:"The total amount of training performed, expressed as total sets × reps × load or total distance/time."},
+
+  // ── W ──
+  {t:"Warm Up",c:[GEN,GCSE,BTEC,CAM,IB],d:"A preparatory phase of low-to-moderate intensity exercise and stretching to prepare the body for more intense activity."},
+  {t:"Water",c:[IB,GEN,BTEC,GCSE],d:"An essential component of all body fluids; critical for thermoregulation, nutrient transport and metabolic reactions."},
+  {t:"Weight",c:[IB,GEN],d:"The gravitational force acting on a body; weight = mass × gravitational acceleration (W = mg)."},
+  {t:"White Blood Cells (Leukocytes)",c:[IB,GEN],d:"Blood cells of the immune system that defend against infection and respond to tissue damage."},
+  {t:"Whole Practice",c:[CAM,GEN],d:"A practice method where the complete skill is performed from start to finish without breaking it into parts."},
+  {t:"Wingate Test",c:[IB,GEN,BTEC],d:"A maximal sprint cycling test used to measure anaerobic power and capacity over 30 seconds."},
+  {t:"Work",c:[IB,GEN],d:"The product of force and displacement in the direction of the force; measured in Joules."},
+  {t:"Working Memory",c:[IB,CAM,GEN],d:"Short-term memory system that temporarily holds and processes information during cognitive tasks."},
+
+  // ── X ──
+  {t:"X-ray",c:[GEN,BTEC],d:"Imaging technique using electromagnetic radiation to view dense structures such as bone; used to diagnose fractures."},
+
+  // ── Y ──
+  {t:"Yerkes-Dodson Law",c:[IB,CAM,GEN],d:"A psychological principle proposing an optimal level of arousal for peak performance, forming an inverted-U relationship."},
+
+  // ── Z ──
+  {t:"Zero Transfer",c:[CAM,GEN],d:"A situation where a previously learned skill has no effect (positive or negative) on learning a new skill."},
+  {t:"Zinc",c:[IB,GEN,BTEC],d:"An essential mineral supporting immune function, wound healing, protein synthesis and testosterone production."},
+  {t:"Zone of Optimal Functioning (ZOF)",c:[IB,GEN],d:"Hanin's concept that each athlete has an individual optimal arousal zone for peak performance, not a single point."},
+  {t:"Z-line",c:[IB,GEN],d:"Protein structure defining the boundaries of each sarcomere; actin filaments are anchored to it."},
+];
+
+// ═══════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════
+let currentFilter = "all";
+let currentSearch = "";
+
+function courseTag(c){
+  const labels={ib:"IB",cam:"A Level",btec:"BTEC",gcse:"GCSE",gen:"Gen"};
+  return `<span class="ctag ctag-${c}">${labels[c]}</span>`;
+}
+
+function getLetters(){return "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");}
+
+function getVisible(){
+  return terms.filter(t=>{
+    const matchFilter = currentFilter==="all" || t.c.includes(currentFilter);
+    const q = currentSearch.toLowerCase();
+    const matchSearch = !q || t.t.toLowerCase().includes(q) || t.d.toLowerCase().includes(q);
+    return matchFilter && matchSearch;
+  });
+}
+
+function render(){
+  const visible = getVisible();
+  document.getElementById("totalCount").textContent = terms.length.toLocaleString();
+  document.getElementById("resultsCount").textContent = currentSearch||currentFilter!=="all"
+    ? `Showing ${visible.length} of ${terms.length} terms`
+    : `${terms.length.toLocaleString()} terms across all courses`;
+
+  const letters = getLetters();
+  // jump nav
+  const jn = document.getElementById("azJumpNav");
+  jn.innerHTML = letters.map(l=>{
+    const has = visible.some(t=>t.t[0].toUpperCase()===l);
+    return `<a href="#letter-${l}" class="${has?"has-results":""}">${l}</a>`;
+  }).join("");
+
+  const content = document.getElementById("azContent");
+  if(visible.length===0){
+    content.innerHTML=`<div class="no-results"><h3>No terms found</h3><p>Try a different search term or remove the course filter.</p></div>`;
+    return;
+  }
+
+  let html="";
+  letters.forEach(l=>{
+    const group = visible.filter(t=>t.t[0].toUpperCase()===l);
+    if(!group.length) return;
+    html+=`<div class="letter-section" id="letter-${l}">
+      <div class="letter-heading">
+        <div class="letter-char">${l}</div>
+        <div><div style="font-size:18px;font-weight:900;">${l}</div><div class="letter-meta">${group.length} term${group.length!==1?"s":""}</div></div>
+      </div>
+      <div class="terms-grid">
+        ${group.sort((a,b)=>a.t.localeCompare(b.t)).map(term=>`
+          <div class="term-card">
+            <div class="term-top">
+              <div class="term-name">${term.t}</div>
+              <div class="term-tags">${term.c.map(courseTag).join("")}</div>
+            </div>
+            <div class="term-def">${term.d}</div>
+          </div>
+        `).join("")}
+      </div>
+    </div>`;
+  });
+  content.innerHTML=html;
+}
+
+function setFilter(f, btn){
+  currentFilter=f;
+  document.querySelectorAll(".filter-btn").forEach(b=>{
+    b.className="filter-btn";
+  });
+  btn.classList.add(`active-${f}`);
+  render();
+}
+
+document.getElementById("searchBox").addEventListener("input",e=>{
+  currentSearch=e.target.value;
+  render();
+});
+
+render();
+</script>
+</body>
+</html>
