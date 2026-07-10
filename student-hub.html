@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Student Hub | Simply Sport Science</title>
+<meta name="description" content="The Simply Sport Science Student Hub — choose your course, find your topic, test yourself with practice checks and track your progress across IB Sport Science, A Level PE, BTEC Sport and GCSE PE."/>
+<style>
+  :root{
+    --purple:#6B21D4;--purple-dark:#4C1397;--purple-light:#9B59E8;
+    --pink:#C026D3;--magenta:#E040FB;--gold:#F59E0B;--gold-light:#FCD34D;
+    --cyan:#22D3EE;--navy:#0F172A;--navy-mid:#1A2540;--navy-card:#162032;
+    --white:#FFFFFF;--grey:#94A3B8;--grey-light:#CBD5E1;
+    --green:#10B981;--border:#2D3F5E;--orange:#F97316;
+    --student:#22D3EE;--student-dark:#0E7490;
+    --ib:#2979FF;--cam:#1D4ED8;--btec:#16A34A;--gcse:#F97316;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--navy);color:var(--white);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;}
+
+  /* NAV */
+  nav{background:rgba(15,23,42,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px;}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+  .logo-circle{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--pink),var(--gold));display:flex;align-items:center;justify-content:center;box-shadow:0 0 18px rgba(107,33,212,0.5);font-size:20px;}
+  .logo-tagline{font-size:9px;color:var(--gold);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;}
+  .logo-name{font-size:14px;font-weight:900;}
+  .logo-name .c1{color:var(--cyan);}.logo-name .c2{color:var(--white);}
+  .nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+  .nav-links a{color:var(--grey-light);text-decoration:none;font-size:13px;font-weight:600;padding:7px 11px;border-radius:7px;transition:all 0.2s;white-space:nowrap;}
+  .nav-links a:hover{color:var(--white);background:rgba(107,33,212,0.25);}
+  .nav-cta{background:linear-gradient(135deg,var(--purple),var(--pink))!important;color:var(--white)!important;padding:8px 18px!important;border-radius:8px!important;margin-left:6px;}
+
+  /* BREADCRUMB */
+  .breadcrumb{font-size:12px;color:var(--grey);padding:10px 24px;background:var(--navy-mid);border-bottom:1px solid var(--border);}
+  .breadcrumb a{color:var(--grey-light);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--cyan);}
+  .breadcrumb span{color:var(--student);margin:0 6px;}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,#0F172A 0%,#071520 50%,#0a1020 100%);padding:56px 24px 48px;position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
+  .hero::before{content:'';position:absolute;top:-60px;right:-60px;width:500px;height:500px;background:radial-gradient(circle,rgba(34,211,238,0.12) 0%,transparent 70%);pointer-events:none;}
+  .hero::after{content:'';position:absolute;bottom:-40px;left:5%;width:400px;height:400px;background:radial-gradient(circle,rgba(107,33,212,0.1) 0%,transparent 70%);pointer-events:none;}
+  .hero-inner{max-width:1100px;margin:0 auto;position:relative;}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(34,211,238,0.12);border:1px solid rgba(34,211,238,0.35);color:var(--cyan);font-size:11px;font-weight:700;letter-spacing:2px;padding:6px 14px;border-radius:99px;margin-bottom:18px;text-transform:uppercase;}
+  .hero h1{font-size:clamp(26px,5vw,48px);font-weight:900;line-height:1.1;margin-bottom:12px;}
+  .hero h1 em{font-style:normal;color:var(--cyan);}
+  .hero-sub{font-size:14px;color:var(--grey-light);line-height:1.7;max-width:580px;margin-bottom:28px;}
+
+  /* THREE JOURNEY CARDS */
+  .journey-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:0;}
+  .journey-card{border-radius:14px;padding:26px;border:1px solid transparent;cursor:pointer;transition:all 0.2s;text-decoration:none;display:flex;flex-direction:column;gap:14px;}
+  .journey-card:hover{transform:translateY(-3px);}
+  .j-start{background:linear-gradient(135deg,rgba(41,121,255,0.15),rgba(34,211,238,0.08));border-color:rgba(41,121,255,0.4);}
+  .j-find{background:linear-gradient(135deg,rgba(107,33,212,0.15),rgba(192,38,211,0.08));border-color:rgba(107,33,212,0.4);}
+  .j-test{background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(245,158,11,0.08));border-color:rgba(16,185,129,0.4);}
+  .journey-icon{font-size:36px;}
+  .journey-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:4px;}
+  .j-start .journey-label{color:var(--ib);}
+  .j-find .journey-label{color:var(--purple-light);}
+  .j-test .journey-label{color:var(--green);}
+  .journey-card h3{font-size:18px;font-weight:800;color:var(--white);}
+  .journey-card p{font-size:13px;color:var(--grey-light);line-height:1.6;flex:1;}
+  .journey-btn{display:block;text-align:center;padding:10px 16px;border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:opacity 0.2s;width:100%;}
+  .journey-btn:hover{opacity:0.85;}
+  .jb-start{background:linear-gradient(135deg,var(--ib),var(--cyan));color:#000;}
+  .jb-find{background:linear-gradient(135deg,var(--purple),var(--pink));color:var(--white);}
+  .jb-test{background:linear-gradient(135deg,#065F46,var(--green));color:var(--white);}
+
+  /* QUICK SEARCH */
+  .quick-search{background:var(--navy-mid);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:20px 24px;}
+  .qs-inner{max-width:1100px;margin:0 auto;display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
+  .qs-label{font-size:12px;color:var(--grey);font-weight:600;white-space:nowrap;}
+  .qs-input{flex:1;min-width:200px;background:var(--navy-card);border:1px solid var(--border);color:var(--white);padding:10px 16px;border-radius:8px;font-size:13px;outline:none;transition:border-color 0.2s;}
+  .qs-input:focus{border-color:var(--cyan);}
+  .qs-input::placeholder{color:var(--grey);}
+  .qs-btn{background:linear-gradient(135deg,var(--purple),var(--cyan));color:#000;border:none;border-radius:8px;padding:10px 20px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;}
+
+  /* TABS */
+  .tabs-bar{background:var(--navy-mid);border-bottom:1px solid var(--border);padding:0 24px;position:sticky;top:66px;z-index:90;}
+  .tabs-inner{max-width:1100px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;}
+  .tab{background:transparent;border:none;color:var(--grey);font-size:13px;font-weight:600;padding:16px 14px;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.2s;}
+  .tab:hover{color:var(--white);}
+  .tab.active{color:var(--cyan);border-bottom-color:var(--cyan);}
+  .tab-content{display:none;}
+  .tab-content.active{display:block;}
+
+  /* SHARED */
+  .page-inner{max-width:1100px;margin:0 auto;padding:40px 24px;}
+  .section-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .section-title{font-size:clamp(18px,3vw,26px);font-weight:900;margin-bottom:8px;}
+  .section-sub{color:var(--grey-light);font-size:13px;line-height:1.7;margin-bottom:28px;}
+  .divider{width:48px;height:3px;background:linear-gradient(90deg,var(--cyan),var(--purple));border-radius:2px;margin-bottom:28px;}
+
+  /* COURSE CARDS */
+  .course-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:40px;}
+  .course-card{background:var(--navy-card);border-radius:14px;padding:24px;border:1px solid var(--border);cursor:pointer;transition:all 0.25s;text-decoration:none;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;}
+  .course-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:14px 14px 0 0;}
+  .course-card:hover{transform:translateY(-3px);}
+  .c-ib::before{background:linear-gradient(90deg,var(--ib),var(--cyan));}
+  .c-ib:hover{box-shadow:0 8px 32px rgba(41,121,255,0.2);border-color:rgba(41,121,255,0.45);}
+  .c-cam::before{background:linear-gradient(90deg,var(--cam),var(--orange));}
+  .c-cam:hover{box-shadow:0 8px 32px rgba(29,78,216,0.2);border-color:rgba(29,78,216,0.45);}
+  .c-btec::before{background:linear-gradient(90deg,var(--btec),#34D399);}
+  .c-btec:hover{box-shadow:0 8px 32px rgba(22,163,74,0.2);border-color:rgba(22,163,74,0.45);}
+  .c-gcse::before{background:linear-gradient(90deg,var(--gold),var(--magenta));}
+  .c-gcse:hover{box-shadow:0 8px 32px rgba(245,158,11,0.2);border-color:rgba(245,158,11,0.45);}
+  .course-tag{display:inline-block;font-size:9px;font-weight:700;padding:3px 8px;border-radius:4px;margin-bottom:4px;}
+  .ctag-ib{background:rgba(41,121,255,0.2);color:#93C5FD;border:1px solid rgba(41,121,255,0.35);}
+  .ctag-cam{background:rgba(29,78,216,0.2);color:#BAE6FD;border:1px solid rgba(29,78,216,0.35);}
+  .ctag-btec{background:rgba(22,163,74,0.2);color:#86EFAC;border:1px solid rgba(22,163,74,0.35);}
+  .ctag-gcse{background:rgba(249,115,22,0.2);color:#FDBA74;border:1px solid rgba(249,115,22,0.35);}
+  .course-name{font-size:17px;font-weight:900;color:var(--white);}
+  .course-desc{font-size:12px;color:var(--grey-light);line-height:1.55;flex:1;}
+  .course-meta{display:flex;gap:10px;flex-wrap:wrap;}
+  .course-meta span{font-size:11px;color:var(--grey);}
+  .course-open-btn{display:block;text-align:center;padding:10px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:opacity 0.2s;margin-top:4px;}
+  .course-open-btn:hover{opacity:0.85;}
+
+  /* PROGRESS TRACKER */
+  .progress-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-bottom:36px;}
+  .progress-card{background:var(--navy-card);border:1px solid var(--border);border-radius:13px;padding:20px;}
+  .progress-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;}
+  .progress-course-name{font-size:14px;font-weight:800;}
+  .progress-pct{font-size:22px;font-weight:900;}
+  .pbar{background:var(--border);border-radius:99px;height:8px;overflow:hidden;margin-bottom:8px;}
+  .pbar-fill{height:100%;border-radius:99px;transition:width 0.5s;}
+  .progress-meta{font-size:11px;color:var(--grey);}
+  .progress-continue-btn{display:block;text-align:center;padding:9px;border-radius:7px;font-size:12px;font-weight:700;text-decoration:none;margin-top:12px;transition:opacity 0.2s;}
+  .progress-continue-btn:hover{opacity:0.85;}
+
+  /* TOPIC FINDER */
+  .topic-finder-box{background:linear-gradient(135deg,rgba(107,33,212,0.1),rgba(34,211,238,0.06));border:1px solid rgba(107,33,212,0.3);border-radius:16px;padding:32px;margin-bottom:32px;}
+  .topic-finder-box h3{font-size:20px;font-weight:900;margin-bottom:8px;}
+  .topic-finder-box p{font-size:13px;color:var(--grey-light);margin-bottom:20px;line-height:1.7;}
+  .tf-search{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap;}
+  .tf-input{flex:1;min-width:200px;background:rgba(255,255,255,0.07);border:1px solid var(--border);color:var(--white);padding:12px 16px;border-radius:9px;font-size:14px;outline:none;}
+  .tf-input:focus{border-color:var(--purple-light);}
+  .tf-input::placeholder{color:var(--grey);}
+  .topic-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px;}
+  .topic-item{background:var(--navy-card);border:1px solid var(--border);border-radius:9px;padding:12px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all 0.15s;text-decoration:none;}
+  .topic-item:hover{border-color:var(--purple-light);background:rgba(107,33,212,0.1);}
+  .topic-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+  .topic-item-name{font-size:12px;font-weight:700;flex:1;color:var(--white);}
+  .topic-item-course{font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;}
+  .topic-item-arrow{color:var(--grey);font-size:12px;}
+
+  /* PRACTICE CHECKS */
+  .checks-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-bottom:36px;}
+  .check-card{background:var(--navy-card);border:1px solid var(--border);border-radius:13px;padding:20px;transition:all 0.2s;cursor:pointer;}
+  .check-card:hover{transform:translateY(-2px);border-color:rgba(16,185,129,0.4);}
+  .check-course-tag{display:inline-block;font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;margin-bottom:8px;}
+  .check-title{font-size:14px;font-weight:800;margin-bottom:5px;}
+  .check-desc{font-size:12px;color:var(--grey-light);line-height:1.5;margin-bottom:12px;}
+  .check-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+  .check-meta span{font-size:11px;color:var(--grey);}
+  .check-score{font-size:12px;font-weight:700;}
+  .check-btn{display:block;text-align:center;padding:9px;border-radius:7px;font-size:12px;font-weight:700;background:linear-gradient(135deg,#065F46,var(--green));color:var(--white);border:none;cursor:pointer;width:100%;text-decoration:none;}
+
+  /* STUDY TOOLS */
+  .tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:36px;}
+  .tool-card{background:var(--navy-card);border:1px solid var(--border);border-radius:13px;padding:22px;text-align:center;cursor:pointer;transition:all 0.2s;text-decoration:none;display:block;}
+  .tool-card:hover{transform:translateY(-2px);border-color:var(--cyan);}
+  .tool-icon{font-size:36px;margin-bottom:12px;}
+  .tool-card h4{font-size:14px;font-weight:800;margin-bottom:6px;}
+  .tool-card p{font-size:12px;color:var(--grey-light);line-height:1.5;}
+  .tool-tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-top:8px;background:rgba(34,211,238,0.15);color:var(--cyan);border:1px solid rgba(34,211,238,0.3);}
+
+  /* REVISION TIPS */
+  .tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:36px;}
+  .tip-card{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:20px;}
+  .tip-num{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--purple),var(--cyan));display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;margin-bottom:10px;}
+  .tip-card h4{font-size:13px;font-weight:800;margin-bottom:6px;}
+  .tip-card p{font-size:12px;color:var(--grey-light);line-height:1.6;}
+
+  /* EXAM COUNTDOWN */
+  .exam-box{background:linear-gradient(135deg,rgba(245,158,11,0.1),rgba(107,33,212,0.08));border:1px solid rgba(245,158,11,0.3);border-radius:14px;padding:28px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;margin-bottom:36px;}
+  .exam-box h3{font-size:18px;font-weight:900;margin-bottom:6px;}
+  .exam-box p{font-size:13px;color:var(--grey-light);line-height:1.6;margin-bottom:14px;}
+  .exam-countdown{text-align:center;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.3);border-radius:12px;padding:20px 28px;}
+  .exam-days{font-size:48px;font-weight:900;color:var(--gold);line-height:1;}
+  .exam-label{font-size:11px;color:var(--grey);text-transform:uppercase;letter-spacing:1px;margin-top:4px;}
+
+  /* NEWSLETTER */
+  .nl-box{background:rgba(34,211,238,0.06);border:1px solid rgba(34,211,238,0.25);border-radius:14px;padding:28px;text-align:center;}
+  .nl-box h4{font-size:16px;font-weight:800;margin-bottom:6px;}
+  .nl-box p{font-size:13px;color:var(--grey-light);margin-bottom:16px;}
+  .nl-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+  .nl-form input{flex:1;min-width:220px;background:rgba(255,255,255,0.07);border:1px solid var(--border);color:var(--white);padding:11px 16px;border-radius:8px;font-size:13px;outline:none;}
+  .nl-form input:focus{border-color:var(--cyan);}
+  .nl-form input::placeholder{color:var(--grey);}
+  .nl-form button{background:linear-gradient(135deg,var(--student-dark),var(--cyan));color:#000;border:none;border-radius:8px;padding:11px 22px;font-size:13px;font-weight:700;cursor:pointer;}
+
+  /* BTN */
+  .btn-cyan{background:linear-gradient(135deg,var(--student-dark),var(--cyan));color:#000;border:none;border-radius:9px;padding:12px 22px;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.2s;}
+  .btn-cyan:hover{transform:translateY(-2px);}
+  .btn-ghost{background:transparent;color:var(--grey-light);border:1px solid var(--border);border-radius:9px;padding:12px 22px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.2s;}
+  .btn-ghost:hover{border-color:var(--cyan);color:var(--cyan);}
+
+  /* FOOTER */
+  .hub-footer{background:#080E1C;border-top:1px solid var(--border);padding:32px 24px;text-align:center;margin-top:40px;}
+  .hub-footer p{font-size:12px;color:var(--grey);}
+  .hub-footer a{color:var(--cyan);text-decoration:none;}
+
+  @media(max-width:900px){.exam-box{grid-template-columns:1fr;}}
+  @media(max-width:640px){.nav-links{display:none;}.hero{padding:40px 16px 36px;}.page-inner{padding:28px 16px;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-circle">🏃</div>
+      <div>
+        <div class="logo-tagline">Sport Science Sorted</div>
+        <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Course Hubs</a></li>
+      <li><a href="#" style="color:var(--cyan);">Student Hub</a></li>
+      <li><a href="#">Teacher Hub</a></li>
+      <li><a href="#">A–Z Library</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><a href="#" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div style="max-width:1100px;margin:0 auto;">
+    <a href="index.html">Home</a>
+    <span>›</span>
+    Student Hub
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">🎓 For Students</div>
+    <h1>Where do you want to<br/><em>start today?</em></h1>
+    <p class="hero-sub">Choose your course and start a lesson, find a specific topic or key term, or jump straight into a practice check. Simply Sport Science is here however you need it.</p>
+    <div class="journey-grid">
+      <a class="journey-card j-start" href="#" onclick="switchTab('courses',document.querySelectorAll('.tab')[0]);return false;">
+        <div class="journey-icon">🚀</div>
+        <div>
+          <div class="journey-label">Just Starting</div>
+          <h3>Choose Your Course & Begin</h3>
+          <p>Select your qualification and enter your course hub — structured lessons, key terms and resources built around your specification.</p>
+        </div>
+        <button class="journey-btn jb-start">Go to Course Hubs →</button>
+      </a>
+      <a class="journey-card j-find" href="#" onclick="switchTab('topics',document.querySelectorAll('.tab')[1]);return false;">
+        <div class="journey-icon">🔍</div>
+        <div>
+          <div class="journey-label">Looking for Something</div>
+          <h3>Find a Topic or Key Term</h3>
+          <p>Know what you need? Search for a topic, key term or concept and go straight to the relevant lesson or A–Z definition.</p>
+        </div>
+        <button class="journey-btn jb-find">Find a Topic →</button>
+      </a>
+      <a class="journey-card j-test" href="#" onclick="switchTab('checks',document.querySelectorAll('.tab')[2]);return false;">
+        <div class="journey-icon">✅</div>
+        <div>
+          <div class="journey-label">Ready to Test Yourself</div>
+          <h3>Take a Practice Check</h3>
+          <p>Already studied a topic? Test your understanding with a practice check, get instant feedback and see where to focus next.</p>
+        </div>
+        <button class="journey-btn jb-test">Take a Practice Check →</button>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- QUICK SEARCH -->
+<div class="quick-search">
+  <div class="qs-inner">
+    <span class="qs-label">Quick search:</span>
+    <input class="qs-input" type="text" placeholder="Search any topic, key term or concept — e.g. cardiac output, EPOC, inverted-U hypothesis..."/>
+    <button class="qs-btn">Search →</button>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs-bar">
+  <div class="tabs-inner">
+    <button class="tab active" onclick="switchTab('courses',this)">Course Hubs</button>
+    <button class="tab" onclick="switchTab('topics',this)">Topic Finder</button>
+    <button class="tab" onclick="switchTab('checks',this)">Practice Checks</button>
+    <button class="tab" onclick="switchTab('tools',this)">Study Tools</button>
+    <button class="tab" onclick="switchTab('tips',this)">Revision Tips</button>
+  </div>
+</div>
+
+<!-- ══ COURSE HUBS ══ -->
+<div id="tab-courses" class="tab-content active">
+  <div class="page-inner">
+    <span class="section-label">Choose Your Course</span>
+    <h2 class="section-title">Your Course Hub is Waiting</h2>
+    <p class="section-sub">Select your qualification below to enter your course hub — structured lessons, key terms, videos, practice checks and resources all built around your exact specification.</p>
+    <div class="divider"></div>
+
+    <div class="course-grid">
+      <a href="ib-hub.html" class="course-card c-ib">
+        <span class="course-tag ctag-ib">International Baccalaureate</span>
+        <div class="course-name">IB Sport Science</div>
+        <div class="course-desc">IB Sports, Exercise & Health Science — three themes covering Exercise Physiology, Biomechanics and Sport Psychology, plus IA support.</div>
+        <div class="course-meta"><span>📚 3 Themes</span><span>✅ Practice Checks</span><span>🎥 Videos</span></div>
+        <button class="course-open-btn" style="background:linear-gradient(135deg,#1565C0,var(--ib));color:var(--white);">Open IB Hub →</button>
+      </a>
+      <a href="cambridge-hub.html" class="course-card c-cam">
+        <span class="course-tag ctag-cam">Cambridge International</span>
+        <div class="course-name">AS Level Sport & PE</div>
+        <div class="course-desc">Cambridge International AS Level Sport & Physical Education (8386) — four components covering anatomy, skills, society and practical performance.</div>
+        <div class="course-meta"><span>📚 4 Components</span><span>✅ Practice Checks</span><span>🎥 Videos</span></div>
+        <button class="course-open-btn" style="background:linear-gradient(135deg,var(--cam),var(--orange));color:var(--white);">Open Cambridge Hub →</button>
+      </a>
+      <a href="btec-hub.html" class="course-card c-btec">
+        <span class="course-tag ctag-btec">Pearson International Level 3</span>
+        <div class="course-name">BTEC Sport</div>
+        <div class="course-desc">All 39 BTEC Sport units — learning aims, assignment support, Pass/Merit/Distinction guidance and vocational resources.</div>
+        <div class="course-meta"><span>📚 39 Units</span><span>📝 Assignment Help</span><span>🎥 Videos</span></div>
+        <button class="course-open-btn" style="background:linear-gradient(135deg,#065F46,var(--btec));color:var(--white);">Open BTEC Hub →</button>
+      </a>
+      <a href="#" class="course-card c-gcse">
+        <span class="course-tag ctag-gcse">Supporting Pathway</span>
+        <div class="course-name">GCSE PE</div>
+        <div class="course-desc">Foundation revision covering applied anatomy, movement analysis, physical training, sport psychology and health & wellbeing.</div>
+        <div class="course-meta"><span>📚 5 Topics</span><span>✅ Practice Checks</span><span>🎥 Videos</span></div>
+        <button class="course-open-btn" style="background:linear-gradient(135deg,#92400E,var(--gcse));color:var(--white);">Open GCSE Hub →</button>
+      </a>
+    </div>
+
+    <!-- Progress section -->
+    <span class="section-label">Your Progress</span>
+    <h3 style="font-size:18px;font-weight:800;margin:6px 0 6px;">Track Your Learning</h3>
+    <p style="font-size:13px;color:var(--grey-light);margin-bottom:20px;">Progress tracking across all your courses — coming with the full student account feature.</p>
+    <div class="progress-grid">
+      <div class="progress-card">
+        <div class="progress-card-top">
+          <div><div style="font-size:10px;color:#93C5FD;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;">IB Sport Science</div><div class="progress-course-name">Exercise Physiology</div></div>
+          <div class="progress-pct" style="color:#93C5FD;">68%</div>
+        </div>
+        <div class="pbar"><div class="pbar-fill" style="width:68%;background:linear-gradient(90deg,var(--ib),var(--cyan));"></div></div>
+        <div class="progress-meta">8 of 12 topics complete · 3 practice checks done</div>
+        <a href="#" class="progress-continue-btn" style="background:linear-gradient(135deg,#1565C0,var(--ib));color:var(--white);">Continue →</a>
+      </div>
+      <div class="progress-card">
+        <div class="progress-card-top">
+          <div><div style="font-size:10px;color:#93C5FD;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;">IB Sport Science</div><div class="progress-course-name">Biomechanics</div></div>
+          <div class="progress-pct" style="color:var(--cyan);">30%</div>
+        </div>
+        <div class="pbar"><div class="pbar-fill" style="width:30%;background:linear-gradient(90deg,var(--cyan),#0E7490);"></div></div>
+        <div class="progress-meta">3 of 10 topics complete · 1 practice check done</div>
+        <a href="#" class="progress-continue-btn" style="background:linear-gradient(135deg,#0E7490,var(--cyan));color:#000;">Continue →</a>
+      </div>
+      <div class="progress-card">
+        <div class="progress-card-top">
+          <div><div style="font-size:10px;color:#86EFAC;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:3px;">IB Sport Science</div><div class="progress-course-name">Sport Psychology</div></div>
+          <div class="progress-pct" style="color:#86EFAC;">10%</div>
+        </div>
+        <div class="pbar"><div class="pbar-fill" style="width:10%;background:linear-gradient(90deg,var(--purple),var(--pink));"></div></div>
+        <div class="progress-meta">1 of 10 topics complete · Not yet tested</div>
+        <a href="#" class="progress-continue-btn" style="background:linear-gradient(135deg,var(--purple),var(--pink));color:var(--white);">Start →</a>
+      </div>
+    </div>
+    <div style="background:rgba(34,211,238,0.07);border:1px solid rgba(34,211,238,0.25);border-radius:12px;padding:20px;text-align:center;">
+      <p style="font-size:13px;color:var(--grey-light);margin-bottom:12px;">Full progress tracking, streak counters and personalised recommendations are coming with the Simply Sport Science student account.</p>
+      <a href="#" class="btn-cyan">Register Interest in Student Accounts →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TOPIC FINDER ══ -->
+<div id="tab-topics" class="tab-content">
+  <div class="page-inner">
+    <span class="section-label">Topic Finder</span>
+    <h2 class="section-title">Find Any Topic Instantly</h2>
+    <p class="section-sub">Search for any topic across all courses, or browse by course below. Every topic links directly to its lesson page.</p>
+    <div class="divider"></div>
+
+    <div class="topic-finder-box">
+      <h3>Search Across All Courses</h3>
+      <p>Type any topic name, key term or concept — Simply Sport Science will find the relevant lesson, A–Z entry and practice check.</p>
+      <div class="tf-search">
+        <input class="tf-input" type="text" id="topicSearch" placeholder="e.g. cardiac output, EPOC, Newton's laws, arousal theory, BTEC Unit 27..." oninput="filterTopics()"/>
+      </div>
+      <div class="topic-list" id="topicList"></div>
+    </div>
+
+    <!-- Browse by course -->
+    <span class="section-label">Browse by Course</span>
+    <h3 style="font-size:18px;font-weight:800;margin:6px 0 16px;">All Topics by Course</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;">
+      <div style="background:var(--navy-card);border:1px solid rgba(41,121,255,0.35);border-radius:12px;padding:20px;">
+        <div style="font-size:11px;color:#93C5FD;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">IB Sport Science</div>
+        <div style="display:flex;flex-direction:column;gap:6px;">
+          {["Exercise Physiology & Nutrition","Biomechanics","Sport Psychology & Motor Learning","Internal Assessment Support","IB Command Terms"].map(t=>`<a href="#" style="font-size:12px;color:var(--grey-light);text-decoration:none;padding:6px 8px;background:rgba(41,121,255,0.07);border-radius:6px;border:1px solid rgba(41,121,255,0.15);display:flex;justify-content:space-between;align-items:center;"><span>${t}</span><span style="color:#93C5FD;">→</span></a>`).join("")}
+        </div>
+      </div>
+      <div style="background:var(--navy-card);border:1px solid rgba(29,78,216,0.35);border-radius:12px;padding:20px;">
+        <div style="font-size:11px;color:#BAE6FD;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">Cambridge AS Level</div>
+        <div style="display:flex;flex-direction:column;gap:6px;" id="camTopicBrowse"></div>
+      </div>
+      <div style="background:var(--navy-card);border:1px solid rgba(22,163,74,0.35);border-radius:12px;padding:20px;">
+        <div style="font-size:11px;color:#86EFAC;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">BTEC Sport</div>
+        <div style="display:flex;flex-direction:column;gap:6px;" id="btecTopicBrowse"></div>
+      </div>
+      <div style="background:var(--navy-card);border:1px solid rgba(249,115,22,0.35);border-radius:12px;padding:20px;">
+        <div style="font-size:11px;color:#FDBA74;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;">GCSE PE</div>
+        <div style="display:flex;flex-direction:column;gap:6px;" id="gcseTopicBrowse"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ PRACTICE CHECKS ══ -->
+<div id="tab-checks" class="tab-content">
+  <div class="page-inner">
+    <span class="section-label">Practice Checks</span>
+    <h2 class="section-title">Test Your Understanding</h2>
+    <p class="section-sub">Short topic-specific practice checks with instant feedback — linked to your specification and designed to help you identify exactly what to revise next.</p>
+    <div class="divider"></div>
+
+    <div style="background:rgba(16,185,129,0.07);border:1px solid rgba(16,185,129,0.25);border-radius:12px;padding:20px;margin-bottom:28px;display:flex;gap:16px;align-items:flex-start;">
+      <div style="font-size:28px;flex-shrink:0;">💡</div>
+      <div>
+        <div style="font-size:13px;font-weight:800;margin-bottom:4px;">How Practice Checks Work</div>
+        <div style="font-size:12px;color:var(--grey-light);line-height:1.6;">Each practice check is a short set of questions (5–10) on a specific topic. After each answer you get instant feedback — correct answer, explanation and the specification reference. At the end you'll see which areas to revisit. There's no score pressure — it's about finding gaps, not passing tests.</div>
+      </div>
+    </div>
+
+    <div class="checks-grid" id="checksGrid"></div>
+  </div>
+</div>
+
+<!-- ══ STUDY TOOLS ══ -->
+<div id="tab-tools" class="tab-content">
+  <div class="page-inner">
+    <span class="section-label">Study Tools</span>
+    <h2 class="section-title">Everything You Need to Study Smarter</h2>
+    <p class="section-sub">Resources, tools and links to help you get the most out of your revision time.</p>
+    <div class="divider"></div>
+
+    <div class="tools-grid">
+      <a href="#" class="tool-card">
+        <div class="tool-icon">🔤</div>
+        <h4>A–Z Sport Science Library</h4>
+        <p>Search any sport science term instantly. Definitions, examples and course tags for every term.</p>
+        <span class="tool-tag">Search Now</span>
+      </a>
+      <a href="#" class="tool-card">
+        <div class="tool-icon">▶️</div>
+        <h4>YouTube Video Lessons</h4>
+        <p>40+ video explanations linked to your course topics — watch, pause and replay at your own pace.</p>
+        <span class="tool-tag">40+ Videos</span>
+      </a>
+      <a href="#" class="tool-card">
+        <div class="tool-icon">📄</div>
+        <h4>Revision PDF Downloads</h4>
+        <p>Topic summaries and key term sheets — download, print and annotate for offline revision.</p>
+        <span class="tool-tag">Free Downloads</span>
+      </a>
+      <a href="#" class="tool-card">
+        <div class="tool-icon">🖥️</div>
+        <h4>Lesson Presentations</h4>
+        <p>Follow along with the same Canva presentations your teacher uses — available as PDFs for students.</p>
+        <span class="tool-tag">All Courses</span>
+      </a>
+      <a href="#" class="tool-card">
+        <div class="tool-icon">🎙️</div>
+        <h4>Simply Sport Science Podcast</h4>
+        <p>Listen to sport science topics explained on the go — on Spotify and Apple Podcasts.</p>
+        <span class="tool-tag">Spotify & Apple</span>
+      </a>
+      <a href="#" class="tool-card">
+        <div class="tool-icon">✅</div>
+        <h4>Practice Checks</h4>
+        <p>Topic-specific retrieval practice with instant feedback — the most effective revision technique.</p>
+        <span class="tool-tag">All Topics</span>
+      </a>
+      <a href="#" class="tool-card">
+        <div class="tool-icon">📅</div>
+        <h4>Revision Planner</h4>
+        <p>A structured revision schedule template for your course — downloadable and customisable.</p>
+        <span class="tool-tag">Coming Soon</span>
+      </a>
+      <a href="#" class="tool-card">
+        <div class="tool-icon">🃏</div>
+        <h4>Flashcard Sets</h4>
+        <p>Digital and printable flashcard sets for every topic — key terms, definitions and exam prompts.</p>
+        <span class="tool-tag">Coming Soon</span>
+      </a>
+    </div>
+
+    <div class="exam-box">
+      <div>
+        <h3>📅 Exam Season Preparation</h3>
+        <p>Use Simply Sport Science in the final weeks before your exam to rapidly identify and fill knowledge gaps. The most effective approach: practice check every topic → revisit the weak ones → practice check again.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <a href="#" class="btn-cyan">Start Practice Checks →</a>
+          <a href="#" class="btn-ghost">Browse Topics →</a>
+        </div>
+      </div>
+      <div class="exam-countdown">
+        <div class="exam-days" id="examDays">—</div>
+        <div class="exam-label">Days of revision<br/>time available</div>
+        <div style="font-size:10px;color:var(--grey);margin-top:6px;">Set your exam date below</div>
+        <input type="date" id="examDate" style="margin-top:8px;background:rgba(255,255,255,0.07);border:1px solid var(--border);color:var(--white);padding:6px 10px;border-radius:6px;font-size:11px;outline:none;width:100%;" oninput="updateCountdown()"/>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ REVISION TIPS ══ -->
+<div id="tab-tips" class="tab-content">
+  <div class="page-inner">
+    <span class="section-label">Study Science</span>
+    <h2 class="section-title">How to Revise Sport Science Effectively</h2>
+    <p class="section-sub">Evidence-based revision strategies that work — not just reading your notes over and over.</p>
+    <div class="divider"></div>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-num">1</div>
+        <h4>Use Retrieval Practice</h4>
+        <p>Testing yourself is more effective than re-reading. Use Simply Sport Science practice checks after every topic — not just before exams.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">2</div>
+        <h4>Space Your Revision</h4>
+        <p>Study a topic, leave it for a few days, then revisit it. Spaced repetition is the most evidence-backed revision method available.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">3</div>
+        <h4>Learn the Command Words</h4>
+        <p>Identify, describe and evaluate are not the same thing. Know exactly what each command word in your specification requires — see the command terms guide in your course hub.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">4</div>
+        <h4>Use Sporting Examples</h4>
+        <p>Examiners reward application. Every time you learn a concept, practise explaining it in the context of a real sport or athlete — don't just recall definitions.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">5</div>
+        <h4>Build a Key Terms Glossary</h4>
+        <p>Write out definitions in your own words — not copied from the A–Z. The act of rewriting forces deeper processing of the meaning.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">6</div>
+        <h4>Watch, Then Read</h4>
+        <p>Watch the Simply Sport Science YouTube video for a topic first to get the big picture, then read the lesson page for detail. This dual-coding approach improves retention.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">7</div>
+        <h4>Focus on Weak Areas</h4>
+        <p>Use your practice check results to identify weak topics. Spend more time on those than on topics you already know well — it's the fastest way to improve your overall grade.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-num">8</div>
+        <h4>Short Sessions Work Better</h4>
+        <p>Four 30-minute focused sessions are more effective than one two-hour marathon. Use the Simply Sport Science lesson and practice check structure as a natural session unit.</p>
+      </div>
+    </div>
+
+    <div class="nl-box">
+      <h4>📬 Get Weekly Revision Content</h4>
+      <p>New topics, practice questions and revision tips delivered to your inbox every week during term time.</p>
+      <div class="nl-form">
+        <input type="email" placeholder="Your email address"/>
+        <button>Subscribe →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="hub-footer">
+  <p>Simply Sport Science · <a href="index.html">Home</a> · <a href="#">Course Hubs</a> · Student Hub · <a href="#">Teacher Hub</a> · <a href="#">A–Z Library</a> · simplysportscience.co.uk</p>
+</div>
+
+<script>
+// ── TOPIC DATA ──
+const allTopics = [
+  // IB
+  {name:"The Cardiovascular System",course:"ib",color:"#93C5FD"},
+  {name:"The Respiratory System",course:"ib",color:"#93C5FD"},
+  {name:"Energy Systems — ATP-PCr, Glycolytic & Aerobic",course:"ib",color:"#93C5FD"},
+  {name:"The Endocrine System",course:"ib",color:"#93C5FD"},
+  {name:"Homeostasis",course:"ib",color:"#93C5FD"},
+  {name:"Water & Hydration",course:"ib",color:"#93C5FD"},
+  {name:"Nutrition & Macronutrients",course:"ib",color:"#93C5FD"},
+  {name:"Lactate Inflection Point",course:"ib",color:"#93C5FD"},
+  {name:"Newton's Laws of Motion",course:"ib",color:"#93C5FD"},
+  {name:"Linear Motion & Momentum",course:"ib",color:"#93C5FD"},
+  {name:"Projectile Motion",course:"ib",color:"#93C5FD"},
+  {name:"Angular Motion & Torque",course:"ib",color:"#93C5FD"},
+  {name:"Motivation Theories",course:"ib",color:"#93C5FD"},
+  {name:"Arousal, Anxiety & Performance",course:"ib",color:"#93C5FD"},
+  {name:"Inverted-U Hypothesis",course:"ib",color:"#93C5FD"},
+  {name:"Motor Learning Theories",course:"ib",color:"#93C5FD"},
+  {name:"Internal Assessment — Research Question",course:"ib",color:"#93C5FD"},
+  {name:"Internal Assessment — Data & Analysis",course:"ib",color:"#93C5FD"},
+  // Cambridge
+  {name:"Joints & Movement Types",course:"cam",color:"#BAE6FD"},
+  {name:"Muscles & Muscle Contractions",course:"cam",color:"#BAE6FD"},
+  {name:"Cardiovascular System",course:"cam",color:"#BAE6FD"},
+  {name:"Energy Systems & EPOC",course:"cam",color:"#BAE6FD"},
+  {name:"Levers in the Human Body",course:"cam",color:"#BAE6FD"},
+  {name:"Phases of Movement",course:"cam",color:"#BAE6FD"},
+  {name:"Information Processing",course:"cam",color:"#BAE6FD"},
+  {name:"Theories of Learning",course:"cam",color:"#BAE6FD"},
+  {name:"Social Learning Theory",course:"cam",color:"#BAE6FD"},
+  {name:"Skill Execution & Attentional Focus",course:"cam",color:"#BAE6FD"},
+  {name:"Personality & Motivation",course:"cam",color:"#BAE6FD"},
+  {name:"Fatigue & Recovery",course:"cam",color:"#BAE6FD"},
+  // BTEC
+  {name:"Unit 1 — Health, Wellbeing and Sport",course:"btec",color:"#86EFAC"},
+  {name:"Unit 2 — Careers in Sport",course:"btec",color:"#86EFAC"},
+  {name:"Unit 8 — Anatomy & Physiology for Exercise",course:"btec",color:"#86EFAC"},
+  {name:"Unit 24 — Applied Sports Anatomy & Physiology",course:"btec",color:"#86EFAC"},
+  {name:"Unit 26 — Nutrition for Physical Performance",course:"btec",color:"#86EFAC"},
+  {name:"Unit 27 — Sports Psychology",course:"btec",color:"#86EFAC"},
+  {name:"Unit 15 — Developing Coaching Skills",course:"btec",color:"#86EFAC"},
+  {name:"Unit 28 — Fitness Testing",course:"btec",color:"#86EFAC"},
+  {name:"Unit 25 — Sports Injuries Management",course:"btec",color:"#86EFAC"},
+  // GCSE
+  {name:"Applied Anatomy — Bones & Joints",course:"gcse",color:"#FDBA74"},
+  {name:"Antagonistic Muscle Pairs",course:"gcse",color:"#FDBA74"},
+  {name:"The Cardiovascular System",course:"gcse",color:"#FDBA74"},
+  {name:"Components of Fitness",course:"gcse",color:"#FDBA74"},
+  {name:"Principles of Training",course:"gcse",color:"#FDBA74"},
+  {name:"Sport Psychology",course:"gcse",color:"#FDBA74"},
+  {name:"Health, Fitness & Wellbeing",course:"gcse",color:"#FDBA74"},
+];
+
+const courseLabels={ib:"IB",cam:"Cambridge",btec:"BTEC",gcse:"GCSE"};
+const courseTagColors={ib:"ctag-ib",cam:"ctag-cam",btec:"ctag-btec",gcse:"ctag-gcse"};
+
+function topicItemHTML(t){
+  return `<a href="#" class="topic-item">
+    <div class="topic-dot" style="background:${t.color};"></div>
+    <div class="topic-item-name">${t.name}</div>
+    <span class="topic-item-course ${courseTagColors[t.course]}">${courseLabels[t.course]}</span>
+    <div class="topic-item-arrow">→</div>
+  </a>`;
+}
+
+function filterTopics(){
+  const q = document.getElementById("topicSearch").value.toLowerCase();
+  const list = document.getElementById("topicList");
+  const filtered = q ? allTopics.filter(t=>t.name.toLowerCase().includes(q)) : allTopics.slice(0,12);
+  list.innerHTML = filtered.length
+    ? filtered.map(topicItemHTML).join("")
+    : `<div style="color:var(--grey);font-size:13px;padding:12px;">No topics found — try a different search term.</div>`;
+}
+
+// browse by course
+function renderBrowse(id, course, color){
+  const el = document.getElementById(id);
+  if(!el) return;
+  el.innerHTML = allTopics.filter(t=>t.course===course).map(t=>`
+    <a href="#" style="font-size:12px;color:var(--grey-light);text-decoration:none;padding:6px 8px;background:rgba(255,255,255,0.03);border-radius:6px;border:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;transition:all 0.15s;"
+      onmouseover="this.style.borderColor='${color}44'" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)'">
+      <span>${t.name}</span><span style="color:${color};">→</span>
+    </a>`).join("");
+}
+
+// ── PRACTICE CHECKS ──
+const checks = [
+  {course:"ib",title:"Energy Systems — IB SEHS",desc:"ATP-PCr, glycolytic and aerobic pathways. Fuel sources, ATP yield and sporting application.",questions:8,spec:"Theme 1 — Exercise Physiology"},
+  {course:"ib",title:"Cardiovascular System — IB SEHS",desc:"Cardiac output, stroke volume, heart rate and cardiovascular responses to exercise.",questions:6,spec:"Theme 1 — Exercise Physiology"},
+  {course:"ib",title:"Newton's Laws in Sport",desc:"Application of all three Newton's laws to sporting movements with data analysis.",questions:7,spec:"Theme 2 — Biomechanics"},
+  {course:"ib",title:"Arousal & Anxiety — IB SEHS",desc:"Drive theory, inverted-U hypothesis, catastrophe theory and ZOF — with exam scenarios.",questions:8,spec:"Theme 3 — Sport Psychology"},
+  {course:"cam",title:"Muscles & Contractions — Cambridge",desc:"Agonist, antagonist, concentric, eccentric and isometric contractions in sporting contexts.",questions:6,spec:"Component 1 — Anatomy & Physiology"},
+  {course:"cam",title:"Information Processing — Cambridge",desc:"Whiting's model, reaction time, stimulus-response and decision making in sport.",questions:7,spec:"Component 2 — Movement Skills"},
+  {course:"cam",title:"Levers — Cambridge AS Level",desc:"First, second and third-class levers. Mechanical advantage and sporting examples.",questions:5,spec:"Component 1 — Anatomy & Physiology"},
+  {course:"btec",title:"BTEC Unit 1 — Health & Wellbeing",desc:"Physical activity, health screening, lifestyle factors and the relationship between sport and wellbeing.",questions:8,spec:"Unit 1 — Set Assignment"},
+  {course:"btec",title:"BTEC Unit 27 — Sports Psychology",desc:"Motivation, arousal, anxiety and psychological strategies for performance in a BTEC context.",questions:7,spec:"Unit 27 — Internal Assessment"},
+  {course:"gcse",title:"Components of Fitness — GCSE PE",desc:"Health and skill-related fitness components — definitions, examples and fitness test links.",questions:8,spec:"GCSE PE — Physical Training"},
+  {course:"gcse",title:"Antagonistic Muscle Pairs — GCSE",desc:"Agonist and antagonist relationships with concrete sporting examples for GCSE PE.",questions:6,spec:"GCSE PE — Applied Anatomy"},
+];
+
+const checkBtnColors={ib:"linear-gradient(135deg,#1565C0,var(--ib))",cam:"linear-gradient(135deg,var(--cam),var(--orange))",btec:"linear-gradient(135deg,#065F46,var(--btec))",gcse:"linear-gradient(135deg,#92400E,var(--gcse))"};
+
+function renderChecks(){
+  document.getElementById("checksGrid").innerHTML = checks.map(c=>`
+    <div class="check-card">
+      <span class="check-course-tag ${courseTagColors[c.course]}">${courseLabels[c.course]}</span>
+      <div class="check-title">${c.title}</div>
+      <div class="check-desc">${c.desc}</div>
+      <div class="check-meta">
+        <span>📝 ${c.questions} questions</span>
+        <span style="font-size:10px;color:var(--grey);">${c.spec}</span>
+      </div>
+      <a href="#" class="check-btn" style="background:${checkBtnColors[c.course]};">Start Practice Check →</a>
+    </div>
+  `).join("");
+}
+
+// Exam countdown
+function updateCountdown(){
+  const d = document.getElementById("examDate").value;
+  if(!d) return;
+  const diff = Math.ceil((new Date(d)-new Date())/(1000*60*60*24));
+  document.getElementById("examDays").textContent = diff > 0 ? diff : "Today!";
+}
+
+function switchTab(id,btn){
+  document.querySelectorAll(".tab-content").forEach(t=>t.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  document.getElementById("tab-"+id).classList.add("active");
+  if(btn && btn.classList) btn.classList.add("active");
+}
+
+// Init
+filterTopics();
+renderBrowse("camTopicBrowse","cam","#BAE6FD");
+renderBrowse("btecTopicBrowse","btec","#86EFAC");
+renderBrowse("gcseTopicBrowse","gcse","#FDBA74");
+renderChecks();
+</script>
+</body>
+</html>
