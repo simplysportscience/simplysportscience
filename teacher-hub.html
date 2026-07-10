@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Teacher Hub | Simply Sport Science</title>
+<meta name="description" content="The Simply Sport Science Teacher Hub — lesson presentations, PDFs, delivery resources and specification tools for IB Sport Science, A Level PE and BTEC Sport teachers."/>
+<style>
+  :root{
+    --purple:#6B21D4;--purple-dark:#4C1397;--purple-light:#9B59E8;
+    --pink:#C026D3;--magenta:#E040FB;--gold:#F59E0B;--gold-light:#FCD34D;
+    --cyan:#22D3EE;--navy:#0F172A;--navy-mid:#1A2540;--navy-card:#162032;
+    --white:#FFFFFF;--grey:#94A3B8;--grey-light:#CBD5E1;
+    --green:#10B981;--border:#2D3F5E;--orange:#F97316;
+    --teacher:#C026D3;--teacher-dark:#86198F;--teacher-light:#F0ABFC;
+    --ib:#2979FF;--cam:#1D4ED8;--btec:#16A34A;--gcse:#F97316;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--navy);color:var(--white);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;}
+
+  /* NAV */
+  nav{background:rgba(15,23,42,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px;}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+  .logo-circle{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--pink),var(--gold));display:flex;align-items:center;justify-content:center;box-shadow:0 0 18px rgba(107,33,212,0.5);font-size:20px;}
+  .logo-tagline{font-size:9px;color:var(--gold);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;}
+  .logo-name{font-size:14px;font-weight:900;}
+  .logo-name .c1{color:var(--cyan);}.logo-name .c2{color:var(--white);}
+  .nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+  .nav-links a{color:var(--grey-light);text-decoration:none;font-size:13px;font-weight:600;padding:7px 11px;border-radius:7px;transition:all 0.2s;white-space:nowrap;}
+  .nav-links a:hover{color:var(--white);background:rgba(107,33,212,0.25);}
+  .nav-cta{background:linear-gradient(135deg,var(--purple),var(--pink))!important;color:var(--white)!important;padding:8px 18px!important;border-radius:8px!important;margin-left:6px;}
+
+  /* BREADCRUMB */
+  .breadcrumb{font-size:12px;color:var(--grey);padding:10px 24px;background:var(--navy-mid);border-bottom:1px solid var(--border);}
+  .breadcrumb a{color:var(--grey-light);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--cyan);}
+  .breadcrumb span{color:var(--teacher-light);margin:0 6px;}
+
+  /* HERO */
+  .hero{background:linear-gradient(160deg,#0F172A 0%,#1a0520 50%,#130818 100%);padding:60px 24px 52px;position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
+  .hero::before{content:'';position:absolute;top:-80px;right:-60px;width:500px;height:500px;background:radial-gradient(circle,rgba(192,38,211,0.16) 0%,transparent 70%);pointer-events:none;}
+  .hero::after{content:'';position:absolute;bottom:-60px;left:5%;width:400px;height:400px;background:radial-gradient(circle,rgba(107,33,212,0.1) 0%,transparent 70%);pointer-events:none;}
+  .hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;position:relative;}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(192,38,211,0.15);border:1px solid rgba(192,38,211,0.4);color:var(--teacher-light);font-size:11px;font-weight:700;letter-spacing:2px;padding:6px 14px;border-radius:99px;margin-bottom:16px;text-transform:uppercase;}
+  .hero h1{font-size:clamp(26px,5vw,48px);font-weight:900;line-height:1.1;margin-bottom:12px;}
+  .hero h1 em{font-style:normal;color:var(--teacher-light);}
+  .hero-sub{font-size:14px;color:var(--grey-light);line-height:1.7;max-width:560px;margin-bottom:24px;}
+  .hero-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
+  .tag{display:inline-block;font-size:11px;font-weight:700;padding:4px 12px;border-radius:99px;}
+  .tag-pink{background:rgba(192,38,211,0.2);color:var(--teacher-light);border:1px solid rgba(192,38,211,0.4);}
+  .tag-green{background:rgba(16,185,129,0.2);color:var(--green);border:1px solid rgba(16,185,129,0.4);}
+  .tag-gold{background:rgba(245,158,11,0.2);color:var(--gold);border:1px solid rgba(245,158,11,0.4);}
+  .tag-grey{background:rgba(148,163,184,0.15);color:var(--grey-light);border:1px solid rgba(148,163,184,0.3);}
+  .hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn-teacher{background:linear-gradient(135deg,var(--teacher-dark),var(--teacher));color:var(--white);border:none;border-radius:9px;padding:13px 24px;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 4px 20px rgba(192,38,211,0.35);transition:all 0.2s;}
+  .btn-teacher:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(192,38,211,0.45);}
+  .btn-ghost{background:transparent;color:var(--grey-light);border:1px solid var(--border);border-radius:9px;padding:13px 24px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.2s;}
+  .btn-ghost:hover{border-color:var(--teacher-light);color:var(--teacher-light);}
+  .hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;min-width:190px;}
+  .hero-stat{background:rgba(192,38,211,0.1);border:1px solid rgba(192,38,211,0.25);border-radius:12px;padding:16px;text-align:center;}
+  .hero-stat-val{font-size:26px;font-weight:900;color:var(--teacher-light);}
+  .hero-stat-label{font-size:10px;color:var(--grey);text-transform:uppercase;letter-spacing:1px;margin-top:2px;}
+
+  /* TABS */
+  .tabs-bar{background:var(--navy-mid);border-bottom:1px solid var(--border);padding:0 24px;position:sticky;top:66px;z-index:90;}
+  .tabs-inner{max-width:1100px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;}
+  .tab{background:transparent;border:none;color:var(--grey);font-size:13px;font-weight:600;padding:16px 14px;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.2s;}
+  .tab:hover{color:var(--white);}
+  .tab.active{color:var(--teacher-light);border-bottom-color:var(--teacher);}
+  .tab-content{display:none;}
+  .tab-content.active{display:block;}
+
+  /* SHARED */
+  .page-inner{max-width:1100px;margin:0 auto;padding:40px 24px;}
+  .section-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .section-title{font-size:clamp(18px,3vw,26px);font-weight:900;margin-bottom:8px;}
+  .section-sub{color:var(--grey-light);font-size:13px;line-height:1.7;margin-bottom:28px;}
+  .divider{width:48px;height:3px;background:linear-gradient(90deg,var(--teacher),var(--gold));border-radius:2px;margin-bottom:28px;}
+
+  /* COURSE FILTER BAR */
+  .course-filter{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;align-items:center;}
+  .course-filter-label{font-size:11px;color:var(--grey);font-weight:600;}
+  .cf-btn{padding:6px 14px;border-radius:7px;border:1px solid var(--border);background:transparent;color:var(--grey-light);font-size:12px;font-weight:700;cursor:pointer;transition:all 0.15s;white-space:nowrap;}
+  .cf-btn:hover{color:var(--white);}
+  .cf-all.active{background:rgba(192,38,211,0.2);border-color:var(--teacher);color:var(--teacher-light);}
+  .cf-ib.active{background:rgba(41,121,255,0.2);border-color:var(--ib);color:#93C5FD;}
+  .cf-cam.active{background:rgba(29,78,216,0.2);border-color:var(--cam);color:#BAE6FD;}
+  .cf-btec.active{background:rgba(22,163,74,0.2);border-color:var(--btec);color:#86EFAC;}
+  .cf-gcse.active{background:rgba(249,115,22,0.2);border-color:var(--gcse);color:#FDBA74;}
+
+  /* RESOURCE CARDS */
+  .resource-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:40px;}
+  .resource-card{background:var(--navy-card);border:1px solid var(--border);border-radius:13px;overflow:hidden;transition:all 0.2s;display:flex;flex-direction:column;}
+  .resource-card:hover{transform:translateY(-3px);border-color:rgba(192,38,211,0.4);box-shadow:0 6px 24px rgba(192,38,211,0.12);}
+  .resource-card-top{padding:20px;flex:1;}
+  .resource-course-tag{display:inline-block;font-size:9px;font-weight:700;padding:2px 8px;border-radius:4px;margin-bottom:10px;}
+  .rtag-ib{background:rgba(41,121,255,0.2);color:#93C5FD;border:1px solid rgba(41,121,255,0.35);}
+  .rtag-cam{background:rgba(29,78,216,0.2);color:#BAE6FD;border:1px solid rgba(29,78,216,0.35);}
+  .rtag-btec{background:rgba(22,163,74,0.2);color:#86EFAC;border:1px solid rgba(22,163,74,0.35);}
+  .rtag-gcse{background:rgba(249,115,22,0.2);color:#FDBA74;border:1px solid rgba(249,115,22,0.35);}
+  .rtag-all{background:rgba(192,38,211,0.2);color:var(--teacher-light);border:1px solid rgba(192,38,211,0.35);}
+  .resource-icon-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+  .resource-type-icon{width:40px;height:40px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+  .resource-title{font-size:14px;font-weight:800;color:var(--white);margin-bottom:5px;line-height:1.3;}
+  .resource-desc{font-size:12px;color:var(--grey-light);line-height:1.55;}
+  .resource-card-footer{padding:12px 20px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;gap:8px;}
+  .resource-formats{display:flex;gap:5px;}
+  .format-badge{font-size:9px;font-weight:700;padding:3px 7px;border-radius:4px;}
+  .fmt-canva{background:rgba(139,92,246,0.2);color:#C4B5FD;border:1px solid rgba(139,92,246,0.3);}
+  .fmt-ppt{background:rgba(249,115,22,0.2);color:#FDBA74;border:1px solid rgba(249,115,22,0.3);}
+  .fmt-pdf{background:rgba(239,68,68,0.2);color:#FCA5A5;border:1px solid rgba(239,68,68,0.3);}
+  .fmt-soon{background:rgba(148,163,184,0.15);color:var(--grey);border:1px solid rgba(148,163,184,0.3);}
+  .download-btn{font-size:11px;font-weight:700;color:var(--teacher-light);background:rgba(192,38,211,0.15);border:1px solid rgba(192,38,211,0.3);border-radius:6px;padding:5px 10px;cursor:pointer;text-decoration:none;white-space:nowrap;transition:all 0.15s;}
+  .download-btn:hover{background:rgba(192,38,211,0.3);}
+  .soon-btn{font-size:11px;font-weight:700;color:var(--grey);background:rgba(148,163,184,0.1);border:1px solid rgba(148,163,184,0.2);border-radius:6px;padding:5px 10px;cursor:default;}
+
+  /* FEATURED RESOURCE */
+  .featured-box{background:linear-gradient(135deg,rgba(192,38,211,0.12),rgba(107,33,212,0.1));border:1px solid rgba(192,38,211,0.35);border-radius:16px;padding:32px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;margin-bottom:36px;}
+  .featured-box h3{font-size:20px;font-weight:900;margin-bottom:8px;}
+  .featured-box p{font-size:13px;color:var(--grey-light);line-height:1.7;margin-bottom:16px;}
+  .featured-formats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;}
+  .featured-stat{text-align:center;background:rgba(192,38,211,0.12);border:1px solid rgba(192,38,211,0.25);border-radius:12px;padding:16px 20px;}
+  .featured-stat-val{font-size:28px;font-weight:900;color:var(--teacher-light);}
+  .featured-stat-label{font-size:10px;color:var(--grey);text-transform:uppercase;letter-spacing:1px;margin-top:2px;}
+
+  /* HOW TO USE */
+  .how-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:36px;}
+  .how-card{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:22px;text-align:center;}
+  .how-num{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--teacher-dark),var(--teacher));display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;margin:0 auto 14px;box-shadow:0 4px 16px rgba(192,38,211,0.3);}
+  .how-card h4{font-size:14px;font-weight:800;margin-bottom:8px;}
+  .how-card p{font-size:12px;color:var(--grey-light);line-height:1.6;}
+
+  /* COMING SOON GRID */
+  .coming-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:36px;}
+  .coming-card{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:22px;opacity:0.7;}
+  .coming-icon{font-size:28px;margin-bottom:10px;}
+  .coming-card h4{font-size:14px;font-weight:800;margin-bottom:6px;}
+  .coming-card p{font-size:12px;color:var(--grey-light);line-height:1.55;}
+  .coming-tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-top:8px;background:rgba(148,163,184,0.15);color:var(--grey);border:1px solid rgba(148,163,184,0.3);}
+
+  /* SCHOOL SECTION */
+  .school-box{background:linear-gradient(135deg,rgba(107,33,212,0.12),rgba(192,38,211,0.08));border:1px solid rgba(107,33,212,0.3);border-radius:16px;padding:40px;text-align:center;}
+  .school-box h3{font-size:24px;font-weight:900;margin-bottom:10px;}
+  .school-box p{color:var(--grey-light);font-size:14px;max-width:520px;margin:0 auto 24px;line-height:1.7;}
+  .school-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:28px;text-align:left;}
+  .school-feature{background:rgba(107,33,212,0.1);border:1px solid rgba(107,33,212,0.25);border-radius:10px;padding:14px;}
+  .school-feature h5{font-size:12px;font-weight:800;margin-bottom:4px;color:var(--purple-light);}
+  .school-feature p{font-size:11px;color:var(--grey-light);line-height:1.5;}
+  .school-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+  /* NOTIFY FORM */
+  .notify-box{background:rgba(192,38,211,0.07);border:1px solid rgba(192,38,211,0.25);border-radius:14px;padding:28px;text-align:center;margin-bottom:32px;}
+  .notify-box h4{font-size:16px;font-weight:800;margin-bottom:6px;}
+  .notify-box p{font-size:13px;color:var(--grey-light);margin-bottom:16px;}
+  .notify-form{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+  .notify-form input{flex:1;min-width:220px;background:rgba(255,255,255,0.07);border:1px solid var(--border);color:var(--white);padding:11px 16px;border-radius:8px;font-size:13px;outline:none;}
+  .notify-form input:focus{border-color:var(--teacher-light);}
+  .notify-form input::placeholder{color:var(--grey);}
+  .notify-form button{background:linear-gradient(135deg,var(--teacher-dark),var(--teacher));color:var(--white);border:none;border-radius:8px;padding:11px 22px;font-size:13px;font-weight:700;cursor:pointer;}
+
+  /* TESTIMONIAL */
+  .testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-bottom:32px;}
+  .testimonial-card{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:22px;}
+  .testimonial-text{font-size:13px;color:var(--grey-light);line-height:1.7;margin-bottom:14px;font-style:italic;}
+  .testimonial-author{display:flex;align-items:center;gap:10px;}
+  .testimonial-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--teacher-dark),var(--teacher));display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;}
+  .testimonial-name{font-size:12px;font-weight:700;}
+  .testimonial-role{font-size:11px;color:var(--grey);}
+
+  /* FOOTER */
+  .hub-footer{background:#080E1C;border-top:1px solid var(--border);padding:32px 24px;text-align:center;margin-top:40px;}
+  .hub-footer p{font-size:12px;color:var(--grey);}
+  .hub-footer a{color:var(--teacher-light);text-decoration:none;}
+
+  @media(max-width:900px){.hero-inner{grid-template-columns:1fr;}.hero-stats{display:none;}.featured-box{grid-template-columns:1fr;}}
+  @media(max-width:640px){.nav-links{display:none;}.hero{padding:40px 16px 36px;}.page-inner{padding:28px 16px;}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-circle">🏃</div>
+      <div>
+        <div class="logo-tagline">Sport Science Sorted</div>
+        <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Course Hubs</a></li>
+      <li><a href="#">Student Hub</a></li>
+      <li><a href="#" style="color:var(--teacher-light);">Teacher Hub</a></li>
+      <li><a href="#">A–Z Library</a></li>
+      <li><a href="#">Resources</a></li>
+      <li><a href="#" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div style="max-width:1100px;margin:0 auto;">
+    <a href="index.html">Home</a>
+    <span>›</span>
+    Teacher Hub
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge">👩‍🏫 For Teachers & Educators</div>
+      <h1>Simply Sport Science<br/><em>Teacher Hub</em></h1>
+      <p class="hero-sub">Specification-aligned lesson presentations, PDF resources and teaching materials for IB Sport Science, Cambridge AS Level PE and BTEC Sport — ready to use in your classroom today.</p>
+      <div class="hero-tags">
+        <span class="tag tag-green">● Resources Available Now</span>
+        <span class="tag tag-pink">IB · Cambridge · BTEC · GCSE</span>
+        <span class="tag tag-gold">Canva · PowerPoint · PDF</span>
+        <span class="tag tag-grey">More Coming Soon</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#" class="btn-teacher" onclick="switchTab('presentations',document.querySelectorAll('.tab')[0]);return false;">Browse Presentations →</a>
+        <a href="#" class="btn-ghost" onclick="switchTab('school',document.querySelectorAll('.tab')[4]);return false;">School Access</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-val">39+</div><div class="hero-stat-label">Presentations</div></div>
+      <div class="hero-stat"><div class="hero-stat-val">3</div><div class="hero-stat-label">Formats</div></div>
+      <div class="hero-stat"><div class="hero-stat-val">4</div><div class="hero-stat-label">Courses</div></div>
+      <div class="hero-stat"><div class="hero-stat-val">More<br/>Soon</div><div class="hero-stat-label">Resources</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs-bar">
+  <div class="tabs-inner">
+    <button class="tab active" onclick="switchTab('presentations',this)">Lesson Presentations</button>
+    <button class="tab" onclick="switchTab('pdfs',this)">PDF Resources</button>
+    <button class="tab" onclick="switchTab('howto',this)">How to Use</button>
+    <button class="tab" onclick="switchTab('coming',this)">Coming Soon</button>
+    <button class="tab" onclick="switchTab('school',this)">School Access</button>
+  </div>
+</div>
+
+<!-- ══ PRESENTATIONS ══ -->
+<div id="tab-presentations" class="tab-content active">
+  <div class="page-inner">
+    <span class="section-label">Lesson Presentations</span>
+    <h2 class="section-title">Ready-Made Lesson Presentations</h2>
+    <p class="section-sub">Every presentation is available in Canva (fully editable), PowerPoint and PDF formats. Simply open, adapt if needed and deliver — no preparation required.</p>
+    <div class="divider"></div>
+
+    <div class="featured-box">
+      <div>
+        <span class="section-label">Available Now</span>
+        <h3>All Presentations Available in Three Formats</h3>
+        <p>Every Simply Sport Science lesson presentation comes in Canva, PowerPoint and PDF format. Edit directly in Canva to add your school branding, adapt content for your class, or use the PowerPoint version in any presentation software. The PDF version is perfect for sharing with students as a lesson handout.</p>
+        <div class="featured-formats">
+          <span class="format-badge fmt-canva">Canva — Fully Editable</span>
+          <span class="format-badge fmt-ppt">PowerPoint — Ready to Present</span>
+          <span class="format-badge fmt-pdf">PDF — Print or Share</span>
+        </div>
+        <a href="#" class="btn-teacher">Browse All Presentations →</a>
+      </div>
+      <div class="featured-stat">
+        <div class="featured-stat-val">39+</div>
+        <div class="featured-stat-label">Presentations</div>
+        <div style="font-size:11px;color:var(--grey);margin-top:6px;">Across all courses</div>
+      </div>
+    </div>
+
+    <!-- Course filter -->
+    <div class="course-filter">
+      <span class="course-filter-label">Filter by course:</span>
+      <button class="cf-btn cf-all active" onclick="filterResources('all',this)">All Courses</button>
+      <button class="cf-btn cf-ib" onclick="filterResources('ib',this)">IB Sport Science</button>
+      <button class="cf-btn cf-cam" onclick="filterResources('cam',this)">Cambridge AS Level</button>
+      <button class="cf-btn cf-btec" onclick="filterResources('btec',this)">BTEC Sport</button>
+      <button class="cf-btn cf-gcse" onclick="filterResources('gcse',this)">GCSE PE</button>
+    </div>
+
+    <div class="resource-grid" id="presentationGrid">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ══ PDFs ══ -->
+<div id="tab-pdfs" class="tab-content">
+  <div class="page-inner">
+    <span class="section-label">PDF Resources</span>
+    <h2 class="section-title">Downloadable PDF Resources</h2>
+    <p class="section-sub">Topic notes, key term sheets and revision summaries — available as PDF downloads for printing or sharing digitally with students.</p>
+    <div class="divider"></div>
+
+    <div class="notify-box">
+      <h4>📥 PDF Library — Expanding Weekly</h4>
+      <p>New PDF resources are being added regularly. Register below to be notified when new resources are available for your course.</p>
+      <div class="notify-form">
+        <input type="email" placeholder="Your email address"/>
+        <button>Notify Me →</button>
+      </div>
+    </div>
+
+    <div class="course-filter">
+      <span class="course-filter-label">Filter by course:</span>
+      <button class="cf-btn cf-all active" onclick="filterPDFs('all',this)">All Courses</button>
+      <button class="cf-btn cf-ib" onclick="filterPDFs('ib',this)">IB Sport Science</button>
+      <button class="cf-btn cf-cam" onclick="filterPDFs('cam',this)">Cambridge AS Level</button>
+      <button class="cf-btn cf-btec" onclick="filterPDFs('btec',this)">BTEC Sport</button>
+      <button class="cf-btn cf-gcse" onclick="filterPDFs('gcse',this)">GCSE PE</button>
+    </div>
+
+    <div class="resource-grid" id="pdfGrid">
+      <!-- Injected by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ══ HOW TO USE ══ -->
+<div id="tab-howto" class="tab-content">
+  <div class="page-inner">
+    <span class="section-label">Getting Started</span>
+    <h2 class="section-title">How to Use Simply Sport Science in Your Classroom</h2>
+    <p class="section-sub">Whether you use the presentations as your main teaching resource or alongside your own materials, here is the quickest way to get started.</p>
+    <div class="divider"></div>
+
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-num">1</div>
+        <h4>Choose Your Course</h4>
+        <p>Select your course hub — IB Sport Science, Cambridge AS Level, BTEC Sport or GCSE PE — and browse the available lesson presentations.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">2</div>
+        <h4>Open in Canva or PowerPoint</h4>
+        <p>Click the Canva link to open the presentation in your Canva account (free to use), or download the PowerPoint version directly.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">3</div>
+        <h4>Adapt if Needed</h4>
+        <p>Add your school logo, adjust the content for your class level, or use it exactly as it is. All presentations are fully editable in Canva.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">4</div>
+        <h4>Share With Students</h4>
+        <p>Share the PDF version with students as a lesson handout, or direct them to the corresponding lesson page on Simply Sport Science.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">5</div>
+        <h4>Use the Practice Checks</h4>
+        <p>After the lesson, direct students to the Simply Sport Science practice check for that topic — built-in retrieval practice with instant feedback.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">6</div>
+        <h4>Explore the A–Z</h4>
+        <p>Use the Simply Sport Science A–Z Library as a class reference — students can look up any key term with definitions and course tags.</p>
+      </div>
+    </div>
+
+    <!-- Canva guide -->
+    <div style="background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.3);border-radius:14px;padding:28px;margin-bottom:28px;">
+      <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C4B5FD;margin-bottom:10px;">Using Canva</div>
+      <h4 style="font-size:16px;font-weight:800;margin-bottom:8px;">Don't have Canva? Here's how to get started.</h4>
+      <p style="font-size:13px;color:var(--grey-light);line-height:1.7;margin-bottom:14px;">Canva is a free online design platform. You can create a free account at canva.com. Once you have an account, clicking any Canva link from Simply Sport Science will copy the presentation directly into your account, ready to edit and present.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;">
+        <div style="background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.25);border-radius:8px;padding:12px;font-size:12px;color:var(--grey-light);">✓ Free to use — no subscription required for basic editing</div>
+        <div style="background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.25);border-radius:8px;padding:12px;font-size:12px;color:var(--grey-light);">✓ Works in any browser on any device — no software to install</div>
+        <div style="background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.25);border-radius:8px;padding:12px;font-size:12px;color:var(--grey-light);">✓ Export as PowerPoint or PDF directly from Canva</div>
+        <div style="background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.25);border-radius:8px;padding:12px;font-size:12px;color:var(--grey-light);">✓ Share with students via a link — no account needed to view</div>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <span class="section-label">Teacher Feedback</span>
+    <h3 style="font-size:18px;font-weight:800;margin-bottom:16px;margin-top:6px;">What Teachers Are Saying</h3>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-text">"The IB SEHS presentations saved me hours of preparation time. The content is accurate, well-structured and my students genuinely engage with it. I've recommended Simply Sport Science to every sport science teacher I know."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">👩</div>
+          <div><div class="testimonial-name">Sarah M.</div><div class="testimonial-role">IB Sport Science Teacher · International School</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-text">"Finally a resource that actually uses the right Cambridge 8386 terminology. My students use the website independently and the presentations work perfectly as lesson starters and main input resources."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">👨</div>
+          <div><div class="testimonial-name">James T.</div><div class="testimonial-role">Cambridge AS Level PE Teacher</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-text">"The BTEC unit presentations are genuinely vocational — they feel different from the academic courses, which is exactly right. My students find the distinction-standard guidance particularly helpful."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">👩</div>
+          <div><div class="testimonial-name">Rachel K.</div><div class="testimonial-role">BTEC Sport Teacher · Sixth Form College</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ COMING SOON ══ -->
+<div id="tab-coming" class="tab-content">
+  <div class="page-inner">
+    <span class="section-label">In Development</span>
+    <h2 class="section-title">What's Coming to the Teacher Hub</h2>
+    <p class="section-sub">The Teacher Hub is growing rapidly. Here's what is currently in development — register below to be notified when new resources go live.</p>
+    <div class="divider"></div>
+
+    <div class="coming-grid">
+      <div class="coming-card">
+        <div class="coming-icon">📅</div>
+        <h4>Schemes of Work</h4>
+        <p>Full teaching schemes for each course — lesson by lesson, with objectives, resources and assessment links mapped to the specification.</p>
+        <span class="coming-tag">In Development</span>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">💡</div>
+        <h4>Lesson Starters</h4>
+        <p>Ready-made retrieval practice starters for every topic — low-stakes recall activities to begin each lesson with minimal preparation.</p>
+        <span class="coming-tag">In Development</span>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">👁️</div>
+        <h4>Teacher Delivery Notes</h4>
+        <p>Topic-by-topic delivery notes covering key content, common misconceptions, differentiation ideas and extension prompts.</p>
+        <span class="coming-tag">In Development</span>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">💬</div>
+        <h4>Classroom Discussion Prompts</h4>
+        <p>Structured Socratic questioning prompts and discussion starters linked to specification content and command terms.</p>
+        <span class="coming-tag">In Development</span>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">📊</div>
+        <h4>Specification Coverage Tracker</h4>
+        <p>A downloadable tracker to map your teaching against the full specification — identify gaps and plan your remaining lessons.</p>
+        <span class="coming-tag">In Development</span>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">🏃</div>
+        <h4>Practical Activity Ideas</h4>
+        <p>Sport science practical investigations with safety notes, recording sheets and links to IA preparation for IB students.</p>
+        <span class="coming-tag">In Development</span>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">📋</div>
+        <h4>Student Worksheets</h4>
+        <p>Structured student worksheets to accompany each lesson presentation — with gap fills, exam-style questions and key term tasks.</p>
+        <span class="coming-tag">In Development</span>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">🎯</div>
+        <h4>Assessment & Mark Scheme Guidance</h4>
+        <p>Command word guides, mark scheme awareness resources and paper practice support for each course's assessment structure.</p>
+        <span class="coming-tag">In Development</span>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">📈</div>
+        <h4>Student Progress Dashboard</h4>
+        <p>Track your students' progress through Simply Sport Science — see which topics they've completed, their practice check scores and weak areas.</p>
+        <span class="coming-tag">Future Feature</span>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">📥</div>
+        <h4>Downloadable Report Packs</h4>
+        <p>Generate student progress reports, specification coverage summaries and weak topic analyses — ideal for parents' evenings and pastoral reviews.</p>
+        <span class="coming-tag">Future Feature</span>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">🏫</div>
+        <h4>Class Leaderboard</h4>
+        <p>A private class version of the Revision League — motivate your students with a friendly competitive element tied to their learning progress.</p>
+        <span class="coming-tag">Future Feature</span>
+      </div>
+      <div class="coming-card">
+        <div class="coming-icon">🌐</div>
+        <h4>School Subscription Dashboard</h4>
+        <p>A dedicated school account giving all teachers and students in your school full access to all resources and tracking features.</p>
+        <span class="coming-tag">Future Feature</span>
+      </div>
+    </div>
+
+    <div class="notify-box">
+      <h4>🔔 Be the First to Know</h4>
+      <p>Register your email and we'll notify you as soon as new teacher resources go live — no spam, just updates when something new is ready.</p>
+      <div class="notify-form">
+        <input type="email" placeholder="Your school email address"/>
+        <button>Register →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SCHOOL ACCESS ══ -->
+<div id="tab-school" class="tab-content">
+  <div class="page-inner">
+    <span class="section-label">For Schools & Departments</span>
+    <h2 class="section-title">Simply Sport Science for Schools</h2>
+    <p class="section-sub">Give every teacher and student in your department full access to all Simply Sport Science resources, course hubs and tools — through a single school subscription.</p>
+    <div class="divider"></div>
+
+    <div class="school-box">
+      <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">School Subscription — Coming Soon</div>
+      <h3>Everything Your Department Needs.<br/>One Simple Subscription.</h3>
+      <p>A Simply Sport Science school subscription gives your entire sport science department — teachers and students — access to every resource, presentation, PDF, practice check, A–Z term and teacher tool on the platform.</p>
+      <div class="school-features">
+        <div class="school-feature">
+          <h5>All Teacher Resources</h5>
+          <p>Every presentation, PDF, lesson starter and delivery resource across all courses.</p>
+        </div>
+        <div class="school-feature">
+          <h5>Student Access</h5>
+          <p>Unlimited student accounts with progress tracking, practice checks and the full A–Z Library.</p>
+        </div>
+        <div class="school-feature">
+          <h5>Class Dashboard</h5>
+          <p>Track every student's progress, identify weak topics and monitor specification coverage.</p>
+        </div>
+        <div class="school-feature">
+          <h5>Specification Tracker</h5>
+          <p>Map your teaching against each course specification — know exactly what's been covered.</p>
+        </div>
+        <div class="school-feature">
+          <h5>Progress Reports</h5>
+          <p>Generate downloadable student and class reports for parents' evenings and reviews.</p>
+        </div>
+        <div class="school-feature">
+          <h5>Priority Support</h5>
+          <p>Direct access to Simply Sport Science for any resource requests or curriculum questions.</p>
+        </div>
+      </div>
+      <div class="school-btns">
+        <a href="#" class="btn-teacher">Register School Interest →</a>
+        <a href="#" class="btn-ghost">Contact Us</a>
+      </div>
+    </div>
+
+    <div style="margin-top:32px;">
+      <span class="section-label">Individual Teachers</span>
+      <h3 style="font-size:18px;font-weight:800;margin:6px 0 10px;">Already using Simply Sport Science as an individual teacher?</h3>
+      <p style="font-size:13px;color:var(--grey-light);margin-bottom:16px;line-height:1.7;">If your school isn't yet subscribed, you can still access all current resources as an individual teacher. Register below to be notified when the school subscription launches — and get early access pricing.</p>
+      <div class="notify-form" style="justify-content:flex-start;">
+        <input type="email" placeholder="Your school email address" style="max-width:320px;"/>
+        <button>Register Interest →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="hub-footer">
+  <p>Simply Sport Science · <a href="index.html">Home</a> · <a href="#">Course Hubs</a> · <a href="#">Student Hub</a> · Teacher Hub · simplysportscience.co.uk</p>
+</div>
+
+<script>
+// ── PRESENTATION DATA ──
+const presentations = [
+  // IB
+  {title:"The Cardiovascular System",course:"ib",desc:"Structure and function of the heart, blood vessels and cardiovascular responses to exercise.",formats:["canva","ppt","pdf"]},
+  {title:"The Respiratory System",course:"ib",desc:"Pulmonary ventilation, gas exchange at the alveoli and respiratory responses during exercise.",formats:["canva","ppt","pdf"]},
+  {title:"Energy Systems — ATP-PCr, Glycolytic & Aerobic",course:"ib",desc:"All three energy systems, their fuel sources, ATP yield and relevance to different sports.",formats:["canva","ppt","pdf"]},
+  {title:"The Endocrine System",course:"ib",desc:"Hormones, glands and the role of the endocrine system in regulating exercise and recovery.",formats:["canva","ppt","pdf"]},
+  {title:"Homeostasis",course:"ib",desc:"Negative feedback mechanisms, thermoregulation and blood glucose regulation during exercise.",formats:["canva","ppt","pdf"]},
+  {title:"Water & Hydration in Sport",course:"ib",desc:"The role of water in the body, dehydration effects on performance and hydration strategies.",formats:["canva","ppt","pdf"]},
+  {title:"Nutrition & Macronutrients",course:"ib",desc:"Carbohydrates, proteins and fats as fuel for sport; dietary requirements for performance.",formats:["canva","ppt","pdf"]},
+  {title:"Lactate Inflection Point",course:"ib",desc:"Blood lactate accumulation, the lactate inflection point and its use in training zone prescription.",formats:["canva","ppt","pdf"]},
+  {title:"Biomechanics — Newton's Laws of Motion",course:"ib",desc:"Application of Newton's three laws to sporting movements with practical examples.",formats:["canva","ppt","pdf"]},
+  {title:"Linear Motion & Momentum",course:"ib",desc:"Distance, displacement, speed, velocity, acceleration and momentum in sporting contexts.",formats:["canva","ppt","pdf"]},
+  {title:"Projectile Motion",course:"ib",desc:"Factors affecting projectile flight in sport including angle, speed and height of release.",formats:["canva","ppt","pdf"]},
+  {title:"Sport Psychology — Motivation",course:"ib",desc:"Intrinsic and extrinsic motivation, achievement motivation theory and its application to sport.",formats:["canva","ppt","pdf"]},
+  {title:"Arousal, Anxiety & Performance",course:"ib",desc:"Drive theory, inverted-U hypothesis, catastrophe theory and zone of optimal functioning.",formats:["canva","ppt","pdf"]},
+  // Cambridge
+  {title:"Joints & Movement Types",course:"cam",desc:"Synovial joint structure, types of movement and application to sporting actions.",formats:["canva","ppt","pdf"]},
+  {title:"Muscles & Muscle Contractions",course:"cam",desc:"Agonist, antagonist, synergist roles; concentric, eccentric and isometric contractions.",formats:["canva","ppt","pdf"]},
+  {title:"The Cardiovascular System — Cambridge",course:"cam",desc:"Cardiac output, stroke volume, heart rate and cardiovascular responses to exercise for Cambridge 8386.",formats:["canva","ppt","pdf"]},
+  {title:"Energy Systems & EPOC",course:"cam",desc:"ATP-PCr, glycolytic and aerobic pathways with a focus on EPOC and oxygen debt.",formats:["canva","ppt","pdf"]},
+  {title:"Levers in the Human Body",course:"cam",desc:"First, second and third-class levers with sporting examples and mechanical advantage.",formats:["canva","ppt","pdf"]},
+  {title:"Phases of Movement",course:"cam",desc:"Preparation, action and recovery phases analysed in the context of different sport skills.",formats:["canva","ppt","pdf"]},
+  {title:"Information Processing in Sport",course:"cam",desc:"Whiting's model, reaction time, decision making and the stimulus-response process.",formats:["canva","ppt","pdf"]},
+  {title:"Theories of Learning",course:"cam",desc:"Operant conditioning, observational learning and cognitive theories applied to sport.",formats:["canva","ppt","pdf"]},
+  {title:"Social Learning Theory",course:"cam",desc:"Bandura's social learning theory and its application to skill development in physical education.",formats:["canva","ppt","pdf"]},
+  {title:"Skill Execution & Attentional Focus",course:"cam",desc:"Attentional styles, internal vs external focus and their effect on skilled performance.",formats:["canva","ppt","pdf"]},
+  {title:"Personality & Motivation",course:"cam",desc:"Trait and interactional theories of personality; intrinsic and extrinsic motivation in sport.",formats:["canva","ppt","pdf"]},
+  {title:"Fatigue & Recovery",course:"cam",desc:"Causes of fatigue at cellular and systemic levels; active and passive recovery strategies.",formats:["canva","ppt","pdf"]},
+  // BTEC
+  {title:"BTEC Unit 1 — Health, Wellbeing and Sport",course:"btec",desc:"Physical activity, health and wellbeing; health screening and lifestyle factors.",formats:["canva","ppt","pdf"]},
+  {title:"BTEC Unit 2 — Careers in Sport",course:"btec",desc:"The sport and active leisure industry; career pathways and the recruitment process.",formats:["canva","ppt","pdf"]},
+  {title:"BTEC Unit 8 — Anatomy & Physiology for Exercise",course:"btec",desc:"Body systems, physiological responses to exercise and application to training.",formats:["canva","ppt","pdf"]},
+  {title:"BTEC Unit 24 — Applied Sports Anatomy & Physiology",course:"btec",desc:"Advanced anatomy and physiology applied directly to sport performance contexts.",formats:["canva","ppt","pdf"]},
+  {title:"BTEC Unit 26 — Nutrition for Physical Performance",course:"btec",desc:"Macronutrients, micronutrients and performance nutrition strategies for athletes.",formats:["canva","ppt","pdf"]},
+  {title:"BTEC Unit 27 — Sports Psychology",course:"btec",desc:"Motivation, arousal, anxiety, goal setting and psychological strategies for performance.",formats:["canva","ppt","pdf"]},
+  {title:"BTEC Unit 15 — Developing Coaching Skills",course:"btec",desc:"Coaching principles, session planning, delivery and evaluation of coaching practice.",formats:["canva","ppt","pdf"]},
+  {title:"BTEC Unit 28 — Fitness Testing",course:"btec",desc:"Selection, administration and interpretation of fitness tests for sport and exercise.",formats:["canva","ppt","pdf"]},
+  {title:"BTEC Unit 25 — Sports Injuries Management",course:"btec",desc:"Classification, prevention and management of common sports injuries.",formats:["canva","ppt","pdf"]},
+  // GCSE
+  {title:"Applied Anatomy — Bones & Joints",course:"gcse",desc:"The skeletal system, synovial joints and their role in supporting physical activity.",formats:["canva","ppt","pdf"]},
+  {title:"Antagonistic Muscle Pairs",course:"gcse",desc:"Agonist and antagonist relationships with sporting examples for GCSE PE.",formats:["canva","ppt","pdf"]},
+  {title:"The Cardiovascular System — GCSE",course:"gcse",desc:"Heart structure, cardiac output and how the cardiovascular system responds to exercise.",formats:["canva","ppt","pdf"]},
+  {title:"Components of Fitness",course:"gcse",desc:"Health and skill-related components of fitness with definitions and sporting examples.",formats:["canva","ppt","pdf"]},
+  {title:"Principles of Training",course:"gcse",desc:"FITT, SPORT and PROVERBS training principles explained for GCSE PE.",formats:["canva","ppt","pdf"]},
+];
+
+// ── PDF DATA ──
+const pdfs = [
+  {title:"IB SEHS Key Terms — Theme 1",course:"ib",desc:"Complete glossary of key terms for Exercise Physiology & Nutrition with definitions.",formats:["pdf"]},
+  {title:"IB SEHS Key Terms — Theme 2",course:"ib",desc:"Complete glossary of key terms for Biomechanics with definitions and equations.",formats:["pdf"]},
+  {title:"IB SEHS Key Terms — Theme 3",course:"ib",desc:"Complete glossary of key terms for Sport Psychology & Motor Learning.",formats:["pdf"]},
+  {title:"IB SEHS Command Terms Reference Sheet",course:"ib",desc:"All IB command terms with definitions and example exam question applications.",formats:["pdf"]},
+  {title:"IB SEHS IA Checklist",course:"ib",desc:"Step-by-step Internal Assessment checklist covering every stage from research question to evaluation.",formats:["pdf"]},
+  {title:"Cambridge 8386 Command Words Reference",course:"cam",desc:"All Cambridge AS Level command words defined with exam application examples.",formats:["pdf"]},
+  {title:"Cambridge AS Level — Anatomy & Physiology Summary",course:"cam",desc:"Condensed revision notes for Component 1 covering all key concepts and terminology.",formats:["pdf"]},
+  {title:"Cambridge AS Level — Movement Skills Summary",course:"cam",desc:"Condensed revision notes for Component 2 covering skill acquisition and tactics.",formats:["pdf"]},
+  {title:"BTEC Sport — BTEC Key Terminology Guide",course:"btec",desc:"All essential BTEC terminology explained: units, learning aims, criteria, evidence types.",formats:["pdf"]},
+  {title:"BTEC Sport — Pass, Merit, Distinction Guide",course:"btec",desc:"What each grade requires across BTEC Sport units — with tips for reaching Distinction standard.",formats:["pdf"]},
+  {title:"BTEC Unit 1 — Student Revision Notes",course:"btec",desc:"Comprehensive notes covering all learning aims for Unit 1: Health, Wellbeing and Sport.",formats:["pdf"]},
+  {title:"GCSE PE — Components of Fitness Flashcards",course:"gcse",desc:"Printable flashcard set for all health and skill-related fitness components.",formats:["pdf"]},
+  {title:"GCSE PE — Principles of Training Summary",course:"gcse",desc:"FITT and SPORT principles explained with examples, ready for printing.",formats:["pdf"]},
+];
+
+function courseTagHTML(course){
+  const map={ib:["rtag-ib","IB Sport Science"],cam:["rtag-cam","Cambridge AS"],btec:["rtag-btec","BTEC Sport"],gcse:["rtag-gcse","GCSE PE"]};
+  const [cls,label]=map[course]||["rtag-all","All Courses"];
+  return `<span class="resource-course-tag ${cls}">${label}</span>`;
+}
+
+function formatBadges(formats){
+  const map={canva:["fmt-canva","Canva"],ppt:["fmt-ppt","PowerPoint"],pdf:["fmt-pdf","PDF"],soon:["fmt-soon","Coming Soon"]};
+  return formats.map(f=>`<span class="format-badge ${map[f][0]}">${map[f][1]}</span>`).join("");
+}
+
+function resourceCardHTML(item, type){
+  const iconMap={ib:"🔬",cam:"📐",btec:"📋",gcse:"🏃"};
+  const icon = iconMap[item.course]||"📚";
+  const hasFile = item.formats.some(f=>f!=="soon");
+  const btn = hasFile
+    ? `<a href="#" class="download-btn">Access →</a>`
+    : `<span class="soon-btn">Coming Soon</span>`;
+  return `<div class="resource-card" data-course="${item.course}">
+    <div class="resource-card-top">
+      ${courseTagHTML(item.course)}
+      <div class="resource-icon-row">
+        <div class="resource-type-icon" style="background:rgba(192,38,211,0.15);">${icon}</div>
+        <div class="resource-title">${item.title}</div>
+      </div>
+      <div class="resource-desc">${item.desc}</div>
+    </div>
+    <div class="resource-card-footer">
+      <div class="resource-formats">${formatBadges(item.formats)}</div>
+      ${btn}
+    </div>
+  </div>`;
+}
+
+function renderGrid(data, gridId, filter="all"){
+  const grid = document.getElementById(gridId);
+  const filtered = filter==="all" ? data : data.filter(d=>d.course===filter);
+  grid.innerHTML = filtered.length
+    ? filtered.map(d=>resourceCardHTML(d)).join("")
+    : `<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--grey);"><h3 style="color:var(--white);margin-bottom:8px;">No resources yet</h3><p>Resources for this course are being added shortly.</p></div>`;
+}
+
+let presFilter="all", pdfFilter="all";
+
+function filterResources(f,btn){
+  presFilter=f;
+  document.querySelectorAll(".course-filter .cf-btn").forEach(b=>b.className=b.className.replace(/active/g,"").trim());
+  btn.className+=" active";
+  renderGrid(presentations,"presentationGrid",f);
+}
+
+function filterPDFs(f,btn){
+  pdfFilter=f;
+  // only update buttons within the PDF tab
+  btn.closest(".course-filter").querySelectorAll(".cf-btn").forEach(b=>b.className=b.className.replace(/active/g,"").trim());
+  btn.className+=" active";
+  renderGrid(pdfs,"pdfGrid",f);
+}
+
+function switchTab(id,btn){
+  document.querySelectorAll(".tab-content").forEach(t=>t.classList.remove("active"));
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
+  document.getElementById("tab-"+id).classList.add("active");
+  if(btn && btn.classList) btn.classList.add("active");
+}
+
+// Initial render
+renderGrid(presentations,"presentationGrid");
+renderGrid(pdfs,"pdfGrid");
+</script>
+</body>
+</html>
