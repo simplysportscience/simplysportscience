@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>IB Sport Science | IB SEHS | Simply Sport Science</title>
+<meta name="description" content="The complete IB Sports, Exercise and Health Science (SEHS) course hub. Structured lessons, key terms, practice checks, IA support and teacher resources — all specification-aligned."/>
+<style>
+  :root{
+    --purple:#6B21D4;--purple-dark:#4C1397;--purple-light:#9B59E8;
+    --pink:#C026D3;--magenta:#E040FB;--gold:#F59E0B;--gold-light:#FCD34D;
+    --cyan:#22D3EE;--navy:#0F172A;--navy-mid:#1A2540;--navy-card:#162032;
+    --white:#FFFFFF;--grey:#94A3B8;--grey-light:#CBD5E1;
+    --green:#10B981;--border:#2D3F5E;--orange:#F97316;
+    --ib:#2979FF;--ib-dark:#1565C0;--ib-light:#82B1FF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--navy);color:var(--white);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;}
+  nav{background:rgba(15,23,42,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px;}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+  .logo-circle{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--pink),var(--gold));display:flex;align-items:center;justify-content:center;box-shadow:0 0 18px rgba(107,33,212,0.5);flex-shrink:0;font-size:20px;}
+  .logo-tagline{font-size:9px;color:var(--gold);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;}
+  .logo-name{font-size:14px;font-weight:900;}
+  .logo-name .c1{color:var(--cyan);}.logo-name .c2{color:var(--white);}
+  .nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+  .nav-links a{color:var(--grey-light);text-decoration:none;font-size:13px;font-weight:600;padding:7px 11px;border-radius:7px;transition:all 0.2s;white-space:nowrap;}
+  .nav-links a:hover{color:var(--white);background:rgba(107,33,212,0.25);}
+  .nav-cta{background:linear-gradient(135deg,var(--purple),var(--pink))!important;color:var(--white)!important;padding:8px 18px!important;border-radius:8px!important;margin-left:6px;}
+  .breadcrumb{font-size:12px;color:var(--grey);padding:10px 24px;background:var(--navy-mid);border-bottom:1px solid var(--border);}
+  .breadcrumb a{color:var(--grey-light);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--cyan);}
+  .breadcrumb span{color:var(--ib-light);margin:0 6px;}
+  .hub-hero{background:linear-gradient(160deg,#0F172A 0%,#0a1535 50%,#0d1a40 100%);padding:56px 24px 48px;position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
+  .hub-hero::before{content:'';position:absolute;top:-100px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(41,121,255,0.15) 0%,transparent 70%);pointer-events:none;}
+  .hub-hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;position:relative;}
+  .hub-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(41,121,255,0.15);border:1px solid rgba(41,121,255,0.4);color:var(--ib-light);font-size:11px;font-weight:700;letter-spacing:2px;padding:6px 14px;border-radius:99px;margin-bottom:16px;text-transform:uppercase;}
+  .hub-hero h1{font-size:clamp(22px,4vw,42px);font-weight:900;line-height:1.1;margin-bottom:12px;}
+  .hub-hero h1 em{font-style:normal;color:var(--ib-light);}
+  .hub-sub{font-size:14px;color:var(--grey-light);line-height:1.7;max-width:580px;margin-bottom:24px;}
+  .hub-tags{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;}
+  .tag{display:inline-block;font-size:11px;font-weight:700;padding:4px 12px;border-radius:99px;}
+  .tag-ib{background:rgba(41,121,255,0.2);color:var(--ib-light);border:1px solid rgba(41,121,255,0.4);}
+  .tag-green{background:rgba(16,185,129,0.2);color:var(--green);border:1px solid rgba(16,185,129,0.4);}
+  .tag-gold{background:rgba(245,158,11,0.2);color:var(--gold);border:1px solid rgba(245,158,11,0.4);}
+  .tag-grey{background:rgba(148,163,184,0.15);color:var(--grey-light);border:1px solid rgba(148,163,184,0.3);}
+  .hub-btns{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn-ib{background:linear-gradient(135deg,var(--ib-dark),var(--ib));color:var(--white);border:none;border-radius:9px;padding:13px 24px;font-size:14px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 4px 20px rgba(41,121,255,0.35);transition:all 0.2s;}
+  .btn-ib:hover{transform:translateY(-2px);}
+  .btn-ghost{background:transparent;color:var(--grey-light);border:1px solid var(--border);border-radius:9px;padding:13px 24px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;transition:all 0.2s;}
+  .btn-ghost:hover{border-color:var(--ib-light);color:var(--ib-light);}
+  .hub-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;min-width:200px;}
+  .hub-stat{background:rgba(41,121,255,0.1);border:1px solid rgba(41,121,255,0.25);border-radius:12px;padding:16px;text-align:center;}
+  .hub-stat-val{font-size:26px;font-weight:900;color:var(--ib-light);}
+  .hub-stat-label{font-size:10px;color:var(--grey);text-transform:uppercase;letter-spacing:1px;margin-top:2px;}
+  .tabs-bar{background:var(--navy-mid);border-bottom:1px solid var(--border);padding:0 24px;position:sticky;top:66px;z-index:90;}
+  .tabs-inner{max-width:1100px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;}
+  .tab{background:transparent;border:none;color:var(--grey);font-size:13px;font-weight:600;padding:16px 14px;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.2s;}
+  .tab:hover{color:var(--white);}
+  .tab.active{color:var(--ib-light);border-bottom-color:var(--ib);}
+  .tab-content{display:none;}
+  .tab-content.active{display:block;}
+  .page-inner{max-width:1100px;margin:0 auto;padding:40px 24px;}
+  .section-label{display:inline-block;font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;}
+  .section-title{font-size:clamp(18px,3vw,24px);font-weight:900;margin-bottom:8px;}
+  .section-sub{color:var(--grey-light);font-size:13px;line-height:1.6;margin-bottom:28px;}
+  .divider{width:48px;height:3px;background:linear-gradient(90deg,var(--ib),var(--cyan));border-radius:2px;margin-bottom:28px;}
+  .overview-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px;margin-bottom:40px;}
+  .spec-note{background:rgba(41,121,255,0.08);border:1px solid rgba(41,121,255,0.25);border-radius:12px;padding:24px;margin-bottom:14px;}
+  .spec-note h4{font-size:14px;font-weight:800;color:var(--ib-light);margin-bottom:12px;}
+  .spec-note p{font-size:13px;color:var(--grey-light);line-height:1.7;margin-bottom:10px;}
+  .spec-note ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+  .spec-note ul li{display:flex;gap:8px;font-size:13px;color:var(--grey-light);}
+  .spec-note ul li::before{content:'→';color:var(--ib-light);flex-shrink:0;}
+  .sidebar-cards{display:flex;flex-direction:column;gap:12px;}
+  .side-card{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:18px;}
+  .side-card h5{font-size:12px;font-weight:800;color:var(--gold);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;}
+  .side-card ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+  .side-card ul li{font-size:12px;color:var(--grey-light);display:flex;gap:7px;align-items:flex-start;}
+  .side-card ul li::before{content:'◆';color:var(--ib-light);font-size:8px;flex-shrink:0;margin-top:4px;}
+  .themes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-bottom:40px;}
+  .theme-card{background:var(--navy-card);border-radius:14px;overflow:hidden;border:1px solid var(--border);transition:all 0.25s;cursor:pointer;}
+  .theme-card:hover{transform:translateY(-3px);}
+  .theme-header{padding:22px;border-bottom:1px solid var(--border);}
+  .theme-header-top{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+  .theme-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+  .theme-num{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:3px;}
+  .theme-name{font-size:16px;font-weight:900;}
+  .theme-desc{font-size:12px;color:var(--grey-light);line-height:1.6;}
+  .theme-body{padding:18px;}
+  .topic-list{list-style:none;display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+  .topic-item{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--grey-light);padding:7px 10px;background:rgba(255,255,255,0.03);border-radius:7px;border:1px solid rgba(255,255,255,0.05);cursor:pointer;transition:all 0.15s;text-decoration:none;}
+  .topic-item:hover{background:rgba(41,121,255,0.1);border-color:rgba(41,121,255,0.3);color:var(--white);}
+  .topic-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+  .topic-status{margin-left:auto;font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px;}
+  .status-live{background:rgba(16,185,129,0.2);color:var(--green);border:1px solid rgba(16,185,129,0.35);}
+  .status-soon{background:rgba(148,163,184,0.15);color:var(--grey);border:1px solid rgba(148,163,184,0.3);}
+  .theme-footer{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--grey);}
+  .theme-btn{display:block;text-align:center;padding:9px;border-radius:8px;font-size:12px;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:opacity 0.2s;width:100%;margin-top:12px;}
+  .theme-btn:hover{opacity:0.85;}
+  .ia-box{background:linear-gradient(135deg,rgba(245,158,11,0.1),rgba(107,33,212,0.1));border:1px solid rgba(245,158,11,0.3);border-radius:16px;padding:32px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;margin-bottom:40px;}
+  .ia-box h3{font-size:20px;font-weight:900;margin-bottom:8px;}
+  .ia-box p{font-size:13px;color:var(--grey-light);line-height:1.7;margin-bottom:16px;}
+  .ia-items{display:flex;flex-direction:column;gap:8px;}
+  .ia-item{display:flex;gap:10px;font-size:13px;color:var(--grey-light);align-items:flex-start;}
+  .ia-item::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;}
+  .ia-visual{display:flex;flex-direction:column;gap:8px;min-width:160px;}
+  .ia-stat{background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.3);border-radius:10px;padding:14px;text-align:center;}
+  .ia-stat-val{font-size:22px;font-weight:900;color:var(--gold);}
+  .ia-stat-label{font-size:10px;color:var(--grey);margin-top:2px;}
+  .cmd-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-bottom:40px;}
+  .cmd-card{background:var(--navy-card);border:1px solid var(--border);border-radius:10px;padding:14px;}
+  .cmd-word{font-size:14px;font-weight:800;color:var(--ib-light);margin-bottom:4px;}
+  .cmd-def{font-size:11px;color:var(--grey-light);line-height:1.5;}
+  .resources-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:40px;}
+  .res-card{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:20px;cursor:pointer;transition:all 0.2s;}
+  .res-card:hover{border-color:var(--ib-light);transform:translateY(-2px);}
+  .res-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:12px;}
+  .res-card h4{font-size:13px;font-weight:800;margin-bottom:5px;}
+  .res-card p{font-size:11px;color:var(--grey-light);line-height:1.5;}
+  .res-tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-top:8px;}
+  .teacher-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:32px;}
+  .teacher-card{background:var(--navy-card);border:1px solid rgba(192,38,211,0.3);border-radius:12px;padding:22px;cursor:pointer;transition:all 0.2s;}
+  .teacher-card:hover{border-color:var(--pink);transform:translateY(-2px);}
+  .teacher-card-icon{font-size:28px;margin-bottom:12px;}
+  .teacher-card h4{font-size:14px;font-weight:800;margin-bottom:6px;}
+  .teacher-card p{font-size:12px;color:var(--grey-light);line-height:1.5;}
+  .teacher-tag{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:4px;margin-top:8px;background:rgba(192,38,211,0.15);color:var(--pink);border:1px solid rgba(192,38,211,0.3);}
+  .hub-footer{background:#080E1C;border-top:1px solid var(--border);padding:32px 24px;text-align:center;}
+  .hub-footer p{font-size:12px;color:var(--grey);}
+  .hub-footer a{color:var(--ib-light);text-decoration:none;}
+  @media(max-width:900px){.hub-hero-inner{grid-template-columns:1fr;}.hub-stats{display:none;}.overview-grid{grid-template-columns:1fr;}.ia-box{grid-template-columns:1fr;}.ia-visual{flex-direction:row;}}
+  @media(max-width:640px){.nav-links{display:none;}.hub-hero{padding:40px 16px 36px;}.page-inner{padding:28px 16px;}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-circle">🏃</div>
+      <div>
+        <div class="logo-tagline">Sport Science Sorted</div>
+        <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#courses">Course Hubs</a></li>
+      <li><a href="student-hub.html">Student Hub</a></li>
+      <li><a href="teacher-hub.html">Teacher Hub</a></li>
+      <li><a href="az-library.html">A–Z Library</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="student-hub.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="breadcrumb">
+  <div style="max-width:1100px;margin:0 auto;">
+    <a href="index.html">Home</a><span>›</span><a href="index.html#courses">Course Hubs</a><span>›</span>IB Sport Science
+  </div>
+</div>
+<div class="hub-hero">
+  <div class="hub-hero-inner">
+    <div>
+      <div class="hub-badge">🔬 International Baccalaureate</div>
+      <h1>IB Sports, Exercise &amp;<br/><em>Health Science</em></h1>
+      <p class="hub-sub">The complete course hub for IB SEHS — structured around the official specification with lessons, key terms, practice checks, Internal Assessment support and teacher delivery resources.</p>
+      <div class="hub-tags">
+        <span class="tag tag-ib">IB SEHS</span>
+        <span class="tag tag-green">● Live</span>
+        <span class="tag tag-gold">SL &amp; HL Pathways</span>
+        <span class="tag tag-grey">3 Major Themes</span>
+        <span class="tag tag-grey">IA Support Included</span>
+      </div>
+      <div class="hub-btns">
+        <a href="#" class="btn-ib" onclick="switchTab('themes',document.querySelectorAll('.tab')[1]);return false;">Start Learning →</a>
+        <a href="#" class="btn-ghost" onclick="switchTab('teacher',document.querySelectorAll('.tab')[5]);return false;">Teacher Resources</a>
+      </div>
+    </div>
+    <div class="hub-stats">
+      <div class="hub-stat"><div class="hub-stat-val">3</div><div class="hub-stat-label">Major Themes</div></div>
+      <div class="hub-stat"><div class="hub-stat-val">20+</div><div class="hub-stat-label">Topics</div></div>
+      <div class="hub-stat"><div class="hub-stat-val">15+</div><div class="hub-stat-label">Practice Checks</div></div>
+      <div class="hub-stat"><div class="hub-stat-val">IA</div><div class="hub-stat-label">Support Hub</div></div>
+    </div>
+  </div>
+</div>
+<div class="tabs-bar">
+  <div class="tabs-inner">
+    <button class="tab active" onclick="switchTab('overview',this)">Course Overview</button>
+    <button class="tab" onclick="switchTab('themes',this)">Topic Library</button>
+    <button class="tab" onclick="switchTab('ia',this)">IA Support</button>
+    <button class="tab" onclick="switchTab('command',this)">Command Terms</button>
+    <button class="tab" onclick="switchTab('resources',this)">Resources</button>
+    <button class="tab" onclick="switchTab('teacher',this)">Teacher Hub</button>
+  </div>
+</div>
+
+<div id="tab-overview" class="tab-content active">
+  <div class="page-inner">
+    <div class="overview-grid">
+      <div>
+        <span class="section-label">About This Course</span>
+        <h2 class="section-title">IB Sports, Exercise &amp; Health Science</h2>
+        <div class="divider"></div>
+        <div class="spec-note">
+          <h4>📐 Specification Structure</h4>
+          <p>IB SEHS is organised around three major interconnected themes, explored at both Standard Level (SL) and Higher Level (HL). The course emphasises scientific inquiry, data analysis and the application of theory to real sporting contexts.</p>
+          <ul>
+            <li>Theme 1 — Exercise Physiology and Nutrition of the Human Body</li>
+            <li>Theme 2 — Biomechanics</li>
+            <li>Theme 3 — Sport Psychology and Motor Learning</li>
+            <li>Internal Assessment — Scientific Investigation (20% of final grade)</li>
+            <li>HL Extension — Additional depth in all three themes</li>
+          </ul>
+        </div>
+        <div style="margin-top:16px;" class="spec-note">
+          <h4>🎯 What Simply Sport Science Provides</h4>
+          <p>This course hub covers all three themes with structured lesson content, key terms, IB command term guidance, practice checks and Internal Assessment support.</p>
+          <ul>
+            <li>Specification-aligned lesson pages for every major topic</li>
+            <li>IB command term explanations with exam application examples</li>
+            <li>Practice checks with instant feedback and specification references</li>
+            <li>Internal Assessment guidance from research question to evaluation</li>
+            <li>Embedded YouTube videos and downloadable PDF resources</li>
+            <li>Teacher notes, lesson starters and delivery sequences</li>
+          </ul>
+        </div>
+      </div>
+      <div class="sidebar-cards">
+        <div class="side-card">
+          <h5>Key Course Details</h5>
+          <ul>
+            <li>Qualification: IB Diploma Programme</li>
+            <li>Pathways: Standard Level (SL) &amp; Higher Level (HL)</li>
+            <li>Assessment: External exams + Internal Assessment</li>
+            <li>IA weighting: 20% of final grade</li>
+            <li>Group: Group 4 — Sciences</li>
+          </ul>
+        </div>
+        <div class="side-card">
+          <h5>IB Command Terms Used</h5>
+          <ul>
+            <li>Define · Describe · Explain</li>
+            <li>Analyse · Evaluate · Justify</li>
+            <li>Design · Process · Discuss</li>
+            <li>Apply · Outline · Compare</li>
+          </ul>
+        </div>
+        <div class="side-card">
+          <h5>Assessment Objectives</h5>
+          <ul>
+            <li>AO1: Knowledge &amp; understanding</li>
+            <li>AO2: Application &amp; analysis</li>
+            <li>AO3: Synthesis &amp; evaluation</li>
+            <li>AO4: Use of skills &amp; techniques</li>
+          </ul>
+        </div>
+        <a href="#" class="btn-ib" style="text-align:center;display:block;" onclick="switchTab('themes',document.querySelectorAll('.tab')[1]);return false;">Go to Topic Library →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-themes" class="tab-content">
+  <div class="page-inner">
+    <span class="section-label">Topic Library</span>
+    <h2 class="section-title">Three Themes. Every Topic Covered.</h2>
+    <p class="section-sub">Select a theme to explore all topics, lessons, key terms and practice checks.</p>
+    <div class="divider"></div>
+    <div class="themes-grid">
+      <div class="theme-card" style="border-color:rgba(41,121,255,0.35);">
+        <div class="theme-header" style="background:rgba(41,121,255,0.07);">
+          <div class="theme-header-top">
+            <div class="theme-icon" style="background:rgba(41,121,255,0.2);">🫁</div>
+            <div><div class="theme-num" style="color:var(--ib-light);">Theme 1</div><div class="theme-name">Exercise Physiology &amp; Nutrition</div></div>
+          </div>
+          <div class="theme-desc">The physiological systems of the human body at rest and during exercise. Energy systems, cardiovascular and respiratory function, nutrition, hydration and thermoregulation.</div>
+        </div>
+        <div class="theme-body">
+          <ul class="topic-list">
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--ib-light);"></span>The Cardiovascular System<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--ib-light);"></span>The Respiratory System<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--ib-light);"></span>Energy Systems<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--ib-light);"></span>The Endocrine System<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--ib-light);"></span>Homeostasis<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--ib-light);"></span>Water &amp; Hydration<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--ib-light);"></span>Nutrition &amp; Macronutrients<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--ib-light);"></span>Lactate Inflection Point<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--grey);"></span>VO₂ Max &amp; Aerobic Capacity<span class="topic-status status-soon">Soon</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--ib-light);"></span>Training Design<span class="topic-status status-live">Live</span></a>
+          </ul>
+          <div class="theme-footer"><span>10 topics · 8 live</span><span style="color:var(--ib-light);">✅ Practice checks</span></div>
+          <button class="theme-btn" style="background:linear-gradient(135deg,var(--ib-dark),var(--ib));color:var(--white);">Explore Theme 1 →</button>
+        </div>
+      </div>
+      <div class="theme-card" style="border-color:rgba(34,211,238,0.3);">
+        <div class="theme-header" style="background:rgba(34,211,238,0.05);">
+          <div class="theme-header-top">
+            <div class="theme-icon" style="background:rgba(34,211,238,0.15);">⚙️</div>
+            <div><div class="theme-num" style="color:var(--cyan);">Theme 2</div><div class="theme-name">Biomechanics</div></div>
+          </div>
+          <div class="theme-desc">Application of mechanical principles to human movement and sport. Forces, motion, Newton's laws, projectile motion, angular momentum and fluid mechanics.</div>
+        </div>
+        <div class="theme-body">
+          <ul class="topic-list">
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cyan);"></span>Newton's Laws of Motion<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cyan);"></span>Linear Motion &amp; Momentum<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cyan);"></span>Projectile Motion<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cyan);"></span>Angular Motion &amp; Torque<span class="topic-status status-soon">Soon</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cyan);"></span>Fluid Mechanics — Drag &amp; Lift<span class="topic-status status-soon">Soon</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--cyan);"></span>Work, Power &amp; Energy<span class="topic-status status-soon">Soon</span></a>
+          </ul>
+          <div class="theme-footer"><span>6 topics · 3 live</span><span style="color:var(--cyan);">✅ Practice checks</span></div>
+          <button class="theme-btn" style="background:linear-gradient(135deg,#0E7490,var(--cyan));color:#000;">Explore Theme 2 →</button>
+        </div>
+      </div>
+      <div class="theme-card" style="border-color:rgba(192,38,211,0.3);">
+        <div class="theme-header" style="background:rgba(192,38,211,0.05);">
+          <div class="theme-header-top">
+            <div class="theme-icon" style="background:rgba(192,38,211,0.15);">🧠</div>
+            <div><div class="theme-num" style="color:var(--magenta);">Theme 3</div><div class="theme-name">Sport Psychology &amp; Motor Learning</div></div>
+          </div>
+          <div class="theme-desc">Psychological principles underlying performance, motivation, arousal, anxiety, motor learning theories and mental skills strategies used by elite athletes.</div>
+        </div>
+        <div class="theme-body">
+          <ul class="topic-list">
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--magenta);"></span>Motivation Theories<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--magenta);"></span>Arousal, Anxiety &amp; Performance<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--magenta);"></span>Inverted-U Hypothesis<span class="topic-status status-live">Live</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--magenta);"></span>Goal Setting &amp; Attribution Theory<span class="topic-status status-soon">Soon</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--magenta);"></span>Motor Learning Theories<span class="topic-status status-soon">Soon</span></a>
+            <a href="#" class="topic-item"><span class="topic-dot" style="background:var(--magenta);"></span>Mental Skills &amp; Imagery<span class="topic-status status-soon">Soon</span></a>
+          </ul>
+          <div class="theme-footer"><span>6 topics · 3 live</span><span style="color:var(--magenta);">✅ Practice checks</span></div>
+          <button class="theme-btn" style="background:linear-gradient(135deg,#7C1EA0,var(--magenta));color:var(--white);">Explore Theme 3 →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-ia" class="tab-content">
+  <div class="page-inner">
+    <span class="section-label">Internal Assessment</span>
+    <h2 class="section-title">Scientific Investigation — IA Support Hub</h2>
+    <p class="section-sub">The IB SEHS Internal Assessment is a scientific investigation worth 20% of your final grade.</p>
+    <div class="divider"></div>
+    <div class="ia-box">
+      <div>
+        <h3>What Is the IB SEHS Internal Assessment?</h3>
+        <p>The IA is an individual scientific investigation worth 20% of your final grade at both SL and HL. You design a study, collect and process data, then write a structured report evaluated against IB criteria.</p>
+        <div class="ia-items">
+          <div class="ia-item">Formulating a focused, measurable research question</div>
+          <div class="ia-item">Designing an ethical and valid methodology</div>
+          <div class="ia-item">Collecting, recording and processing quantitative data</div>
+          <div class="ia-item">Presenting data with appropriate graphs and statistical analysis</div>
+          <div class="ia-item">Evaluating methodology, identifying limitations and suggesting improvements</div>
+        </div>
+      </div>
+      <div class="ia-visual">
+        <div class="ia-stat"><div class="ia-stat-val">20%</div><div class="ia-stat-label">Of Final Grade</div></div>
+        <div class="ia-stat"><div class="ia-stat-val">~2,000</div><div class="ia-stat-label">Word Count</div></div>
+      </div>
+    </div>
+    <div class="themes-grid">
+      <div class="theme-card" style="border-color:rgba(245,158,11,0.3);">
+        <div class="theme-header" style="background:rgba(245,158,11,0.05);">
+          <div class="theme-header-top">
+            <div class="theme-icon" style="background:rgba(245,158,11,0.15);">❓</div>
+            <div><div class="theme-num" style="color:var(--gold);">Stage 1</div><div class="theme-name">Research Question</div></div>
+          </div>
+          <div class="theme-desc">How to design a focused, testable and relevant research question with examples and IB examiner expectations.</div>
+        </div>
+        <div class="theme-body">
+          <div class="ia-items">
+            <div class="ia-item">What makes a strong IB research question</div>
+            <div class="ia-item">Independent and dependent variables</div>
+            <div class="ia-item">Linking your question to SEHS theory</div>
+            <div class="ia-item">Example research questions with commentary</div>
+          </div>
+          <button class="theme-btn" style="background:linear-gradient(135deg,#92400E,var(--gold));color:#000;margin-top:16px;">Open Stage 1 →</button>
+        </div>
+      </div>
+      <div class="theme-card" style="border-color:rgba(16,185,129,0.3);">
+        <div class="theme-header" style="background:rgba(16,185,129,0.05);">
+          <div class="theme-header-top">
+            <div class="theme-icon" style="background:rgba(16,185,129,0.15);">📊</div>
+            <div><div class="theme-num" style="color:var(--green);">Stage 2</div><div class="theme-name">Data &amp; Analysis</div></div>
+          </div>
+          <div class="theme-desc">Collecting, recording, processing and presenting data to IB standard including statistical tests and graph types.</div>
+        </div>
+        <div class="theme-body">
+          <div class="ia-items">
+            <div class="ia-item">Raw data tables and processed data</div>
+            <div class="ia-item">Mean, standard deviation and t-tests</div>
+            <div class="ia-item">Appropriate graph selection and labelling</div>
+            <div class="ia-item">Uncertainty and error analysis</div>
+          </div>
+          <button class="theme-btn" style="background:linear-gradient(135deg,#065F46,var(--green));color:var(--white);margin-top:16px;">Open Stage 2 →</button>
+        </div>
+      </div>
+      <div class="theme-card" style="border-color:rgba(192,38,211,0.3);">
+        <div class="theme-header" style="background:rgba(192,38,211,0.05);">
+          <div class="theme-header-top">
+            <div class="theme-icon" style="background:rgba(192,38,211,0.15);">✍️</div>
+            <div><div class="theme-num" style="color:var(--magenta);">Stage 3</div><div class="theme-name">Evaluation &amp; Writing</div></div>
+          </div>
+          <div class="theme-desc">How to write a high-scoring evaluation section identifying limitations, suggesting improvements and connecting findings to theory.</div>
+        </div>
+        <div class="theme-body">
+          <div class="ia-items">
+            <div class="ia-item">What IB examiners look for in evaluation</div>
+            <div class="ia-item">Identifying methodological limitations</div>
+            <div class="ia-item">Realistic and specific improvements</div>
+            <div class="ia-item">Linking results back to the literature</div>
+          </div>
+          <button class="theme-btn" style="background:linear-gradient(135deg,#7C1EA0,var(--magenta));color:var(--white);margin-top:16px;">Open Stage 3 →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-command" class="tab-content">
+  <div class="page-inner">
+    <span class="section-label">IB Command Terms</span>
+    <h2 class="section-title">Know Exactly What Every Question Is Asking</h2>
+    <p class="section-sub">IB examiners use specific command terms to define the depth and type of answer required. Understanding these is essential for exam success.</p>
+    <div class="divider"></div>
+    <div class="cmd-grid">
+      <div class="cmd-card"><div class="cmd-word">Define</div><div class="cmd-def">Give the precise meaning of a word, phrase or concept.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Describe</div><div class="cmd-def">Give a detailed account of facts, characteristics or events without explanation.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Explain</div><div class="cmd-def">Give a detailed account with reasons or causes. Show how or why something occurs.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Analyse</div><div class="cmd-def">Break down information into its component parts and examine each part in detail.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Evaluate</div><div class="cmd-def">Make an appraisal by weighing up strengths and limitations. Come to a conclusion.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Justify</div><div class="cmd-def">Give valid reasons or evidence to support an answer or conclusion.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Discuss</div><div class="cmd-def">Offer a considered and balanced review including a range of arguments and evidence.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Compare</div><div class="cmd-def">Give an account of both similarities and differences between two or more items.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Outline</div><div class="cmd-def">Give a brief account or summary of key points only.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Apply</div><div class="cmd-def">Use knowledge and understanding in a response that relates to a specific situation.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Design</div><div class="cmd-def">Produce a plan, simulation or model. Used particularly in IA methodology.</div></div>
+      <div class="cmd-card"><div class="cmd-word">Process</div><div class="cmd-def">Carry out or describe the steps taken to obtain a result. Used in IA data processing.</div></div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-resources" class="tab-content">
+  <div class="page-inner">
+    <span class="section-label">IB SEHS Resources</span>
+    <h2 class="section-title">Everything You Need in One Place</h2>
+    <p class="section-sub">Lesson content, videos, downloadable PDFs and revision tools — all connected to IB SEHS topics and themes.</p>
+    <div class="divider"></div>
+    <div class="resources-row">
+      <div class="res-card"><div class="res-icon" style="background:rgba(239,68,68,0.15);">▶️</div><h4>YouTube Video Lessons</h4><p>IB SEHS topic videos covering all three themes.</p><span class="res-tag" style="background:rgba(239,68,68,0.15);color:#F87171;">40+ Videos</span></div>
+      <div class="res-card"><div class="res-icon" style="background:rgba(41,121,255,0.15);">📄</div><h4>Revision PDFs</h4><p>Downloadable revision guides and key term sheets for each IB SEHS theme.</p><span class="res-tag" style="background:rgba(41,121,255,0.15);color:var(--ib-light);">PDF Downloads</span></div>
+      <div class="res-card"><div class="res-icon" style="background:rgba(245,158,11,0.15);">🖥️</div><h4>Lesson Presentations</h4><p>Canva and PowerPoint presentations for every IB SEHS topic.</p><span class="res-tag" style="background:rgba(245,158,11,0.15);color:var(--gold);">Canva &amp; PowerPoint</span></div>
+      <div class="res-card"><div class="res-icon" style="background:rgba(16,185,129,0.15);">✅</div><h4>Practice Checks</h4><p>Topic-specific retrieval practice with instant feedback and specification references.</p><span class="res-tag" style="background:rgba(16,185,129,0.15);color:var(--green);">Interactive</span></div>
+      <div class="res-card"><div class="res-icon" style="background:rgba(107,33,212,0.15);">🎙️</div><h4>Podcast Episodes</h4><p>IB SEHS topics in audio format — great for revision on the go.</p><span class="res-tag" style="background:rgba(107,33,212,0.15);color:var(--purple-light);">Spotify &amp; Apple</span></div>
+      <div class="res-card"><div class="res-icon" style="background:rgba(192,38,211,0.15);">🔤</div><h4>A–Z Key Terms</h4><p>Every IB SEHS key term explained with definitions, examples and theme tags.</p><span class="res-tag" style="background:rgba(192,38,211,0.15);color:var(--pink);">IB Tagged</span></div>
+    </div>
+  </div>
+</div>
+
+<div id="tab-teacher" class="tab-content">
+  <div class="page-inner">
+    <span class="section-label">Teacher Delivery Resources</span>
+    <h2 class="section-title">IB SEHS Teacher Hub</h2>
+    <p class="section-sub">Lesson sequences, delivery notes, discussion prompts, starter activities and assessment guidance — all aligned to IB SEHS.</p>
+    <div class="divider"></div>
+    <div class="teacher-grid">
+      <div class="teacher-card"><div class="teacher-card-icon">📝</div><h4>Lesson Sequences</h4><p>Suggested lesson order for all three themes with timing and specification references for SL and HL.</p><span class="teacher-tag">Download Available</span></div>
+      <div class="teacher-card"><div class="teacher-card-icon">💡</div><h4>Lesson Starters</h4><p>Ready-to-use retrieval starters and warm-up activities for every IB SEHS topic area.</p><span class="teacher-tag">Download Available</span></div>
+      <div class="teacher-card"><div class="teacher-card-icon">👁️</div><h4>Teacher Notes</h4><p>Delivery notes covering common misconceptions, differentiation ideas and HL extension points.</p><span class="teacher-tag">Coming Soon</span></div>
+      <div class="teacher-card"><div class="teacher-card-icon">💬</div><h4>Discussion Prompts</h4><p>Structured classroom questioning linked to IB command terms and assessment objectives.</p><span class="teacher-tag">Coming Soon</span></div>
+      <div class="teacher-card"><div class="teacher-card-icon">🏃</div><h4>Practical Activities</h4><p>Sport science investigation ideas with safety notes and data recording sheets for IA preparation.</p><span class="teacher-tag">Coming Soon</span></div>
+      <div class="teacher-card"><div class="teacher-card-icon">📋</div><h4>IA Delivery Guide</h4><p>A teacher guide to delivering the Internal Assessment process from introduction to final submission.</p><span class="teacher-tag">Download Available</span></div>
+      <div class="teacher-card"><div class="teacher-card-icon">📊</div><h4>Specification Tracker</h4><p>Map your teaching against the full IB SEHS specification and identify coverage gaps.</p><span class="teacher-tag">Coming Soon</span></div>
+      <div class="teacher-card"><div class="teacher-card-icon">🎯</div><h4>Exam Preparation</h4><p>Command word guidance and mark scheme awareness for Paper 1, Paper 2 and Paper 3.</p><span class="teacher-tag">Coming Soon</span></div>
+    </div>
+    <div style="background:rgba(192,38,211,0.08);border:1px solid rgba(192,38,211,0.25);border-radius:12px;padding:24px;text-align:center;">
+      <p style="font-size:14px;color:var(--grey-light);margin-bottom:14px;">Want full access to all IB SEHS teacher resources and class progress tools?</p>
+      <a href="teacher-hub.html" class="btn-ib">Go to Teacher Hub →</a>
+    </div>
+  </div>
+</div>
+
+<div class="hub-footer">
+  <p>Simply Sport Science · <a href="index.html">Home</a> · <a href="index.html#courses">Course Hubs</a> · <a href="az-library.html">A–Z Library</a> · simplysportscience.co.uk</p>
+</div>
+
+<script>
+function switchTab(id,btn){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  if(btn&&btn.classList)btn.classList.add('active');
+}
+</script>
+</body>
+</html>
