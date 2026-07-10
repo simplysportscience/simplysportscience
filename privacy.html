@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Privacy Policy | Simply Sport Science</title>
+<meta name="description" content="How Simply Sport Science collects, uses and protects your information."/>
+<style>
+  :root {
+    --purple: #6B21D4;
+    --purple-dark: #4C1397;
+    --purple-light: #9B59E8;
+    --pink: #C026D3;
+    --magenta: #E040FB;
+    --gold: #F59E0B;
+    --cyan: #22D3EE;
+    --navy: #0F172A;
+    --navy-mid: #1A2540;
+    --navy-card: #162032;
+    --white: #FFFFFF;
+    --grey: #94A3B8;
+    --grey-light: #CBD5E1;
+    --border: #2D3F5E;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--navy); color:var(--white); font-family:'Segoe UI',system-ui,sans-serif; line-height:1.6; }
+
+  nav { background:rgba(15,23,42,0.97); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; backdrop-filter:blur(12px); }
+  .nav-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; height:66px; gap:16px; }
+  .logo { display:flex; align-items:center; gap:10px; text-decoration:none; flex-shrink:0; }
+  .logo-circle { width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg,var(--purple),var(--pink),var(--gold)); display:flex; align-items:center; justify-content:center; box-shadow:0 0 18px rgba(107,33,212,0.5); flex-shrink:0; font-size:20px; }
+  .logo-tagline { font-size:9px; color:var(--gold); font-weight:700; letter-spacing:2.5px; text-transform:uppercase; }
+  .logo-name { font-size:14px; font-weight:900; }
+  .logo-name .c1 { color:var(--cyan); }
+  .logo-name .c2 { color:var(--white); }
+  .nav-links { display:flex; align-items:center; gap:2px; list-style:none; }
+  .nav-links a { color:var(--grey-light); text-decoration:none; font-size:13px; font-weight:600; padding:7px 11px; border-radius:7px; transition:all 0.2s; white-space:nowrap; }
+  .nav-links a:hover { color:var(--white); background:rgba(107,33,212,0.25); }
+  .nav-cta { background:linear-gradient(135deg,var(--purple),var(--pink)) !important; color:var(--white) !important; padding:8px 18px !important; border-radius:8px !important; margin-left:6px; }
+
+  .breadcrumb { font-size:12px; color:var(--grey); padding:10px 24px; background:var(--navy-mid); border-bottom:1px solid var(--border); }
+  .breadcrumb a { color:var(--grey-light); text-decoration:none; }
+  .breadcrumb a:hover { color:var(--cyan); }
+  .breadcrumb span { color:var(--purple-light); margin:0 6px; }
+
+  .hero { background:linear-gradient(160deg,#0F172A 0%,#1a0a2e 50%,#0F172A 100%); padding:52px 24px 44px; text-align:center; border-bottom:1px solid var(--border); }
+  .hero-badge { display:inline-block; background:rgba(107,33,212,0.15); border:1px solid rgba(107,33,212,0.4); color:var(--purple-light); font-size:11px; font-weight:700; letter-spacing:2px; padding:6px 14px; border-radius:99px; margin-bottom:16px; text-transform:uppercase; }
+  .hero h1 { font-size:clamp(26px,5vw,42px); font-weight:900; margin-bottom:10px; }
+  .hero-sub { font-size:13px; color:var(--grey); }
+
+  .page-inner { max-width:800px; margin:0 auto; padding:56px 24px 72px; }
+  .page-inner h2 { font-size:19px; font-weight:800; margin:36px 0 12px; color:var(--white); }
+  .page-inner h2:first-child { margin-top:0; }
+  .page-inner p { font-size:14px; color:var(--grey-light); line-height:1.8; margin-bottom:14px; }
+  .page-inner ul { margin:0 0 14px 20px; }
+  .page-inner li { font-size:14px; color:var(--grey-light); line-height:1.8; margin-bottom:6px; }
+  .page-inner a { color:var(--cyan); text-decoration:none; }
+  .page-inner a:hover { text-decoration:underline; }
+  .page-inner strong { color:var(--white); }
+  .note-box { background:rgba(245,158,11,0.08); border:1px solid rgba(245,158,11,0.3); border-radius:12px; padding:18px 20px; margin-bottom:36px; }
+  .note-box p { font-size:13px; color:var(--grey-light); margin-bottom:0; line-height:1.7; }
+  .note-box strong { color:var(--gold-light,var(--gold)); }
+
+  footer { background:#080E1C; border-top:1px solid var(--border); padding:52px 24px 26px; }
+  .footer-inner { max-width:1100px; margin:0 auto; }
+  .footer-top { display:grid; grid-template-columns:1.6fr repeat(3,1fr); gap:36px; margin-bottom:44px; }
+  .footer-brand p { font-size:12px; color:var(--grey); line-height:1.75; margin-top:14px; max-width:260px; }
+  .footer-col h5 { font-size:10px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
+  .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:9px; margin:0; }
+  .footer-col ul li { list-style:none; }
+  .footer-col ul li a { font-size:13px; color:var(--grey-light); text-decoration:none; transition:color 0.15s; }
+  .footer-col ul li a:hover { color:var(--cyan); }
+  .footer-bottom { border-top:1px solid var(--border); padding-top:22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+  .footer-bottom p { font-size:12px; color:var(--grey); }
+  .footer-soc { display:flex; gap:14px; }
+  .footer-soc a { color:var(--grey); text-decoration:none; font-size:12px; transition:color 0.15s; }
+  .footer-soc a:hover { color:var(--cyan); }
+
+  @media(max-width:900px) { .footer-top { grid-template-columns:1fr 1fr; } }
+  @media(max-width:640px) {
+    .nav-links { display:none; }
+    footer { padding:40px 16px 22px; }
+    .footer-top { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-circle">🏃</div>
+      <div>
+        <div class="logo-tagline">Sport Science Sorted</div>
+        <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Course Hubs</a></li>
+      <li><a href="student-hub.html">Student Hub</a></li>
+      <li><a href="teacher-hub.html">Teacher Hub</a></li>
+      <li><a href="az-library.html">A–Z Library</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="student-hub.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div style="max-width:1100px;margin:0 auto;">
+    <a href="index.html">Home</a><span>›</span>Privacy Policy
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-badge">🔒 Privacy</div>
+  <h1>Privacy Policy</h1>
+  <p class="hero-sub">Last updated: July 2026</p>
+</div>
+
+<div class="page-inner">
+
+  <div class="note-box">
+    <p><strong>Note:</strong> This is a starting template covering the basics of what Simply Sport Science collects and why. Before relying on it, it's worth having it reviewed by a legal professional — particularly around UK GDPR and data protection for users under 18, since many students using this site are minors.</p>
+  </div>
+
+  <h2>Who We Are</h2>
+  <p>Simply Sport Science (<a href="https://simplysportscience.co.uk">simplysportscience.co.uk</a>) is an educational platform created by Phil Mathe, providing sport science learning resources for IB SEHS, Cambridge AS Level Sport &amp; PE, BTEC Sport and GCSE PE students and teachers. If you have any questions about this policy, you can reach us at <a href="mailto:hello@simplysportscience.co.uk">hello@simplysportscience.co.uk</a>.</p>
+
+  <h2>Information We Collect</h2>
+  <p>We collect information in the following ways:</p>
+  <ul>
+    <li><strong>Contact form submissions</strong> — if you use the contact form on our About page, we collect your name, email address and message.</li>
+    <li><strong>Newsletter sign-up</strong> — if you subscribe for updates, we collect your email address.</li>
+    <li><strong>Usage data</strong> — like most websites, our hosting and analytics tools may automatically collect basic technical information such as browser type, device type and pages visited, to help us understand how the site is used.</li>
+  </ul>
+
+  <h2>How We Use Your Information</h2>
+  <p>We use the information we collect to:</p>
+  <ul>
+    <li>Respond to messages sent through the contact form</li>
+    <li>Send newsletter updates to subscribers, when requested</li>
+    <li>Understand how the site is used, so we can improve it</li>
+  </ul>
+  <p>We do not sell or rent your personal information to third parties.</p>
+
+  <h2>Cookies &amp; Third-Party Content</h2>
+  <p>Some pages on this site embed videos from YouTube. When you view an embedded video, YouTube (Google) may set its own cookies and collect data according to its own privacy policy. We don't control this directly — you can find out more from <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's privacy policy</a>.</p>
+
+  <h2>Data Retention</h2>
+  <p>We keep contact form and newsletter information only for as long as it's needed for the purpose it was collected — for example, until your enquiry is resolved, or until you unsubscribe from the newsletter.</p>
+
+  <h2>Your Rights</h2>
+  <p>Under UK data protection law, you have the right to:</p>
+  <ul>
+    <li>Ask what personal information we hold about you</li>
+    <li>Ask us to correct or delete it</li>
+    <li>Withdraw consent (for example, unsubscribe from the newsletter) at any time</li>
+  </ul>
+  <p>To exercise any of these rights, contact <a href="mailto:hello@simplysportscience.co.uk">hello@simplysportscience.co.uk</a>.</p>
+
+  <h2>Children's Privacy</h2>
+  <p>Simply Sport Science is designed to be used by school students, many of whom are under 18. We only collect the minimum information necessary (such as an email address for the newsletter, or contact form details), and we encourage students to check with a parent, guardian or teacher before submitting any personal information through this site.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>We may update this policy from time to time. Changes will be posted on this page with an updated "last updated" date.</p>
+
+  <h2>Contact Us</h2>
+  <p>Questions about this policy can be sent to <a href="mailto:hello@simplysportscience.co.uk">hello@simplysportscience.co.uk</a>.</p>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="index.html" style="text-decoration:none;">
+          <div class="logo-circle" style="width:40px;height:40px;font-size:18px;">🏃</div>
+          <div>
+            <div class="logo-tagline">Sport Science Sorted</div>
+            <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+          </div>
+        </a>
+        <p>The ultimate sport science learning platform for students and teachers worldwide. Specification-led content for IB SEHS, A Level PE, BTEC Sport and GCSE PE.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Course Hubs</h5>
+        <ul>
+          <li><a href="ib-hub.html">IB Sport Science</a></li>
+          <li><a href="cambridge-hub.html">AS Level Sport &amp; PE</a></li>
+          <li><a href="btec-hub.html">BTEC Sport</a></li>
+          <li><a href="gcse-hub.html">GCSE PE</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="az-library.html">A–Z Library</a></li>
+          <li><a href="student-hub.html">Student Hub</a></li>
+          <li><a href="teacher-hub.html">Teacher Hub</a></li>
+          <li><a href="https://www.youtube.com/@SimplySportScience" target="_blank">YouTube Videos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>About</h5>
+        <ul>
+          <li><a href="about.html">About Simply Sport Science</a></li>
+          <li><a href="about.html#contact">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Simply Sport Science · simplysportscience.co.uk · Sport Science Sorted</p>
+      <div class="footer-soc">
+        <a href="https://www.youtube.com/@SimplySportScience" target="_blank">YouTube</a>
+        <a href="https://www.tiktok.com/@simplysportscienc" target="_blank">TikTok</a>
+        <a href="https://x.com/simplysportsci" target="_blank">X</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
