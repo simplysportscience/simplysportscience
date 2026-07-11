@@ -183,7 +183,7 @@
 <nav>
   <div class="nav-inner">
     <a class="logo" href="index.html">
-      <div class="logo-circle">🏃</div>
+      <div class="logo-circle"><img src="assets/logo/sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
       <div>
         <div class="logo-tagline">Sport Science Sorted</div>
         <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
@@ -638,8 +638,6 @@ function formatBadges(formats){
 }
 
 function resourceCardHTML(item, type){
-  const iconMap={ib:"🔬",cam:"📐",btec:"📋",gcse:"🏃"};
-  const icon = iconMap[item.course]||"📚";
   const hasFile = item.formats.some(f=>f!=="soon");
   const btn = hasFile
     ? `<a href="#" class="download-btn">Access →</a>`
@@ -648,7 +646,7 @@ function resourceCardHTML(item, type){
     <div class="resource-card-top">
       ${courseTagHTML(item.course)}
       <div class="resource-icon-row">
-        <div class="resource-type-icon" style="background:rgba(192,38,211,0.15);">${icon}</div>
+        <div class="resource-type-icon" style="background:rgba(192,38,211,0.15);"><img src="assets/logo/sss-icon.png" alt="Simply Sport Science" style="width:70%;height:70%;object-fit:contain;"></div>
         <div class="resource-title">${item.title}</div>
       </div>
       <div class="resource-desc">${item.desc}</div>
