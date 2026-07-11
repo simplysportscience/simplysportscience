@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<link rel="icon" type="image/x-icon" href="favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Page Not Found | Simply Sport Science</title>
+<meta name="description" content="This page doesn't exist — head back to Simply Sport Science's course hubs, A-Z library, or homepage."/>
+<meta name="robots" content="noindex"/>
+<style>
+  :root {
+    --purple: #6B21D4;
+    --purple-dark: #4C1397;
+    --purple-light: #9B59E8;
+    --pink: #C026D3;
+    --magenta: #E040FB;
+    --gold: #F59E0B;
+    --gold-light: #FCD34D;
+    --cyan: #22D3EE;
+    --navy: #0F172A;
+    --navy-mid: #1A2540;
+    --navy-card: #162032;
+    --white: #FFFFFF;
+    --grey: #94A3B8;
+    --grey-light: #CBD5E1;
+    --green: #10B981;
+    --border: #2D3F5E;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--navy); color:var(--white); font-family:'Segoe UI',system-ui,sans-serif; line-height:1.6; min-height:100vh; display:flex; flex-direction:column; }
+  nav { background:rgba(15,23,42,0.97); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; backdrop-filter:blur(12px); }
+  .nav-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; height:66px; gap:16px; }
+  .logo { display:flex; align-items:center; gap:10px; text-decoration:none; flex-shrink:0; }
+  .logo-circle { width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg,var(--purple),var(--pink),var(--gold)); display:flex; align-items:center; justify-content:center; box-shadow:0 0 18px rgba(107,33,212,0.5); flex-shrink:0; font-size:20px; }
+  .logo-tagline { font-size:9px; color:var(--gold); font-weight:700; letter-spacing:2.5px; text-transform:uppercase; }
+  .logo-name { font-size:14px; font-weight:900; }
+  .logo-name .c1 { color:var(--cyan); }
+  .logo-name .c2 { color:var(--white); }
+  .nav-links { display:flex; align-items:center; gap:2px; list-style:none; }
+  .nav-links a { color:var(--grey-light); text-decoration:none; font-size:13px; font-weight:600; padding:7px 11px; border-radius:7px; transition:all 0.2s; white-space:nowrap; }
+  .nav-links a:hover { color:var(--white); background:rgba(107,33,212,0.25); }
+  .nav-cta { background:linear-gradient(135deg,var(--purple),var(--pink)) !important; color:var(--white) !important; padding:8px 18px !important; border-radius:8px !important; margin-left:6px; }
+
+  .error-main { flex:1; display:flex; align-items:center; justify-content:center; padding:60px 24px; position:relative; overflow:hidden; background:linear-gradient(160deg,#0F172A 0%,#1a0a2e 45%,#180620 100%); }
+  .glow1 { position:absolute; top:-100px; left:-100px; width:500px; height:500px; background:radial-gradient(circle,rgba(107,33,212,0.22) 0%,transparent 70%); pointer-events:none; }
+  .glow2 { position:absolute; bottom:-80px; right:-80px; width:450px; height:450px; background:radial-gradient(circle,rgba(192,38,211,0.18) 0%,transparent 70%); pointer-events:none; }
+  .error-inner { position:relative; max-width:600px; text-align:center; z-index:1; }
+  .error-mascot { width:140px; height:140px; margin:0 auto 20px; filter:drop-shadow(0 20px 40px rgba(107,33,212,0.5)); animation:mascotFloat 3.5s ease-in-out infinite; }
+  @keyframes mascotFloat { 0%,100% { transform:translateY(0) rotate(0deg); } 50% { transform:translateY(-16px) rotate(-6deg); } }
+  .error-code { font-size:clamp(64px,12vw,110px); font-weight:900; line-height:1; background:linear-gradient(90deg,var(--purple-light),var(--magenta),var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom:6px; }
+  .error-title { font-size:clamp(22px,4vw,32px); font-weight:900; margin-bottom:14px; }
+  .error-sub { font-size:15px; color:var(--grey-light); max-width:460px; margin:0 auto 36px; line-height:1.75; }
+  .error-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:44px; }
+  .btn-primary { background:linear-gradient(135deg,var(--purple),var(--pink)); color:var(--white); border:none; border-radius:10px; padding:15px 30px; font-size:15px; font-weight:700; cursor:pointer; text-decoration:none; display:inline-block; box-shadow:0 4px 24px rgba(107,33,212,0.45); transition:all 0.2s; }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 32px rgba(107,33,212,0.55); }
+  .btn-secondary { background:linear-gradient(135deg,var(--purple-dark),var(--purple)); color:var(--white); border:1px solid rgba(155,89,232,0.4); border-radius:10px; padding:15px 30px; font-size:15px; font-weight:700; cursor:pointer; text-decoration:none; display:inline-block; transition:all 0.2s; }
+  .btn-secondary:hover { transform:translateY(-2px); border-color:var(--purple-light); }
+
+  .quick-links { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  .quick-links a { font-size:13px; font-weight:600; color:var(--grey-light); text-decoration:none; padding:8px 16px; border:1px solid var(--border); border-radius:99px; transition:all 0.2s; }
+  .quick-links a:hover { border-color:var(--cyan); color:var(--cyan); }
+
+  footer { background:#080E1C; border-top:1px solid var(--border); padding:52px 24px 26px; }
+  .footer-inner { max-width:1100px; margin:0 auto; }
+  .footer-top { display:grid; grid-template-columns:1.6fr repeat(3,1fr); gap:36px; margin-bottom:44px; }
+  .footer-brand p { font-size:12px; color:var(--grey); line-height:1.75; margin-top:14px; max-width:260px; }
+  .footer-col h5 { font-size:10px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
+  .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:9px; }
+  .footer-col ul li a { font-size:13px; color:var(--grey-light); text-decoration:none; transition:color 0.15s; }
+  .footer-col ul li a:hover { color:var(--cyan); }
+  .footer-bottom { border-top:1px solid var(--border); padding-top:22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+  .footer-bottom p { font-size:12px; color:var(--grey); }
+  .footer-soc { display:flex; gap:14px; }
+  .footer-soc a { color:var(--grey); text-decoration:none; font-size:12px; transition:color 0.15s; }
+  .footer-soc a:hover { color:var(--cyan); }
+
+  @media(max-width:640px) {
+    .nav-links { display:none; }
+    .error-main { padding:44px 20px; }
+    footer { padding:40px 16px 22px; }
+    .footer-top { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-circle"><img src="sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
+      <div>
+        <div class="logo-tagline">Sport Science Sorted</div>
+        <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Course Hubs</a></li>
+      <li><a href="student-hub.html">Student Hub</a></li>
+      <li><a href="teacher-hub.html">Teacher Hub</a></li>
+      <li><a href="az-library.html">A–Z Library</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="student-hub.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="error-main">
+  <div class="glow1"></div>
+  <div class="glow2"></div>
+  <div class="error-inner">
+    <img src="sss-hero-logo.png" alt="Simply Sport Science" class="error-mascot">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Offside! This Page Doesn't Exist</h1>
+    <p class="error-sub">The page you're looking for has either moved, been renamed, or never existed in the first place. Let's get you back into play.</p>
+    <div class="error-btns">
+      <a href="index.html" class="btn-primary">Back to Homepage</a>
+      <a href="courses.html" class="btn-secondary">Browse Course Hubs</a>
+    </div>
+    <div class="quick-links">
+      <a href="az-library.html">A–Z Library</a>
+      <a href="student-hub.html">Student Hub</a>
+      <a href="teacher-hub.html">Teacher Hub</a>
+      <a href="about.html#contact">Report a Broken Link</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="index.html" style="text-decoration:none;">
+          <div class="logo-circle" style="width:40px;height:40px;font-size:18px;"><img src="sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
+          <div>
+            <div class="logo-tagline">Sport Science Sorted</div>
+            <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+          </div>
+        </a>
+        <p>The ultimate sport science learning platform for students and teachers worldwide. Specification-led content for IB SEHS, A Level PE, BTEC Sport and GCSE PE.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Course Hubs</h5>
+        <ul>
+          <li><a href="ib-hub.html">IB Sport Science</a></li>
+          <li><a href="cambridge-hub.html">AS Level Sport &amp; PE</a></li>
+          <li><a href="btec-hub.html">BTEC Sport</a></li>
+          <li><a href="gcse-hub.html">GCSE PE</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="az-library.html">A–Z Library</a></li>
+          <li><a href="student-hub.html">Student Hub</a></li>
+          <li><a href="teacher-hub.html">Teacher Hub</a></li>
+          <li><a href="https://www.youtube.com/@SimplySportScience" target="_blank">YouTube Videos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>About</h5>
+        <ul>
+          <li><a href="about.html">About Simply Sport Science</a></li>
+          <li><a href="about.html#contact">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Simply Sport Science · simplysportscience.co.uk · Sport Science Sorted</p>
+      <div class="footer-soc">
+        <a href="https://www.youtube.com/@SimplySportScience" target="_blank">YouTube</a>
+        <a href="https://www.tiktok.com/@simplysportscienc" target="_blank">TikTok</a>
+        <a href="https://x.com/simplysportsci" target="_blank">X</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
