@@ -43,7 +43,10 @@
   .hero { background:linear-gradient(160deg,#0F172A 0%,#1a0a2e 45%,#180620 100%); padding:80px 24px 72px; text-align:center; position:relative; overflow:hidden; }
   .glow1 { position:absolute; top:-80px; left:-80px; width:500px; height:500px; background:radial-gradient(circle,rgba(107,33,212,0.22) 0%,transparent 70%); pointer-events:none; }
   .glow2 { position:absolute; bottom:-60px; right:-60px; width:400px; height:400px; background:radial-gradient(circle,rgba(192,38,211,0.18) 0%,transparent 70%); pointer-events:none; }
-  .hero-inner { position:relative; max-width:740px; margin:0 auto; }
+  .hero-side-logo { position:absolute; top:50%; left:28px; transform:translateY(-50%); width:260px; z-index:1; pointer-events:none; filter:drop-shadow(0 25px 50px rgba(107,33,212,0.45)) drop-shadow(0 0 45px rgba(192,38,211,0.25)); animation:heroLogoFloat 6s ease-in-out infinite; }
+  @keyframes heroLogoFloat { 0%,100% { transform:translateY(-50%) translateY(0); } 50% { transform:translateY(-50%) translateY(-14px); } }
+  @media(max-width:1450px) { .hero-side-logo { display:none; } }
+  .hero-inner { position:relative; max-width:740px; margin:0 auto; z-index:2; }
   .hero-badge { display:inline-block; background:rgba(107,33,212,0.2); border:1px solid rgba(107,33,212,0.45); color:var(--white); font-size:16px; font-weight:800; letter-spacing:3px; padding:12px 28px; border-radius:99px; margin-bottom:28px; text-transform:uppercase; }
   .hero h1 { font-size:clamp(48px,9vw,84px); font-weight:900; line-height:1.0; margin-bottom:22px; }
   .hero h1 .l1 { display:block; color:var(--white); }
@@ -186,7 +189,7 @@
 <nav>
   <div class="nav-inner">
     <a class="logo" href="index.html">
-      <div class="logo-circle"><img src="assets/logo/sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
+      <div class="logo-circle"><img src="sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
       <div>
         <div class="logo-tagline">Sport Science Sorted</div>
         <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
@@ -207,6 +210,7 @@
 <div class="hero">
   <div class="glow1"></div>
   <div class="glow2"></div>
+  <img src="sss-hero-logo.png" alt="Simply Sport Science" class="hero-side-logo">
   <div class="hero-inner">
     <div class="hero-badge">Sport Science Sorted</div>
     <h1>
@@ -270,7 +274,7 @@
     </div>
     <div class="course-grid">
       <a href="ib-hub.html" class="course-card c-ib">
-        <div class="avatar av-md" style="background:linear-gradient(135deg,#1565C0,#2979FF);"><img src="assets/logo/sss-icon.png" alt="Simply Sport Science" style="width:72%;height:72%;object-fit:contain;"></div>
+        <div class="avatar av-md" style="background:linear-gradient(135deg,#1565C0,#2979FF);"><img src="sss-icon.png" alt="Simply Sport Science" style="width:72%;height:72%;object-fit:contain;"></div>
         <div>
           <div class="course-qualifier">International Baccalaureate</div>
           <div class="course-name">IB Sport Science</div>
@@ -280,7 +284,7 @@
         <div class="course-meta"><span>📚 3 Themes</span><span>✅ Practice Checks</span><span>🎥 Videos</span></div>
       </a>
       <a href="cambridge-hub.html" class="course-card c-al">
-        <div class="avatar av-md" style="background:linear-gradient(135deg,#1D4ED8,#F97316);"><img src="assets/logo/sss-icon.png" alt="Simply Sport Science" style="width:72%;height:72%;object-fit:contain;"></div>
+        <div class="avatar av-md" style="background:linear-gradient(135deg,#1D4ED8,#F97316);"><img src="sss-icon.png" alt="Simply Sport Science" style="width:72%;height:72%;object-fit:contain;"></div>
         <div>
           <div class="course-qualifier">Cambridge International</div>
           <div class="course-name">AS Level Sport &amp; PE</div>
@@ -290,7 +294,7 @@
         <div class="course-meta"><span>📚 11 Topics</span><span>✅ Practice Checks</span><span>🎥 Videos</span></div>
       </a>
       <a href="btec-hub.html" class="course-card c-bt">
-        <div class="avatar av-md" style="background:linear-gradient(135deg,#065F46,#10B981);"><img src="assets/logo/sss-icon.png" alt="Simply Sport Science" style="width:72%;height:72%;object-fit:contain;"></div>
+        <div class="avatar av-md" style="background:linear-gradient(135deg,#065F46,#10B981);"><img src="sss-icon.png" alt="Simply Sport Science" style="width:72%;height:72%;object-fit:contain;"></div>
         <div>
           <div class="course-qualifier">Pearson International Level 3</div>
           <div class="course-name">BTEC Sport</div>
@@ -300,7 +304,7 @@
         <div class="course-meta"><span>📚 39 Units</span><span>📝 Assignment Help</span><span>🎥 Videos</span></div>
       </a>
       <a href="gcse-hub.html" class="course-card c-gc">
-        <div class="avatar av-md" style="background:linear-gradient(135deg,#92400E,#F59E0B);"><img src="assets/logo/sss-icon.png" alt="Simply Sport Science" style="width:72%;height:72%;object-fit:contain;"></div>
+        <div class="avatar av-md" style="background:linear-gradient(135deg,#92400E,#F59E0B);"><img src="sss-icon.png" alt="Simply Sport Science" style="width:72%;height:72%;object-fit:contain;"></div>
         <div>
           <div class="course-qualifier">Supporting Pathway</div>
           <div class="course-name">GCSE PE</div>
@@ -378,7 +382,7 @@
     </div>
     <div class="res-grid">
       <div class="res-card">
-        <div class="res-icon" style="background:rgba(239,68,68,0.14);"><img src="assets/logo/sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
+        <div class="res-icon" style="background:rgba(239,68,68,0.14);"><img src="sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
         <div>
           <h4>YouTube Video Lessons</h4>
           <p>40+ video explanations covering all major course topics. Watch, pause and replay at your own pace.</p>
@@ -386,7 +390,7 @@
         </div>
       </div>
       <div class="res-card">
-        <div class="res-icon" style="background:rgba(107,33,212,0.14);"><img src="assets/logo/sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
+        <div class="res-icon" style="background:rgba(107,33,212,0.14);"><img src="sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
         <div>
           <h4>Podcast Episodes</h4>
           <p>Sport science on the go. Listen to topic explanations and discussions wherever you are.</p>
@@ -394,7 +398,7 @@
         </div>
       </div>
       <div class="res-card">
-        <div class="res-icon" style="background:rgba(16,185,129,0.14);"><img src="assets/logo/sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
+        <div class="res-icon" style="background:rgba(16,185,129,0.14);"><img src="sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
         <div>
           <h4>Downloadable PDFs</h4>
           <p>Revision guides, topic summaries and key term sheets — ready to download, print and use.</p>
@@ -402,7 +406,7 @@
         </div>
       </div>
       <div class="res-card">
-        <div class="res-icon" style="background:rgba(245,158,11,0.14);"><img src="assets/logo/sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
+        <div class="res-icon" style="background:rgba(245,158,11,0.14);"><img src="sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
         <div>
           <h4>Lesson Presentations</h4>
           <p>Canva and PowerPoint presentations — for students to follow along and teachers to deliver in class.</p>
@@ -460,7 +464,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a class="logo" href="index.html" style="text-decoration:none;">
-          <div class="logo-circle" style="width:40px;height:40px;font-size:18px;"><img src="assets/logo/sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
+          <div class="logo-circle" style="width:40px;height:40px;font-size:18px;"><img src="sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
           <div>
             <div class="logo-tagline">Sport Science Sorted</div>
             <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
