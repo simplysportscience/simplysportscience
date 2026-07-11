@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Simply Sport Science | Sport Science Sorted</title>
+<meta name="description" content="Specification-led sport science learning for IB Sport Science, A Level PE, BTEC Sport and GCSE PE students and teachers."/>
+<style>
+  :root {
+    --purple: #6B21D4;
+    --purple-dark: #4C1397;
+    --purple-light: #9B59E8;
+    --pink: #C026D3;
+    --magenta: #E040FB;
+    --gold: #F59E0B;
+    --gold-light: #FCD34D;
+    --cyan: #22D3EE;
+    --navy: #0F172A;
+    --navy-mid: #1A2540;
+    --navy-card: #162032;
+    --white: #FFFFFF;
+    --grey: #94A3B8;
+    --grey-light: #CBD5E1;
+    --green: #10B981;
+    --border: #2D3F5E;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--navy); color:var(--white); font-family:'Segoe UI',system-ui,sans-serif; line-height:1.6; }
+
+  nav { background:rgba(15,23,42,0.97); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:100; backdrop-filter:blur(12px); }
+  .nav-inner { max-width:1200px; margin:0 auto; padding:0 24px; display:flex; align-items:center; justify-content:space-between; height:66px; gap:16px; }
+  .logo { display:flex; align-items:center; gap:10px; text-decoration:none; flex-shrink:0; }
+  .logo-circle { width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg,var(--purple),var(--pink),var(--gold)); display:flex; align-items:center; justify-content:center; box-shadow:0 0 18px rgba(107,33,212,0.5); flex-shrink:0; font-size:20px; }
+  .logo-tagline { font-size:9px; color:var(--gold); font-weight:700; letter-spacing:2.5px; text-transform:uppercase; }
+  .logo-name { font-size:14px; font-weight:900; }
+  .logo-name .c1 { color:var(--cyan); }
+  .logo-name .c2 { color:var(--white); }
+  .nav-links { display:flex; align-items:center; gap:2px; list-style:none; }
+  .nav-links a { color:var(--grey-light); text-decoration:none; font-size:13px; font-weight:600; padding:7px 11px; border-radius:7px; transition:all 0.2s; white-space:nowrap; }
+  .nav-links a:hover { color:var(--white); background:rgba(107,33,212,0.25); }
+  .nav-cta { background:linear-gradient(135deg,var(--purple),var(--pink)) !important; color:var(--white) !important; padding:8px 18px !important; border-radius:8px !important; margin-left:6px; }
+
+  .hero { background:linear-gradient(160deg,#0F172A 0%,#1a0a2e 45%,#180620 100%); padding:80px 24px 72px; text-align:center; position:relative; overflow:hidden; }
+  .glow1 { position:absolute; top:-80px; left:-80px; width:500px; height:500px; background:radial-gradient(circle,rgba(107,33,212,0.22) 0%,transparent 70%); pointer-events:none; }
+  .glow2 { position:absolute; bottom:-60px; right:-60px; width:400px; height:400px; background:radial-gradient(circle,rgba(192,38,211,0.18) 0%,transparent 70%); pointer-events:none; }
+  .hero-side-logo { position:absolute; top:50%; left:-90px; transform:translateY(-50%); width:520px; z-index:1; pointer-events:none; filter:drop-shadow(0 25px 50px rgba(107,33,212,0.45)) drop-shadow(0 0 45px rgba(192,38,211,0.25)); animation:heroLogoFloat 6s ease-in-out infinite; }
+  @keyframes heroLogoFloat { 0%,100% { transform:translateY(-50%) translateY(0); } 50% { transform:translateY(-50%) translateY(-14px); } }
+  @media(max-width:1620px) { .hero-side-logo { display:none; } }
+  .hero-inner { position:relative; max-width:740px; margin:0 auto; z-index:2; }
+  .hero-badge { display:inline-block; background:rgba(107,33,212,0.2); border:1px solid rgba(107,33,212,0.45); color:var(--white); font-size:16px; font-weight:800; letter-spacing:3px; padding:12px 28px; border-radius:99px; margin-bottom:28px; text-transform:uppercase; }
+  .hero h1 { font-size:clamp(48px,9vw,84px); font-weight:900; line-height:1.0; margin-bottom:22px; }
+  .hero h1 .l1 { display:block; color:var(--white); }
+  .hero h1 .l2 { display:block; background:linear-gradient(90deg,var(--purple-light),var(--magenta),var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+  .hero-sub { font-size:clamp(15px,2.5vw,18px); color:var(--grey-light); max-width:600px; margin:0 auto 40px; line-height:1.75; }
+  .hero-sub strong { color:var(--white); }
+  .hero-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .btn-primary { background:linear-gradient(135deg,var(--purple),var(--pink)); color:var(--white); border:none; border-radius:10px; padding:15px 30px; font-size:15px; font-weight:700; cursor:pointer; text-decoration:none; display:inline-block; box-shadow:0 4px 24px rgba(107,33,212,0.45); transition:all 0.2s; }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 8px 32px rgba(107,33,212,0.55); }
+  .btn-secondary { background:linear-gradient(135deg,var(--purple-dark),var(--purple)); color:var(--white); border:1px solid rgba(155,89,232,0.4); border-radius:10px; padding:15px 30px; font-size:15px; font-weight:700; cursor:pointer; text-decoration:none; display:inline-block; transition:all 0.2s; }
+  .btn-secondary:hover { transform:translateY(-2px); border-color:var(--purple-light); }
+
+  .pathway-split { background:var(--navy-mid); padding:56px 24px; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+  .pathway-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:20px; }
+  .pathway-card { border-radius:16px; padding:32px; border:1px solid transparent; transition:transform 0.2s; cursor:pointer; display:flex; flex-direction:column; gap:18px; justify-content:space-between; }
+  .pathway-card:hover { transform:translateY(-3px); }
+  .p-student { background:linear-gradient(135deg,rgba(107,33,212,0.18),rgba(34,211,238,0.08)); border-color:rgba(107,33,212,0.4); }
+  .p-teacher { background:linear-gradient(135deg,rgba(192,38,211,0.18),rgba(245,158,11,0.08)); border-color:rgba(192,38,211,0.4); }
+  .p-img { width:72px; height:72px; border-radius:50%; overflow:hidden; border:3px solid rgba(107,33,212,0.5); box-shadow:0 4px 20px rgba(107,33,212,0.3); flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:32px; }
+  .p-teacher .p-img { border-color:rgba(192,38,211,0.5); box-shadow:0 4px 20px rgba(192,38,211,0.3); background:linear-gradient(135deg,rgba(192,38,211,0.2),rgba(245,158,11,0.1)); }
+  .p-student .p-img { background:linear-gradient(135deg,rgba(107,33,212,0.2),rgba(34,211,238,0.1)); }
+  .pathway-label { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; margin-bottom:6px; }
+  .p-student .pathway-label { color:var(--cyan); }
+  .p-teacher .pathway-label { color:var(--gold); }
+  .pathway-card h3 { font-size:21px; font-weight:800; }
+  .pathway-card p { font-size:13px; color:var(--grey-light); line-height:1.65; }
+  .pathway-list { list-style:none; display:flex; flex-direction:column; gap:9px; flex:1; }
+  .pathway-list li { display:flex; align-items:center; gap:9px; font-size:13px; color:var(--grey-light); }
+  .dot { width:6px; height:6px; border-radius:50%; flex-shrink:0; }
+  .p-student .dot { background:var(--cyan); }
+  .p-teacher .dot { background:var(--gold); }
+  .pathway-btn { display:block; text-align:center; text-decoration:none; border-radius:9px; padding:13px 20px; font-size:14px; font-weight:700; border:none; cursor:pointer; transition:opacity 0.2s; margin-top:auto; }
+  .pathway-btn:hover { opacity:0.85; }
+  .btn-s { background:linear-gradient(135deg,var(--purple),var(--cyan)); color:#000; }
+  .btn-t { background:linear-gradient(135deg,var(--pink),var(--gold)); color:#000; }
+
+  section { padding:68px 24px; }
+  .section-inner { max-width:1100px; margin:0 auto; }
+  .section-header { text-align:center; margin-bottom:44px; }
+  .section-label { display:inline-block; font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+  .section-header h2 { font-size:clamp(22px,4vw,34px); font-weight:900; margin-bottom:10px; }
+  .section-header p { color:var(--grey-light); font-size:14px; max-width:520px; margin:0 auto; line-height:1.7; }
+  .divider { width:56px; height:3px; background:linear-gradient(90deg,var(--purple),var(--pink)); border-radius:2px; margin:14px auto 0; }
+
+  .courses-bg { background:var(--navy); }
+  .course-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:16px; }
+  .course-card { background:var(--navy-card); border-radius:14px; padding:26px 22px; border:1px solid var(--border); cursor:pointer; transition:all 0.25s; text-decoration:none; display:flex; flex-direction:column; gap:14px; position:relative; overflow:hidden; }
+  .course-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; border-radius:14px 14px 0 0; }
+  .course-card:hover { transform:translateY(-4px); }
+  .c-ib::before { background:linear-gradient(90deg,var(--purple),var(--cyan)); }
+  .c-ib:hover { box-shadow:0 8px 32px rgba(107,33,212,0.28); border-color:rgba(107,33,212,0.5); }
+  .c-al::before { background:linear-gradient(90deg,#3B82F6,var(--gold)); }
+  .c-al:hover { box-shadow:0 8px 32px rgba(59,130,246,0.28); border-color:rgba(59,130,246,0.4); }
+  .c-bt::before { background:linear-gradient(90deg,#10B981,#34D399); }
+  .c-bt:hover { box-shadow:0 8px 32px rgba(16,185,129,0.28); border-color:rgba(16,185,129,0.4); }
+  .c-gc::before { background:linear-gradient(90deg,var(--gold),var(--magenta)); }
+  .c-gc:hover { box-shadow:0 8px 32px rgba(245,158,11,0.22); border-color:rgba(245,158,11,0.35); }
+  .avatar { border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; flex-shrink:0; }
+  .av-md { width:60px; height:60px; font-size:26px; border:2px solid var(--border); }
+  .av-sm { width:72px; height:72px; font-size:26px; border:3px solid var(--purple); box-shadow:0 4px 18px rgba(107,33,212,0.4); }
+  .av-xl { width:180px; height:180px; font-size:72px; border:4px solid rgba(107,33,212,0.4); box-shadow:0 0 40px rgba(107,33,212,0.4); }
+  .course-qualifier { font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--grey); margin-bottom:3px; }
+  .course-name { font-size:17px; font-weight:900; color:var(--white); margin-bottom:6px; }
+  .course-desc { font-size:12px; color:var(--grey-light); line-height:1.55; flex:1; }
+  .course-meta { display:flex; gap:10px; flex-wrap:wrap; }
+  .course-meta span { font-size:11px; color:var(--grey); }
+  .course-status { display:inline-block; font-size:10px; font-weight:700; padding:3px 10px; border-radius:99px; margin-bottom:4px; }
+  .s-live { background:rgba(16,185,129,0.18); color:var(--green); border:1px solid rgba(16,185,129,0.35); }
+  .s-soon { background:rgba(245,158,11,0.18); color:var(--gold); border:1px solid rgba(245,158,11,0.35); }
+
+  .how-bg { background:var(--navy-mid); }
+  .steps-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; }
+  .step-card { background:var(--navy-card); border:1px solid var(--border); border-radius:14px; padding:30px 24px; text-align:center; }
+  .step-card h4 { font-size:15px; font-weight:800; margin-bottom:10px; margin-top:16px; }
+  .step-card p { font-size:12px; color:var(--grey-light); line-height:1.65; }
+
+  .az-bg { background:var(--navy); }
+  .az-box { background:linear-gradient(135deg,rgba(107,33,212,0.14),rgba(192,38,211,0.09)); border:1px solid rgba(107,33,212,0.35); border-radius:18px; padding:48px; display:grid; grid-template-columns:1fr auto; gap:40px; align-items:center; }
+  .az-box h3 { font-size:26px; font-weight:900; margin-bottom:12px; }
+  .az-box p { color:var(--grey-light); font-size:14px; line-height:1.7; margin-bottom:22px; }
+  .az-letters { display:flex; flex-wrap:wrap; gap:7px; margin-bottom:24px; }
+  .az-letters span { width:32px; height:32px; background:rgba(107,33,212,0.2); border:1px solid rgba(107,33,212,0.38); border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:var(--purple-light); cursor:pointer; transition:all 0.15s; }
+  .az-letters span:hover { background:var(--purple); color:var(--white); }
+
+  .res-bg { background:var(--navy-mid); }
+  .res-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:14px; }
+  .res-card { background:var(--navy-card); border:1px solid var(--border); border-radius:13px; padding:24px; display:flex; gap:16px; align-items:flex-start; transition:border-color 0.2s; cursor:pointer; }
+  .res-card:hover { border-color:var(--purple-light); }
+  .res-icon { width:46px; height:46px; border-radius:11px; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; }
+  .res-card h4 { font-size:14px; font-weight:800; margin-bottom:5px; }
+  .res-card p { font-size:12px; color:var(--grey-light); line-height:1.55; }
+  .res-tag { display:inline-block; font-size:10px; font-weight:700; padding:3px 9px; border-radius:5px; margin-top:8px; }
+
+  .nl-bg { background:linear-gradient(135deg,rgba(107,33,212,0.18),rgba(192,38,211,0.12)); border-top:1px solid rgba(107,33,212,0.3); border-bottom:1px solid rgba(107,33,212,0.3); }
+  .nl-inner { max-width:560px; margin:0 auto; text-align:center; }
+  .nl-inner h3 { font-size:26px; font-weight:900; margin-bottom:10px; }
+  .nl-inner p { color:var(--grey-light); font-size:14px; margin-bottom:26px; line-height:1.7; }
+  .nl-form { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
+  .nl-form input { flex:1; min-width:220px; background:rgba(255,255,255,0.07); border:1px solid var(--border); color:var(--white); padding:13px 16px; border-radius:9px; font-size:14px; outline:none; }
+  .nl-form input::placeholder { color:var(--grey); }
+  .nl-form input:focus { border-color:var(--purple-light); }
+  .nl-form button { background:linear-gradient(135deg,var(--purple),var(--pink)); color:var(--white); border:none; border-radius:9px; padding:13px 26px; font-size:14px; font-weight:700; cursor:pointer; }
+
+  .soc-bg { background:var(--navy); }
+  .soc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; }
+  .soc-card { background:var(--navy-card); border:1px solid var(--border); border-radius:13px; padding:22px; text-align:center; cursor:pointer; transition:all 0.2s; text-decoration:none; display:block; }
+  .soc-card:hover { transform:translateY(-2px); border-color:var(--purple-light); }
+  .soc-icon { font-size:28px; margin-bottom:9px; }
+  .soc-name { font-size:13px; font-weight:800; margin-bottom:4px; color:var(--white); }
+  .soc-handle { font-size:11px; color:var(--grey); }
+
+  footer { background:#080E1C; border-top:1px solid var(--border); padding:52px 24px 26px; }
+  .footer-inner { max-width:1100px; margin:0 auto; }
+  .footer-top { display:grid; grid-template-columns:1.6fr repeat(3,1fr); gap:36px; margin-bottom:44px; }
+  .footer-brand p { font-size:12px; color:var(--grey); line-height:1.75; margin-top:14px; max-width:260px; }
+  .footer-col h5 { font-size:10px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
+  .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:9px; }
+  .footer-col ul li a { font-size:13px; color:var(--grey-light); text-decoration:none; transition:color 0.15s; }
+  .footer-col ul li a:hover { color:var(--cyan); }
+  .footer-bottom { border-top:1px solid var(--border); padding-top:22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+  .footer-bottom p { font-size:12px; color:var(--grey); }
+  .footer-soc { display:flex; gap:14px; }
+  .footer-soc a { color:var(--grey); text-decoration:none; font-size:12px; transition:color 0.15s; }
+  .footer-soc a:hover { color:var(--cyan); }
+
+  @media(max-width:900px) { .footer-top { grid-template-columns:1fr 1fr; } }
+  @media(max-width:640px) {
+    .nav-links { display:none; }
+    .hero { padding:56px 16px 52px; }
+    .az-box { grid-template-columns:1fr; padding:28px 20px; }
+    .az-right { display:none; }
+    section { padding:52px 16px; }
+    footer { padding:40px 16px 22px; }
+    .footer-top { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-circle"><img src="sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
+      <div>
+        <div class="logo-tagline">Sport Science Sorted</div>
+        <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Course Hubs</a></li>
+      <li><a href="student-hub.html">Student Hub</a></li>
+      <li><a href="teacher-hub.html">Teacher Hub</a></li>
+      <li><a href="az-library.html">A–Z Library</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="student-hub.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="glow1"></div>
+  <div class="glow2"></div>
+  <img src="sss-hero-logo.png" alt="Simply Sport Science" class="hero-side-logo">
+  <div class="hero-inner">
+    <div class="hero-badge">Sport Science Sorted</div>
+    <h1>
+      <span class="l1">Simply Sport</span>
+      <span class="l2">Science.</span>
+    </h1>
+    <p class="hero-sub">
+      The ultimate resource for <strong>IB Sport Science</strong>, <strong>A Level PE</strong>, <strong>BTEC Sport</strong> and <strong>GCSE PE</strong>. Structured lessons, key terms, videos, practice checks and teacher resources — all in one place.
+    </p>
+    <div class="hero-btns">
+      <a href="courses.html" class="btn-primary">Explore Course Hubs</a>
+      <a href="az-library.html" class="btn-secondary">Browse the A–Z Library</a>
+    </div>
+  </div>
+</div>
+
+<div class="pathway-split">
+  <div class="pathway-inner">
+    <div class="pathway-card p-student">
+      <div class="p-img">🎓</div>
+      <div>
+        <div class="pathway-label">For Students</div>
+        <h3>Learn Your Course. Ace Your Exam.</h3>
+        <p>Structured lessons, key terms, video explanations and practice checks — all built around your exact course specification.</p>
+      </div>
+      <ul class="pathway-list">
+        <li><span class="dot"></span>Choose your course hub</li>
+        <li><span class="dot"></span>Work through structured topic lessons</li>
+        <li><span class="dot"></span>Test yourself with practice checks</li>
+        <li><span class="dot"></span>Search any term in the A–Z Library</li>
+        <li><span class="dot"></span>Watch video explanations on YouTube</li>
+      </ul>
+      <a href="student-hub.html" class="pathway-btn btn-s">Start Learning →</a>
+    </div>
+    <div class="pathway-card p-teacher">
+      <div class="p-img">👩‍🏫</div>
+      <div>
+        <div class="pathway-label">For Teachers</div>
+        <h3>Teach with Confidence. Save Time.</h3>
+        <p>Lesson sequences, teacher notes, discussion prompts, presentations and specification coverage tools — built for busy educators.</p>
+      </div>
+      <ul class="pathway-list">
+        <li><span class="dot"></span>Access course-specific teacher resources</li>
+        <li><span class="dot"></span>Download lesson presentations</li>
+        <li><span class="dot"></span>Use ready-made lesson starters</li>
+        <li><span class="dot"></span>Track specification coverage</li>
+        <li><span class="dot"></span>Share resources directly with students</li>
+      </ul>
+      <a href="teacher-hub.html" class="pathway-btn btn-t">Teacher Hub →</a>
+    </div>
+  </div>
+</div>
+
+<section class="courses-bg" id="courses">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Course Hubs</span>
+      <h2>Choose Your Course</h2>
+      <p>Select your qualification to access structured content, lessons, key terms and resources — all built around your specification</p>
+      <div class="divider"></div>
+    </div>
+    <div class="course-grid">
+      <a href="ib-hub.html" class="course-card c-ib">
+        <div class="avatar av-md" style="background:linear-gradient(135deg,#1565C0,#2979FF);"><img src="sss-icon.png" alt="Simply Sport Science" style="width:72%;height:72%;object-fit:contain;"></div>
+        <div>
+          <div class="course-qualifier">International Baccalaureate</div>
+          <div class="course-name">IB Sport Science</div>
+          <span class="course-status s-live">● Live</span>
+        </div>
+        <div class="course-desc">IB Sports, Exercise &amp; Health Science. Three major themes — Exercise Physiology, Biomechanics and Sport Psychology — plus Internal Assessment support.</div>
+        <div class="course-meta"><span>📚 3 Themes</span><span>✅ Practice Checks</span><span>🎥 Videos</span></div>
+      </a>
+      <a href="cambridge-hub.html" class="course-card c-al">
+        <div class="avatar av-md" style="background:linear-gradient(135deg,#1D4ED8,#F97316);"><img src="sss-icon.png" alt="Simply Sport Science" style="width:72%;height:72%;object-fit:contain;"></div>
+        <div>
+          <div class="course-qualifier">Cambridge International</div>
+          <div class="course-name">AS Level Sport &amp; PE</div>
+          <span class="course-status s-live">● Live</span>
+        </div>
+        <div class="course-desc">Cambridge International AS Level Sport &amp; Physical Education (8386). Anatomy, physiology, movement skills, tactics and sport in society.</div>
+        <div class="course-meta"><span>📚 11 Topics</span><span>✅ Practice Checks</span><span>🎥 Videos</span></div>
+      </a>
+      <a href="btec-hub.html" class="course-card c-bt">
+        <div class="avatar av-md" style="background:linear-gradient(135deg,#065F46,#10B981);"><img src="sss-icon.png" alt="Simply Sport Science" style="width:72%;height:72%;object-fit:contain;"></div>
+        <div>
+          <div class="course-qualifier">Pearson International Level 3</div>
+          <div class="course-name">BTEC Sport</div>
+          <span class="course-status s-live">● Live</span>
+        </div>
+        <div class="course-desc">Vocational sport science qualification. Unit-by-unit resources with learning aims, assignment support and distinction-standard guidance.</div>
+        <div class="course-meta"><span>📚 39 Units</span><span>📝 Assignment Help</span><span>🎥 Videos</span></div>
+      </a>
+      <a href="gcse-hub.html" class="course-card c-gc">
+        <div class="avatar av-md" style="background:linear-gradient(135deg,#92400E,#F59E0B);"><img src="sss-icon.png" alt="Simply Sport Science" style="width:72%;height:72%;object-fit:contain;"></div>
+        <div>
+          <div class="course-qualifier">Supporting Pathway</div>
+          <div class="course-name">GCSE PE</div>
+          <span class="course-status s-soon">◌ Coming Soon</span>
+        </div>
+        <div class="course-desc">Foundation revision platform covering applied anatomy, movement analysis, physical training, sport psychology and health &amp; wellbeing.</div>
+        <div class="course-meta"><span>📚 5 Topics</span><span>✅ Practice Checks</span><span>🎥 Videos</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="how-bg">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">How It Works</span>
+      <h2>Your Learning Journey</h2>
+      <p>A clear path from choosing your course to walking into your exam with confidence</p>
+      <div class="divider"></div>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="avatar av-sm" style="background:linear-gradient(135deg,var(--purple),var(--pink));margin:0 auto;">🎯</div>
+        <h4>Choose Your Course Hub</h4>
+        <p>Select your qualification and enter a specification-aligned course hub designed around your exact syllabus.</p>
+      </div>
+      <div class="step-card">
+        <div class="avatar av-sm" style="background:linear-gradient(135deg,#1D4ED8,var(--cyan));margin:0 auto;">📖</div>
+        <h4>Learn the Content</h4>
+        <p>Work through structured topic lessons with clear explanations, key terms, embedded videos and downloadable resources.</p>
+      </div>
+      <div class="step-card">
+        <div class="avatar av-sm" style="background:linear-gradient(135deg,#065F46,var(--green));margin:0 auto;">✅</div>
+        <h4>Test Your Understanding</h4>
+        <p>Complete practice checks after each topic. Get instant feedback and know exactly what to revise next.</p>
+      </div>
+      <div class="step-card">
+        <div class="avatar av-sm" style="background:linear-gradient(135deg,#92400E,var(--gold));margin:0 auto;">🔤</div>
+        <h4>Search the A–Z Library</h4>
+        <p>Look up any sport science term instantly. Every definition includes examples, course tags and links to the relevant lesson.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="az-bg" id="az">
+  <div class="section-inner">
+    <div class="az-box">
+      <div>
+        <span class="section-label">A–Z Sport Science Library</span>
+        <h3>Every Term. Every Course. Explained.</h3>
+        <p>Sport science terms defined and explained — with sporting examples, course tags and links to the relevant lesson. The most comprehensive sport science glossary online.</p>
+        <div class="az-letters">
+          <span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span>
+          <span>H</span><span>I</span><span>J</span><span>K</span><span>L</span><span>M</span><span>N</span>
+          <span>O</span><span>P</span><span>Q</span><span>R</span><span>S</span><span>T</span><span>U</span>
+          <span>V</span><span>W</span><span>X</span><span>Y</span><span>Z</span>
+        </div>
+        <a href="az-library.html" class="btn-primary">Explore the A–Z Library →</a>
+      </div>
+      <div class="az-right">
+        <div class="avatar av-xl" style="background:linear-gradient(135deg,var(--purple-dark),var(--pink),var(--gold));">🔤</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="res-bg">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Learning Resources</span>
+      <h2>More Ways to Learn</h2>
+      <p>Simply Sport Science connects lessons, videos, podcasts and downloadable resources into one joined-up learning experience</p>
+      <div class="divider"></div>
+    </div>
+    <div class="res-grid">
+      <div class="res-card">
+        <div class="res-icon" style="background:rgba(239,68,68,0.14);"><img src="sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
+        <div>
+          <h4>YouTube Video Lessons</h4>
+          <p>40+ video explanations covering all major course topics. Watch, pause and replay at your own pace.</p>
+          <span class="res-tag" style="background:rgba(239,68,68,0.14);color:#F87171;">40+ Videos</span>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="res-icon" style="background:rgba(107,33,212,0.14);"><img src="sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
+        <div>
+          <h4>Podcast Episodes</h4>
+          <p>Sport science on the go. Listen to topic explanations and discussions wherever you are.</p>
+          <span class="res-tag" style="background:rgba(107,33,212,0.14);color:var(--purple-light);">Spotify &amp; Apple</span>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="res-icon" style="background:rgba(16,185,129,0.14);"><img src="sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
+        <div>
+          <h4>Downloadable PDFs</h4>
+          <p>Revision guides, topic summaries and key term sheets — ready to download, print and use.</p>
+          <span class="res-tag" style="background:rgba(16,185,129,0.14);color:var(--green);">Revision Resources</span>
+        </div>
+      </div>
+      <div class="res-card">
+        <div class="res-icon" style="background:rgba(245,158,11,0.14);"><img src="sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
+        <div>
+          <h4>Lesson Presentations</h4>
+          <p>Canva and PowerPoint presentations — for students to follow along and teachers to deliver in class.</p>
+          <span class="res-tag" style="background:rgba(245,158,11,0.14);color:var(--gold);">Canva &amp; PowerPoint</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="nl-bg">
+  <div class="section-inner">
+    <div class="nl-inner">
+      <span class="section-label">Stay Updated</span>
+      <h3>Get New Sport Science Content First</h3>
+      <p>New lessons, resources and videos delivered straight to your inbox.</p>
+      <div class="nl-form">
+        <input type="email" placeholder="Enter your email address"/>
+        <button>Subscribe →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="soc-bg">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-label">Find Us Online</span>
+      <h2>Simply Sport Science Community</h2>
+      <p>Follow us for sport science content, exam tips and new resource alerts</p>
+      <div class="divider"></div>
+    </div>
+    <div class="soc-grid">
+      <a href="https://www.youtube.com/@SimplySportScience" class="soc-card" target="_blank">
+        <div class="soc-icon">▶️</div>
+        <div class="soc-name">YouTube</div>
+        <div class="soc-handle">@SimplySportScience</div>
+      </a>
+      <a href="https://www.tiktok.com/@simplysportscienc" class="soc-card" target="_blank">
+        <div class="soc-icon">🎵</div>
+        <div class="soc-name">TikTok</div>
+        <div class="soc-handle">@simplysportscienc</div>
+      </a>
+      <a href="https://x.com/simplysportsci" class="soc-card" target="_blank">
+        <div class="soc-icon">✖️</div>
+        <div class="soc-name">X / Twitter</div>
+        <div class="soc-handle">@simplysportsci</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="index.html" style="text-decoration:none;">
+          <div class="logo-circle" style="width:40px;height:40px;font-size:18px;"><img src="sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
+          <div>
+            <div class="logo-tagline">Sport Science Sorted</div>
+            <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+          </div>
+        </a>
+        <p>The ultimate sport science learning platform for students and teachers worldwide. Specification-led content for IB SEHS, A Level PE, BTEC Sport and GCSE PE.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Course Hubs</h5>
+        <ul>
+          <li><a href="ib-hub.html">IB Sport Science</a></li>
+          <li><a href="cambridge-hub.html">AS Level Sport &amp; PE</a></li>
+          <li><a href="btec-hub.html">BTEC Sport</a></li>
+          <li><a href="gcse-hub.html">GCSE PE</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="az-library.html">A–Z Library</a></li>
+          <li><a href="student-hub.html">Student Hub</a></li>
+          <li><a href="teacher-hub.html">Teacher Hub</a></li>
+          <li><a href="https://www.youtube.com/@SimplySportScience" target="_blank">YouTube Videos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>About</h5>
+        <ul>
+          <li><a href="about.html">About Simply Sport Science</a></li>
+          <li><a href="about.html#contact">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Simply Sport Science · simplysportscience.co.uk · Sport Science Sorted</p>
+      <div class="footer-soc">
+        <a href="https://www.youtube.com/@SimplySportScience" target="_blank">YouTube</a>
+        <a href="https://www.tiktok.com/@simplysportscienc" target="_blank">TikTok</a>
+        <a href="https://x.com/simplysportsci" target="_blank">X</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
