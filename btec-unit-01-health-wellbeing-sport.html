@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Health, Wellbeing and Sport | BTEC Sport | Simply Sport Science</title>
+<meta name="description" content="Pearson BTEC International Level 3 Sport — Unit 1: Health, Wellbeing and Sport. The importance of physical activity, physical health, mental health and social wellbeing, and health screening."/>
+<style>
+  :root{
+    --purple:#6B21D4;--purple-dark:#4C1397;--purple-light:#9B59E8;
+    --pink:#C026D3;--magenta:#E040FB;--gold:#F59E0B;--gold-light:#FCD34D;
+    --cyan:#22D3EE;--navy:#0F172A;--navy-mid:#1A2540;--navy-card:#162032;
+    --white:#FFFFFF;--grey:#94A3B8;--grey-light:#CBD5E1;
+    --green:#10B981;--border:#2D3F5E;--orange:#F97316;
+    --btec:#16A34A;--btec-dark:#14532D;--btec-light:#86EFAC;--btec-mid:#22C55E;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--navy);color:var(--white);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;}
+  nav{background:rgba(15,23,42,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px;}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+  .logo-circle{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--pink),var(--gold));display:flex;align-items:center;justify-content:center;box-shadow:0 0 18px rgba(107,33,212,0.5);flex-shrink:0;font-size:20px;}
+  .logo-tagline{font-size:9px;color:var(--gold);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;}
+  .logo-name{font-size:14px;font-weight:900;}
+  .logo-name .c1{color:var(--cyan);}.logo-name .c2{color:var(--white);}
+  .nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+  .nav-links a{color:var(--grey-light);text-decoration:none;font-size:13px;font-weight:600;padding:7px 11px;border-radius:7px;transition:all 0.2s;white-space:nowrap;}
+  .nav-links a:hover{color:var(--white);background:rgba(107,33,212,0.25);}
+  .nav-cta{background:linear-gradient(135deg,var(--purple),var(--pink))!important;color:var(--white)!important;padding:8px 18px!important;border-radius:8px!important;margin-left:6px;}
+  .breadcrumb{font-size:12px;color:var(--grey);padding:10px 24px;background:var(--navy-mid);border-bottom:1px solid var(--border);}
+  .breadcrumb a{color:var(--grey-light);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--btec-light);}
+  .breadcrumb span{color:var(--btec-light);margin:0 6px;}
+
+  .lesson-hero{background:linear-gradient(160deg,#0F172A 0%,#0a1f14 50%,#0d2818 100%);padding:44px 24px 38px;border-bottom:1px solid var(--border);}
+  .lesson-hero-inner{max-width:900px;margin:0 auto;}
+  .lesson-eyebrow{display:flex;gap:8px;align-items:center;margin-bottom:16px;flex-wrap:wrap;}
+  .unit-chip{font-size:11px;font-weight:700;padding:4px 12px;border-radius:99px;background:rgba(22,163,74,0.15);border:1px solid rgba(22,163,74,0.4);color:var(--btec-light);}
+  .glh-chip{font-size:11px;font-weight:700;padding:4px 12px;border-radius:99px;background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--grey-light);}
+  .type-chip-mandatory{font-size:11px;font-weight:700;padding:4px 12px;border-radius:99px;background:rgba(239,68,68,0.15);color:#F87171;border:1px solid rgba(239,68,68,0.3);}
+  .type-chip-set{font-size:11px;font-weight:700;padding:4px 12px;border-radius:99px;background:rgba(245,158,11,0.15);color:var(--gold);border:1px solid rgba(245,158,11,0.3);}
+  .lesson-hero h1{font-size:clamp(24px,4vw,36px);font-weight:900;margin-bottom:10px;}
+  .lesson-hook{font-size:14px;color:var(--grey-light);line-height:1.7;max-width:660px;}
+
+  .lesson-inner{max-width:900px;margin:0 auto;padding:40px 24px 72px;}
+
+  .aims-box{background:linear-gradient(135deg,rgba(22,163,74,0.1),rgba(34,211,238,0.06));border:1px solid rgba(22,163,74,0.3);border-radius:14px;padding:22px 24px;margin-bottom:36px;}
+  .aims-box h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--btec-light);margin-bottom:14px;}
+  .aim-row{display:grid;grid-template-columns:32px 1fr;gap:4px 12px;font-size:13px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);align-items:start;}
+  .aim-row:last-child{border-bottom:none;}
+  .aim-letter{width:26px;height:26px;border-radius:7px;background:rgba(22,163,74,0.2);border:1px solid rgba(22,163,74,0.4);color:var(--btec-light);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;}
+  .aim-text{color:var(--grey-light);line-height:1.6;padding-top:3px;}
+
+  .key-terms-box{background:var(--navy-card);border:1px solid var(--border);border-radius:14px;padding:22px 24px;margin-bottom:36px;}
+  .key-terms-box h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--btec-light);margin-bottom:14px;}
+  .term-row{display:grid;grid-template-columns:150px 1fr;gap:2px 14px;font-size:13px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .term-row:last-child{border-bottom:none;}
+  .term-name{font-weight:700;color:var(--white);}
+  .term-def{color:var(--grey-light);line-height:1.6;}
+
+  .content-section{margin-bottom:30px;}
+  .content-section h2{font-size:17px;font-weight:800;margin-bottom:4px;padding-bottom:8px;border-bottom:2px solid var(--border);display:flex;align-items:center;gap:9px;}
+  .content-section h2 .aim-badge{width:24px;height:24px;border-radius:6px;background:rgba(22,163,74,0.2);border:1px solid rgba(22,163,74,0.4);color:var(--btec-light);font-size:11px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .content-section p{font-size:14px;color:var(--grey-light);line-height:1.8;margin-bottom:12px;}
+  .content-section ul,.content-section ol{margin:0 0 12px 20px;}
+  .content-section li{font-size:14px;color:var(--grey-light);line-height:1.8;margin-bottom:6px;}
+  .content-section strong{color:var(--white);}
+
+  .es-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px;}
+  .es-table th{text-align:left;padding:10px 12px;background:var(--navy-card);color:var(--btec-light);font-size:11px;text-transform:uppercase;letter-spacing:0.5px;border-bottom:2px solid var(--border);}
+  .es-table td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--grey-light);}
+  .es-table tr:last-child td{border-bottom:none;}
+
+  .assign-tip{background:rgba(245,158,11,0.08);border-left:3px solid var(--gold);border-radius:8px;padding:14px 18px;margin:18px 0;}
+  .assign-tip p{font-size:13px;color:var(--grey-light);line-height:1.7;margin:0;}
+  .assign-tip strong{color:var(--gold-light);}
+
+  .grading-heading{font-size:18px;font-weight:800;margin-bottom:6px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+  .grading-sub{font-size:13px;color:var(--grey);margin-bottom:16px;}
+  .grade-card{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:2px;margin-bottom:12px;}
+  .grade-card summary{font-size:13px;font-weight:700;padding:14px 16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+  .grade-card summary::-webkit-details-marker{display:none;}
+  .grade-tag{font-size:10px;font-weight:800;padding:3px 9px;border-radius:99px;flex-shrink:0;}
+  .gt-pass{background:rgba(148,163,184,0.15);color:var(--grey-light);border:1px solid rgba(148,163,184,0.3);}
+  .gt-merit{background:rgba(41,121,255,0.15);color:#93C5FD;border:1px solid rgba(41,121,255,0.3);}
+  .gt-distinction{background:rgba(245,158,11,0.15);color:var(--gold);border:1px solid rgba(245,158,11,0.3);}
+  .pc-plus{color:var(--btec-light);font-size:18px;flex-shrink:0;margin-left:auto;}
+  .grade-card .pc-answer{padding:0 16px 16px;font-size:13px;color:var(--grey-light);line-height:1.75;border-top:1px solid var(--border);margin-top:2px;padding-top:12px;}
+  .grade-card .pc-answer strong{color:var(--white);}
+  .grade-card .pc-answer ul{margin:8px 0 0 18px;}
+  .grade-card .pc-answer li{margin-bottom:5px;}
+
+  .video-slot{background:var(--navy-card);border:1px dashed var(--border);border-radius:14px;padding:30px;text-align:center;margin:8px 0 32px;}
+  .video-slot p{font-size:13px;color:var(--grey);}
+
+  .lesson-nav-bottom{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:44px;padding-top:24px;border-top:1px solid var(--border);}
+  .lesson-nav-bottom a{font-size:13px;font-weight:700;color:var(--btec-light);text-decoration:none;padding:11px 18px;border:1px solid var(--border);border-radius:9px;transition:all 0.2s;}
+  .lesson-nav-bottom a:hover{border-color:var(--btec-light);background:rgba(22,163,74,0.08);}
+
+  footer{background:#080E1C;border-top:1px solid var(--border);padding:52px 24px 26px;}
+  .footer-inner{max-width:1100px;margin:0 auto;}
+  .footer-top{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:36px;margin-bottom:44px;}
+  .footer-brand p{font-size:12px;color:var(--grey);line-height:1.75;margin-top:14px;max-width:260px;}
+  .footer-col h5{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+  .footer-col ul li a{font-size:13px;color:var(--grey-light);text-decoration:none;transition:color 0.15s;}
+  .footer-col ul li a:hover{color:var(--cyan);}
+  .footer-bottom{border-top:1px solid var(--border);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+  .footer-bottom p{font-size:12px;color:var(--grey);}
+  .footer-soc{display:flex;gap:14px;}
+  .footer-soc a{color:var(--grey);text-decoration:none;font-size:12px;transition:color 0.15s;}
+  .footer-soc a:hover{color:var(--cyan);}
+
+  @media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;}}
+  @media(max-width:640px){
+    .nav-links{display:none;}
+    .term-row{grid-template-columns:1fr;}
+    .es-table{font-size:12px;}
+    footer{padding:40px 16px 22px;}
+    .footer-top{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-circle">🏃</div>
+      <div>
+        <div class="logo-tagline">Sport Science Sorted</div>
+        <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="courses.html">Course Hubs</a></li>
+      <li><a href="student-hub.html">Student Hub</a></li>
+      <li><a href="teacher-hub.html">Teacher Hub</a></li>
+      <li><a href="az-library.html">A–Z Library</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="student-hub.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div style="max-width:1100px;margin:0 auto;">
+    <a href="index.html">Home</a><span>›</span><a href="courses.html">Course Hubs</a><span>›</span><a href="btec-hub.html">BTEC Sport</a><span>›</span>Unit 1: Health, Wellbeing and Sport
+  </div>
+</div>
+
+<div class="lesson-hero">
+  <div class="lesson-hero-inner">
+    <div class="lesson-eyebrow">
+      <span class="unit-chip">Unit 1</span>
+      <span class="type-chip-set">Set Assignment</span>
+      <span class="glh-chip">⏱ 90 GLH</span>
+    </div>
+    <h1>Health, Wellbeing and Sport</h1>
+    <p class="lesson-hook">Why sport and physical activity matter for both body and mind — and how to properly screen, interpret and feed back on someone's health status.</p>
+  </div>
+</div>
+
+<div class="lesson-inner">
+
+  <div class="aims-box">
+    <h3>Learning Aims</h3>
+    <div class="aim-row"><span class="aim-letter">A</span><span class="aim-text">Examine the importance of physical activity and sport</span></div>
+    <div class="aim-row"><span class="aim-letter">B</span><span class="aim-text">Investigate the importance of physical health</span></div>
+    <div class="aim-row"><span class="aim-letter">C</span><span class="aim-text">Explore mental health and social wellbeing</span></div>
+    <div class="aim-row"><span class="aim-letter">D</span><span class="aim-text">Undertake health and wellbeing screening and provide feedback</span></div>
+
+  </div>
+
+  <div class="key-terms-box">
+    <h3>Key Terms</h3>
+    <div class="term-row"><span class="term-name">Physical Recreation</span><span class="term-def">Activity done in leisure time for enjoyment, e.g. walking or cycling.</span></div>
+    <div class="term-row"><span class="term-name">Physical Health</span><span class="term-def">The ability of the body to function effectively.</span></div>
+    <div class="term-row"><span class="term-name">Mental Health</span><span class="term-def">Emotional wellbeing and resilience to adversity.</span></div>
+    <div class="term-row"><span class="term-name">Normative Data</span><span class="term-def">Population benchmarks used to judge whether a test result is typical or a cause for concern.</span></div>
+    <div class="term-row"><span class="term-name">Health Screening</span><span class="term-def">A structured process of testing and questioning used to assess someone's current health status.</span></div>
+
+  </div>
+
+  <div class="content-section">
+    <h2><span class="aim-badge">A</span> The Importance of Physical Activity and Sport</h2>
+<p>Active pursuits fall into several categories: <strong>sport</strong> (competitive activity using skills and tactics), <strong>physical recreation</strong> (leisure activity like walking or cycling), <strong>outdoor activities</strong> (e.g. climbing, kayaking), <strong>physical education</strong> (curriculum-based activity), and <strong>physical fitness</strong> (activity aimed at improving fitness, e.g. resistance training, yoga).</p>
+<p>Different participant groups — young people, older adults, people with a disability or medical condition, those at risk of social isolation — benefit differently from these activities, both physically (heart health, healthy body composition, muscular strength) and mentally (self-esteem, reduced loneliness, improved social wellbeing).</p>
+<p>Organisations provide sport and physical activity for social, financial, environmental and historical reasons — from improving community health and reducing crime, to generating revenue and preserving green space for recreation.</p>
+  </div>
+
+  <div class="content-section">
+    <h2><span class="aim-badge">B</span> The Importance of Physical Health</h2>
+<p>Physical health is the ability of the body to function effectively — moving freely, managing daily tasks, and being free of unexplained pain. It's affected by activity levels, diet, sleep, stress, smoking and alcohol use, among other factors.</p>
+<p>Physical health is typically benchmarked using health monitoring tests with recognised normative data: <strong>blood pressure</strong>, <strong>resting heart rate</strong>, and <strong>body composition</strong> measures such as BMI or bioelectrical impedance.</p>
+    <div class="assign-tip">
+      <p><strong>Assignment tip:</strong> When assessing your own or a client's physical health, always compare the result against recognised normative data, not just your own opinion of whether it "seems okay" — that comparison is exactly what separates a Pass-level description from a Merit-level analysis.</p>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2><span class="aim-badge">C</span> Mental Health and Social Wellbeing</h2>
+<p>Mental health is emotional wellbeing and resilience to adversity; social wellbeing is the ability to function in society and form relationships. Both can be affected by factors such as bereavement, long-term stress, social isolation, or a long-term physical health condition.</p>
+<p>Common signs of poor mental health and social wellbeing include reduced motivation, difficulty in personal relationships, increased irritability, and changes to sleep or appetite. Wellbeing can be measured using recognised scales, structured conversation with health professionals, or observed lifestyle indicators such as emotional resilience and social interactivity.</p>
+  </div>
+
+  <div class="content-section">
+    <h2><span class="aim-badge">D</span> Health and Wellbeing Screening</h2>
+<p>Effective screening starts with building rapport and communicating clearly and sensitively with a client, since health questions can be personal. Testing should follow correct protocols and maintain the client's dignity throughout. Results should always be interpreted against normative data or accepted health ranges, before identifying practical strategies to improve health status — and feeding this back constructively, highlighting strengths as well as areas for improvement.</p>
+  </div>
+
+
+
+  <div class="video-slot">
+    <p>🎥 Video walkthrough — add your embed here</p>
+  </div>
+
+  <div class="grading-heading">Grading Checklist</div>
+  <p class="grading-sub">What Pass, Merit and Distinction actually look like for this unit</p>
+
+  <details class="grade-card">
+    <summary>1. Explain the different types of physical activity provided in a local area and their benefits. <span class="grade-tag gt-pass">Pass</span><span class="pc-plus">+</span></summary>
+    <div class="pc-answer">
+      <strong>What this looks like:</strong>
+      <ul>
+        <li>Identify at least one example from each category — sport, physical recreation, outdoor activity, PE, physical fitness.</li>
+        <li>Link each to a specific physical or mental health benefit, not just a general statement that "exercise is good for you."</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="grade-card">
+    <summary>2. Analyse how different activities can benefit different groups of participants in a local area. <span class="grade-tag gt-merit">Merit</span><span class="pc-plus">+</span></summary>
+    <div class="pc-answer">
+      <strong>What this looks like:</strong>
+      <ul>
+        <li>Go beyond describing benefits in general — connect specific activities to specific participant groups.</li>
+        <li>Explain why that particular activity suits that particular group (e.g. low-impact activity for older adults, social team sport for those at risk of isolation).</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="grade-card">
+    <summary>3. Evaluate the reasons for providing different activities in a local area, recommending ways to engage more participants. <span class="grade-tag gt-distinction">Distinction</span><span class="pc-plus">+</span></summary>
+    <div class="pc-answer">
+      <strong>What this looks like:</strong>
+      <ul>
+        <li>Weigh up the social, financial, environmental and historical reasons for provision, rather than just listing them.</li>
+        <li>Base recommendations on a genuine gap or weakness you've identified in current local provision — vague, generic suggestions won't reach Distinction standard.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="grade-card">
+    <summary>4. Use national physical health benchmarks to assess your own physical health. <span class="grade-tag gt-pass">Pass</span><span class="pc-plus">+</span></summary>
+    <div class="pc-answer">
+      <strong>What this looks like:</strong>
+      <ul>
+        <li>Carry out the specified health monitoring tests correctly.</li>
+        <li>Record your results and state the relevant normative data range for comparison.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="grade-card">
+    <summary>5. Analyse your own physical and mental health against national normative data, identifying strengths and areas for improvement. <span class="grade-tag gt-merit">Merit</span><span class="pc-plus">+</span></summary>
+    <div class="pc-answer">
+      <strong>What this looks like:</strong>
+      <ul>
+        <li>Don't just state the numbers — explain what each result means for your health.</li>
+        <li>Identify specific, evidenced strengths and specific, evidenced areas for improvement, not a generic "I should exercise more."</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="grade-card">
+    <summary>6. Evaluate your own current physical and mental health, including the potential impact if no improvements are made. <span class="grade-tag gt-distinction">Distinction</span><span class="pc-plus">+</span></summary>
+    <div class="pc-answer">
+      <strong>What this looks like:</strong>
+      <ul>
+        <li>Discuss realistic consequences of not addressing identified areas for improvement — this is what distinguishes evaluation from analysis.</li>
+        <li>Where relevant, link consequences specifically to performance, daily life or long-term health, not just a vague "it would be bad."</li>
+      </ul>
+    </div>
+  </details>
+
+
+
+  <div class="lesson-nav-bottom">
+    <a href="btec-hub.html">← Back to Unit Library</a>
+    <a href="btec-unit-02-careers-sport-active-leisure.html">Next: Unit 2 — Careers in the Sport and Active Leisure Industry →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="index.html" style="text-decoration:none;">
+          <div class="logo-circle" style="width:40px;height:40px;font-size:18px;">🏃</div>
+          <div>
+            <div class="logo-tagline">Sport Science Sorted</div>
+            <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+          </div>
+        </a>
+        <p>The ultimate sport science learning platform for students and teachers worldwide. Specification-led content for IB SEHS, A Level PE, BTEC Sport and GCSE PE.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Course Hubs</h5>
+        <ul>
+          <li><a href="ib-hub.html">IB Sport Science</a></li>
+          <li><a href="cambridge-hub.html">AS Level Sport &amp; PE</a></li>
+          <li><a href="btec-hub.html">BTEC Sport</a></li>
+          <li><a href="gcse-hub.html">GCSE PE</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="az-library.html">A–Z Library</a></li>
+          <li><a href="student-hub.html">Student Hub</a></li>
+          <li><a href="teacher-hub.html">Teacher Hub</a></li>
+          <li><a href="https://www.youtube.com/@SimplySportScience" target="_blank">YouTube Videos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>About</h5>
+        <ul>
+          <li><a href="about.html">About Simply Sport Science</a></li>
+          <li><a href="about.html#contact">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Simply Sport Science · simplysportscience.co.uk · Sport Science Sorted</p>
+      <div class="footer-soc">
+        <a href="https://www.youtube.com/@SimplySportScience" target="_blank">YouTube</a>
+        <a href="https://www.tiktok.com/@simplysportscienc" target="_blank">TikTok</a>
+        <a href="https://x.com/simplysportsci" target="_blank">X</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

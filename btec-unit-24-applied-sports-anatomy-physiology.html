@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Applied Sports Anatomy and Physiology | BTEC Sport | Simply Sport Science</title>
+<meta name="description" content="Pearson BTEC International Level 3 Sport — Unit 24: Applied Sports Anatomy and Physiology. Lever systems, energy system demands, and analysing how body systems support a selected sport."/>
+<style>
+  :root{
+    --purple:#6B21D4;--purple-dark:#4C1397;--purple-light:#9B59E8;
+    --pink:#C026D3;--magenta:#E040FB;--gold:#F59E0B;--gold-light:#FCD34D;
+    --cyan:#22D3EE;--navy:#0F172A;--navy-mid:#1A2540;--navy-card:#162032;
+    --white:#FFFFFF;--grey:#94A3B8;--grey-light:#CBD5E1;
+    --green:#10B981;--border:#2D3F5E;--orange:#F97316;
+    --btec:#16A34A;--btec-dark:#14532D;--btec-light:#86EFAC;--btec-mid:#22C55E;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--navy);color:var(--white);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;}
+  nav{background:rgba(15,23,42,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:66px;gap:16px;}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+  .logo-circle{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--pink),var(--gold));display:flex;align-items:center;justify-content:center;box-shadow:0 0 18px rgba(107,33,212,0.5);flex-shrink:0;font-size:20px;}
+  .logo-tagline{font-size:9px;color:var(--gold);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;}
+  .logo-name{font-size:14px;font-weight:900;}
+  .logo-name .c1{color:var(--cyan);}.logo-name .c2{color:var(--white);}
+  .nav-links{display:flex;align-items:center;gap:2px;list-style:none;}
+  .nav-links a{color:var(--grey-light);text-decoration:none;font-size:13px;font-weight:600;padding:7px 11px;border-radius:7px;transition:all 0.2s;white-space:nowrap;}
+  .nav-links a:hover{color:var(--white);background:rgba(107,33,212,0.25);}
+  .nav-cta{background:linear-gradient(135deg,var(--purple),var(--pink))!important;color:var(--white)!important;padding:8px 18px!important;border-radius:8px!important;margin-left:6px;}
+  .breadcrumb{font-size:12px;color:var(--grey);padding:10px 24px;background:var(--navy-mid);border-bottom:1px solid var(--border);}
+  .breadcrumb a{color:var(--grey-light);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--btec-light);}
+  .breadcrumb span{color:var(--btec-light);margin:0 6px;}
+
+  .lesson-hero{background:linear-gradient(160deg,#0F172A 0%,#0a1f14 50%,#0d2818 100%);padding:44px 24px 38px;border-bottom:1px solid var(--border);}
+  .lesson-hero-inner{max-width:900px;margin:0 auto;}
+  .lesson-eyebrow{display:flex;gap:8px;align-items:center;margin-bottom:16px;flex-wrap:wrap;}
+  .unit-chip{font-size:11px;font-weight:700;padding:4px 12px;border-radius:99px;background:rgba(22,163,74,0.15);border:1px solid rgba(22,163,74,0.4);color:var(--btec-light);}
+  .glh-chip{font-size:11px;font-weight:700;padding:4px 12px;border-radius:99px;background:rgba(255,255,255,0.06);border:1px solid var(--border);color:var(--grey-light);}
+  .type-chip-mandatory{font-size:11px;font-weight:700;padding:4px 12px;border-radius:99px;background:rgba(239,68,68,0.15);color:#F87171;border:1px solid rgba(239,68,68,0.3);}
+  .type-chip-set{font-size:11px;font-weight:700;padding:4px 12px;border-radius:99px;background:rgba(245,158,11,0.15);color:var(--gold);border:1px solid rgba(245,158,11,0.3);}
+  .lesson-hero h1{font-size:clamp(24px,4vw,36px);font-weight:900;margin-bottom:10px;}
+  .lesson-hook{font-size:14px;color:var(--grey-light);line-height:1.7;max-width:660px;}
+
+  .lesson-inner{max-width:900px;margin:0 auto;padding:40px 24px 72px;}
+
+  .aims-box{background:linear-gradient(135deg,rgba(22,163,74,0.1),rgba(34,211,238,0.06));border:1px solid rgba(22,163,74,0.3);border-radius:14px;padding:22px 24px;margin-bottom:36px;}
+  .aims-box h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--btec-light);margin-bottom:14px;}
+  .aim-row{display:grid;grid-template-columns:32px 1fr;gap:4px 12px;font-size:13px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);align-items:start;}
+  .aim-row:last-child{border-bottom:none;}
+  .aim-letter{width:26px;height:26px;border-radius:7px;background:rgba(22,163,74,0.2);border:1px solid rgba(22,163,74,0.4);color:var(--btec-light);font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;}
+  .aim-text{color:var(--grey-light);line-height:1.6;padding-top:3px;}
+
+  .key-terms-box{background:var(--navy-card);border:1px solid var(--border);border-radius:14px;padding:22px 24px;margin-bottom:36px;}
+  .key-terms-box h3{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--btec-light);margin-bottom:14px;}
+  .term-row{display:grid;grid-template-columns:150px 1fr;gap:2px 14px;font-size:13px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);}
+  .term-row:last-child{border-bottom:none;}
+  .term-name{font-weight:700;color:var(--white);}
+  .term-def{color:var(--grey-light);line-height:1.6;}
+
+  .content-section{margin-bottom:30px;}
+  .content-section h2{font-size:17px;font-weight:800;margin-bottom:4px;padding-bottom:8px;border-bottom:2px solid var(--border);display:flex;align-items:center;gap:9px;}
+  .content-section h2 .aim-badge{width:24px;height:24px;border-radius:6px;background:rgba(22,163,74,0.2);border:1px solid rgba(22,163,74,0.4);color:var(--btec-light);font-size:11px;font-weight:800;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .content-section p{font-size:14px;color:var(--grey-light);line-height:1.8;margin-bottom:12px;}
+  .content-section ul,.content-section ol{margin:0 0 12px 20px;}
+  .content-section li{font-size:14px;color:var(--grey-light);line-height:1.8;margin-bottom:6px;}
+  .content-section strong{color:var(--white);}
+
+  .es-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px;}
+  .es-table th{text-align:left;padding:10px 12px;background:var(--navy-card);color:var(--btec-light);font-size:11px;text-transform:uppercase;letter-spacing:0.5px;border-bottom:2px solid var(--border);}
+  .es-table td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--grey-light);}
+  .es-table tr:last-child td{border-bottom:none;}
+
+  .assign-tip{background:rgba(245,158,11,0.08);border-left:3px solid var(--gold);border-radius:8px;padding:14px 18px;margin:18px 0;}
+  .assign-tip p{font-size:13px;color:var(--grey-light);line-height:1.7;margin:0;}
+  .assign-tip strong{color:var(--gold-light);}
+
+  .grading-heading{font-size:18px;font-weight:800;margin-bottom:6px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+  .grading-sub{font-size:13px;color:var(--grey);margin-bottom:16px;}
+  .grade-card{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:2px;margin-bottom:12px;}
+  .grade-card summary{font-size:13px;font-weight:700;padding:14px 16px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+  .grade-card summary::-webkit-details-marker{display:none;}
+  .grade-tag{font-size:10px;font-weight:800;padding:3px 9px;border-radius:99px;flex-shrink:0;}
+  .gt-pass{background:rgba(148,163,184,0.15);color:var(--grey-light);border:1px solid rgba(148,163,184,0.3);}
+  .gt-merit{background:rgba(41,121,255,0.15);color:#93C5FD;border:1px solid rgba(41,121,255,0.3);}
+  .gt-distinction{background:rgba(245,158,11,0.15);color:var(--gold);border:1px solid rgba(245,158,11,0.3);}
+  .pc-plus{color:var(--btec-light);font-size:18px;flex-shrink:0;margin-left:auto;}
+  .grade-card .pc-answer{padding:0 16px 16px;font-size:13px;color:var(--grey-light);line-height:1.75;border-top:1px solid var(--border);margin-top:2px;padding-top:12px;}
+  .grade-card .pc-answer strong{color:var(--white);}
+  .grade-card .pc-answer ul{margin:8px 0 0 18px;}
+  .grade-card .pc-answer li{margin-bottom:5px;}
+
+  .video-slot{background:var(--navy-card);border:1px dashed var(--border);border-radius:14px;padding:30px;text-align:center;margin:8px 0 32px;}
+  .video-slot p{font-size:13px;color:var(--grey);}
+
+  .lesson-nav-bottom{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:44px;padding-top:24px;border-top:1px solid var(--border);}
+  .lesson-nav-bottom a{font-size:13px;font-weight:700;color:var(--btec-light);text-decoration:none;padding:11px 18px;border:1px solid var(--border);border-radius:9px;transition:all 0.2s;}
+  .lesson-nav-bottom a:hover{border-color:var(--btec-light);background:rgba(22,163,74,0.08);}
+
+  footer{background:#080E1C;border-top:1px solid var(--border);padding:52px 24px 26px;}
+  .footer-inner{max-width:1100px;margin:0 auto;}
+  .footer-top{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:36px;margin-bottom:44px;}
+  .footer-brand p{font-size:12px;color:var(--grey);line-height:1.75;margin-top:14px;max-width:260px;}
+  .footer-col h5{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+  .footer-col ul li a{font-size:13px;color:var(--grey-light);text-decoration:none;transition:color 0.15s;}
+  .footer-col ul li a:hover{color:var(--cyan);}
+  .footer-bottom{border-top:1px solid var(--border);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+  .footer-bottom p{font-size:12px;color:var(--grey);}
+  .footer-soc{display:flex;gap:14px;}
+  .footer-soc a{color:var(--grey);text-decoration:none;font-size:12px;transition:color 0.15s;}
+  .footer-soc a:hover{color:var(--cyan);}
+
+  @media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;}}
+  @media(max-width:640px){
+    .nav-links{display:none;}
+    .term-row{grid-template-columns:1fr;}
+    .es-table{font-size:12px;}
+    footer{padding:40px 16px 22px;}
+    .footer-top{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-circle">🏃</div>
+      <div>
+        <div class="logo-tagline">Sport Science Sorted</div>
+        <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="courses.html">Course Hubs</a></li>
+      <li><a href="student-hub.html">Student Hub</a></li>
+      <li><a href="teacher-hub.html">Teacher Hub</a></li>
+      <li><a href="az-library.html">A–Z Library</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="student-hub.html" class="nav-cta">Start Learning</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div style="max-width:1100px;margin:0 auto;">
+    <a href="index.html">Home</a><span>›</span><a href="courses.html">Course Hubs</a><span>›</span><a href="btec-hub.html">BTEC Sport</a><span>›</span>Unit 24: Applied Sports Anatomy and Physiology
+  </div>
+</div>
+
+<div class="lesson-hero">
+  <div class="lesson-hero-inner">
+    <div class="lesson-eyebrow">
+      <span class="unit-chip">Unit 24</span>
+      <span class="type-chip-mandatory">Mandatory</span>
+      <span class="glh-chip">⏱ 90 GLH</span>
+    </div>
+    <h1>Applied Sports Anatomy and Physiology</h1>
+    <p class="lesson-hook">Taking anatomy off the page and applying it directly to a real sport — which systems it actually stresses, and why.</p>
+  </div>
+</div>
+
+<div class="lesson-inner">
+
+  <div class="aims-box">
+    <h3>Learning Aims</h3>
+    <div class="aim-row"><span class="aim-letter">A</span><span class="aim-text">Apply anatomical knowledge to sport performance</span></div>
+    <div class="aim-row"><span class="aim-letter">B</span><span class="aim-text">Understand physiological responses to exercise</span></div>
+    <div class="aim-row"><span class="aim-letter">C</span><span class="aim-text">Analyse how body systems support sporting activity</span></div>
+
+  </div>
+
+  <div class="key-terms-box">
+    <h3>Key Terms</h3>
+    <div class="term-row"><span class="term-name">Lever System</span><span class="term-def">A bone-and-joint arrangement that rotates around a fulcrum to produce sporting movement.</span></div>
+    <div class="term-row"><span class="term-name">Energy System</span><span class="term-def">One of three pathways (ATP-PC, glycolytic, aerobic) the body uses to regenerate ATP during exercise.</span></div>
+    <div class="term-row"><span class="term-name">Movement Analysis</span><span class="term-def">Breaking a sporting action down to identify which joints, muscles and systems are involved.</span></div>
+    <div class="term-row"><span class="term-name">Performance Demand</span><span class="term-def">The specific physiological and biomechanical requirements of a given sport.</span></div>
+
+  </div>
+
+  <div class="content-section">
+    <h2><span class="aim-badge">A</span> Applying Anatomical Knowledge to Sport Performance</h2>
+<p>Where Unit 8 builds foundational body-systems knowledge, this unit applies it directly to analysing sporting movement. Every technical action in sport — a sprint start, a tennis serve, a rugby tackle — can be broken down in terms of the specific joints, lever systems and muscle groups involved, and understanding this is central to coaching technique and preventing injury.</p>
+  </div>
+
+  <div class="content-section">
+    <h2><span class="aim-badge">B</span> Physiological Responses to Exercise</h2>
+<p>Different sports place very different demands on the body's energy systems, depending on their typical intensity and duration — a sprinter relies overwhelmingly on the ATP-PC and glycolytic systems, while a marathon runner relies almost entirely on the aerobic system. Recognising which systems dominate in a given sport is the foundation for designing performance-relevant training.</p>
+    <div class="assign-tip">
+      <p><strong>Assignment tip:</strong> "Analyse a selected sport's physiological demands" wants you to name the actual dominant energy system(s) for that sport's typical effort duration and intensity — a generic "it uses all three systems" answer without specifying the balance won't reach the higher grade bands.</p>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <h2><span class="aim-badge">C</span> How Body Systems Support Sporting Activity</h2>
+<p>Sporting performance depends on multiple body systems working together — skeletal and muscular systems producing movement, the cardiorespiratory system delivering oxygen and fuel, and energy systems regenerating ATP at the rate the sport demands. Analysing a selected sport means identifying which of these systems are placed under the greatest demand, and why.</p>
+  </div>
+
+
+
+  <div class="video-slot">
+    <p>🎥 Video walkthrough — add your embed here</p>
+  </div>
+
+  <div class="grading-heading">Grading Checklist</div>
+  <p class="grading-sub">What Pass, Merit and Distinction actually look like for this unit</p>
+
+  <details class="grade-card">
+    <summary>1. Describe the lever systems and muscle groups involved in a named sporting action. <span class="grade-tag gt-pass">Pass</span><span class="pc-plus">+</span></summary>
+    <div class="pc-answer">
+      <strong>What this looks like:</strong>
+      <ul>
+        <li>Choose a specific, observable action (e.g. a bicep curl, a squat jump, a tennis serve).</li>
+        <li>Correctly identify the lever class, and the muscles acting as agonist and antagonist.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="grade-card">
+    <summary>2. Explain the physiological demands of a selected sport. <span class="grade-tag gt-merit">Merit</span><span class="pc-plus">+</span></summary>
+    <div class="pc-answer">
+      <strong>What this looks like:</strong>
+      <ul>
+        <li>Name the dominant energy system(s) for that sport, based on its typical intensity and duration.</li>
+        <li>Support your explanation with sport-specific detail, not a generic description of all three energy systems.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details class="grade-card">
+    <summary>3. Analyse how the body's systems work together to support performance in a selected sport. <span class="grade-tag gt-distinction">Distinction</span><span class="pc-plus">+</span></summary>
+    <div class="pc-answer">
+      <strong>What this looks like:</strong>
+      <ul>
+        <li>Show how skeletal, muscular, cardiorespiratory and energy systems interact — not just describe each in isolation.</li>
+        <li>Ground your analysis in the actual physical and physiological demands of the specific sport you've chosen.</li>
+      </ul>
+    </div>
+  </details>
+
+
+
+  <div class="lesson-nav-bottom">
+    <a href="btec-unit-08-anatomy-physiology-exercise.html">← Previous: Unit 8 — Anatomy and Physiology for Exercise</a>
+    <a href="btec-unit-26-nutrition-physical-performance.html">Next: Unit 26 — Nutrition for Physical Performance →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="index.html" style="text-decoration:none;">
+          <div class="logo-circle" style="width:40px;height:40px;font-size:18px;">🏃</div>
+          <div>
+            <div class="logo-tagline">Sport Science Sorted</div>
+            <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+          </div>
+        </a>
+        <p>The ultimate sport science learning platform for students and teachers worldwide. Specification-led content for IB SEHS, A Level PE, BTEC Sport and GCSE PE.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Course Hubs</h5>
+        <ul>
+          <li><a href="ib-hub.html">IB Sport Science</a></li>
+          <li><a href="cambridge-hub.html">AS Level Sport &amp; PE</a></li>
+          <li><a href="btec-hub.html">BTEC Sport</a></li>
+          <li><a href="gcse-hub.html">GCSE PE</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="az-library.html">A–Z Library</a></li>
+          <li><a href="student-hub.html">Student Hub</a></li>
+          <li><a href="teacher-hub.html">Teacher Hub</a></li>
+          <li><a href="https://www.youtube.com/@SimplySportScience" target="_blank">YouTube Videos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>About</h5>
+        <ul>
+          <li><a href="about.html">About Simply Sport Science</a></li>
+          <li><a href="about.html#contact">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Simply Sport Science · simplysportscience.co.uk · Sport Science Sorted</p>
+      <div class="footer-soc">
+        <a href="https://www.youtube.com/@SimplySportScience" target="_blank">YouTube</a>
+        <a href="https://www.tiktok.com/@simplysportscienc" target="_blank">TikTok</a>
+        <a href="https://x.com/simplysportsci" target="_blank">X</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

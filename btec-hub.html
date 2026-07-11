@@ -618,14 +618,14 @@
 
 <script>
 const units = [
-  {num:1,name:"Health, Wellbeing and Sport",glh:90,type:"set",tags:["mandatory","set"],aims:["Examine importance of physical activity and sport","Investigate importance of physical health","Explore mental health and social wellbeing","Undertake health and wellbeing screening"]},
-  {num:2,name:"Careers in the Sport and Active Leisure Industry",glh:90,type:"set",tags:["mandatory","set"],aims:["Examine organisation of the sport and active leisure industry","Investigate careers in the industry","Explore recruitment processes","Reflect on own performance in recruitment"]},
-  {num:3,name:"Research Project in Sport",glh:120,type:"set",tags:["mandatory","set"],aims:["Design and plan a research project","Conduct research using appropriate methods","Analyse and present research findings","Evaluate research process and outcomes"]},
+  {num:1,name:"Health, Wellbeing and Sport",glh:90,type:"set",tags:["mandatory","set"],page:"btec-unit-01-health-wellbeing-sport.html",aims:["Examine importance of physical activity and sport","Investigate importance of physical health","Explore mental health and social wellbeing","Undertake health and wellbeing screening"]},
+  {num:2,name:"Careers in the Sport and Active Leisure Industry",glh:90,type:"set",tags:["mandatory","set"],page:"btec-unit-02-careers-sport-active-leisure.html",aims:["Examine organisation of the sport and active leisure industry","Investigate careers in the industry","Explore recruitment processes","Reflect on own performance in recruitment"]},
+  {num:3,name:"Research Project in Sport",glh:120,type:"set",tags:["mandatory","set"],page:"btec-unit-03-research-project.html",aims:["Design and plan a research project","Conduct research using appropriate methods","Analyse and present research findings","Evaluate research process and outcomes"]},
   {num:4,name:"Ethics, Behaviours and Values",glh:60,type:"internal",tags:["optional"],aims:["Explore ethical principles in sport","Investigate behaviours and values in sport contexts","Apply ethical frameworks to sporting scenarios"]},
   {num:5,name:"Self-employment in Sport and Physical Activity",glh:60,type:"internal",tags:["optional","business"],aims:["Understand self-employment in sport","Explore business planning for sport enterprises","Investigate financial and legal requirements"]},
   {num:6,name:"Exercise and Fitness Skills Development",glh:120,type:"internal",tags:["optional","physiology"],aims:["Plan and deliver exercise sessions","Develop fitness instruction skills","Evaluate own exercise delivery performance"]},
   {num:7,name:"Personal Training and Programming",glh:180,type:"internal",tags:["optional","physiology"],aims:["Design personal training programmes","Apply exercise science principles to programming","Evaluate programme effectiveness and adapt"]},
-  {num:8,name:"Anatomy and Physiology for Exercise and Physical Activity",glh:120,type:"internal",tags:["mandatory","physiology"],aims:["Understand structure and function of body systems","Apply anatomical knowledge to exercise contexts","Analyse physiological responses to exercise"]},
+  {num:8,name:"Anatomy and Physiology for Exercise and Physical Activity",glh:120,type:"internal",tags:["mandatory","physiology"],page:"btec-unit-08-anatomy-physiology-exercise.html",aims:["Understand structure and function of body systems","Apply anatomical knowledge to exercise contexts","Analyse physiological responses to exercise"]},
   {num:9,name:"Nutrition for Physical Activity and Exercise",glh:60,type:"internal",tags:["optional","physiology"],aims:["Understand nutritional requirements for exercise","Apply nutritional principles to physical activity","Evaluate dietary intake and make recommendations"]},
   {num:10,name:"Business and Technology in Personal Training",glh:60,type:"internal",tags:["optional","business"],aims:["Explore business aspects of personal training","Investigate use of technology in fitness industry","Plan a personal training business"]},
   {num:11,name:"Business in Sport",glh:60,type:"internal",tags:["optional","business"],aims:["Examine structure of sport business sector","Investigate financial management in sport","Explore marketing and commercial activity in sport"]},
@@ -641,18 +641,18 @@ const units = [
   {num:21,name:"History of Liverpool Football Club",glh:30,type:"internal",tags:["optional"],aims:["Explore the history and heritage of Liverpool FC","Understand the club's role in football history","Investigate Liverpool FC's cultural significance"]},
   {num:22,name:"Liverpool Football Club as a Business",glh:60,type:"internal",tags:["optional","business"],aims:["Examine Liverpool FC as a global sports business","Investigate commercial operations and revenue streams","Analyse brand, marketing and global expansion"]},
   {num:23,name:"Talent Identification and Development in Sport",glh:30,type:"internal",tags:["optional","coaching"],aims:["Understand talent identification processes","Investigate athlete development pathways","Evaluate talent development programmes"]},
-  {num:24,name:"Applied Sports Anatomy and Physiology",glh:90,type:"internal",tags:["mandatory","physiology"],aims:["Apply anatomical knowledge to sport performance","Understand physiological responses to exercise","Analyse how body systems support sporting activity"]},
+  {num:24,name:"Applied Sports Anatomy and Physiology",glh:90,type:"internal",tags:["mandatory","physiology"],page:"btec-unit-24-applied-sports-anatomy-physiology.html",aims:["Apply anatomical knowledge to sport performance","Understand physiological responses to exercise","Analyse how body systems support sporting activity"]},
   {num:25,name:"Sports Injuries Management",glh:60,type:"internal",tags:["optional","physiology"],aims:["Identify and classify common sports injuries","Understand immediate and long-term injury management","Plan injury prevention and rehabilitation strategies"]},
-  {num:26,name:"Nutrition for Physical Performance",glh:60,type:"internal",tags:["mandatory","physiology"],aims:["Understand macronutrients and micronutrients in sport","Apply nutritional principles to performance","Evaluate and plan performance nutrition strategies"]},
-  {num:27,name:"Sports Psychology",glh:60,type:"internal",tags:["mandatory","physiology"],aims:["Understand psychological factors affecting performance","Investigate motivation, arousal and anxiety in sport","Apply psychological strategies to optimise performance"]},
+  {num:26,name:"Nutrition for Physical Performance",glh:60,type:"internal",tags:["mandatory","physiology"],page:"btec-unit-26-nutrition-physical-performance.html",aims:["Understand macronutrients and micronutrients in sport","Apply nutritional principles to performance","Evaluate and plan performance nutrition strategies"]},
+  {num:27,name:"Sports Psychology",glh:60,type:"internal",tags:["mandatory","physiology"],page:"btec-unit-27-sports-psychology.html",aims:["Understand psychological factors affecting performance","Investigate motivation, arousal and anxiety in sport","Apply psychological strategies to optimise performance"]},
   {num:28,name:"Fitness Testing",glh:60,type:"internal",tags:["optional","physiology"],aims:["Select appropriate fitness tests for sport","Administer and record fitness test results","Analyse and interpret fitness test data"]},
   {num:29,name:"Technical and Tactical Skills in Sport",glh:60,type:"internal",tags:["optional","coaching"],aims:["Understand technical skill development in sport","Analyse tactical approaches in competitive sport","Evaluate skill and tactical performance"]},
   {num:30,name:"Organising Events in Sport and Physical Activities",glh:60,type:"internal",tags:["optional","business"],aims:["Plan and organise a sport or physical activity event","Apply project management principles to event planning","Evaluate event outcomes and review process"]},
   {num:31,name:"Influence of Technology in Sport and Physical Activity",glh:60,type:"internal",tags:["optional","business"],aims:["Investigate the use of technology in sport","Analyse how technology enhances performance and participation","Evaluate the impact of technology on sport industry"]},
   {num:32,name:"Sports Performance Analysis",glh:60,type:"internal",tags:["optional","coaching"],aims:["Understand methods of performance analysis in sport","Collect and analyse performance data","Provide feedback based on performance analysis"]},
   {num:33,name:"Rules, Regulations and Officiating in Sport",glh:30,type:"internal",tags:["optional"],aims:["Understand rules and regulations in sport","Investigate the role of officials in sport","Apply officiating skills in a practical context"]},
-  {num:34,name:"Sport Development",glh:60,type:"internal",tags:["mandatory"],aims:["Understand sport development structures and pathways","Investigate national and local sport development initiatives","Evaluate the effectiveness of sport development programmes"]},
-  {num:35,name:"Practical Sports Performance",glh:30,type:"internal",tags:["mandatory","coaching"],aims:["Demonstrate technical skills in a chosen sport","Apply tactical awareness in competitive performance","Evaluate own performance and identify improvements"]},
+  {num:34,name:"Sport Development",glh:60,type:"internal",tags:["mandatory"],page:"btec-unit-34-sport-development.html",aims:["Understand sport development structures and pathways","Investigate national and local sport development initiatives","Evaluate the effectiveness of sport development programmes"]},
+  {num:35,name:"Practical Sports Performance",glh:30,type:"internal",tags:["mandatory","coaching"],page:"btec-unit-35-practical-sports-performance.html",aims:["Demonstrate technical skills in a chosen sport","Apply tactical awareness in competitive performance","Evaluate own performance and identify improvements"]},
   {num:36,name:"Functional Sports Massage",glh:60,type:"internal",tags:["optional","physiology"],aims:["Understand principles of sports massage","Apply sports massage techniques safely and effectively","Evaluate the benefits and application of massage in sport"]},
   {num:37,name:"The Liverpool Coach — Employability Skills",glh:30,type:"internal",tags:["optional","coaching"],aims:["Develop employability skills for coaching careers","Reflect on personal and professional development","Apply Liverpool FC coaching philosophy"]},
   {num:38,name:"Coaching Football The Liverpool Way",glh:30,type:"internal",tags:["optional","coaching"],aims:["Understand Liverpool FC's coaching methodology","Apply The Liverpool Way philosophy to coaching practice","Evaluate coaching sessions using Liverpool FC principles"]},
@@ -672,7 +672,7 @@ function renderUnits(filter="all"){
     return u.tags.includes(filter);
   });
   grid.innerHTML = filtered.map(u=>`
-    <div class="unit-card">
+    <a href="${u.page ? u.page : '#'}" class="unit-card" style="text-decoration:none;color:inherit;display:block;${u.page ? '' : 'cursor:default;'}">
       <div class="unit-top">
         <div class="unit-num-badge">${u.num}</div>
         <div class="unit-top-text">
@@ -687,10 +687,10 @@ function renderUnits(filter="all"){
         </ul>
       </div>
       <div class="unit-footer">
-        <span class="unit-footer-tag">🖥️ Presentation Available</span>
-        <button class="unit-open-btn">Open Unit →</button>
+        <span class="unit-footer-tag">${u.page ? "✅ Lesson Live" : "🖥️ Presentation Available"}</span>
+        <button class="unit-open-btn">${u.page ? "Open Unit →" : "Coming Soon"}</button>
       </div>
-    </div>
+    </a>
   `).join("");
 }
 
