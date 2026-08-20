@@ -78,6 +78,8 @@
   .term-card:hover{border-color:#9B59E8;}
   .term-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
   .term-name{font-size:12px;font-weight:800;color:var(--white);line-height:1.3;}
+  .term-name a:hover{text-decoration:underline!important;color:var(--cyan)!important;}
+  .term-card:hover .term-name a{color:var(--cyan)!important;}
   .term-tags{display:flex;gap:4px;flex-wrap:wrap;flex-shrink:0;}
   .ctag{font-size:8px;font-weight:700;padding:2px 5px;border-radius:4px;}
   .ctag-ib{background:rgba(41,121,255,0.2);color:#93C5FD;}
@@ -693,6 +695,95 @@ const terms = [
   {t:"Muscular Strength",c:[GEN,BTEC,CAM],d:"The maximum force a muscle or muscle group can generate in a single contraction."},
   {t:"Speed-Agility-Quickness (SAQ)",c:[GEN,BTEC],d:"A training approach developing rapid multi-directional movement through drills for acceleration, change of direction and reaction."},
   {t:"Recovery Position",c:[BTEC,GEN],d:"A first-aid body position used to keep an unconscious but breathing casualty's airway open and clear."},
+
+  // ═══ EXPANSION BATCH 3 — psychology theory, biomechanics, energy systems, health/lifestyle, fitness tests, research methods, physiology ═══
+  {t:"Achievement Motivation",c:[IB,CAM,GEN],d:"The drive to succeed and approach challenges, shaped by the balance between the motive to achieve success and the motive to avoid failure."},
+  {t:"Self-Determination Theory",c:[IB,CAM,GEN],d:"A theory of motivation proposing that autonomy, competence and relatedness underpin intrinsic drive and sustained engagement in sport."},
+  {t:"Intrinsic Motivation",c:[IB,CAM,BTEC,GEN],d:"Motivation that comes from internal satisfaction, enjoyment or a sense of accomplishment rather than external rewards."},
+  {t:"Learned Helplessness",c:[IB,CAM,GEN],d:"A state in which repeated failure leads a performer to believe success is beyond their control, reducing effort and persistence."},
+  {t:"Social Facilitation",c:[IB,CAM,GEN],d:"The effect that the presence of an audience or co-actors has on performance, typically improving simple skills and impairing complex ones."},
+  {t:"Evaluation Apprehension",c:[IB,CAM,GEN],d:"Anxiety caused by the perception of being judged by others, which can impair performance in front of an audience."},
+  {t:"Aggression",c:[IB,CAM,GEN],d:"Behaviour intended to harm or injure another, distinguished in sport from assertive, forceful but rule-abiding play."},
+  {t:"Assertion",c:[IB,CAM,GEN],d:"Forceful, goal-directed behaviour played within the rules and without intent to harm, distinct from aggression."},
+  {t:"Group Cohesion",c:[IB,CAM,GEN],d:"The tendency of a team to stick together and remain united in pursuit of shared goals, comprising task and social dimensions."},
+  {t:"Ringelmann Effect",c:[IB,CAM,GEN],d:"The tendency for individual effort to decrease as group size increases, contributing to reduced team productivity."},
+  {t:"Attentional Focus",c:[IB,CAM,GEN],d:"The direction and breadth of an athlete's concentration, which can be broad or narrow and internal or external."},
+  {t:"Cue Utilisation",c:[IB,CAM,GEN],d:"Easterbrook's theory that arousal narrows attention, filtering out irrelevant cues at moderate levels but relevant ones when arousal is too high."},
+  {t:"Self-Talk",c:[IB,CAM,GEN],d:"The internal or spoken statements an athlete uses to direct focus, build confidence or manage emotions during performance."},
+  {t:"Goal Orientation",c:[IB,CAM,GEN],d:"An athlete's tendency to define success through personal mastery (task orientation) or through comparison with others (ego orientation)."},
+  {t:"Flow State",c:[IB,CAM,GEN],d:"An optimal psychological state of complete absorption and effortless performance, associated with peak experience in sport."},
+  {t:"Peak Flow Experience",c:[IB,GEN],d:"A moment of exceptional, seemingly effortless performance often accompanied by intense focus and enjoyment."},
+  {t:"Trait Anxiety",c:[IB,CAM,GEN],d:"A stable personality characteristic describing an individual's general tendency to perceive situations as threatening."},
+  {t:"State Anxiety",c:[IB,CAM,GEN],d:"A temporary emotional response of worry and heightened arousal experienced in a specific situation, such as before competition."},
+  {t:"Progressive Muscle Relaxation",c:[IB,CAM,GEN],d:"A relaxation technique involving the sequential tensing and releasing of muscle groups to reduce somatic anxiety."},
+  {t:"Mental Rehearsal",c:[IB,CAM,GEN],d:"The practice of mentally performing a skill or routine without physical movement to improve preparation and confidence."},
+  {t:"Displacement",c:[IB,CAM,GEN],d:"The straight-line distance and direction between an object's start and end positions, a vector quantity."},
+  {t:"Distance",c:[IB,CAM,GEN],d:"The total length of the path travelled by a body, a scalar quantity with no direction."},
+  {t:"Scalar Quantity",c:[IB,CAM,GEN],d:"A quantity described by magnitude only, such as distance, speed or mass."},
+  {t:"Vector Quantity",c:[IB,CAM,GEN],d:"A quantity described by both magnitude and direction, such as displacement, velocity, acceleration or force."},
+  {t:"Centre of Mass",c:[IB,CAM,GEN],d:"The single point at which a body's mass can be considered to be concentrated for the purposes of motion analysis."},
+  {t:"Line of Gravity",c:[IB,CAM,GEN],d:"An imaginary vertical line running downward from the centre of mass, used to assess balance and stability."},
+  {t:"Net Force",c:[IB,GEN],d:"The overall force resulting from the combination of all forces acting on a body, determining its change in motion."},
+  {t:"Air Resistance",c:[IB,CAM,GEN],d:"The frictional force opposing a body's motion through air, affecting projectiles, cyclists and runners."},
+  {t:"Streamlining",c:[IB,CAM,GEN],d:"Shaping a body or adopting a posture to reduce air or water resistance and improve movement efficiency."},
+  {t:"Angular Acceleration",c:[IB,GEN],d:"The rate of change of angular velocity of a rotating body over time."},
+  {t:"Mechanical Advantage",c:[IB,GEN],d:"The ratio of load to effort in a lever system, indicating whether the lever favours force or range and speed of movement."},
+  {t:"ATP-PC System",c:[IB,CAM,BTEC,GEN],d:"The immediate anaerobic energy system that regenerates ATP from phosphocreatine, fuelling maximal efforts of up to around ten seconds."},
+  {t:"Lactic Acid System",c:[IB,CAM,BTEC,GEN],d:"The anaerobic glycolytic energy system that breaks down glucose to produce ATP and lactate, dominant in high-intensity efforts up to around three minutes."},
+  {t:"Aerobic System",c:[IB,CAM,BTEC,GEN],d:"The oxygen-dependent energy system that produces large amounts of ATP for prolonged, lower-intensity exercise."},
+  {t:"Energy Continuum",c:[IB,CAM,GEN],d:"The concept that all three energy systems contribute to ATP production simultaneously, with their relative dominance shifting by intensity and duration."},
+  {t:"Onset of Blood Lactate Accumulation (OBLA)",c:[IB,GEN],d:"The exercise intensity at which blood lactate rises sharply, conventionally around 4 mmol per litre; a key endurance marker."},
+  {t:"Fuel Utilisation",c:[IB,GEN],d:"The balance of carbohydrate and fat used to produce energy, which shifts toward carbohydrate as exercise intensity increases."},
+  {t:"Recovery Oxygen Consumption",c:[IB,GEN],d:"The elevated oxygen uptake after exercise used to restore the body toward its resting state; also known as EPOC."},
+  {t:"Phosphocreatine Recovery",c:[IB,GEN],d:"The rapid resynthesis of phosphocreatine stores during recovery, largely completed within a few minutes of stopping intense exercise."},
+  {t:"Sedentary Lifestyle",c:[BTEC,GEN,CAM],d:"A way of living involving little physical activity, associated with increased risk of chronic disease."},
+  {t:"Cardiovascular Disease",c:[BTEC,GEN],d:"A group of conditions affecting the heart and blood vessels, the risk of which is reduced by regular exercise."},
+  {t:"Type 2 Diabetes",c:[BTEC,GEN],d:"A metabolic condition of impaired blood glucose control, strongly linked to inactivity and reducible in risk through exercise."},
+  {t:"Physical Activity Guidelines",c:[BTEC,GEN],d:"Recommended minimum amounts of moderate or vigorous activity for maintaining health across different age groups."},
+  {t:"Wellbeing",c:[BTEC,GEN,CAM],d:"A holistic state of physical, mental and social health, supported by regular physical activity."},
+  {t:"Lifestyle Choice",c:[BTEC,GEN],d:"A personal decision about behaviours such as diet, activity, smoking or alcohol that influences long-term health."},
+  {t:"Health-Related Fitness",c:[GEN,BTEC,CAM],d:"The components of fitness linked to health, including cardiovascular endurance, muscular strength and endurance, flexibility and body composition."},
+  {t:"Skill-Related Fitness",c:[GEN,BTEC,CAM],d:"The components of fitness linked to sporting performance, including agility, balance, coordination, power, reaction time and speed."},
+  {t:"Blood Cholesterol",c:[IB,BTEC,GEN],d:"A fatty substance in the blood; regular exercise can improve the balance of high- and low-density lipoproteins, lowering disease risk."},
+  {t:"Resting Metabolic Rate",c:[IB,BTEC,GEN],d:"The energy the body uses at rest to sustain basic functions, making up the largest part of daily energy expenditure for most people."},
+  {t:"Sit and Reach Test",c:[GEN,BTEC,CAM],d:"A flexibility test measuring the range of movement in the lower back and hamstrings by reaching forward from a seated position."},
+  {t:"Vertical Jump Test",c:[GEN,BTEC,CAM],d:"A test of leg power measuring the height gained between a standing reach and a maximal jump."},
+  {t:"Standing Broad Jump",c:[GEN,BTEC],d:"A test of explosive leg power measuring the horizontal distance covered in a two-footed standing jump."},
+  {t:"Grip Strength Test",c:[GEN,BTEC],d:"A test measuring the maximal force of the hand and forearm muscles using a handgrip dynamometer."},
+  {t:"Ruler Drop Test",c:[GEN,BTEC,CAM],d:"A simple test of reaction time measuring how quickly a person can catch a falling ruler."},
+  {t:"Wall Toss Test",c:[GEN,BTEC],d:"A test of hand-eye coordination measuring the number of successful catches when throwing a ball against a wall over a set time."},
+  {t:"30 Metre Sprint Test",c:[GEN,BTEC],d:"A test of acceleration and speed measuring the time taken to sprint 30 metres from a standing start."},
+  {t:"Standing Stork Test",c:[GEN,BTEC],d:"A test of static balance measuring how long a performer can balance on the ball of one foot with eyes open."},
+  {t:"Margaria-Kalamen Test",c:[GEN,BTEC],d:"A test of anaerobic leg power measuring the time taken to run up a set of stairs at maximal effort."},
+  {t:"Multistage Abdominal Test",c:[GEN,BTEC],d:"A progressive test of abdominal muscular endurance in which curl-ups are performed in time with an audio signal."},
+  {t:"Validity",c:[GEN,BTEC,CAM],d:"The extent to which a fitness test actually measures what it claims to measure."},
+  {t:"Reliability",c:[GEN,BTEC,CAM],d:"The extent to which a fitness test produces consistent, repeatable results when administered under the same conditions."},
+  {t:"Independent Variable",c:[IB,GEN],d:"The factor deliberately changed or manipulated by the researcher in an investigation to observe its effect."},
+  {t:"Dependent Variable",c:[IB,GEN],d:"The factor measured in an investigation, which may change in response to the independent variable."},
+  {t:"Controlled Variable",c:[IB,GEN],d:"A factor kept constant during an investigation to ensure a fair test of the independent variable's effect."},
+  {t:"Hypothesis",c:[IB,GEN],d:"A testable, predictive statement about the expected relationship between variables in an investigation."},
+  {t:"Reliability of Data",c:[IB,GEN],d:"The consistency and repeatability of measurements collected during an investigation."},
+  {t:"Standard Deviation",c:[IB,GEN],d:"A statistical measure of the spread of data around the mean, indicating how variable a set of results is."},
+  {t:"Correlation",c:[IB,GEN],d:"A statistical relationship between two variables, describing how they change together without implying that one causes the other."},
+  {t:"Mean",c:[IB,GEN],d:"The arithmetic average of a set of values, found by dividing the sum of the values by their number."},
+  {t:"Systematic Error",c:[IB,GEN],d:"A consistent, repeatable error in measurement that shifts all results in the same direction, affecting accuracy."},
+  {t:"Random Error",c:[IB,GEN],d:"An unpredictable variation in measurement that affects the precision of results and can be reduced by repeated trials."},
+  {t:"Motor Neurone",c:[IB,CAM,GEN],d:"A nerve cell that carries impulses from the central nervous system to muscle fibres, triggering contraction."},
+  {t:"Neuromuscular Junction",c:[IB,GEN],d:"The synapse where a motor neurone meets a muscle fibre and transmits the signal to contract."},
+  {t:"All-or-None Law",c:[IB,GEN],d:"The principle that a motor unit either contracts fully or not at all when stimulated above its threshold."},
+  {t:"Muscle Fibre Recruitment",c:[IB,GEN],d:"The progressive activation of motor units to match the force required, with larger units recruited as demand increases."},
+  {t:"Wave Summation",c:[IB,GEN],d:"The increase in muscle force produced when successive stimuli arrive before the muscle relaxes, causing contractions to combine."},
+  {t:"Spatial Summation",c:[IB,GEN],d:"The increase in muscle force produced by recruiting a greater number of motor units simultaneously."},
+  {t:"Proprioceptor",c:[IB,CAM,GEN],d:"A sensory receptor in muscles, tendons and joints that provides information about body position and movement."},
+  {t:"Baroreceptor",c:[IB,GEN],d:"A sensory receptor that detects changes in blood pressure and helps regulate cardiovascular responses."},
+  {t:"Venoconstriction",c:[IB,GEN],d:"The narrowing of veins that increases venous return of blood to the heart during exercise."},
+  {t:"Skeletal Muscle Pump",c:[IB,GEN],d:"The mechanism by which contracting skeletal muscles squeeze veins to aid the return of blood to the heart."},
+  {t:"Respiratory Pump",c:[IB,GEN],d:"The mechanism by which pressure changes during breathing assist the return of venous blood to the heart."},
+  {t:"Thermoreceptor",c:[IB,GEN],d:"A sensory receptor that detects changes in temperature and contributes to the regulation of body heat."},
+  {t:"Conduction (heat loss)",c:[IB,GEN],d:"The transfer of body heat to a cooler object or surface through direct contact."},
+  {t:"Convection (heat loss)",c:[IB,GEN],d:"The transfer of body heat to moving air or water passing over the skin."},
+  {t:"Evaporation (heat loss)",c:[IB,GEN],d:"The loss of body heat as sweat turns from liquid to vapour on the skin surface, the main cooling mechanism during exercise."},
+  {t:"Radiation (heat loss)",c:[IB,GEN],d:"The transfer of body heat to the surroundings as infrared energy without direct contact."},
 ];
 
 let currentFilter = "all";
@@ -714,6 +805,8 @@ function getVisible(){
   });
 }
 
+const TERM_PAGES=new Set(["1rm-one-repetition-maximum", "abdominal-curl-test", "abduction", "abductor", "ability", "acceleration", "acclimatisation", "acetylcholine", "achievement-motivation", "acid-base-balance", "actin", "action-potential", "active-recovery", "active-stretching", "acute-exercise-response", "adams-closed-loop-theory", "adductor", "adenosine-diphosphate-adp", "adenosine-triphosphate-atp", "aerobic-capacity", "aerobic-energy-system", "aerobic-system", "aggression", "agility", "agonist", "altitude-training", "alveoli", "anaerobic-capacity", "anaerobic-glycolysis", "angle-of-release", "angular-momentum", "angular-motion", "angular-velocity", "antagonist", "anterior-cruciate-ligament-acl", "anthropometry", "anxiety", "arousal", "assertion", "associative-stage-of-learning", "atp-pc-system", "atrophy", "attentional-focus", "attribution-theory", "autonomous-stage-of-learning", "ball-and-socket-joint", "banduras-social-learning-theory", "barriers-to-participation", "base-of-support", "bernoulli-principle", "beta-oxidation", "biceps-brachii", "bleep-test-multistage-fitness-test", "blood-doping", "blood-lactate", "blood-pressure", "blood-redistribution", "body-composition", "bohr-effect", "borg-scale", "caffeine", "carbohydrate", "carbohydrate-loading", "cardiac-hypertrophy", "cardiac-output", "cardiovascular-drift", "catastrophe-theory", "centre-of-gravity", "centre-of-mass", "circuit-training", "closed-skill", "cognitive-anxiety", "cognitive-stage-of-learning", "commercialisation", "components-of-fitness", "concussion", "continuous-training", "cool-down", "cooper-test", "core-stability", "correlation", "creatine", "creatine-phosphate-pcr", "csai-2", "decision-making", "dehydration", "delayed-onset-muscle-soreness-doms", "deltoid", "dependent-variable", "deviance-in-sport", "diffusion", "discrete-skill", "displacement", "distributed-practice", "doping", "drive-theory", "electrolytes", "electron-transport-chain", "endurance", "energy-continuum", "energy-systems", "epoc-excess-post-exercise-oxygen-consumption", "ergogenic-aid", "ethics-in-sport", "extension", "extrinsic-motivation", "fartlek-training", "fast-twitch-fibres-type-ii", "fat-lipid", "feedback", "fine-motor-skill", "first-class-lever", "fitness-testing", "fitt-principle", "fitts-and-posners-stages-of-learning", "fixed-practice", "flexibility", "flexion", "flow-state", "force", "frontal-plane", "gamesmanship", "gas-exchange", "gastrocnemius", "glucose", "gluteus-maximus", "glycaemic-index", "glycogen", "glycolysis", "goal-setting", "golgi-tendon-organ-gto", "gross-motor-skill", "ground-reaction-force", "group-cohesion", "guidance", "haemoglobin", "hamstrings", "health-related-fitness", "heart-rate", "heart-rate-reserve", "hicks-law", "hiit-high-intensity-interval-training", "hinge-joint", "homeostasis", "hydration-strategy", "hypertrophy", "hypothesis", "illinois-agility-test", "imagery", "impulse", "independent-variable", "information-processing-model", "interval-training", "intrinsic-motivation", "inverted-u-hypothesis", "joint", "knowledge-of-performance-kp", "knowledge-of-results-kr", "krebs-cycle", "lactate", "lactate-threshold", "lactic-acid-system", "latissimus-dorsi", "learned-helplessness", "levers", "linear-motion", "magnus-effect", "massed-practice", "maximum-heart-rate-hrmax", "mental-rehearsal", "minute-ventilation", "momentum", "motivation", "motor-learning", "motor-unit", "muscle-fibre", "muscle-fibre-recruitment", "muscle-spindle", "muscular-endurance", "muscular-strength", "national-governing-body", "negative-transfer", "newtons-laws-of-motion", "onset-of-blood-lactate-accumulation-obla", "open-loop-control", "open-skill", "outcome-goal", "overload", "overtraining", "oxygen-debt", "oxyhaemoglobin-dissociation-curve", "part-practice", "pectoralis-major", "performance-goal", "periodisation", "personality", "phosphocreatine-pcr", "planes-of-movement", "plyometric-training", "positive-transfer", "power", "principle-of-progression", "process-goal", "projectile", "protein", "pulmonary-ventilation", "quadriceps", "rating-of-perceived-exertion-rpe", "reaction-time", "recovery", "reliability", "resistance-training", "resting-heart-rate", "reversibility", "rice", "rotator-cuff", "sagittal-plane", "sarcomere", "scalar-quantity", "scat-sports-competition-anxiety-test", "schema-theory", "second-class-lever", "self-confidence", "self-efficacy", "self-talk", "serial-skill", "sit-and-reach-test", "skeletal-muscle", "skill", "skill-related-fitness", "sliding-filament-theory", "slow-twitch-fibres-type-i", "smart-goals", "social-facilitation", "social-loafing", "somatic-anxiety", "somatotype", "specificity", "speed", "sportsmanship", "sprain", "stability", "standard-deviation", "starlings-law", "state-anxiety", "strain", "strength", "stroke-volume", "summation-of-force", "supercompensation", "synovial-joint", "tapering", "thermoregulation", "third-class-lever", "tidal-volume", "torque", "trait-anxiety", "transfer-of-learning", "transverse-plane", "triceps-brachii", "validity", "variable-practice", "vascular-shunt", "vector-quantity", "velocity", "venous-return", "vertical-jump-test", "vital-capacity", "vo2-max", "warm-up", "whole-part-whole-practice", "whole-practice", "yerkes-dodson-law", "zone-of-optimal-functioning-zof"]);
+function termSlug(t){return t.toLowerCase().replace(/\u2082/g,'2').replace(/\u00b2/g,'2').replace(/['\u2019\u2018]/g,'').replace(/[()]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/-+/g,'-').replace(/^-|-$/g,'');}
 function render(){
   const visible = getVisible();
   document.getElementById("totalCount").textContent = terms.length.toLocaleString();
@@ -747,7 +840,7 @@ function render(){
         ${group.sort((a,b)=>a.t.localeCompare(b.t)).map(term=>`
           <div class="term-card">
             <div class="term-top">
-              <div class="term-name">${term.t}</div>
+              <div class="term-name">${TERM_PAGES.has(termSlug(term.t))?`<a href="term-${termSlug(term.t)}.html" style="color:inherit;text-decoration:none;">${term.t}</a>`:term.t}</div>
               <div class="term-tags">${term.c.map(courseTag).join("")}</div>
             </div>
             <div class="term-def">${term.d}</div>
