@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Simply Sport Science | Sport Science Sorted</title>
+<!-- rebuilt via delete+recreate -->
+<meta name="description" content="Simply Sport Science is the ultimate destination for students and educators looking to master IB Sport Science, A Level PE, BTEC Sport and GCSE PE."/>
+<style>
+  :root{
+    --purple:#6B21D4;--purple-dark:#4C1397;--purple-light:#9B59E8;
+    --pink:#C026D3;--magenta:#E040FB;--gold:#F59E0B;--gold-light:#FCD34D;
+    --cyan:#22D3EE;--navy:#0F172A;--navy-mid:#1A2540;--navy-card:#162032;
+    --white:#FFFFFF;--grey:#94A3B8;--grey-light:#CBD5E1;
+    --green:#10B981;--border:#2D3F5E;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--navy);color:var(--white);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;}
+
+  nav{background:rgba(15,23,42,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px;}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+  .logo-circle{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--pink),var(--gold));display:flex;align-items:center;justify-content:center;box-shadow:0 0 16px rgba(107,33,212,0.45);font-size:18px;}
+  .logo-tagline{font-size:9px;color:var(--gold);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;}
+  .logo-name{font-size:14px;font-weight:900;}
+  .logo-name .c1{color:var(--cyan);}.logo-name .c2{color:var(--white);}
+  .nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+  .nav-links a{color:var(--grey-light);text-decoration:none;font-size:13px;font-weight:600;padding:7px 10px;border-radius:7px;transition:all 0.2s;white-space:nowrap;}
+  .nav-links a:hover{color:var(--white);background:rgba(107,33,212,0.2);}
+  .nav-links a.teacher-link{color:var(--gold-light);}
+
+  .hero{background:linear-gradient(160deg,#0F172A 0%,#1a0a2e 45%,#180620 100%);padding:64px 24px 56px;text-align:center;position:relative;overflow:hidden;}
+  .glow1{position:absolute;top:-80px;left:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(107,33,212,0.2) 0%,transparent 70%);pointer-events:none;}
+  .glow2{position:absolute;bottom:-60px;right:-60px;width:400px;height:400px;background:radial-gradient(circle,rgba(192,38,211,0.16) 0%,transparent 70%);pointer-events:none;}
+  .hero-inner{position:relative;max-width:680px;margin:0 auto;}
+  .hero-badge{display:inline-block;background:rgba(107,33,212,0.2);border:1px solid rgba(107,33,212,0.45);color:var(--white);font-size:15px;font-weight:800;letter-spacing:3px;padding:10px 26px;border-radius:99px;margin-bottom:24px;text-transform:uppercase;}
+  .hero h1{font-size:clamp(38px,7vw,64px);font-weight:900;line-height:1.05;margin-bottom:16px;}
+  .hero h1 .c1{color:var(--white);}
+  .hero h1 .c2{background:linear-gradient(90deg,var(--purple-light),var(--magenta),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+  .hero-sub{font-size:16px;color:var(--grey-light);max-width:520px;margin:0 auto 32px;line-height:1.7;}
+  .btn-primary{background:linear-gradient(135deg,var(--purple),var(--pink));color:var(--white);border:none;border-radius:10px;padding:15px 32px;font-size:15px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block;box-shadow:0 4px 24px rgba(107,33,212,0.4);transition:all 0.2s;}
+  .btn-primary:hover{transform:translateY(-2px);}
+
+  .az-banner{max-width:1100px;margin:0 auto;padding:0 24px 48px;}
+  .az-banner-inner{background:linear-gradient(120deg,rgba(107,33,212,0.22),rgba(192,38,211,0.14));border:1px solid rgba(107,33,212,0.4);border-radius:16px;padding:28px 32px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;text-decoration:none;transition:all 0.2s;}
+  .az-banner-inner:hover{border-color:rgba(107,33,212,0.7);transform:translateY(-2px);}
+  .az-banner-text h2{font-size:22px;font-weight:900;color:var(--white);margin-bottom:4px;}
+  .az-banner-text p{font-size:13px;color:var(--grey-light);}
+  .az-banner-arrow{font-size:26px;color:var(--gold);flex-shrink:0;}
+
+  .courses{max-width:1100px;margin:0 auto;padding:0 24px 64px;}
+  .courses-heading{text-align:center;margin-bottom:28px;}
+  .courses-heading h2{font-size:24px;font-weight:900;margin-bottom:6px;}
+  .courses-heading p{font-size:13px;color:var(--grey-light);}
+  .course-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;}
+  .course-card{background:var(--navy-card);border-radius:14px;padding:26px 22px;border:1px solid var(--border);cursor:pointer;transition:all 0.25s;text-decoration:none;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden;}
+  .course-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
+  .course-card:hover{transform:translateY(-4px);}
+  .c-ib::before{background:linear-gradient(90deg,#1565C0,#2979FF);}
+  .c-ib:hover{box-shadow:0 8px 32px rgba(41,121,255,0.28);border-color:rgba(41,121,255,0.5);}
+  .c-al::before{background:linear-gradient(90deg,#1D4ED8,#F97316);}
+  .c-al:hover{box-shadow:0 8px 32px rgba(29,78,216,0.28);border-color:rgba(29,78,216,0.4);}
+  .c-bt::before{background:linear-gradient(90deg,#065F46,#10B981);}
+  .c-bt:hover{box-shadow:0 8px 32px rgba(16,185,129,0.28);border-color:rgba(16,185,129,0.4);}
+  .c-gc::before{background:linear-gradient(90deg,#92400E,#F59E0B);}
+  .c-gc:hover{box-shadow:0 8px 32px rgba(245,158,11,0.22);border-color:rgba(245,158,11,0.35);}
+  .course-icon{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;}
+  .course-qualifier{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey);}
+  .course-name{font-size:18px;font-weight:900;color:var(--white);}
+  .course-desc{font-size:12px;color:var(--grey-light);line-height:1.5;}
+  .course-status{display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:99px;align-self:flex-start;margin-top:2px;}
+  .s-live{background:rgba(16,185,129,0.18);color:var(--green);border:1px solid rgba(16,185,129,0.35);}
+  .s-soon{background:rgba(245,158,11,0.18);color:var(--gold);border:1px solid rgba(245,158,11,0.35);}
+
+  .social-row{display:flex;justify-content:center;gap:16px;padding:32px 24px;border-top:1px solid var(--border);}
+  .social-row a{color:var(--grey);font-size:20px;text-decoration:none;transition:color 0.2s;}
+  .social-row a:hover{color:var(--cyan);}
+
+  footer{background:#080E1C;padding:24px;text-align:center;}
+  footer p{font-size:12px;color:var(--grey);}
+  footer a{color:var(--grey-light);text-decoration:none;margin:0 6px;}
+  footer a:hover{color:var(--cyan);}
+
+  @media(max-width:640px){
+    .nav-links{display:none;}
+    .hero{padding:44px 16px 40px;}
+    .az-banner-inner{padding:22px;flex-direction:column;text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <div class="logo-circle">🏃</div>
+      <div>
+        <div class="logo-tagline">Sport Science Sorted</div>
+        <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ib-hub.html">IB Sport Science</a></li>
+      <li><a href="cambridge-hub.html">A Level PE</a></li>
+      <li><a href="btec-hub.html">BTEC Sport</a></li>
+      <li><a href="gcse-hub.html">GCSE PE</a></li>
+      <li><a href="az-library.html">A–Z</a></li>
+      <li><a href="teacher-hub.html" class="teacher-link">Teacher Hub</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="glow1"></div>
+  <div class="glow2"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">Sport Science Sorted</div>
+    <h1><span class="c1">Simply Sport</span> <span class="c2">Science.</span></h1>
+    <p class="hero-sub">The ultimate destination for students and educators looking to master IB Sport Science, A Level PE, BTEC Sport and GCSE PE.</p>
+    <a href="#courses" class="btn-primary">Explore Course Hubs ↓</a>
+  </div>
+</div>
+
+<div class="az-banner">
+  <a href="az-library.html" class="az-banner-inner">
+    <div class="az-banner-text">
+      <h2>🔤 The Sport Science A–Z</h2>
+      <p>Every key term, defined and course-tagged. Search it instantly.</p>
+    </div>
+    <div class="az-banner-arrow">→</div>
+  </a>
+</div>
+
+<div class="courses" id="courses">
+  <div class="courses-heading">
+    <h2>Choose Your Course</h2>
+    <p>Pick your qualification to get started</p>
+  </div>
+  <div class="course-grid">
+    <a href="ib-hub.html" class="course-card c-ib">
+      <div class="course-icon" style="background:rgba(41,121,255,0.18);">🔬</div>
+      <div class="course-qualifier">International Baccalaureate</div>
+      <div class="course-name">IB Sport Science</div>
+      <div class="course-desc">IB Sports, Exercise &amp; Health Science — Physiology, Biomechanics and Psychology.</div>
+      <span class="course-status s-live">● Live</span>
+    </a>
+    <a href="cambridge-hub.html" class="course-card c-al">
+      <div class="course-icon" style="background:rgba(29,78,216,0.18);">📐</div>
+      <div class="course-qualifier">Cambridge International</div>
+      <div class="course-name">A Level PE</div>
+      <div class="course-desc">Cambridge International AS Level Sport &amp; Physical Education (8386).</div>
+      <span class="course-status s-live">● Live</span>
+    </a>
+    <a href="btec-hub.html" class="course-card c-bt">
+      <div class="course-icon" style="background:rgba(16,185,129,0.18);">📋</div>
+      <div class="course-qualifier">Pearson International</div>
+      <div class="course-name">BTEC Sport</div>
+      <div class="course-desc">All 39 units — learning aims, assignment support and grading guidance.</div>
+      <span class="course-status s-live">● Live</span>
+    </a>
+    <a href="gcse-hub.html" class="course-card c-gc">
+      <div class="course-icon" style="background:rgba(245,158,11,0.18);">🏃</div>
+      <div class="course-qualifier">Supporting Pathway</div>
+      <div class="course-name">GCSE PE</div>
+      <div class="course-desc">Applied anatomy, training, psychology and health &amp; wellbeing.</div>
+      <span class="course-status s-soon">◌ Coming Soon</span>
+    </a>
+  </div>
+</div>
+
+<div class="social-row">
+  <a href="https://www.youtube.com/@SimplySportScience" target="_blank">▶️</a>
+  <a href="https://www.tiktok.com/@simplysportscienc" target="_blank">🎵</a>
+  <a href="https://x.com/simplysportsci" target="_blank">✖️</a>
+</div>
+
+<footer>
+  <p>
+    <a href="index.html">Home</a>·<a href="teacher-hub.html">Teacher Hub</a>·<a href="about.html">About</a>·<a href="about.html#contact">Contact</a>
+  </p>
+  <p style="margin-top:10px;">© 2025 Simply Sport Science · simplysportscience.co.uk</p>
+</footer>
+
+</body>
+</html>
