@@ -109,6 +109,11 @@
     footer{padding:40px 16px 22px;}
     .footer-top{grid-template-columns:1fr;}
   }
+
+  /* ── SSS Diagram styles ── */
+  .sss-diagram{background:#162032;border:1px solid #2D3F5E;border-radius:14px;padding:18px 12px 10px;margin:8px 0 28px;overflow:hidden;}
+  .sss-diagram-title{display:none;}  /* title is inside the SVG */
+  .sss-diagram svg{width:100%;height:auto;display:block;}
 </style>
 </head>
 <body>
@@ -163,6 +168,71 @@
 
   <div class="content-section">
     <h2>B.1.1 Anatomical Position, Planes and Movement</h2>
+
+<div class="sss-diagram">
+<p class="sss-diagram-title">Planes and Axes of Movement</p>
+<svg viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three planes of movement and their axes shown on a human figure: sagittal plane with frontal axis, frontal plane with sagittal axis, and transverse plane with longitudinal axis">
+  <rect width="520" height="320" fill="#0F172A" rx="12"/>
+
+  <!-- Human figure (stick) -->
+  <!-- Head -->
+  <circle cx="260" cy="66" r="22" fill="none" stroke="#CBD5E1" stroke-width="2"/>
+  <!-- Neck -->
+  <line x1="260" y1="88" x2="260" y2="104" stroke="#CBD5E1" stroke-width="2"/>
+  <!-- Torso -->
+  <line x1="260" y1="104" x2="260" y2="190" stroke="#CBD5E1" stroke-width="2"/>
+  <!-- Arms -->
+  <line x1="260" y1="120" x2="200" y2="165" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="260" y1="120" x2="320" y2="165" stroke="#CBD5E1" stroke-width="2"/>
+  <!-- Legs -->
+  <line x1="260" y1="190" x2="230" y2="260" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="260" y1="190" x2="290" y2="260" stroke="#CBD5E1" stroke-width="2"/>
+  <!-- Feet -->
+  <line x1="230" y1="260" x2="215" y2="270" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="290" y1="260" x2="305" y2="270" stroke="#CBD5E1" stroke-width="2"/>
+
+  <!-- ── SAGITTAL PLANE (divides left/right) ── -->
+  <!-- Vertical plane through middle -->
+  <rect x="252" y="44" width="16" height="240" fill="#22D3EE" opacity="0.07"/>
+  <line x1="260" y1="44" x2="260" y2="284" stroke="#22D3EE" stroke-width="1.5" stroke-dasharray="8,4"/>
+  <text x="260" y="36" fill="#22D3EE" font-size="12" font-family="Segoe UI,sans-serif" font-weight="800" text-anchor="middle">Sagittal Plane</text>
+
+  <!-- Frontal axis (horizontal, L-R through body at hip) -->
+  <line x1="185" y1="163" x2="335" y2="163" stroke="#22D3EE" stroke-width="2"/>
+  <circle cx="185" cy="163" r="4" fill="#22D3EE"/>
+  <circle cx="335" cy="163" r="4" fill="#22D3EE"/>
+  <text x="170" y="178" fill="#22D3EE" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">Frontal</text>
+  <text x="172" y="190" fill="#22D3EE" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">axis</text>
+  <!-- Arc showing flexion/extension -->
+  <path d="M240,155 Q220,155 220,175 Q220,195 240,195" stroke="#22D3EE" stroke-width="1.5" fill="none" stroke-dasharray="4,2" opacity="0.7"/>
+  <text x="48" y="168" fill="#22D3EE" font-size="10" font-family="Segoe UI,sans-serif">Flexion/</text>
+  <text x="46" y="180" fill="#22D3EE" font-size="10" font-family="Segoe UI,sans-serif">Extension</text>
+  <text x="54" y="192" fill="#94A3B8" font-size="9" font-family="Segoe UI,sans-serif">(kicking)</text>
+
+  <!-- ── FRONTAL PLANE (divides front/back) ── -->
+  <ellipse cx="260" cy="163" rx="75" ry="122" fill="#F59E0B" opacity="0.05" stroke="#F59E0B" stroke-width="1" stroke-dasharray="6,4"/>
+  <text x="370" y="56" fill="#F59E0B" font-size="12" font-family="Segoe UI,sans-serif" font-weight="800">Frontal Plane</text>
+  <!-- Sagittal axis (horizontal, front-back) -->
+  <line x1="260" y1="128" x2="340" y2="90" stroke="#F59E0B" stroke-width="2"/>
+  <circle cx="340" cy="90" r="4" fill="#F59E0B"/>
+  <text x="344" y="88" fill="#F59E0B" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">Sagittal</text>
+  <text x="347" y="100" fill="#F59E0B" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">axis</text>
+  <text x="356" y="124" fill="#F59E0B" font-size="10" font-family="Segoe UI,sans-serif">Abduction/</text>
+  <text x="358" y="136" fill="#F59E0B" font-size="10" font-family="Segoe UI,sans-serif">Adduction</text>
+  <text x="362" y="148" fill="#94A3B8" font-size="9" font-family="Segoe UI,sans-serif">(star jump)</text>
+
+  <!-- ── TRANSVERSE PLANE (divides top/bottom) ── -->
+  <ellipse cx="260" cy="155" rx="100" ry="22" fill="#C026D3" opacity="0.09" stroke="#C026D3" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="80" y="230" fill="#C026D3" font-size="12" font-family="Segoe UI,sans-serif" font-weight="800">Transverse Plane</text>
+  <!-- Longitudinal axis (vertical) -->
+  <line x1="260" y1="44" x2="260" y2="284" stroke="#C026D3" stroke-width="2.5" opacity="0.5"/>
+  <text x="140" y="254" fill="#C026D3" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">Longitudinal axis</text>
+  <text x="138" y="268" fill="#C026D3" font-size="10" font-family="Segoe UI,sans-serif">→ Rotation / twisting</text>
+  <text x="142" y="280" fill="#94A3B8" font-size="9" font-family="Segoe UI,sans-serif">(tennis forehand)</text>
+
+  <text x="16" y="312" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif">Simply Sport Science · Planes &amp; Axes of Movement</text>
+</svg>
+</div>
 <p>The anatomical position — standing upright, facing forward, arms at the sides, palms forward — is the reference point for describing movement. Three planes describe movement direction: the <strong>sagittal plane</strong> (left/right division — flexion, extension), the <strong>frontal plane</strong> (front/back division — abduction, adduction), and the <strong>transverse plane</strong> (upper/lower division — rotation).</p>
   </div>
 
@@ -173,11 +243,200 @@
 
   <div class="content-section">
     <h2>B.1.3 Muscular Function</h2>
+
+<div class="sss-diagram">
+<p class="sss-diagram-title">Sliding Filament Theory</p>
+<svg viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sliding filament theory showing sarcomere at rest and during contraction with actin and myosin filaments">
+  <rect width="520" height="320" fill="#0F172A" rx="12"/>
+  <defs>
+    <marker id="sa" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0,8 3,0 6" fill="#22D3EE"/></marker>
+    <marker id="sb" markerWidth="8" markerHeight="6" refX="0" refY="3" orient="auto"><polygon points="8 0,0 3,8 6" fill="#22D3EE"/></marker>
+  </defs>
+
+  <!-- ── RELAXED sarcomere ── -->
+  <text x="26" y="32" fill="#CBD5E1" font-size="13" font-family="Segoe UI,sans-serif" font-weight="800">RELAXED</text>
+
+  <!-- Z-lines -->
+  <line x1="60" y1="46" x2="60" y2="110" stroke="#22D3EE" stroke-width="3"/>
+  <line x1="460" y1="46" x2="460" y2="110" stroke="#22D3EE" stroke-width="3"/>
+  <text x="48" y="120" fill="#22D3EE" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">Z-line</text>
+  <text x="448" y="120" fill="#22D3EE" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">Z-line</text>
+
+  <!-- Actin (thin) filaments — left -->
+  <rect x="62" y="60" width="140" height="10" fill="#6B21D4" rx="5"/>
+  <rect x="62" y="82" width="140" height="10" fill="#6B21D4" rx="5"/>
+  <!-- Actin right -->
+  <rect x="318" y="60" width="140" height="10" fill="#6B21D4" rx="5"/>
+  <rect x="318" y="82" width="140" height="10" fill="#6B21D4" rx="5"/>
+
+  <!-- Myosin (thick) filament — centre -->
+  <rect x="150" y="53" width="220" height="8" fill="#F59E0B" rx="4"/>
+  <rect x="150" y="86" width="220" height="8" fill="#F59E0B" rx="4"/>
+  <!-- Myosin heads -->
+  <circle cx="180" cy="62" r="5" fill="#F59E0B"/>
+  <circle cx="200" cy="58" r="5" fill="#F59E0B"/>
+  <circle cx="320" cy="62" r="5" fill="#F59E0B"/>
+  <circle cx="340" cy="58" r="5" fill="#F59E0B"/>
+  <circle cx="180" cy="87" r="5" fill="#F59E0B"/>
+  <circle cx="200" cy="91" r="5" fill="#F59E0B"/>
+  <circle cx="320" cy="87" r="5" fill="#F59E0B"/>
+  <circle cx="340" cy="91" r="5" fill="#F59E0B"/>
+
+  <!-- H zone -->
+  <line x1="220" y1="46" x2="300" y2="46" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="220" y1="110" x2="300" y2="110" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="240" y="43" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif">H zone</text>
+
+  <!-- Sarcomere width label -->
+  <line x1="60" y1="130" x2="460" y2="130" stroke="#94A3B8" stroke-width="1"/>
+  <line x1="60" y1="126" x2="60" y2="134" stroke="#94A3B8" stroke-width="1"/>
+  <line x1="460" y1="126" x2="460" y2="134" stroke="#94A3B8" stroke-width="1"/>
+  <text x="230" y="142" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">← Sarcomere length (at rest) →</text>
+
+  <!-- ── CONTRACTED sarcomere ── -->
+  <text x="26" y="170" fill="#10B981" font-size="13" font-family="Segoe UI,sans-serif" font-weight="800">CONTRACTED</text>
+  <text x="290" y="170" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif">(actin slides inward — Z-lines pulled together)</text>
+
+  <!-- Z-lines closer together -->
+  <line x1="110" y1="184" x2="110" y2="248" stroke="#22D3EE" stroke-width="3"/>
+  <line x1="410" y1="184" x2="410" y2="248" stroke="#22D3EE" stroke-width="3"/>
+
+  <!-- Actin (thin) left — longer overlap -->
+  <rect x="112" y="198" width="160" height="10" fill="#6B21D4" rx="5"/>
+  <rect x="112" y="220" width="160" height="10" fill="#6B21D4" rx="5"/>
+  <!-- Actin right -->
+  <rect x="248" y="198" width="160" height="10" fill="#6B21D4" rx="5"/>
+  <rect x="248" y="220" width="160" height="10" fill="#6B21D4" rx="5"/>
+
+  <!-- Myosin (same length) -->
+  <rect x="150" y="191" width="220" height="8" fill="#F59E0B" rx="4"/>
+  <rect x="150" y="224" width="220" height="8" fill="#F59E0B" rx="4"/>
+
+  <!-- Cross-bridges formed -->
+  <line x1="170" y1="198" x2="175" y2="191" stroke="#10B981" stroke-width="2"/>
+  <line x1="200" y1="198" x2="205" y2="191" stroke="#10B981" stroke-width="2"/>
+  <line x1="310" y1="198" x2="315" y2="191" stroke="#10B981" stroke-width="2"/>
+  <line x1="340" y1="198" x2="345" y2="191" stroke="#10B981" stroke-width="2"/>
+  <text x="198" y="185" fill="#10B981" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">cross-bridges</text>
+
+  <!-- Sarcomere shorter -->
+  <line x1="110" y1="262" x2="410" y2="262" stroke="#10B981" stroke-width="1"/>
+  <line x1="110" y1="258" x2="110" y2="266" stroke="#10B981" stroke-width="1"/>
+  <line x1="410" y1="258" x2="410" y2="266" stroke="#10B981" stroke-width="1"/>
+  <text x="230" y="274" fill="#10B981" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">← Sarcomere SHORTER (muscle contracted) →</text>
+
+  <!-- H zone reduced -->
+  <text x="240" y="186" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif">H zone reduced</text>
+
+  <!-- Key -->
+  <rect x="340" y="282" width="12" height="8" fill="#6B21D4" rx="2"/>
+  <text x="358" y="290" fill="#CBD5E1" font-size="10" font-family="Segoe UI,sans-serif">Actin (thin)</text>
+  <rect x="430" y="282" width="12" height="8" fill="#F59E0B" rx="2"/>
+  <text x="448" y="290" fill="#CBD5E1" font-size="10" font-family="Segoe UI,sans-serif">Myosin (thick)</text>
+
+  <text x="16" y="310" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif">Simply Sport Science · Sliding Filament Theory</text>
+</svg>
+</div>
 <p>Muscles work in functional roles: the <strong>agonist</strong> (prime mover) contracts to produce movement; the <strong>antagonist</strong> relaxes to allow it; <strong>fixators</strong> stabilise a joint so agonists/antagonists can act effectively. Contraction types: <strong>concentric</strong> (muscle shortens), <strong>eccentric</strong> (muscle lengthens under tension, controlling movement), and <strong>isometric</strong> (tension without a length change, e.g. holding a plank).</p>
   </div>
 
   <div class="content-section">
     <h2>B.1.4 Levers in Movement and Sport</h2>
+
+<div class="sss-diagram">
+<p class="sss-diagram-title">The Three Classes of Lever</p>
+<svg viewBox="0 0 520 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three classes of lever showing effort, fulcrum and load positions for first class (neck), second class (tiptoe), and third class (biceps curl)">
+  <rect width="520" height="310" fill="#0F172A" rx="12"/>
+
+  <!-- Column headers -->
+  <text x="87" y="24" fill="#22D3EE" font-size="13" font-family="Segoe UI,sans-serif" font-weight="900" text-anchor="middle">1st Class</text>
+  <text x="87" y="37" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">F — L — E / E — F — L</text>
+  <text x="260" y="24" fill="#F59E0B" font-size="13" font-family="Segoe UI,sans-serif" font-weight="900" text-anchor="middle">2nd Class</text>
+  <text x="260" y="37" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">F — E — L (load in middle)</text>
+  <text x="433" y="24" fill="#C026D3" font-size="13" font-family="Segoe UI,sans-serif" font-weight="900" text-anchor="middle">3rd Class</text>
+  <text x="433" y="37" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">F — E — L (effort in middle)</text>
+
+  <!-- Divider lines -->
+  <line x1="173" y1="10" x2="173" y2="300" stroke="#2D3F5E" stroke-width="1"/>
+  <line x1="347" y1="10" x2="347" y2="300" stroke="#2D3F5E" stroke-width="1"/>
+
+  <!-- ── 1ST CLASS ── -->
+  <!-- Beam -->
+  <line x1="20" y1="88" x2="154" y2="88" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
+  <!-- Fulcrum (triangle) at centre -->
+  <polygon points="87,88 76,108 98,108" fill="#22D3EE"/>
+  <text x="87" y="120" fill="#22D3EE" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">F</text>
+  <!-- Effort arrow left -->
+  <line x1="28" y1="68" x2="28" y2="86" stroke="#10B981" stroke-width="2.5" marker-end="url(#lv1)"/>
+  <text x="28" y="62" fill="#10B981" font-size="11" font-family="Segoe UI,sans-serif" font-weight="800" text-anchor="middle">E</text>
+  <!-- Load arrow right -->
+  <line x1="148" y1="68" x2="148" y2="86" stroke="#C026D3" stroke-width="2.5" marker-end="url(#lv2)"/>
+  <text x="148" y="62" fill="#C026D3" font-size="11" font-family="Segoe UI,sans-serif" font-weight="800" text-anchor="middle">L</text>
+
+  <defs>
+    <marker id="lv1" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#10B981"/></marker>
+    <marker id="lv2" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#C026D3"/></marker>
+    <marker id="lv3" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#10B981"/></marker>
+    <marker id="lv4" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#C026D3"/></marker>
+  </defs>
+
+  <!-- Body example text -->
+  <text x="87" y="140" fill="#CBD5E1" font-size="11" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">Head on neck</text>
+  <text x="87" y="154" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">Atlas joint = fulcrum</text>
+  <text x="87" y="166" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">Neck muscle = effort</text>
+  <text x="87" y="178" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">Head weight = load</text>
+  <text x="87" y="198" fill="#F59E0B" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">Also: see-saw, triceps push-up</text>
+  <text x="87" y="214" fill="#94A3B8" font-size="9" font-family="Segoe UI,sans-serif" text-anchor="middle">MA can be &gt;1 or &lt;1</text>
+
+  <!-- ── 2ND CLASS ── -->
+  <line x1="193" y1="88" x2="327" y2="88" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
+  <!-- Fulcrum at left end -->
+  <polygon points="193,88 182,108 204,108" fill="#F59E0B"/>
+  <text x="193" y="120" fill="#F59E0B" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">F</text>
+  <!-- Load in middle -->
+  <line x1="250" y1="68" x2="250" y2="86" stroke="#C026D3" stroke-width="2.5" marker-end="url(#lv4)"/>
+  <text x="250" y="62" fill="#C026D3" font-size="11" font-family="Segoe UI,sans-serif" font-weight="800" text-anchor="middle">L</text>
+  <!-- Effort at right end -->
+  <line x1="320" y1="68" x2="320" y2="86" stroke="#10B981" stroke-width="2.5" marker-end="url(#lv3)"/>
+  <text x="320" y="62" fill="#10B981" font-size="11" font-family="Segoe UI,sans-serif" font-weight="800" text-anchor="middle">E</text>
+
+  <text x="260" y="140" fill="#CBD5E1" font-size="11" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">Rising onto tiptoe</text>
+  <text x="260" y="154" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">Toes = fulcrum</text>
+  <text x="260" y="166" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">Body weight = load</text>
+  <text x="260" y="178" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">Calf muscle = effort</text>
+  <text x="260" y="198" fill="#F59E0B" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">Effort arm &gt; load arm</text>
+  <text x="260" y="214" fill="#94A3B8" font-size="9" font-family="Segoe UI,sans-serif" text-anchor="middle">MA always &gt; 1 · favours FORCE</text>
+
+  <!-- ── 3RD CLASS ── -->
+  <line x1="367" y1="88" x2="501" y2="88" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
+  <!-- Fulcrum at left end -->
+  <polygon points="367,88 356,108 378,108" fill="#C026D3"/>
+  <text x="367" y="120" fill="#C026D3" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">F</text>
+  <!-- Effort near fulcrum -->
+  <line x1="400" y1="68" x2="400" y2="86" stroke="#10B981" stroke-width="2.5" marker-end="url(#lv3)"/>
+  <text x="400" y="62" fill="#10B981" font-size="11" font-family="Segoe UI,sans-serif" font-weight="800" text-anchor="middle">E</text>
+  <!-- Load at far end -->
+  <line x1="495" y1="68" x2="495" y2="86" stroke="#C026D3" stroke-width="2.5" marker-end="url(#lv4)"/>
+  <text x="495" y="62" fill="#C026D3" font-size="11" font-family="Segoe UI,sans-serif" font-weight="800" text-anchor="middle">L</text>
+
+  <text x="433" y="140" fill="#CBD5E1" font-size="11" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">Biceps curl</text>
+  <text x="433" y="154" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">Elbow = fulcrum</text>
+  <text x="433" y="166" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">Biceps = effort</text>
+  <text x="433" y="178" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">Dumbbell = load</text>
+  <text x="433" y="198" fill="#F59E0B" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">Most body levers — MA &lt; 1</text>
+  <text x="433" y="214" fill="#94A3B8" font-size="9" font-family="Segoe UI,sans-serif" text-anchor="middle">Trades force for SPEED &amp; range</text>
+
+  <!-- Key: E, F, L -->
+  <text x="16" y="240" fill="#10B981" font-size="12" font-family="Segoe UI,sans-serif" font-weight="900">E</text>
+  <text x="28" y="240" fill="#CBD5E1" font-size="11" font-family="Segoe UI,sans-serif"> = Effort</text>
+  <text x="100" y="240" fill="#C026D3" font-size="12" font-family="Segoe UI,sans-serif" font-weight="900">L</text>
+  <text x="112" y="240" fill="#CBD5E1" font-size="11" font-family="Segoe UI,sans-serif"> = Load</text>
+  <text x="170" y="240" fill="#22D3EE" font-size="12" font-family="Segoe UI,sans-serif" font-weight="900">F</text>
+  <text x="182" y="240" fill="#CBD5E1" font-size="11" font-family="Segoe UI,sans-serif"> = Fulcrum (pivot)</text>
+
+  <text x="16" y="300" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif">Simply Sport Science · Three Classes of Lever</text>
+</svg>
+</div>
 <p>A lever is a rigid bone that rotates around a joint (fulcrum) when muscular force is applied, to move a load. Three classes:</p>
 <ul><li><strong>First class</strong> — fulcrum between force and load, e.g. nodding the head.</li><li><strong>Second class</strong> — load between fulcrum and force, e.g. a calf raise.</li><li><strong>Third class</strong> — force between fulcrum and load, e.g. a bicep curl. This is the most common lever system in the body — it sacrifices mechanical advantage for speed and range of motion, well suited to sport.</li></ul>
     <div class="exam-tip">

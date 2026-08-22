@@ -109,6 +109,11 @@
     footer{padding:40px 16px 22px;}
     .footer-top{grid-template-columns:1fr;}
   }
+
+  /* ── SSS Diagram styles ── */
+  .sss-diagram{background:#162032;border:1px solid #2D3F5E;border-radius:14px;padding:18px 12px 10px;margin:8px 0 28px;overflow:hidden;}
+  .sss-diagram-title{display:none;}  /* title is inside the SVG */
+  .sss-diagram svg{width:100%;height:auto;display:block;}
 </style>
 </head>
 <body>
@@ -163,6 +168,69 @@
 
   <div class="content-section">
     <h2>7.1 Theory of Information Processing</h2>
+
+<div class="sss-diagram">
+<p class="sss-diagram-title">Information Processing Model</p>
+<svg viewBox="0 0 520 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Information processing model showing stimulus through display, sensory input, perception, decision making, effector mechanism to response, with intrinsic and extrinsic feedback loops">
+  <rect width="520" height="230" fill="#0F172A" rx="12"/>
+  <defs>
+    <marker id="ip1" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#22D3EE"/></marker>
+    <marker id="ip2" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto"><polygon points="0 0,7 2.5,0 5" fill="#F59E0B"/></marker>
+  </defs>
+
+  <!-- Boxes -->
+  <!-- 1 Display -->
+  <rect x="14" y="60" width="68" height="44" fill="#162032" stroke="#22D3EE" stroke-width="1.5" rx="6"/>
+  <text x="48" y="79" fill="#22D3EE" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">Display</text>
+  <text x="48" y="93" fill="#94A3B8" font-size="9" font-family="Segoe UI,sans-serif" text-anchor="middle">(environment)</text>
+
+  <!-- 2 Sensory Input -->
+  <rect x="94" y="60" width="72" height="44" fill="#162032" stroke="#6B21D4" stroke-width="1.5" rx="6"/>
+  <text x="130" y="79" fill="#9B59E8" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">Sensory</text>
+  <text x="130" y="93" fill="#9B59E8" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">Input</text>
+
+  <!-- 3 Perception -->
+  <rect x="178" y="60" width="72" height="44" fill="#162032" stroke="#6B21D4" stroke-width="1.5" rx="6"/>
+  <text x="214" y="79" fill="#9B59E8" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">Perception</text>
+  <text x="214" y="93" fill="#94A3B8" font-size="9" font-family="Segoe UI,sans-serif" text-anchor="middle">(interpret)</text>
+
+  <!-- 4 Decision Making -->
+  <rect x="262" y="60" width="72" height="44" fill="#162032" stroke="#C026D3" stroke-width="1.5" rx="6"/>
+  <text x="298" y="74" fill="#E040FB" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">Decision</text>
+  <text x="298" y="86" fill="#E040FB" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">Making</text>
+  <text x="298" y="98" fill="#94A3B8" font-size="9" font-family="Segoe UI,sans-serif" text-anchor="middle">(what to do)</text>
+
+  <!-- 5 Effector -->
+  <rect x="346" y="60" width="72" height="44" fill="#162032" stroke="#F59E0B" stroke-width="1.5" rx="6"/>
+  <text x="382" y="79" fill="#FCD34D" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">Effector</text>
+  <text x="382" y="93" fill="#94A3B8" font-size="9" font-family="Segoe UI,sans-serif" text-anchor="middle">(muscles/nerves)</text>
+
+  <!-- 6 Response -->
+  <rect x="430" y="60" width="72" height="44" fill="#162032" stroke="#10B981" stroke-width="1.5" rx="6"/>
+  <text x="466" y="79" fill="#10B981" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">Response</text>
+  <text x="466" y="93" fill="#94A3B8" font-size="9" font-family="Segoe UI,sans-serif" text-anchor="middle">(movement)</text>
+
+  <!-- Connecting arrows -->
+  <line x1="82" y1="82" x2="92" y2="82" stroke="#22D3EE" stroke-width="2" marker-end="url(#ip1)"/>
+  <line x1="166" y1="82" x2="176" y2="82" stroke="#22D3EE" stroke-width="2" marker-end="url(#ip1)"/>
+  <line x1="250" y1="82" x2="260" y2="82" stroke="#22D3EE" stroke-width="2" marker-end="url(#ip1)"/>
+  <line x1="334" y1="82" x2="344" y2="82" stroke="#22D3EE" stroke-width="2" marker-end="url(#ip1)"/>
+  <line x1="418" y1="82" x2="428" y2="82" stroke="#22D3EE" stroke-width="2" marker-end="url(#ip1)"/>
+
+  <!-- Intrinsic feedback loop (bottom) -->
+  <path d="M466,104 Q466,145 298,145 Q130,145 130,104" stroke="#F59E0B" stroke-width="1.5" fill="none" stroke-dasharray="5,3" marker-end="url(#ip2)"/>
+  <text x="298" y="158" fill="#F59E0B" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">Intrinsic Feedback (proprioception — 'how it felt')</text>
+
+  <!-- Extrinsic feedback loop (outer) -->
+  <path d="M502,82 Q515,82 515,175 Q515,185 298,185 Q80,185 14,175 Q6,175 6,82 Q6,52 48,52" stroke="#10B981" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#ip1)"/>
+  <text x="298" y="200" fill="#10B981" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">Extrinsic Feedback (from coach, video, result)</text>
+
+  <!-- Selective attention label above sensory -->
+  <text x="130" y="52" fill="#9B59E8" font-size="9" font-family="Segoe UI,sans-serif" text-anchor="middle">↑ Selective attention filters here</text>
+
+  <text x="16" y="220" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif">Simply Sport Science · Information Processing Model</text>
+</svg>
+</div>
 <p>The information processing model describes how a performer moves from sensing to acting: <strong>display</strong> (the environment) → <strong>sensory information</strong> received via <strong>sense organs</strong> → <strong>perception</strong> → <strong>decision making</strong> → <strong>effector mechanism</strong> (muscles) → <strong>response</strong> → <strong>feedback</strong>.</p>
   </div>
 

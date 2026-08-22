@@ -109,6 +109,11 @@
     footer{padding:40px 16px 22px;}
     .footer-top{grid-template-columns:1fr;}
   }
+
+  /* ── SSS Diagram styles ── */
+  .sss-diagram{background:#162032;border:1px solid #2D3F5E;border-radius:14px;padding:18px 12px 10px;margin:8px 0 28px;overflow:hidden;}
+  .sss-diagram-title{display:none;}  /* title is inside the SVG */
+  .sss-diagram svg{width:100%;height:auto;display:block;}
 </style>
 </head>
 <body>
@@ -163,6 +168,116 @@
 
   <div class="content-section">
     <h2>A.1.1 Inter-System Communication</h2>
+
+<div class="sss-diagram">
+<p class="sss-diagram-title">Heart Structure</p>
+<svg viewBox="0 0 520 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cross-section of the human heart showing four chambers, valves, aorta and pulmonary vessels">
+  <defs>
+    <linearGradient id="hg1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a0a2e"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#22D3EE"/>
+    </marker>
+    <marker id="arrW" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0,8 3,0 6" fill="#94A3B8"/>
+    </marker>
+  </defs>
+  <!-- background -->
+  <rect width="520" height="380" fill="url(#hg1)" rx="12"/>
+
+  <!-- Aorta (arch top-left) -->
+  <path d="M200,40 Q180,20 160,30 Q140,40 145,70 L155,70 Q152,45 168,36 Q183,27 196,44Z" fill="#C026D3" opacity="0.9"/>
+  <text x="115" y="28" fill="#E040FB" font-size="11" font-family="Segoe UI,sans-serif" font-weight="700">Aorta</text>
+  <line x1="148" y1="30" x2="130" y2="32" stroke="#94A3B8" stroke-width="1"/>
+
+  <!-- Pulmonary artery (top right) -->
+  <path d="M270,45 Q290,20 310,28 Q328,38 322,65 L312,65 Q318,42 304,34 Q288,25 276,48Z" fill="#C026D3" opacity="0.7"/>
+  <text x="308" y="22" fill="#E040FB" font-size="11" font-family="Segoe UI,sans-serif" font-weight="700">Pulmonary</text>
+  <text x="314" y="34" fill="#E040FB" font-size="11" font-family="Segoe UI,sans-serif" font-weight="700">Artery</text>
+  <line x1="314" y1="38" x2="318" y2="46" stroke="#94A3B8" stroke-width="1"/>
+
+  <!-- Superior vena cava -->
+  <rect x="218" y="28" width="22" height="42" fill="#2979FF" rx="3" opacity="0.85"/>
+  <text x="246" y="42" fill="#93C5FD" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">SVC</text>
+  <line x1="246" y1="46" x2="242" y2="50" stroke="#94A3B8" stroke-width="1"/>
+
+  <!-- Pulmonary veins (left side) -->
+  <rect x="152" y="120" width="18" height="36" fill="#2979FF" rx="2" opacity="0.75"/>
+  <text x="108" y="132" fill="#93C5FD" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">Pulmonary</text>
+  <text x="116" y="144" fill="#93C5FD" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">Veins</text>
+  <line x1="152" y1="136" x2="148" y2="136" stroke="#94A3B8" stroke-width="1"/>
+
+  <!-- Right Atrium -->
+  <ellipse cx="248" cy="140" rx="64" ry="52" fill="#1D4ED8" opacity="0.55"/>
+  <text x="228" y="135" fill="#fff" font-size="12" font-family="Segoe UI,sans-serif" font-weight="800">Right</text>
+  <text x="224" y="150" fill="#fff" font-size="12" font-family="Segoe UI,sans-serif" font-weight="800">Atrium</text>
+
+  <!-- Left Atrium -->
+  <ellipse cx="200" cy="148" rx="52" ry="44" fill="#6B21D4" opacity="0.65"/>
+  <text x="174" y="143" fill="#fff" font-size="12" font-family="Segoe UI,sans-serif" font-weight="800">Left</text>
+  <text x="168" y="158" fill="#fff" font-size="12" font-family="Segoe UI,sans-serif" font-weight="800">Atrium</text>
+
+  <!-- Septum -->
+  <line x1="222" y1="105" x2="218" y2="290" stroke="#94A3B8" stroke-width="2.5" stroke-dasharray="4,3"/>
+
+  <!-- Tricuspid valve -->
+  <path d="M230,190 Q248,182 265,190 Q248,202 230,190Z" fill="#F59E0B" opacity="0.9"/>
+  <text x="268" y="196" fill="#FCD34D" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">Tricuspid</text>
+  <text x="270" y="207" fill="#FCD34D" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">Valve</text>
+
+  <!-- Mitral valve -->
+  <path d="M178,193 Q196,185 213,193 Q196,205 178,193Z" fill="#F59E0B" opacity="0.9"/>
+  <text x="120" y="192" fill="#FCD34D" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">Mitral</text>
+  <text x="122" y="203" fill="#FCD34D" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">Valve</text>
+  <line x1="178" y1="196" x2="156" y2="200" stroke="#94A3B8" stroke-width="1"/>
+
+  <!-- Right Ventricle -->
+  <path d="M218,205 Q285,200 298,265 Q285,310 248,318 Q218,318 218,280Z" fill="#1D4ED8" opacity="0.7"/>
+  <text x="242" y="270" fill="#fff" font-size="12" font-family="Segoe UI,sans-serif" font-weight="800">Right</text>
+  <text x="234" y="285" fill="#fff" font-size="12" font-family="Segoe UI,sans-serif" font-weight="800">Ventricle</text>
+
+  <!-- Left Ventricle (larger, thicker wall) -->
+  <path d="M135,208 Q218,200 218,280 Q218,326 184,336 Q148,344 132,310 Q118,275 135,208Z" fill="#6B21D4" opacity="0.75"/>
+  <text x="142" y="276" fill="#fff" font-size="12" font-family="Segoe UI,sans-serif" font-weight="800">Left</text>
+  <text x="133" y="291" fill="#fff" font-size="12" font-family="Segoe UI,sans-serif" font-weight="800">Ventricle</text>
+
+  <!-- Thicker wall annotation -->
+  <path d="M122,220 L115,220 L115,310 L122,310" stroke="#22D3EE" stroke-width="1.5" fill="none"/>
+  <text x="70" y="262" fill="#22D3EE" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">Thick</text>
+  <text x="72" y="274" fill="#22D3EE" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">wall</text>
+
+  <!-- Pulmonary valve -->
+  <path d="M295,195 Q310,188 325,195 Q310,205 295,195Z" fill="#F59E0B" opacity="0.85"/>
+  <text x="328" y="192" fill="#FCD34D" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">Pulmonary</text>
+  <text x="332" y="203" fill="#FCD34D" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">Valve</text>
+
+  <!-- Aortic valve -->
+  <path d="M186,78 Q200,70 214,78 Q200,88 186,78Z" fill="#F59E0B" opacity="0.85"/>
+  <text x="336" y="82" fill="#FCD34D" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">Aortic Valve</text>
+  <line x1="214" y1="78" x2="330" y2="82" stroke="#94A3B8" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Inferior vena cava -->
+  <rect x="248" y="318" width="22" height="38" fill="#2979FF" rx="3" opacity="0.85"/>
+  <text x="276" y="338" fill="#93C5FD" font-size="10" font-family="Segoe UI,sans-serif" font-weight="700">IVC</text>
+
+  <!-- Blood flow arrows -->
+  <path d="M239,68 L239,90" stroke="#22D3EE" stroke-width="2" marker-end="url(#arr)" stroke-dasharray="4,2"/>
+  <path d="M258,90 L258,68" stroke="#22D3EE" stroke-width="2" marker-end="url(#arr)" stroke-dasharray="4,2" opacity="0.5"/>
+
+  <!-- Deoxygenated / oxygenated key -->
+  <rect x="355" y="290" width="14" height="10" fill="#2979FF" rx="2"/>
+  <text x="374" y="300" fill="#CBD5E1" font-size="10" font-family="Segoe UI,sans-serif">Deoxygenated</text>
+  <rect x="355" y="308" width="14" height="10" fill="#6B21D4" rx="2"/>
+  <text x="374" y="318" fill="#CBD5E1" font-size="10" font-family="Segoe UI,sans-serif">Oxygenated</text>
+  <rect x="355" y="326" width="14" height="10" fill="#F59E0B" rx="2"/>
+  <text x="374" y="336" fill="#CBD5E1" font-size="10" font-family="Segoe UI,sans-serif">Valves</text>
+
+  <!-- Title -->
+  <text x="26" y="362" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif">Simply Sport Science · Heart Structure</text>
+</svg>
+</div>
 <p>The body coordinates its systems using two communication pathways. The <strong>nervous system</strong> uses fast electrical nerve impulses for rapid, short-duration responses — e.g. the immediate rise in heart rate as exercise begins. The <strong>endocrine system</strong> uses hormones released into the bloodstream for slower, longer-lasting responses — e.g. adrenaline reinforcing and sustaining the cardiovascular response over the course of a session.</p>
 <p>These systems work together rather than separately: a nervous signal can trigger a hormonal release (e.g. sympathetic stimulation of the adrenal medulla releasing adrenaline), and hormones can influence how sensitive the nervous system is to future signals.</p>
     <div class="exam-tip">
