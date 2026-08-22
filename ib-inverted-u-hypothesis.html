@@ -109,6 +109,11 @@
     footer{padding:40px 16px 22px;}
     .footer-top{grid-template-columns:1fr;}
   }
+
+  /* ── SSS Diagram styles ── */
+  .sss-diagram{background:#162032;border:1px solid #2D3F5E;border-radius:14px;padding:18px 12px 10px;margin:8px 0 28px;overflow:hidden;}
+  .sss-diagram-title{display:none;}  /* title is inside the SVG */
+  .sss-diagram svg{width:100%;height:auto;display:block;}
 </style>
 </head>
 <body>
@@ -163,6 +168,62 @@
 
   <div class="content-section">
     <h2>The Basic Relationship</h2>
+
+<div class="sss-diagram">
+<p class="sss-diagram-title">The Inverted-U Hypothesis</p>
+<svg viewBox="0 0 520 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Inverted U hypothesis showing performance rising with arousal to an optimal point then declining, with separate curves for simple and complex tasks">
+  <rect width="520" height="290" fill="#0F172A" rx="12"/>
+
+  <!-- Axes -->
+  <line x1="60" y1="220" x2="470" y2="220" stroke="#2D3F5E" stroke-width="2"/>
+  <line x1="60" y1="30" x2="60" y2="220" stroke="#2D3F5E" stroke-width="2"/>
+
+  <!-- Y axis label -->
+  <text x="16" y="130" fill="#94A3B8" font-size="11" font-family="Segoe UI,sans-serif" font-weight="700" transform="rotate(-90,16,130)">Performance</text>
+  <!-- X axis label -->
+  <text x="260" y="242" fill="#94A3B8" font-size="11" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">← Arousal Level →</text>
+  <text x="68" y="234" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif">Low</text>
+  <text x="240" y="234" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">Moderate</text>
+  <text x="444" y="234" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif">High</text>
+
+  <!-- Complex skill curve (peaks left of centre) -->
+  <path d="M68,210 Q130,200 180,90 Q210,42 240,50 Q270,58 300,120 Q340,185 460,218"
+        stroke="#C026D3" stroke-width="2.5" fill="none" stroke-dasharray="8,4"/>
+  <text x="150" y="82" fill="#C026D3" font-size="11" font-family="Segoe UI,sans-serif" font-weight="700">Complex / fine skill</text>
+  <text x="152" y="95" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif">(e.g. golf putt, archery)</text>
+
+  <!-- Simple skill curve (peaks right of centre) -->
+  <path d="M68,215 Q160,205 260,75 Q320,35 350,48 Q390,68 440,215"
+        stroke="#22D3EE" stroke-width="2.5" fill="none"/>
+  <text x="342" y="44" fill="#22D3EE" font-size="11" font-family="Segoe UI,sans-serif" font-weight="700">Simple / gross skill</text>
+  <text x="344" y="57" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif">(e.g. sprint, tackle)</text>
+
+  <!-- Optimal zones -->
+  <line x1="218" y1="44" x2="218" y2="220" stroke="#C026D3" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+  <line x1="316" y1="38" x2="316" y2="220" stroke="#22D3EE" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+
+  <!-- Labels on axes -->
+  <text x="205" y="260" fill="#C026D3" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">Optimal</text>
+  <text x="205" y="272" fill="#C026D3" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">(complex)</text>
+  <text x="316" y="260" fill="#22D3EE" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">Optimal</text>
+  <text x="316" y="272" fill="#22D3EE" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">(simple)</text>
+
+  <!-- Zones annotations -->
+  <text x="75" y="60" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif">Under-aroused</text>
+  <text x="76" y="72" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif">boredom / low effort</text>
+  <text x="390" y="60" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif">Over-aroused</text>
+  <text x="388" y="72" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif">anxiety / panic</text>
+
+  <!-- Y axis ticks -->
+  <line x1="56" y1="220" x2="64" y2="220" stroke="#94A3B8" stroke-width="1"/>
+  <text x="50" y="224" fill="#94A3B8" font-size="9" font-family="Segoe UI,sans-serif" text-anchor="end">Low</text>
+  <line x1="56" y1="125" x2="64" y2="125" stroke="#94A3B8" stroke-width="1"/>
+  <line x1="56" y1="30" x2="64" y2="30" stroke="#94A3B8" stroke-width="1"/>
+  <text x="50" y="34" fill="#94A3B8" font-size="9" font-family="Segoe UI,sans-serif" text-anchor="end">High</text>
+
+  <text x="16" y="282" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif">Simply Sport Science · Inverted-U Hypothesis (Yerkes-Dodson)</text>
+</svg>
+</div>
 <p>The <strong>inverted-U hypothesis</strong> proposes that as arousal increases, performance improves — but only up to an <strong>optimal point</strong>. Beyond that point, further arousal causes performance to decline. Plotted on a graph, this produces the characteristic inverted-U shape.</p>
   </div>
 

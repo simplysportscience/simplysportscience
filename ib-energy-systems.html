@@ -109,6 +109,11 @@
     footer{padding:40px 16px 22px;}
     .footer-top{grid-template-columns:1fr;}
   }
+
+  /* ── SSS Diagram styles ── */
+  .sss-diagram{background:#162032;border:1px solid #2D3F5E;border-radius:14px;padding:18px 12px 10px;margin:8px 0 28px;overflow:hidden;}
+  .sss-diagram-title{display:none;}  /* title is inside the SVG */
+  .sss-diagram svg{width:100%;height:auto;display:block;}
 </style>
 </head>
 <body>
@@ -168,6 +173,76 @@
 
   <div class="content-section">
     <h2>The Three Systems</h2>
+
+<div class="sss-diagram">
+<p class="sss-diagram-title">The Energy Continuum</p>
+<svg viewBox="0 0 520 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Energy continuum showing ATP-PC system dominating short explosive efforts through to the aerobic system dominating long-duration activity">
+  <rect width="520" height="280" fill="#0F172A" rx="12"/>
+
+  <!-- Gradient bar -->
+  <defs>
+    <linearGradient id="ecg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22D3EE"/>
+      <stop offset="40%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+  <rect x="40" y="100" width="440" height="36" fill="url(#ecg)" rx="6"/>
+
+  <!-- System labels above bar -->
+  <text x="90" y="90" fill="#22D3EE" font-size="13" font-family="Segoe UI,sans-serif" font-weight="900" text-anchor="middle">ATP-PC</text>
+  <text x="90" y="104" fill="#22D3EE" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">System</text>
+
+  <text x="240" y="90" fill="#F59E0B" font-size="13" font-family="Segoe UI,sans-serif" font-weight="900" text-anchor="middle">Anaerobic</text>
+  <text x="240" y="104" fill="#F59E0B" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">Glycolysis</text>
+
+  <text x="415" y="90" fill="#10B981" font-size="13" font-family="Segoe UI,sans-serif" font-weight="900" text-anchor="middle">Aerobic</text>
+  <text x="415" y="104" fill="#10B981" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">System</text>
+
+  <!-- Divider lines -->
+  <line x1="165" y1="95" x2="165" y2="140" stroke="#0F172A" stroke-width="2" opacity="0.7"/>
+  <line x1="320" y1="95" x2="320" y2="140" stroke="#0F172A" stroke-width="2" opacity="0.7"/>
+
+  <!-- Duration axis -->
+  <line x1="40" y1="148" x2="480" y2="148" stroke="#2D3F5E" stroke-width="1"/>
+  <!-- Tick marks and labels -->
+  <line x1="40" y1="144" x2="40" y2="152" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="40" y="162" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">0s</text>
+  <line x1="115" y1="144" x2="115" y2="152" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="115" y="162" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">10s</text>
+  <line x1="200" y1="144" x2="200" y2="152" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="200" y="162" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">90s</text>
+  <line x1="310" y1="144" x2="310" y2="152" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="310" y="162" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">3 min</text>
+  <line x1="480" y1="144" x2="480" y2="152" stroke="#94A3B8" stroke-width="1.5"/>
+  <text x="480" y="162" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">60+ min</text>
+  <text x="260" y="174" fill="#94A3B8" font-size="11" font-family="Segoe UI,sans-serif" text-anchor="middle">← Exercise Duration →</text>
+
+  <!-- Sport examples -->
+  <text x="90" y="196" fill="#22D3EE" font-size="11" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">100m sprint</text>
+  <text x="90" y="210" fill="#22D3EE" font-size="11" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">Shot put</text>
+  <text x="90" y="224" fill="#22D3EE" font-size="11" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">High jump</text>
+
+  <text x="235" y="196" fill="#F59E0B" font-size="11" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">400m / 800m</text>
+  <text x="235" y="210" fill="#F59E0B" font-size="11" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">200m swim</text>
+
+  <text x="415" y="196" fill="#10B981" font-size="11" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">5K / 10K</text>
+  <text x="415" y="210" fill="#10B981" font-size="11" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">Marathon</text>
+  <text x="415" y="224" fill="#10B981" font-size="11" font-family="Segoe UI,sans-serif" font-weight="700" text-anchor="middle">Triathlon</text>
+
+  <!-- Properties -->
+  <text x="90" y="244" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">No O₂ · PCr fuel</text>
+  <text x="90" y="256" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">High power</text>
+
+  <text x="240" y="244" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">No O₂ · Glucose</text>
+  <text x="240" y="256" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">Lactate produced</text>
+
+  <text x="415" y="244" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">O₂ required · CHO + fat</text>
+  <text x="415" y="256" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif" text-anchor="middle">High capacity</text>
+
+  <text x="16" y="272" fill="#94A3B8" font-size="10" font-family="Segoe UI,sans-serif">Simply Sport Science · Energy Continuum</text>
+</svg>
+</div>
 <table class="es-table"><thead><tr><th>System</th><th>Fuel</th><th>Oxygen?</th><th>Duration</th><th>By-product</th></tr></thead><tbody><tr><td>ATP-PC</td><td>Phosphocreatine</td><td>No</td><td>~8–10 s</td><td>None (alactic)</td></tr><tr><td>Anaerobic glycolysis</td><td>Glucose/glycogen</td><td>No</td><td>~10 s–3 min</td><td>Lactate / H⁺</td></tr><tr><td>Aerobic</td><td>Carbs, fats (protein)</td><td>Yes</td><td>3 min onward</td><td>CO₂ and water</td></tr></tbody></table>
 <p>The <strong>ATP-PC system</strong> is fastest but briefest — ideal for explosive efforts. <strong>Anaerobic glycolysis</strong> supplies rapid energy for high-intensity efforts but the accumulation of hydrogen ions lowers muscle pH and causes fatigue. The <strong>aerobic system</strong> yields far more ATP per molecule of fuel and produces no fatiguing by-products, but is slower to supply energy.</p>
   </div>
