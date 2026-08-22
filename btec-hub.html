@@ -88,7 +88,7 @@
 <nav>
   <div class="nav-inner">
     <a class="logo" href="index.html">
-      <div class="logo-circle">🏃</div>
+      <div class="logo-circle"><img src="sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
       <div>
         <div class="logo-tagline">Sport Science Sorted</div>
         <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
@@ -217,10 +217,11 @@ function tagLabel(u){
   return '<span class="topic-tag tag-optional">Optional</span>';
 }
 
+const UNIT_PAGES={"1": "btec-unit-01-health-wellbeing-sport.html", "2": "btec-unit-02-careers-sport-active-leisure.html", "3": "btec-unit-03-research-project.html", "4": "btec-unit-04-ethics-behaviours-values.html", "5": "btec-unit-05-self-employment-sport.html", "6": "btec-unit-06-exercise-fitness-skills.html", "7": "btec-unit-07-personal-training-programming.html", "8": "btec-unit-08-anatomy-physiology-exercise.html", "9": "btec-unit-09-nutrition-physical-activity.html", "10": "btec-unit-10-business-technology-personal-training.html", "11": "btec-unit-11-business-in-sport.html", "12": "btec-unit-12-sports-tourism.html", "13": "btec-unit-13-sports-journalism.html", "14": "btec-unit-14-marketing-communications.html", "15": "btec-unit-15-developing-coaching-skills.html", "16": "btec-unit-16-applied-coaching-skills.html", "17": "btec-unit-17-inclusive-coaching.html", "18": "btec-unit-18-sport-leisure-facilities-management.html", "19": "btec-unit-19-sport-leisure-facility-operations.html", "20": "btec-unit-20-large-sports-spectator-events.html", "23": "btec-unit-23-talent-identification-development.html", "24": "btec-unit-24-applied-sports-anatomy-physiology.html", "25": "btec-unit-25-sports-injuries-management.html", "26": "btec-unit-26-nutrition-physical-performance.html", "27": "btec-unit-27-sports-psychology.html", "28": "btec-unit-28-fitness-testing.html", "29": "btec-unit-29-technical-tactical-skills.html", "30": "btec-unit-30-organising-sport-events.html", "31": "btec-unit-31-influence-technology-sport.html", "32": "btec-unit-32-sports-performance-analysis.html", "33": "btec-unit-33-rules-regulations-officiating.html", "34": "btec-unit-34-sport-development.html", "35": "btec-unit-35-practical-sports-performance.html", "36": "btec-unit-36-functional-sports-massage.html", "39": "btec-unit-39-enterprise-entrepreneurs.html"};
 function renderUnits(filter){
   const filtered = filter==="all" ? units : units.filter(u=>u.tags.includes(filter));
   document.getElementById("unitList").innerHTML = filtered.map(u=>`
-    <a href="#" class="topic-item">
+    <a href="${UNIT_PAGES[u.num]||'#'}" class="topic-item"${UNIT_PAGES[u.num]?'':' style="opacity:0.55;cursor:default;"'}>
       <div class="topic-num">${u.num}</div>
       <div class="topic-text"><h4>${u.name}</h4><p>${u.aim}</p></div>
       ${tagLabel(u)}
