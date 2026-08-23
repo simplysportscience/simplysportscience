@@ -10,7 +10,7 @@
     --purple:#6B21D4;--pink:#C026D3;--gold:#F59E0B;--gold-light:#FCD34D;--cyan:#22D3EE;
     --navy:#0F172A;--navy-mid:#1A2540;--navy-card:#162032;--white:#FFFFFF;
     --grey:#94A3B8;--grey-light:#CBD5E1;--green:#10B981;--border:#2D3F5E;
-    --ib:#2979FF;--cam:#1D4ED8;--btec:#16A34A;--gen:#8B5CF6;
+    --ib:#4FA3F7;--cam:#EF4444;--btec:#16A34A;--gen:#8B5CF6;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   body{background:var(--navy);color:var(--white);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;}
@@ -57,14 +57,14 @@
   .filter-btn{padding:5px 12px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--grey-light);font-size:11px;font-weight:700;cursor:pointer;transition:all 0.15s;white-space:nowrap;}
   .filter-btn:hover{border-color:#9B59E8;color:var(--white);}
   .filter-btn.active-all{background:rgba(107,33,212,0.25);border-color:var(--purple);color:var(--white);}
-  .filter-btn.active-ib{background:rgba(41,121,255,0.2);border-color:var(--ib);color:#93C5FD;}
-  .filter-btn.active-cam{background:rgba(29,78,216,0.2);border-color:var(--cam);color:#BAE6FD;}
+  .filter-btn.active-ib{background:rgba(79,163,247,0.2);border-color:var(--ib);color:#A8D4FF;}
+  .filter-btn.active-cam{background:rgba(239,68,68,0.2);border-color:var(--cam);color:#FCA5A5;}
   .filter-btn.active-btec{background:rgba(22,163,74,0.2);border-color:var(--btec);color:#86EFAC;}
   .filter-btn.active-gen{background:rgba(139,92,246,0.2);border-color:var(--gen);color:#C4B5FD;}
 
-  .az-jump{background:var(--navy);border-bottom:1px solid var(--border);padding:8px 24px;position:sticky;top:145px;z-index:89;overflow-x:auto;}
-  .az-jump-inner{max-width:1200px;margin:0 auto;display:flex;gap:4px;min-width:max-content;}
-  .az-jump a{width:28px;height:28px;border-radius:6px;background:rgba(107,33,212,0.15);border:1px solid rgba(107,33,212,0.3);color:#9B59E8;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;text-decoration:none;transition:all 0.15s;flex-shrink:0;}
+  .az-jump{background:var(--navy);border-bottom:1px solid var(--border);padding:10px 24px;position:sticky;top:145px;z-index:89;}
+  .az-jump-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:6px;}
+  .az-jump a{flex:1 1 0;min-width:34px;height:42px;border-radius:8px;background:rgba(107,33,212,0.15);border:1px solid rgba(107,33,212,0.3);color:#9B59E8;display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;text-decoration:none;transition:all 0.15s;}
   .az-jump a:hover{background:var(--purple);color:var(--white);}
   .az-jump a.has-results{background:rgba(107,33,212,0.25);border-color:rgba(107,33,212,0.5);}
 
@@ -82,8 +82,8 @@
   .term-card:hover .term-name a{color:var(--cyan)!important;}
   .term-tags{display:flex;gap:4px;flex-wrap:wrap;flex-shrink:0;}
   .ctag{font-size:8px;font-weight:700;padding:2px 5px;border-radius:4px;}
-  .ctag-ib{background:rgba(41,121,255,0.2);color:#93C5FD;}
-  .ctag-cam{background:rgba(29,78,216,0.2);color:#BAE6FD;}
+  .ctag-ib{background:rgba(79,163,247,0.2);color:#A8D4FF;}
+  .ctag-cam{background:rgba(239,68,68,0.2);color:#FCA5A5;}
   .ctag-btec{background:rgba(22,163,74,0.2);color:#86EFAC;}
   .ctag-gen{background:rgba(139,92,246,0.2);color:#C4B5FD;}
   .term-def{font-size:11px;color:var(--grey-light);line-height:1.5;}
@@ -102,7 +102,8 @@
     .az-main{padding:20px 16px;}
     .controls{padding:10px 16px;}
     .terms-grid{grid-template-columns:1fr;}
-    .az-jump{top:118px;}
+    .az-jump{top:118px;padding:8px 16px;}
+    .az-jump a{min-width:28px;height:36px;font-size:14px;}
   }
 </style>
 </head>
@@ -143,8 +144,8 @@
     <div class="az-count-item"><div class="az-count-val">4</div><div class="az-count-label">Course Tags</div></div>
   </div>
   <div class="colour-key">
-    <div class="key-item"><div class="key-dot" style="background:#2979FF;"></div>IB Sport Science</div>
-    <div class="key-item"><div class="key-dot" style="background:#1D4ED8;"></div>A Level / Cambridge</div>
+    <div class="key-item"><div class="key-dot" style="background:#4FA3F7;"></div>IB Sport Science</div>
+    <div class="key-item"><div class="key-dot" style="background:#EF4444;"></div>A Level / Cambridge</div>
     <div class="key-item"><div class="key-dot" style="background:#16A34A;"></div>BTEC Sport</div>
     <div class="key-item"><div class="key-dot" style="background:#8B5CF6;"></div>General Sport Science</div>
   </div>
