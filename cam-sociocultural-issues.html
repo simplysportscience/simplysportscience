@@ -109,6 +109,27 @@
     footer{padding:40px 16px 22px;}
     .footer-top{grid-template-columns:1fr;}
   }
+  /* Inline presentation deck */
+  .inline-deck-label{font-size:14px;font-weight:700;color:var(--cam-light);margin:0 0 8px;}
+  .inline-deck{background:var(--navy-card);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin:8px 0 24px;}
+  .inline-deck-frame{position:relative;background:#000;}
+  .inline-deck-frame img{width:100%;display:block;aspect-ratio:16/9;object-fit:contain;cursor:zoom-in;background:#000;}
+  .inline-deck-expand{position:absolute;top:10px;right:10px;width:38px;height:38px;border-radius:8px;background:rgba(15,23,42,0.75);border:1px solid var(--border);color:var(--white);font-size:16px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;}
+  .inline-deck-expand:hover{background:rgba(15,23,42,0.95);border-color:var(--cam-light);}
+  .inline-deck-close{display:none;position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;background:rgba(15,23,42,0.85);border:1px solid var(--border);color:var(--white);font-size:20px;align-items:center;justify-content:center;cursor:pointer;z-index:5;}
+  .inline-deck-controls{display:flex;align-items:center;justify-content:center;gap:16px;padding:12px;border-top:1px solid var(--border);}
+  .inline-deck-nav{background:var(--navy);border:1px solid var(--border);color:var(--white);width:38px;height:38px;border-radius:9px;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;}
+  .inline-deck-nav:hover:not(:disabled){border-color:var(--cam-light);background:rgba(239,68,68,0.1);}
+  .inline-deck-nav:disabled{opacity:.3;cursor:default;}
+  .inline-deck-counter{font-size:13px;font-weight:700;color:var(--grey-light);min-width:60px;text-align:center;}
+  .inline-deck-fullview{display:block;text-align:center;font-size:12px;color:var(--grey);text-decoration:none;padding:8px 0 0;}
+  .inline-deck-fullview:hover{color:var(--cam-light);}
+  .inline-deck:fullscreen{display:flex;flex-direction:column;justify-content:center;background:#000;}
+  .inline-deck:fullscreen .inline-deck-frame{flex:1;display:flex;align-items:center;justify-content:center;}
+  .inline-deck:fullscreen .inline-deck-frame img{aspect-ratio:auto;max-height:92vh;width:auto;max-width:100vw;cursor:default;}
+  .inline-deck:fullscreen .inline-deck-close{display:flex;}
+  .inline-deck:fullscreen .inline-deck-expand{display:none;}
+  .inline-deck:fullscreen .inline-deck-fullview{display:none;}
 </style>
 </head>
 <body>
@@ -194,17 +215,36 @@
     </div>
   </div>
 
+  <p class="inline-deck-label">Physical Education in Schools</p>
+  <div class="inline-deck" data-slides-path="assets/presentations/cam-sociocultural-issues" data-start-slide="1" data-total="17">
+    <div class="inline-deck-frame">
+      <img class="inline-deck-img" src="assets/presentations/cam-sociocultural-issues/slide-01.jpg" alt="Slide 1">
+      <button class="inline-deck-expand" type="button" aria-label="View fullscreen" title="View fullscreen">⛶</button>
+      <button class="inline-deck-close" type="button" aria-label="Exit fullscreen" title="Exit fullscreen">✕</button>
+    </div>
+    <div class="inline-deck-controls">
+      <button class="inline-deck-nav inline-deck-prev" type="button" aria-label="Previous slide">‹</button>
+      <span class="inline-deck-counter">1 / 17</span>
+      <button class="inline-deck-nav inline-deck-next" type="button" aria-label="Next slide">›</button>
+    </div>
+    <a href="cam-sociocultural-issues-presentation.html" class="inline-deck-fullview">Open full presentation view ↗</a>
+  </div>
 
-
-    <a href="cam-sociocultural-issues-presentation.html" class="video-slot" style="display:block;text-decoration:none;color:inherit;">
-    <p style="color:var(--cam-light);font-weight:700;">🖥️ Lesson Presentation — Physical Education in Schools (17 slides) →</p>
-  </a>
-
-    <a href="cam-sociocultural-issues-94-presentation.html" class="video-slot" style="display:block;text-decoration:none;color:inherit;">
-    <p style="color:var(--cam-light);font-weight:700;">🖥️ Lesson Presentation — Regular Participation (17 slides) →</p>
-  </a>
-
-  <div class="video-slot">
+  <p class="inline-deck-label">Regular Participation</p>
+  <div class="inline-deck" data-slides-path="assets/presentations/cam-sociocultural-issues" data-start-slide="18" data-total="17">
+    <div class="inline-deck-frame">
+      <img class="inline-deck-img" src="assets/presentations/cam-sociocultural-issues/slide-18.jpg" alt="Slide 1">
+      <button class="inline-deck-expand" type="button" aria-label="View fullscreen" title="View fullscreen">⛶</button>
+      <button class="inline-deck-close" type="button" aria-label="Exit fullscreen" title="Exit fullscreen">✕</button>
+    </div>
+    <div class="inline-deck-controls">
+      <button class="inline-deck-nav inline-deck-prev" type="button" aria-label="Previous slide">‹</button>
+      <span class="inline-deck-counter">1 / 17</span>
+      <button class="inline-deck-nav inline-deck-next" type="button" aria-label="Next slide">›</button>
+    </div>
+    <a href="cam-sociocultural-issues-94-presentation.html" class="inline-deck-fullview">Open full presentation view ↗</a>
+  </div>
+<div class="video-slot">
     <p>🎥 Video walkthrough — add your embed here</p>
   </div>
 
@@ -320,5 +360,55 @@
 </footer>
 
 <script data-goatcounter="https://simplysportscience.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>
+(function(){
+  document.querySelectorAll('.inline-deck').forEach(function(deck){
+    var path = deck.dataset.slidesPath;
+    var start = parseInt(deck.dataset.startSlide || '1', 10);
+    var total = parseInt(deck.dataset.total, 10);
+    var current = 1;
+    var img = deck.querySelector('.inline-deck-img');
+    var counter = deck.querySelector('.inline-deck-counter');
+    var prevBtn = deck.querySelector('.inline-deck-prev');
+    var nextBtn = deck.querySelector('.inline-deck-next');
+    var expandBtn = deck.querySelector('.inline-deck-expand');
+    var closeBtn = deck.querySelector('.inline-deck-close');
+    function slidePath(n){ return path + '/slide-' + String(start + n - 1).padStart(2,'0') + '.jpg'; }
+    function render(){
+      img.src = slidePath(current);
+      img.alt = 'Slide ' + current;
+      counter.textContent = current + ' / ' + total;
+      prevBtn.disabled = current === 1;
+      nextBtn.disabled = current === total;
+    }
+    function go(n){
+      if(n < 1 || n > total) return;
+      current = n;
+      render();
+    }
+    function toggleFullscreen(){
+      if(!document.fullscreenElement){
+        (deck.requestFullscreen || deck.webkitRequestFullscreen).call(deck);
+      } else {
+        (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+      }
+    }
+    prevBtn.addEventListener('click', function(e){ e.stopPropagation(); go(current - 1); });
+    nextBtn.addEventListener('click', function(e){ e.stopPropagation(); go(current + 1); });
+    img.addEventListener('click', toggleFullscreen);
+    expandBtn.addEventListener('click', toggleFullscreen);
+    closeBtn.addEventListener('click', function(e){ e.stopPropagation(); if(document.fullscreenElement) document.exitFullscreen(); });
+    deck.setAttribute('tabindex', '-1');
+    deck.addEventListener('keydown', function(e){
+      if(e.key === 'ArrowLeft') go(current - 1);
+      if(e.key === 'ArrowRight') go(current + 1);
+    });
+    document.addEventListener('fullscreenchange', function(){
+      if(document.fullscreenElement === deck){ deck.focus(); }
+    });
+    render();
+  });
+})();
+</script>
 </body>
 </html>
