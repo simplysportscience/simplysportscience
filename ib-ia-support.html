@@ -4,70 +4,100 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Internal Assessment Support | IB Sport Science | Simply Sport Science</title>
-<meta name="description" content="IB SEHS Internal Assessment support — research question design, data collection and analysis, and evaluation writing guidance."/>
+<link rel="icon" href="favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+<meta name="description" content="IB SEHS internal assessment (scientific investigation) support: choosing a topic, writing the research question, method, recording and processing data, tools, conclusion, evaluation, referencing and a pre-submission checklist."/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Simply Sport Science"/>
+<meta property="og:title" content="Internal Assessment Support | Simply Sport Science"/>
+<meta property="og:description" content="IB SEHS internal assessment (scientific investigation) support: choosing a topic, writing the research question, method, recording and processing data, tools, conclusion, evaluation, referencing and a pre-submission checklist."/>
+<meta property="og:url" content="https://simplysportscience.co.uk/ib-ia-support.html"/>
+<meta property="og:image" content="https://simplysportscience.co.uk/og-share-image.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <style>
-  :root{
-    --purple:#6B21D4;--pink:#C026D3;--gold:#F59E0B;--gold-light:#FCD34D;--cyan:#22D3EE;
-    --navy:#0F172A;--navy-mid:#1A2540;--navy-card:#162032;--white:#FFFFFF;
-    --grey:#94A3B8;--grey-light:#CBD5E1;--green:#10B981;--border:#2D3F5E;
-    --ib:#4FA3F7;--ib-light:#A8D4FF;--magenta:#E040FB;
-  }
+  :root{--deep:#3D1F8C;--indigo:#1A0F5C;--magenta:#C4218A;--violet:#6B2FC4;--amber:#E8A020;
+    --violet-light:#B38BFF;--magenta-light:#F07CC4;--amber-light:#F5C866;--ib:#4FA3F7;--ib-light:#A8D4FF;
+    --bg:#0E0A24;--bg-mid:#160F36;--card:#1C1442;--border:#33275F;--white:#FFFFFF;--grey:#A39FC0;--grey-light:#D4D0EA;}
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{background:var(--navy);color:var(--white);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;}
-
-  nav{background:rgba(15,23,42,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+  body{background:var(--bg);color:var(--white);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.65;}
+  a{color:var(--ib-light);}
+  nav{background:rgba(14,10,36,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
   .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px;}
   .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
-  .logo-circle{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--pink),var(--gold));display:flex;align-items:center;justify-content:center;box-shadow:0 0 16px rgba(107,33,212,0.45);font-size:18px;}
-  .logo-tagline{font-size:9px;color:var(--gold);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;}
+  .logo img{width:42px;height:42px;object-fit:contain;}
+  .logo-tagline{font-size:9px;color:var(--amber);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;}
   .logo-name{font-size:14px;font-weight:900;}
-  .logo-name .c1{color:var(--cyan);}.logo-name .c2{color:var(--white);}
+  .logo-name .c1{color:#22D3EE;}.logo-name .c2{color:var(--white);}
   .nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
-  .nav-links a{color:var(--grey-light);text-decoration:none;font-size:13px;font-weight:600;padding:7px 10px;border-radius:7px;transition:all 0.2s;white-space:nowrap;}
-  .nav-links a:hover{color:var(--white);background:rgba(107,33,212,0.2);}
+  .nav-links a{color:var(--grey-light);text-decoration:none;font-size:13px;font-weight:600;padding:7px 10px;border-radius:7px;transition:all .2s;white-space:nowrap;}
+  .nav-links a:hover{color:var(--white);background:rgba(107,47,196,.25);}
   .nav-links a.active{color:var(--ib-light);}
-  .nav-links a.teacher-link{color:var(--gold-light);}
-
-  .breadcrumb{font-size:12px;color:var(--grey);padding:10px 24px;background:var(--navy-mid);border-bottom:1px solid var(--border);}
+  .nav-links a.teacher-link{color:var(--amber-light);}
+  .breadcrumb{font-size:12px;color:var(--grey);padding:10px 24px;background:var(--bg-mid);border-bottom:1px solid var(--border);}
+  .breadcrumb-inner{max-width:900px;margin:0 auto;}
   .breadcrumb a{color:var(--grey-light);text-decoration:none;}
-  .breadcrumb a:hover{color:var(--cyan);}
-  .breadcrumb span{color:var(--gold);margin:0 6px;}
-
-  .hero{background:linear-gradient(160deg,#0F172A 0%,#221507 60%,#1a1005 100%);padding:40px 24px 32px;border-bottom:1px solid var(--border);}
-  .hero-inner{max-width:900px;margin:0 auto;}
-  .hero-badge{display:inline-block;background:rgba(245,158,11,0.14);border:1px solid rgba(245,158,11,0.4);color:var(--gold-light);font-size:11px;font-weight:700;letter-spacing:2px;padding:6px 14px;border-radius:99px;margin-bottom:14px;text-transform:uppercase;}
-  .hero h1{font-size:clamp(24px,4.5vw,32px);font-weight:900;margin-bottom:8px;}
-  .hero p{font-size:14px;color:var(--grey-light);max-width:600px;line-height:1.7;}
+  .breadcrumb a:hover{color:var(--magenta-light);}
+  .breadcrumb span{color:var(--ib-light);margin:0 6px;}
+  .hero{background:linear-gradient(160deg,var(--bg) 0%,#0c1f4a 55%,#101a4a 100%);padding:44px 24px 36px;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;top:-120px;right:-80px;width:520px;height:420px;background:radial-gradient(circle,rgba(79,163,247,.22) 0%,transparent 70%);pointer-events:none;}
+  .hero-inner{position:relative;max-width:900px;margin:0 auto;}
+  .hero-badge{display:inline-block;background:rgba(79,163,247,.15);border:1px solid rgba(79,163,247,.45);color:var(--ib-light);font-size:11px;font-weight:800;letter-spacing:2px;padding:6px 14px;border-radius:99px;margin-bottom:14px;text-transform:uppercase;}
+  .hero h1{font-size:clamp(24px,4.5vw,34px);font-weight:900;line-height:1.15;margin-bottom:10px;}
+  .hero p{font-size:14px;color:var(--grey-light);max-width:640px;line-height:1.7;}
   .hero-stats{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
-  .hero-stat{background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.25);border-radius:10px;padding:10px 18px;text-align:center;}
-  .hero-stat-val{font-size:18px;font-weight:900;color:var(--gold);}
+  .hero-stat{background:rgba(79,163,247,.1);border:1px solid rgba(79,163,247,.3);border-radius:12px;padding:10px 18px;text-align:center;}
+  .hero-stat-val{font-size:18px;font-weight:900;color:var(--ib-light);}
   .hero-stat-label{font-size:10px;color:var(--grey);text-transform:uppercase;letter-spacing:1px;}
-
   .page-inner{max-width:900px;margin:0 auto;padding:36px 24px 56px;}
-
-  .stage-list{display:flex;flex-direction:column;gap:14px;margin-bottom:32px;}
-  .stage-card{background:var(--navy-card);border-radius:14px;padding:24px;border:1px solid var(--border);}
-  .stage-top{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
-  .stage-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
-  .stage-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:2px;}
-  .stage-name{font-size:17px;font-weight:900;}
-  .stage-desc{font-size:13px;color:var(--grey-light);line-height:1.65;margin-bottom:14px;}
-  .stage-items{display:flex;flex-direction:column;gap:7px;}
-  .stage-item{display:flex;gap:9px;font-size:13px;color:var(--grey-light);align-items:flex-start;}
-  .stage-item::before{content:'✓';font-weight:700;flex-shrink:0;}
-
-  .foot-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;}
-  .foot-link{background:var(--navy-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:10px;text-decoration:none;transition:all 0.2s;}
-  .foot-link:hover{border-color:var(--gold);}
+  h2.sec{font-size:22px;font-weight:900;margin:44px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+  h2.sec:first-child{margin-top:0;}
+  h3.sub{font-size:16px;font-weight:800;margin:22px 0 8px;color:var(--amber-light);}
+  p{font-size:14px;color:var(--grey-light);margin-bottom:12px;}
+  p strong{color:var(--white);}
+  ul.list,ol.list{margin:0 0 14px 0;padding-left:0;list-style:none;}
+  ul.list li,ol.list li{font-size:14px;color:var(--grey-light);padding:6px 0 6px 26px;position:relative;}
+  ul.list li::before{content:'◆';color:var(--amber);position:absolute;left:0;top:7px;font-size:11px;}
+  ol.list{counter-reset:o;}
+  ol.list li{counter-increment:o;}
+  ol.list li::before{content:counter(o);position:absolute;left:0;top:6px;width:18px;height:18px;border-radius:50%;background:rgba(79,163,247,.2);color:var(--ib-light);font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center;}
+  .diagram{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px;margin:18px 0 24px;overflow:hidden;}
+  .diagram svg{display:block;width:100%;height:auto;}
+  .diagram-caption{font-size:12px;color:var(--grey);text-align:center;margin-top:8px;}
+  .callout{border-radius:12px;padding:16px 18px;margin:16px 0;font-size:13.5px;line-height:1.65;}
+  .callout b{display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;}
+  .callout.tip{background:rgba(79,163,247,.1);border:1px solid rgba(79,163,247,.35);color:var(--grey-light);}
+  .callout.tip b{color:var(--ib-light);}
+  .callout.warn{background:rgba(232,160,32,.1);border:1px solid rgba(232,160,32,.4);color:var(--grey-light);}
+  .callout.warn b{color:var(--amber-light);}
+  .callout.note{background:rgba(107,47,196,.12);border:1px solid rgba(179,139,255,.35);color:var(--grey-light);}
+  .callout.note b{color:var(--violet-light);}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px 24px;margin-bottom:18px;}
+  .card h3{font-size:19px;font-weight:900;margin-bottom:4px;}
+  .card .def{font-size:13.5px;color:var(--amber-light);font-style:italic;margin-bottom:12px;}
+  .card .label{font-size:10px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--ib-light);margin:14px 0 6px;}
+  .example{background:#0E0A24;border-left:3px solid var(--ib);border-radius:8px;padding:12px 14px;margin:10px 0;font-size:13px;color:var(--grey-light);}
+  .example b{color:var(--white);}
+  .model{background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.35);border-radius:10px;padding:12px 14px;margin:8px 0;font-size:13px;color:var(--grey-light);}
+  .model b{color:#34D399;font-size:11px;letter-spacing:1px;text-transform:uppercase;display:block;margin-bottom:4px;}
+  table.grid{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 18px;background:var(--card);border-radius:12px;overflow:hidden;}
+  table.grid th{background:#2A1B5C;color:var(--white);text-align:left;padding:10px 12px;font-size:12px;letter-spacing:.5px;}
+  table.grid td{padding:10px 12px;border-top:1px solid var(--border);color:var(--grey-light);vertical-align:top;}
+  table.grid td:first-child{color:var(--white);font-weight:700;white-space:nowrap;}
+  .jump{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px;}
+  .jump a{font-size:12px;font-weight:700;color:var(--ib-light);text-decoration:none;background:rgba(79,163,247,.1);border:1px solid rgba(79,163,247,.3);padding:5px 11px;border-radius:99px;}
+  .jump a:hover{background:rgba(79,163,247,.22);}
+  .foot-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:36px;}
+  .foot-link{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;display:flex;align-items:center;gap:10px;text-decoration:none;transition:all .2s;}
+  .foot-link:hover{border-color:var(--ib-light);}
   .foot-link span.i{font-size:18px;}
   .foot-link span.t{font-size:12px;font-weight:700;color:var(--white);}
-
-  .hub-footer{background:#080E1C;padding:24px;text-align:center;}
-  .hub-footer p{font-size:12px;color:var(--grey);}
+  .hub-footer{background:#080617;padding:24px;text-align:center;border-top:1px solid var(--border);}
+  .hub-footer p{font-size:12px;color:var(--grey);margin:0;}
   .hub-footer a{color:var(--grey-light);text-decoration:none;margin:0 6px;}
-  .hub-footer a:hover{color:var(--cyan);}
-
-  @media(max-width:640px){.nav-links{display:none;}.hero{padding:28px 16px 24px;}.page-inner{padding:24px 16px 40px;}}
+  .hub-footer a:hover{color:var(--magenta-light);}
+  @media(max-width:640px){.nav-links{display:none;}.hero{padding:30px 16px 26px;}.page-inner{padding:26px 16px 40px;}}
 </style>
 </head>
 <body>
@@ -75,7 +105,7 @@
 <nav>
   <div class="nav-inner">
     <a class="logo" href="index.html">
-      <div class="logo-circle"><img src="sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
+      <img src="sss-icon.png" alt="Simply Sport Science"/>
       <div>
         <div class="logo-tagline">Sport Science Sorted</div>
         <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
@@ -92,81 +122,310 @@
   </div>
 </nav>
 
-<div class="breadcrumb">
-  <div style="max-width:900px;margin:0 auto;">
-    <a href="index.html">Home</a><span>›</span><a href="ib-hub.html">IB Sport Science</a><span>›</span>Internal Assessment Support
-  </div>
-</div>
+<div class="breadcrumb"><div class="breadcrumb-inner">
+  <a href="index.html">Home</a><span>›</span><a href="ib-hub.html">IB Sport Science</a><span>›</span>Internal Assessment Support
+</div></div>
 
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-badge">🔬 Internal Assessment</div>
-    <h1>Scientific Investigation — IA Support</h1>
-    <p>The IB SEHS Internal Assessment is an individual scientific investigation worth 20% of your final grade at both SL and HL. This page guides you through every stage — from research question to evaluation.</p>
-    <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-val">20%</div><div class="hero-stat-label">Of Final Grade</div></div>
-      <div class="hero-stat"><div class="hero-stat-val">~2,000</div><div class="hero-stat-label">Word Count</div></div>
-    </div>
+
+<div class="hero"><div class="hero-inner">
+  <div class="hero-badge">🔬 Internal Assessment</div>
+  <h1>Scientific Investigation: Internal Assessment Support</h1>
+  <p>The IB SEHS internal assessment is an individual scientific investigation that you design, carry out and report on. This page takes you through every stage, from choosing a topic to checking your final report.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="hero-stat-val">24%</div><div class="hero-stat-label">Of final grade</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">~10 hrs</div><div class="hero-stat-label">Practical time</div></div>
+    <div class="hero-stat"><div class="hero-stat-val">3,200</div><div class="hero-stat-label">Word limit (max)</div></div>
   </div>
-</div>
+</div></div>
 
 <div class="page-inner">
 
-  <div class="stage-list">
-    <div class="stage-card" style="border-color:rgba(245,158,11,0.3);">
-      <div class="stage-top">
-        <div class="stage-icon" style="background:rgba(245,158,11,0.15);">❓</div>
-        <div><div class="stage-label" style="color:var(--gold);">Stage 1</div><div class="stage-name">Research Question</div></div>
-      </div>
-      <div class="stage-desc">How to design a focused, testable and relevant research question — with examples and IB examiner expectations.</div>
-      <div class="stage-items" style="color:var(--gold-light);">
-        <div class="stage-item">What makes a strong IB research question</div>
-        <div class="stage-item">Independent and dependent variables</div>
-        <div class="stage-item">Linking your question to SEHS theory</div>
-        <div class="stage-item">Example research questions with commentary</div>
-      </div>
-    </div>
+<h2 class="sec">1. What the internal assessment is</h2>
+<p>The internal assessment (IA), called the <strong>scientific investigation</strong> in the current course, is an open-ended task. You formulate your own research question, collect and analyse data to answer it, and write a report. It is marked against assessment criteria, with the strongest weight on conclusion and evaluation.</p>
+<table class="grid">
+  <tr><th>Feature</th><th>What to know</th></tr>
+  <tr><td>Weighting</td><td>24% of the final SEHS grade, at both SL and HL</td></tr>
+  <tr><td>Practical time</td><td>About 10 hours, including developing the question, the method, data collection and processing</td></tr>
+  <tr><td>Report length</td><td>Maximum 3,200 words. Check your subject brief for what counts towards the limit (for example whether references and appendices are included)</td></tr>
+  <tr><td>Individual report</td><td>Every student submits their own report, even if you worked in a group</td></tr>
+  <tr><td>Group work</td><td>Small groups may collaborate, and similar methods may be shared, provided the independent or dependent variable differs and each student's data is unique to them</td></tr>
+  <tr><td>Marking emphasis</td><td>Half of the marks are for conclusion and evaluation. Build your report around answering the question well and judging your own work</td></tr>
+</table>
 
-    <div class="stage-card" style="border-color:rgba(16,185,129,0.3);">
-      <div class="stage-top">
-        <div class="stage-icon" style="background:rgba(16,185,129,0.15);">📊</div>
-        <div><div class="stage-label" style="color:var(--green);">Stage 2</div><div class="stage-name">Data &amp; Analysis</div></div>
-      </div>
-      <div class="stage-desc">Collecting, recording, processing and presenting data to IB standard — statistical tests, graph types and requirements.</div>
-      <div class="stage-items" style="color:#6EE7B7;">
-        <div class="stage-item">Raw data tables and processed data</div>
-        <div class="stage-item">Mean, standard deviation and t-tests</div>
-        <div class="stage-item">Appropriate graph selection and labelling</div>
-        <div class="stage-item">Uncertainty and error analysis</div>
-      </div>
-    </div>
+<div class="callout note"><b>Check your official source</b>The IB subject brief for SEHS is the authority on mark allocations, criteria wording and word-count rules. This page is a practical guide that follows the published changes. Confirm the details with your teacher before you start.</div>
 
-    <div class="stage-card" style="border-color:rgba(224,64,251,0.3);">
-      <div class="stage-top">
-        <div class="stage-icon" style="background:rgba(224,64,251,0.15);">✍️</div>
-        <div><div class="stage-label" style="color:var(--magenta);">Stage 3</div><div class="stage-name">Evaluation &amp; Writing</div></div>
-      </div>
-      <div class="stage-desc">How to write a high-scoring evaluation — identifying limitations, suggesting improvements and connecting findings to theory.</div>
-      <div class="stage-items" style="color:#F0ABFC;">
-        <div class="stage-item">What IB examiners look for in evaluation</div>
-        <div class="stage-item">Identifying methodological limitations</div>
-        <div class="stage-item">Realistic and specific improvements</div>
-        <div class="stage-item">Linking results back to the literature</div>
-      </div>
-    </div>
-  </div>
+<div class="diagram"><svg viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="Stages of the internal assessment from choosing a topic through research question, method, data collection, processing, conclusion, evaluation and referencing"><defs>
+<linearGradient id="ia-card" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E1D74"/><stop offset="1" stop-color="#1C1442"/></linearGradient>
+<linearGradient id="ia-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4FA3F7"/><stop offset="1" stop-color="#1D6FCC"/></linearGradient>
+<linearGradient id="ia-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7A45D6"/><stop offset="1" stop-color="#5526A8"/></linearGradient>
+<linearGradient id="ia-c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DE3FA2"/><stop offset="1" stop-color="#A3186F"/></linearGradient>
+<linearGradient id="ia-d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0B53A"/><stop offset="1" stop-color="#C9861A"/></linearGradient>
+<marker id="ia-arr" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#F5C866"/></marker>
+<filter id="ia-shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.45"/></filter>
+</defs>
+<text x="14" y="30" font-size="11" font-weight="800" letter-spacing="1.5" fill="#F5C866">THE INTERNAL ASSESSMENT, STAGE BY STAGE</text>
+<g filter="url(#ia-shadow)"><rect x="14" y="56" width="190" height="84" rx="14" fill="url(#ia-a)"/></g>
+<circle cx="38" cy="78" r="13" fill="#1A0F5C"/><text x="38" y="83" text-anchor="middle" font-size="13" font-weight="900" fill="#F5C866">1</text>
+<text x="117" y="106" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFFFF">Choose a</text>
+<text x="117" y="122" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFFFF">topic</text>
+<line x1="206" y1="98" x2="218" y2="98" stroke="#F5C866" stroke-width="2.5" marker-end="url(#ia-arr)"/>
+<g filter="url(#ia-shadow)"><rect x="230" y="56" width="190" height="84" rx="14" fill="url(#ia-a)"/></g>
+<circle cx="254" cy="78" r="13" fill="#1A0F5C"/><text x="254" y="83" text-anchor="middle" font-size="13" font-weight="900" fill="#F5C866">2</text>
+<text x="333" y="106" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFFFF">Research</text>
+<text x="333" y="122" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFFFF">question</text>
+<line x1="422" y1="98" x2="434" y2="98" stroke="#F5C866" stroke-width="2.5" marker-end="url(#ia-arr)"/>
+<g filter="url(#ia-shadow)"><rect x="446" y="56" width="190" height="84" rx="14" fill="url(#ia-b)"/></g>
+<circle cx="470" cy="78" r="13" fill="#1A0F5C"/><text x="470" y="83" text-anchor="middle" font-size="13" font-weight="900" fill="#F5C866">3</text>
+<text x="549" y="106" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFFFF">Background</text>
+<text x="549" y="122" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFFFF">&amp; method</text>
+<line x1="638" y1="98" x2="650" y2="98" stroke="#F5C866" stroke-width="2.5" marker-end="url(#ia-arr)"/>
+<g filter="url(#ia-shadow)"><rect x="662" y="56" width="190" height="84" rx="14" fill="url(#ia-b)"/></g>
+<circle cx="686" cy="78" r="13" fill="#1A0F5C"/><text x="686" y="83" text-anchor="middle" font-size="13" font-weight="900" fill="#F5C866">4</text>
+<text x="765" y="106" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFFFF">Collect</text>
+<text x="765" y="122" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFFFF">data</text>
+<g filter="url(#ia-shadow)"><rect x="14" y="190" width="190" height="84" rx="14" fill="url(#ia-c)"/></g>
+<circle cx="38" cy="212" r="13" fill="#1A0F5C"/><text x="38" y="217" text-anchor="middle" font-size="13" font-weight="900" fill="#F5C866">5</text>
+<text x="117" y="240" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFFFF">Process</text>
+<text x="117" y="256" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFFFF">data</text>
+<line x1="206" y1="232" x2="218" y2="232" stroke="#F5C866" stroke-width="2.5" marker-end="url(#ia-arr)"/>
+<g filter="url(#ia-shadow)"><rect x="230" y="190" width="190" height="84" rx="14" fill="url(#ia-c)"/></g>
+<circle cx="254" cy="212" r="13" fill="#1A0F5C"/><text x="254" y="217" text-anchor="middle" font-size="13" font-weight="900" fill="#F5C866">6</text>
+<text x="333" y="240" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFFFF">Conclusion</text>
+<line x1="422" y1="232" x2="434" y2="232" stroke="#F5C866" stroke-width="2.5" marker-end="url(#ia-arr)"/>
+<g filter="url(#ia-shadow)"><rect x="446" y="190" width="190" height="84" rx="14" fill="url(#ia-d)"/></g>
+<circle cx="470" cy="212" r="13" fill="#1A0F5C"/><text x="470" y="217" text-anchor="middle" font-size="13" font-weight="900" fill="#F5C866">7</text>
+<text x="549" y="240" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFFFF">Evaluate</text>
+<line x1="638" y1="232" x2="650" y2="232" stroke="#F5C866" stroke-width="2.5" marker-end="url(#ia-arr)"/>
+<g filter="url(#ia-shadow)"><rect x="662" y="190" width="190" height="84" rx="14" fill="url(#ia-d)"/></g>
+<circle cx="686" cy="212" r="13" fill="#1A0F5C"/><text x="686" y="217" text-anchor="middle" font-size="13" font-weight="900" fill="#F5C866">8</text>
+<text x="765" y="240" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFFFF">Reference</text>
+<text x="765" y="256" text-anchor="middle" font-size="13" font-weight="800" fill="#FFFFFF">&amp; appendix</text>
+<path d="M757,140 V156 H109 V188" fill="none" stroke="#F5C866" stroke-width="2.5" stroke-dasharray="6 4" marker-end="url(#ia-arr)"/>
+<text x="14" y="302" font-size="10.5" fill="#A39FC0">Work through the stages in order, but expect to loop back: a weak result often means revisiting the method or the research question.</text>
+</svg><div class="diagram-caption">The main stages of the investigation. Work through them in order, but expect to revisit earlier stages when results or evaluation show a problem.</div></div>
 
-  <div class="foot-links">
-    <a href="ib-command-terms.html" class="foot-link"><span class="i">📖</span><span class="t">IB Command Terms</span></a>
-    <a href="az-library.html" class="foot-link"><span class="i">🔤</span><span class="t">A–Z Key Terms</span></a>
-    <a href="ib-hub.html" class="foot-link"><span class="i">←</span><span class="t">Back to IB Hub</span></a>
-  </div>
+<h2 class="sec">2. Choosing a topic</h2>
+<p>The best topics test one manageable factor, use equipment you can access in school, and produce enough repeated, reliable data to support a justified conclusion. Use this checklist before you commit:</p>
+<ul class="list">
+  <li><strong>Safe:</strong> you can do it without unreasonable risk, and you have a risk assessment that your teacher has approved.</li>
+  <li><strong>Measurable:</strong> the dependent variable can be measured with a reliable, precise instrument.</li>
+  <li><strong>Controllable:</strong> you can keep the other factors constant.</li>
+  <li><strong>Feasible:</strong> you can get enough participants or trials within about 10 hours.</li>
+  <li><strong>Ethical:</strong> participants give informed consent, and no one is pushed beyond a safe level of exertion or discomfort.</li>
+  <li><strong>Scientific:</strong> you can explain the expected result using SEHS theory from the syllabus.</li>
+</ul>
+<h3 class="sub">Examples</h3>
+<table class="grid">
+  <tr><th>Weaker topic</th><th>Why it is weaker</th><th>Stronger version</th></tr>
+  <tr><td>Does music improve fitness?</td><td>Too broad; "fitness" is not measurable</td><td>Does playing fast-tempo music change the number of push-ups completed in 60 seconds?</td></tr>
+  <tr><td>How does training change the heart?</td><td>Requires long training periods and invasive measures</td><td>Does a 2-minute warm-up change resting heart rate recovery after a set of step-ups?</td></tr>
+  <tr><td>Which shoe is best for running?</td><td>Uncontrolled variables and no clear measure</td><td>Does sole thickness change the contact time of a standing vertical jump?</td></tr>
+</table>
+
+<h2 class="sec">3. Writing the research question</h2>
+<p>A research question should be focused, testable, measurable and clearly linked to the variables. A common format is:</p>
+<div class="callout tip"><b>Template</b>How does [independent variable] affect [dependent variable] in [participants or context]?</div>
+<p>Make sure the question names the variables, states the units where relevant, and is possible to answer within your method. Avoid questions that can only be answered "yes" or "no", unless you then measure how much.</p>
+<div class="example"><b>Good:</b> How does a 1-minute versus a 3-minute rest interval affect the time taken for a 30 m sprint in Year 12 students?</div>
+<div class="example"><b>Too broad:</b> What affects sprint performance?</div>
+
+<h2 class="sec">4. Background and hypothesis</h2>
+<p>Show that you understand the science behind your question. In the background section:</p>
+<ul class="list">
+  <li>Explain the relevant theory from the syllabus, using the correct terms.</li>
+  <li>Summarise what other research has found, with references.</li>
+  <li>Build a hypothesis that predicts the direction of the effect and gives a reason, based on the theory.</li>
+</ul>
+<div class="example"><b>Example hypothesis:</b> Longer rest between sprints will allow more phosphocreatine resynthesis, so sprint times will be faster after 3 minutes of rest than after 1 minute, because the phosphagen system is more fully restored.</div>
+
+<h2 class="sec">5. Variables and method</h2>
+<p>Identify your variables before you design the method. The independent variable is the one you change on purpose, the dependent variable is what you measure, and the controlled variables are kept the same.</p>
+<div class="diagram"><svg viewBox="0 0 880 290" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="Variables in a sprint investigation: the independent variable (caffeine dose) is changed, the dependent variable (sprint time) is measured, and controlled variables (warm-up, distance, footwear and rest) are kept the same"><defs>
+<linearGradient id="vr-card" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E1D74"/><stop offset="1" stop-color="#1C1442"/></linearGradient>
+<linearGradient id="vr-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4FA3F7"/><stop offset="1" stop-color="#1D6FCC"/></linearGradient>
+<linearGradient id="vr-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7A45D6"/><stop offset="1" stop-color="#5526A8"/></linearGradient>
+<linearGradient id="vr-c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DE3FA2"/><stop offset="1" stop-color="#A3186F"/></linearGradient>
+<linearGradient id="vr-d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0B53A"/><stop offset="1" stop-color="#C9861A"/></linearGradient>
+<marker id="vr-arr" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#F5C866"/></marker>
+<filter id="vr-shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.45"/></filter>
+</defs>
+<text x="14" y="30" font-size="11" font-weight="800" letter-spacing="1.5" fill="#F5C866">VARIABLES: AN EXAMPLE</text>
+<g filter="url(#vr-shadow)"><rect x="14" y="56" width="236" height="120" rx="14" fill="url(#vr-a)"/></g>
+<text x="30" y="88" font-size="14" font-weight="900" fill="#FFFFFF">Independent variable</text>
+<text x="30" y="110" font-size="11" fill="#FFFFFF">What you change on purpose</text>
+<text x="30" y="146" font-size="12" font-weight="800" fill="#FFFFFF">Rest between sprints:</text>
+<text x="30" y="162" font-size="12" font-weight="800" fill="#FFFFFF">1 min or 3 min</text>
+<g filter="url(#vr-shadow)"><rect x="330" y="56" width="236" height="120" rx="14" fill="url(#vr-c)"/></g>
+<text x="346" y="88" font-size="14" font-weight="900" fill="#1A0F5C">Dependent variable</text>
+<text x="346" y="110" font-size="11" fill="#1A0F5C">What you measure</text>
+<text x="346" y="146" font-size="12" font-weight="800" fill="#1A0F5C">30 m sprint time (s)</text>
+<line x1="252" y1="116" x2="326" y2="116" stroke="#F5C866" stroke-width="3" marker-end="url(#vr-arr)"/>
+<text x="289" y="108" text-anchor="middle" font-size="10" fill="#F5C866" font-weight="800">affects</text>
+<g filter="url(#vr-shadow)"><rect x="606" y="56" width="260" height="120" rx="14" fill="url(#vr-card)" stroke="#33275F"/></g>
+<text x="622" y="88" font-size="14" font-weight="900" fill="#34D399">Controlled variables</text>
+<text x="622" y="112" font-size="11" fill="#D4D0EA">◆ Same warm-up and track</text>
+<text x="622" y="128" font-size="11" fill="#D4D0EA">◆ Same sprint distance (30 m)</text>
+<text x="622" y="144" font-size="11" fill="#D4D0EA">◆ Same footwear and start method</text>
+<text x="622" y="160" font-size="11" fill="#D4D0EA">◆ Same time of day and temperature</text>
+<text x="14" y="200" font-size="11" font-weight="800" fill="#FFFFFF">Why it matters</text>
+<text x="14" y="222" font-size="11" fill="#D4D0EA">Controlled variables stop other factors from explaining the change in sprint time.</text>
+<text x="14" y="240" font-size="11" fill="#D4D0EA">Without them, your conclusion can only say that something changed, not why.</text>
+<text x="14" y="268" font-size="11" fill="#D4D0EA">Record each variable with its units in your method, and state how each controlled variable was kept constant.</text>
+</svg><div class="diagram-caption">An example of variables for a sprint investigation. The rest interval is changed, the sprint time is measured, and the other factors are kept constant.</div></div>
+<p>Your method must be detailed enough for another student to repeat it. Include:</p>
+<ul class="list">
+  <li>the participants (number, age, relevant characteristics) and how they were selected;</li>
+  <li>the equipment, with its precision (for example timing gates to 0.01 s, not a stopwatch to 0.1 s);</li>
+  <li>a step-by-step procedure, including warm-up, the number of trials, and the order of conditions;</li>
+  <li>how each controlled variable was kept constant;</li>
+  <li>the number of repeats, and how you dealt with fatigue and learning effects (for example randomising the order);</li>
+  <li>safety measures and the risk assessment reference;</li>
+  <li>how consent was obtained, and how personal data was stored and anonymised.</li>
+</ul>
+
+<h2 class="sec">6. Recording data</h2>
+<p>Good data is easy to read, complete and traceable. Follow these rules:</p>
+<ul class="list">
+  <li><strong>Design your table before you collect data.</strong> Use one column per variable, with the quantity and unit in the heading, for example "Sprint time (s)".</li>
+  <li><strong>Record raw data at the time, not afterwards.</strong> Write or type directly into the table. Keep the raw data unedited in an appendix.</li>
+  <li><strong>Use consistent decimal places</strong> that match the precision of your instrument.</li>
+  <li><strong>Record uncertainties</strong> for every measurement, for example ±0.01 s for a timing gate.</li>
+  <li><strong>Repeat trials.</strong> Three or more repeats per condition is usually a good minimum, so that you can calculate a mean and spread.</li>
+  <li><strong>Note anything unusual</strong>, such as a participant who stumbled or a timing error, in a comments column. Do not delete the result.</li>
+  <li><strong>Keep a log of the date, time, conditions and equipment.</strong> A notebook or a shared digital log is fine; be consistent.</li>
+  <li><strong>Back up your data</strong> on a second device or cloud folder as you go.</li>
+</ul>
+<h3 class="sub">Example table layout</h3>
+<table class="grid">
+  <tr><th>Condition</th><th>Trial</th><th>Sprint time (s ± 0.01)</th><th>Comments</th></tr>
+  <tr><td>1 min rest</td><td>1</td><td>4.82</td><td>–</td></tr>
+  <tr><td>1 min rest</td><td>2</td><td>4.91</td><td>–</td></tr>
+  <tr><td>3 min rest</td><td>1</td><td>4.67</td><td>Slight wind noted</td></tr>
+</table>
+
+<h2 class="sec">7. Processing and analysing data</h2>
+<p>Processing turns raw numbers into something you can interpret. Use the methods that suit your data and your question.</p>
+<h3 class="sub">Common calculations</h3>
+<table class="grid">
+  <tr><th>Calculation</th><th>What it tells you</th><th>How to do it</th></tr>
+  <tr><td>Mean</td><td>The typical value across repeats</td><td>Sum of values ÷ number of values</td></tr>
+  <tr><td>Range and standard deviation</td><td>The spread of the data (the sample standard deviation is used for a sample)</td><td>Excel/Sheets: MAX − MIN for range; STDEV.S for standard deviation</td></tr>
+  <tr><td>Percentage change</td><td>How much a value changed, relative to the start</td><td>(new − original) ÷ original × 100</td></tr>
+  <tr><td>Absolute and percentage uncertainty</td><td>How precise a measurement or result is</td><td>Absolute: the ± value. Percentage: absolute ÷ value × 100</td></tr>
+  <tr><td>Correlation</td><td>The strength and direction of a relationship between two continuous variables</td><td>Excel/Sheets: CORREL(x, y). Report r with its sign and interpret its size</td></tr>
+  <tr><td>t-test</td><td>Whether two means differ by more than chance would suggest</td><td>Excel/Sheets: T.TEST. Choose paired or unpaired to match your design</td></tr>
+</table>
+
+<h3 class="sub">Choosing a graph</h3>
+<ul class="list">
+  <li><strong>Scatter plot</strong> with a line of best fit for two continuous variables (for example rest time against sprint time).</li>
+  <li><strong>Bar chart</strong> with error bars for comparing means across categories (for example mean sprint time for each rest condition).</li>
+  <li><strong>Line graph</strong> for change over time (for example heart rate over a 10-minute recovery).</li>
+  <li><strong>Box plot</strong> to show the spread and median of each group.</li>
+</ul>
+<p>Every graph needs a title, labelled axes with units, a sensible scale that uses most of the space, and a legend if there is more than one data set. Error bars should show the uncertainty or standard deviation, and the caption should say which.</p>
+
+<h3 class="sub">Tools that can help</h3>
+<table class="grid">
+  <tr><th>Tool</th><th>Use it for</th><th>Cost</th></tr>
+  <tr><td>Microsoft Excel or Google Sheets</td><td>Tables, means, standard deviation, t-tests, correlation, charts</td><td>Free (Sheets) / school licence</td></tr>
+  <tr><td>Desmos</td><td>Plotting, curve fitting and regression lines</td><td>Free</td></tr>
+  <tr><td>GraphPad QuickCalcs</td><td>Quick, checked t-tests and other statistics on the web</td><td>Free</td></tr>
+  <tr><td>Kinovea</td><td>Frame-by-frame video analysis, timing and joint angles</td><td>Free</td></tr>
+  <tr><td>Tracker</td><td>Video analysis of motion, with position and velocity data</td><td>Free</td></tr>
+  <tr><td>Sensors (for example Vernier or smartphone sensor apps)</td><td>Logging acceleration, force, heart rate or timing directly</td><td>Varies; check school equipment first</td></tr>
+</table>
+<div class="callout tip"><b>Check your working</b>Recalculate one value by hand, and check that your spreadsheet formulas refer to the right cells. Small errors in formulas are a common cause of wrong conclusions.</div>
+
+<h2 class="sec">8. Writing the conclusion</h2>
+<p>The conclusion answers your research question directly, using your processed data. Make it:</p>
+<ul class="list">
+  <li><strong>Direct:</strong> start with the answer, for example "The 3-minute rest condition produced faster sprint times than the 1-minute condition."</li>
+  <li><strong>Quantified:</strong> give the key values with their uncertainty, for example the mean difference and its spread.</li>
+  <li><strong>Linked to the hypothesis:</strong> say whether the data supported your prediction, and why.</li>
+  <li><strong>Linked to theory:</strong> explain the mechanism using SEHS concepts, without overclaiming.</li>
+  <li><strong>Cautious about causation:</strong> a correlation or an effect in a small sample supports a conclusion; it does not prove it.</li>
+</ul>
+
+<h2 class="sec">9. Writing the evaluation</h2>
+<p>Evaluation is where you judge your own investigation. Half of the marks sit in conclusion and evaluation, so give it real effort. A strong evaluation:</p>
+<ul class="list">
+  <li><strong>Identifies real limitations</strong> of the method, data or analysis, and explains how each one could affect the result.</li>
+  <li><strong>Distinguishes random and systematic error.</strong> Random error varies unpredictably (for example reaction time when starting a stopwatch); systematic error pushes results consistently one way (for example a timing gate that is miscalibrated).</li>
+  <li><strong>Discusses sample size and representativeness</strong> (for example a small group of Year 12 students cannot represent all athletes).</li>
+  <li><strong>Judges the uncertainty</strong> of the result: is the difference between conditions larger than the uncertainty?</li>
+  <li><strong>Suggests specific improvements</strong>, each linked to a limitation and explaining what it would change. "Use timing gates instead of a stopwatch, because hand timing adds human reaction error, often around 0.1–0.2 s, which is larger than some of the differences measured" is specific; "use better equipment" is not.</li>
+</ul>
+<div class="example"><b>Weak:</b> The results may not be accurate because of human error.<br>
+<b>Strong:</b> Hand timing introduces reaction-time error of around 0.1–0.2 s, which is comparable to the 0.15 s difference between conditions. Timing gates would reduce this error and would make the difference between conditions more reliable.</div>
+
+<h2 class="sec">10. Referencing</h2>
+<p>Support your background, method and evaluation with sources. Use one consistent referencing style throughout (for example Harvard or APA), with:</p>
+<ul class="list">
+  <li>an in-text citation wherever you use another person's idea, data or image;</li>
+  <li>a reference list at the end, with full details for each source.</li>
+</ul>
+<h3 class="sub">Good sources</h3>
+<p>Use textbooks, peer-reviewed journal articles, official bodies (for example government health guidance or national sports organisations), and the IB syllabus. Be cautious with blogs and general websites: check the author, date and evidence. Wikipedia can help you find sources, but do not cite it as a primary source.</p>
+<h3 class="sub">Tools</h3>
+<p>Reference managers such as Zotero or Mendeley are free and can keep your references organised. Check whether your school allows a particular tool.</p>
+<div class="example"><b>Harvard template (book):</b> Surname, Initial. (Year) <i>Title of book</i>. Edition. Place of publication: Publisher.<br><b>Harvard template (journal):</b> Surname, Initial. (Year) 'Title of article', <i>Journal Name</i>, volume(issue), pp. x–x.</div>
+
+<h2 class="sec">11. Structure and word count</h2>
+<p>A clear structure helps the examiner find the marks. A typical report includes these sections:</p>
+<ol class="list">
+  <li>Title, and research question</li>
+  <li>Introduction and background (theory, prior research, hypothesis)</li>
+  <li>Method (variables, participants, equipment, procedure, safety and ethics)</li>
+  <li>Data (raw data tables, with uncertainties)</li>
+  <li>Data processing and analysis (calculations, graphs)</li>
+  <li>Conclusion</li>
+  <li>Evaluation (limitations and improvements)</li>
+  <li>References and appendices</li>
+</ol>
+<p>Stay within the 3,200-word limit. A report that is too long usually has repetition, unnecessary background or raw data that belongs in an appendix. Check with your teacher what is counted.</p>
+
+<h2 class="sec">12. Academic integrity</h2>
+<ul class="list">
+  <li>The report, data and analysis must be your own work. Do not make up or alter data.</li>
+  <li>Acknowledge any help, including the use of software, sources and any AI tools, in line with your school's policy and the IB's academic honesty rules.</li>
+  <li>If you collaborate, follow the group rules in the subject brief. Your data must be unique to you, and your report must be individual.</li>
+</ul>
+
+<h2 class="sec">13. Before you submit</h2>
+<ul class="list">
+  <li>Does my research question name the variables and the context?</li>
+  <li>Can another student repeat my method from what I have written?</li>
+  <li>Are my tables complete, with units and uncertainties?</li>
+  <li>Are my graphs labelled, titled and appropriate for the data?</li>
+  <li>Does my conclusion answer the research question directly, with values?</li>
+  <li>Does my evaluation name specific limitations and specific improvements?</li>
+  <li>Is every source cited in the text and listed in the references?</li>
+  <li>Is the report within the word limit, and is the file named clearly?</li>
+</ul>
+
+<h2 class="sec">14. Common mistakes</h2>
+<ul class="list">
+  <li>A research question that is too broad, or cannot be answered with the data collected.</li>
+  <li>Method steps that are vague ("measure the athletes") and cannot be repeated.</li>
+  <li>Raw data that is missing units or uncertainties.</li>
+  <li>Graphs without axis labels, units or a title.</li>
+  <li>A conclusion that claims more than the data shows, or restates results without answering the question.</li>
+  <li>An evaluation that only says "human error" or "small sample", without explaining the effect or proposing a specific improvement.</li>
+</ul>
+
+<div class="foot-links">
+  <a href="ib-command-terms.html" class="foot-link"><span class="i">📖</span><span class="t">IB Command Terms</span></a>
+  <a href="az-library.html" class="foot-link"><span class="i">🔤</span><span class="t">A–Z Key Terms</span></a>
+  <a href="ib-hub.html" class="foot-link"><span class="i">←</span><span class="t">Back to IB Hub</span></a>
+</div>
 
 </div>
 
+
 <div class="hub-footer">
-  <p><a href="index.html">Home</a>·<a href="az-library.html">A–Z Library</a>·<a href="teacher-hub.html">Teacher Hub</a>·<a href="about.html">About</a></p>
-  <p style="margin-top:10px;">Simply Sport Science · simplysportscience.co.uk</p>
+  <p><a href="index.html">Home</a>·<a href="az-library.html">A–Z Library</a>·<a href="teacher-hub.html">Teacher Hub</a>·<a href="about.html">About</a>·<a href="privacy.html">Privacy</a></p>
+  <p style="margin-top:10px;">© 2026 Simply Sport Science · simplysportscience.co.uk</p>
 </div>
 
 </body>

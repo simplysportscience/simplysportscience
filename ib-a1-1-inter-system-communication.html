@@ -243,8 +243,15 @@
 
   <!-- ═══ 2. PRESENTATION ═══ -->
   <section class="section" id="presentation">
-    <div class="section-head"><div class="section-num">2</div><h2>Presentation</h2></div>
-    <div class="deck" id="deck"></div>
+    <div class="section-head"><div class="section-num">2</div><h2>Presentations</h2></div>
+    <div class="deck-block">
+      <h3 class="sub">A.1.1.1 The Nervous System</h3>
+      <div class="deck" id="deck1"></div>
+    </div>
+    <div class="deck-block">
+      <h3 class="sub">A.1.1.2 The Endocrine System</h3>
+      <div class="deck" id="deck2"></div>
+    </div>
   </section>
 
   <!-- ═══ 3. DEEP DIVE ═══ -->
@@ -556,60 +563,89 @@
 
 <script>
 /* ═══ PAGE SETTINGS — the only part that changes per topic ═══
-   SLIDES: list the slide image paths in order, e.g.
+   DECKS: one entry per presentation, each with its own slide paths in order, e.g.
      ["assets/presentations/ib-a1-1/slide-01.jpg", "assets/presentations/ib-a1-1/slide-02.jpg"]
    Leave empty [] and the "coming soon" panel shows instead.
    VIDEO_ID: the code at the end of the YouTube link
      (youtube.com/watch?v=THIS_PART). Leave "" for the "coming soon" panel. */
-const SLIDES = [
-  "assets/presentations/ib-a1-1/slide-01.jpg",
-  "assets/presentations/ib-a1-1/slide-02.jpg",
-  "assets/presentations/ib-a1-1/slide-03.jpg",
-  "assets/presentations/ib-a1-1/slide-04.jpg",
-  "assets/presentations/ib-a1-1/slide-05.jpg",
-  "assets/presentations/ib-a1-1/slide-06.jpg",
-  "assets/presentations/ib-a1-1/slide-07.jpg",
-  "assets/presentations/ib-a1-1/slide-08.jpg",
-  "assets/presentations/ib-a1-1/slide-09.jpg",
-  "assets/presentations/ib-a1-1/slide-10.jpg",
-  "assets/presentations/ib-a1-1/slide-11.jpg",
-  "assets/presentations/ib-a1-1/slide-12.jpg",
-  "assets/presentations/ib-a1-1/slide-13.jpg",
-  "assets/presentations/ib-a1-1/slide-14.jpg",
-  "assets/presentations/ib-a1-1/slide-15.jpg",
-  "assets/presentations/ib-a1-1/slide-16.jpg",
-  "assets/presentations/ib-a1-1/slide-17.jpg",
-  "assets/presentations/ib-a1-1/slide-18.jpg",
-  "assets/presentations/ib-a1-1/slide-19.jpg",
-  "assets/presentations/ib-a1-1/slide-20.jpg"
+const DECKS = [
+  { id: "deck1", slides: [
+    "assets/presentations/ib-a1-1-1/slide-01.jpg",
+    "assets/presentations/ib-a1-1-1/slide-02.jpg",
+    "assets/presentations/ib-a1-1-1/slide-03.jpg",
+    "assets/presentations/ib-a1-1-1/slide-04.jpg",
+    "assets/presentations/ib-a1-1-1/slide-05.jpg",
+    "assets/presentations/ib-a1-1-1/slide-06.jpg",
+    "assets/presentations/ib-a1-1-1/slide-07.jpg",
+    "assets/presentations/ib-a1-1-1/slide-08.jpg",
+    "assets/presentations/ib-a1-1-1/slide-09.jpg",
+    "assets/presentations/ib-a1-1-1/slide-10.jpg",
+    "assets/presentations/ib-a1-1-1/slide-11.jpg",
+    "assets/presentations/ib-a1-1-1/slide-12.jpg",
+    "assets/presentations/ib-a1-1-1/slide-13.jpg",
+    "assets/presentations/ib-a1-1-1/slide-14.jpg",
+    "assets/presentations/ib-a1-1-1/slide-15.jpg",
+    "assets/presentations/ib-a1-1-1/slide-16.jpg",
+    "assets/presentations/ib-a1-1-1/slide-17.jpg",
+    "assets/presentations/ib-a1-1-1/slide-18.jpg",
+    "assets/presentations/ib-a1-1-1/slide-19.jpg",
+    "assets/presentations/ib-a1-1-1/slide-20.jpg"
+  ] },
+  { id: "deck2", slides: [
+    "assets/presentations/ib-a1-1-2/slide-01.jpg",
+    "assets/presentations/ib-a1-1-2/slide-02.jpg",
+    "assets/presentations/ib-a1-1-2/slide-03.jpg",
+    "assets/presentations/ib-a1-1-2/slide-04.jpg",
+    "assets/presentations/ib-a1-1-2/slide-05.jpg",
+    "assets/presentations/ib-a1-1-2/slide-06.jpg",
+    "assets/presentations/ib-a1-1-2/slide-07.jpg",
+    "assets/presentations/ib-a1-1-2/slide-08.jpg",
+    "assets/presentations/ib-a1-1-2/slide-09.jpg",
+    "assets/presentations/ib-a1-1-2/slide-10.jpg",
+    "assets/presentations/ib-a1-1-2/slide-11.jpg",
+    "assets/presentations/ib-a1-1-2/slide-12.jpg",
+    "assets/presentations/ib-a1-1-2/slide-13.jpg",
+    "assets/presentations/ib-a1-1-2/slide-14.jpg",
+    "assets/presentations/ib-a1-1-2/slide-15.jpg",
+    "assets/presentations/ib-a1-1-2/slide-16.jpg",
+    "assets/presentations/ib-a1-1-2/slide-17.jpg",
+    "assets/presentations/ib-a1-1-2/slide-18.jpg",
+    "assets/presentations/ib-a1-1-2/slide-19.jpg"
+  ] }
 ];
 const VIDEO_ID = "";
 
-/* Presentation */
-(function(){
-  const deck = document.getElementById("deck");
-  if(!SLIDES.length){
+/* Presentations: one player per deck */
+let activeDeck = null;
+function renderDeck(cfg){
+  const deck = document.getElementById(cfg.id);
+  const S = cfg.slides, n = cfg.id;
+  if(!S.length){
     deck.innerHTML = '<div class="placeholder"><div class="ph-icon">🖥️</div><h4>Presentation coming soon</h4><p>The slide deck for this topic is being added. Use the Deep Dive below in the meantime.</p></div>';
     return;
   }
   let i = 0;
-  deck.innerHTML = '<div class="deck-stage"><img id="deckImg" alt="Presentation slide" draggable="false" oncontextmenu="return false"/></div>' +
-    '<div class="deck-controls"><button class="deck-btn" id="prevBtn">← Prev</button>' +
-    '<span class="deck-count" id="deckCount"></span>' +
-    '<button class="deck-btn" id="fsBtn">⛶ Fullscreen</button>' +
-    '<button class="deck-btn" id="nextBtn">Next →</button></div>';
-  const img = document.getElementById("deckImg"), count = document.getElementById("deckCount");
-  function show(){ img.src = SLIDES[i]; count.textContent = "Slide " + (i+1) + " of " + SLIDES.length; }
-  document.getElementById("prevBtn").onclick = () => { i = (i - 1 + SLIDES.length) % SLIDES.length; show(); };
-  document.getElementById("nextBtn").onclick = () => { i = (i + 1) % SLIDES.length; show(); };
-  document.getElementById("fsBtn").onclick = () => { const s = deck.querySelector(".deck-stage"); (s.requestFullscreen || s.webkitRequestFullscreen).call(s); };
-  img.onclick = () => document.getElementById("fsBtn").click();
-  document.addEventListener("keydown", e => {
-    if(e.key === "ArrowRight") document.getElementById("nextBtn").click();
-    if(e.key === "ArrowLeft") document.getElementById("prevBtn").click();
-  });
+  deck.innerHTML = '<div class="deck-stage"><img class="deckImg" alt="Presentation slide" draggable="false" oncontextmenu="return false"/></div>' +
+    '<div class="deck-controls"><button class="deck-btn prevBtn">← Prev</button>' +
+    '<span class="deck-count"></span>' +
+    '<button class="deck-btn fsBtn">⛶ Fullscreen</button>' +
+    '<button class="deck-btn nextBtn">Next →</button></div>';
+  const img = deck.querySelector(".deckImg"), count = deck.querySelector(".deck-count");
+  function show(){ img.src = S[i]; count.textContent = "Slide " + (i+1) + " of " + S.length; }
+  deck.querySelector(".prevBtn").onclick = () => { activeDeck = n; i = (i - 1 + S.length) % S.length; show(); };
+  deck.querySelector(".nextBtn").onclick = () => { activeDeck = n; i = (i + 1) % S.length; show(); };
+  deck.querySelector(".fsBtn").onclick = () => { const s = deck.querySelector(".deck-stage"); (s.requestFullscreen || s.webkitRequestFullscreen).call(s); };
+  img.onclick = () => deck.querySelector(".fsBtn").click();
+  deck.addEventListener("mousedown", () => { activeDeck = n; });
   show();
-})();
+}
+DECKS.forEach(renderDeck);
+document.addEventListener("keydown", e => {
+  if(!activeDeck) return;
+  const d = document.getElementById(activeDeck);
+  if(e.key === "ArrowRight") d.querySelector(".nextBtn").click();
+  if(e.key === "ArrowLeft") d.querySelector(".prevBtn").click();
+});
 
 /* Video */
 (function(){
