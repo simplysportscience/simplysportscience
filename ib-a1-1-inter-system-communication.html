@@ -561,7 +561,28 @@
    Leave empty [] and the "coming soon" panel shows instead.
    VIDEO_ID: the code at the end of the YouTube link
      (youtube.com/watch?v=THIS_PART). Leave "" for the "coming soon" panel. */
-const SLIDES = [];
+const SLIDES = [
+  "assets/presentations/ib-a1-1/slide-01.jpg",
+  "assets/presentations/ib-a1-1/slide-02.jpg",
+  "assets/presentations/ib-a1-1/slide-03.jpg",
+  "assets/presentations/ib-a1-1/slide-04.jpg",
+  "assets/presentations/ib-a1-1/slide-05.jpg",
+  "assets/presentations/ib-a1-1/slide-06.jpg",
+  "assets/presentations/ib-a1-1/slide-07.jpg",
+  "assets/presentations/ib-a1-1/slide-08.jpg",
+  "assets/presentations/ib-a1-1/slide-09.jpg",
+  "assets/presentations/ib-a1-1/slide-10.jpg",
+  "assets/presentations/ib-a1-1/slide-11.jpg",
+  "assets/presentations/ib-a1-1/slide-12.jpg",
+  "assets/presentations/ib-a1-1/slide-13.jpg",
+  "assets/presentations/ib-a1-1/slide-14.jpg",
+  "assets/presentations/ib-a1-1/slide-15.jpg",
+  "assets/presentations/ib-a1-1/slide-16.jpg",
+  "assets/presentations/ib-a1-1/slide-17.jpg",
+  "assets/presentations/ib-a1-1/slide-18.jpg",
+  "assets/presentations/ib-a1-1/slide-19.jpg",
+  "assets/presentations/ib-a1-1/slide-20.jpg"
+];
 const VIDEO_ID = "";
 
 /* Presentation */
@@ -572,7 +593,7 @@ const VIDEO_ID = "";
     return;
   }
   let i = 0;
-  deck.innerHTML = '<div class="deck-stage"><img id="deckImg" alt="Presentation slide"/></div>' +
+  deck.innerHTML = '<div class="deck-stage"><img id="deckImg" alt="Presentation slide" draggable="false" oncontextmenu="return false"/></div>' +
     '<div class="deck-controls"><button class="deck-btn" id="prevBtn">← Prev</button>' +
     '<span class="deck-count" id="deckCount"></span>' +
     '<button class="deck-btn" id="fsBtn">⛶ Fullscreen</button>' +
