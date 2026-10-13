@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>C.4.1 Arousal &amp; Anxiety | IB Sport Science | Simply Sport Science</title>
+<meta name="description" content="IB SEHS C.4.1 Arousal and Anxiety — physical and psychological arousal, cognitive and somatic anxiety, the inverted-U hypothesis, IZOF and catastrophe theory. Overview, presentation, deep dive with diagrams, exam tips, video and practice questions."/>
+<link rel="icon" href="favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Simply Sport Science"/>
+<meta property="og:title" content="C.4.1 Arousal &amp; Anxiety | IB Sport Science"/>
+<meta property="og:description" content="Physical and psychological arousal, cognitive and somatic anxiety, the inverted-U hypothesis, IZOF and catastrophe theory."/>
+<meta property="og:url" content="https://simplysportscience.co.uk/ib-c4-1-arousal-anxiety.html"/>
+<meta property="og:image" content="https://simplysportscience.co.uk/og-share-image.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<style>
+  /* ═══ BRAND PALETTE — identical on every topic page ═══ */
+  :root{
+    --deep-purple:#3D1F8C; --indigo:#1A0F5C; --magenta:#C4218A; --violet:#6B2FC4; --amber:#E8A020;
+    --violet-light:#B38BFF; --magenta-light:#F07CC4; --amber-light:#F5C866; --cyan:#22D3EE;
+    --bg:#0E0A24; --bg-mid:#160F36; --card:#1C1442; --border:#33275F;
+    --white:#FFFFFF; --grey:#A39FC0; --grey-light:#D4D0EA; --green:#34D399;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--white);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.7;}
+
+  /* NAV */
+  nav{background:rgba(14,10,36,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px;}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+  .logo img{width:42px;height:42px;object-fit:contain;}
+  .logo-tagline{font-size:9px;color:var(--amber);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;}
+  .logo-name{font-size:14px;font-weight:900;line-height:1.3;}
+  .logo-name .c1{color:var(--cyan);}.logo-name .c2{color:var(--white);}
+  .nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+  .nav-links a{color:var(--grey-light);text-decoration:none;font-size:13px;font-weight:600;padding:7px 10px;border-radius:7px;transition:all 0.2s;white-space:nowrap;}
+  .nav-links a:hover{color:var(--white);background:rgba(107,47,196,0.25);}
+  .nav-links a.active{color:var(--magenta-light);}
+  .nav-links a.teacher-link{color:var(--amber-light);}
+
+  .breadcrumb{font-size:12px;color:var(--grey);padding:10px 24px;background:var(--bg-mid);border-bottom:1px solid var(--border);}
+  .breadcrumb a{color:var(--grey-light);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--magenta-light);}
+  .breadcrumb span{color:var(--magenta-light);margin:0 6px;}
+
+  /* TOPIC HEADER */
+  .topic-hero{background:linear-gradient(160deg,var(--bg) 0%,var(--indigo) 55%,#2A0F3E 100%);padding:40px 24px 34px;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+  .topic-hero::before{content:'';position:absolute;top:-120px;right:-60px;width:520px;height:420px;background:radial-gradient(circle,rgba(196,33,138,0.22) 0%,transparent 70%);pointer-events:none;}
+  .topic-hero-inner{max-width:900px;margin:0 auto;position:relative;}
+  .topic-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+  .pill{font-size:11px;font-weight:800;padding:5px 12px;border-radius:99px;letter-spacing:0.5px;}
+  .pill-code{background:linear-gradient(135deg,var(--deep-purple),var(--magenta));color:var(--white);}
+  .pill-theme{background:rgba(179,139,255,0.14);color:var(--violet-light);border:1px solid rgba(179,139,255,0.35);}
+  .pill-level{background:rgba(232,160,32,0.14);color:var(--amber-light);border:1px solid rgba(232,160,32,0.4);}
+  .topic-hero h1{font-size:clamp(28px,5vw,40px);font-weight:900;line-height:1.12;margin-bottom:10px;}
+  .topic-hero p{font-size:15px;color:var(--grey-light);max-width:640px;}
+
+  /* SECTION JUMP BAR */
+  .jump-bar{background:var(--bg-mid);border-bottom:1px solid var(--border);position:sticky;top:64px;z-index:90;overflow-x:auto;}
+  .jump-inner{max-width:900px;margin:0 auto;padding:10px 24px;display:flex;gap:6px;min-width:max-content;}
+  .jump-inner a{font-size:12px;font-weight:700;color:var(--grey-light);text-decoration:none;padding:6px 12px;border-radius:99px;border:1px solid var(--border);white-space:nowrap;transition:all 0.2s;}
+  .jump-inner a:hover{border-color:var(--magenta);color:var(--white);}
+  .jump-inner a b{color:var(--amber);margin-right:4px;}
+
+  /* SECTIONS */
+  .page-inner{max-width:900px;margin:0 auto;padding:30px 24px 56px;}
+  .section{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px 28px 30px;margin-bottom:22px;scroll-margin-top:120px;}
+  .section-head{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+  .section-num{width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,var(--deep-purple),var(--magenta));display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:900;flex-shrink:0;box-shadow:0 4px 14px rgba(196,33,138,0.35);}
+  .section-head h2{font-size:21px;font-weight:900;}
+  .section p{font-size:14.5px;color:var(--grey-light);margin-bottom:12px;}
+  .section p strong{color:var(--white);}
+  .section h3{font-size:16px;font-weight:900;color:var(--violet-light);margin:22px 0 10px;}
+  .section ul.points{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:12px;}
+  .section ul.points li{font-size:14px;color:var(--grey-light);display:flex;gap:10px;}
+  .section ul.points li::before{content:'◆';color:var(--magenta-light);font-size:9px;margin-top:6px;flex-shrink:0;}
+
+  /* Overview extras */
+  .learn-box{background:rgba(107,47,196,0.12);border:1px solid rgba(179,139,255,0.3);border-radius:12px;padding:16px 18px;margin:14px 0;}
+  .learn-box h4{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber-light);margin-bottom:8px;}
+  .key-terms{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-top:10px;}
+  .key-term{background:var(--bg-mid);border:1px solid var(--border);border-radius:10px;padding:12px 14px;}
+  .key-term b{display:block;font-size:13px;color:var(--magenta-light);margin-bottom:2px;}
+  .key-term span{font-size:12.5px;color:var(--grey-light);line-height:1.55;}
+
+  /* Presentation component */
+  .deck{background:var(--bg);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+  .deck-stage{position:relative;aspect-ratio:16/9;background:#000;display:flex;align-items:center;justify-content:center;}
+  .deck-stage img{width:100%;height:100%;object-fit:contain;cursor:zoom-in;}
+  .deck-controls{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;background:var(--bg-mid);}
+  .deck-btn{background:var(--card);border:1px solid var(--border);color:var(--white);border-radius:8px;padding:7px 14px;font-size:13px;font-weight:700;cursor:pointer;}
+  .deck-btn:hover{border-color:var(--magenta);}
+  .deck-count{font-size:12px;color:var(--grey);}
+  .placeholder{aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:24px;background:linear-gradient(135deg,rgba(61,31,140,0.35),rgba(196,33,138,0.18));}
+  .placeholder .ph-icon{font-size:40px;}
+  .placeholder h4{font-size:16px;font-weight:900;}
+  .placeholder p{font-size:13px;color:var(--grey-light);margin:0;max-width:380px;}
+
+  /* Diagrams & tables */
+  .diagram{background:var(--bg-mid);border:1px solid var(--border);border-radius:14px;padding:18px;margin:16px 0;}
+  .diagram svg{width:100%;height:auto;display:block;}
+  .diagram-caption{font-size:12px;color:var(--grey);text-align:center;margin-top:8px;}
+  table.compare{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;}
+  table.compare th{background:var(--deep-purple);color:var(--white);text-align:left;padding:10px 12px;font-weight:800;}
+  table.compare td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--grey-light);vertical-align:top;}
+  table.compare td:first-child{color:var(--amber-light);font-weight:700;white-space:nowrap;}
+  .table-wrap{overflow-x:auto;}
+
+  /* Exam tips */
+  .tip{display:flex;gap:14px;background:rgba(232,160,32,0.08);border:1px solid rgba(232,160,32,0.3);border-radius:12px;padding:14px 16px;margin-bottom:10px;}
+  .tip-icon{font-size:20px;flex-shrink:0;}
+  .tip b{display:block;font-size:14px;color:var(--amber-light);margin-bottom:2px;}
+  .tip span{font-size:13.5px;color:var(--grey-light);}
+  .tip.warn{background:rgba(196,33,138,0.08);border-color:rgba(196,33,138,0.35);}
+  .tip.warn b{color:var(--magenta-light);}
+
+  /* Video */
+  .video-frame{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#000;}
+  .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .placeholder a{color:var(--amber-light);font-weight:700;}
+
+  /* Practice questions */
+  .question{background:var(--bg-mid);border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+  .question summary{list-style:none;cursor:pointer;padding:15px 18px;display:flex;align-items:flex-start;gap:12px;font-size:14px;font-weight:700;color:var(--white);}
+  .question summary::-webkit-details-marker{display:none;}
+  .q-num{background:linear-gradient(135deg,var(--deep-purple),var(--violet));border-radius:7px;min-width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;}
+  .q-text{flex:1;}
+  .q-marks{font-size:11px;font-weight:800;color:var(--amber-light);background:rgba(232,160,32,0.14);border-radius:99px;padding:3px 9px;flex-shrink:0;}
+  .q-toggle{color:var(--magenta-light);font-size:12px;font-weight:800;flex-shrink:0;}
+  .question[open] .q-toggle::after{content:' ▲';}
+  .question:not([open]) .q-toggle::after{content:' ▼';}
+  .answer{padding:0 18px 16px 58px;}
+  .answer h5{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:6px;}
+  .answer ul{list-style:none;display:flex;flex-direction:column;gap:5px;}
+  .answer li{font-size:13.5px;color:var(--grey-light);display:flex;gap:8px;}
+  .answer li::before{content:'✓';color:var(--green);font-weight:900;flex-shrink:0;}
+
+  /* Prev / next */
+  .topic-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;}
+  .topic-nav a{background:var(--bg-mid);border:1px solid var(--border);border-radius:12px;padding:14px 18px;text-decoration:none;color:var(--white);font-size:14px;font-weight:800;transition:all 0.2s;}
+  .topic-nav a:hover{border-color:var(--magenta);}
+  .topic-nav a span{display:block;font-size:10px;color:var(--grey);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
+  .topic-nav a.next{text-align:right;}
+
+  .hub-footer{background:#080617;padding:24px;text-align:center;border-top:1px solid var(--border);}
+  .hub-footer p{font-size:12px;color:var(--grey);}
+  .hub-footer a{color:var(--grey-light);text-decoration:none;margin:0 6px;}
+  .hub-footer a:hover{color:var(--magenta-light);}
+
+  @media(max-width:640px){
+    .nav-links{display:none;}
+    .topic-hero{padding:28px 16px 24px;}
+    .jump-inner{padding:10px 16px;}
+    .page-inner{padding:20px 14px 40px;}
+    .section{padding:22px 18px;}
+    .answer{padding:0 16px 14px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <img src="sss-icon.png" alt="Simply Sport Science"/>
+      <div>
+        <div class="logo-tagline">Sport Science Sorted</div>
+        <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ib-hub.html" class="active">IB Sport Science</a></li>
+      <li><a href="cambridge-hub.html">A Level PE</a></li>
+      <li><a href="btec-hub.html">BTEC Sport</a></li>
+      <li><a href="az-library.html">A–Z</a></li>
+      <li><a href="teacher-hub.html" class="teacher-link">Teacher Hub</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div style="max-width:900px;margin:0 auto;">
+    <a href="index.html">Home</a><span>›</span><a href="ib-hub.html">IB Sport Science</a><span>›</span><a href="ib-theme-c.html">Theme C</a><span>›</span>C.4.1
+  </div>
+</div>
+
+<!-- ═══ TOPIC HEADER ═══ -->
+<div class="topic-hero">
+  <div class="topic-hero-inner">
+    <div class="topic-meta">
+      <span class="pill pill-code">C.4.1</span>
+      <span class="pill pill-theme">Theme C · Stress &amp; Coping</span>
+      <span class="pill pill-level">SL &amp; HL</span>
+    </div>
+    <h1>Arousal &amp; Anxiety</h1>
+    <p>How arousal and anxiety relate to performance: the inverted-U hypothesis, individual zones, the two components of anxiety and why high anxiety can cause a sudden collapse.</p>
+  </div>
+</div>
+
+<!-- ═══ SECTION JUMP BAR ═══ -->
+<div class="jump-bar">
+  <div class="jump-inner">
+    <a href="#overview"><b>1</b>Overview</a>
+    <a href="#presentation"><b>2</b>Presentation</a>
+    <a href="#deep-dive"><b>3</b>Deep Dive</a>
+    <a href="#exam-tips"><b>4</b>Exam Tips</a>
+    <a href="#video"><b>5</b>Video</a>
+    <a href="#practice"><b>6</b>Practice Questions</a>
+  </div>
+</div>
+
+<div class="page-inner">
+
+  <!-- ═══ 1. OVERVIEW ═══ -->
+  <section class="section" id="overview">
+    <div class="section-head"><div class="section-num">1</div><h2>Overview</h2></div>
+    <p><strong>Arousal</strong> is the level of physical and psychological activation, from deep sleep to intense excitement. <strong>Anxiety</strong> is a negative emotional state with worry and physical symptoms. The two are related but different: arousal can be positive, and anxiety is the unpleasant form of activation. The <strong>inverted-U hypothesis</strong> proposes that performance improves with arousal up to an optimal point and then declines. The <strong>individual zone of optimal functioning (IZOF)</strong> recognises that the optimal point differs between athletes and between tasks. At higher level, anxiety is split into <strong>cognitive</strong> and <strong>somatic</strong> components, and <strong>catastrophe theory</strong> explains why performance can collapse suddenly when both are high.</p>
+    <div class="learn-box">
+      <h4>By the end of this topic you should be able to</h4>
+      <ul class="points">
+        <li>Define arousal as physical and psychological activation, and distinguish it from anxiety.</li>
+        <li>Distinguish between cognitive and somatic anxiety, with examples.</li>
+        <li>Distinguish between trait and state anxiety.</li>
+        <li>Explain the inverted-U hypothesis, including the effect of task complexity, and the concept of IZOF.</li>
+        <li>HL: Explain catastrophe theory, and compare it with the inverted-U hypothesis and IZOF.</li>
+      </ul>
+    </div>
+    <h3>Key Terms</h3>
+    <div class="key-terms">
+      <div class="key-term"><b>Arousal</b><span>The level of physical and psychological activation, which affects performance.</span></div>
+      <div class="key-term"><b>Anxiety</b><span>A negative emotional state involving worry and physical symptoms of arousal.</span></div>
+      <div class="key-term"><b>Cognitive anxiety</b><span>Mental worry, negative thoughts and self-doubt.</span></div>
+      <div class="key-term"><b>Somatic anxiety</b><span>Physical symptoms of arousal, such as increased heart rate, muscle tension and sweating.</span></div>
+      <div class="key-term"><b>Inverted-U hypothesis</b><span>Performance rises with arousal to an optimal point, then falls when arousal is too high.</span></div>
+      <div class="key-term"><b>IZOF</b><span>Individual zone of optimal functioning: each athlete's own zone of arousal for peak performance.</span></div>
+    </div>
+  </section>
+
+  <!-- ═══ 2. PRESENTATION ═══ -->
+  <section class="section" id="presentation">
+    <div class="section-head"><div class="section-num">2</div><h2>Presentation</h2></div>
+    <div class="deck" id="deck"></div>
+  </section>
+
+  <!-- ═══ 3. DEEP DIVE ═══ -->
+  <section class="section" id="deep-dive">
+    <div class="section-head"><div class="section-num">3</div><h2>Deep Dive</h2></div>
+
+    <h3>Arousal: physical and psychological activation</h3>
+    <p>Arousal has a physical side (heart rate, breathing, muscle tension, adrenaline release) and a psychological side (alertness, focus, readiness). It is controlled largely by the sympathetic nervous system and hormones such as adrenaline. Low arousal may leave an athlete flat and inattentive; high arousal may bring energy and readiness, but also tension. Arousal is not bad in itself. The question for performance is how much arousal there is compared with what the task needs.</p>
+
+    <h3>Anxiety: cognitive and somatic components</h3>
+    <p>Anxiety is more than high arousal. It has two components that are often measured separately. <strong>Cognitive anxiety</strong> is the worry, negative thinking and fear of failure. <strong>Somatic anxiety</strong> is the physical experience of arousal that is interpreted as unpleasant, such as a racing heart, sweaty palms, butterflies or muscle tension. An athlete can have high physical arousal without anxiety, for example when excited, and anxiety can be present with little physical arousal.</p>
+
+    <div class="diagram">
+<svg viewBox="0 0 880 340" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="Two dimensions of anxiety: cognitive or somatic, and trait or state, with examples before a competition"><defs>
+<linearGradient id="co-card" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E1D74"/><stop offset="1" stop-color="#1C1442"/></linearGradient>
+<linearGradient id="co-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7A45D6"/><stop offset="1" stop-color="#5526A8"/></linearGradient>
+<linearGradient id="co-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DE3FA2"/><stop offset="1" stop-color="#A3186F"/></linearGradient>
+<linearGradient id="co-c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0B53A"/><stop offset="1" stop-color="#C9861A"/></linearGradient>
+<linearGradient id="co-d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2FBF8C"/><stop offset="1" stop-color="#14785C"/></linearGradient>
+<filter id="co-shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.45"/></filter>
+</defs>
+<text x="14" y="30" font-size="11" font-weight="800" letter-spacing="1.5" fill="#F5C866">ANXIETY: WHAT IT IS MADE OF AND WHEN IT OCCURS</text>
+<g filter="url(#co-shadow)"><rect x="14" y="48" width="278" height="150" rx="14" fill="url(#co-card)" stroke="#33275F"/></g><rect x="14" y="48" width="278" height="6" rx="3" fill="url(#co-b)"/>
+<text x="30" y="80" font-size="14" font-weight="900" fill="#F07CC4">Cognitive anxiety</text>
+<text x="30" y="104" font-size="11" fill="#D4D0EA">Mental worry, negative thoughts,</text>
+<text x="30" y="119" font-size="11" fill="#D4D0EA">self-doubt, fear of failure</text>
+<text x="30" y="180" font-size="10.5" font-weight="700" fill="#FFFFFF">e.g. "I'm going to lose this match."</text>
+<g filter="url(#co-shadow)"><rect x="300" y="48" width="278" height="150" rx="14" fill="url(#co-card)" stroke="#33275F"/></g><rect x="300" y="48" width="278" height="6" rx="3" fill="url(#co-c)"/>
+<text x="316" y="80" font-size="14" font-weight="900" fill="#F5C866">Somatic anxiety</text>
+<text x="316" y="104" font-size="11" fill="#D4D0EA">Physical signs of arousal: heart rate,</text>
+<text x="316" y="119" font-size="11" fill="#D4D0EA">sweating, tension, butterflies</text>
+<text x="316" y="180" font-size="10.5" font-weight="700" fill="#FFFFFF">e.g. shaking hands before a penalty.</text>
+<g filter="url(#co-shadow)"><rect x="586" y="48" width="278" height="150" rx="14" fill="url(#co-card)" stroke="#33275F"/></g><rect x="586" y="48" width="278" height="6" rx="3" fill="url(#co-a)"/>
+<text x="602" y="80" font-size="14" font-weight="900" fill="#B38BFF">Trait anxiety</text>
+<text x="602" y="104" font-size="11" fill="#D4D0EA">A stable personal tendency to feel</text>
+<text x="602" y="119" font-size="11" fill="#D4D0EA">anxious across many situations</text>
+<text x="602" y="180" font-size="10.5" font-weight="700" fill="#FFFFFF">e.g. an athlete who is anxious in</text>
+<text x="602" y="195" font-size="10.5" font-weight="700" fill="#FFFFFF">most competitions.</text>
+<g filter="url(#co-shadow)"><rect x="14" y="220" width="850" height="100" rx="14" fill="url(#co-card)" stroke="#33275F"/></g>
+<text x="30" y="246" font-size="13" font-weight="900" fill="#FFFFFF">State anxiety</text>
+<text x="30" y="266" font-size="11" fill="#D4D0EA">A temporary emotional state in one situation. It can rise and fall quickly, for example before a final.</text>
+<text x="30" y="296" font-size="11" fill="#D4D0EA">Measured just before competition with inventories such as the CSAI-2R (cognitive and somatic anxiety, self-confidence).</text>
+</svg>
+      <div class="diagram-caption">The components of anxiety: cognitive and somatic anxiety, and trait and state anxiety, with examples. Trait anxiety is a stable tendency; state anxiety is a temporary response to a situation.</div>
+    </div>
+
+    <h3>Trait and state anxiety</h3>
+    <p><strong>Trait anxiety</strong> is a stable personality tendency to perceive situations as threatening and to feel anxious across many situations. <strong>State anxiety</strong> is a temporary emotional state in a particular situation, which can rise and fall quickly, for example in the minutes before a final. A high-trait athlete is more likely to experience high state anxiety, but the two are not the same. Coaches and sport psychologists often measure state anxiety just before competition with questionnaires such as the Competitive State Anxiety Inventory-2 (CSAI-2R), which assess cognitive anxiety, somatic anxiety and self-confidence.</p>
+
+    <h3>The inverted-U hypothesis and IZOF</h3>
+    <p>The <strong>inverted-U hypothesis</strong> proposes that performance increases as arousal increases, up to an optimal level, and then decreases as arousal becomes too high. Two points are important. First, the <strong>optimal level depends on the task</strong>: simple or gross motor tasks, such as a sprint start or a weightlift, tolerate and often need higher arousal, while complex or fine-motor tasks, such as a golf putt or a gymnastics balance, need lower arousal, because too much arousal disrupts precise control and attention. Second, the optimal point differs between athletes. The <strong>individual zone of optimal functioning (IZOF)</strong> proposes that each athlete has their own zone of arousal in which they perform best, and that this zone can be identified and used in training.</p>
+
+    <div class="diagram">
+<svg viewBox="0 0 880 370" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="Inverted-U curves of performance against arousal: a simple task has an optimal arousal level that is higher than a complex task, and an individual zone of optimal functioning shows where one athlete performs best"><defs>
+<linearGradient id="uc-card" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E1D74"/><stop offset="1" stop-color="#1C1442"/></linearGradient>
+<linearGradient id="uc-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7A45D6"/><stop offset="1" stop-color="#5526A8"/></linearGradient>
+<linearGradient id="uc-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DE3FA2"/><stop offset="1" stop-color="#A3186F"/></linearGradient>
+<linearGradient id="uc-c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0B53A"/><stop offset="1" stop-color="#C9861A"/></linearGradient>
+<linearGradient id="uc-d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2FBF8C"/><stop offset="1" stop-color="#14785C"/></linearGradient>
+<filter id="uc-shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.45"/></filter>
+</defs>
+<text x="14" y="30" font-size="11" font-weight="800" letter-spacing="1.5" fill="#F5C866">THE INVERTED-U HYPOTHESIS AND THE INDIVIDUAL ZONE OF OPTIMAL FUNCTIONING</text>
+<rect x="283.8" y="60.0" width="122.4" height="240.0" rx="8" fill="#34D399" fill-opacity="0.10"/>
+<text x="345.0" y="276.0" text-anchor="middle" font-size="10" fill="#34D399" font-weight="800">IZOF</text>
+<line x1="90" y1="300" x2="600" y2="300" stroke="#8F78D6" stroke-width="1.5"/><line x1="90" y1="60" x2="90" y2="300" stroke="#8F78D6" stroke-width="1.5"/>
+<text x="345" y="334" text-anchor="middle" font-size="11" fill="#A39FC0">Arousal (low to high)</text>
+<text transform="translate(54,180) rotate(-90)" text-anchor="middle" font-size="11" fill="#A39FC0">Performance</text>
+<path d="M90.0,300.0 L95.1,300.0 L100.2,300.0 L105.3,300.0 L110.4,300.0 L115.5,300.0 L120.6,300.0 L125.7,300.0 L130.8,300.0 L135.9,299.9 L141.0,299.9 L146.1,299.9 L151.2,299.9 L156.3,299.8 L161.4,299.8 L166.5,299.7 L171.6,299.6 L176.7,299.5 L181.8,299.4 L186.9,299.3 L192.0,299.1 L197.1,298.8 L202.2,298.6 L207.3,298.2 L212.4,297.8 L217.5,297.3 L222.6,296.8 L227.7,296.1 L232.8,295.2 L237.9,294.3 L243.0,293.1 L248.1,291.8 L253.2,290.3 L258.3,288.5 L263.4,286.5 L268.5,284.2 L273.6,281.6 L278.7,278.7 L283.8,275.3 L288.9,271.6 L294.0,267.5 L299.1,263.0 L304.2,258.0 L309.3,252.5 L314.4,246.6 L319.5,240.2 L324.6,233.3 L329.7,225.9 L334.8,218.1 L339.9,209.9 L345.0,201.3 L350.1,192.4 L355.2,183.2 L360.3,173.7 L365.4,164.1 L370.5,154.4 L375.6,144.7 L380.7,135.1 L385.8,125.7 L390.9,116.6 L396.0,107.8 L401.1,99.5 L406.2,91.8 L411.3,84.8 L416.4,78.5 L421.5,73.0 L426.6,68.4 L431.7,64.8 L436.8,62.1 L441.9,60.5 L447.0,60.0 L452.1,60.5 L457.2,62.1 L462.3,64.8 L467.4,68.4 L472.5,73.0 L477.6,78.5 L482.7,84.8 L487.8,91.8 L492.9,99.5 L498.0,107.8 L503.1,116.6 L508.2,125.7 L513.3,135.1 L518.4,144.7 L523.5,154.4 L528.6,164.1 L533.7,173.7 L538.8,183.2 L543.9,192.4 L549.0,201.3 L554.1,209.9 L559.2,218.1 L564.3,225.9 L569.4,233.3 L574.5,240.2 L579.6,246.6 L584.7,252.5 L589.8,258.0 L594.9,263.0 L600.0,267.5" fill="none" stroke="#F0B53A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M90.0,299.9 L95.1,299.9 L100.2,299.8 L105.3,299.8 L110.4,299.7 L115.5,299.5 L120.6,299.3 L125.7,299.1 L130.8,298.7 L135.9,298.3 L141.0,297.7 L146.1,297.0 L151.2,296.0 L156.3,294.8 L161.4,293.2 L166.5,291.3 L171.6,288.9 L176.7,286.0 L181.8,282.5 L186.9,278.3 L192.0,273.4 L197.1,267.7 L202.2,261.0 L207.3,253.5 L212.4,245.0 L217.5,235.5 L222.6,225.0 L227.7,213.7 L232.8,201.5 L237.9,188.7 L243.0,175.3 L248.1,161.5 L253.2,147.7 L258.3,133.9 L263.4,120.6 L268.5,107.9 L273.6,96.2 L278.7,85.8 L283.8,76.8 L288.9,69.6 L294.0,64.3 L299.1,61.1 L304.2,60.0 L309.3,61.1 L314.4,64.3 L319.5,69.6 L324.6,76.8 L329.7,85.8 L334.8,96.2 L339.9,107.9 L345.0,120.6 L350.1,133.9 L355.2,147.7 L360.3,161.5 L365.4,175.3 L370.5,188.7 L375.6,201.5 L380.7,213.7 L385.8,225.0 L390.9,235.5 L396.0,245.0 L401.1,253.5 L406.2,261.0 L411.3,267.7 L416.4,273.4 L421.5,278.3 L426.6,282.5 L431.7,286.0 L436.8,288.9 L441.9,291.3 L447.0,293.2 L452.1,294.8 L457.2,296.0 L462.3,297.0 L467.4,297.7 L472.5,298.3 L477.6,298.7 L482.7,299.1 L487.8,299.3 L492.9,299.5 L498.0,299.7 L503.1,299.8 L508.2,299.8 L513.3,299.9 L518.4,299.9 L523.5,299.9 L528.6,300.0 L533.7,300.0 L538.8,300.0 L543.9,300.0 L549.0,300.0 L554.1,300.0 L559.2,300.0 L564.3,300.0 L569.4,300.0 L574.5,300.0 L579.6,300.0 L584.7,300.0 L589.8,300.0 L594.9,300.0 L600.0,300.0" fill="none" stroke="#B38BFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="304.2" y1="60" x2="304.2" y2="300" stroke="#F5C866" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="492.9" y="103.2" font-size="10.5" fill="#F0B53A" font-weight="800">simple task</text><text x="105.3" y="144.0" font-size="10.5" fill="#B38BFF" font-weight="800">complex task</text>
+<g filter="url(#uc-shadow)"><rect x="630" y="48" width="236" height="284" rx="14" fill="url(#uc-card)" stroke="#33275F"/></g>
+<text x="646" y="74" font-size="13" font-weight="900" fill="#FFFFFF">Reading the model</text>
+<text x="646" y="100" font-size="11.5" font-weight="800" fill="#F5C866">Inverted-U</text>
+<text x="646" y="116" font-size="10.5" fill="#D4D0EA">Performance rises with arousal up</text>
+<text x="646" y="130" font-size="10.5" fill="#D4D0EA">to an optimal point, then falls</text>
+<text x="646" y="144" font-size="10.5" fill="#D4D0EA">as arousal becomes too high.</text>
+<text x="646" y="176" font-size="11.5" font-weight="800" fill="#B38BFF">Task type</text>
+<text x="646" y="192" font-size="10.5" fill="#D4D0EA">Simple or gross tasks (orange)</text>
+<text x="646" y="206" font-size="10.5" fill="#D4D0EA">tolerate higher arousal; complex</text>
+<text x="646" y="220" font-size="10.5" fill="#D4D0EA">or fine-motor tasks (purple) need</text>
+<text x="646" y="234" font-size="10.5" fill="#D4D0EA">lower arousal.</text>
+<text x="646" y="266" font-size="11.5" font-weight="800" fill="#34D399">IZOF</text>
+<text x="646" y="282" font-size="10.5" fill="#D4D0EA">Each athlete has a personal zone</text>
+<text x="646" y="296" font-size="10.5" fill="#D4D0EA">where arousal is optimal, so the</text>
+<text x="646" y="310" font-size="10.5" fill="#D4D0EA">peak differs between people.</text>
+<text x="14" y="354" font-size="10.5" fill="#A39FC0">Curves are schematic, to show the shape predicted by the theory.</text>
+</svg>
+      <div class="diagram-caption">The inverted-U hypothesis for simple and complex tasks (schematic), with the individual zone of optimal functioning for one athlete shaded. The optimal arousal level is lower for complex tasks.</div>
+    </div>
+
+    <p>The model links to attention (see C.2.2). Arousal beyond the optimal level tends to narrow attention, so an athlete may focus on the threat and miss relevant cues. Coaches can use IZOF to help athletes recognise their own signs of too much or too little arousal, and then use strategies to adjust it.</p>
+
+    <h3>Catastrophe theory <span style="font-size:10px;font-weight:800;padding:3px 9px;border-radius:99px;background:rgba(232,160,32,0.16);color:var(--amber-light);border:1px solid rgba(232,160,32,0.4);margin-left:8px;vertical-align:middle;">HL</span></h3>
+    <p>The inverted-U hypothesis predicts a gradual fall in performance after the optimal point. <strong>Catastrophe theory</strong> predicts something different when anxiety is involved. When <strong>cognitive anxiety is low</strong>, performance declines gradually as arousal rises past the optimal point, as the inverted-U predicts. When <strong>cognitive anxiety is high</strong>, performance may fall suddenly and severely once arousal passes a threshold, because the athlete's worry and physical arousal combine and the performance can collapse. This is why catastrophe theory explains the phrase "choking" under pressure.</p>
+
+    <div class="diagram">
+<svg viewBox="0 0 880 360" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="Two graphs of performance against physiological arousal: with low cognitive anxiety, performance declines gradually after the optimal point, but with high cognitive anxiety, performance drops suddenly once arousal passes a threshold"><defs>
+<linearGradient id="ct-card" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E1D74"/><stop offset="1" stop-color="#1C1442"/></linearGradient>
+<linearGradient id="ct-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7A45D6"/><stop offset="1" stop-color="#5526A8"/></linearGradient>
+<linearGradient id="ct-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DE3FA2"/><stop offset="1" stop-color="#A3186F"/></linearGradient>
+<linearGradient id="ct-c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0B53A"/><stop offset="1" stop-color="#C9861A"/></linearGradient>
+<linearGradient id="ct-d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2FBF8C"/><stop offset="1" stop-color="#14785C"/></linearGradient>
+<filter id="ct-shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.45"/></filter>
+</defs>
+<text x="14" y="30" font-size="11" font-weight="800" letter-spacing="1.5" fill="#F5C866">CATASTROPHE THEORY: THE INTERACTION WITH COGNITIVE ANXIETY (HL)</text>
+<g filter="url(#ct-shadow)"><rect x="14" y="46" width="420" height="284" rx="14" fill="url(#ct-card)" stroke="#33275F"/></g>
+<text x="30" y="72" font-size="13.5" font-weight="900" fill="#34D399">Low cognitive anxiety</text>
+<line x1="72" y1="290" x2="410" y2="290" stroke="#8F78D6" stroke-width="1.5"/><line x1="72" y1="84" x2="72" y2="290" stroke="#8F78D6" stroke-width="1.5"/>
+<text x="241" y="324" text-anchor="middle" font-size="11" fill="#A39FC0">Physiological arousal</text>
+<text transform="translate(36,187) rotate(-90)" text-anchor="middle" font-size="11" fill="#A39FC0">Performance</text>
+<path d="M72.0,166.4 L75.4,162.3 L78.8,158.4 L82.1,154.5 L85.5,150.7 L88.9,147.1 L92.3,143.5 L95.7,140.1 L99.0,136.7 L102.4,133.5 L105.8,130.3 L109.2,127.3 L112.6,124.4 L115.9,121.5 L119.3,118.8 L122.7,116.2 L126.1,113.7 L129.5,111.2 L132.8,108.9 L136.2,106.7 L139.6,104.6 L143.0,102.6 L146.4,100.7 L149.7,98.9 L153.1,97.2 L156.5,95.6 L159.9,94.1 L163.3,92.7 L166.6,91.4 L170.0,90.2 L173.4,89.2 L176.8,88.2 L180.2,87.3 L183.5,86.5 L186.9,85.9 L190.3,85.3 L193.7,84.8 L197.1,84.5 L200.4,84.2 L203.8,84.1 L207.2,84.0 L210.6,84.1 L214.0,84.2 L217.3,84.5 L220.7,84.8 L224.1,85.3 L227.5,85.9 L230.9,86.5 L234.2,87.3 L237.6,88.2 L241.0,89.2 L244.4,90.2 L247.8,91.4 L251.1,92.7 L254.5,94.1 L257.9,95.6 L261.3,97.2 L264.7,98.9 L268.0,100.7 L271.4,102.6 L274.8,104.6 L278.2,106.7 L281.6,108.9 L284.9,111.2 L288.3,113.7 L291.7,116.2 L295.1,118.8 L298.5,121.5 L301.8,124.4 L305.2,127.3 L308.6,130.3 L312.0,133.5 L315.4,136.7 L318.7,140.1 L322.1,143.5 L325.5,147.1 L328.9,150.7 L332.3,154.5 L335.6,158.4 L339.0,162.3 L342.4,166.4 L345.8,170.6 L349.2,174.8 L352.5,179.2 L355.9,183.7 L359.3,188.3 L362.7,193.0 L366.1,197.8 L369.4,202.7 L372.8,207.7 L376.2,212.8 L379.6,218.0 L383.0,223.3 L386.3,228.7 L389.7,234.2 L393.1,239.8 L396.5,245.5 L399.9,251.3 L403.2,257.2 L406.6,263.3 L410.0,269.4" fill="none" stroke="#34D399" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="261.3" y="197.3" font-size="11" font-weight="800" fill="#34D399">gradual decline</text>
+<g filter="url(#ct-shadow)"><rect x="456" y="46" width="420" height="284" rx="14" fill="url(#ct-card)" stroke="#33275F"/></g>
+<text x="472" y="72" font-size="13.5" font-weight="900" fill="#F07CC4">High cognitive anxiety</text>
+<line x1="514" y1="290" x2="852" y2="290" stroke="#8F78D6" stroke-width="1.5"/><line x1="514" y1="84" x2="514" y2="290" stroke="#8F78D6" stroke-width="1.5"/>
+<text x="683" y="324" text-anchor="middle" font-size="11" fill="#A39FC0">Physiological arousal</text>
+<text transform="translate(478,187) rotate(-90)" text-anchor="middle" font-size="11" fill="#A39FC0">Performance</text>
+<path d="M514.0,166.4 L517.4,162.3 L520.8,158.4 L524.1,154.5 L527.5,150.7 L530.9,147.1 L534.3,143.5 L537.7,140.1 L541.0,136.7 L544.4,133.5 L547.8,130.3 L551.2,127.3 L554.6,124.4 L557.9,121.5 L561.3,118.8 L564.7,116.2 L568.1,113.7 L571.5,111.2 L574.8,108.9 L578.2,106.7 L581.6,104.6 L585.0,102.6 L588.4,100.7 L591.7,98.9 L595.1,97.2 L598.5,95.6 L601.9,94.1 L605.3,92.7 L608.6,91.4 L612.0,90.2 L615.4,89.2 L618.8,88.2 L622.2,87.3 L625.5,86.5 L628.9,85.9 L632.3,85.3 L635.7,84.8 L639.1,84.5 L642.4,84.2 L645.8,84.1 L649.2,84.0 L652.6,84.1 L656.0,84.2 L659.3,84.5 L662.7,84.8 L666.1,85.3 L669.5,85.9 L672.9,86.9 L676.2,88.4 L679.6,92.1 L683.0,102.1 L686.4,128.0 L689.8,175.8 L693.1,223.1 L696.5,248.0 L699.9,257.0 L703.3,260.0 L706.7,261.0 L710.0,261.5 L713.4,261.9 L716.8,262.2 L720.2,262.5 L723.6,262.8 L726.9,263.2 L730.3,263.5 L733.7,263.9 L737.1,264.3 L740.5,264.7 L743.8,265.2 L747.2,265.6 L750.6,266.1 L754.0,266.5 L757.4,267.0 L760.7,267.5 L764.1,268.0 L767.5,268.6 L770.9,269.1 L774.3,269.7 L777.6,270.3 L781.0,270.8 L784.4,271.5 L787.8,272.1 L791.2,272.7 L794.5,273.4 L797.9,274.1 L801.3,274.7 L804.7,275.4 L808.1,276.2 L811.4,276.9 L814.8,277.6 L818.2,278.4 L821.6,279.2 L825.0,280.0 L828.3,280.8 L831.7,281.6 L835.1,282.5 L838.5,283.3 L841.9,284.2 L845.2,285.1 L848.6,286.0 L852.0,286.9" fill="none" stroke="#F07CC4" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="689.8" y1="84" x2="689.8" y2="290" stroke="#F5C866" stroke-width="1.5" stroke-dasharray="5 4"/><text x="695.8" y="98" font-size="10.5" font-weight="800" fill="#F5C866">threshold</text>
+<text x="716.8" y="197.3" font-size="11" font-weight="800" fill="#F07CC4">sudden drop</text>
+<text x="14" y="346" font-size="10.5" fill="#A39FC0">Schematic. Inverted-U predicts a gradual fall after optimal arousal; catastrophe theory predicts a sudden fall when cognitive and somatic anxiety are both high.</text>
+</svg>
+      <div class="diagram-caption">Catastrophe theory compared with the inverted-U hypothesis (schematic). With low cognitive anxiety performance declines gradually; with high cognitive anxiety it drops suddenly once arousal passes the threshold.</div>
+    </div>
+
+    <h3>Comparing the theories <span style="font-size:10px;font-weight:800;padding:3px 9px;border-radius:99px;background:rgba(232,160,32,0.16);color:var(--amber-light);border:1px solid rgba(232,160,32,0.4);margin-left:8px;vertical-align:middle;">HL</span></h3>
+    <p>Each theory explains a different part of the relationship:</p>
+    <div class="table-wrap">
+      <table class="compare">
+        <tr><th>Theory</th><th>Key idea</th><th>Prediction for high arousal</th><th>Limitation</th></tr>
+        <tr><td>Drive theory</td><td>Arousal increases the dominant response; skilled, well-learned responses improve while novel ones worsen</td><td>Performance improves for well-learned skills, worsens for new ones</td><td>Does not describe the optimal point clearly, and the drive-performance link is hard to test</td></tr>
+        <tr><td>Inverted-U hypothesis</td><td>Performance is best at a moderate, optimal arousal level, and the optimal level depends on task complexity</td><td>Gradual decline after the optimal point</td><td>One optimal level is assumed for all athletes; the shape is hard to measure precisely</td></tr>
+        <tr><td>IZOF</td><td>Each athlete has a personal zone of optimal arousal</td><td>Decline beyond the athlete's own zone</td><td>Zones are hard to identify reliably, and can change over time</td></tr>
+        <tr><td>Catastrophe theory</td><td>Performance can collapse suddenly when cognitive and somatic anxiety are both high</td><td>Sudden, severe drop once a threshold is passed</td><td>Complex to test; the threshold is hard to define</td></tr>
+      </table>
+    </div>
+    <p>A balanced evaluation shows that these theories are not in competition. Inverted-U and IZOF describe the basic relationship, and catastrophe theory explains when performance can fall sharply. The best approach for coaches is to combine them: identify each athlete's zone, and watch for cognitive anxiety, which can make the drop sudden.</p>
+  </section>
+
+  <!-- ═══ 4. EXAM TIPS ═══ -->
+  <section class="section" id="exam-tips">
+    <div class="section-head"><div class="section-num">4</div><h2>Exam Tips</h2></div>
+    <div class="tip"><div class="tip-icon">📈</div><div><b>Name the optimal point</b><span>Don't describe the inverted-U without naming the optimal arousal level and the decline after it. Say whether the task is simple or complex, because this changes the optimal level.</span></div></div>
+    <div class="tip"><div class="tip-icon">🧩</div><div><b>Separate arousal from anxiety</b><span>Arousal is activation; anxiety is the unpleasant, worried form of it. Give one cognitive and one somatic example for anxiety. Check the <a href="ib-command-terms.html" style="color:var(--amber-light);">IB command terms</a>.</span></div></div>
+    <div class="tip"><div class="tip-icon">⚡</div><div><b>Catastrophe theory needs both components</b><span>Don't explain it as "high arousal only". It requires high cognitive anxiety combined with high somatic arousal, which causes a sudden drop.</span></div></div>
+    <div class="tip"><div class="tip-icon">⚖️</div><div><b>Evaluate the theories together</b><span>For comparison questions, state what each theory predicts for high arousal and one limitation of each.</span></div></div>
+    <div class="tip warn"><div class="tip-icon">⚠️</div><div><b>Common mistake</b><span>Don't say that all athletes have the same optimal arousal level, or that low arousal is always the best way to control anxiety. The optimal point differs between athletes and tasks.</span></div></div>
+  </section>
+
+  <!-- ═══ 5. VIDEO ═══ -->
+  <section class="section" id="video">
+    <div class="section-head"><div class="section-num">5</div><h2>Video</h2></div>
+    <div id="videoBox"></div>
+  </section>
+
+  <!-- ═══ 6. PRACTICE QUESTIONS ═══ -->
+  <section class="section" id="practice">
+    <div class="section-head"><div class="section-num">6</div><h2>Practice Questions</h2></div>
+    <p>Write your answer first, then open the model answer to check it.</p>
+
+    <details class="question">
+      <summary><span class="q-num">1</span><span class="q-text">Define <strong>arousal</strong> in the context of sports performance.</span><span class="q-marks">1 mark</span><span class="q-toggle">Answer</span></summary>
+      <div class="answer"><h5>Model answer</h5><ul>
+        <li>The level of physical and psychological activation (for example heart rate, alertness and readiness) that affects how well an athlete performs.</li>
+      </ul></div>
+    </details>
+
+    <details class="question">
+      <summary><span class="q-num">2</span><span class="q-text">Identify <strong>two</strong> physiological signs of somatic anxiety.</span><span class="q-marks">2 marks</span><span class="q-toggle">Answer</span></summary>
+      <div class="answer"><h5>Model answer</h5><ul>
+        <li>Increased heart rate or breathing rate.</li>
+        <li>Muscle tension, sweating or butterflies in the stomach. (Any two.)</li>
+      </ul></div>
+    </details>
+
+    <details class="question">
+      <summary><span class="q-num">3</span><span class="q-text">Outline how trait anxiety differs from state anxiety.</span><span class="q-marks">2 marks</span><span class="q-toggle">Answer</span></summary>
+      <div class="answer"><h5>Model answer</h5><ul>
+        <li>Trait anxiety is a stable personality tendency to feel anxious across many situations.</li>
+        <li>State anxiety is a temporary emotional response to a particular situation, which can rise and fall quickly.</li>
+      </ul></div>
+    </details>
+
+    <details class="question">
+      <summary><span class="q-num">4</span><span class="q-text">Explain how the inverted-U hypothesis describes the relationship between arousal and performance for a complex, fine-motor task.</span><span class="q-marks">3 marks</span><span class="q-toggle">Answer</span></summary>
+      <div class="answer"><h5>Model answer</h5><ul>
+        <li>Performance improves as arousal increases up to an optimal point.</li>
+        <li>Beyond this point, performance declines as arousal becomes too high.</li>
+        <li>For a complex, fine-motor task the optimal arousal level is lower, because high arousal disrupts precise control and attention.</li>
+      </ul></div>
+    </details>
+
+    <details class="question">
+      <summary><span class="q-num">5</span><span class="q-text">(HL) Explain how catastrophe theory explains a sudden fall in performance under pressure.</span><span class="q-marks">4 marks</span><span class="q-toggle">Answer</span></summary>
+      <div class="answer"><h5>Model answer</h5><ul>
+        <li>Catastrophe theory proposes that performance can fall suddenly and severely when arousal passes a threshold.</li>
+        <li>This happens when cognitive anxiety (worry, fear of failure) is high alongside high somatic anxiety (physical arousal).</li>
+        <li>With low cognitive anxiety, performance declines more gradually, as the inverted-U predicts.</li>
+        <li>An athlete with high cognitive and somatic anxiety at a penalty may therefore suffer a sudden breakdown, which is sometimes described as choking.</li>
+      </ul></div>
+    </details>
+  </section>
+
+  <!-- ═══ PREV / NEXT ═══ -->
+  <div class="topic-nav">
+    <a href="ib-c3-3-motivational-climate.html"><span>Previous topic</span>← C.3.3 Motivational Climate</a>
+    <a href="ib-c4-2-coping.html" class="next"><span>Next topic</span>C.4.2 Coping →</a>
+  </div>
+
+</div>
+
+<div class="hub-footer">
+  <p><a href="index.html">Home</a>·<a href="az-library.html">A–Z Library</a>·<a href="teacher-hub.html">Teacher Hub</a>·<a href="about.html">About</a>·<a href="privacy.html">Privacy</a></p>
+  <p style="margin-top:10px;">© 2026 Simply Sport Science · simplysportscience.co.uk</p>
+</div>
+
+<script>
+/* ═══ PAGE SETTINGS — the only part that changes per topic ═══
+   SLIDES: list the slide image paths in order, e.g.
+     ["assets/presentations/ib-c4-1/slide-01.jpg", "assets/presentations/ib-c4-1/slide-02.jpg"]
+   Leave empty [] and the "coming soon" panel shows instead.
+   VIDEO_ID: the code at the end of the YouTube link
+     (youtube.com/watch?v=THIS_PART). Leave "" for the "coming soon" panel. */
+const SLIDES = [];
+const VIDEO_ID = "";
+
+/* Presentation */
+(function(){
+  const deck = document.getElementById("deck");
+  if(!SLIDES.length){
+    deck.innerHTML = '<div class="placeholder"><div class="ph-icon">🖥️</div><h4>Presentation coming soon</h4><p>The slide deck for this topic is being added. Use the Deep Dive below in the meantime.</p></div>';
+    return;
+  }
+  let i = 0;
+  deck.innerHTML = '<div class="deck-stage"><img id="deckImg" alt="Presentation slide"/></div>' +
+    '<div class="deck-controls"><button class="deck-btn" id="prevBtn">← Prev</button>' +
+    '<span class="deck-count" id="deckCount"></span>' +
+    '<button class="deck-btn" id="fsBtn">⛶ Fullscreen</button>' +
+    '<button class="deck-btn" id="nextBtn">Next →</button></div>';
+  const img = document.getElementById("deckImg"), count = document.getElementById("deckCount");
+  function show(){ img.src = SLIDES[i]; count.textContent = "Slide " + (i+1) + " of " + SLIDES.length; }
+  document.getElementById("prevBtn").onclick = () => { i = (i - 1 + SLIDES.length) % SLIDES.length; show(); };
+  document.getElementById("nextBtn").onclick = () => { i = (i + 1) % SLIDES.length; show(); };
+  document.getElementById("fsBtn").onclick = () => { const s = deck.querySelector(".deck-stage"); (s.requestFullscreen || s.webkitRequestFullscreen).call(s); };
+  img.onclick = () => document.getElementById("fsBtn").click();
+  document.addEventListener("keydown", e => {
+    if(e.key === "ArrowRight") document.getElementById("nextBtn").click();
+    if(e.key === "ArrowLeft") document.getElementById("prevBtn").click();
+  });
+  show();
+})();
+
+/* Video */
+(function(){
+  const box = document.getElementById("videoBox");
+  if(!VIDEO_ID){
+    box.innerHTML = '<div class="video-frame"><div class="placeholder" style="position:absolute;inset:0;"><div class="ph-icon">🎬</div><h4>Video coming soon</h4><p>In the meantime, browse the <a href="https://www.youtube.com/@SimplySportScience" target="_blank" rel="noopener">Simply Sport Science YouTube channel</a>.</p></div></div>';
+    return;
+  }
+  box.innerHTML = '<div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/' + VIDEO_ID + '" title="Topic video" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+})();
+</script>
+
+</body>
+</html>

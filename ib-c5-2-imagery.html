@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>C.5.2 Imagery | IB Sport Science | Simply Sport Science</title>
+<meta name="description" content="IB SEHS C.5.2 Imagery — multisensory mental rehearsal, internal and external perspective, Paivio's imagery framework and the PETTLEP model. Overview, presentation, deep dive with diagrams, exam tips, video and practice questions."/>
+<link rel="icon" href="favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Simply Sport Science"/>
+<meta property="og:title" content="C.5.2 Imagery | IB Sport Science"/>
+<meta property="og:description" content="Multisensory mental rehearsal, internal and external perspective, Paivio's imagery framework and the PETTLEP model."/>
+<meta property="og:url" content="https://simplysportscience.co.uk/ib-c5-2-imagery.html"/>
+<meta property="og:image" content="https://simplysportscience.co.uk/og-share-image.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<style>
+  /* ═══ BRAND PALETTE — identical on every topic page ═══ */
+  :root{
+    --deep-purple:#3D1F8C; --indigo:#1A0F5C; --magenta:#C4218A; --violet:#6B2FC4; --amber:#E8A020;
+    --violet-light:#B38BFF; --magenta-light:#F07CC4; --amber-light:#F5C866; --cyan:#22D3EE;
+    --bg:#0E0A24; --bg-mid:#160F36; --card:#1C1442; --border:#33275F;
+    --white:#FFFFFF; --grey:#A39FC0; --grey-light:#D4D0EA; --green:#34D399;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--white);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.7;}
+
+  /* NAV */
+  nav{background:rgba(14,10,36,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px;}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+  .logo img{width:42px;height:42px;object-fit:contain;}
+  .logo-tagline{font-size:9px;color:var(--amber);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;}
+  .logo-name{font-size:14px;font-weight:900;line-height:1.3;}
+  .logo-name .c1{color:var(--cyan);}.logo-name .c2{color:var(--white);}
+  .nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+  .nav-links a{color:var(--grey-light);text-decoration:none;font-size:13px;font-weight:600;padding:7px 10px;border-radius:7px;transition:all 0.2s;white-space:nowrap;}
+  .nav-links a:hover{color:var(--white);background:rgba(107,47,196,0.25);}
+  .nav-links a.active{color:var(--magenta-light);}
+  .nav-links a.teacher-link{color:var(--amber-light);}
+
+  .breadcrumb{font-size:12px;color:var(--grey);padding:10px 24px;background:var(--bg-mid);border-bottom:1px solid var(--border);}
+  .breadcrumb a{color:var(--grey-light);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--magenta-light);}
+  .breadcrumb span{color:var(--magenta-light);margin:0 6px;}
+
+  /* TOPIC HEADER */
+  .topic-hero{background:linear-gradient(160deg,var(--bg) 0%,var(--indigo) 55%,#2A0F3E 100%);padding:40px 24px 34px;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+  .topic-hero::before{content:'';position:absolute;top:-120px;right:-60px;width:520px;height:420px;background:radial-gradient(circle,rgba(196,33,138,0.22) 0%,transparent 70%);pointer-events:none;}
+  .topic-hero-inner{max-width:900px;margin:0 auto;position:relative;}
+  .topic-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+  .pill{font-size:11px;font-weight:800;padding:5px 12px;border-radius:99px;letter-spacing:0.5px;}
+  .pill-code{background:linear-gradient(135deg,var(--deep-purple),var(--magenta));color:var(--white);}
+  .pill-theme{background:rgba(179,139,255,0.14);color:var(--violet-light);border:1px solid rgba(179,139,255,0.35);}
+  .pill-level{background:rgba(232,160,32,0.14);color:var(--amber-light);border:1px solid rgba(232,160,32,0.4);}
+  .topic-hero h1{font-size:clamp(28px,5vw,40px);font-weight:900;line-height:1.12;margin-bottom:10px;}
+  .topic-hero p{font-size:15px;color:var(--grey-light);max-width:640px;}
+
+  /* SECTION JUMP BAR */
+  .jump-bar{background:var(--bg-mid);border-bottom:1px solid var(--border);position:sticky;top:64px;z-index:90;overflow-x:auto;}
+  .jump-inner{max-width:900px;margin:0 auto;padding:10px 24px;display:flex;gap:6px;min-width:max-content;}
+  .jump-inner a{font-size:12px;font-weight:700;color:var(--grey-light);text-decoration:none;padding:6px 12px;border-radius:99px;border:1px solid var(--border);white-space:nowrap;transition:all 0.2s;}
+  .jump-inner a:hover{border-color:var(--magenta);color:var(--white);}
+  .jump-inner a b{color:var(--amber);margin-right:4px;}
+
+  /* SECTIONS */
+  .page-inner{max-width:900px;margin:0 auto;padding:30px 24px 56px;}
+  .section{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px 28px 30px;margin-bottom:22px;scroll-margin-top:120px;}
+  .section-head{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+  .section-num{width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,var(--deep-purple),var(--magenta));display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:900;flex-shrink:0;box-shadow:0 4px 14px rgba(196,33,138,0.35);}
+  .section-head h2{font-size:21px;font-weight:900;}
+  .section p{font-size:14.5px;color:var(--grey-light);margin-bottom:12px;}
+  .section p strong{color:var(--white);}
+  .section h3{font-size:16px;font-weight:900;color:var(--violet-light);margin:22px 0 10px;}
+  .section ul.points{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:12px;}
+  .section ul.points li{font-size:14px;color:var(--grey-light);display:flex;gap:10px;}
+  .section ul.points li::before{content:'◆';color:var(--magenta-light);font-size:9px;margin-top:6px;flex-shrink:0;}
+
+  /* Overview extras */
+  .learn-box{background:rgba(107,47,196,0.12);border:1px solid rgba(179,139,255,0.3);border-radius:12px;padding:16px 18px;margin:14px 0;}
+  .learn-box h4{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber-light);margin-bottom:8px;}
+  .key-terms{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-top:10px;}
+  .key-term{background:var(--bg-mid);border:1px solid var(--border);border-radius:10px;padding:12px 14px;}
+  .key-term b{display:block;font-size:13px;color:var(--magenta-light);margin-bottom:2px;}
+  .key-term span{font-size:12.5px;color:var(--grey-light);line-height:1.55;}
+
+  /* Presentation component */
+  .deck{background:var(--bg);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+  .deck-stage{position:relative;aspect-ratio:16/9;background:#000;display:flex;align-items:center;justify-content:center;}
+  .deck-stage img{width:100%;height:100%;object-fit:contain;cursor:zoom-in;}
+  .deck-controls{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;background:var(--bg-mid);}
+  .deck-btn{background:var(--card);border:1px solid var(--border);color:var(--white);border-radius:8px;padding:7px 14px;font-size:13px;font-weight:700;cursor:pointer;}
+  .deck-btn:hover{border-color:var(--magenta);}
+  .deck-count{font-size:12px;color:var(--grey);}
+  .placeholder{aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:24px;background:linear-gradient(135deg,rgba(61,31,140,0.35),rgba(196,33,138,0.18));}
+  .placeholder .ph-icon{font-size:40px;}
+  .placeholder h4{font-size:16px;font-weight:900;}
+  .placeholder p{font-size:13px;color:var(--grey-light);margin:0;max-width:380px;}
+
+  /* Diagrams & tables */
+  .diagram{background:var(--bg-mid);border:1px solid var(--border);border-radius:14px;padding:18px;margin:16px 0;}
+  .diagram svg{width:100%;height:auto;display:block;}
+  .diagram-caption{font-size:12px;color:var(--grey);text-align:center;margin-top:8px;}
+  table.compare{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;}
+  table.compare th{background:var(--deep-purple);color:var(--white);text-align:left;padding:10px 12px;font-weight:800;}
+  table.compare td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--grey-light);vertical-align:top;}
+  table.compare td:first-child{color:var(--amber-light);font-weight:700;white-space:nowrap;}
+  .table-wrap{overflow-x:auto;}
+
+  /* Exam tips */
+  .tip{display:flex;gap:14px;background:rgba(232,160,32,0.08);border:1px solid rgba(232,160,32,0.3);border-radius:12px;padding:14px 16px;margin-bottom:10px;}
+  .tip-icon{font-size:20px;flex-shrink:0;}
+  .tip b{display:block;font-size:14px;color:var(--amber-light);margin-bottom:2px;}
+  .tip span{font-size:13.5px;color:var(--grey-light);}
+  .tip.warn{background:rgba(196,33,138,0.08);border-color:rgba(196,33,138,0.35);}
+  .tip.warn b{color:var(--magenta-light);}
+
+  /* Video */
+  .video-frame{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#000;}
+  .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .placeholder a{color:var(--amber-light);font-weight:700;}
+
+  /* Practice questions */
+  .question{background:var(--bg-mid);border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+  .question summary{list-style:none;cursor:pointer;padding:15px 18px;display:flex;align-items:flex-start;gap:12px;font-size:14px;font-weight:700;color:var(--white);}
+  .question summary::-webkit-details-marker{display:none;}
+  .q-num{background:linear-gradient(135deg,var(--deep-purple),var(--violet));border-radius:7px;min-width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;}
+  .q-text{flex:1;}
+  .q-marks{font-size:11px;font-weight:800;color:var(--amber-light);background:rgba(232,160,32,0.14);border-radius:99px;padding:3px 9px;flex-shrink:0;}
+  .q-toggle{color:var(--magenta-light);font-size:12px;font-weight:800;flex-shrink:0;}
+  .question[open] .q-toggle::after{content:' ▲';}
+  .question:not([open]) .q-toggle::after{content:' ▼';}
+  .answer{padding:0 18px 16px 58px;}
+  .answer h5{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:6px;}
+  .answer ul{list-style:none;display:flex;flex-direction:column;gap:5px;}
+  .answer li{font-size:13.5px;color:var(--grey-light);display:flex;gap:8px;}
+  .answer li::before{content:'✓';color:var(--green);font-weight:900;flex-shrink:0;}
+
+  /* Prev / next */
+  .topic-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;}
+  .topic-nav a{background:var(--bg-mid);border:1px solid var(--border);border-radius:12px;padding:14px 18px;text-decoration:none;color:var(--white);font-size:14px;font-weight:800;transition:all 0.2s;}
+  .topic-nav a:hover{border-color:var(--magenta);}
+  .topic-nav a span{display:block;font-size:10px;color:var(--grey);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
+  .topic-nav a.next{text-align:right;}
+
+  .hub-footer{background:#080617;padding:24px;text-align:center;border-top:1px solid var(--border);}
+  .hub-footer p{font-size:12px;color:var(--grey);}
+  .hub-footer a{color:var(--grey-light);text-decoration:none;margin:0 6px;}
+  .hub-footer a:hover{color:var(--magenta-light);}
+
+  @media(max-width:640px){
+    .nav-links{display:none;}
+    .topic-hero{padding:28px 16px 24px;}
+    .jump-inner{padding:10px 16px;}
+    .page-inner{padding:20px 14px 40px;}
+    .section{padding:22px 18px;}
+    .answer{padding:0 16px 14px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <img src="sss-icon.png" alt="Simply Sport Science"/>
+      <div>
+        <div class="logo-tagline">Sport Science Sorted</div>
+        <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ib-hub.html" class="active">IB Sport Science</a></li>
+      <li><a href="cambridge-hub.html">A Level PE</a></li>
+      <li><a href="btec-hub.html">BTEC Sport</a></li>
+      <li><a href="az-library.html">A–Z</a></li>
+      <li><a href="teacher-hub.html" class="teacher-link">Teacher Hub</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div style="max-width:900px;margin:0 auto;">
+    <a href="index.html">Home</a><span>›</span><a href="ib-hub.html">IB Sport Science</a><span>›</span><a href="ib-theme-c.html">Theme C</a><span>›</span>C.5.2
+  </div>
+</div>
+
+<!-- ═══ TOPIC HEADER ═══ -->
+<div class="topic-hero">
+  <div class="topic-hero-inner">
+    <div class="topic-meta">
+      <span class="pill pill-code">C.5.2</span>
+      <span class="pill pill-theme">Theme C · Psychological Skills</span>
+      <span class="pill pill-level">SL &amp; HL</span>
+    </div>
+    <h1>Imagery</h1>
+    <p>How mental rehearsal, when made realistic, can improve skill execution, confidence and arousal control, and how to structure imagery for different purposes.</p>
+  </div>
+</div>
+
+<!-- ═══ SECTION JUMP BAR ═══ -->
+<div class="jump-bar">
+  <div class="jump-inner">
+    <a href="#overview"><b>1</b>Overview</a>
+    <a href="#presentation"><b>2</b>Presentation</a>
+    <a href="#deep-dive"><b>3</b>Deep Dive</a>
+    <a href="#exam-tips"><b>4</b>Exam Tips</a>
+    <a href="#video"><b>5</b>Video</a>
+    <a href="#practice"><b>6</b>Practice Questions</a>
+  </div>
+</div>
+
+<div class="page-inner">
+
+  <!-- ═══ 1. OVERVIEW ═══ -->
+  <section class="section" id="overview">
+    <div class="section-head"><div class="section-num">1</div><h2>Overview</h2></div>
+    <p><strong>Imagery</strong> is multisensory mental rehearsal of a skill or situation, carried out in the absence of actual physical performance. It uses sight, sound, touch and the feeling of movement, and can be seen through the athlete's own eyes (<strong>internal</strong>) or as if watching oneself from outside (<strong>external</strong>). Imagery can help improve skill execution, plan tactics, build confidence and control arousal. Paivio's framework classifies imagery by its <strong>function</strong> (cognitive or motivational) and its <strong>specificity</strong> (specific or general). The <strong>PETTLEP</strong> model describes how to make imagery as close as possible to real performance, which makes it more effective.</p>
+    <div class="learn-box">
+      <h4>By the end of this topic you should be able to</h4>
+      <ul class="points">
+        <li>Define imagery as multisensory mental rehearsal in the absence of actual perception.</li>
+        <li>Distinguish between internal and external imagery, and when each is most appropriate.</li>
+        <li>Distinguish between cognitive and motivational imagery, and between specific and general imagery, using Paivio's framework.</li>
+        <li>Explain the PETTLEP model and how it makes imagery more effective.</li>
+        <li>Apply imagery to a sporting scenario, classifying its function and specificity.</li>
+      </ul>
+    </div>
+    <h3>Key Terms</h3>
+    <div class="key-terms">
+      <div class="key-term"><b>Imagery</b><span>Multisensory mental rehearsal in the absence of actual perception of the movement.</span></div>
+      <div class="key-term"><b>Internal imagery</b><span>Imagining the performance through one's own eyes, feeling the movement from inside.</span></div>
+      <div class="key-term"><b>External imagery</b><span>Imagining oneself performing, as if watching from outside.</span></div>
+      <div class="key-term"><b>Cognitive imagery</b><span>Imagery used to rehearse skills and strategies.</span></div>
+      <div class="key-term"><b>Motivational imagery</b><span>Imagery used to achieve goals, regulate arousal or build confidence and control.</span></div>
+      <div class="key-term"><b>PETTLEP</b><span>A model of seven elements (physical, environment, task, timing, learning, emotion, perspective) for making imagery functionally equivalent to real performance.</span></div>
+    </div>
+  </section>
+
+  <!-- ═══ 2. PRESENTATION ═══ -->
+  <section class="section" id="presentation">
+    <div class="section-head"><div class="section-num">2</div><h2>Presentation</h2></div>
+    <div class="deck" id="deck"></div>
+  </section>
+
+  <!-- ═══ 3. DEEP DIVE ═══ -->
+  <section class="section" id="deep-dive">
+    <div class="section-head"><div class="section-num">3</div><h2>Deep Dive</h2></div>
+
+    <h3>What imagery is</h3>
+    <p>Imagery is <strong>multisensory</strong>: it involves more than a picture in the mind. A good image includes what the athlete sees, hears and feels, including the movement, the timing and the emotion. Imagery is sometimes called mental practice, visualisation or mental simulation. Its value comes from rehearsing a skill or situation without the physical effort, risk or cost of performing it, so it can be used when physical practice is not possible, for example during injury or before a competition.</p>
+
+    <h3>Internal and external perspective</h3>
+    <p>The perspective chosen affects what is rehearsed. In <strong>internal imagery</strong>, the athlete sees the performance through their own eyes and experiences the movement from inside, which helps with the feel of the skill and its timing. In <strong>external imagery</strong>, the athlete watches themselves as if on video, which helps with technique, body position and how the performance looks. Many athletes use both, and choose the perspective that suits the aim of the session.</p>
+
+    <div class="diagram">
+<svg viewBox="0 0 880 320" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="Internal imagery seen through the athlete's own eyes, and external imagery seen as if watching oneself on video, with an example of each"><defs>
+<linearGradient id="pe-card" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E1D74"/><stop offset="1" stop-color="#1C1442"/></linearGradient>
+<linearGradient id="pe-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7A45D6"/><stop offset="1" stop-color="#5526A8"/></linearGradient>
+<linearGradient id="pe-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DE3FA2"/><stop offset="1" stop-color="#A3186F"/></linearGradient>
+<linearGradient id="pe-c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0B53A"/><stop offset="1" stop-color="#C9861A"/></linearGradient>
+<linearGradient id="pe-d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2FBF8C"/><stop offset="1" stop-color="#14785C"/></linearGradient>
+<filter id="pe-shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.45"/></filter>
+</defs>
+<text x="14" y="30" font-size="11" font-weight="800" letter-spacing="1.5" fill="#F5C866">IMAGERY PERSPECTIVE: INTERNAL OR EXTERNAL</text>
+<g filter="url(#pe-shadow)"><rect x="14" y="48" width="408" height="250" rx="14" fill="url(#pe-card)" stroke="#33275F"/></g><rect x="14" y="48" width="408" height="6" rx="3" fill="url(#pe-a)"/>
+<text x="30" y="82" font-size="15" font-weight="900" fill="#B38BFF">Internal perspective</text>
+<text x="30" y="106" font-size="11.5" fill="#D4D0EA">Imagine the performance through your own eyes, feeling</text>
+<text x="30" y="122" font-size="11.5" fill="#D4D0EA">the movement from inside.</text>
+<rect x="30" y="168" width="376" height="72" rx="10" fill="#0E0A24"/>
+<text x="40" y="190" font-size="11" font-style="italic" fill="#FFFFFF">A netball shooter sees the ring from her own eyes and</text>
+<text x="40" y="206" font-size="11" font-style="italic" fill="#FFFFFF">feels the release in her wrist.</text>
+<text x="30" y="264" font-size="11" font-weight="700" fill="#F5C866">Best for: feel, timing and kinaesthetic detail.</text>
+<g filter="url(#pe-shadow)"><rect x="458" y="48" width="408" height="250" rx="14" fill="url(#pe-card)" stroke="#33275F"/></g><rect x="458" y="48" width="408" height="6" rx="3" fill="url(#pe-d)"/>
+<text x="474" y="82" font-size="15" font-weight="900" fill="#34D399">External perspective</text>
+<text x="474" y="106" font-size="11.5" fill="#D4D0EA">Watch yourself perform, as if from the outside or on a</text>
+<text x="474" y="122" font-size="11.5" fill="#D4D0EA">video.</text>
+<rect x="474" y="168" width="376" height="72" rx="10" fill="#0E0A24"/>
+<text x="484" y="190" font-size="11" font-style="italic" fill="#FFFFFF">A diver watches herself from the side of the pool,</text>
+<text x="484" y="206" font-size="11" font-style="italic" fill="#FFFFFF">checking the body shape.</text>
+<text x="474" y="264" font-size="11" font-weight="700" fill="#F5C866">Best for: technique, body position and appearance.</text>
+<text x="14" y="314" font-size="10.5" fill="#A39FC0">Imagery is multisensory: include sight, sound, touch and movement feelings, not only pictures. The perspective chosen should suit the aim.</text>
+</svg>
+      <div class="diagram-caption">Internal and external imagery, with an example and the aims each suits best.</div>
+    </div>
+
+    <h3>Paivio's imagery framework</h3>
+    <p>Paivio's framework helps decide what imagery is for. It classifies imagery by <strong>function</strong> (cognitive or motivational) and <strong>specificity</strong> (specific or general):</p>
+    <ul class="points">
+      <li><strong>Cognitive specific (CS):</strong> rehearsing a specific skill, such as a golf swing sequence or a gymnastics element.</li>
+      <li><strong>Cognitive general (CG):</strong> rehearsing strategies, routines and game plans, such as a team's tactics for a set piece.</li>
+      <li><strong>Motivational specific (MS):</strong> imagining achieving a specific goal, such as a personal best time or a winning moment.</li>
+      <li><strong>Motivational general-arousal (MG-A):</strong> regulating stress, anxiety or activation, for example through calm breathing and relaxed imagery before competition.</li>
+      <li><strong>Motivational general-mastery (MG-M):</strong> imagining confidence, coping and control under pressure, for example composed play when the score is close.</li>
+    </ul>
+
+    <div class="diagram">
+<svg viewBox="0 0 880 370" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="Paivio imagery framework: cognitive specific, cognitive general, motivational specific, motivational general-arousal and motivational general-mastery imagery, each with a sporting example"><defs>
+<linearGradient id="pv-card" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E1D74"/><stop offset="1" stop-color="#1C1442"/></linearGradient>
+<linearGradient id="pv-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7A45D6"/><stop offset="1" stop-color="#5526A8"/></linearGradient>
+<linearGradient id="pv-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DE3FA2"/><stop offset="1" stop-color="#A3186F"/></linearGradient>
+<linearGradient id="pv-c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0B53A"/><stop offset="1" stop-color="#C9861A"/></linearGradient>
+<linearGradient id="pv-d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2FBF8C"/><stop offset="1" stop-color="#14785C"/></linearGradient>
+<filter id="pv-shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.45"/></filter>
+</defs>
+<text x="14" y="30" font-size="11" font-weight="800" letter-spacing="1.5" fill="#F5C866">PAIVIO'S IMAGERY FRAMEWORK: FUNCTION AND SPECIFICITY</text>
+<g filter="url(#pv-shadow)"><rect x="14" y="48" width="166" height="296" rx="14" fill="url(#pv-b)"/></g>
+<text x="97" y="82" text-anchor="middle" font-size="20" font-weight="900" fill="#FFFFFF">CS</text>
+<text x="97" y="108" text-anchor="middle" font-size="12" font-weight="800" fill="#FFFFFF">Cognitive</text>
+<text x="97" y="124" text-anchor="middle" font-size="12" font-weight="800" fill="#FFFFFF">specific</text>
+<line x1="28" y1="150" x2="166" y2="150" stroke="#FFFFFF" stroke-opacity="0.5"/>
+<text x="26" y="172" font-size="10.5" font-weight="700" fill="#FFFFFF">Rehearsing a specific</text>
+<text x="26" y="187" font-size="10.5" font-weight="700" fill="#FFFFFF">skill</text>
+<text x="26" y="232" font-size="10.5" font-style="italic" fill="#FFFFFF">A golfer rehearses</text>
+<text x="26" y="247" font-size="10.5" font-style="italic" fill="#FFFFFF">the swing sequence</text>
+<text x="26" y="262" font-size="10.5" font-style="italic" fill="#FFFFFF">before a bunker shot.</text>
+<g filter="url(#pv-shadow)"><rect x="188" y="48" width="166" height="296" rx="14" fill="url(#pv-a)"/></g>
+<text x="271" y="82" text-anchor="middle" font-size="20" font-weight="900" fill="#FFFFFF">CG</text>
+<text x="271" y="108" text-anchor="middle" font-size="12" font-weight="800" fill="#FFFFFF">Cognitive general</text>
+<line x1="202" y1="150" x2="340" y2="150" stroke="#FFFFFF" stroke-opacity="0.5"/>
+<text x="200" y="172" font-size="10.5" font-weight="700" fill="#FFFFFF">Rehearsing strategy,</text>
+<text x="200" y="187" font-size="10.5" font-weight="700" fill="#FFFFFF">routines and game</text>
+<text x="200" y="202" font-size="10.5" font-weight="700" fill="#FFFFFF">plans</text>
+<text x="200" y="232" font-size="10.5" font-style="italic" fill="#FFFFFF">A rugby team mentally</text>
+<text x="200" y="247" font-size="10.5" font-style="italic" fill="#FFFFFF">walks through a</text>
+<text x="200" y="262" font-size="10.5" font-style="italic" fill="#FFFFFF">set-piece move.</text>
+<g filter="url(#pv-shadow)"><rect x="362" y="48" width="166" height="296" rx="14" fill="url(#pv-c)"/></g>
+<text x="445" y="82" text-anchor="middle" font-size="20" font-weight="900" fill="#1A0F5C">MS</text>
+<text x="445" y="108" text-anchor="middle" font-size="12" font-weight="800" fill="#1A0F5C">Motivational</text>
+<text x="445" y="124" text-anchor="middle" font-size="12" font-weight="800" fill="#1A0F5C">specific</text>
+<line x1="376" y1="150" x2="514" y2="150" stroke="#1A0F5C" stroke-opacity="0.5"/>
+<text x="374" y="172" font-size="10.5" font-weight="700" fill="#1A0F5C">Imagining achieving a</text>
+<text x="374" y="187" font-size="10.5" font-weight="700" fill="#1A0F5C">specific goal</text>
+<text x="374" y="232" font-size="10.5" font-style="italic" fill="#1A0F5C">A runner imagines</text>
+<text x="374" y="247" font-size="10.5" font-style="italic" fill="#1A0F5C">crossing the line in</text>
+<text x="374" y="262" font-size="10.5" font-style="italic" fill="#1A0F5C">a personal-best time.</text>
+<g filter="url(#pv-shadow)"><rect x="536" y="48" width="166" height="296" rx="14" fill="url(#pv-d)"/></g>
+<text x="619" y="82" text-anchor="middle" font-size="20" font-weight="900" fill="#FFFFFF">MG-A</text>
+<text x="619" y="108" text-anchor="middle" font-size="12" font-weight="800" fill="#FFFFFF">Motivational</text>
+<text x="619" y="124" text-anchor="middle" font-size="12" font-weight="800" fill="#FFFFFF">general-arousal</text>
+<line x1="550" y1="150" x2="688" y2="150" stroke="#FFFFFF" stroke-opacity="0.5"/>
+<text x="548" y="172" font-size="10.5" font-weight="700" fill="#FFFFFF">Regulating stress,</text>
+<text x="548" y="187" font-size="10.5" font-weight="700" fill="#FFFFFF">anxiety or activation</text>
+<text x="548" y="232" font-size="10.5" font-style="italic" fill="#FFFFFF">A boxer imagines calm</text>
+<text x="548" y="247" font-size="10.5" font-style="italic" fill="#FFFFFF">breathing to lower</text>
+<text x="548" y="262" font-size="10.5" font-style="italic" fill="#FFFFFF">pre-fight tension.</text>
+<g filter="url(#pv-shadow)"><rect x="710" y="48" width="166" height="296" rx="14" fill="url(#pv-a)"/></g>
+<text x="793" y="82" text-anchor="middle" font-size="20" font-weight="900" fill="#FFFFFF">MG-M</text>
+<text x="793" y="108" text-anchor="middle" font-size="12" font-weight="800" fill="#FFFFFF">Motivational</text>
+<text x="793" y="124" text-anchor="middle" font-size="12" font-weight="800" fill="#FFFFFF">general-mastery</text>
+<line x1="724" y1="150" x2="862" y2="150" stroke="#FFFFFF" stroke-opacity="0.5"/>
+<text x="722" y="172" font-size="10.5" font-weight="700" fill="#FFFFFF">Imagining confidence,</text>
+<text x="722" y="187" font-size="10.5" font-weight="700" fill="#FFFFFF">coping and control</text>
+<text x="722" y="202" font-size="10.5" font-weight="700" fill="#FFFFFF">under pressure</text>
+<text x="722" y="232" font-size="10.5" font-style="italic" fill="#FFFFFF">A tennis player</text>
+<text x="722" y="247" font-size="10.5" font-style="italic" fill="#FFFFFF">imagines composed</text>
+<text x="722" y="262" font-size="10.5" font-style="italic" fill="#FFFFFF">play in a tie-break.</text>
+<text x="14" y="360" font-size="10.5" fill="#A39FC0">Cognitive imagery improves skills and strategies; motivational imagery improves goals, arousal and confidence.</text>
+</svg>
+      <div class="diagram-caption">Paivio's framework of imagery, showing the five categories with their function and an example for each. Choosing the right category helps the athlete match the imagery to the aim.</div>
+    </div>
+
+    <p>Classifying imagery matters because it sets the content of the session. A coach who wants a player to improve a penalty technique would use cognitive specific imagery, whereas a player who is anxious before a penalty would benefit from motivational general-arousal imagery. Using the wrong type can waste time or fail to address the real need.</p>
+
+    <h3>The PETTLEP model</h3>
+    <p>The PETTLEP model, proposed by Holmes and Collins (2001), gives seven elements for making imagery functionally equivalent to real performance. The more closely imagery reproduces the physical, environmental and emotional conditions of the actual performance, the more effective it is likely to be:</p>
+
+    <div class="diagram">
+<svg viewBox="0 0 880 380" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="The PETTLEP model: physical, environment, task, timing, learning, emotion and perspective, with what each means for making imagery functionally equivalent to real performance"><defs>
+<linearGradient id="pt-card" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E1D74"/><stop offset="1" stop-color="#1C1442"/></linearGradient>
+<linearGradient id="pt-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7A45D6"/><stop offset="1" stop-color="#5526A8"/></linearGradient>
+<linearGradient id="pt-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DE3FA2"/><stop offset="1" stop-color="#A3186F"/></linearGradient>
+<linearGradient id="pt-c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0B53A"/><stop offset="1" stop-color="#C9861A"/></linearGradient>
+<linearGradient id="pt-d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2FBF8C"/><stop offset="1" stop-color="#14785C"/></linearGradient>
+<filter id="pt-shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.45"/></filter>
+</defs>
+<text x="14" y="30" font-size="11" font-weight="800" letter-spacing="1.5" fill="#F5C866">THE PETTLEP MODEL: MAKING IMAGERY LIKE REAL PERFORMANCE</text>
+<g filter="url(#pt-shadow)"><rect x="14" y="50" width="206" height="136" rx="14" fill="url(#pt-a)"/></g>
+<text x="28" y="86" font-size="26" font-weight="900" fill="#FFFFFF">P</text>
+<text x="60" y="82" font-size="13" font-weight="900" fill="#FFFFFF">Physical</text>
+<text x="28" y="112" font-size="10.5" fill="#EFE6FF">Include physical movements</text>
+<text x="28" y="126" font-size="10.5" fill="#EFE6FF">and sensations, e.g. tensing</text>
+<text x="28" y="140" font-size="10.5" fill="#EFE6FF">the muscles while imagining a</text>
+<text x="28" y="154" font-size="10.5" fill="#EFE6FF">lift</text>
+<g filter="url(#pt-shadow)"><rect x="232" y="50" width="206" height="136" rx="14" fill="url(#pt-c)"/></g>
+<text x="246" y="86" font-size="26" font-weight="900" fill="#1A0F5C">E</text>
+<text x="278" y="82" font-size="13" font-weight="900" fill="#1A0F5C">Environment</text>
+<text x="246" y="112" font-size="10.5" fill="#1A0F5C">Recreate the setting, e.g.</text>
+<text x="246" y="126" font-size="10.5" fill="#1A0F5C">the specific course, crowd</text>
+<text x="246" y="140" font-size="10.5" fill="#1A0F5C">noise and weather</text>
+<g filter="url(#pt-shadow)"><rect x="450" y="50" width="206" height="136" rx="14" fill="url(#pt-d)"/></g>
+<text x="464" y="86" font-size="26" font-weight="900" fill="#FFFFFF">T</text>
+<text x="496" y="82" font-size="13" font-weight="900" fill="#FFFFFF">Task</text>
+<text x="464" y="112" font-size="10.5" fill="#EFE6FF">Focus on the specific skill</text>
+<text x="464" y="126" font-size="10.5" fill="#EFE6FF">or sequence being performed</text>
+<g filter="url(#pt-shadow)"><rect x="668" y="50" width="206" height="136" rx="14" fill="url(#pt-b)"/></g>
+<text x="682" y="86" font-size="26" font-weight="900" fill="#FFFFFF">T</text>
+<text x="714" y="82" font-size="13" font-weight="900" fill="#FFFFFF">Timing</text>
+<text x="682" y="112" font-size="10.5" fill="#EFE6FF">Match the duration of the</text>
+<text x="682" y="126" font-size="10.5" fill="#EFE6FF">imagery to the real action</text>
+<g filter="url(#pt-shadow)"><rect x="14" y="200" width="206" height="136" rx="14" fill="url(#pt-a)"/></g>
+<text x="28" y="236" font-size="26" font-weight="900" fill="#FFFFFF">L</text>
+<text x="60" y="232" font-size="13" font-weight="900" fill="#FFFFFF">Learning</text>
+<text x="28" y="262" font-size="10.5" fill="#EFE6FF">Adapt the imagery as the</text>
+<text x="28" y="276" font-size="10.5" fill="#EFE6FF">athlete's skill and</text>
+<text x="28" y="290" font-size="10.5" fill="#EFE6FF">understanding develop</text>
+<g filter="url(#pt-shadow)"><rect x="232" y="200" width="206" height="136" rx="14" fill="url(#pt-c)"/></g>
+<text x="246" y="236" font-size="26" font-weight="900" fill="#1A0F5C">E</text>
+<text x="278" y="232" font-size="13" font-weight="900" fill="#1A0F5C">Emotion</text>
+<text x="246" y="262" font-size="10.5" fill="#1A0F5C">Include the emotions of the</text>
+<text x="246" y="276" font-size="10.5" fill="#1A0F5C">real situation, e.g. pressure</text>
+<text x="246" y="290" font-size="10.5" fill="#1A0F5C">and excitement</text>
+<g filter="url(#pt-shadow)"><rect x="450" y="200" width="206" height="136" rx="14" fill="url(#pt-d)"/></g>
+<text x="464" y="236" font-size="26" font-weight="900" fill="#FFFFFF">P</text>
+<text x="496" y="232" font-size="13" font-weight="900" fill="#FFFFFF">Perspective</text>
+<text x="464" y="262" font-size="10.5" fill="#EFE6FF">Choose internal (own eyes) or</text>
+<text x="464" y="276" font-size="10.5" fill="#EFE6FF">external (watching oneself)</text>
+<g filter="url(#pt-shadow)"><rect x="668" y="200" width="206" height="136" rx="14" fill="url(#pt-card)" stroke="#F5C866" stroke-width="1.5"/></g>
+<text x="682" y="228" font-size="13" font-weight="900" fill="#F5C866">Why it matters</text>
+<text x="682" y="250" font-size="10.5" fill="#D4D0EA">Imagery that is closer to</text>
+<text x="682" y="264" font-size="10.5" fill="#D4D0EA">real performance is more</text>
+<text x="682" y="278" font-size="10.5" fill="#D4D0EA">effective. Holmes and Collins</text>
+<text x="682" y="292" font-size="10.5" fill="#D4D0EA">(2001) proposed PETTLEP to</text>
+<text x="682" y="306" font-size="10.5" fill="#D4D0EA">achieve this.</text>
+<text x="14" y="366" font-size="10.5" fill="#A39FC0">The seven elements are used together. Imagery vividness and controllability are also important for effectiveness.</text>
+</svg>
+      <div class="diagram-caption">The seven elements of PETTLEP: physical, environment, task, timing, learning, emotion and perspective. The elements are used together to make imagery close to real performance.</div>
+    </div>
+
+    <p>For example, a weightlifter using PETTLEP might tense the same muscles as in the lift, imagine the specific gym and the sound of the crowd, match the imagery to the time the lift takes, and update the image as their technique improves. The model supports an athlete returning from injury as well: imagery can rehearse the movement, and PETTLEP makes it closer to real performance as physical work is gradually restored.</p>
+
+    <h3>How imagery is used in practice</h3>
+    <p>Effective imagery is planned and practised, not used at random. Athletes often start with a relaxed, quiet setting, rehearse a specific skill or routine, and then add detail and emotion. Regular practice makes imagery more vivid and controllable. Imagery is most useful when it is combined with physical practice, because it strengthens the planning and rehearsal of the skill, while physical practice develops the actual movement.</p>
+    <p>There are limits. Imagery cannot replace physical training, and its effects are usually larger for well-learned skills than for complex new ones. Vividness and controllability vary between athletes, and a poorly structured or unrealistic image may not help. Coaches should check that imagery supports, rather than replaces, the training programme.</p>
+  </section>
+
+  <!-- ═══ 4. EXAM TIPS ═══ -->
+  <section class="section" id="exam-tips">
+    <div class="section-head"><div class="section-num">4</div><h2>Exam Tips</h2></div>
+    <div class="tip"><div class="tip-icon">🎯</div><div><b>Define it as multisensory rehearsal</b><span>Use the phrase "multisensory mental rehearsal in the absence of actual perception", then give one sporting example. Check the <a href="ib-command-terms.html" style="color:var(--amber-light);">IB command terms</a>.</span></div></div>
+    <div class="tip"><div class="tip-icon">🧩</div><div><b>Classify with both terms</b><span>Name the function (cognitive or motivational) and the specificity (specific or general), for example "motivational general-arousal imagery". This is the core of Paivio questions.</span></div></div>
+    <div class="tip"><div class="tip-icon">🎥</div><div><b>Choose the perspective with a reason</b><span>Internal imagery suits feel and timing; external imagery suits technique and body position. Justify the choice for the athlete in the question.</span></div></div>
+    <div class="tip"><div class="tip-icon">🔁</div><div><b>Apply PETTLEP to the scenario</b><span>For "how to make imagery effective" questions, name the relevant PETTLEP elements and say how each would be applied to the sport.</span></div></div>
+    <div class="tip warn"><div class="tip-icon">⚠️</div><div><b>Common mistake</b><span>Don't describe imagery as "just visualising" or as a replacement for physical practice. It is multisensory and works best alongside physical training.</span></div></div>
+  </section>
+
+  <!-- ═══ 5. VIDEO ═══ -->
+  <section class="section" id="video">
+    <div class="section-head"><div class="section-num">5</div><h2>Video</h2></div>
+    <div id="videoBox"></div>
+  </section>
+
+  <!-- ═══ 6. PRACTICE QUESTIONS ═══ -->
+  <section class="section" id="practice">
+    <div class="section-head"><div class="section-num">6</div><h2>Practice Questions</h2></div>
+    <p>Write your answer first, then open the model answer to check it.</p>
+
+    <details class="question">
+      <summary><span class="q-num">1</span><span class="q-text">Define <strong>imagery</strong> as a psychological skill.</span><span class="q-marks">1 mark</span><span class="q-toggle">Answer</span></summary>
+      <div class="answer"><h5>Model answer</h5><ul>
+        <li>Multisensory mental rehearsal of a skill or situation in the absence of actual physical performance.</li>
+      </ul></div>
+    </details>
+
+    <details class="question">
+      <summary><span class="q-num">2</span><span class="q-text">Distinguish between <strong>internal</strong> and <strong>external</strong> imagery.</span><span class="q-marks">2 marks</span><span class="q-toggle">Answer</span></summary>
+      <div class="answer"><h5>Model answer</h5><ul>
+        <li>Internal imagery is seen through the athlete's own eyes and involves feeling the movement from inside.</li>
+        <li>External imagery is seen as if watching oneself from outside, for example on video, and focuses on technique and appearance.</li>
+      </ul></div>
+    </details>
+
+    <details class="question">
+      <summary><span class="q-num">3</span><span class="q-text">A penalty taker imagines the exact technique of the kick before taking the penalty. Classify this imagery using Paivio's framework.</span><span class="q-marks">2 marks</span><span class="q-toggle">Answer</span></summary>
+      <div class="answer"><h5>Model answer</h5><ul>
+        <li>Cognitive specific (CS) imagery: it rehearses a specific skill (the kicking technique).</li>
+      </ul></div>
+    </details>
+
+    <details class="question">
+      <summary><span class="q-num">4</span><span class="q-text">Explain how a motivational general-arousal imagery session could help a goalkeeper before a penalty shoot-out.</span><span class="q-marks">3 marks</span><span class="q-toggle">Answer</span></summary>
+      <div class="answer"><h5>Model answer</h5><ul>
+        <li>Motivational general-arousal imagery regulates stress and activation, so the goalkeeper can imagine calm breathing and a relaxed body.</li>
+        <li>Imagining a composed state helps lower anxiety and bring arousal closer to the optimal level for the task.</li>
+        <li>This supports focus and decision-making during the shoot-out, when stress is high.</li>
+      </ul></div>
+    </details>
+
+    <details class="question">
+      <summary><span class="q-num">5</span><span class="q-text">(HL) Explain how the PETTLEP model could be used to make imagery more effective for a sprinter preparing for a final.</span><span class="q-marks">4 marks</span><span class="q-toggle">Answer</span></summary>
+      <div class="answer"><h5>Model answer</h5><ul>
+        <li>Physical: the sprinter tenses and moves the muscles as in the start and drive phase.</li>
+        <li>Environment and timing: they imagine the specific track and crowd, and match the duration of the imagery to the race.</li>
+        <li>Emotion and learning: they include the pressure of the final, and update the imagery as their technique improves.</li>
+        <li>Perspective: they choose internal or external imagery depending on whether they are working on feel or on technique.</li>
+      </ul></div>
+    </details>
+  </section>
+
+  <!-- ═══ PREV / NEXT ═══ -->
+  <div class="topic-nav">
+    <a href="ib-c5-1-goal-setting.html"><span>Previous topic</span>← C.5.1 Goal Setting</a>
+    <a href="ib-hub.html" class="next"><span>Back to</span>IB Hub →</a>
+  </div>
+
+</div>
+
+<div class="hub-footer">
+  <p><a href="index.html">Home</a>·<a href="az-library.html">A–Z Library</a>·<a href="teacher-hub.html">Teacher Hub</a>·<a href="about.html">About</a>·<a href="privacy.html">Privacy</a></p>
+  <p style="margin-top:10px;">© 2026 Simply Sport Science · simplysportscience.co.uk</p>
+</div>
+
+<script>
+/* ═══ PAGE SETTINGS — the only part that changes per topic ═══
+   SLIDES: list the slide image paths in order, e.g.
+     ["assets/presentations/ib-c5-2/slide-01.jpg", "assets/presentations/ib-c5-2/slide-02.jpg"]
+   Leave empty [] and the "coming soon" panel shows instead.
+   VIDEO_ID: the code at the end of the YouTube link
+     (youtube.com/watch?v=THIS_PART). Leave "" for the "coming soon" panel. */
+const SLIDES = [];
+const VIDEO_ID = "";
+
+/* Presentation */
+(function(){
+  const deck = document.getElementById("deck");
+  if(!SLIDES.length){
+    deck.innerHTML = '<div class="placeholder"><div class="ph-icon">🖥️</div><h4>Presentation coming soon</h4><p>The slide deck for this topic is being added. Use the Deep Dive below in the meantime.</p></div>';
+    return;
+  }
+  let i = 0;
+  deck.innerHTML = '<div class="deck-stage"><img id="deckImg" alt="Presentation slide"/></div>' +
+    '<div class="deck-controls"><button class="deck-btn" id="prevBtn">← Prev</button>' +
+    '<span class="deck-count" id="deckCount"></span>' +
+    '<button class="deck-btn" id="fsBtn">⛶ Fullscreen</button>' +
+    '<button class="deck-btn" id="nextBtn">Next →</button></div>';
+  const img = document.getElementById("deckImg"), count = document.getElementById("deckCount");
+  function show(){ img.src = SLIDES[i]; count.textContent = "Slide " + (i+1) + " of " + SLIDES.length; }
+  document.getElementById("prevBtn").onclick = () => { i = (i - 1 + SLIDES.length) % SLIDES.length; show(); };
+  document.getElementById("nextBtn").onclick = () => { i = (i + 1) % SLIDES.length; show(); };
+  document.getElementById("fsBtn").onclick = () => { const s = deck.querySelector(".deck-stage"); (s.requestFullscreen || s.webkitRequestFullscreen).call(s); };
+  img.onclick = () => document.getElementById("fsBtn").click();
+  document.addEventListener("keydown", e => {
+    if(e.key === "ArrowRight") document.getElementById("nextBtn").click();
+    if(e.key === "ArrowLeft") document.getElementById("prevBtn").click();
+  });
+  show();
+})();
+
+/* Video */
+(function(){
+  const box = document.getElementById("videoBox");
+  if(!VIDEO_ID){
+    box.innerHTML = '<div class="video-frame"><div class="placeholder" style="position:absolute;inset:0;"><div class="ph-icon">🎬</div><h4>Video coming soon</h4><p>In the meantime, browse the <a href="https://www.youtube.com/@SimplySportScience" target="_blank" rel="noopener">Simply Sport Science YouTube channel</a>.</p></div></div>';
+    return;
+  }
+  box.innerHTML = '<div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/' + VIDEO_ID + '" title="Topic video" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+})();
+</script>
+
+</body>
+</html>
