@@ -3,14 +3,25 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Exercise Physiology & Nutrition | IB Sport Science | Simply Sport Science</title>
-<meta name="description" content="IB SEHS Theme 1 — Exercise Physiology and Nutrition of the Human Body. Cardiovascular, respiratory, energy systems, nutrition and hydration topics."/>
+<title>Theme A: Exercise Physiology & Nutrition | IB Sport Science | Simply Sport Science</title>
+<meta name="description" content="IB SEHS Theme A — Exercise Physiology and Nutrition. Syllabus sections A.1 Communication, A.2 Hydration and Nutrition, A.3 Response, plus topic deep dives."/>
+<link rel="icon" href="favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Simply Sport Science"/>
+<meta property="og:title" content="Theme A: Exercise Physiology & Nutrition | IB Sport Science"/>
+<meta property="og:description" content="IB SEHS Theme A — A.1 Communication, A.2 Hydration and Nutrition, A.3 Response, plus topic deep dives."/>
+<meta property="og:url" content="https://simplysportscience.co.uk/ib-physiology.html"/>
+<meta property="og:image" content="https://simplysportscience.co.uk/og-share-image.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <style>
   :root{
     --purple:#6B21D4;--pink:#C026D3;--gold:#F59E0B;--gold-light:#FCD34D;--cyan:#22D3EE;
     --navy:#0F172A;--navy-mid:#1A2540;--navy-card:#162032;--white:#FFFFFF;
     --grey:#94A3B8;--grey-light:#CBD5E1;--green:#10B981;--border:#2D3F5E;
-    --ib:#4FA3F7;--ib-dark:#1D6FCC;--ib-light:#A8D4FF;
+    --ib:#3B9EFF;--ib-dark:#1D6FD1;--ib-light:#93C9FF;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   body{background:var(--navy);color:var(--white);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;}
@@ -18,7 +29,7 @@
   nav{background:rgba(15,23,42,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
   .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px;}
   .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
-  .logo-circle{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--purple),var(--pink),var(--gold));display:flex;align-items:center;justify-content:center;box-shadow:0 0 16px rgba(107,33,212,0.45);font-size:18px;}
+  .logo img{width:42px;height:42px;object-fit:contain;}
   .logo-tagline{font-size:9px;color:var(--gold);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;}
   .logo-name{font-size:14px;font-weight:900;}
   .logo-name .c1{color:var(--cyan);}.logo-name .c2{color:var(--white);}
@@ -33,24 +44,30 @@
   .breadcrumb a:hover{color:var(--cyan);}
   .breadcrumb span{color:var(--ib-light);margin:0 6px;}
 
-  .hero{background:linear-gradient(160deg,#0F172A 0%,#0a1535 60%,#0d1a40 100%);padding:40px 24px 32px;border-bottom:1px solid var(--border);}
+  .hero{background:linear-gradient(160deg,#0F172A 0%,#0a1a38 60%,#0d2045 100%);padding:40px 24px 32px;border-bottom:1px solid var(--border);}
   .hero-inner{max-width:900px;margin:0 auto;}
-  .hero-badge{display:inline-block;background:rgba(79,163,247,0.15);border:1px solid rgba(79,163,247,0.4);color:var(--ib-light);font-size:11px;font-weight:700;letter-spacing:2px;padding:6px 14px;border-radius:99px;margin-bottom:14px;text-transform:uppercase;}
+  .hero-badge{display:inline-block;background:rgba(59,158,255,0.15);border:1px solid rgba(59,158,255,0.4);color:var(--ib-light);font-size:11px;font-weight:700;letter-spacing:2px;padding:6px 14px;border-radius:99px;margin-bottom:14px;text-transform:uppercase;}
   .hero h1{font-size:clamp(24px,4.5vw,32px);font-weight:900;margin-bottom:8px;}
-  .hero p{font-size:14px;color:var(--grey-light);max-width:600px;line-height:1.7;}
+  .hero p{font-size:14px;color:var(--grey-light);max-width:620px;line-height:1.7;}
 
   .page-inner{max-width:900px;margin:0 auto;padding:36px 24px 56px;}
+  .section-heading{margin:0 0 14px;}
+  .section-heading h2{font-size:18px;font-weight:900;margin-bottom:3px;}
+  .section-heading p{font-size:12px;color:var(--grey);}
 
-  .topic-list{display:flex;flex-direction:column;gap:10px;margin-bottom:32px;}
-  .topic-item{background:var(--navy-card);border:1px solid var(--border);border-radius:12px;padding:18px 20px;display:flex;align-items:center;gap:16px;text-decoration:none;transition:all 0.2s;}
+  .syllabus-list{display:flex;flex-direction:column;gap:10px;margin-bottom:40px;}
+  .syllabus-item{background:var(--navy-card);border:1px solid rgba(59,158,255,0.35);border-radius:12px;padding:20px 22px;display:flex;align-items:center;gap:18px;text-decoration:none;transition:all 0.2s;}
+  .syllabus-item:hover{border-color:var(--ib-light);transform:translateX(4px);box-shadow:0 6px 24px rgba(59,158,255,0.15);}
+  .syllabus-code{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,var(--ib-dark),var(--ib));color:var(--white);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;flex-shrink:0;}
+  .syllabus-text h3{font-size:16px;font-weight:900;color:var(--white);margin-bottom:3px;}
+  .syllabus-text p{font-size:12px;color:var(--grey-light);line-height:1.55;}
+
+  .topic-list{display:flex;flex-direction:column;gap:8px;margin-bottom:32px;}
+  .topic-item{background:var(--navy-card);border:1px solid var(--border);border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:14px;text-decoration:none;transition:all 0.2s;}
   .topic-item:hover{border-color:var(--ib-light);transform:translateX(4px);}
-  .topic-num{width:34px;height:34px;border-radius:9px;background:rgba(79,163,247,0.15);color:var(--ib-light);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;}
-  .topic-text{flex:1;min-width:0;}
-  .topic-text h4{font-size:14px;font-weight:800;color:var(--white);margin-bottom:3px;}
-  .topic-text p{font-size:12px;color:var(--grey-light);line-height:1.5;}
-  .topic-status{font-size:10px;font-weight:700;padding:3px 10px;border-radius:99px;flex-shrink:0;}
-  .status-live{background:rgba(16,185,129,0.18);color:var(--green);border:1px solid rgba(16,185,129,0.35);}
-  .status-soon{background:rgba(148,163,184,0.15);color:var(--grey);border:1px solid rgba(148,163,184,0.3);}
+  .topic-num{width:30px;height:30px;border-radius:8px;background:rgba(59,158,255,0.14);color:var(--ib-light);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0;}
+  .topic-text h4{font-size:13px;font-weight:800;color:var(--white);margin-bottom:2px;}
+  .topic-text p{font-size:11px;color:var(--grey-light);line-height:1.5;}
 
   .foot-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;}
   .foot-link{background:var(--navy-card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:10px;text-decoration:none;transition:all 0.2s;}
@@ -71,7 +88,7 @@
 <nav>
   <div class="nav-inner">
     <a class="logo" href="index.html">
-      <div class="logo-circle"><img src="sss-icon.png" alt="Simply Sport Science" style="width:68%;height:68%;object-fit:contain;"></div>
+      <img src="sss-icon.png" alt="Simply Sport Science"/>
       <div>
         <div class="logo-tagline">Sport Science Sorted</div>
         <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
@@ -90,71 +107,54 @@
 
 <div class="breadcrumb">
   <div style="max-width:900px;margin:0 auto;">
-    <a href="index.html">Home</a><span>›</span><a href="ib-hub.html">IB Sport Science</a><span>›</span>Exercise Physiology &amp; Nutrition
+    <a href="index.html">Home</a><span>›</span><a href="ib-hub.html">IB Sport Science</a><span>›</span>Theme A
   </div>
 </div>
 
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-badge">🫁 Theme 1</div>
-    <h1>Exercise Physiology &amp; Nutrition of the Human Body</h1>
-    <p>The physiological systems of the human body at rest and during exercise — cardiovascular, respiratory and endocrine function, energy systems, nutrition, hydration and homeostasis.</p>
+    <div class="hero-badge">Theme A</div>
+    <h1>Exercise Physiology &amp; Nutrition</h1>
+    <p>How the body communicates, fuels and responds to exercise. Start with the three syllabus sections, then use the topic deep dives to go further on individual areas.</p>
   </div>
 </div>
 
 <div class="page-inner">
 
+  <div class="section-heading">
+    <h2>Syllabus Sections</h2>
+    <p>The core content of Theme A, in syllabus order</p>
+  </div>
+  <div class="syllabus-list">
+    <a href="ib-a1-communication.html" class="syllabus-item">
+      <div class="syllabus-code">A.1</div>
+      <div class="syllabus-text"><h3>Communication</h3><p>How the nervous and endocrine systems coordinate and control the body during exercise.</p></div>
+    </a>
+    <a href="ib-a2-hydration-nutrition.html" class="syllabus-item">
+      <div class="syllabus-code">A.2</div>
+      <div class="syllabus-text"><h3>Hydration &amp; Nutrition</h3><p>Water balance, macronutrients and how diet supports health and performance.</p></div>
+    </a>
+    <a href="ib-a3-response.html" class="syllabus-item">
+      <div class="syllabus-code">A.3</div>
+      <div class="syllabus-text"><h3>Response</h3><p>How the body's systems respond and adapt to exercise and training.</p></div>
+    </a>
+  </div>
+
+  <div class="section-heading">
+    <h2>Topic Deep Dives</h2>
+    <p>Focused pages on individual Theme A topics</p>
+  </div>
   <div class="topic-list">
-    <a href="ib-cardiovascular-system.html" class="topic-item">
-      <div class="topic-num">1</div>
-      <div class="topic-text"><h4>The Cardiovascular System</h4><p>Heart structure, cardiac output, stroke volume and cardiovascular responses to exercise.</p></div>
-      <span class="topic-status status-live">Live</span>
-    </a>
-    <a href="ib-respiratory-system.html" class="topic-item">
-      <div class="topic-num">2</div>
-      <div class="topic-text"><h4>The Respiratory System</h4><p>Pulmonary ventilation, gas exchange at the alveoli and respiratory responses to exercise.</p></div>
-      <span class="topic-status status-live">Live</span>
-    </a>
-    <a href="ib-energy-systems.html" class="topic-item">
-      <div class="topic-num">3</div>
-      <div class="topic-text"><h4>Energy Systems</h4><p>ATP-PCr, glycolytic and aerobic pathways — fuel sources, ATP yield and sporting application.</p></div>
-      <span class="topic-status status-live">Live</span>
-    </a>
-    <a href="ib-endocrine-system.html" class="topic-item">
-      <div class="topic-num">4</div>
-      <div class="topic-text"><h4>The Endocrine System</h4><p>Hormones, glands and their role in regulating exercise, metabolism and recovery.</p></div>
-      <span class="topic-status status-live">Live</span>
-    </a>
-    <a href="ib-homeostasis.html" class="topic-item">
-      <div class="topic-num">5</div>
-      <div class="topic-text"><h4>Homeostasis</h4><p>Negative feedback mechanisms, thermoregulation and blood glucose regulation during exercise.</p></div>
-      <span class="topic-status status-live">Live</span>
-    </a>
-    <a href="ib-water-hydration.html" class="topic-item">
-      <div class="topic-num">6</div>
-      <div class="topic-text"><h4>Water &amp; Hydration</h4><p>The role of water in the body, dehydration effects on performance and hydration strategies.</p></div>
-      <span class="topic-status status-live">Live</span>
-    </a>
-    <a href="ib-nutrition-macronutrients.html" class="topic-item">
-      <div class="topic-num">7</div>
-      <div class="topic-text"><h4>Nutrition &amp; Macronutrients</h4><p>Carbohydrates, proteins and fats as fuel for sport, and dietary requirements for performance.</p></div>
-      <span class="topic-status status-live">Live</span>
-    </a>
-    <a href="ib-lactate-inflection-point.html" class="topic-item">
-      <div class="topic-num">8</div>
-      <div class="topic-text"><h4>Lactate Inflection Point</h4><p>Blood lactate accumulation and its use in training zone prescription.</p></div>
-      <span class="topic-status status-live">Live</span>
-    </a>
-    <a href="ib-vo2-max-aerobic-capacity.html" class="topic-item">
-      <div class="topic-num">9</div>
-      <div class="topic-text"><h4>VO₂ Max &amp; Aerobic Capacity</h4><p>Maximal oxygen uptake as the gold-standard measure of aerobic fitness.</p></div>
-      <span class="topic-status status-live">Live</span>
-    </a>
-    <a href="ib-training-design.html" class="topic-item">
-      <div class="topic-num">10</div>
-      <div class="topic-text"><h4>Training Design</h4><p>Applying physiological principles to design effective, individualised training programmes.</p></div>
-      <span class="topic-status status-live">Live</span>
-    </a>
+    <a href="ib-cardiovascular-system.html" class="topic-item"><div class="topic-num">1</div><div class="topic-text"><h4>The Cardiovascular System</h4><p>Heart structure, cardiac output, stroke volume and responses to exercise.</p></div></a>
+    <a href="ib-respiratory-system.html" class="topic-item"><div class="topic-num">2</div><div class="topic-text"><h4>The Respiratory System</h4><p>Pulmonary ventilation, gas exchange and respiratory responses to exercise.</p></div></a>
+    <a href="ib-energy-systems.html" class="topic-item"><div class="topic-num">3</div><div class="topic-text"><h4>Energy Systems</h4><p>ATP-PC, anaerobic glycolysis and the aerobic system, and the energy continuum.</p></div></a>
+    <a href="ib-endocrine-system.html" class="topic-item"><div class="topic-num">4</div><div class="topic-text"><h4>The Endocrine System</h4><p>Hormones, glands and their role in exercise, metabolism and recovery.</p></div></a>
+    <a href="ib-homeostasis.html" class="topic-item"><div class="topic-num">5</div><div class="topic-text"><h4>Homeostasis</h4><p>Negative feedback, thermoregulation and blood glucose regulation.</p></div></a>
+    <a href="ib-water-hydration.html" class="topic-item"><div class="topic-num">6</div><div class="topic-text"><h4>Water &amp; Hydration</h4><p>Dehydration, its effect on performance and hydration strategies.</p></div></a>
+    <a href="ib-nutrition-macronutrients.html" class="topic-item"><div class="topic-num">7</div><div class="topic-text"><h4>Nutrition &amp; Macronutrients</h4><p>Carbohydrates, proteins and fats as fuel for sport.</p></div></a>
+    <a href="ib-lactate-inflection-point.html" class="topic-item"><div class="topic-num">8</div><div class="topic-text"><h4>Lactate Inflection Point</h4><p>Blood lactate accumulation and training zone prescription.</p></div></a>
+    <a href="ib-vo2-max-aerobic-capacity.html" class="topic-item"><div class="topic-num">9</div><div class="topic-text"><h4>VO₂ Max &amp; Aerobic Capacity</h4><p>Maximal oxygen uptake as the key measure of aerobic fitness.</p></div></a>
+    <a href="ib-training-design.html" class="topic-item"><div class="topic-num">10</div><div class="topic-text"><h4>Training Design</h4><p>Applying physiological principles to design training programmes.</p></div></a>
   </div>
 
   <div class="foot-links">
@@ -167,8 +167,8 @@
 </div>
 
 <div class="hub-footer">
-  <p><a href="index.html">Home</a>·<a href="az-library.html">A–Z Library</a>·<a href="teacher-hub.html">Teacher Hub</a>·<a href="about.html">About</a></p>
-  <p style="margin-top:10px;">Simply Sport Science · simplysportscience.co.uk</p>
+  <p><a href="index.html">Home</a>·<a href="az-library.html">A–Z Library</a>·<a href="teacher-hub.html">Teacher Hub</a>·<a href="about.html">About</a>·<a href="privacy.html">Privacy</a></p>
+  <p style="margin-top:10px;">© 2026 Simply Sport Science · simplysportscience.co.uk</p>
 </div>
 
 </body>
