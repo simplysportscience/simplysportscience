@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>C.2.1 Motor Learning Processes | IB Sport Science | Simply Sport Science</title>
+<meta name="description" content="IB SEHS C.2.1 Motor Learning Processes — the information processing model, Fitts and Posner stages, feedback, practice and transfer. Overview, presentation, deep dive with diagrams, exam tips, video and practice questions."/>
+<link rel="icon" href="favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Simply Sport Science"/>
+<meta property="og:title" content="C.2.1 Motor Learning Processes | IB Sport Science"/>
+<meta property="og:description" content="The information processing model, Fitts and Posner stages, feedback, practice and transfer."/>
+<meta property="og:url" content="https://simplysportscience.co.uk/ib-c2-1-motor-learning-processes.html"/>
+<meta property="og:image" content="https://simplysportscience.co.uk/og-share-image.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<style>
+  /* ═══ BRAND PALETTE — identical on every topic page ═══ */
+  :root{
+    --deep-purple:#3D1F8C; --indigo:#1A0F5C; --magenta:#C4218A; --violet:#6B2FC4; --amber:#E8A020;
+    --violet-light:#B38BFF; --magenta-light:#F07CC4; --amber-light:#F5C866; --cyan:#22D3EE;
+    --bg:#0E0A24; --bg-mid:#160F36; --card:#1C1442; --border:#33275F;
+    --white:#FFFFFF; --grey:#A39FC0; --grey-light:#D4D0EA; --green:#34D399;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--white);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.7;}
+
+  /* NAV */
+  nav{background:rgba(14,10,36,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px;}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+  .logo img{width:42px;height:42px;object-fit:contain;}
+  .logo-tagline{font-size:9px;color:var(--amber);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;}
+  .logo-name{font-size:14px;font-weight:900;line-height:1.3;}
+  .logo-name .c1{color:var(--cyan);}.logo-name .c2{color:var(--white);}
+  .nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+  .nav-links a{color:var(--grey-light);text-decoration:none;font-size:13px;font-weight:600;padding:7px 10px;border-radius:7px;transition:all 0.2s;white-space:nowrap;}
+  .nav-links a:hover{color:var(--white);background:rgba(107,47,196,0.25);}
+  .nav-links a.active{color:var(--magenta-light);}
+  .nav-links a.teacher-link{color:var(--amber-light);}
+
+  .breadcrumb{font-size:12px;color:var(--grey);padding:10px 24px;background:var(--bg-mid);border-bottom:1px solid var(--border);}
+  .breadcrumb a{color:var(--grey-light);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--magenta-light);}
+  .breadcrumb span{color:var(--magenta-light);margin:0 6px;}
+
+  /* TOPIC HEADER */
+  .topic-hero{background:linear-gradient(160deg,var(--bg) 0%,var(--indigo) 55%,#2A0F3E 100%);padding:40px 24px 34px;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+  .topic-hero::before{content:'';position:absolute;top:-120px;right:-60px;width:520px;height:420px;background:radial-gradient(circle,rgba(196,33,138,0.22) 0%,transparent 70%);pointer-events:none;}
+  .topic-hero-inner{max-width:900px;margin:0 auto;position:relative;}
+  .topic-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+  .pill{font-size:11px;font-weight:800;padding:5px 12px;border-radius:99px;letter-spacing:0.5px;}
+  .pill-code{background:linear-gradient(135deg,var(--deep-purple),var(--magenta));color:var(--white);}
+  .pill-theme{background:rgba(179,139,255,0.14);color:var(--violet-light);border:1px solid rgba(179,139,255,0.35);}
+  .pill-level{background:rgba(232,160,32,0.14);color:var(--amber-light);border:1px solid rgba(232,160,32,0.4);}
+  .topic-hero h1{font-size:clamp(28px,5vw,40px);font-weight:900;line-height:1.12;margin-bottom:10px;}
+  .topic-hero p{font-size:15px;color:var(--grey-light);max-width:640px;}
+
+  /* SECTION JUMP BAR */
+  .jump-bar{background:var(--bg-mid);border-bottom:1px solid var(--border);position:sticky;top:64px;z-index:90;overflow-x:auto;}
+  .jump-inner{max-width:900px;margin:0 auto;padding:10px 24px;display:flex;gap:6px;min-width:max-content;}
+  .jump-inner a{font-size:12px;font-weight:700;color:var(--grey-light);text-decoration:none;padding:6px 12px;border-radius:99px;border:1px solid var(--border);white-space:nowrap;transition:all 0.2s;}
+  .jump-inner a:hover{border-color:var(--magenta);color:var(--white);}
+  .jump-inner a b{color:var(--amber);margin-right:4px;}
+
+  /* SECTIONS */
+  .page-inner{max-width:900px;margin:0 auto;padding:30px 24px 56px;}
+  .section{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px 28px 30px;margin-bottom:22px;scroll-margin-top:120px;}
+  .section-head{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+  .section-num{width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,var(--deep-purple),var(--magenta));display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:900;flex-shrink:0;box-shadow:0 4px 14px rgba(196,33,138,0.35);}
+  .section-head h2{font-size:21px;font-weight:900;}
+  .section p{font-size:14.5px;color:var(--grey-light);margin-bottom:12px;}
+  .section p strong{color:var(--white);}
+  .section h3{font-size:16px;font-weight:900;color:var(--violet-light);margin:22px 0 10px;}
+  .section ul.points{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:12px;}
+  .section ul.points li{font-size:14px;color:var(--grey-light);display:flex;gap:10px;}
+  .section ul.points li::before{content:'◆';color:var(--magenta-light);font-size:9px;margin-top:6px;flex-shrink:0;}
+
+  /* Overview extras */
+  .learn-box{background:rgba(107,47,196,0.12);border:1px solid rgba(179,139,255,0.3);border-radius:12px;padding:16px 18px;margin:14px 0;}
+  .learn-box h4{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber-light);margin-bottom:8px;}
+  .key-terms{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-top:10px;}
+  .key-term{background:var(--bg-mid);border:1px solid var(--border);border-radius:10px;padding:12px 14px;}
+  .key-term b{display:block;font-size:13px;color:var(--magenta-light);margin-bottom:2px;}
+  .key-term span{font-size:12.5px;color:var(--grey-light);line-height:1.55;}
+
+  /* Presentation component */
+  .deck{background:var(--bg);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+  .deck-stage{position:relative;aspect-ratio:16/9;background:#000;display:flex;align-items:center;justify-content:center;}
+  .deck-stage img{width:100%;height:100%;object-fit:contain;cursor:zoom-in;}
+  .deck-controls{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;background:var(--bg-mid);}
+  .deck-btn{background:var(--card);border:1px solid var(--border);color:var(--white);border-radius:8px;padding:7px 14px;font-size:13px;font-weight:700;cursor:pointer;}
+  .deck-btn:hover{border-color:var(--magenta);}
+  .deck-count{font-size:12px;color:var(--grey);}
+  .placeholder{aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:24px;background:linear-gradient(135deg,rgba(61,31,140,0.35),rgba(196,33,138,0.18));}
+  .placeholder .ph-icon{font-size:40px;}
+  .placeholder h4{font-size:16px;font-weight:900;}
+  .placeholder p{font-size:13px;color:var(--grey-light);margin:0;max-width:380px;}
+
+  /* Diagrams & tables */
+  .diagram{background:var(--bg-mid);border:1px solid var(--border);border-radius:14px;padding:18px;margin:16px 0;}
+  .diagram svg{width:100%;height:auto;display:block;}
+  .diagram-caption{font-size:12px;color:var(--grey);text-align:center;margin-top:8px;}
+  table.compare{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;}
+  table.compare th{background:var(--deep-purple);color:var(--white);text-align:left;padding:10px 12px;font-weight:800;}
+  table.compare td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--grey-light);vertical-align:top;}
+  table.compare td:first-child{color:var(--amber-light);font-weight:700;white-space:nowrap;}
+  .table-wrap{overflow-x:auto;}
+
+  /* Exam tips */
+  .tip{display:flex;gap:14px;background:rgba(232,160,32,0.08);border:1px solid rgba(232,160,32,0.3);border-radius:12px;padding:14px 16px;margin-bottom:10px;}
+  .tip-icon{font-size:20px;flex-shrink:0;}
+  .tip b{display:block;font-size:14px;color:var(--amber-light);margin-bottom:2px;}
+  .tip span{font-size:13.5px;color:var(--grey-light);}
+  .tip.warn{background:rgba(196,33,138,0.08);border-color:rgba(196,33,138,0.35);}
+  .tip.warn b{color:var(--magenta-light);}
+
+  /* Video */
+  .video-frame{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#000;}
+  .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .placeholder a{color:var(--amber-light);font-weight:700;}
+
+  /* Practice questions */
+  .question{background:var(--bg-mid);border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+  .question summary{list-style:none;cursor:pointer;padding:15px 18px;display:flex;align-items:flex-start;gap:12px;font-size:14px;font-weight:700;color:var(--white);}
+  .question summary::-webkit-details-marker{display:none;}
+  .q-num{background:linear-gradient(135deg,var(--deep-purple),var(--violet));border-radius:7px;min-width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;}
+  .q-text{flex:1;}
+  .q-marks{font-size:11px;font-weight:800;color:var(--amber-light);background:rgba(232,160,32,0.14);border-radius:99px;padding:3px 9px;flex-shrink:0;}
+  .q-toggle{color:var(--magenta-light);font-size:12px;font-weight:800;flex-shrink:0;}
+  .question[open] .q-toggle::after{content:' ▲';}
+  .question:not([open]) .q-toggle::after{content:' ▼';}
+  .answer{padding:0 18px 16px 58px;}
+  .answer h5{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:6px;}
+  .answer ul{list-style:none;display:flex;flex-direction:column;gap:5px;}
+  .answer li{font-size:13.5px;color:var(--grey-light);display:flex;gap:8px;}
+  .answer li::before{content:'✓';color:var(--green);font-weight:900;flex-shrink:0;}
+
+  /* Prev / next */
+  .topic-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;}
+  .topic-nav a{background:var(--bg-mid);border:1px solid var(--border);border-radius:12px;padding:14px 18px;text-decoration:none;color:var(--white);font-size:14px;font-weight:800;transition:all 0.2s;}
+  .topic-nav a:hover{border-color:var(--magenta);}
+  .topic-nav a span{display:block;font-size:10px;color:var(--grey);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
+  .topic-nav a.next{text-align:right;}
+
+  .hub-footer{background:#080617;padding:24px;text-align:center;border-top:1px solid var(--border);}
+  .hub-footer p{font-size:12px;color:var(--grey);}
+  .hub-footer a{color:var(--grey-light);text-decoration:none;margin:0 6px;}
+  .hub-footer a:hover{color:var(--magenta-light);}
+
+  @media(max-width:640px){
+    .nav-links{display:none;}
+    .topic-hero{padding:28px 16px 24px;}
+    .jump-inner{padding:10px 16px;}
+    .page-inner{padding:20px 14px 40px;}
+    .section{padding:22px 18px;}
+    .answer{padding:0 16px 14px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <img src="sss-icon.png" alt="Simply Sport Science"/>
+      <div>
+        <div class="logo-tagline">Sport Science Sorted</div>
+        <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ib-hub.html" class="active">IB Sport Science</a></li>
+      <li><a href="cambridge-hub.html">A Level PE</a></li>
+      <li><a href="btec-hub.html">BTEC Sport</a></li>
+      <li><a href="az-library.html">A–Z</a></li>
+      <li><a href="teacher-hub.html" class="teacher-link">Teacher Hub</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb">
+  <div style="max-width:900px;margin:0 auto;">
+    <a href="index.html">Home</a><span>›</span><a href="ib-hub.html">IB Sport Science</a><span>›</span><a href="ib-theme-c.html">Theme C</a><span>›</span>C.2.1
+  </div>
+</div>
+
+<!-- ═══ TOPIC HEADER ═══ -->
+<div class="topic-hero">
+  <div class="topic-hero-inner">
+    <div class="topic-meta">
+      <span class="pill pill-code">C.2.1</span>
+      <span class="pill pill-theme">Theme C · Motor Learning</span>
+      <span class="pill pill-level">SL &amp; HL</span>
+    </div>
+    <h1>Motor Learning Processes</h1>
+    <p>How people acquire skills through practice and feedback: the information processing model, the three stages of learning, and how practice design supports transfer.</p>
+  </div>
+</div>
+
+<!-- ═══ SECTION JUMP BAR ═══ -->
+<div class="jump-bar">
+  <div class="jump-inner">
+    <a href="#overview"><b>1</b>Overview</a>
+    <a href="#presentation"><b>2</b>Presentation</a>
+    <a href="#deep-dive"><b>3</b>Deep Dive</a>
+    <a href="#exam-tips"><b>4</b>Exam Tips</a>
+    <a href="#video"><b>5</b>Video</a>
+    <a href="#practice"><b>6</b>Practice Questions</a>
+  </div>
+</div>
+
+<div class="page-inner">
+
+  <!-- ═══ 1. OVERVIEW ═══ -->
+  <section class="section" id="overview">
+    <div class="section-head"><div class="section-num">1</div><h2>Overview</h2></div>
+    <p><strong>Motor learning</strong> is a relatively permanent change in the ability to perform a skill, brought about by practice and experience. It is different from performance, which can change temporarily because of fatigue, mood or conditions. The <strong>information processing model</strong> describes how a performer takes in information, decides what to do, produces a movement and uses feedback to improve the next attempt. <strong>Fitts and Posner</strong> describe three stages through which learners typically progress: cognitive, associative and autonomous. Coaches use these ideas to choose feedback, practice and cues that suit the learner's stage.</p>
+    <div class="learn-box">
+      <h4>By the end of this topic you should be able to</h4>
+      <ul class="points">
+        <li>Distinguish between motor learning and performance.</li>
+        <li>Describe the information processing model and apply it to a sporting skill.</li>
+        <li>Describe the cognitive, associative and autonomous stages of learning, and their characteristics.</li>
+        <li>Explain intrinsic and extrinsic (augmented) feedback, including knowledge of results and knowledge of performance.</li>
+        <li>Explain how practice design (massed or distributed, constant or variable) affects learning and transfer.</li>
+        <li>Apply these ideas to plan a coaching session for a learner at a given stage.</li>
+      </ul>
+    </div>
+    <h3>Key Terms</h3>
+    <div class="key-terms">
+      <div class="key-term"><b>Motor learning</b><span>A relatively permanent change in the ability to perform a skill, brought about by practice.</span></div>
+      <div class="key-term"><b>Information processing</b><span>Taking in information, deciding what to do, producing movement and using feedback.</span></div>
+      <div class="key-term"><b>Intrinsic feedback</b><span>Information the performer gets from their own senses during or after a movement.</span></div>
+      <div class="key-term"><b>Augmented (extrinsic) feedback</b><span>Information from outside the performer, such as a coach's comment, video or the result.</span></div>
+      <div class="key-term"><b>Transfer</b><span>The influence of previous learning on the learning or performance of a new skill.</span></div>
+      <div class="key-term"><b>Variable practice</b><span>Practising the same skill under changing conditions, which supports transfer to new situations.</span></div>
+    </div>
+  </section>
+
+  <!-- ═══ 2. PRESENTATION ═══ -->
+  <section class="section" id="presentation">
+    <div class="section-head"><div class="section-num">2</div><h2>Presentation</h2></div>
+    <div class="deck" id="deck"></div>
+  </section>
+
+  <!-- ═══ 3. DEEP DIVE ═══ -->
+  <section class="section" id="deep-dive">
+    <div class="section-head"><div class="section-num">3</div><h2>Deep Dive</h2></div>
+
+    <h3>Motor learning and performance</h3>
+    <p>Learning is inferred from a <strong>relatively permanent</strong> change, which is why it is measured after practice, often in a retention test or a transfer test, rather than during practice. Performance is the temporary level shown on a particular day. A player may perform well in training because the conditions are easy, without having learned the skill. Coaches therefore design practice to produce learning, not just good performance during practice.</p>
+
+    <h3>The information processing model</h3>
+    <p>The information processing model treats the performer as a system that moves through a sequence of stages. A performer <strong>takes in</strong> information from the environment, <strong>decides</strong> what to do, <strong>produces</strong> the movement, and receives <strong>feedback</strong> that updates the next attempt. Experienced performers process information more efficiently: they notice relevant cues quickly and need less decision time.</p>
+
+    <div class="diagram">
+<svg viewBox="0 0 880 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="Information processing model of motor learning: input, decision-making, output and feedback, with a feedback loop back to input, and a volleyball example"><defs>
+<linearGradient id="ip-card" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E1D74"/><stop offset="1" stop-color="#1C1442"/></linearGradient>
+<linearGradient id="ip-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7A45D6"/><stop offset="1" stop-color="#5526A8"/></linearGradient>
+<linearGradient id="ip-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DE3FA2"/><stop offset="1" stop-color="#A3186F"/></linearGradient>
+<linearGradient id="ip-c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0B53A"/><stop offset="1" stop-color="#C9861A"/></linearGradient>
+<linearGradient id="ip-d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2FBF8C"/><stop offset="1" stop-color="#14785C"/></linearGradient>
+<marker id="ip-arr" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#F5C866"/></marker>
+<marker id="ip-g" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#34D399"/></marker>
+<filter id="ip-shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.45"/></filter>
+</defs>
+<text x="14" y="30" font-size="11" font-weight="800" letter-spacing="1.5" fill="#F5C866">INFORMATION PROCESSING MODEL: A VOLLEYBALL SERVE</text>
+<g filter="url(#ip-shadow)"><rect x="14" y="50" width="250" height="110" rx="14" fill="url(#ip-a)"/></g>
+<text x="139" y="88" text-anchor="middle" font-size="15" font-weight="900" fill="#FFFFFF">Input</text>
+<text x="139" y="116" text-anchor="middle" font-size="11" fill="#EFE6FF">Sees the ball toss, the court,</text>
+<text x="139" y="131" text-anchor="middle" font-size="11" fill="#EFE6FF">the opponent</text>
+<g filter="url(#ip-shadow)"><rect x="314" y="50" width="250" height="110" rx="14" fill="url(#ip-b)"/></g>
+<text x="439" y="88" text-anchor="middle" font-size="15" font-weight="900" fill="#FFFFFF">Decision-making</text>
+<text x="439" y="116" text-anchor="middle" font-size="11" fill="#EFE6FF">Chooses a serve: float or jump</text>
+<g filter="url(#ip-shadow)"><rect x="614" y="50" width="250" height="110" rx="14" fill="url(#ip-c)"/></g>
+<text x="739" y="88" text-anchor="middle" font-size="15" font-weight="900" fill="#FFFFFF">Output</text>
+<text x="739" y="116" text-anchor="middle" font-size="11" fill="#EFE6FF">Movement: the arm swing and</text>
+<text x="739" y="131" text-anchor="middle" font-size="11" fill="#EFE6FF">contact</text>
+<line x1="264" y1="105" x2="296" y2="105" stroke="#F5C866" stroke-width="3" marker-end="url(#ip-arr)"/>
+<line x1="564" y1="105" x2="596" y2="105" stroke="#F5C866" stroke-width="3" marker-end="url(#ip-arr)"/>
+<path d="M864,160 V230 H139 V160" fill="none" stroke="#34D399" stroke-width="3" stroke-dasharray="7 5" marker-end="url(#ip-g)"/>
+<text x="500" y="250" text-anchor="middle" font-size="12" font-weight="800" fill="#34D399">Feedback: did the serve land in? (intrinsic feel and extrinsic result)</text>
+<text x="500" y="268" text-anchor="middle" font-size="11" fill="#D4D0EA">Feedback is used to update the next input, decision and movement.</text>
+</svg>
+      <div class="diagram-caption">The information processing model applied to a volleyball serve. Feedback from each attempt updates the next input, decision and movement.</div>
+    </div>
+
+    <h3>The three stages of learning (Fitts and Posner)</h3>
+    <p>Fitts and Posner describe learning as three overlapping stages. Learners move through them at different speeds, and they may be at different stages for different skills.</p>
+    <ul class="points">
+      <li><strong>Cognitive stage:</strong> the learner works out what the skill involves. They think about each cue and body position, make many errors and feel clumsy. Coaching should use simple, clear cues, demonstrations, basic feedback and safe, low-pressure practice.</li>
+      <li><strong>Associative stage:</strong> the learner refines the skill. Errors fall, timing and consistency improve, and the learner starts to detect and correct their own mistakes. Coaching should give more specific feedback, vary the practice and encourage error detection.</li>
+      <li><strong>Autonomous stage:</strong> the skill becomes largely automatic. It needs less attention, so the performer can focus on tactics, adapt to pressure and combine skills. Coaching should challenge the performer with changing and competitive conditions.</li>
+    </ul>
+
+    <div class="diagram">
+<svg viewBox="0 0 880 410" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="Fitts and Posner stages of learning: cognitive, associative and autonomous, with the typical error rate falling and consistency rising over time, and the main focus of each stage"><defs>
+<linearGradient id="st-card" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E1D74"/><stop offset="1" stop-color="#1C1442"/></linearGradient>
+<linearGradient id="st-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7A45D6"/><stop offset="1" stop-color="#5526A8"/></linearGradient>
+<linearGradient id="st-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DE3FA2"/><stop offset="1" stop-color="#A3186F"/></linearGradient>
+<linearGradient id="st-c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0B53A"/><stop offset="1" stop-color="#C9861A"/></linearGradient>
+<linearGradient id="st-d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2FBF8C"/><stop offset="1" stop-color="#14785C"/></linearGradient>
+<marker id="st-arr" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#F5C866"/></marker>
+<marker id="st-g" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#34D399"/></marker>
+<filter id="st-shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.45"/></filter>
+</defs>
+<text x="14" y="30" font-size="11" font-weight="800" letter-spacing="1.5" fill="#F5C866">FITTS AND POSNER: THREE STAGES OF LEARNING</text>
+<line x1="70" y1="300.0" x2="430" y2="300.0" stroke="#33275F"/><text x="64" y="303.5" text-anchor="end" font-size="10" fill="#A39FC0">0%</text>
+<line x1="70" y1="180.0" x2="430" y2="180.0" stroke="#33275F"/><text x="64" y="183.5" text-anchor="end" font-size="10" fill="#A39FC0">50%</text>
+<line x1="70" y1="60.0" x2="430" y2="60.0" stroke="#33275F"/><text x="64" y="63.5" text-anchor="end" font-size="10" fill="#A39FC0">100%</text>
+<line x1="70" y1="300" x2="430" y2="300" stroke="#8F78D6" stroke-width="1.5"/><line x1="70" y1="60" x2="70" y2="300" stroke="#8F78D6" stroke-width="1.5"/>
+<text x="250" y="328" text-anchor="middle" font-size="10.5" fill="#A39FC0">Time and practice →</text>
+<text transform="translate(24,180) rotate(-90)" text-anchor="middle" font-size="10.5" fill="#A39FC0">Errors (approximate)</text>
+<line x1="178.0" y1="60" x2="178.0" y2="300" stroke="#8F78D6" stroke-width="1" stroke-dasharray="4 4"/>
+<line x1="293.2" y1="60" x2="293.2" y2="300" stroke="#8F78D6" stroke-width="1" stroke-dasharray="4 4"/>
+<path d="M70.0,88.8 L73.6,95.7 L77.2,102.2 L80.8,108.5 L84.4,114.6 L88.0,120.4 L91.6,126.0 L95.2,131.3 L98.8,136.4 L102.4,141.3 L106.0,146.0 L109.6,150.6 L113.2,154.9 L116.8,159.1 L120.4,163.1 L124.0,166.9 L127.6,170.5 L131.2,174.1 L134.8,177.4 L138.4,180.7 L142.0,183.8 L145.6,186.8 L149.2,189.6 L152.8,192.4 L156.4,195.0 L160.0,197.5 L163.6,199.9 L167.2,202.3 L170.8,204.5 L174.4,206.6 L178.0,208.7 L181.6,210.6 L185.2,212.5 L188.8,214.3 L192.4,216.1 L196.0,217.7 L199.6,219.3 L203.2,220.8 L206.8,222.3 L210.4,223.7 L214.0,225.1 L217.6,226.4 L221.2,227.6 L224.8,228.8 L228.4,229.9 L232.0,231.0 L235.6,232.1 L239.2,233.1 L242.8,234.1 L246.4,235.0 L250.0,235.9 L253.6,236.7 L257.2,237.6 L260.8,238.3 L264.4,239.1 L268.0,239.8 L271.6,240.5 L275.2,241.2 L278.8,241.8 L282.4,242.4 L286.0,243.0 L289.6,243.6 L293.2,244.1 L296.8,244.6 L300.4,245.1 L304.0,245.6 L307.6,246.1 L311.2,246.5 L314.8,246.9 L318.4,247.3 L322.0,247.7 L325.6,248.1 L329.2,248.4 L332.8,248.8 L336.4,249.1 L340.0,249.4 L343.6,249.7 L347.2,250.0 L350.8,250.3 L354.4,250.6 L358.0,250.8 L361.6,251.1 L365.2,251.3 L368.8,251.5 L372.4,251.7 L376.0,251.9 L379.6,252.1 L383.2,252.3 L386.8,252.5 L390.4,252.7 L394.0,252.8 L397.6,253.0 L401.2,253.2 L404.8,253.3 L408.4,253.5 L412.0,253.6 L415.6,253.7 L419.2,253.8 L422.8,254.0 L426.4,254.1 L430.0,254.2" fill="none" stroke="#F07CC4" stroke-width="3.5" stroke-linecap="round"/>
+<text x="110" y="292" text-anchor="middle" font-size="11" font-weight="800" fill="#B38BFF">Cognitive</text>
+<text x="250" y="292" text-anchor="middle" font-size="11" font-weight="800" fill="#F5C866">Associative</text>
+<text x="380" y="292" text-anchor="middle" font-size="11" font-weight="800" fill="#34D399">Autonomous</text>
+<g filter="url(#st-shadow)"><rect x="466" y="60" width="400" height="100" rx="14" fill="url(#st-card)" stroke="#33275F"/></g><rect x="466" y="60" width="6" height="100" rx="3" fill="#B38BFF"/>
+<text x="486" y="84" font-size="14" font-weight="900" fill="#B38BFF">Cognitive stage</text>
+<text x="486" y="106" font-size="11" fill="#D4D0EA">Thinks about each cue and body position</text>
+<text x="486" y="123" font-size="11" fill="#D4D0EA">Many errors; feels clumsy</text>
+<text x="486" y="140" font-size="11" fill="#FFFFFF">Focus: simple cues, demonstrations, basic feedback</text>
+<g filter="url(#st-shadow)"><rect x="466" y="172" width="400" height="100" rx="14" fill="url(#st-card)" stroke="#33275F"/></g><rect x="466" y="172" width="6" height="100" rx="3" fill="#F5C866"/>
+<text x="486" y="196" font-size="14" font-weight="900" fill="#F5C866">Associative stage</text>
+<text x="486" y="218" font-size="11" fill="#D4D0EA">Errors fall; timing and consistency improve</text>
+<text x="486" y="235" font-size="11" fill="#D4D0EA">Starts to detect and correct own errors</text>
+<text x="486" y="252" font-size="11" fill="#FFFFFF">Focus: specific feedback, varied practice</text>
+<g filter="url(#st-shadow)"><rect x="466" y="284" width="400" height="100" rx="14" fill="url(#st-card)" stroke="#33275F"/></g><rect x="466" y="284" width="6" height="100" rx="3" fill="#34D399"/>
+<text x="486" y="308" font-size="14" font-weight="900" fill="#34D399">Autonomous stage</text>
+<text x="486" y="330" font-size="11" fill="#D4D0EA">Movement is automatic and needs little attention</text>
+<text x="486" y="347" font-size="11" fill="#D4D0EA">Can focus on tactics while performing</text>
+<text x="486" y="364" font-size="11" fill="#FFFFFF">Focus: adapting to pressure, transfer, new challenges</text>
+<text x="14" y="400" font-size="10.5" fill="#A39FC0">Stages are a model of progression, not a fixed timetable. Learners may be in different stages for different skills.</text>
+</svg>
+      <div class="diagram-caption">The Fitts and Posner stages, with errors falling over time (a typical pattern, illustrative). The focus of coaching changes at each stage.</div>
+    </div>
+
+    <p>Note that the autonomous stage is not always fully reached. A skill may appear automatic but break down under distraction or fatigue, so performance under pressure should be tested.</p>
+
+    <h3>Feedback</h3>
+    <p><strong>Feedback</strong> is information about a movement that helps the learner improve. It can be <strong>intrinsic</strong>, coming from the performer's own senses (proprioception, kinaesthesis, vision), or <strong>extrinsic</strong>, coming from outside. Extrinsic feedback is often called <strong>augmented feedback</strong>, and it includes:</p>
+    <ul class="points">
+      <li><strong>Knowledge of results (KR):</strong> information about the outcome of the movement, such as whether the shot went in or the time achieved.</li>
+      <li><strong>Knowledge of performance (KP):</strong> information about how the movement was made, such as the position of the elbow or the body shape at take-off, often from video or coach observation.</li>
+    </ul>
+    <p>The learner's stage affects what feedback is useful. Beginners often need specific, frequent feedback on the form of the movement, because they cannot yet judge it. As the learner develops, too much augmented feedback can make them dependent on the coach, so feedback should be reduced and the learner encouraged to judge their own performance. This is known as the <strong>guidance</strong> or <strong>frequency</strong> effect: frequent feedback helps in the short term, but it may hinder long-term learning if it prevents the learner building their own error detection.</p>
+
+    <div class="diagram">
+<svg viewBox="0 0 880 340" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif" role="img" aria-label="Types of feedback: intrinsic feedback from the body and extrinsic augmented feedback such as knowledge of results and knowledge of performance, and types of practice: massed against distributed, and constant against variable"><defs>
+<linearGradient id="fb-card" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2E1D74"/><stop offset="1" stop-color="#1C1442"/></linearGradient>
+<linearGradient id="fb-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7A45D6"/><stop offset="1" stop-color="#5526A8"/></linearGradient>
+<linearGradient id="fb-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#DE3FA2"/><stop offset="1" stop-color="#A3186F"/></linearGradient>
+<linearGradient id="fb-c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F0B53A"/><stop offset="1" stop-color="#C9861A"/></linearGradient>
+<linearGradient id="fb-d" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2FBF8C"/><stop offset="1" stop-color="#14785C"/></linearGradient>
+<marker id="fb-arr" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#F5C866"/></marker>
+<marker id="fb-g" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#34D399"/></marker>
+<filter id="fb-shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000000" flood-opacity="0.45"/></filter>
+</defs>
+<text x="14" y="30" font-size="11" font-weight="800" letter-spacing="1.5" fill="#F5C866">FEEDBACK AND PRACTICE IN MOTOR LEARNING</text>
+<g filter="url(#fb-shadow)"><rect x="14" y="50" width="278" height="250" rx="14" fill="url(#fb-card)" stroke="#33275F"/></g><rect x="14" y="50" width="278" height="6" rx="3" fill="#B38BFF"/>
+<text x="32" y="86" font-size="14" font-weight="900" fill="#B38BFF">Intrinsic feedback</text>
+<text x="32" y="118" font-size="11.5" fill="#D4D0EA" font-weight="400">Comes from the performer's own senses</text>
+<text x="32" y="140" font-size="11.5" fill="#D4D0EA" font-weight="400">(proprioception, kinaesthesis, vision)</text>
+<text x="32" y="162" font-size="11.5" fill="#FFFFFF" font-weight="700">Example: feeling the racket face</text>
+<text x="32" y="184" font-size="11.5" fill="#D4D0EA" font-weight="400">hit the ball centrally</text>
+<g filter="url(#fb-shadow)"><rect x="300" y="50" width="278" height="250" rx="14" fill="url(#fb-card)" stroke="#33275F"/></g><rect x="300" y="50" width="278" height="6" rx="3" fill="#F0B53A"/>
+<text x="318" y="86" font-size="14" font-weight="900" fill="#F0B53A">Extrinsic (augmented)</text>
+<text x="318" y="118" font-size="11.5" fill="#D4D0EA" font-weight="400">Comes from outside the performer</text>
+<text x="318" y="140" font-size="11.5" fill="#D4D0EA" font-weight="400">Knowledge of results (KR): the outcome</text>
+<text x="318" y="162" font-size="11.5" fill="#FFFFFF" font-weight="700">Example: the ball landed out</text>
+<text x="318" y="184" font-size="11.5" fill="#D4D0EA" font-weight="400">Knowledge of performance (KP): the form</text>
+<text x="318" y="206" font-size="11.5" fill="#FFFFFF" font-weight="700">Example: video of the elbow position</text>
+<g filter="url(#fb-shadow)"><rect x="586" y="50" width="278" height="250" rx="14" fill="url(#fb-card)" stroke="#33275F"/></g><rect x="586" y="50" width="278" height="6" rx="3" fill="#34D399"/>
+<text x="604" y="86" font-size="14" font-weight="900" fill="#34D399">Practice design</text>
+<text x="604" y="118" font-size="11.5" fill="#D4D0EA" font-weight="400">Massed: one long block, short rest</text>
+<text x="604" y="140" font-size="11.5" fill="#D4D0EA" font-weight="400">Distributed: spaced sessions with rest</text>
+<text x="604" y="162" font-size="11.5" fill="#D4D0EA" font-weight="400">Constant: same conditions every time</text>
+<text x="604" y="184" font-size="11.5" fill="#D4D0EA" font-weight="400">Variable: changing conditions</text>
+<text x="604" y="206" font-size="11.5" fill="#D4D0EA" font-weight="400">Variable practice helps transfer</text>
+<text x="604" y="228" font-size="11.5" fill="#D4D0EA" font-weight="400">to new situations</text>
+<text x="14" y="326" font-size="10.5" fill="#A39FC0">Augmented feedback is extrinsic. Too much feedback can stop the learner developing their own intrinsic checks; reduce it as the learner improves.</text>
+</svg>
+      <div class="diagram-caption">Intrinsic and extrinsic feedback, and the two main types of practice design. Massed and distributed practice differ in the rest between repetitions; constant and variable practice differ in whether conditions change.</div>
+    </div>
+
+    <h3>Practice and transfer</h3>
+    <p>How practice is organised affects how well a skill is learned:</p>
+    <ul class="points">
+      <li><strong>Massed practice</strong> (repetitions with short rest) can improve performance quickly in the short term, but may lead to fatigue and less retention.</li>
+      <li><strong>Distributed practice</strong> (repetitions spread out with longer rest, or across several sessions) usually gives better retention and long-term learning.</li>
+      <li><strong>Constant practice</strong> (the same conditions every time) helps early learning, because the performer can build a clear movement pattern.</li>
+      <li><strong>Variable practice</strong> (changing conditions, such as different targets or opponents) helps learners build flexible patterns that transfer to new situations.</li>
+    </ul>
+    <p><strong>Transfer</strong> is the influence of previous learning on a new skill. <strong>Positive transfer</strong> occurs when the earlier skill helps the new one, for example a tennis player learning badminton. <strong>Negative transfer</strong> occurs when the earlier skill interferes, for example a badminton player's shuttle-hitting action getting in the way of learning a tennis serve. Variable practice and clear links between skills help positive transfer.</p>
+
+    <h3>Planning a coaching session</h3>
+    <p>To plan a session, identify the learner's stage first, then choose the features that suit it. A beginner in the cognitive stage may need a demonstration, one or two simple cues, short sets with rest, and plenty of positive, specific KR. An athlete in the associative stage may need more varied practice, feedback on the key details of the movement, and time to detect their own errors. An autonomous performer may practise under pressure, with tactical decisions added.</p>
+  </section>
+
+  <!-- ═══ 4. EXAM TIPS ═══ -->
+  <section class="section" id="exam-tips">
+    <div class="section-head"><div class="section-num">4</div><h2>Exam Tips</h2></div>
+    <div class="tip"><div class="tip-icon">🎯</div><div><b>Name the stage and its characteristics</b><span>For stage questions, give the stage name and two features of it, then apply them to the sport. Check the <a href="ib-command-terms.html" style="color:var(--amber-light);">IB command terms</a>.</span></div></div>
+    <div class="tip"><div class="tip-icon">🔁</div><div><b>Match feedback to the stage</b><span>Beginners need specific, frequent feedback on form. More advanced learners need less, so they can detect their own errors.</span></div></div>
+    <div class="tip"><div class="tip-icon">📚</div><div><b>Use the correct feedback term</b><span>Say "knowledge of results" for the outcome and "knowledge of performance" for how the movement was made. Intrinsic feedback comes from the performer.</span></div></div>
+    <div class="tip"><div class="tip-icon">🔀</div><div><b>Link practice to transfer</b><span>Variable practice supports transfer to new situations. Distributed practice usually gives better retention than massed practice.</span></div></div>
+    <div class="tip warn"><div class="tip-icon">⚠️</div><div><b>Common mistake</b><span>Don't confuse performance with learning. A good performance in practice does not prove that learning has occurred. Also, don't say that more feedback is always better.</span></div></div>
+  </section>
+
+  <!-- ═══ 5. VIDEO ═══ -->
+  <section class="section" id="video">
+    <div class="section-head"><div class="section-num">5</div><h2>Video</h2></div>
+    <div id="videoBox"></div>
+  </section>
+
+  <!-- ═══ 6. PRACTICE QUESTIONS ═══ -->
+  <section class="section" id="practice">
+    <div class="section-head"><div class="section-num">6</div><h2>Practice Questions</h2></div>
+    <p>Write your answer first, then open the model answer to check it.</p>
+
+    <details class="question">
+      <summary><span class="q-num">1</span><span class="q-text">Define <strong>motor learning</strong>.</span><span class="q-marks">1 mark</span><span class="q-toggle">Answer</span></summary>
+      <div class="answer"><h5>Model answer</h5><ul>
+        <li>A relatively permanent change in the ability to perform a skill, brought about by practice and experience.</li>
+      </ul></div>
+    </details>
+
+    <details class="question">
+      <summary><span class="q-num">2</span><span class="q-text">State <strong>two</strong> characteristics of the associative stage of learning.</span><span class="q-marks">2 marks</span><span class="q-toggle">Answer</span></summary>
+      <div class="answer"><h5>Model answer</h5><ul>
+        <li>Errors fall and the movement becomes more consistent.</li>
+        <li>Timing improves and the learner starts to detect and correct their own errors. (Any two.)</li>
+      </ul></div>
+    </details>
+
+    <details class="question">
+      <summary><span class="q-num">3</span><span class="q-text">Distinguish between <strong>knowledge of results</strong> and <strong>knowledge of performance</strong>.</span><span class="q-marks">2 marks</span><span class="q-toggle">Answer</span></summary>
+      <div class="answer"><h5>Model answer</h5><ul>
+        <li>Knowledge of results is information about the outcome of the movement (for example whether the shot went in).</li>
+        <li>Knowledge of performance is information about how the movement was produced (for example the position of the elbow).</li>
+      </ul></div>
+    </details>
+
+    <details class="question">
+      <summary><span class="q-num">4</span><span class="q-text">Explain why a coach might use distributed practice rather than massed practice when teaching a new skill.</span><span class="q-marks">3 marks</span><span class="q-toggle">Answer</span></summary>
+      <div class="answer"><h5>Model answer</h5><ul>
+        <li>Distributed practice spreads repetitions out with longer rest, which reduces fatigue during practice.</li>
+        <li>This usually leads to better retention and long-term learning than massed practice, which can improve short-term performance but may not last.</li>
+        <li>Distributed practice therefore supports learning rather than just good performance in the session.</li>
+      </ul></div>
+    </details>
+
+    <details class="question">
+      <summary><span class="q-num">5</span><span class="q-text">Discuss how a coach could adjust feedback and practice for a beginner in the cognitive stage compared with an athlete in the autonomous stage.</span><span class="q-marks">4 marks</span><span class="q-toggle">Answer</span></summary>
+      <div class="answer"><h5>Model answer</h5><ul>
+        <li>Beginner (cognitive stage): simple cues and demonstrations, frequent specific feedback on form, short sessions with safe, low-pressure practice.</li>
+        <li>Autonomous stage: less frequent feedback, so the athlete can detect their own errors, and practice that challenges them with pressure, tactics and variable conditions.</li>
+        <li>Feedback is reduced as the learner develops, to avoid dependence on the coach and to build intrinsic error detection.</li>
+        <li>Coaches should check that the skill holds up under pressure and distraction, not just in calm conditions.</li>
+      </ul></div>
+    </details>
+  </section>
+
+  <!-- ═══ PREV / NEXT ═══ -->
+  <div class="topic-nav">
+    <a href="ib-c1-2-mental-toughness.html"><span>Previous topic</span>← C.1.2 Mental Toughness</a>
+    <a href="ib-c2-2-attentional-control.html" class="next"><span>Next topic</span>C.2.2 Attentional Control →</a>
+  </div>
+
+</div>
+
+<div class="hub-footer">
+  <p><a href="index.html">Home</a>·<a href="az-library.html">A–Z Library</a>·<a href="teacher-hub.html">Teacher Hub</a>·<a href="about.html">About</a>·<a href="privacy.html">Privacy</a></p>
+  <p style="margin-top:10px;">© 2026 Simply Sport Science · simplysportscience.co.uk</p>
+</div>
+
+<script>
+/* ═══ PAGE SETTINGS — the only part that changes per topic ═══
+   SLIDES: list the slide image paths in order, e.g.
+     ["assets/presentations/ib-c2-1/slide-01.jpg", "assets/presentations/ib-c2-1/slide-02.jpg"]
+   Leave empty [] and the "coming soon" panel shows instead.
+   VIDEO_ID: the code at the end of the YouTube link
+     (youtube.com/watch?v=THIS_PART). Leave "" for the "coming soon" panel. */
+const SLIDES = [];
+const VIDEO_ID = "";
+
+/* Presentation */
+(function(){
+  const deck = document.getElementById("deck");
+  if(!SLIDES.length){
+    deck.innerHTML = '<div class="placeholder"><div class="ph-icon">🖥️</div><h4>Presentation coming soon</h4><p>The slide deck for this topic is being added. Use the Deep Dive below in the meantime.</p></div>';
+    return;
+  }
+  let i = 0;
+  deck.innerHTML = '<div class="deck-stage"><img id="deckImg" alt="Presentation slide"/></div>' +
+    '<div class="deck-controls"><button class="deck-btn" id="prevBtn">← Prev</button>' +
+    '<span class="deck-count" id="deckCount"></span>' +
+    '<button class="deck-btn" id="fsBtn">⛶ Fullscreen</button>' +
+    '<button class="deck-btn" id="nextBtn">Next →</button></div>';
+  const img = document.getElementById("deckImg"), count = document.getElementById("deckCount");
+  function show(){ img.src = SLIDES[i]; count.textContent = "Slide " + (i+1) + " of " + SLIDES.length; }
+  document.getElementById("prevBtn").onclick = () => { i = (i - 1 + SLIDES.length) % SLIDES.length; show(); };
+  document.getElementById("nextBtn").onclick = () => { i = (i + 1) % SLIDES.length; show(); };
+  document.getElementById("fsBtn").onclick = () => { const s = deck.querySelector(".deck-stage"); (s.requestFullscreen || s.webkitRequestFullscreen).call(s); };
+  img.onclick = () => document.getElementById("fsBtn").click();
+  document.addEventListener("keydown", e => {
+    if(e.key === "ArrowRight") document.getElementById("nextBtn").click();
+    if(e.key === "ArrowLeft") document.getElementById("prevBtn").click();
+  });
+  show();
+})();
+
+/* Video */
+(function(){
+  const box = document.getElementById("videoBox");
+  if(!VIDEO_ID){
+    box.innerHTML = '<div class="video-frame"><div class="placeholder" style="position:absolute;inset:0;"><div class="ph-icon">🎬</div><h4>Video coming soon</h4><p>In the meantime, browse the <a href="https://www.youtube.com/@SimplySportScience" target="_blank" rel="noopener">Simply Sport Science YouTube channel</a>.</p></div></div>';
+    return;
+  }
+  box.innerHTML = '<div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/' + VIDEO_ID + '" title="Topic video" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
+})();
+</script>
+
+</body>
+</html>
