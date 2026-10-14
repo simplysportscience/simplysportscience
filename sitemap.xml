@@ -493,12 +493,6 @@
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://simplysportscience.co.uk/student-hub.html</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://simplysportscience.co.uk/teacher-hub.html</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -4135,4 +4129,10 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://simplysportscience.co.uk/revision.html</loc>
+    <lastmod>2026-10-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
