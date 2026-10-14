@@ -200,6 +200,13 @@
       <button class="btn" id="reveal">Show model answer</button>
       <button class="btn alt" id="next">Next question</button>
     </div>
+    <div id="aiBox" class="hidden" style="margin:14px 0 6px;">
+      <h3>Mark my answer</h3>
+      <p class="note">Write your answer, then press Mark my answer. The feedback is practice guidance, not an official grade. Your answer is sent for marking and is not stored.</p>
+      <textarea id="aiText" rows="6" maxlength="2000" placeholder="Write your answer here…" style="width:100%;background:#0E0A24;color:#fff;border:1px solid var(--border);border-radius:12px;padding:12px;font:inherit;font-size:14px;"></textarea>
+      <div class="row" style="margin-top:10px;"><button class="btn" id="aiGo">Mark my answer</button><span class="note" id="aiStatus"></span></div>
+      <div id="aiOut" style="margin-top:12px;"></div>
+    </div>
     <div id="answer" class="hidden">
       <h3 id="ahead"></h3>
       <ul class="points" id="points"></ul>
@@ -264,6 +271,7 @@ function show(){
   $('qbest').textContent = rec && rec.attempts ? 'Best ' + rec.best + ' / ' + q.marks + ' (' + rec.attempts + (rec.attempts===1?' attempt':' attempts') + ')' : 'Not yet attempted';
   $('answer').classList.add('hidden'); $('reveal').disabled = false; $('next').disabled = false;
   $('saved').textContent = '';
+  setupMarker();
   if ($('timed').value === 'on'){ left = q.marks * 120; $('timer').textContent = fmt(left); startTimer(); }
   else $('timer').textContent = '';
 }
@@ -326,7 +334,37 @@ $('timed').addEventListener('change', show);
 $('reveal').addEventListener('click', reveal);
 $('next').addEventListener('click', next);
 $('save').addEventListener('click', saveScore);
+$('aiGo').addEventListener('click', markAnswer);
 $('reset').addEventListener('click', () => { if (confirm('Reset all saved progress in this browser?')){ saveProgress({}); renderStats(); } });
+
+const MARKER_URL = 'https://YOUR-SUBDOMAIN.workers.dev/mark';
+const MARKER_READY = !MARKER_URL.includes('YOUR-SUBDOMAIN');
+function setupMarker(){ $('aiBox').classList.toggle('hidden', !MARKER_READY); $('aiText').value=''; $('aiOut').innerHTML=''; $('aiStatus').textContent=''; }
+async function markAnswer(){
+  const q = list[idx]; const ans = $('aiText').value.trim();
+  if (ans.length < 20){ $('aiStatus').textContent = 'Please write a longer answer (at least 20 characters).'; return; }
+  $('aiGo').disabled = true; $('aiStatus').textContent = 'Marking…'; $('aiOut').innerHTML = '';
+  try {
+    const r = await fetch(MARKER_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ course: 'IB Sport, Exercise and Health Science', question: q.q, marks: q.marks, points: q.points, answer: ans }) });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || 'Marking failed. Please try again.');
+    renderMark(q, j); $('aiStatus').textContent = '';
+  } catch (e) { $('aiStatus').textContent = e.message; }
+  finally { $('aiGo').disabled = false; }
+}
+function renderMark(q, j){
+  const met = (j.points_met||[]).map(n => '<li>' + esc(q.points[n-1]) + '</li>').join('') || '<li>None yet</li>';
+  const miss = (j.points_missed||[]).map(n => '<li>' + esc(q.points[n-1]) + '</li>').join('') || '<li>None: all points covered</li>';
+  $('aiOut').innerHTML = '<div class="score">Marks awarded: ' + j.marks_awarded + ' / ' + j.marks_available + '</div>'
+    + '<div class="note" style="margin-bottom:10px;">' + esc(j.note||'') + '</div>'
+    + '<p><strong>Points you covered</strong></p><ul class="points">' + met + '</ul>'
+    + '<p><strong>Points to add</strong></p><ul class="points">' + miss + '</ul>'
+    + '<p><strong>Feedback:</strong> ' + esc(j.feedback||'') + '</p>'
+    + '<p><strong>To improve:</strong> ' + esc(j.improvement||'') + '</p>';
+}
+function esc(t){ return String(t).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
 fillTopics(); build(); renderStats();
 </script>
 
