@@ -186,13 +186,14 @@
       <div><label for="topic">Topic</label><br><select id="topic"></select></div>
       <div><label for="order">Order</label><br><select id="order"><option value="random">Random</option><option value="inorder">In order</option></select></div>
       <div><label for="timed">Timer</label><br><select id="timed"><option value="on">2 minutes per mark</option><option value="off">No timer</option></select></div>
+      <div><label for="focus">Focus</label><br><select id="focus"><option value="all">All questions</option><option value="new">Not yet attempted</option><option value="work">Needs work (not full marks)</option></select></div>
     </div>
     <p class="note" style="margin-top:12px;">Questions shown: <span id="count">0</span>.</p>
   </div>
 
   <div class="panel" id="card">
     <h3>Question <span id="pos"></span></h3>
-    <div class="qmeta"><span class="pill pill-code" id="qcode"></span><span class="pill pill-btec" id="qmarks"></span><span class="pill pill-btec" id="qtopic"></span></div>
+    <div class="qmeta"><span class="pill pill-code" id="qcode"></span><span class="pill pill-btec" id="qmarks"></span><span class="pill pill-btec" id="qtopic"></span><span class="pill pill-btec" id="qbest"></span></div>
     <div class="qtext" id="qtext"></div>
     <div class="row" style="margin-bottom:14px;">
       <span class="timer" id="timer"></span>
@@ -211,7 +212,7 @@
     <h3>Your progress</h3>
     <div id="stats"></div>
     <div class="row" style="margin-top:12px;"><button class="btn alt" id="reset">Reset progress</button></div>
-    <p class="note" style="margin-top:10px;">Progress is saved in this browser only. Nothing is sent to a server.</p>
+    <p class="note" style="margin-top:10px;">Topics are listed weakest first, so the ones that need most work are at the top. Progress is saved in this browser only. Nothing is sent to a server.</p>
   </div>
 
   <div class="tool-grid">
@@ -244,7 +245,9 @@ function fillTopics(){
 }
 function build(){
   const th = $('theme').value, tp = $('topic').value;
-  list = DATA.questions.filter(q => (!th || q.theme === th) && (!tp || q.code === tp));
+  const fo = $('focus').value, pr = loadProgress();
+  list = DATA.questions.filter(q => (!th || q.theme === th) && (!tp || q.code === tp))
+    .filter(q => fo === 'all' || (fo === 'new' && !(pr[q.id] && pr[q.id].attempts > 0)) || (fo === 'work' && !(pr[q.id] && pr[q.id].best >= q.marks)));
   if ($('order').value === 'random') list = shuffle(list.slice());
   idx = 0; $('count').textContent = list.length; show();
 }
@@ -257,6 +260,8 @@ function show(){
   $('pos').textContent = (idx+1) + ' of ' + list.length;
   $('qcode').textContent = q.code; $('qmarks').textContent = q.marks + (q.marks===1?' mark':' marks'); $('qtopic').textContent = q.topic;
   $('qtext').textContent = q.q;
+  const pr = loadProgress(), rec = pr[q.id];
+  $('qbest').textContent = rec && rec.attempts ? 'Best ' + rec.best + ' / ' + q.marks + ' (' + rec.attempts + (rec.attempts===1?' attempt':' attempts') + ')' : 'Not yet attempted';
   $('answer').classList.add('hidden'); $('reveal').disabled = false; $('next').disabled = false;
   $('saved').textContent = '';
   if ($('timed').value === 'on'){ left = q.marks * 120; $('timer').textContent = fmt(left); startTimer(); }
@@ -301,19 +306,22 @@ function next(){ stopTimer(); if (!list.length) return; idx = (idx+1) % list.len
 
 function renderStats(){
   const p = loadProgress();
-  const rows = DATA.topics.map(t => {
+  const info = DATA.topics.map(t => {
     const qs = DATA.questions.filter(q => q.code === t.code);
     const done = qs.filter(q => p[q.id] && p[q.id].attempts > 0);
     const got = done.reduce((a,q)=>a+p[q.id].best,0), max = qs.reduce((a,q)=>a+q.marks,0);
     const pct = max ? Math.round(100*got/max) : 0;
-    return '<tr><td>' + t.code + '</td><td>' + t.title + '</td><td>' + done.length + ' / ' + qs.length + '</td><td><div class="bar"><span style="width:' + pct + '%"></span></div></td><td>' + pct + '%</td></tr>';
-  }).join('');
+    return {t, done: done.length, n: qs.length, pct};
+  });
+  info.sort((a,b) => (a.done ? a.pct : 101) - (b.done ? b.pct : 101));
+  const rows = info.map(x => '<tr><td>' + x.t.code + '</td><td>' + x.t.title + '</td><td>' + x.done + ' / ' + x.n + '</td><td><div class="bar"><span style="width:' + x.pct + '%"></span></div></td><td>' + x.pct + '%</td></tr>').join('');
   $('stats').innerHTML = '<table class="prog"><tr><th>Code</th><th>Topic</th><th>Answered</th><th>Best marks</th><th></th></tr>' + rows + '</table>';
 }
 
 $('theme').addEventListener('change', () => { fillTopics(); build(); });
 $('topic').addEventListener('change', build);
 $('order').addEventListener('change', build);
+$('focus').addEventListener('change', build);
 $('timed').addEventListener('change', show);
 $('reveal').addEventListener('click', reveal);
 $('next').addEventListener('click', next);
