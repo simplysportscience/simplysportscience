@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>AS Level PE: Practice Questions | Simply Sport Science</title>
+<meta name="description" content="Interactive Cambridge AS Level Sport &amp; PE 8386 practice: questions across all three themes, with timed practice, model answers, self-marking and progress tracking."/>
+<link rel="icon" href="favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Simply Sport Science"/>
+<meta property="og:title" content="AS Level Practice Questions | Simply Sport Science"/>
+<meta property="og:description" content="Interactive Cambridge AS Level Sport &amp; PE 8386 practice with model answers and progress tracking."/>
+<meta property="og:url" content="https://simplysportscience.co.uk/cambridge-revision.html"/>
+<meta property="og:image" content="https://simplysportscience.co.uk/og-share-image.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<style>
+  :root{
+    --deep-purple:#3D1F8C; --indigo:#1A0F5C; --magenta:#C4218A; --violet:#6B2FC4; --amber:#E8A020;
+    --violet-light:#B38BFF; --magenta-light:#F07CC4; --amber-light:#F5C866; --cyan:#22D3EE;
+    --bg:#0E0A24; --bg-mid:#160F36; --card:#1C1442; --border:#33275F;
+    --white:#FFFFFF; --grey:#A39FC0; --grey-light:#D4D0EA;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--white);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;}
+
+  nav{background:rgba(14,10,36,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px;}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+  .logo img{width:42px;height:42px;object-fit:contain;}
+  .logo-tagline{font-size:9px;color:var(--amber);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;}
+  .logo-name{font-size:14px;font-weight:900;}
+  .logo-name .c1{color:var(--cyan);}.logo-name .c2{color:var(--white);}
+  .nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+  .nav-links a{color:var(--grey-light);text-decoration:none;font-size:13px;font-weight:600;padding:7px 10px;border-radius:7px;transition:all 0.2s;white-space:nowrap;}
+  .nav-links a:hover{color:var(--white);background:rgba(107,47,196,0.25);}
+  .nav-links a.active{color:var(--magenta-light);}
+  .nav-links a.teacher-link{color:var(--amber-light);}
+
+  .breadcrumb{font-size:12px;color:var(--grey);padding:10px 24px;background:var(--bg-mid);border-bottom:1px solid var(--border);}
+  .breadcrumb a{color:var(--grey-light);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--magenta-light);}
+  .breadcrumb span{color:var(--magenta-light);margin:0 6px;}
+
+  .hero{background:linear-gradient(160deg,var(--bg) 0%,var(--indigo) 55%,#2A0F3E 100%);padding:44px 24px 38px;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;top:-120px;right:-80px;width:520px;height:420px;background:radial-gradient(circle,rgba(196,33,138,0.2) 0%,transparent 70%);pointer-events:none;}
+  .hero-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:22px;position:relative;}
+  .hero-letter{width:76px;height:76px;border-radius:18px;background:linear-gradient(135deg,var(--deep-purple),var(--magenta));display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:900;flex-shrink:0;box-shadow:0 8px 26px rgba(196,33,138,0.4);}
+  .hero-label{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--amber-light);margin-bottom:4px;}
+  .hero h1{font-size:clamp(24px,4.5vw,34px);font-weight:900;line-height:1.15;margin-bottom:6px;}
+  .hero p{font-size:14px;color:var(--grey-light);line-height:1.65;}
+
+  .page-inner{max-width:900px;margin:0 auto;padding:36px 24px 56px;}
+
+  .group{margin-bottom:34px;}
+  .group-head{display:flex;align-items:baseline;gap:12px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+  .group-code{font-size:15px;font-weight:900;color:var(--amber);}
+  .group-name{font-size:18px;font-weight:900;}
+
+  .topic-list{display:flex;flex-direction:column;gap:10px;}
+  .topic{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;display:flex;align-items:center;gap:18px;text-decoration:none;transition:all 0.2s;}
+  .topic:hover{border-color:var(--magenta);transform:translateX(5px);box-shadow:0 8px 26px rgba(196,33,138,0.18);}
+  .topic-code{min-width:62px;height:48px;padding:0 10px;border-radius:11px;background:linear-gradient(135deg,var(--deep-purple),var(--violet));display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;color:var(--white);flex-shrink:0;}
+  .topic-text{flex:1;min-width:0;}
+  .topic-text h3{font-size:15px;font-weight:800;color:var(--white);margin-bottom:2px;}
+  .topic-text p{font-size:12px;color:var(--grey-light);line-height:1.5;}
+  .hl-badge{font-size:10px;font-weight:800;padding:3px 9px;border-radius:99px;background:rgba(232,160,32,0.16);color:var(--amber-light);border:1px solid rgba(232,160,32,0.4);flex-shrink:0;}
+  .topic-arrow{color:var(--magenta-light);font-size:16px;flex-shrink:0;}
+
+  .theme-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;}
+  .theme-nav a{background:var(--bg-mid);border:1px solid var(--border);border-radius:12px;padding:14px 18px;text-decoration:none;color:var(--white);font-size:13px;font-weight:700;transition:all 0.2s;}
+  .theme-nav a:hover{border-color:var(--violet);}
+  .theme-nav a span{display:block;font-size:10px;color:var(--grey);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
+  .theme-nav a.next{text-align:right;}
+
+  .hub-footer{background:#080617;padding:24px;text-align:center;border-top:1px solid var(--border);}
+  .hub-footer p{font-size:12px;color:var(--grey);}
+  .hub-footer a{color:var(--grey-light);text-decoration:none;margin:0 6px;}
+  .hub-footer a:hover{color:var(--magenta-light);}
+
+  @media(max-width:640px){
+    .nav-links{display:none;}
+    .hero{padding:30px 16px 26px;}
+    .hero-inner{flex-direction:column;align-items:flex-start;}
+    .page-inner{padding:26px 16px 40px;}
+    .topic{gap:12px;padding:14px;}
+    .topic-arrow{display:none;}
+  }
+
+  .theme-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px 22px 20px;display:flex;align-items:flex-start;gap:20px;text-decoration:none;color:var(--white);transition:all 0.2s;}
+  .theme-card:hover{border-color:var(--magenta);transform:translateY(-3px);box-shadow:0 10px 30px rgba(196,33,138,0.2);}
+  .theme-letter{width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,var(--deep-purple),var(--magenta));display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900;flex-shrink:0;box-shadow:0 6px 20px rgba(196,33,138,0.35);}
+  .theme-body{flex:1;min-width:0;}
+  .theme-count{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber-light);margin-bottom:3px;}
+  .theme-body h3{font-size:20px;font-weight:900;margin-bottom:5px;}
+  .theme-body p{font-size:13.5px;color:var(--grey-light);line-height:1.6;margin-bottom:12px;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;}
+  .chip{font-size:11px;font-weight:700;padding:4px 10px;border-radius:99px;background:rgba(179,139,255,0.14);color:var(--violet-light);border:1px solid rgba(179,139,255,0.35);}
+  .theme-go{color:var(--magenta-light);font-size:20px;flex-shrink:0;align-self:center;}
+  .theme-stack{display:flex;flex-direction:column;gap:14px;}
+  .section-title{font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--amber-light);margin:34px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+  .tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .tool{background:var(--bg-mid);border:1px solid var(--border);border-radius:12px;padding:16px 18px;text-decoration:none;color:var(--white);transition:all 0.2s;}
+  .tool:hover{border-color:var(--violet);}
+  .tool b{display:block;font-size:14px;font-weight:800;margin-bottom:2px;}
+  .tool span{font-size:12px;color:var(--grey-light);}
+  @media(max-width:640px){
+    .theme-card{flex-direction:column;gap:14px;padding:18px;}
+    .theme-go{display:none;}
+    .tool-grid{grid-template-columns:1fr;}
+  }
+
+  .rev-wrap{max-width:900px;margin:0 auto;padding:30px 24px 56px;}
+  .panel{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px 22px;margin-bottom:18px;}
+  .panel h3{font-size:14px;font-weight:900;letter-spacing:.6px;text-transform:uppercase;color:#F5C866;margin-bottom:12px;}
+  .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;}
+  .row label{font-size:12px;font-weight:700;color:var(--grey-light);}
+  select,button,input[type=number]{font:inherit;}
+  select{background:#0E0A24;color:var(--white);border:1px solid var(--border);border-radius:10px;padding:8px 10px;min-width:150px;}
+  .btn{background:linear-gradient(135deg,#6B2FC4,#C4218A);color:#fff;border:0;border-radius:99px;padding:9px 18px;font-weight:800;font-size:13px;cursor:pointer;box-shadow:0 0 18px rgba(196,33,138,.25);}
+  .btn.alt{background:transparent;border:1px solid rgba(179,139,255,.5);box-shadow:none;color:#D9C8FF;}
+  .btn:disabled{opacity:.4;cursor:not-allowed;}
+  .qmeta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+  .qtext{font-size:17px;line-height:1.6;color:var(--white);margin-bottom:14px;}
+  .timer{font-variant-numeric:tabular-nums;font-size:22px;font-weight:900;color:#F5C866;}
+  .timer.over{color:#F87171;}
+  .points{list-style:none;padding:0;margin:8px 0 14px;}
+  .points li{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;background:rgba(14,10,36,.6);border:1px solid var(--border);border-radius:12px;margin-bottom:8px;font-size:14px;color:var(--grey-light);line-height:1.55;}
+  .points input{margin-top:4px;accent-color:#C4218A;transform:scale(1.2);}
+  .score{font-size:20px;font-weight:900;color:#F5C866;margin:6px 0 10px;}
+  .note{font-size:12.5px;color:var(--grey);line-height:1.6;}
+  table.prog{width:100%;border-collapse:collapse;font-size:13px;}
+  table.prog th{text-align:left;color:var(--grey-light);font-weight:800;padding:8px 6px;border-bottom:1px solid var(--border);}
+  table.prog td{padding:8px 6px;border-bottom:1px solid rgba(51,39,95,.6);color:var(--grey-light);}
+  .bar{height:8px;background:#1C1442;border-radius:99px;overflow:hidden;min-width:120px;}
+  .bar span{display:block;height:100%;background:linear-gradient(90deg,#7A45D6,#E040FB);}
+  .hidden{display:none !important;}
+  .pill{display:inline-block;font-size:11px;font-weight:800;padding:4px 11px;border-radius:99px;letter-spacing:.3px;}
+  .pill-code{background:linear-gradient(135deg,#3D1F8C,#C4218A);color:#fff;}
+  .pill-btec{background:rgba(179,139,255,.14);color:#D9C8FF;border:1px solid rgba(179,139,255,.4);}
+
+  .hero-letter.cam,.btn{background:linear-gradient(135deg,#B91C1C,#EF4444);}
+  .btn{box-shadow:0 0 18px rgba(239,68,68,.25);}
+  .btn.alt{background:transparent;border:1px solid rgba(252,165,165,.5);box-shadow:none;color:#FCA5A5;}
+  .pill-code{background:linear-gradient(135deg,#7F1D1D,#EF4444);color:#fff;}
+  .pill-btec{background:rgba(239,68,68,.12);color:#FCA5A5;border:1px solid rgba(239,68,68,.4);}
+  .points input{accent-color:#EF4444;}
+  .timer{color:#FCA5A5;}
+  select:focus{outline:1px solid #EF4444;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <img src="sss-icon.png" alt="Simply Sport Science"/>
+      <div>
+        <div class="logo-tagline">Sport Science Sorted</div>
+        <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ib-hub.html">IB Sport Science</a></li>
+      <li><a href="cambridge-hub.html" class="active">AS Level PE</a></li>
+      <li><a href="btec-hub.html">BTEC Sport</a></li>
+      <li><a href="az-library.html">A–Z</a></li>
+      <li><a href="teacher-hub.html" class="teacher-link">Teacher Hub</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb"><div style="max-width:900px;margin:0 auto;">
+  <a href="index.html">Home</a><span>›</span><a href="revision.html">Revision</a><span>›</span>AS Level practice questions
+</div></div>
+
+<div class="hero"><div class="hero-inner">
+  <div class="hero-letter cam">AS</div>
+  <div>
+    <div class="hero-label">Interactive practice · 49 questions</div>
+    <h1>AS Level Practice Questions</h1>
+    <p>Answer each question, reveal the model answer, then tick the points you included. Your score is the number of points you ticked, up to the marks available.</p>
+  </div>
+</div></div>
+
+<div class="rev-wrap">
+
+  <div class="panel">
+    <h3>Choose your practice</h3>
+    <div class="row">
+      <div><label for="theme">Theme</label><br><select id="theme"><option value="">All themes</option><option value="1">Theme 1</option><option value="2">Theme 2</option><option value="3">Theme 3</option></select></div>
+      <div><label for="topic">Topic</label><br><select id="topic"></select></div>
+      <div><label for="order">Order</label><br><select id="order"><option value="random">Random</option><option value="inorder">In order</option></select></div>
+      <div><label for="timed">Timer</label><br><select id="timed"><option value="on">2 minutes per mark</option><option value="off">No timer</option></select></div>
+      <div><label for="focus">Focus</label><br><select id="focus"><option value="all">All questions</option><option value="new">Not yet attempted</option><option value="work">Needs work (not full marks)</option></select></div>
+    </div>
+    <p class="note" style="margin-top:12px;">Questions shown: <span id="count">0</span>.</p>
+  </div>
+
+  <div class="panel" id="card">
+    <h3>Question <span id="pos"></span></h3>
+    <div class="qmeta"><span class="pill pill-code" id="qcode"></span><span class="pill pill-btec" id="qmarks"></span><span class="pill pill-btec" id="qtopic"></span><span class="pill pill-btec" id="qbest"></span></div>
+    <div class="qtext" id="qtext"></div>
+    <div class="row" style="margin-bottom:14px;">
+      <span class="timer" id="timer"></span>
+      <button class="btn" id="reveal">Show model answer</button>
+      <button class="btn alt" id="next">Next question</button>
+    </div>
+    <div id="answer" class="hidden">
+      <h3 id="ahead"></h3>
+      <ul class="points" id="points"></ul>
+      <div class="score" id="score"></div>
+      <div class="row"><button class="btn" id="save">Save score</button><span class="note" id="saved"></span></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Your progress</h3>
+    <div id="stats"></div>
+    <div class="row" style="margin-top:12px;"><button class="btn alt" id="reset">Reset progress</button></div>
+    <p class="note" style="margin-top:10px;">Topics are listed weakest first, so the ones that need most work are at the top. Progress is saved in this browser only. Nothing is sent to a server.</p>
+  </div>
+
+  <div class="tool-grid">
+    <a href="cambridge-hub.html" class="tool"><b>AS Level hub</b><span>All themes and topics.</span></a>
+    <a href="cambridge-command-words.html" class="tool"><b>Command words</b><span>What each command word requires.</span></a>
+  </div>
+
+</div>
+
+<div class="hub-footer">
+  <p><a href="index.html">Home</a>·<a href="az-library.html">A–Z Library</a>·<a href="teacher-hub.html">Teacher Hub</a>·<a href="about.html">About</a>·<a href="privacy.html">Privacy</a></p>
+  <p style="margin-top:10px;">© 2026 Simply Sport Science · simplysportscience.co.uk</p>
+</div>
+
+<script>
+const DATA = {"topics": [{"code": "Topic 1", "title": "Joints, Movements and Muscles", "theme": "1", "theme_letter": "1", "file": "cam-1-joints-movements-muscles.html"}, {"code": "Topic 2", "title": "Biomechanics", "theme": "1", "theme_letter": "1", "file": "cam-2-biomechanics.html"}, {"code": "Topic 3", "title": "The Cardiovascular System", "theme": "1", "theme_letter": "1", "file": "cam-3-cardiovascular-system.html"}, {"code": "Topic 4", "title": "The Respiratory System", "theme": "1", "theme_letter": "1", "file": "cam-4-respiratory-system.html"}, {"code": "Topic 5", "title": "Skill and Ability", "theme": "2", "theme_letter": "2", "file": "cam-5-skill-and-ability.html"}, {"code": "Topic 6", "title": "Theories of Learning", "theme": "2", "theme_letter": "2", "file": "cam-6-theories-of-learning.html"}, {"code": "Topic 7", "title": "Information Processing", "theme": "2", "theme_letter": "2", "file": "cam-7-information-processing.html"}, {"code": "Topic 8", "title": "Practice and Learning", "theme": "2", "theme_letter": "2", "file": "cam-8-practice-and-learning.html"}, {"code": "Topic 9", "title": "Sociocultural Issues", "theme": "3", "theme_letter": "3", "file": "cam-9-sociocultural-issues.html"}, {"code": "Topic 10", "title": "Ethics and Deviance", "theme": "3", "theme_letter": "3", "file": "cam-10-ethics-and-deviance.html"}, {"code": "Topic 11", "title": "Commercialisation and the Media", "theme": "3", "theme_letter": "3", "file": "cam-11-commercialisation-and-media.html"}, {"code": "Topic 12", "title": "The Use of Technology", "theme": "3", "theme_letter": "3", "file": "cam-12-use-of-technology.html"}], "questions": [{"id": "T1-1", "code": "Topic 1", "topic": "Joints, Movements and Muscles", "theme": "1", "file": "cam-1-joints-movements-muscles.html", "q": "Identify the type of synovial joint at the knee and name the bones that articulate there.", "marks": 2, "heading": "Model answer", "points": ["Hinge joint.", "Femur and tibia."]}, {"id": "T1-2", "code": "Topic 1", "topic": "Joints, Movements and Muscles", "theme": "1", "file": "cam-1-joints-movements-muscles.html", "q": "Explain why the shoulder has a greater range of movement than the elbow.", "marks": 3, "heading": "Model answer", "points": ["The shoulder is a ball-and-socket joint, which is multi-axial and allows movement in many planes.", "The elbow is a hinge joint, which is uniaxial and moves in one plane only.", "Therefore the shoulder can move through a much greater range, at the cost of stability."]}, {"id": "T1-3", "code": "Topic 1", "topic": "Joints, Movements and Muscles", "theme": "1", "file": "cam-1-joints-movements-muscles.html", "q": "During the lowering phase of a bicep curl, the biceps brachii is working eccentrically. Explain what it is controlling.", "marks": 2, "heading": "Model answer", "points": ["It is controlling elbow extension, a movement in the opposite direction to its usual action of elbow flexion.", "The muscle lengthens while producing force, so the arm is lowered in a controlled way."]}, {"id": "T1-4", "code": "Topic 1", "topic": "Joints, Movements and Muscles", "theme": "1", "file": "cam-1-joints-movements-muscles.html", "q": "Describe the structure and function of fast glycolytic (type IIx) muscle fibres and give one sporting example of their use.", "marks": 3, "heading": "Model answer", "points": ["Fast contraction, high force production and rapid fatigue, because they are adapted for anaerobic glycolysis.", "Use of the fibres is shown by a sprint, such as the 100 m."]}, {"id": "T1-5", "code": "Topic 1", "topic": "Joints, Movements and Muscles", "theme": "1", "file": "cam-1-joints-movements-muscles.html", "q": "Analyse the action of elbow flexion during a bicep curl, using the five-step method.", "marks": 4, "heading": "Model answer", "points": ["Joint: elbow; hinge joint, articulating bones humerus, radius and ulna.", "Movement: flexion; agonist biceps brachii.", "Antagonist triceps brachii; fixators stabilise the upper arm.", "Contraction type is concentric as the biceps shortens while lifting."]}, {"id": "T2-1", "code": "Topic 2", "topic": "Biomechanics", "theme": "1", "file": "cam-2-biomechanics.html", "q": "A 90 kg player is moving at 6 m/s. Calculate the momentum of the player.", "marks": 2, "heading": "Model answer", "points": ["Momentum = mass × velocity = 90 kg × 6 m/s.", "= 540 kg m/s."]}, {"id": "T2-2", "code": "Topic 2", "topic": "Biomechanics", "theme": "1", "file": "cam-2-biomechanics.html", "q": "Explain why a diver rotates faster when they tuck than when they extend their body.", "marks": 3, "heading": "Model answer", "points": ["Tucking brings the mass closer to the axis of rotation, which reduces the moment of inertia.", "Angular momentum is conserved, so when the moment of inertia falls the angular velocity increases.", "Extending the body does the reverse, slowing the rotation."]}, {"id": "T2-3", "code": "Topic 2", "topic": "Biomechanics", "theme": "1", "file": "cam-2-biomechanics.html", "q": "Explain why the flight path of a shot put is parabolic, but the flight path of a badminton shuttlecock is not.", "marks": 3, "heading": "Model answer", "points": ["The shot put is dense and compact, so air resistance has little effect on its flight.", "The shuttlecock has a large surface area for its mass, so air resistance is significant and changes its path.", "Its descent is therefore steeper and not parabolic."]}, {"id": "T2-4", "code": "Topic 2", "topic": "Biomechanics", "theme": "1", "file": "cam-2-biomechanics.html", "q": "Explain two factors that make a rugby player less likely to be knocked over.", "marks": 3, "heading": "Model answer", "points": ["A wider base of support, because the line of gravity is more likely to fall within it.", "A lower centre of mass, which makes the body more stable."]}, {"id": "T2-5", "code": "Topic 2", "topic": "Biomechanics", "theme": "1", "file": "cam-2-biomechanics.html", "q": "A sprinter pushes backwards against the blocks. Using Newton’s third law, explain how this produces forward motion.", "marks": 2, "heading": "Model answer", "points": ["For every action there is an equal and opposite reaction.", "The blocks push the sprinter forwards with a force equal to the force the sprinter applies backwards."]}, {"id": "T3-1", "code": "Topic 3", "topic": "The Cardiovascular System", "theme": "1", "file": "cam-3-cardiovascular-system.html", "q": "Calculate the cardiac output of a person with a heart rate of 150 beats per minute and a stroke volume of 120 ml.", "marks": 2, "heading": "Model answer", "points": ["Stroke volume = 120 ml = 0.12 l.", "Cardiac output = 150 × 0.12 = 18 l/min."]}, {"id": "T3-2", "code": "Topic 3", "topic": "The Cardiovascular System", "theme": "1", "file": "cam-3-cardiovascular-system.html", "q": "Describe the pathway of an electrical impulse through the heart, from the start of one heartbeat to ventricular contraction.", "marks": 4, "heading": "Model answer", "points": ["The impulse starts at the sinoatrial node in the right atrium.", "It spreads across both atria, causing atrial systole.", "It reaches the atrioventricular node, which delays it.", "It passes down the bundle of His and the Purkyne tissue, causing ventricular systole from the base upwards."]}, {"id": "T3-3", "code": "Topic 3", "topic": "The Cardiovascular System", "theme": "1", "file": "cam-3-cardiovascular-system.html", "q": "Explain how Starling’s law explains the increase in stroke volume during exercise.", "marks": 3, "heading": "Model answer", "points": ["Exercise increases venous return, so the ventricle fills with more blood.", "The greater stretch of the myocardium produces a stronger contraction.", "Therefore stroke volume increases."]}, {"id": "T3-4", "code": "Topic 3", "topic": "The Cardiovascular System", "theme": "1", "file": "cam-3-cardiovascular-system.html", "q": "Explain how blood flow is redistributed during exercise.", "marks": 4, "heading": "Model answer", "points": ["The sympathetic nervous system causes vasoconstriction in arterioles supplying inactive tissue, such as the gut.", "Vasodilation occurs in the arterioles supplying working muscles.", "Precapillary sphincters open in the active muscles to increase blood flow.", "This increases blood supply to the muscles that need oxygen."]}, {"id": "T3-5", "code": "Topic 3", "topic": "The Cardiovascular System", "theme": "1", "file": "cam-3-cardiovascular-system.html", "q": "Compare the resting heart rate and stroke volume of an untrained individual and a trained athlete.", "marks": 3, "heading": "Model answer", "points": ["The untrained individual has a resting heart rate of 60–80 beats per minute, compared with 30–70 for the trained athlete.", "The trained athlete has a larger resting stroke volume, 80–120 ml, compared with 60–80 ml for the untrained individual.", "This is because training increases the stroke volume, so the same cardiac output needs fewer beats."]}, {"id": "T4-1", "code": "Topic 4", "topic": "The Respiratory System", "theme": "1", "file": "cam-4-respiratory-system.html", "q": "Calculate the minute ventilation of an athlete with a breathing rate of 40 breaths per minute and a tidal volume of 2.0 litres.", "marks": 2, "heading": "Model answer", "points": ["Minute ventilation = breathing rate × tidal volume = 40 × 2.0.", "= 80 litres per minute."]}, {"id": "T4-2", "code": "Topic 4", "topic": "The Respiratory System", "theme": "1", "file": "cam-4-respiratory-system.html", "q": "Explain the role of the diaphragm during inspiration at rest.", "marks": 2, "heading": "Model answer", "points": ["The diaphragm contracts and flattens, increasing the volume of the thorax.", "This lowers the pressure in the lungs, so air flows in."]}, {"id": "T4-3", "code": "Topic 4", "topic": "The Respiratory System", "theme": "1", "file": "cam-4-respiratory-system.html", "q": "Explain how the Hering–Breuer reflex protects the lungs.", "marks": 3, "heading": "Model answer", "points": ["Stretch receptors in the lungs detect inflation.", "They send signals to the medulla, which ends inspiration.", "This prevents over-inflation of the lungs."]}, {"id": "T4-4", "code": "Topic 4", "topic": "The Respiratory System", "theme": "1", "file": "cam-4-respiratory-system.html", "q": "Explain why oxygen diffuses from the alveoli into the blood.", "marks": 3, "heading": "Model answer", "points": ["The partial pressure of oxygen is higher in the alveoli than in the blood.", "Oxygen therefore diffuses down its partial pressure gradient, from high to low.", "It then binds to haemoglobin for transport."]}, {"id": "T4-5", "code": "Topic 4", "topic": "The Respiratory System", "theme": "1", "file": "cam-4-respiratory-system.html", "q": "Describe how the expiratory muscles act during exercise.", "marks": 3, "heading": "Model answer", "points": ["Expiration becomes active during exercise.", "The internal intercostals pull the ribs down.", "Rectus abdominis compresses the abdomen, pushing the diaphragm up."]}, {"id": "T5-1", "code": "Topic 5", "topic": "Skill and Ability", "theme": "2", "file": "cam-5-skill-and-ability.html", "q": "Classify a basketball free throw on the continua of muscular involvement, environmental influence and pacing. Justify each classification.", "marks": 3, "heading": "Model answer", "points": ["Muscular involvement: fine, because the shot depends on precise hand and wrist control.", "Environmental influence: closed, because the shooter is not reacting to a changing environment.", "Pacing: internally paced, because the shooter decides when to start the shot."]}, {"id": "T5-2", "code": "Topic 5", "topic": "Skill and Ability", "theme": "2", "file": "cam-5-skill-and-ability.html", "q": "Explain what is meant by an ability, and explain how an ability differs from a skill.", "marks": 3, "heading": "Model answer", "points": ["An ability is a relatively stable, underlying capacity that supports the learning of many skills.", "A skill is learned and specific to a particular task.", "For example, reaction ability is general, while the technique used in a specific sport is a learned skill."]}, {"id": "T5-3", "code": "Topic 5", "topic": "Skill and Ability", "theme": "2", "file": "cam-5-skill-and-ability.html", "q": "Explain why a tennis rally is classified as open rather than closed.", "marks": 2, "heading": "Model answer", "points": ["The environment is constantly changing, because the opponent’s shots vary in speed, direction and placement.", "The performer must read and respond to these changes."]}, {"id": "T6-1", "code": "Topic 6", "topic": "Theories of Learning", "theme": "2", "file": "cam-6-theories-of-learning.html", "q": "Describe what is meant by a motor programme.", "marks": 2, "heading": "Model answer", "points": ["A generalised series of movements made up of subroutines.", "Completed in the correct order, as a set of nerve impulses to the muscles."]}, {"id": "T6-2", "code": "Topic 6", "topic": "Theories of Learning", "theme": "2", "file": "cam-6-theories-of-learning.html", "q": "A coach praises a player each time they hit the target. Explain this using operant conditioning.", "marks": 3, "heading": "Model answer", "points": ["Praise is positive reinforcement, which strengthens the stimulus–response bond.", "The correct response is therefore more likely to be repeated.", "Trial and error and shaping are used as the player moves towards the target skill."]}, {"id": "T6-3", "code": "Topic 6", "topic": "Theories of Learning", "theme": "2", "file": "cam-6-theories-of-learning.html", "q": "Explain how Bandura’s observational learning theory explains a young footballer copying the celebrations of a professional.", "marks": 3, "heading": "Model answer", "points": ["Attention: the footballer watches the professional closely.", "Retention: they remember the behaviour, often by rehearsing it mentally.", "Motivation: the behaviour is admired and rewarded, so the footballer wants to copy it."]}, {"id": "T6-4", "code": "Topic 6", "topic": "Theories of Learning", "theme": "2", "file": "cam-6-theories-of-learning.html", "q": "Explain the difference between a recall schema and a recognition schema.", "marks": 2, "heading": "Model answer", "points": ["A recall schema is the rule used to produce a movement, given the conditions and the response required.", "A recognition schema is the rule used to judge the outcome by comparing sensory information with what was expected."]}, {"id": "T7-1", "code": "Topic 7", "topic": "Information Processing", "theme": "2", "file": "cam-7-information-processing.html", "q": "State the stages of the information processing model in the order they occur.", "marks": 3, "heading": "Model answer", "points": ["Display, then sensory information detected by the sense organs.", "Perception, then decision making.", "Effector mechanism producing the response, with feedback returning to the start."]}, {"id": "T7-2", "code": "Topic 7", "topic": "Information Processing", "theme": "2", "file": "cam-7-information-processing.html", "q": "Explain the difference between knowledge of performance and knowledge of results, and give an example of each.", "marks": 3, "heading": "Model answer", "points": ["Knowledge of performance describes how the movement was made, for example the position of the elbow.", "Knowledge of results describes the outcome, for example whether the shot went in.", "Example: a coach’s comment on technique versus the scoreline."]}, {"id": "T7-3", "code": "Topic 7", "topic": "Information Processing", "theme": "2", "file": "cam-7-information-processing.html", "q": "A goalkeeper has four possible shooting options to respond to. Explain how Hick’s law applies.", "marks": 2, "heading": "Model answer", "points": ["Reaction time increases as the number of stimulus–response choices increases.", "With four options, the goalkeeper’s decision takes longer than with one, so the response is slower."]}, {"id": "T7-4", "code": "Topic 7", "topic": "Information Processing", "theme": "2", "file": "cam-7-information-processing.html", "q": "Explain why a player might use a feint before passing the ball.", "marks": 3, "heading": "Model answer", "points": ["The feint is a deception that disguises the intended action.", "It delays the opponent’s decision making, so the opponent’s response is slower.", "The attacking player therefore has more time to make the pass."]}, {"id": "T8-1", "code": "Topic 8", "topic": "Practice and Learning", "theme": "2", "file": "cam-8-practice-and-learning.html", "q": "Explain the difference between massed and distributed practice.", "marks": 2, "heading": "Model answer", "points": ["Massed practice has short rest periods between repetitions, while distributed practice has longer rest periods.", "Massed practice gives more repetitions in less time, but distributed practice usually gives better retention."]}, {"id": "T8-2", "code": "Topic 8", "topic": "Practice and Learning", "theme": "2", "file": "cam-8-practice-and-learning.html", "q": "Evaluate the use of whole–part–whole practice for a learner in the associative stage.", "marks": 4, "heading": "Model answer", "points": ["The whole skill is performed, giving the learner a sense of the whole action.", "The difficult part is then practised, which targets the element that is causing errors.", "The whole skill is performed again, so the part is placed back in context.", "The method suits the associative stage, although it takes more time than whole practice alone."]}, {"id": "T8-3", "code": "Topic 8", "topic": "Practice and Learning", "theme": "2", "file": "cam-8-practice-and-learning.html", "q": "Explain how a coach could optimise positive transfer between the forehand in tennis and the forehand in squash.", "marks": 3, "heading": "Model answer", "points": ["Emphasise the common elements, such as the grip, the shoulder rotation and the timing of the swing.", "Teach the underlying principles of the stroke, which apply to both sports.", "Use varied practice so the learner can adapt the stroke to different situations."]}, {"id": "T8-4", "code": "Topic 8", "topic": "Practice and Learning", "theme": "2", "file": "cam-8-practice-and-learning.html", "q": "Explain the difference between tangible and intangible rewards, and give one example of each.", "marks": 2, "heading": "Model answer", "points": ["Tangible rewards are physical, such as medals or prize money.", "Intangible rewards are non-physical, such as praise or recognition."]}, {"id": "T9-1", "code": "Topic 9", "topic": "Sociocultural Issues", "theme": "3", "file": "cam-9-sociocultural-issues.html", "q": "Describe two characteristics of physical education that distinguish it from sport.", "marks": 2, "heading": "Model answer", "points": ["Physical education is planned, progressive learning delivered to all pupils, whereas sport is competitive.", "Physical education is teacher-led and aims to build physical competence, while sport is organised around predetermined rules and officials."]}, {"id": "T9-2", "code": "Topic 9", "topic": "Sociocultural Issues", "theme": "3", "file": "cam-9-sociocultural-issues.html", "q": "Explain how economic status can affect participation in physical activity.", "marks": 3, "heading": "Model answer", "points": ["Costs of equipment, membership and travel can be a barrier for people on lower incomes.", "This reduces the range of activities that people can take part in.", "As a result, participation may be lower in the groups that can least afford it."]}, {"id": "T9-3", "code": "Topic 9", "topic": "Sociocultural Issues", "theme": "3", "file": "cam-9-sociocultural-issues.html", "q": "Evaluate the benefits and limitations of an elitist policy for excellence in sport.", "marks": 6, "heading": "Model answer", "points": ["Benefit: successful elite athletes provide role models and can inspire participation.", "Benefit: investment can increase medal success and raise the profile of the sport.", "Limitation: the cost is high and may reduce money for grassroots participation.", "Limitation: a focus on a few performers may put pressure on young athletes.", "Judgement: the benefits depend on whether the policy also supports grassroots participation."]}, {"id": "T9-4", "code": "Topic 9", "topic": "Sociocultural Issues", "theme": "3", "file": "cam-9-sociocultural-issues.html", "q": "Explain the role of talent identification in the pathway to excellence.", "marks": 3, "heading": "Model answer", "points": ["Talent identification selects young performers who have the potential to reach elite level.", "These performers are then placed on pathways such as academies, squads or scholarships.", "This allows the provision for excellence to be targeted at those most likely to succeed."]}, {"id": "T10-1", "code": "Topic 10", "topic": "Ethics and Deviance", "theme": "3", "file": "cam-10-ethics-and-deviance.html", "q": "Explain two reasons why a performer might use a prohibited performance-enhancing drug.", "marks": 4, "heading": "Model answer", "points": ["To increase fitness, such as strength or endurance, to gain an advantage.", "To speed up recovery after injury, so that the performer can return to competition sooner.", "Pressure to win is a motivation, as the performer feels they must succeed.", "Each reason is explained in terms of the advantage it gives the performer."]}, {"id": "T10-2", "code": "Topic 10", "topic": "Ethics and Deviance", "theme": "3", "file": "cam-10-ethics-and-deviance.html", "q": "Explain the consequences of the use of prohibited PEDs for society.", "marks": 3, "heading": "Model answer", "points": ["Young people may copy the behaviour of role models who use drugs, because they admire them.", "Public trust in sport and its values is damaged.", "Health services may face costs from the health problems caused by drug use."]}, {"id": "T10-3", "code": "Topic 10", "topic": "Ethics and Deviance", "theme": "3", "file": "cam-10-ethics-and-deviance.html", "q": "Explain how tanking affects the unpredictability of competition.", "marks": 3, "heading": "Model answer", "points": ["Tanking is deliberately losing a match, so the outcome is decided before the match is played.", "This removes the unpredictability of the contest, which is one of the values that makes competition valuable.", "Spectators and sponsors lose confidence in the result."]}, {"id": "T10-4", "code": "Topic 10", "topic": "Ethics and Deviance", "theme": "3", "file": "cam-10-ethics-and-deviance.html", "q": "Evaluate the use of sanctions as a strategy to prevent violence by spectators.", "marks": 4, "heading": "Model answer", "points": ["Sanctions such as bans and fines deter spectators who want to avoid the penalty.", "They are effective where the spectator can be identified, through CCTV and ticketing.", "However, sanctions only act after violence has occurred and do not change the attitudes that cause it.", "Sanctions are therefore most effective when combined with education and stewarding."]}, {"id": "T11-1", "code": "Topic 11", "topic": "Commercialisation and the Media", "theme": "3", "file": "cam-11-commercialisation-and-media.html", "q": "Explain how sponsorship has contributed to the commercialisation of sport.", "marks": 3, "heading": "Model answer", "points": ["Sponsors provide money for events and performers, in return for publicity.", "This allows sport to become more professional and better funded.", "Sport in turn gives sponsors an audience and an association with success."]}, {"id": "T11-2", "code": "Topic 11", "topic": "Commercialisation and the Media", "theme": "3", "file": "cam-11-commercialisation-and-media.html", "q": "Explain what is meant by the golden triangle.", "marks": 3, "heading": "Model answer", "points": ["The golden triangle is the relationship between sponsors or business, the media and sport.", "Each depends on the others: sport provides the events, the media broadcast them, and sponsors fund both.", "Each can influence the others, for example by changing event timing."]}, {"id": "T11-3", "code": "Topic 11", "topic": "Commercialisation and the Media", "theme": "3", "file": "cam-11-commercialisation-and-media.html", "q": "Evaluate the effect of commercialisation on primary spectators.", "marks": 4, "heading": "Model answer", "points": ["Benefit: better facilities, entertainment and services at the event.", "Limitation: higher ticket prices can exclude some people.", "Limitation: scheduling for broadcasters can change the event and the atmosphere.", "Judgement: the benefits depend on whether the price and experience are accessible to the wider audience."]}, {"id": "T12-1", "code": "Topic 12", "topic": "The Use of Technology", "theme": "3", "file": "cam-12-use-of-technology.html", "q": "Explain how a force plate can be used in the analysis of a sprint start.", "marks": 3, "heading": "Model answer", "points": ["A force plate records the forces the performer applies to the ground.", "This data shows the force, its direction and how it changes through the start.", "It can be used to identify weaknesses and to plan training."]}, {"id": "T12-2", "code": "Topic 12", "topic": "The Use of Technology", "theme": "3", "file": "cam-12-use-of-technology.html", "q": "Explain one advantage and one disadvantage of photo-finish cameras for officials.", "marks": 3, "heading": "Model answer", "points": ["Advantage: the photo-finish gives an objective decision in close results.", "Disadvantage: the technology can take time, which delays the official result and can disrupt the event."]}, {"id": "T12-3", "code": "Topic 12", "topic": "The Use of Technology", "theme": "3", "file": "cam-12-use-of-technology.html", "q": "Evaluate the advantages and disadvantages of motion tracking software for a coach.", "marks": 4, "heading": "Model answer", "points": ["Advantage: objective data on player movement can inform tactics and training.", "Advantage: data can be used to track improvement over time.", "Disadvantage: the software is expensive, so it may be available only to well-funded teams.", "Disadvantage: coaches may rely on data over observation and experience."]}]};
+const KEY = 'camRevisionProgress.v1';
+let list = [], idx = 0, timerId = null, left = 0;
+const $ = id => document.getElementById(id);
+
+function loadProgress(){ try { return JSON.parse(localStorage.getItem(KEY)) || {}; } catch(e){ return {}; } }
+function saveProgress(p){ try { localStorage.setItem(KEY, JSON.stringify(p)); } catch(e){} }
+
+function fillTopics(){
+  const th = $('theme').value;
+  const t = $('topic'); t.innerHTML = '<option value="">All topics</option>';
+  DATA.topics.filter(x => !th || x.theme_letter === th).forEach(x => {
+    const o = document.createElement('option'); o.value = x.code; o.textContent = x.code + ' ' + x.title; t.appendChild(o);
+  });
+}
+function build(){
+  const th = $('theme').value, tp = $('topic').value;
+  const fo = $('focus').value, pr = loadProgress();
+  list = DATA.questions.filter(q => (!th || q.theme === th) && (!tp || q.code === tp))
+    .filter(q => fo === 'all' || (fo === 'new' && !(pr[q.id] && pr[q.id].attempts > 0)) || (fo === 'work' && !(pr[q.id] && pr[q.id].best >= q.marks)));
+  if ($('order').value === 'random') list = shuffle(list.slice());
+  idx = 0; $('count').textContent = list.length; show();
+}
+function shuffle(a){ for (let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+
+function show(){
+  stopTimer();
+  if (!list.length){ $('qtext').textContent = 'No questions for this choice.'; $('reveal').disabled = true; $('next').disabled = true; $('answer').classList.add('hidden'); $('timer').textContent=''; $('pos').textContent=''; return; }
+  const q = list[idx];
+  $('pos').textContent = (idx+1) + ' of ' + list.length;
+  $('qcode').textContent = q.code; $('qmarks').textContent = q.marks + (q.marks===1?' mark':' marks'); $('qtopic').textContent = q.topic;
+  $('qtext').textContent = q.q;
+  const pr = loadProgress(), rec = pr[q.id];
+  $('qbest').textContent = rec && rec.attempts ? 'Best ' + rec.best + ' / ' + q.marks + ' (' + rec.attempts + (rec.attempts===1?' attempt':' attempts') + ')' : 'Not yet attempted';
+  $('answer').classList.add('hidden'); $('reveal').disabled = false; $('next').disabled = false;
+  $('saved').textContent = '';
+  if ($('timed').value === 'on'){ left = q.marks * 120; $('timer').textContent = fmt(left); startTimer(); }
+  else $('timer').textContent = '';
+}
+function fmt(s){ const m = Math.floor(s/60), r = s%60; return m + ':' + String(r).padStart(2,'0'); }
+function startTimer(){
+  $('timer').classList.remove('over');
+  timerId = setInterval(() => { left--; if (left <= 0){ left = 0; $('timer').classList.add('over'); stopTimer(); } $('timer').textContent = fmt(left); }, 1000);
+}
+function stopTimer(){ if (timerId){ clearInterval(timerId); timerId = null; } }
+
+function reveal(){
+  stopTimer();
+  const q = list[idx];
+  $('ahead').textContent = q.heading;
+  const ul = $('points'); ul.innerHTML = '';
+  q.points.forEach((p, i) => {
+    const li = document.createElement('li');
+    const cb = document.createElement('input'); cb.type = 'checkbox'; cb.id = 'pt' + i; cb.addEventListener('change', updateScore);
+    const lab = document.createElement('label'); lab.htmlFor = cb.id; lab.textContent = p;
+    li.appendChild(cb); li.appendChild(lab); ul.appendChild(li);
+  });
+  $('answer').classList.remove('hidden');
+  updateScore();
+}
+function ticked(){ return [...document.querySelectorAll('#points input')].filter(c => c.checked).length; }
+function updateScore(){
+  const q = list[idx];
+  const s = Math.min(ticked(), q.marks);
+  $('score').textContent = 'Score: ' + s + ' / ' + q.marks;
+  return s;
+}
+function saveScore(){
+  const q = list[idx]; const s = updateScore(); const p = loadProgress();
+  const r = p[q.id] || { attempts: 0, best: 0, last: 0, marks: q.marks };
+  r.attempts += 1; r.last = s; r.best = Math.max(r.best, s); r.marks = q.marks; p[q.id] = r; saveProgress(p);
+  $('saved').textContent = 'Saved. Best so far: ' + r.best + ' / ' + q.marks + '.';
+  renderStats();
+}
+function next(){ stopTimer(); if (!list.length) return; idx = (idx+1) % list.length; show(); }
+
+function renderStats(){
+  const p = loadProgress();
+  const info = DATA.topics.map(t => {
+    const qs = DATA.questions.filter(q => q.code === t.code);
+    const done = qs.filter(q => p[q.id] && p[q.id].attempts > 0);
+    const got = done.reduce((a,q)=>a+p[q.id].best,0), max = qs.reduce((a,q)=>a+q.marks,0);
+    const pct = max ? Math.round(100*got/max) : 0;
+    return {t, done: done.length, n: qs.length, pct};
+  });
+  info.sort((a,b) => (a.done ? a.pct : 101) - (b.done ? b.pct : 101));
+  const rows = info.map(x => '<tr><td>' + x.t.code + '</td><td>' + x.t.title + '</td><td>' + x.done + ' / ' + x.n + '</td><td><div class="bar"><span style="width:' + x.pct + '%"></span></div></td><td>' + x.pct + '%</td></tr>').join('');
+  $('stats').innerHTML = '<table class="prog"><tr><th>Code</th><th>Topic</th><th>Answered</th><th>Best marks</th><th></th></tr>' + rows + '</table>';
+}
+
+$('theme').addEventListener('change', () => { fillTopics(); build(); });
+$('topic').addEventListener('change', build);
+$('order').addEventListener('change', build);
+$('focus').addEventListener('change', build);
+$('timed').addEventListener('change', show);
+$('reveal').addEventListener('click', reveal);
+$('next').addEventListener('click', next);
+$('save').addEventListener('click', saveScore);
+$('reset').addEventListener('click', () => { if (confirm('Reset all saved progress in this browser?')){ saveProgress({}); renderStats(); } });
+fillTopics(); build(); renderStats();
+</script>
+
+</body>
+</html>
