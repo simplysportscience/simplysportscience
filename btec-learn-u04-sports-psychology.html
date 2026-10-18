@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Learn: Unit 4 Sports Psychology | BTEC Sport | Simply Sport Science</title>
+<meta name="description" content="Student learning for Unit 4: Sports Psychology. Deep dive, worked examples, practice and key terms."/>
+<link rel="icon" href="favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"/>
+<link rel="apple-touch-icon" href="apple-touch-icon.png"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Simply Sport Science"/>
+<meta property="og:title" content="IB Sport, Exercise &amp; Health Science | Simply Sport Science"/>
+<meta property="og:description" content="Three themes and 29 topic pages for the 2026 IB SEHS syllabus."/>
+<meta property="og:url" content="https://simplysportscience.co.uk/ib-hub.html"/>
+<meta property="og:image" content="https://simplysportscience.co.uk/og-share-image.jpg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<style>
+  /* ═══ BRAND PALETTE — identical on every topic page ═══ */
+  :root{
+    --deep-purple:#3D1F8C; --indigo:#1A0F5C; --magenta:#C4218A; --violet:#6B2FC4; --amber:#E8A020;
+    --violet-light:#B38BFF; --magenta-light:#F07CC4; --amber-light:#F5C866; --cyan:#22D3EE;
+    --bg:#0E0A24; --bg-mid:#160F36; --card:#1C1442; --border:#33275F;
+    --white:#FFFFFF; --grey:#A39FC0; --grey-light:#D4D0EA; --green:#34D399;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--white);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.7;}
+
+  /* NAV */
+  nav{background:rgba(14,10,36,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px;}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+  .logo img{width:42px;height:42px;object-fit:contain;}
+  .logo-tagline{font-size:9px;color:var(--amber);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;}
+  .logo-name{font-size:14px;font-weight:900;line-height:1.3;}
+  .logo-name .c1{color:var(--cyan);}.logo-name .c2{color:var(--white);}
+  .nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+  .nav-links a{color:var(--grey-light);text-decoration:none;font-size:13px;font-weight:600;padding:7px 10px;border-radius:7px;transition:all 0.2s;white-space:nowrap;}
+  .nav-links a:hover{color:var(--white);background:rgba(107,47,196,0.25);}
+  .nav-links a.active{color:var(--magenta-light);}
+  .nav-links a.teacher-link{color:var(--amber-light);}
+
+  .breadcrumb{font-size:12px;color:var(--grey);padding:10px 24px;background:var(--bg-mid);border-bottom:1px solid var(--border);}
+  .breadcrumb a{color:var(--grey-light);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--magenta-light);}
+  .breadcrumb span{color:var(--magenta-light);margin:0 6px;}
+
+  /* TOPIC HEADER */
+  .topic-hero{background:linear-gradient(160deg,var(--bg) 0%,var(--indigo) 55%,#2A0F3E 100%);padding:40px 24px 34px;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+  .topic-hero::before{content:'';position:absolute;top:-120px;right:-60px;width:520px;height:420px;background:radial-gradient(circle,rgba(196,33,138,0.22) 0%,transparent 70%);pointer-events:none;}
+  .topic-hero-inner{max-width:900px;margin:0 auto;position:relative;}
+  .topic-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;}
+  .pill{font-size:11px;font-weight:800;padding:5px 12px;border-radius:99px;letter-spacing:0.5px;}
+  .pill-code{background:linear-gradient(135deg,var(--deep-purple),var(--magenta));color:var(--white);}
+  .pill-theme{background:rgba(179,139,255,0.14);color:var(--violet-light);border:1px solid rgba(179,139,255,0.35);}
+  .pill-level{background:rgba(232,160,32,0.14);color:var(--amber-light);border:1px solid rgba(232,160,32,0.4);}
+  .topic-hero h1{font-size:clamp(28px,5vw,40px);font-weight:900;line-height:1.12;margin-bottom:10px;}
+  .topic-hero p{font-size:15px;color:var(--grey-light);max-width:640px;}
+
+  /* SECTION JUMP BAR */
+  .jump-bar{background:var(--bg-mid);border-bottom:1px solid var(--border);position:sticky;top:64px;z-index:90;overflow-x:auto;}
+  .jump-inner{max-width:900px;margin:0 auto;padding:10px 24px;display:flex;gap:6px;min-width:max-content;}
+  .jump-inner a{font-size:12px;font-weight:700;color:var(--grey-light);text-decoration:none;padding:6px 12px;border-radius:99px;border:1px solid var(--border);white-space:nowrap;transition:all 0.2s;}
+  .jump-inner a:hover{border-color:var(--magenta);color:var(--white);}
+  .jump-inner a b{color:var(--amber);margin-right:4px;}
+
+  /* SECTIONS */
+  .page-inner{max-width:900px;margin:0 auto;padding:30px 24px 56px;}
+  .section{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px 28px 30px;margin-bottom:22px;scroll-margin-top:120px;}
+  .section-head{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
+  .section-num{width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,var(--deep-purple),var(--magenta));display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:900;flex-shrink:0;box-shadow:0 4px 14px rgba(196,33,138,0.35);}
+  .section-head h2{font-size:21px;font-weight:900;}
+  .section p{font-size:14.5px;color:var(--grey-light);margin-bottom:12px;}
+  .section p strong{color:var(--white);}
+  .section h3{font-size:16px;font-weight:900;color:var(--violet-light);margin:22px 0 10px;}
+  .section ul.points{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:12px;}
+  .section ul.points li{font-size:14px;color:var(--grey-light);display:flex;gap:10px;}
+  .section ul.points li::before{content:'◆';color:var(--magenta-light);font-size:9px;margin-top:6px;flex-shrink:0;}
+
+  /* Overview extras */
+  .learn-box{background:rgba(107,47,196,0.12);border:1px solid rgba(179,139,255,0.3);border-radius:12px;padding:16px 18px;margin:14px 0;}
+  .learn-box h4{font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber-light);margin-bottom:8px;}
+  .key-terms{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;margin-top:10px;}
+  .key-term{background:var(--bg-mid);border:1px solid var(--border);border-radius:10px;padding:12px 14px;}
+  .key-term b{display:block;font-size:13px;color:var(--magenta-light);margin-bottom:2px;}
+  .key-term span{font-size:12.5px;color:var(--grey-light);line-height:1.55;}
+
+  /* Presentation component */
+  .deck{background:var(--bg);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+  .deck-stage{position:relative;aspect-ratio:16/9;background:#000;display:flex;align-items:center;justify-content:center;}
+  .deck-stage img{width:100%;height:100%;object-fit:contain;cursor:zoom-in;}
+  .deck-controls{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;background:var(--bg-mid);}
+  .deck-btn{background:var(--card);border:1px solid var(--border);color:var(--white);border-radius:8px;padding:7px 14px;font-size:13px;font-weight:700;cursor:pointer;}
+  .deck-btn:hover{border-color:var(--magenta);}
+  .deck-count{font-size:12px;color:var(--grey);}
+  .placeholder{aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:24px;background:linear-gradient(135deg,rgba(61,31,140,0.35),rgba(196,33,138,0.18));}
+  .placeholder .ph-icon{font-size:40px;}
+  .placeholder h4{font-size:16px;font-weight:900;}
+  .placeholder p{font-size:13px;color:var(--grey-light);margin:0;max-width:380px;}
+
+  /* Diagrams & tables */
+  .diagram{background:var(--bg-mid);border:1px solid var(--border);border-radius:14px;padding:18px;margin:16px 0;}
+  .diagram svg{width:100%;height:auto;display:block;}
+  .diagram-caption{font-size:12px;color:var(--grey);text-align:center;margin-top:8px;}
+  table.compare{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px;}
+  table.compare th{background:var(--deep-purple);color:var(--white);text-align:left;padding:10px 12px;font-weight:800;}
+  table.compare td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--grey-light);vertical-align:top;}
+  table.compare td:first-child{color:var(--amber-light);font-weight:700;white-space:nowrap;}
+  .table-wrap{overflow-x:auto;}
+
+  /* Exam tips */
+  .tip{display:flex;gap:14px;background:rgba(232,160,32,0.08);border:1px solid rgba(232,160,32,0.3);border-radius:12px;padding:14px 16px;margin-bottom:10px;}
+  .tip-icon{font-size:20px;flex-shrink:0;}
+  .tip b{display:block;font-size:14px;color:var(--amber-light);margin-bottom:2px;}
+  .tip span{font-size:13.5px;color:var(--grey-light);}
+  .tip.warn{background:rgba(196,33,138,0.08);border-color:rgba(196,33,138,0.35);}
+  .tip.warn b{color:var(--magenta-light);}
+
+  /* Video */
+  .video-frame{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#000;}
+  .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .placeholder a{color:var(--amber-light);font-weight:700;}
+
+  /* Practice questions */
+  .question{background:var(--bg-mid);border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+  .question summary{list-style:none;cursor:pointer;padding:15px 18px;display:flex;align-items:flex-start;gap:12px;font-size:14px;font-weight:700;color:var(--white);}
+  .question summary::-webkit-details-marker{display:none;}
+  .q-num{background:linear-gradient(135deg,var(--deep-purple),var(--violet));border-radius:7px;min-width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;}
+  .q-text{flex:1;}
+  .q-marks{font-size:11px;font-weight:800;color:var(--amber-light);background:rgba(232,160,32,0.14);border-radius:99px;padding:3px 9px;flex-shrink:0;}
+  .q-toggle{color:var(--magenta-light);font-size:12px;font-weight:800;flex-shrink:0;}
+  .question[open] .q-toggle::after{content:' ▲';}
+  .question:not([open]) .q-toggle::after{content:' ▼';}
+  .answer{padding:0 18px 16px 58px;}
+  .answer h5{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);margin-bottom:6px;}
+  .answer ul{list-style:none;display:flex;flex-direction:column;gap:5px;}
+  .answer li{font-size:13.5px;color:var(--grey-light);display:flex;gap:8px;}
+  .answer li::before{content:'✓';color:var(--green);font-weight:900;flex-shrink:0;}
+
+  /* Prev / next */
+  .topic-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;}
+  .topic-nav a{background:var(--bg-mid);border:1px solid var(--border);border-radius:12px;padding:14px 18px;text-decoration:none;color:var(--white);font-size:14px;font-weight:800;transition:all 0.2s;}
+  .topic-nav a:hover{border-color:var(--magenta);}
+  .topic-nav a span{display:block;font-size:10px;color:var(--grey);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
+  .topic-nav a.next{text-align:right;}
+
+  .hub-footer{background:#080617;padding:24px;text-align:center;border-top:1px solid var(--border);}
+  .hub-footer p{font-size:12px;color:var(--grey);}
+  .hub-footer a{color:var(--grey-light);text-decoration:none;margin:0 6px;}
+  .hub-footer a:hover{color:var(--magenta-light);}
+
+  @media(max-width:640px){
+    .nav-links{display:none;}
+    .topic-hero{padding:28px 16px 24px;}
+    .jump-inner{padding:10px 16px;}
+    .page-inner{padding:20px 14px 40px;}
+    .section{padding:22px 18px;}
+    .answer{padding:0 16px 14px 16px;}
+  }
+
+  :root{
+    --deep-purple:#3D1F8C; --indigo:#1A0F5C; --magenta:#C4218A; --violet:#6B2FC4; --amber:#E8A020;
+    --violet-light:#B38BFF; --magenta-light:#F07CC4; --amber-light:#F5C866; --cyan:#22D3EE;
+    --bg:#0E0A24; --bg-mid:#160F36; --card:#1C1442; --border:#33275F;
+    --white:#FFFFFF; --grey:#A39FC0; --grey-light:#D4D0EA;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--white);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;}
+
+  nav{background:rgba(14,10,36,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px;}
+  .logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}
+  .logo img{width:42px;height:42px;object-fit:contain;}
+  .logo-tagline{font-size:9px;color:var(--amber);font-weight:700;letter-spacing:2.5px;text-transform:uppercase;}
+  .logo-name{font-size:14px;font-weight:900;}
+  .logo-name .c1{color:var(--cyan);}.logo-name .c2{color:var(--white);}
+  .nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+  .nav-links a{color:var(--grey-light);text-decoration:none;font-size:13px;font-weight:600;padding:7px 10px;border-radius:7px;transition:all 0.2s;white-space:nowrap;}
+  .nav-links a:hover{color:var(--white);background:rgba(107,47,196,0.25);}
+  .nav-links a.active{color:var(--magenta-light);}
+  .nav-links a.teacher-link{color:var(--amber-light);}
+
+  .breadcrumb{font-size:12px;color:var(--grey);padding:10px 24px;background:var(--bg-mid);border-bottom:1px solid var(--border);}
+  .breadcrumb a{color:var(--grey-light);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--magenta-light);}
+  .breadcrumb span{color:var(--magenta-light);margin:0 6px;}
+
+  .hero{background:linear-gradient(160deg,var(--bg) 0%,var(--indigo) 55%,#2A0F3E 100%);padding:44px 24px 38px;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;top:-120px;right:-80px;width:520px;height:420px;background:radial-gradient(circle,rgba(196,33,138,0.2) 0%,transparent 70%);pointer-events:none;}
+  .hero-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:22px;position:relative;}
+  .hero-letter{width:76px;height:76px;border-radius:18px;background:linear-gradient(135deg,var(--deep-purple),var(--magenta));display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:900;flex-shrink:0;box-shadow:0 8px 26px rgba(196,33,138,0.4);}
+  .hero-label{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--amber-light);margin-bottom:4px;}
+  .hero h1{font-size:clamp(24px,4.5vw,34px);font-weight:900;line-height:1.15;margin-bottom:6px;}
+  .hero p{font-size:14px;color:var(--grey-light);line-height:1.65;}
+
+  .page-inner{max-width:900px;margin:0 auto;padding:36px 24px 56px;}
+
+  .group{margin-bottom:34px;}
+  .group-head{display:flex;align-items:baseline;gap:12px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+  .group-code{font-size:15px;font-weight:900;color:var(--amber);}
+  .group-name{font-size:18px;font-weight:900;}
+
+  .topic-list{display:flex;flex-direction:column;gap:10px;}
+  .topic{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;display:flex;align-items:center;gap:18px;text-decoration:none;transition:all 0.2s;}
+  .topic:hover{border-color:var(--magenta);transform:translateX(5px);box-shadow:0 8px 26px rgba(196,33,138,0.18);}
+  .topic-code{min-width:62px;height:48px;padding:0 10px;border-radius:11px;background:linear-gradient(135deg,var(--deep-purple),var(--violet));display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;color:var(--white);flex-shrink:0;}
+  .topic-text{flex:1;min-width:0;}
+  .topic-text h3{font-size:15px;font-weight:800;color:var(--white);margin-bottom:2px;}
+  .topic-text p{font-size:12px;color:var(--grey-light);line-height:1.5;}
+  .hl-badge{font-size:10px;font-weight:800;padding:3px 9px;border-radius:99px;background:rgba(232,160,32,0.16);color:var(--amber-light);border:1px solid rgba(232,160,32,0.4);flex-shrink:0;}
+  .topic-arrow{color:var(--magenta-light);font-size:16px;flex-shrink:0;}
+
+  .theme-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px;}
+  .theme-nav a{background:var(--bg-mid);border:1px solid var(--border);border-radius:12px;padding:14px 18px;text-decoration:none;color:var(--white);font-size:13px;font-weight:700;transition:all 0.2s;}
+  .theme-nav a:hover{border-color:var(--violet);}
+  .theme-nav a span{display:block;font-size:10px;color:var(--grey);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:2px;}
+  .theme-nav a.next{text-align:right;}
+
+  .hub-footer{background:#080617;padding:24px;text-align:center;border-top:1px solid var(--border);}
+  .hub-footer p{font-size:12px;color:var(--grey);}
+  .hub-footer a{color:var(--grey-light);text-decoration:none;margin:0 6px;}
+  .hub-footer a:hover{color:var(--magenta-light);}
+
+  @media(max-width:640px){
+    .nav-links{display:none;}
+    .hero{padding:30px 16px 26px;}
+    .hero-inner{flex-direction:column;align-items:flex-start;}
+    .page-inner{padding:26px 16px 40px;}
+    .topic{gap:12px;padding:14px;}
+    .topic-arrow{display:none;}
+  }
+
+  .theme-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px 22px 20px;display:flex;align-items:flex-start;gap:20px;text-decoration:none;color:var(--white);transition:all 0.2s;}
+  .theme-card:hover{border-color:var(--magenta);transform:translateY(-3px);box-shadow:0 10px 30px rgba(196,33,138,0.2);}
+  .theme-letter{width:64px;height:64px;border-radius:16px;background:linear-gradient(135deg,var(--deep-purple),var(--magenta));display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900;flex-shrink:0;box-shadow:0 6px 20px rgba(196,33,138,0.35);}
+  .theme-body{flex:1;min-width:0;}
+  .theme-count{font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber-light);margin-bottom:3px;}
+  .theme-body h3{font-size:20px;font-weight:900;margin-bottom:5px;}
+  .theme-body p{font-size:13.5px;color:var(--grey-light);line-height:1.6;margin-bottom:12px;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;}
+  .chip{font-size:11px;font-weight:700;padding:4px 10px;border-radius:99px;background:rgba(179,139,255,0.14);color:var(--violet-light);border:1px solid rgba(179,139,255,0.35);}
+  .theme-go{color:var(--magenta-light);font-size:20px;flex-shrink:0;align-self:center;}
+  .theme-stack{display:flex;flex-direction:column;gap:14px;}
+  .section-title{font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--amber-light);margin:34px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border);}
+  .tool-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .tool{background:var(--bg-mid);border:1px solid var(--border);border-radius:12px;padding:16px 18px;text-decoration:none;color:var(--white);transition:all 0.2s;}
+  .tool:hover{border-color:var(--violet);}
+  .tool b{display:block;font-size:14px;font-weight:800;margin-bottom:2px;}
+  .tool span{font-size:12px;color:var(--grey-light);}
+  @media(max-width:640px){
+    .theme-card{flex-direction:column;gap:14px;padding:18px;}
+    .theme-go{display:none;}
+    .tool-grid{grid-template-columns:1fr;}
+  }
+
+  /* BTEC accent: subtle green on the shared design */
+  .hero::before{background:radial-gradient(circle,rgba(16,185,129,0.15) 0%,transparent 70%) !important;}
+  .hero-letter.btec{background:linear-gradient(135deg,#047857,#10B981);}
+  .section-num{background:linear-gradient(135deg,#047857,#10B981);}
+  .breadcrumb span{color:#6EE7B7;}
+  .hub-footer a:hover{color:#6EE7B7;}
+  .key-term{border-left:3px solid #10B981;}
+  .table-wrap{border-radius:16px;overflow:hidden;border:1px solid rgba(16,185,129,0.35);box-shadow:0 0 22px rgba(16,185,129,0.12);margin:12px 0 20px;}
+  table.compare{border-radius:16px;overflow:hidden;background:rgba(14,10,36,0.6);}
+  table.compare th{background:linear-gradient(90deg,rgba(16,185,129,0.30),rgba(107,47,196,0.32));color:#E6FFF5;font-weight:800;letter-spacing:0.3px;border-bottom:1px solid rgba(16,185,129,0.45);}
+  table.compare td{border-top:1px solid rgba(51,39,95,0.8);}
+  table.compare td.c{text-align:center;}
+  .tool:hover{border-color:rgba(16,185,129,0.5);}
+  .unit-group{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px 24px;margin-bottom:20px;}
+  .group-top{display:flex;gap:16px;align-items:center;margin-bottom:6px;}
+  .group-badge{width:50px;height:50px;border-radius:14px;background:linear-gradient(135deg,#047857,#10B981);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;color:#fff;flex-shrink:0;}
+  .group-label{font-size:11px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:#F5C866;}
+  .group-top h2{font-size:20px;font-weight:900;margin:2px 0 0;}
+  .group-desc{font-size:13px;color:var(--grey-light);margin:4px 0 14px;}
+  .unit-list{display:flex;flex-direction:column;gap:8px;}
+  .unit-row{display:flex;gap:14px;align-items:flex-start;background:rgba(14,10,36,0.55);border:1px solid var(--border);border-radius:12px;padding:13px 16px;}
+  .unit-num{min-width:42px;height:34px;border-radius:9px;background:rgba(16,185,129,0.15);color:#6EE7B7;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:13px;flex-shrink:0;}
+  .unit-body{flex:1;min-width:0;}
+  .unit-title{font-size:14.5px;font-weight:800;color:var(--white);margin-bottom:4px;}
+  .unit-desc{font-size:12.5px;color:var(--grey-light);line-height:1.6;margin-bottom:8px;}
+  .unit-tags{display:flex;gap:6px;flex-wrap:wrap;}
+  .utag{font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:99px;background:rgba(148,163,184,0.12);color:var(--grey-light);border:1px solid rgba(148,163,184,0.25);}
+  .utag.set{background:rgba(16,185,129,0.14);color:#6EE7B7;border-color:rgba(16,185,129,0.4);}
+  .utag.mand{background:rgba(232,160,32,0.12);color:#F5C866;border-color:rgba(232,160,32,0.4);}
+  .note{font-size:12px;color:var(--grey);margin-top:6px;}
+  .unit-title a{color:var(--white);text-decoration:none;}
+  .unit-title a:hover{color:#6EE7B7;}
+  .utag.chg{background:rgba(245,200,102,0.12);color:#F5C866;border-color:rgba(245,200,102,0.45);}
+  .utag.glh{background:rgba(167,139,250,0.14);color:#C4B5FD;border-color:rgba(167,139,250,0.45);}
+  .utag.only{background:transparent;color:var(--grey);border-style:dashed;}
+  .utag.new{background:rgba(16,185,129,0.14);color:#6EE7B7;border-color:rgba(16,185,129,0.45);}
+  .legend{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 16px;}
+  .six-dot{width:42px;height:42px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#FFB3E6,#F472B6 45%,#DB2777);box-shadow:0 0 14px rgba(244,114,182,0.55),0 0 2px rgba(244,114,182,0.9);color:#2A0A1E;font-weight:900;font-size:17px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .unit-row.six{border-color:rgba(244,114,182,0.35);}
+  .unit-num.six{background:rgba(244,114,182,0.14);color:#F9A8D4;}
+  .utag.six{background:rgba(244,114,182,0.14);color:#F9A8D4;border-color:rgba(244,114,182,0.45);}
+  .group-badge.six{background:radial-gradient(circle at 35% 30%,#FFB3E6,#F472B6 45%,#DB2777);box-shadow:0 0 16px rgba(244,114,182,0.5);color:#2A0A1E;}
+
+  .learn-sec h3.sub{color:#F5C866;margin-top:18px;}
+  .learn-sec p{font-size:14.5px;line-height:1.75;color:var(--grey-light);margin-bottom:12px;}
+  .learn-sec p strong{color:#fff;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">
+      <img src="sss-icon.png" alt="Simply Sport Science"/>
+      <div>
+        <div class="logo-tagline">Sport Science Sorted</div>
+        <div class="logo-name"><span class="c1">Simply </span><span class="c2">Sport Science</span></div>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ib-hub.html">IB Sport Science</a></li>
+      <li><a href="cambridge-hub.html">AS Level PE</a></li>
+      <li><a href="btec-hub.html" class="active">BTEC Sport</a></li>
+      <li><a href="az-library.html">A–Z</a></li>
+      <li><a href="teacher-hub.html" class="teacher-link">Teacher Hub</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="breadcrumb"><div style="max-width:900px;margin:0 auto;">
+  <a href="index.html">Home</a><span>›</span><a href="btec-hub.html">BTEC Sport</a><span>›</span><a href="btec-u04-sports-psychology.html">Unit 4</a><span>›</span>Learn
+</div></div>
+
+<div class="topic-hero"><div class="topic-hero-inner">
+  <div class="topic-meta"><span class="pill pill-code">Unit 4</span><span class="pill pill-btec">60 GLH</span><span class="pill pill-btec">Student learning</span></div>
+  <h1>Sports Psychology</h1>
+  <p>Why do some athletes thrive under pressure while others struggle? This unit explores the psychology behind performance: personality and motivation, stress, anxiety and arousal, how teams work, and how psychological skills are planned and judged.</p>
+</div></div>
+
+<div class="page-inner">
+
+  <section class="section" id="overview">
+    <div class="section-head"><div class="section-num">0</div><h2>Overview</h2></div>
+    <p>Why do some athletes thrive under pressure while others struggle? This unit explores the psychology behind performance: personality and motivation, stress, anxiety and arousal, how teams work, and how psychological skills are planned and judged.</p>
+  </section>
+
+  <section class="section learn-sec" id="s1">
+    <div class="section-head"><div class="section-num">1</div><h2>A1 Personality</h2></div>
+    <p>Personality is a consistent pattern of thoughts, feelings and behaviour. Three approaches explain how it affects performance. <strong>Trait theory</strong> says personality is stable across situations. The <strong>situational approach</strong> says behaviour depends mainly on the environment. The <strong>interactional approach</strong> combines both: a trait such as competitiveness shows more in some situations than others. Type A performers are competitive and time-urgent, which can drive motivation but also raise stress. Type B performers are more relaxed, which can reduce stress but may limit drive in a high-pressure contest.</p>
+  </section>
+
+  <section class="section learn-sec" id="s2">
+    <div class="section-head"><div class="section-num">2</div><h2>A2 Motivation</h2></div>
+    <p>Motivation is the drive to start and keep going. <strong>Intrinsic</strong> motivation comes from enjoyment and satisfaction. <strong>Extrinsic</strong> motivation comes from rewards such as medals, praise or money. <strong>Achievement motivation</strong> depends on whether a person hopes for success or fears failure. <strong>Attribution theory</strong> explains how a performer explains a result: attributing success to effort and failure to a changeable cause helps keep motivation high. Consider how a performer's type of motivation affects their persistence in training.</p>
+  </section>
+
+  <section class="section learn-sec" id="s3">
+    <div class="section-head"><div class="section-num">3</div><h2>B1 Stress</h2></div>
+    <p>Stress is the response to demands that exceed a person's ability to cope. A performer may feel stress from a difficult opponent, a selection decision or a poor result. Stress produces physical changes, such as a faster heart rate and tense muscles, and mental changes, such as poor concentration. The key distinction is between demands and the response: the same demand can cause stress in one performer and a useful challenge in another.</p>
+  </section>
+
+  <section class="section learn-sec" id="s4">
+    <div class="section-head"><div class="section-num">4</div><h2>B2 Anxiety</h2></div>
+    <p>Anxiety is a state of worry and fear about an outcome. <strong>Cognitive anxiety</strong> is the mental side: worry, negative thoughts and self-doubt. <strong>Somatic anxiety</strong> is the physical side: sweating, a racing heart and muscle tension. Each can be measured, and each affects performance differently. Cognitive anxiety usually reduces performance, while some somatic arousal can help a performer feel ready.</p>
+  </section>
+
+  <section class="section learn-sec" id="s5">
+    <div class="section-head"><div class="section-num">5</div><h2>B3 Arousal</h2></div>
+    <p>Arousal is the level of physical and mental activation. The <strong>inverted-U hypothesis</strong> proposes that performance improves as arousal rises to an optimal level, then declines. Under-aroused performers lack focus; over-aroused performers narrow their attention and make errors. <strong>Catastrophe theory</strong> adds that, when cognitive anxiety is high, performance can fall sharply once arousal passes the optimal point. The optimal level varies: fine, precise skills usually need lower arousal than strong, simple skills.</p>
+  </section>
+
+  <section class="section learn-sec" id="s6">
+    <div class="section-head"><div class="section-num">6</div><h2>B4 Team dynamics</h2></div>
+    <p>Teams develop over time. Tuckman's stages describe forming, storming, norming and performing. <strong>Task cohesion</strong> is the shared commitment to a common goal; <strong>social cohesion</strong> is the friendship and trust between members. <strong>Leadership styles</strong> shape the team, from directive to participative. Two problems often appear in groups: the <strong>Ringelmann effect</strong>, where individual effort falls as group size grows, and <strong>social loafing</strong>, where people contribute less when their individual effort is hard to see.</p>
+  </section>
+
+  <section class="section learn-sec" id="s7">
+    <div class="section-head"><div class="section-num">7</div><h2>C1 Assessment</h2></div>
+    <p>Before planning a training programme, assess the performer. <strong>Performance profiling</strong> rates a performer's psychological strengths and weaknesses. Questionnaires can measure anxiety, motivation or self-confidence. A good assessment explains what was measured, why, and what it means for the performer, so that the programme targets real needs.</p>
+  </section>
+
+  <section class="section learn-sec" id="s8">
+    <div class="section-head"><div class="section-num">8</div><h2>C2 Planning</h2></div>
+    <p>A psychological skills programme usually lasts four to six weeks. Set <strong>SMART</strong> aims: specific, measurable, achievable, relevant and time-bound. Plan the sequence of sessions so that each technique builds on the last, and schedule how and when the performer will practise.</p>
+  </section>
+
+  <section class="section learn-sec" id="s9">
+    <div class="section-head"><div class="section-num">9</div><h2>C3 Psychological skills and techniques</h2></div>
+    <p>The main techniques are <strong>goal setting</strong> (process, performance and outcome goals), <strong>arousal regulation</strong> (breathing and relaxation to lower arousal, or activation to raise it), <strong>imagery</strong> (mental rehearsal of a skill or situation), <strong>confidence building</strong> (positive self-talk and reviewing successes) and <strong>concentration training</strong> (focusing on a cue and recovering focus after a distraction). Choose each technique because the performer needs it.</p>
+  </section>
+
+  <section class="section learn-sec" id="s10">
+    <div class="section-head"><div class="section-num">10</div><h2>D1 Overview of psychological techniques</h2></div>
+    <p>Each technique aims at a psychological need. Goal setting directs effort, arousal regulation manages anxiety and stress, imagery rehearses skills and builds confidence, and concentration training keeps attention on what matters. A programme works best when its techniques support one another.</p>
+  </section>
+
+  <section class="section learn-sec" id="s11">
+    <div class="section-head"><div class="section-num">11</div><h2>D2 Evaluating effectiveness</h2></div>
+    <p>Judge a programme using several types of evidence: performance results, changes in psychological measures, the performer's own report, and observation of behaviour in training and competition. One result is rarely enough. Note whether the effect lasted, and whether it applies to every performer in the same way.</p>
+  </section>
+
+  <section class="section learn-sec" id="s12">
+    <div class="section-head"><div class="section-num">12</div><h2>D3 Modern influences</h2></div>
+    <p>Modern performers are shaped by social media, pressure from sponsors and the media, and sports science tools such as performance data and wearables. These can support psychological skills, for example by showing progress, but they can also add pressure and self-comparison. Consider both sides when you evaluate.</p>
+  </section>
+
+  <section class="section learn-sec" id="s13">
+    <div class="section-head"><div class="section-num">13</div><h2>D4 Making recommendations</h2></div>
+    <p>Recommendations should follow from the evidence. A good recommendation names the change, explains why the evidence supports it, says how it would be measured and when it will be reviewed.</p>
+  </section>
+
+  <section class="section" id="practice">
+    <div class="section-head"><div class="section-num">14</div><h2>Practice</h2></div>
+    <p>Write or say your answer before you open the points. Use the points to check what you covered, not to copy.</p>
+    <div class="ex-card"><div class="ex-head"><span class="pill pill-btec">3 marks</span><span class="pill pill-code">Practice 1</span></div><p class="ex-prompt">Explain personality and its effect on sports performance.</p><div class="ex-model"><strong>Your answer should include:</strong><ul class="points"><li>Define personality as a consistent pattern of thoughts, feelings and behaviour.</li><li>Explain trait, situational or interactional views, using one of them clearly.</li><li>Link a personality type to a named effect on performance, such as stress or drive.</li></ul></div></div>
+    <div class="ex-card"><div class="ex-head"><span class="pill pill-btec">6 marks</span><span class="pill pill-code">Practice 2</span></div><p class="ex-prompt">Analyse how stress, anxiety and arousal theories affect performance.</p><div class="ex-model"><strong>Your answer should include:</strong><ul class="points"><li>Explain the inverted-U hypothesis and the effect of under- and over-arousal.</li><li>Explain the difference between cognitive and somatic anxiety.</li><li>Explain catastrophe theory and why the performance can fall sharply.</li><li>Make a judgement about which measure a coach should monitor and why.</li></ul></div></div>
+  </section>
+
+  <section class="section" id="terms">
+    <div class="section-head"><div class="section-num">15</div><h2>Key terms</h2></div>
+    <div class="key-terms"><div class="key-term"><b>Personality</b><span>A consistent pattern of thoughts, feelings and behaviours that influences performance.</span></div><div class="key-term"><b>Inverted-U hypothesis</b><span>The idea that performance improves with arousal up to an optimal level, then declines.</span></div><div class="key-term"><b>Social loafing</b><span>Reduced individual effort in a group, where each person's contribution is hard to see.</span></div><div class="key-term"><b>Performance profiling</b><span>A structured assessment of a performer's psychological strengths and weaknesses.</span></div></div>
+  </section>
+
+  <section class="section" id="check">
+    <div class="section-head"><div class="section-num">16</div><h2>Check your understanding</h2></div>
+    <p>Tick each statement you can do confidently. Any you cannot tick are the parts to revisit.</p>
+    <ul class="points"><li>I can explain trait, situational and interactional views of personality.</li><li>I can explain the difference between stress, anxiety and arousal.</li><li>I can explain the inverted-U hypothesis and catastrophe theory.</li><li>I can plan a psychological skills programme with SMART aims and justified techniques.</li></ul>
+  </section>
+
+  <div class="topic-nav">
+    <a href="btec-u04-sports-psychology.html"><span>Back to</span>← Unit 4 overview</a>
+    <a href="btec-hub.html" class="next"><span>Back to</span>All BTEC units →</a>
+  </div>
+
+</div>
+
+<div class="hub-footer">
+  <p><a href="index.html">Home</a>·<a href="az-library.html">A–Z Library</a>·<a href="teacher-hub.html">Teacher Hub</a>·<a href="about.html">About</a>·<a href="privacy.html">Privacy</a></p>
+  <p style="margin-top:10px;">© 2026 Simply Sport Science · simplysportscience.co.uk</p>
+</div>
+
+</body>
+</html>
