@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>B.1.4 Levers in Movement &amp; Sport | IB Sport Science | Simply Sport Science</title>
-<meta name="description" content="IB SEHS B.1.4 Levers in Movement and Sport — first, second and third class levers, mechanical advantage, torque and levers in sport. Overview, presentation, deep dive with diagrams, exam tips, video and practice questions."/>
+<meta name="description" content="IB SEHS B.1.4 Levers in Movement and Sport — first, second and third class levers, mechanical advantage, torque and levers in sport. Overview, presentation, deep dive with diagrams, exam tips and practice questions."/>
 <link rel="icon" href="favicon.ico"/>
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"/>
@@ -117,10 +117,6 @@
   .tip span{font-size:13.5px;color:var(--grey-light);}
   .tip.warn{background:rgba(196,33,138,0.08);border-color:rgba(196,33,138,0.35);}
   .tip.warn b{color:var(--magenta-light);}
-
-  /* Video */
-  .video-frame{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:#000;}
-  .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
   .placeholder a{color:var(--amber-light);font-weight:700;}
 
   /* Practice questions */
@@ -178,6 +174,7 @@
       <li><a href="cambridge-hub.html">AS Level PE</a></li>
       <li><a href="btec-hub.html">BTEC Sport</a></li>
       <li><a href="az-library.html">A–Z</a></li>
+      <li><a href="youtube.html">YouTube</a></li>
       <li><a href="teacher-hub.html" class="teacher-link">Teacher Hub</a></li>
     </ul>
   </div>
@@ -209,8 +206,7 @@
     <a href="#presentation"><b>2</b>Presentation</a>
     <a href="#deep-dive"><b>3</b>Deep Dive</a>
     <a href="#exam-tips"><b>4</b>Exam Tips</a>
-    <a href="#video"><b>5</b>Video</a>
-    <a href="#practice"><b>6</b>Practice Questions</a>
+    <a href="#practice"><b>5</b>Practice Questions</a>
   </div>
 </div>
 
@@ -424,15 +420,10 @@
     <div class="tip warn"><div class="tip-icon">⚠️</div><div><b>Common mistake</b><span>Don't call third-class levers "inefficient" and stop there. They give up force but gain speed and range of movement. Also, class alone doesn't give mechanical advantage for a first-class lever: that depends on the lengths of the arms.</span></div></div>
   </section>
 
-  <!-- ═══ 5. VIDEO ═══ -->
-  <section class="section" id="video">
-    <div class="section-head"><div class="section-num">5</div><h2>Video</h2></div>
-    <div id="videoBox"></div>
-  </section>
 
-  <!-- ═══ 6. PRACTICE QUESTIONS ═══ -->
+  <!-- ═══ 5. PRACTICE QUESTIONS ═══ -->
   <section class="section" id="practice">
-    <div class="section-head"><div class="section-num">6</div><h2>Practice Questions</h2></div>
+    <div class="section-head"><div class="section-num">5</div><h2>Practice Questions</h2></div>
     <p>Write your answer first, then open the model answer to check it.</p>
 
     <details class="question">
@@ -488,7 +479,7 @@
 </div>
 
 <div class="hub-footer">
-  <p><a href="index.html">Home</a>·<a href="az-library.html">A–Z Library</a>·<a href="teacher-hub.html">Teacher Hub</a>·<a href="about.html">About</a>·<a href="privacy.html">Privacy</a></p>
+  <p><a href="index.html">Home</a>·<a href="az-library.html">A–Z Library</a>·<a href="teacher-hub.html">Teacher Hub</a>·<a href="youtube.html">YouTube</a>·<a href="about.html">About</a>·<a href="privacy.html">Privacy</a></p>
   <p style="margin-top:10px;">© 2026 Simply Sport Science · simplysportscience.co.uk</p>
 </div>
 
@@ -497,10 +488,8 @@
    SLIDES: list the slide image paths in order, e.g.
      ["assets/presentations/ib-b1-4/slide-01.jpg", "assets/presentations/ib-b1-4/slide-02.jpg"]
    Leave empty [] and the "coming soon" panel shows instead.
-   VIDEO_ID: the code at the end of the YouTube link
-     (youtube.com/watch?v=THIS_PART). Leave "" for the "coming soon" panel. */
+   */
 const SLIDES = [];
-const VIDEO_ID = "";
 
 /* Presentation */
 (function(){
@@ -528,15 +517,6 @@ const VIDEO_ID = "";
   show();
 })();
 
-/* Video */
-(function(){
-  const box = document.getElementById("videoBox");
-  if(!VIDEO_ID){
-    box.innerHTML = '<div class="video-frame"><div class="placeholder" style="position:absolute;inset:0;"><div class="ph-icon">🎬</div><h4>Video coming soon</h4><p>In the meantime, browse the <a href="https://www.youtube.com/@SimplySportScience" target="_blank" rel="noopener">Simply Sport Science YouTube channel</a>.</p></div></div>';
-    return;
-  }
-  box.innerHTML = '<div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/' + VIDEO_ID + '" title="Topic video" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
-})();
 </script>
 
 </body>
