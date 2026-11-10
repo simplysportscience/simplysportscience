@@ -317,7 +317,7 @@
       <li><a href="cambridge-hub.html">AS Level PE</a></li>
       <li><a href="btec-hub.html" class="active">BTEC Sport</a></li>
       <li><a href="az-library.html">A–Z</a></li>
-      <li><a href="youtube.html">YouTube</a></li>
+      <li><a href="https://www.youtube.com/@SimplySportScience" target="_blank" rel="noopener">YouTube</a></li>
       <li><a href="teacher-hub.html" class="teacher-link">Teacher Hub</a></li>
     </ul>
   </div>
@@ -339,6 +339,12 @@
     <div class="section-head"><div class="section-num">0</div><h2>Overview</h2></div>
     <p>Performance in sport comes from technique, tactics, decision-making and applying them under pressure. In this unit you will understand the technical and tactical demands of one sport, practise skills in drills, perform in competitive situations, and review your own performance to plan improvement.</p>
   </section>
+
+  <section class="section" id="presentation">
+    <div class="section-head"><div class="section-num">▶</div><h2>Presentation</h2></div>
+    <div class="deck" id="deck1"></div>
+  </section>
+
 
   <section class="section learn-sec" id="s1">
     <div class="section-head"><div class="section-num">1</div><h2>A1 Technical demands</h2></div>
@@ -406,9 +412,91 @@
 </div>
 
 <div class="hub-footer">
-  <p><a href="index.html">Home</a>·<a href="az-library.html">A–Z Library</a>·<a href="teacher-hub.html">Teacher Hub</a>·<a href="youtube.html">YouTube</a>·<a href="about.html">About</a>·<a href="privacy.html">Privacy</a></p>
+  <p><a href="index.html">Home</a>·<a href="az-library.html">A–Z Library</a>·<a href="teacher-hub.html">Teacher Hub</a>·<a href="https://www.youtube.com/@SimplySportScience" target="_blank" rel="noopener">YouTube</a>·<a href="about.html">About</a>·<a href="privacy.html">Privacy</a></p>
   <p style="margin-top:10px;">© 2026 Simply Sport Science · simplysportscience.co.uk</p>
 </div>
+
+
+<script>
+/* ═══ PRESENTATION — slide folder for this unit ═══ */
+const DECKS = [
+  { id: "deck1", slides: [
+    "assets/presentations/btec-u09/slide-01.jpg",
+    "assets/presentations/btec-u09/slide-02.jpg",
+    "assets/presentations/btec-u09/slide-03.jpg",
+    "assets/presentations/btec-u09/slide-04.jpg",
+    "assets/presentations/btec-u09/slide-05.jpg",
+    "assets/presentations/btec-u09/slide-06.jpg",
+    "assets/presentations/btec-u09/slide-07.jpg",
+    "assets/presentations/btec-u09/slide-08.jpg",
+    "assets/presentations/btec-u09/slide-09.jpg",
+    "assets/presentations/btec-u09/slide-10.jpg",
+    "assets/presentations/btec-u09/slide-11.jpg",
+    "assets/presentations/btec-u09/slide-12.jpg",
+    "assets/presentations/btec-u09/slide-13.jpg",
+    "assets/presentations/btec-u09/slide-14.jpg",
+    "assets/presentations/btec-u09/slide-15.jpg",
+    "assets/presentations/btec-u09/slide-16.jpg",
+    "assets/presentations/btec-u09/slide-17.jpg",
+    "assets/presentations/btec-u09/slide-18.jpg",
+    "assets/presentations/btec-u09/slide-19.jpg",
+    "assets/presentations/btec-u09/slide-20.jpg",
+    "assets/presentations/btec-u09/slide-21.jpg",
+    "assets/presentations/btec-u09/slide-22.jpg",
+    "assets/presentations/btec-u09/slide-23.jpg",
+    "assets/presentations/btec-u09/slide-24.jpg",
+    "assets/presentations/btec-u09/slide-25.jpg",
+    "assets/presentations/btec-u09/slide-26.jpg",
+    "assets/presentations/btec-u09/slide-27.jpg",
+    "assets/presentations/btec-u09/slide-28.jpg",
+    "assets/presentations/btec-u09/slide-29.jpg",
+    "assets/presentations/btec-u09/slide-30.jpg",
+    "assets/presentations/btec-u09/slide-31.jpg",
+    "assets/presentations/btec-u09/slide-32.jpg",
+    "assets/presentations/btec-u09/slide-33.jpg",
+    "assets/presentations/btec-u09/slide-34.jpg",
+    "assets/presentations/btec-u09/slide-35.jpg",
+    "assets/presentations/btec-u09/slide-36.jpg",
+    "assets/presentations/btec-u09/slide-37.jpg",
+    "assets/presentations/btec-u09/slide-38.jpg",
+    "assets/presentations/btec-u09/slide-39.jpg",
+    "assets/presentations/btec-u09/slide-40.jpg",
+    "assets/presentations/btec-u09/slide-41.jpg",
+    "assets/presentations/btec-u09/slide-42.jpg"
+  ] }
+];
+let activeDeck = null;
+function renderDeck(cfg){
+  const deck = document.getElementById(cfg.id);
+  if(!deck) return;
+  const S = cfg.slides, n = cfg.id;
+  if(!S.length){
+    deck.innerHTML = '<div class="placeholder"><div class="ph-icon">🖥️</div><h4>Presentation coming soon</h4><p>The slide deck for this unit is being added.</p></div>';
+    return;
+  }
+  let i = 0;
+  deck.innerHTML = '<div class="deck-stage"><img class="deckImg" alt="Presentation slide" draggable="false" oncontextmenu="return false"/></div>' +
+    '<div class="deck-controls"><button class="deck-btn prevBtn">← Prev</button>' +
+    '<span class="deck-count"></span>' +
+    '<button class="deck-btn fsBtn">⛶ Fullscreen</button>' +
+    '<button class="deck-btn nextBtn">Next →</button></div>';
+  const img = deck.querySelector(".deckImg"), count = deck.querySelector(".deck-count");
+  function show(){ img.src = S[i]; count.textContent = "Slide " + (i+1) + " of " + S.length; }
+  deck.querySelector(".prevBtn").onclick = () => { activeDeck = n; i = (i - 1 + S.length) % S.length; show(); };
+  deck.querySelector(".nextBtn").onclick = () => { activeDeck = n; i = (i + 1) % S.length; show(); };
+  deck.querySelector(".fsBtn").onclick = () => { const s = deck.querySelector(".deck-stage"); (s.requestFullscreen || s.webkitRequestFullscreen).call(s); };
+  img.onclick = () => deck.querySelector(".fsBtn").click();
+  deck.addEventListener("mousedown", () => { activeDeck = n; });
+  show();
+}
+DECKS.forEach(renderDeck);
+document.addEventListener("keydown", e => {
+  if(!activeDeck) return;
+  const d = document.getElementById(activeDeck);
+  if(e.key === "ArrowRight") d.querySelector(".nextBtn").click();
+  if(e.key === "ArrowLeft") d.querySelector(".prevBtn").click();
+});
+</script>
 
 </body>
 </html>
