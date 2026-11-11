@@ -193,7 +193,7 @@
       <li><a href="cambridge-hub.html" class="active">AS Level PE</a></li>
       <li><a href="btec-hub.html">BTEC Sport</a></li>
       <li><a href="az-library.html">A–Z</a></li>
-      <li><a href="youtube.html">YouTube</a></li>
+      <li><a href="https://www.youtube.com/@SimplySportScience" target="_blank" rel="noopener">YouTube</a></li>
       <li><a href="teacher-hub.html" class="teacher-link">Teacher Hub</a></li>
     </ul>
   </div>
@@ -247,16 +247,20 @@
   <section class="section" id="presentation">
     <div class="section-head"><div class="section-num">2</div><h2>Presentations</h2></div>
     <div class="deck-block">
-      <h3 class="sub">Conduction System and Cardiac Cycle</h3>
+      <h3 class="sub">3.1 Heart Structure and Blood Flow</h3>
       <div class="deck" id="deck1"></div>
     </div>
     <div class="deck-block">
-      <h3 class="sub">Heart Structure and Blood Flow</h3>
+      <h3 class="sub">3.2 Conduction System and Cardiac Cycle</h3>
       <div class="deck" id="deck2"></div>
     </div>
     <div class="deck-block">
-      <h3 class="sub">Cardiac Output: Values, Equations and Responses</h3>
+      <h3 class="sub">3.3 Cardiac Output: Values, Equations and Responses</h3>
       <div class="deck" id="deck3"></div>
+    </div>
+    <div class="deck-block">
+      <h3 class="sub">3.4 Venous Return and Vascular Shunt</h3>
+      <div class="deck" id="deck4"></div>
     </div>
   </section>
 
@@ -339,7 +343,7 @@
 </div>
 
 <div class="hub-footer">
-  <p><a href="index.html">Home</a>·<a href="az-library.html">A–Z Library</a>·<a href="teacher-hub.html">Teacher Hub</a>·<a href="youtube.html">YouTube</a>·<a href="about.html">About</a>·<a href="privacy.html">Privacy</a></p>
+  <p><a href="index.html">Home</a>·<a href="az-library.html">A–Z Library</a>·<a href="teacher-hub.html">Teacher Hub</a>·<a href="https://www.youtube.com/@SimplySportScience" target="_blank" rel="noopener">YouTube</a>·<a href="about.html">About</a>·<a href="privacy.html">Privacy</a></p>
   <p style="margin-top:10px;">© 2026 Simply Sport Science · simplysportscience.co.uk</p>
 </div>
 
@@ -351,60 +355,77 @@
    */
 const DECKS = [
   { id: "deck1", slides: [
-    "assets/presentations/cam-cardiovascular-system-slides/slide-01.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-02.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-03.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-04.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-05.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-06.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-07.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-08.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-09.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-10.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-11.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-12.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-13.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-14.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-15.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-16.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-17.jpg"
+    "assets/presentations/cam-3-1-heart-structure-blood-flow/slide-01.jpg",
+    "assets/presentations/cam-3-1-heart-structure-blood-flow/slide-02.jpg",
+    "assets/presentations/cam-3-1-heart-structure-blood-flow/slide-03.jpg",
+    "assets/presentations/cam-3-1-heart-structure-blood-flow/slide-04.jpg",
+    "assets/presentations/cam-3-1-heart-structure-blood-flow/slide-05.jpg",
+    "assets/presentations/cam-3-1-heart-structure-blood-flow/slide-06.jpg",
+    "assets/presentations/cam-3-1-heart-structure-blood-flow/slide-07.jpg",
+    "assets/presentations/cam-3-1-heart-structure-blood-flow/slide-08.jpg",
+    "assets/presentations/cam-3-1-heart-structure-blood-flow/slide-09.jpg",
+    "assets/presentations/cam-3-1-heart-structure-blood-flow/slide-10.jpg",
+    "assets/presentations/cam-3-1-heart-structure-blood-flow/slide-11.jpg",
+    "assets/presentations/cam-3-1-heart-structure-blood-flow/slide-12.jpg"
   ] },
   { id: "deck2", slides: [
-    "assets/presentations/cam-cardiovascular-system-slides/slide-18.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-19.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-20.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-21.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-22.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-23.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-24.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-25.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-26.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-27.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-28.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-29.jpg"
+    "assets/presentations/cam-3-2-conduction-cardiac-cycle/slide-01.jpg",
+    "assets/presentations/cam-3-2-conduction-cardiac-cycle/slide-02.jpg",
+    "assets/presentations/cam-3-2-conduction-cardiac-cycle/slide-03.jpg",
+    "assets/presentations/cam-3-2-conduction-cardiac-cycle/slide-04.jpg",
+    "assets/presentations/cam-3-2-conduction-cardiac-cycle/slide-05.jpg",
+    "assets/presentations/cam-3-2-conduction-cardiac-cycle/slide-06.jpg",
+    "assets/presentations/cam-3-2-conduction-cardiac-cycle/slide-07.jpg",
+    "assets/presentations/cam-3-2-conduction-cardiac-cycle/slide-08.jpg",
+    "assets/presentations/cam-3-2-conduction-cardiac-cycle/slide-09.jpg",
+    "assets/presentations/cam-3-2-conduction-cardiac-cycle/slide-10.jpg",
+    "assets/presentations/cam-3-2-conduction-cardiac-cycle/slide-11.jpg",
+    "assets/presentations/cam-3-2-conduction-cardiac-cycle/slide-12.jpg",
+    "assets/presentations/cam-3-2-conduction-cardiac-cycle/slide-13.jpg",
+    "assets/presentations/cam-3-2-conduction-cardiac-cycle/slide-14.jpg",
+    "assets/presentations/cam-3-2-conduction-cardiac-cycle/slide-15.jpg",
+    "assets/presentations/cam-3-2-conduction-cardiac-cycle/slide-16.jpg",
+    "assets/presentations/cam-3-2-conduction-cardiac-cycle/slide-17.jpg"
   ] },
   { id: "deck3", slides: [
-    "assets/presentations/cam-cardiovascular-system-slides/slide-30.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-31.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-32.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-33.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-34.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-35.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-36.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-37.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-38.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-39.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-40.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-41.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-42.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-43.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-44.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-45.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-46.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-47.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-48.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-49.jpg",
-    "assets/presentations/cam-cardiovascular-system-slides/slide-50.jpg"
+    "assets/presentations/cam-3-3-cardiac-output/slide-01.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-02.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-03.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-04.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-05.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-06.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-07.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-08.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-09.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-10.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-11.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-12.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-13.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-14.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-15.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-16.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-17.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-18.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-19.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-20.jpg",
+    "assets/presentations/cam-3-3-cardiac-output/slide-21.jpg"
+  ] },
+  { id: "deck4", slides: [
+    "assets/presentations/cam-3-4-venous-return-vascular-shunt/slide-01.jpg",
+    "assets/presentations/cam-3-4-venous-return-vascular-shunt/slide-02.jpg",
+    "assets/presentations/cam-3-4-venous-return-vascular-shunt/slide-03.jpg",
+    "assets/presentations/cam-3-4-venous-return-vascular-shunt/slide-04.jpg",
+    "assets/presentations/cam-3-4-venous-return-vascular-shunt/slide-05.jpg",
+    "assets/presentations/cam-3-4-venous-return-vascular-shunt/slide-06.jpg",
+    "assets/presentations/cam-3-4-venous-return-vascular-shunt/slide-07.jpg",
+    "assets/presentations/cam-3-4-venous-return-vascular-shunt/slide-08.jpg",
+    "assets/presentations/cam-3-4-venous-return-vascular-shunt/slide-09.jpg",
+    "assets/presentations/cam-3-4-venous-return-vascular-shunt/slide-10.jpg",
+    "assets/presentations/cam-3-4-venous-return-vascular-shunt/slide-11.jpg",
+    "assets/presentations/cam-3-4-venous-return-vascular-shunt/slide-12.jpg",
+    "assets/presentations/cam-3-4-venous-return-vascular-shunt/slide-13.jpg",
+    "assets/presentations/cam-3-4-venous-return-vascular-shunt/slide-14.jpg",
+    "assets/presentations/cam-3-4-venous-return-vascular-shunt/slide-15.jpg"
   ] }
 ];
 
