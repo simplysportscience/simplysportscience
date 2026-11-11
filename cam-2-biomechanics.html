@@ -193,7 +193,7 @@
       <li><a href="cambridge-hub.html" class="active">AS Level PE</a></li>
       <li><a href="btec-hub.html">BTEC Sport</a></li>
       <li><a href="az-library.html">A–Z</a></li>
-      <li><a href="youtube.html">YouTube</a></li>
+      <li><a href="https://www.youtube.com/@SimplySportScience" target="_blank" rel="noopener">YouTube</a></li>
       <li><a href="teacher-hub.html" class="teacher-link">Teacher Hub</a></li>
     </ul>
   </div>
@@ -245,10 +245,26 @@
 
   <!-- ═══ 2. PRESENTATION ═══ -->
   <section class="section" id="presentation">
-    <div class="section-head"><div class="section-num">2</div><h2>Presentation</h2></div>
+    <div class="section-head"><div class="section-num">2</div><h2>Presentations</h2></div>
     <div class="deck-block">
-      <h3 class="sub">Linear Motion</h3>
+      <h3 class="sub">2.1 Linear Motion</h3>
       <div class="deck" id="deck1"></div>
+    </div>
+    <div class="deck-block">
+      <h3 class="sub">2.2 Newton's Laws of Motion</h3>
+      <div class="deck" id="deck2"></div>
+    </div>
+    <div class="deck-block">
+      <h3 class="sub">2.3 Angular Motion</h3>
+      <div class="deck" id="deck3"></div>
+    </div>
+    <div class="deck-block">
+      <h3 class="sub">2.4 Projectile Flight</h3>
+      <div class="deck" id="deck4"></div>
+    </div>
+    <div class="deck-block">
+      <h3 class="sub">2.5 Centre of Mass and Stability</h3>
+      <div class="deck" id="deck5"></div>
     </div>
   </section>
 
@@ -326,7 +342,7 @@
 </div>
 
 <div class="hub-footer">
-  <p><a href="index.html">Home</a>·<a href="az-library.html">A–Z Library</a>·<a href="teacher-hub.html">Teacher Hub</a>·<a href="youtube.html">YouTube</a>·<a href="about.html">About</a>·<a href="privacy.html">Privacy</a></p>
+  <p><a href="index.html">Home</a>·<a href="az-library.html">A–Z Library</a>·<a href="teacher-hub.html">Teacher Hub</a>·<a href="https://www.youtube.com/@SimplySportScience" target="_blank" rel="noopener">YouTube</a>·<a href="about.html">About</a>·<a href="privacy.html">Privacy</a></p>
   <p style="margin-top:10px;">© 2026 Simply Sport Science · simplysportscience.co.uk</p>
 </div>
 
@@ -338,27 +354,89 @@
    */
 const DECKS = [
   { id: "deck1", slides: [
-    "assets/presentations/cam-biomechanics/slide-01.jpg",
-    "assets/presentations/cam-biomechanics/slide-02.jpg",
-    "assets/presentations/cam-biomechanics/slide-03.jpg",
-    "assets/presentations/cam-biomechanics/slide-04.jpg",
-    "assets/presentations/cam-biomechanics/slide-05.jpg",
-    "assets/presentations/cam-biomechanics/slide-06.jpg",
-    "assets/presentations/cam-biomechanics/slide-07.jpg",
-    "assets/presentations/cam-biomechanics/slide-08.jpg",
-    "assets/presentations/cam-biomechanics/slide-09.jpg",
-    "assets/presentations/cam-biomechanics/slide-10.jpg",
-    "assets/presentations/cam-biomechanics/slide-11.jpg",
-    "assets/presentations/cam-biomechanics/slide-12.jpg",
-    "assets/presentations/cam-biomechanics/slide-13.jpg",
-    "assets/presentations/cam-biomechanics/slide-14.jpg",
-    "assets/presentations/cam-biomechanics/slide-15.jpg",
-    "assets/presentations/cam-biomechanics/slide-16.jpg",
-    "assets/presentations/cam-biomechanics/slide-17.jpg",
-    "assets/presentations/cam-biomechanics/slide-18.jpg",
-    "assets/presentations/cam-biomechanics/slide-19.jpg",
-    "assets/presentations/cam-biomechanics/slide-20.jpg",
-    "assets/presentations/cam-biomechanics/slide-21.jpg"
+    "assets/presentations/cam-2-1-linear-motion/slide-01.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-02.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-03.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-04.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-05.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-06.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-07.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-08.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-09.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-10.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-11.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-12.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-13.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-14.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-15.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-16.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-17.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-18.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-19.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-20.jpg",
+    "assets/presentations/cam-2-1-linear-motion/slide-21.jpg"
+  ] },
+  { id: "deck2", slides: [
+    "assets/presentations/cam-2-2-newtons-laws/slide-01.jpg",
+    "assets/presentations/cam-2-2-newtons-laws/slide-02.jpg",
+    "assets/presentations/cam-2-2-newtons-laws/slide-03.jpg",
+    "assets/presentations/cam-2-2-newtons-laws/slide-04.jpg",
+    "assets/presentations/cam-2-2-newtons-laws/slide-05.jpg",
+    "assets/presentations/cam-2-2-newtons-laws/slide-06.jpg",
+    "assets/presentations/cam-2-2-newtons-laws/slide-07.jpg",
+    "assets/presentations/cam-2-2-newtons-laws/slide-08.jpg",
+    "assets/presentations/cam-2-2-newtons-laws/slide-09.jpg",
+    "assets/presentations/cam-2-2-newtons-laws/slide-10.jpg",
+    "assets/presentations/cam-2-2-newtons-laws/slide-11.jpg",
+    "assets/presentations/cam-2-2-newtons-laws/slide-12.jpg",
+    "assets/presentations/cam-2-2-newtons-laws/slide-13.jpg",
+    "assets/presentations/cam-2-2-newtons-laws/slide-14.jpg",
+    "assets/presentations/cam-2-2-newtons-laws/slide-15.jpg",
+    "assets/presentations/cam-2-2-newtons-laws/slide-16.jpg"
+  ] },
+  { id: "deck3", slides: [
+    "assets/presentations/cam-2-3-angular-motion/slide-01.jpg",
+    "assets/presentations/cam-2-3-angular-motion/slide-02.jpg",
+    "assets/presentations/cam-2-3-angular-motion/slide-03.jpg",
+    "assets/presentations/cam-2-3-angular-motion/slide-04.jpg",
+    "assets/presentations/cam-2-3-angular-motion/slide-05.jpg",
+    "assets/presentations/cam-2-3-angular-motion/slide-06.jpg",
+    "assets/presentations/cam-2-3-angular-motion/slide-07.jpg",
+    "assets/presentations/cam-2-3-angular-motion/slide-08.jpg",
+    "assets/presentations/cam-2-3-angular-motion/slide-09.jpg",
+    "assets/presentations/cam-2-3-angular-motion/slide-10.jpg",
+    "assets/presentations/cam-2-3-angular-motion/slide-11.jpg"
+  ] },
+  { id: "deck4", slides: [
+    "assets/presentations/cam-2-4-projectile-flight/slide-01.jpg",
+    "assets/presentations/cam-2-4-projectile-flight/slide-02.jpg",
+    "assets/presentations/cam-2-4-projectile-flight/slide-03.jpg",
+    "assets/presentations/cam-2-4-projectile-flight/slide-04.jpg",
+    "assets/presentations/cam-2-4-projectile-flight/slide-05.jpg",
+    "assets/presentations/cam-2-4-projectile-flight/slide-06.jpg",
+    "assets/presentations/cam-2-4-projectile-flight/slide-07.jpg",
+    "assets/presentations/cam-2-4-projectile-flight/slide-08.jpg",
+    "assets/presentations/cam-2-4-projectile-flight/slide-09.jpg",
+    "assets/presentations/cam-2-4-projectile-flight/slide-10.jpg",
+    "assets/presentations/cam-2-4-projectile-flight/slide-11.jpg",
+    "assets/presentations/cam-2-4-projectile-flight/slide-12.jpg",
+    "assets/presentations/cam-2-4-projectile-flight/slide-13.jpg",
+    "assets/presentations/cam-2-4-projectile-flight/slide-14.jpg"
+  ] },
+  { id: "deck5", slides: [
+    "assets/presentations/cam-2-5-centre-of-mass-stability/slide-01.jpg",
+    "assets/presentations/cam-2-5-centre-of-mass-stability/slide-02.jpg",
+    "assets/presentations/cam-2-5-centre-of-mass-stability/slide-03.jpg",
+    "assets/presentations/cam-2-5-centre-of-mass-stability/slide-04.jpg",
+    "assets/presentations/cam-2-5-centre-of-mass-stability/slide-05.jpg",
+    "assets/presentations/cam-2-5-centre-of-mass-stability/slide-06.jpg",
+    "assets/presentations/cam-2-5-centre-of-mass-stability/slide-07.jpg",
+    "assets/presentations/cam-2-5-centre-of-mass-stability/slide-08.jpg",
+    "assets/presentations/cam-2-5-centre-of-mass-stability/slide-09.jpg",
+    "assets/presentations/cam-2-5-centre-of-mass-stability/slide-10.jpg",
+    "assets/presentations/cam-2-5-centre-of-mass-stability/slide-11.jpg",
+    "assets/presentations/cam-2-5-centre-of-mass-stability/slide-12.jpg",
+    "assets/presentations/cam-2-5-centre-of-mass-stability/slide-13.jpg"
   ] }
 ];
 
