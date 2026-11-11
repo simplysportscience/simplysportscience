@@ -1,0 +1,4 @@
+Delete these two files from your local repo (GitHub Desktop will then show them as deleted):
+
+btec-u19-expedition-skills.html
+btec-learn-u19-expedition-skills.html
