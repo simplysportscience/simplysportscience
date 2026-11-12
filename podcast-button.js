@@ -76,6 +76,7 @@
     var audio=wrap.querySelector('audio'), btn=wrap.querySelector('.pc-btn'), fill=wrap.querySelector('.pc-ring-fill'),
         status=info.querySelector('.pc-status'), seek=info.querySelector('.pc-seek'), speedBtn=info.querySelector('.pc-speed');
     var C=339.292, speeds=[1,1.25,1.5,0.75], si=0, lastSave=0, seeking=false;
+    var loadedSrc=null;
 
     function fmt(s){ if(!isFinite(s)) return '0:00'; s=Math.max(0,Math.round(s)); var m=Math.floor(s/60), r=s%60; return m+':'+(r<10?'0':'')+r; }
     function savedPos(){ var v=0; try{ v=parseFloat(localStorage.getItem(store)||'0'); }catch(e){} return v||0; }
@@ -102,9 +103,10 @@
       var kids=opts.infoSlot.children; for(var i=0;i<kids.length;i++) kids[i].classList.remove('is-current');
       info.classList.add('is-current');
     }
+    function ensureSrc(){ if(loadedSrc!==src){ audio.src=src; loadedSrc=src; } }
     function startPlay(){
       document.dispatchEvent(new CustomEvent('sss-podcast-play',{detail:wrap}));
-      makeCurrent();
+      makeCurrent(); ensureSrc();
       if(!wrap.classList.contains('has-started')){
         var s=savedPos();
         var go=function(){ if(s>5 && (!isFinite(audio.duration)||s<audio.duration-5)) { try{audio.currentTime=s;}catch(e){} } };
@@ -116,7 +118,8 @@
     function loadTrack(i,autoplay){
       cur=i; var t=tracks[i]; src=t.src; title=t.title; minutes=t.minutes; store='sss-podcast-pos:'+src;
       audio.pause(); setStarted(false); wrap.classList.remove('is-unavailable'); btn.disabled=false;
-      fill.style.strokeDashoffset=C; seek.value=0; audio.src=src; try{audio.load();}catch(e){}
+      fill.style.strokeDashoffset=C; seek.value=0;
+      if(loadedSrc!==null && loadedSrc!==src){ audio.removeAttribute('src'); loadedSrc=null; try{audio.load();}catch(e){} }   /* nothing is downloaded until play is pressed */
       dots.forEach(function(d,k){ d.classList.toggle('is-active',k===i); d.setAttribute('aria-pressed',k===i?'true':'false'); });
       if(capLabel) capEl.textContent=opts.caption+' · '+(t.label||t.title);
       setPlaying(false); status.innerHTML=idleText();
