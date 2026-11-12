@@ -1,0 +1,97 @@
+/* Simply Sport Science – podcast button
+   Circular play button that sits on the right of the topic header.
+   Needs the site's colour variables (--violet, --magenta, --amber, --cyan, --card, --border, --grey-light). */
+
+.topic-hero.has-podcast .topic-hero-inner,.lesson-hero.has-podcast .lesson-hero-inner{position:relative; padding-right:150px; min-height:204px;}
+
+.pc-wrap{
+  --pc-size:116px;
+  position:absolute; right:0; top:2px; z-index:3;
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+  width:calc(var(--pc-size) + 34px);
+  font-family:'Segoe UI',system-ui,sans-serif;
+}
+.pc-btn{
+  position:relative; width:var(--pc-size); height:var(--pc-size); padding:0; border:0; border-radius:50%;
+  background:transparent; cursor:pointer; color:#fff; -webkit-tap-highlight-color:transparent;
+  transition:transform .18s ease;
+}
+.pc-btn:hover{transform:scale(1.045);}
+.pc-btn:active{transform:scale(.97);}
+.pc-btn:focus-visible{outline:3px solid var(--cyan,#22D3EE); outline-offset:4px;}
+
+/* progress ring */
+.pc-ring{position:absolute; inset:0; width:100%; height:100%; transform:rotate(-90deg); overflow:visible;}
+.pc-ring-track{fill:none; stroke:rgba(255,255,255,.16); stroke-width:5;}
+.pc-ring-fill{fill:none; stroke:url(#pc-grad); stroke-width:5; stroke-linecap:round; stroke-dasharray:339.292; stroke-dashoffset:339.292; transition:stroke-dashoffset .25s linear;}
+
+/* face */
+.pc-face{
+  position:absolute; inset:9px; border-radius:50%;
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0;
+  background:radial-gradient(circle at 30% 22%,rgba(255,255,255,.26) 0%,rgba(255,255,255,0) 46%),linear-gradient(145deg,#8A4DFF 0%,#D7309F 100%);
+  box-shadow:0 8px 26px rgba(215,48,159,.45), 0 0 30px rgba(138,77,255,.35), inset 0 2px 0 rgba(255,255,255,.35), inset 0 -6px 14px rgba(26,15,92,.30);
+}
+.pc-icon{width:60px; height:60px; display:block; margin-top:-4px; filter:drop-shadow(0 0 4px rgba(255,255,255,.65)) drop-shadow(0 0 11px rgba(34,211,238,.6));}
+.pc-arc{transform-origin:32px 25px;}
+.pc-wrap:not(.is-playing) .pc-arc-inner{animation:pcWave 2.6s ease-in-out infinite;}
+.pc-wrap:not(.is-playing) .pc-arc-outer{animation:pcWave 2.6s ease-in-out .35s infinite;}
+@keyframes pcWave{0%,100%{opacity:1;}50%{opacity:.72;}}
+.pc-icon-pause{display:none;}
+.pc-label{font-size:11px; font-weight:800; letter-spacing:1.7px; text-transform:uppercase; line-height:1; margin-top:-3px; text-shadow:0 1px 3px rgba(26,15,92,.55);}
+
+/* idle attention pulse */
+.pc-btn::before{
+  content:""; position:absolute; inset:2px; border-radius:50%; z-index:-1;
+  box-shadow:0 0 0 0 rgba(196,33,138,.55); animation:pcPulse 3.4s ease-out infinite;
+}
+@keyframes pcPulse{0%{box-shadow:0 0 0 0 rgba(196,33,138,.50);}70%,100%{box-shadow:0 0 0 20px rgba(196,33,138,0);}}
+
+/* playing state */
+.pc-wrap.is-playing .pc-icon-podcast{display:none;}
+.pc-wrap.is-playing .pc-icon-pause{display:block;}
+.pc-wrap.is-playing .pc-btn::before{animation:pcHalo 1.8s ease-in-out infinite;}
+@keyframes pcHalo{0%,100%{box-shadow:0 0 0 0 rgba(34,211,238,.45);}50%{box-shadow:0 0 0 14px rgba(34,211,238,0);}}
+
+/* status + controls */
+.pc-status{font-size:12px; font-weight:700; color:var(--grey-light,#D4D0EA); text-align:center; line-height:1.25; min-height:15px;}
+.pc-status b{color:var(--amber-light,#F5C866);}
+.pc-controls{display:none; align-items:center; gap:6px;}
+.pc-wrap.has-started .pc-controls{display:flex; animation:pcFade .3s ease;}
+@keyframes pcFade{from{opacity:0; transform:translateY(-4px);}to{opacity:1; transform:none;}}
+.pc-mini{
+  font:inherit; font-size:11px; font-weight:800; color:var(--grey-light,#D4D0EA);
+  background:rgba(255,255,255,.08); border:1px solid var(--border,#33275F); border-radius:99px; padding:5px 9px; cursor:pointer; line-height:1; min-width:38px;
+}
+.pc-mini:hover{background:rgba(255,255,255,.16); color:#fff;}
+.pc-mini:focus-visible{outline:2px solid var(--cyan,#22D3EE); outline-offset:2px;}
+.pc-seek{
+  -webkit-appearance:none; appearance:none; width:132px; height:4px; border-radius:4px; background:rgba(255,255,255,.18); outline:none; cursor:pointer; margin:0;
+  display:none;
+}
+.pc-wrap.has-started .pc-seek{display:block; animation:pcFade .3s ease;}
+.pc-seek::-webkit-slider-thumb{-webkit-appearance:none; width:12px; height:12px; border-radius:50%; background:var(--amber-light,#F5C866); border:0;}
+.pc-seek::-moz-range-thumb{width:12px; height:12px; border-radius:50%; background:var(--amber-light,#F5C866); border:0;}
+.pc-seek:focus-visible{outline:2px solid var(--cyan,#22D3EE); outline-offset:4px;}
+
+/* unavailable */
+.pc-wrap.is-unavailable .pc-btn{cursor:not-allowed; filter:grayscale(.85) opacity(.65);}
+.pc-wrap.is-unavailable .pc-btn::before{animation:none;}
+
+@media (max-width:640px){
+  .topic-hero.has-podcast .topic-hero-inner,.lesson-hero.has-podcast .lesson-hero-inner{padding-right:96px; min-height:168px;}
+  .pc-wrap{--pc-size:80px; width:calc(var(--pc-size) + 14px); top:0;}
+  .pc-icon{width:42px; height:42px; margin-top:-3px;}
+  .pc-label{font-size:8.5px; letter-spacing:1.2px; margin-top:-2px;}
+  .pc-face{inset:7px; gap:2px;}
+  .pc-status{font-size:10.5px;}
+  .pc-seek{width:92px;}
+  .pc-controls{gap:3px;}
+  .pc-mini{padding:4px 6px; font-size:9.5px; min-width:0;}
+}
+@media (prefers-reduced-motion:reduce){
+  .pc-btn::before,.pc-wrap.is-playing .pc-btn::before{animation:none;}
+  .pc-wrap:not(.is-playing) .pc-arc{animation:none;}
+  .pc-btn,.pc-ring-fill{transition:none;}
+  .pc-wrap.has-started .pc-controls,.pc-wrap.has-started .pc-seek{animation:none;}
+}
