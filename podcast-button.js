@@ -157,6 +157,62 @@
     return {hero:hero, inner:hero.querySelector('.topic-hero-inner')||hero.querySelector('.lesson-hero-inner')||hero};
   }
 
+  /* ---------- keep the header at its ORIGINAL height ----------
+     The podcast block floats over the header's own padding. If it would be taller than the header,
+     the circles shrink (never the header grow) until the whole block - including the player strip - fits. */
+  var fitters=[];
+  function textRects(hero){
+    var out=[], t=hero.querySelectorAll('h1,p');
+    for(var i=0;i<t.length;i++){ var r=document.createRange(); r.selectNodeContents(t[i]); var rs=r.getClientRects(); for(var j=0;j<rs.length;j++) if(rs[j].width>0) out.push(rs[j]); }
+    var pills=hero.querySelectorAll('.topic-meta > *, .lesson-eyebrow > *'); for(i=0;i<pills.length;i++) out.push(pills[i].getBoundingClientRect());
+    return out;
+  }
+  function collides(rect,lines){
+    for(var i=0;i<lines.length;i++){ var t=lines[i];
+      if(t.right>rect.left-10 && t.left<rect.right+10 && t.bottom>rect.top-2 && t.top<rect.bottom+2) return true; }
+    return false;
+  }
+  function unionRect(els){
+    var l=1e9,t=1e9,r=-1e9,b=-1e9,any=false;
+    for(var i=0;i<els.length;i++){ var x=els[i].getBoundingClientRect(); if(!x.width&&!x.height) continue; any=true; l=Math.min(l,x.left); t=Math.min(t,x.top); r=Math.max(r,x.right); b=Math.max(b,x.bottom); }
+    return any?{left:l,top:t,right:r,bottom:b,width:r-l,height:b-t}:null;
+  }
+  function registerFit(box,maxSize,hp){
+    var f=function(){
+      if(window.innerWidth<=640){ box.style.removeProperty('--pc-fit'); box.style.removeProperty('top'); box.style.removeProperty('--pc-low-top'); box.classList.remove('pc-strip-low'); return; }
+      var hero=hp.hero, cs=getComputedStyle(hero), padTop=parseFloat(cs.paddingTop)||0, avail=hero.clientHeight-16;   /* 8px breathing room above and below */
+      box.style.top=(8-padTop)+'px'; box.classList.remove('pc-strip-low'); box.style.removeProperty('--pc-low-top');
+      var lines=textRects(hero), infos=box.querySelectorAll('.pc-info'), info0=infos[0], saved=[];
+      for(var i=0;i<infos.length;i++) saved.push(infos[i].className);
+      if(info0) info0.classList.add('has-started','is-current');       /* measure with ONE strip showing, as in real use */
+      var circleParts=box.querySelectorAll('.pc-dock-row,.pc-btn,.pc-cap,.pc-dots');
+      var size=maxSize;
+      for(; size>=52; size-=4){
+        box.style.setProperty('--pc-fit',size+'px');
+        var u=unionRect(circleParts), ok=!u||u.height<=avail;
+        if(ok){ for(var k=0;k<circleParts.length;k++){ if(collides(circleParts[k].getBoundingClientRect(),lines)){ ok=false; break; } } }
+        if(ok) break;
+      }
+      /* player strip: under the circles if there is room, otherwise tucked into the bottom-right corner of the header */
+      if(info0){
+        var br=box.getBoundingClientRect(), ir=info0.getBoundingClientRect();
+        var stackedOK=br.height<=avail && !collides(ir,lines);
+        if(!stackedOK){
+          box.classList.add('pc-strip-low');
+          var hr=hero.getBoundingClientRect(), bb=box.getBoundingClientRect(), h=ir.height;   /* strip height as measured while stacked */
+          box.style.setProperty('--pc-low-top',Math.max(0,(hr.bottom-8-h)-bb.top)+'px');
+        }
+      }
+      for(i=0;i<infos.length;i++) infos[i].className=saved[i];
+    };
+    fitters.push(f); f();
+  }
+  var fitTimer=null;
+  function refit(){ clearTimeout(fitTimer); fitTimer=setTimeout(function(){ fitters.forEach(function(f){ f(); }); },120); }
+  window.addEventListener('resize',refit);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(refit);
+  window.addEventListener('load',refit);
+
   /* ---------- IB: one button per presentation, all in the header ---------- */
   function deckKey(block,blocks){
     var d=block.querySelector('.deck'), id=d&&d.id;
@@ -189,7 +245,8 @@
     var anyMulti=items.some(function(x){ return x.tracks.length>1; });
     if(items.length===1){
       var it=items[0];
-      build(it.tracks,{caption:multiPage?it.code:null,place:function(w){ hp.inner.insertBefore(w,hp.inner.firstChild); hp.hero.classList.add('has-podcast'); if(anyMulti||multiPage) hp.hero.classList.add('pc-tall'); }});
+      var w1=build(it.tracks,{caption:multiPage?it.code:null,place:function(w){ hp.inner.insertBefore(w,hp.inner.firstChild); hp.hero.classList.add('has-podcast'); }});
+      registerFit(w1,it.tracks.length>1?84:116,hp);
       return;
     }
     var n=Math.min(items.length,4);
@@ -200,7 +257,8 @@
     items.forEach(function(it){
       build(it.tracks,{caption:it.code,infoSlot:slot,place:function(w){ row.appendChild(w); }});
     });
-    hp.inner.appendChild(dock); hp.hero.classList.add('has-podcast-dock','pc-n'+n); if(anyMulti) hp.hero.classList.add('pc-tall');
+    hp.inner.insertBefore(dock,hp.inner.firstChild); hp.hero.classList.add('has-podcast-dock','pc-n'+n);
+    registerFit(dock,{2:92,3:72,4:60}[n],hp);
   }
 
   /* ---------- BTEC (and any other header page): one button in the header ---------- */
@@ -209,7 +267,8 @@
     var h1=hp.hero.querySelector('h1'); var title=hp.hero.getAttribute('data-podcast-title')||(h1?h1.textContent.trim():'this topic');
     var forced=hp.hero.getAttribute('data-podcast-src'), key=pageKey(), e=manifest&&manifest.episodes&&manifest.episodes[key];
     var tr=forced?[{src:forced,title:title}]:(e?tracksFor(e,key,title):null); if(!tr) return;
-    build(tr,{place:function(w){ hp.inner.insertBefore(w,hp.inner.firstChild); hp.hero.classList.add('has-podcast'); if(tr.length>1) hp.hero.classList.add('pc-tall'); }});
+    var w2=build(tr,{place:function(w){ hp.inner.insertBefore(w,hp.inner.firstChild); hp.hero.classList.add('has-podcast'); }});
+    registerFit(w2,tr.length>1?84:116,hp);
   }
 
   if(!window.fetch) return;

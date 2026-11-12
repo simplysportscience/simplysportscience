@@ -3,13 +3,12 @@
    One button = full-size circle. Two to four (IB pages with several presentations) = a row of smaller circles
    with one shared player strip underneath. Needs the site's colour variables (--cyan, --border, --grey-light, --amber-light). */
 
-.topic-hero.has-podcast .topic-hero-inner,.lesson-hero.has-podcast .lesson-hero-inner{position:relative; padding-right:150px; min-height:204px;}
-.topic-hero.has-podcast.pc-tall .topic-hero-inner{min-height:248px;}
+.topic-hero.has-podcast .topic-hero-inner,.lesson-hero.has-podcast .lesson-hero-inner{position:relative;}
 
 .pc-wrap{
-  --pc-size:116px;
-  position:absolute; right:0; top:2px; z-index:3;
-  display:flex; flex-direction:column; align-items:center; gap:8px;
+  --pc-size:var(--pc-fit,116px);
+  position:absolute; right:0; top:-30px; z-index:3;
+  display:flex; flex-direction:column; align-items:center; gap:6px;
   width:calc(var(--pc-size) + 34px);
   font-family:'Segoe UI',system-ui,sans-serif;
 }
@@ -29,18 +28,18 @@
 
 /* face */
 .pc-face{
-  position:absolute; inset:9px; border-radius:50%;
+  position:absolute; inset:calc(var(--pc-size) * .078); border-radius:50%;
   display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0;
   background:radial-gradient(circle at 30% 22%,rgba(255,255,255,.26) 0%,rgba(255,255,255,0) 46%),linear-gradient(145deg,#8A4DFF 0%,#D7309F 100%);
   box-shadow:0 8px 26px rgba(215,48,159,.45), 0 0 30px rgba(138,77,255,.35), inset 0 2px 0 rgba(255,255,255,.35), inset 0 -6px 14px rgba(26,15,92,.30);
 }
-.pc-icon{width:60px; height:60px; display:block; margin-top:-4px; filter:drop-shadow(0 0 4px rgba(255,255,255,.65)) drop-shadow(0 0 11px rgba(34,211,238,.6));}
+.pc-icon{width:calc(var(--pc-size) * .52); height:calc(var(--pc-size) * .52); display:block; margin-top:calc(var(--pc-size) * -.035); filter:drop-shadow(0 0 4px rgba(255,255,255,.65)) drop-shadow(0 0 11px rgba(34,211,238,.6));}
 .pc-arc{transform-origin:32px 25px;}
 .pc-wrap:not(.is-playing) .pc-arc-inner{animation:pcWave 2.6s ease-in-out infinite;}
 .pc-wrap:not(.is-playing) .pc-arc-outer{animation:pcWave 2.6s ease-in-out .35s infinite;}
 @keyframes pcWave{0%,100%{opacity:1;}50%{opacity:.72;}}
 .pc-icon-pause{display:none;}
-.pc-label{font-size:11px; font-weight:800; letter-spacing:1.7px; text-transform:uppercase; line-height:1; margin-top:-3px; text-shadow:0 1px 3px rgba(26,15,92,.55); color:#fff;}
+.pc-label{font-size:max(6.5px, calc(var(--pc-size) * .095)); font-weight:800; letter-spacing:calc(var(--pc-size) * .014); text-transform:uppercase; line-height:1; margin-top:calc(var(--pc-size) * -.026); text-shadow:0 1px 3px rgba(26,15,92,.55); color:#fff;}
 
 /* idle attention pulse */
 .pc-btn::before{
@@ -59,7 +58,7 @@
 .pc-cap{font-size:11.5px; font-weight:800; letter-spacing:.4px; color:var(--grey-light,#D4D0EA); text-align:center; line-height:1.2;}
 .pc-dots{display:flex; flex-wrap:wrap; justify-content:center; gap:5px; max-width:150px;}
 .pc-dot{
-  width:22px; height:22px; padding:0; border-radius:50%; font:inherit; font-size:11px; font-weight:800; line-height:1; cursor:pointer;
+  width:20px; height:20px; padding:0; border-radius:50%; font:inherit; font-size:11px; font-weight:800; line-height:1; cursor:pointer;
   color:var(--grey-light,#D4D0EA); background:rgba(255,255,255,.08); border:1px solid var(--border,#33275F);
 }
 .pc-dot:hover{background:rgba(255,255,255,.18); color:#fff;}
@@ -67,8 +66,8 @@
 .pc-dot.is-active{background:linear-gradient(135deg,#8A4DFF,#D7309F); border-color:transparent; color:#fff;}
 
 /* info block (episode name, status, seek, controls) */
-.pc-info{display:flex; flex-direction:column; align-items:center; gap:8px;}
-.pc-now{font-size:11px; font-weight:800; color:var(--amber-light,#F5C866); text-align:center; line-height:1.2; max-width:170px;}
+.pc-info{display:flex; flex-direction:column; align-items:center; gap:5px;}
+.pc-now{font-size:11px; font-weight:800; color:var(--amber-light,#F5C866); text-align:center; line-height:1.2; max-width:170px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 .pc-status{font-size:12px; font-weight:700; color:var(--grey-light,#D4D0EA); text-align:center; line-height:1.25; min-height:15px;}
 .pc-status b{color:var(--amber-light,#F5C866);}
 .pc-controls{display:none; align-items:center; gap:6px;}
@@ -76,12 +75,12 @@
 @keyframes pcFade{from{opacity:0; transform:translateY(-4px);}to{opacity:1; transform:none;}}
 .pc-mini{
   font:inherit; font-size:11px; font-weight:800; color:var(--grey-light,#D4D0EA);
-  background:rgba(255,255,255,.08); border:1px solid var(--border,#33275F); border-radius:99px; padding:5px 9px; cursor:pointer; line-height:1; min-width:38px;
+  background:rgba(255,255,255,.08); border:1px solid var(--border,#33275F); border-radius:99px; padding:4px 8px; cursor:pointer; line-height:1; min-width:36px;
 }
 .pc-mini:hover{background:rgba(255,255,255,.16); color:#fff;}
 .pc-mini:focus-visible{outline:2px solid var(--cyan,#22D3EE); outline-offset:2px;}
 .pc-seek{
-  -webkit-appearance:none; appearance:none; width:132px; height:4px; border-radius:4px; background:rgba(255,255,255,.18); outline:none; cursor:pointer; margin:0;
+  -webkit-appearance:none; appearance:none; width:min(132px,100%); height:4px; border-radius:4px; background:rgba(255,255,255,.18); outline:none; cursor:pointer; margin:0;
   display:none;
 }
 .pc-wrap.has-started .pc-seek,.pc-info.has-started .pc-seek{display:block; animation:pcFade .3s ease;}
@@ -93,50 +92,46 @@
 .pc-wrap.is-unavailable .pc-btn{cursor:not-allowed; filter:grayscale(.85) opacity(.65);}
 .pc-wrap.is-unavailable .pc-btn::before{animation:none;}
 
+/* strip tucked into the bottom-right corner when the circles leave no room beneath them */
+.pc-wrap.pc-strip-low.has-started > .pc-info,
+.pc-dock.pc-strip-low .pc-info.is-current.has-started{position:absolute; right:0; top:var(--pc-low-top,0);}
+.pc-wrap.pc-strip-low:not(.has-started) .pc-status{display:none;}
+
 /* ---------- IB pages with 2-4 buttons: a row of smaller circles in the header ---------- */
-.topic-hero.has-podcast-dock .topic-hero-inner{position:relative; min-height:226px;}
-.topic-hero.has-podcast-dock.pc-tall .topic-hero-inner{min-height:262px;}
-.topic-hero.pc-n2 .topic-hero-inner{padding-right:236px;}
-.topic-hero.pc-n3 .topic-hero-inner{padding-right:294px;}
-.topic-hero.pc-n4 .topic-hero-inner{padding-right:336px;}
-.pc-dock{position:absolute; right:0; top:2px; z-index:3; display:flex; flex-direction:column; align-items:flex-end; gap:12px; font-family:'Segoe UI',system-ui,sans-serif;}
-.pc-dock-row{display:flex; align-items:flex-start; justify-content:flex-end; gap:10px;}
-.pc-dock .pc-wrap{position:static; width:calc(var(--pc-size) + 6px); gap:6px;}
-.pc-dock.pc-n2 .pc-wrap{--pc-size:96px;} .pc-dock.pc-n3 .pc-wrap{--pc-size:80px;} .pc-dock.pc-n4 .pc-wrap{--pc-size:68px;}
-.pc-dock.pc-n2 .pc-icon{width:52px; height:52px;} .pc-dock.pc-n3 .pc-icon{width:42px; height:42px;} .pc-dock.pc-n4 .pc-icon{width:36px; height:36px;}
-.pc-dock.pc-n2 .pc-label{font-size:9.5px; letter-spacing:1.3px;} .pc-dock.pc-n3 .pc-label{font-size:8px; letter-spacing:1px;} .pc-dock.pc-n4 .pc-label{font-size:7px; letter-spacing:.8px;}
-.pc-dock.pc-n3 .pc-face,.pc-dock.pc-n4 .pc-face{inset:7px;}
-.pc-dock .pc-dots{max-width:calc(var(--pc-size) + 6px); gap:4px;}
-.pc-dock .pc-dot{width:19px; height:19px; font-size:10px;}
+.topic-hero.has-podcast-dock .topic-hero-inner{position:relative;}
+.pc-dock{position:absolute; right:0; top:-30px; z-index:3; display:flex; flex-direction:column; align-items:flex-end; gap:8px; font-family:'Segoe UI',system-ui,sans-serif;}
+.pc-dock-row{display:flex; align-items:flex-start; justify-content:flex-end; gap:8px;}
+.pc-dock .pc-wrap{position:static; width:calc(var(--pc-size) + 6px); gap:5px;}
+.pc-dock.pc-n2{--pc-fit:92px;} .pc-dock.pc-n3{--pc-fit:72px;} .pc-dock.pc-n4{--pc-fit:60px;}
+.pc-dock .pc-dots{max-width:calc(var(--pc-size) + 6px); gap:3px;}
+.pc-dock .pc-dot{width:17px; height:17px; font-size:9px;}
 .pc-dock-info{display:flex; justify-content:flex-end; width:100%;}
 .pc-dock-info .pc-info{display:none;}
 .pc-dock-info .pc-info.is-current{display:flex;}
-.pc-dock .pc-cap{font-size:11px;}
+.pc-dock .pc-cap{font-size:10.5px;}
 
 @media (max-width:640px){
-  /* single button: small circle top-right */
-  .topic-hero.has-podcast .topic-hero-inner,.lesson-hero.has-podcast .lesson-hero-inner{padding-right:96px; min-height:168px;}
-  .topic-hero.has-podcast.pc-tall .topic-hero-inner{min-height:214px;}
-  .pc-wrap{--pc-size:80px; width:calc(var(--pc-size) + 14px); top:0;}
-  .pc-icon{width:42px; height:42px; margin-top:-3px;}
-  .pc-label{font-size:8.5px; letter-spacing:1.2px; margin-top:-2px;}
-  .pc-face{inset:7px; gap:2px;}
-  .pc-status{font-size:10.5px;}
-  .pc-seek{width:92px;}
-  .pc-controls{gap:3px;}
-  .pc-mini{padding:4px 6px; font-size:9.5px; min-width:0;}
-  .pc-cap{font-size:10px;}
-  .pc-dots{max-width:94px;}
-  /* several buttons: a tidy row at the end of the header */
-  .topic-hero.has-podcast-dock .topic-hero-inner,.topic-hero.has-podcast-dock.pc-tall .topic-hero-inner{padding-right:0; min-height:0;}
-  .pc-dock{position:static; margin-top:18px; align-items:stretch;}
-  .pc-dock-row{justify-content:flex-start; flex-wrap:wrap; gap:12px;}
-  .pc-dock.pc-n2 .pc-wrap,.pc-dock.pc-n3 .pc-wrap,.pc-dock.pc-n4 .pc-wrap{--pc-size:72px;}
-  .pc-dock.pc-n2 .pc-icon,.pc-dock.pc-n3 .pc-icon,.pc-dock.pc-n4 .pc-icon{width:38px; height:38px;}
-  .pc-dock.pc-n2 .pc-label,.pc-dock.pc-n3 .pc-label,.pc-dock.pc-n4 .pc-label{font-size:7.5px; letter-spacing:.9px;}
-  .pc-dock .pc-face{inset:7px;}
-  .pc-dock-info{justify-content:flex-start;}
-  .pc-dock .pc-cap{font-size:10.5px;}
+  /* phones: the circles float in the top-right corner and the text wraps around them (header stays as close to its original size as possible) */
+  .topic-hero.has-podcast .topic-hero-inner,.lesson-hero.has-podcast .lesson-hero-inner,.topic-hero.has-podcast-dock .topic-hero-inner{padding-right:0;}
+  .pc-wrap{--pc-fit:64px; position:relative; float:right; top:auto; right:auto; width:auto; margin:0 0 6px 12px; gap:4px;}
+  .pc-dock{position:relative; float:right; top:auto; right:auto; margin:0 0 6px 12px; align-items:flex-end; gap:0;}
+  .pc-dock-row{flex-wrap:wrap; justify-content:flex-end; max-width:128px; gap:4px 6px;}
+  .pc-dock.pc-n2,.pc-dock.pc-n3,.pc-dock.pc-n4{--pc-fit:56px;}
+  .pc-dock .pc-wrap{--pc-fit:52px; float:none; margin:0; width:calc(var(--pc-size) + 4px);}
+  .pc-cap,.pc-dock .pc-cap{font-size:10px;}
+  .pc-status{font-size:10.5px; white-space:nowrap;}
+  .pc-dots{max-width:80px;}
+  .pc-dock-info{width:auto;}
+  /* while playing, the player controls sit in a bar at the bottom of the screen, so the page never jumps */
+  .pc-wrap .pc-info.has-started,.pc-dock-info .pc-info.is-current.has-started{
+    position:fixed; left:12px; right:12px; bottom:12px; z-index:60; width:auto;
+    flex-direction:row; flex-wrap:wrap; justify-content:center; align-items:center; gap:8px 12px; padding:10px 14px;
+    background:rgba(20,14,50,.97); border:1px solid var(--border,#33275F); border-radius:16px; box-shadow:0 10px 34px rgba(0,0,0,.55);
+  }
+  .pc-info.has-started .pc-seek{width:100%; order:3;}
+  .pc-info.has-started .pc-controls{order:4;}
+  .pc-info.has-started .pc-now{max-width:none;}
+  .pc-info.has-started .pc-status{font-size:12px;}
 }
 @media (prefers-reduced-motion:reduce){
   .pc-btn::before,.pc-wrap.is-playing .pc-btn::before{animation:none;}
