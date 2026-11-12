@@ -50,7 +50,6 @@
         '<span class="pc-face">'+iconPodcast(u)+iconPause(u)+'<span class="pc-label">Podcast</span></span></button>'+
       (opts.caption?'<div class="pc-cap">'+esc(opts.caption)+'</div>':'')+
       '<div class="pc-info">'+
-        (multi?'<div class="pc-now"></div>':'')+
         '<div class="pc-status" role="status" aria-live="polite"></div>'+
         '<input class="pc-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Seek within podcast episode">'+
         '<div class="pc-controls"><button class="pc-mini pc-back" type="button" aria-label="Back 15 seconds">−15s</button>'+
@@ -72,7 +71,7 @@
     if(opts.infoSlot){ opts.infoSlot.appendChild(info); }
     opts.place(wrap);
     var audio=wrap.querySelector('audio'), btn=wrap.querySelector('.pc-btn'), fill=wrap.querySelector('.pc-ring-fill'),
-        status=info.querySelector('.pc-status'), seek=info.querySelector('.pc-seek'), speedBtn=info.querySelector('.pc-speed'), now=info.querySelector('.pc-now');
+        status=info.querySelector('.pc-status'), seek=info.querySelector('.pc-seek'), speedBtn=info.querySelector('.pc-speed');
     var C=339.292, speeds=[1,1.25,1.5,0.75], si=0, lastSave=0, seeking=false;
 
     function fmt(s){ if(!isFinite(s)) return '0:00'; s=Math.max(0,Math.round(s)); var m=Math.floor(s/60), r=s%60; return m+':'+(r<10?'0':'')+r; }
@@ -93,7 +92,7 @@
       var d=audio.duration, t=audio.currentTime, f=(d&&isFinite(d))?t/d:0;
       fill.style.strokeDashoffset=C*(1-f);
       if(!seeking) seek.value=Math.round(f*1000);
-      if(wrap.classList.contains('has-started')) status.innerHTML=epTag()+'<b>'+fmt(t)+'</b> / '+fmt(d);
+      if(wrap.classList.contains('has-started')) status.innerHTML=(multi?('<span class="pc-ep">'+esc(tracks[cur].label||tracks[cur].title)+'</span> · '):'')+'<b>'+fmt(t)+'</b> / '+fmt(d);
     }
     function makeCurrent(){
       if(!opts.infoSlot) return;
@@ -116,7 +115,6 @@
       audio.pause(); setStarted(false); wrap.classList.remove('is-unavailable'); btn.disabled=false;
       fill.style.strokeDashoffset=C; seek.value=0; audio.src=src; try{audio.load();}catch(e){}
       dots.forEach(function(d,k){ d.classList.toggle('is-active',k===i); d.setAttribute('aria-pressed',k===i?'true':'false'); });
-      if(now) now.textContent=t.label||t.title;
       setPlaying(false); status.innerHTML=idleText();
       if(autoplay) startPlay();
     }
@@ -169,38 +167,48 @@
   }
   function collides(rect,lines){
     for(var i=0;i<lines.length;i++){ var t=lines[i];
-      if(t.right>rect.left-10 && t.left<rect.right+10 && t.bottom>rect.top-2 && t.top<rect.bottom+2) return true; }
+      if(t.right>rect.left-4 && t.left<rect.right+4 && t.bottom>rect.top-2 && t.top<rect.bottom+2) return true; }
     return false;
   }
-  function unionRect(els){
-    var l=1e9,t=1e9,r=-1e9,b=-1e9,any=false;
-    for(var i=0;i<els.length;i++){ var x=els[i].getBoundingClientRect(); if(!x.width&&!x.height) continue; any=true; l=Math.min(l,x.left); t=Math.min(t,x.top); r=Math.max(r,x.right); b=Math.max(b,x.bottom); }
-    return any?{left:l,top:t,right:r,bottom:b,width:r-l,height:b-t}:null;
-  }
+  /* Centre the circles vertically on the header text block, in line with the title and paragraph on the left.
+     The circles shrink until they fit without touching any text. On a page whose title runs so far right that
+     centring is impossible, they sit in the free band above the title instead. */
   function registerFit(box,maxSize,hp){
     var f=function(){
       if(window.innerWidth<=640){ box.style.removeProperty('--pc-fit'); box.style.removeProperty('top'); box.style.removeProperty('--pc-low-top'); box.classList.remove('pc-strip-low'); return; }
-      var hero=hp.hero, cs=getComputedStyle(hero), padTop=parseFloat(cs.paddingTop)||0, avail=hero.clientHeight-16;   /* 8px breathing room above and below */
-      box.style.top=(8-padTop)+'px'; box.classList.remove('pc-strip-low'); box.style.removeProperty('--pc-low-top');
-      var lines=textRects(hero), infos=box.querySelectorAll('.pc-info'), info0=infos[0], saved=[];
+      var hero=hp.hero, inner=hp.inner;
+      var infos=box.querySelectorAll('.pc-info'), info0=infos[0], saved=[], lines=textRects(hero);
       for(var i=0;i<infos.length;i++) saved.push(infos[i].className);
-      if(info0) info0.classList.add('has-started','is-current');       /* measure with ONE strip showing, as in real use */
-      var circleParts=box.querySelectorAll('.pc-dock-row,.pc-btn,.pc-cap,.pc-dots');
-      var size=maxSize;
-      for(; size>=52; size-=4){
+      if(info0) info0.classList.add('has-started','is-current');       /* measure with the player strip showing, as in real use */
+      function place(mode,size){
         box.style.setProperty('--pc-fit',size+'px');
-        var u=unionRect(circleParts), ok=!u||u.height<=avail;
-        if(ok){ for(var k=0;k<circleParts.length;k++){ if(collides(circleParts[k].getBoundingClientRect(),lines)){ ok=false; break; } } }
-        if(ok) break;
+        var hr=hero.getBoundingClientRect(), ir=inner.getBoundingClientRect();
+        if(mode==='center'){
+          box.style.top='0px';
+          var bt=box.querySelector('.pc-btn').getBoundingClientRect();
+          box.style.top=((ir.top+ir.height/2)-(bt.top+bt.height/2))+'px';
+        } else { box.style.top=(8-(ir.top-hr.top))+'px'; }
       }
-      /* player strip: under the circles if there is room, otherwise tucked into the bottom-right corner of the header */
-      if(info0){
-        var br=box.getBoundingClientRect(), ir=info0.getBoundingClientRect();
-        var stackedOK=br.height<=avail && !collides(ir,lines);
-        if(!stackedOK){
+      function fits(){
+        var hr=hero.getBoundingClientRect(), r=box.getBoundingClientRect();
+        if(r.top<hr.top+8 || r.bottom>hr.bottom-8) return false;
+        var parts=box.querySelectorAll('.pc-dock-row,.pc-btn,.pc-cap,.pc-dots,.pc-info');
+        for(var k=0;k<parts.length;k++){ var pr=parts[k].getBoundingClientRect(); if((pr.width||pr.height) && collides(pr,lines)) return false; }
+        return true;
+      }
+      box.classList.remove('pc-strip-low'); box.style.removeProperty('--pc-low-top');
+      var done=false, modes=['center','top'], usedMode='center';
+      for(var m=0;m<modes.length && !done;m++){
+        for(var size=maxSize; size>=52; size-=4){ place(modes[m],size); usedMode=modes[m]; if(fits()){ done=true; break; } }
+      }
+      if(!done){ place('top',52); usedMode='top'; }
+      /* top-band fallback: if the player strip would run into the title, tuck it into the bottom-right corner */
+      if(usedMode==='top' && info0){
+        var ir=info0.getBoundingClientRect(), hr0=hero.getBoundingClientRect(), bx=box.getBoundingClientRect();
+        if(collides(ir,lines) || bx.bottom>hr0.bottom-8){
           box.classList.add('pc-strip-low');
-          var hr=hero.getBoundingClientRect(), bb=box.getBoundingClientRect(), h=ir.height;   /* strip height as measured while stacked */
-          box.style.setProperty('--pc-low-top',Math.max(0,(hr.bottom-8-h)-bb.top)+'px');
+          var bb=box.getBoundingClientRect();
+          box.style.setProperty('--pc-low-top',Math.max(0,(hr0.bottom-8-ir.height)-bb.top)+'px');
         }
       }
       for(i=0;i<infos.length;i++) infos[i].className=saved[i];
