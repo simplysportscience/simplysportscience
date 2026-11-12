@@ -2,20 +2,21 @@
    Circular "Podcast" buttons in the page header, shown only when an episode exists.
    Episodes live in the separate audio site; podcasts.json there lists which episodes exist.
    BTEC pages → one button in the header   (btec-learn-u01-… → btec-u01 | btec-unit-08-… → btec-old-08)
-   IB pages   → one button per presentation, all in the header (named after the presentation's slide folder, e.g. ib-a2-3-2).
+   IB / AS Level pages → one button per presentation, all in the header (named after the presentation's slide folder, e.g. ib-a2-3-2 or cam-1-1-synovial-joints).
                 One button = full-size circle; 2-4 buttons = a row of smaller circles with a shared player strip.
    Change window.SSS_PODCAST_BASE (before this script) or the default below to move the audio to a new host. */
 (function(){
   var BASE=window.SSS_PODCAST_BASE||'https://simplysportscience.github.io/podcasts/';
   if(BASE.slice(-1)!=='/') BASE+='/';
   var file=(location.pathname.split('/').pop()||'index.html').replace(/\.html?$/,'');
-  var isIB=/^ib-[a-d]\d+-\d+-/.test(file);
+  var isIB=/^(ib-[a-d]\d+-\d+|cam-\d+)-/.test(file);   /* IB and AS Level (Cambridge) topic pages: one button per presentation */
   var uidN=0;
 
   function pageKey(){
     var m=file.match(/^btec-learn-u(\d+)-/); if(m) return 'btec-u'+m[1];
     m=file.match(/^btec-unit-(\d+)-/); if(m) return 'btec-old-'+m[1];
     m=file.match(/^(ib-[a-d]\d+-\d+)-/); if(m) return m[1];
+    m=file.match(/^(cam-\d+)-/); if(m) return m[1];
     return file;
   }
   function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;'); }
@@ -185,7 +186,7 @@
         var hr=hero.getBoundingClientRect(), ir=inner.getBoundingClientRect();
         if(mode==='center'){
           box.style.top='0px';
-          var bt=box.querySelector('.pc-btn').getBoundingClientRect();
+          var bt=(box.querySelector('.pc-dock-row')||box.querySelector('.pc-btn')).getBoundingClientRect();   /* centre the whole row/grid of circles */
           box.style.top=((ir.top+ir.height/2)-(bt.top+bt.height/2))+'px';
         } else { box.style.top=(8-(ir.top-hr.top))+'px'; }
       }
@@ -199,9 +200,9 @@
       box.classList.remove('pc-strip-low'); box.style.removeProperty('--pc-low-top');
       var done=false, modes=['center','top'], usedMode='center';
       for(var m=0;m<modes.length && !done;m++){
-        for(var size=maxSize; size>=52; size-=4){ place(modes[m],size); usedMode=modes[m]; if(fits()){ done=true; break; } }
+        for(var size=maxSize; size>=44; size-=4){ place(modes[m],size); usedMode=modes[m]; if(fits()){ done=true; break; } }
       }
-      if(!done){ place('top',52); usedMode='top'; }
+      if(!done){ place('top',44); usedMode='top'; }
       /* top-band fallback: if the player strip would run into the title, tuck it into the bottom-right corner */
       if(usedMode==='top' && info0){
         var ir=info0.getBoundingClientRect(), hr0=hero.getBoundingClientRect(), bx=box.getBoundingClientRect();
@@ -257,7 +258,7 @@
       registerFit(w1,it.tracks.length>1?84:116,hp);
       return;
     }
-    var n=Math.min(items.length,4);
+    var n=Math.min(items.length,5);
     var dock=document.createElement('div'); dock.className='pc-dock pc-n'+n;
     var row=document.createElement('div'); row.className='pc-dock-row';
     var slot=document.createElement('div'); slot.className='pc-dock-info';
@@ -266,7 +267,7 @@
       build(it.tracks,{caption:it.code,infoSlot:slot,place:function(w){ row.appendChild(w); }});
     });
     hp.inner.insertBefore(dock,hp.inner.firstChild); hp.hero.classList.add('has-podcast-dock','pc-n'+n);
-    registerFit(dock,{2:92,3:72,4:60}[n],hp);
+    registerFit(dock,{2:92,3:72,4:60,5:52}[n],hp);
   }
 
   /* ---------- BTEC (and any other header page): one button in the header ---------- */
