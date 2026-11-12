@@ -1,8 +1,10 @@
 /* Simply Sport Science – podcast button
-   Circular play button that sits on the right of the topic header.
-   Needs the site's colour variables (--violet, --magenta, --amber, --cyan, --card, --border, --grey-light). */
+   Circular "Podcast" buttons that sit on the right of the page header.
+   One button = full-size circle. Two to four (IB pages with several presentations) = a row of smaller circles
+   with one shared player strip underneath. Needs the site's colour variables (--cyan, --border, --grey-light, --amber-light). */
 
 .topic-hero.has-podcast .topic-hero-inner,.lesson-hero.has-podcast .lesson-hero-inner{position:relative; padding-right:150px; min-height:204px;}
+.topic-hero.has-podcast.pc-tall .topic-hero-inner{min-height:248px;}
 
 .pc-wrap{
   --pc-size:116px;
@@ -38,7 +40,7 @@
 .pc-wrap:not(.is-playing) .pc-arc-outer{animation:pcWave 2.6s ease-in-out .35s infinite;}
 @keyframes pcWave{0%,100%{opacity:1;}50%{opacity:.72;}}
 .pc-icon-pause{display:none;}
-.pc-label{font-size:11px; font-weight:800; letter-spacing:1.7px; text-transform:uppercase; line-height:1; margin-top:-3px; text-shadow:0 1px 3px rgba(26,15,92,.55);}
+.pc-label{font-size:11px; font-weight:800; letter-spacing:1.7px; text-transform:uppercase; line-height:1; margin-top:-3px; text-shadow:0 1px 3px rgba(26,15,92,.55); color:#fff;}
 
 /* idle attention pulse */
 .pc-btn::before{
@@ -53,14 +55,24 @@
 .pc-wrap.is-playing .pc-btn::before{animation:pcHalo 1.8s ease-in-out infinite;}
 @keyframes pcHalo{0%,100%{box-shadow:0 0 0 0 rgba(34,211,238,.45);}50%{box-shadow:0 0 0 14px rgba(34,211,238,0);}}
 
-/* info block (status, seek, controls) */
-.pc-info{display:flex; flex-direction:column; align-items:center; gap:8px;}
+/* small caption under a circle (presentation code), and episode dots */
+.pc-cap{font-size:11.5px; font-weight:800; letter-spacing:.4px; color:var(--grey-light,#D4D0EA); text-align:center; line-height:1.2;}
+.pc-dots{display:flex; flex-wrap:wrap; justify-content:center; gap:5px; max-width:150px;}
+.pc-dot{
+  width:22px; height:22px; padding:0; border-radius:50%; font:inherit; font-size:11px; font-weight:800; line-height:1; cursor:pointer;
+  color:var(--grey-light,#D4D0EA); background:rgba(255,255,255,.08); border:1px solid var(--border,#33275F);
+}
+.pc-dot:hover{background:rgba(255,255,255,.18); color:#fff;}
+.pc-dot:focus-visible{outline:2px solid var(--cyan,#22D3EE); outline-offset:2px;}
+.pc-dot.is-active{background:linear-gradient(135deg,#8A4DFF,#D7309F); border-color:transparent; color:#fff;}
 
-/* status + controls */
+/* info block (episode name, status, seek, controls) */
+.pc-info{display:flex; flex-direction:column; align-items:center; gap:8px;}
+.pc-now{font-size:11px; font-weight:800; color:var(--amber-light,#F5C866); text-align:center; line-height:1.2; max-width:170px;}
 .pc-status{font-size:12px; font-weight:700; color:var(--grey-light,#D4D0EA); text-align:center; line-height:1.25; min-height:15px;}
 .pc-status b{color:var(--amber-light,#F5C866);}
 .pc-controls{display:none; align-items:center; gap:6px;}
-.pc-wrap.has-started .pc-controls{display:flex; animation:pcFade .3s ease;}
+.pc-wrap.has-started .pc-controls,.pc-info.has-started .pc-controls{display:flex; animation:pcFade .3s ease;}
 @keyframes pcFade{from{opacity:0; transform:translateY(-4px);}to{opacity:1; transform:none;}}
 .pc-mini{
   font:inherit; font-size:11px; font-weight:800; color:var(--grey-light,#D4D0EA);
@@ -72,7 +84,7 @@
   -webkit-appearance:none; appearance:none; width:132px; height:4px; border-radius:4px; background:rgba(255,255,255,.18); outline:none; cursor:pointer; margin:0;
   display:none;
 }
-.pc-wrap.has-started .pc-seek{display:block; animation:pcFade .3s ease;}
+.pc-wrap.has-started .pc-seek,.pc-info.has-started .pc-seek{display:block; animation:pcFade .3s ease;}
 .pc-seek::-webkit-slider-thumb{-webkit-appearance:none; width:12px; height:12px; border-radius:50%; background:var(--amber-light,#F5C866); border:0;}
 .pc-seek::-moz-range-thumb{width:12px; height:12px; border-radius:50%; background:var(--amber-light,#F5C866); border:0;}
 .pc-seek:focus-visible{outline:2px solid var(--cyan,#22D3EE); outline-offset:4px;}
@@ -81,8 +93,30 @@
 .pc-wrap.is-unavailable .pc-btn{cursor:not-allowed; filter:grayscale(.85) opacity(.65);}
 .pc-wrap.is-unavailable .pc-btn::before{animation:none;}
 
+/* ---------- IB pages with 2-4 buttons: a row of smaller circles in the header ---------- */
+.topic-hero.has-podcast-dock .topic-hero-inner{position:relative; min-height:226px;}
+.topic-hero.has-podcast-dock.pc-tall .topic-hero-inner{min-height:262px;}
+.topic-hero.pc-n2 .topic-hero-inner{padding-right:236px;}
+.topic-hero.pc-n3 .topic-hero-inner{padding-right:294px;}
+.topic-hero.pc-n4 .topic-hero-inner{padding-right:336px;}
+.pc-dock{position:absolute; right:0; top:2px; z-index:3; display:flex; flex-direction:column; align-items:flex-end; gap:12px; font-family:'Segoe UI',system-ui,sans-serif;}
+.pc-dock-row{display:flex; align-items:flex-start; justify-content:flex-end; gap:10px;}
+.pc-dock .pc-wrap{position:static; width:calc(var(--pc-size) + 6px); gap:6px;}
+.pc-dock.pc-n2 .pc-wrap{--pc-size:96px;} .pc-dock.pc-n3 .pc-wrap{--pc-size:80px;} .pc-dock.pc-n4 .pc-wrap{--pc-size:68px;}
+.pc-dock.pc-n2 .pc-icon{width:52px; height:52px;} .pc-dock.pc-n3 .pc-icon{width:42px; height:42px;} .pc-dock.pc-n4 .pc-icon{width:36px; height:36px;}
+.pc-dock.pc-n2 .pc-label{font-size:9.5px; letter-spacing:1.3px;} .pc-dock.pc-n3 .pc-label{font-size:8px; letter-spacing:1px;} .pc-dock.pc-n4 .pc-label{font-size:7px; letter-spacing:.8px;}
+.pc-dock.pc-n3 .pc-face,.pc-dock.pc-n4 .pc-face{inset:7px;}
+.pc-dock .pc-dots{max-width:calc(var(--pc-size) + 6px); gap:4px;}
+.pc-dock .pc-dot{width:19px; height:19px; font-size:10px;}
+.pc-dock-info{display:flex; justify-content:flex-end; width:100%;}
+.pc-dock-info .pc-info{display:none;}
+.pc-dock-info .pc-info.is-current{display:flex;}
+.pc-dock .pc-cap{font-size:11px;}
+
 @media (max-width:640px){
+  /* single button: small circle top-right */
   .topic-hero.has-podcast .topic-hero-inner,.lesson-hero.has-podcast .lesson-hero-inner{padding-right:96px; min-height:168px;}
+  .topic-hero.has-podcast.pc-tall .topic-hero-inner{min-height:214px;}
   .pc-wrap{--pc-size:80px; width:calc(var(--pc-size) + 14px); top:0;}
   .pc-icon{width:42px; height:42px; margin-top:-3px;}
   .pc-label{font-size:8.5px; letter-spacing:1.2px; margin-top:-2px;}
@@ -91,44 +125,22 @@
   .pc-seek{width:92px;}
   .pc-controls{gap:3px;}
   .pc-mini{padding:4px 6px; font-size:9.5px; min-width:0;}
+  .pc-cap{font-size:10px;}
+  .pc-dots{max-width:94px;}
+  /* several buttons: a tidy row at the end of the header */
+  .topic-hero.has-podcast-dock .topic-hero-inner,.topic-hero.has-podcast-dock.pc-tall .topic-hero-inner{padding-right:0; min-height:0;}
+  .pc-dock{position:static; margin-top:18px; align-items:stretch;}
+  .pc-dock-row{justify-content:flex-start; flex-wrap:wrap; gap:12px;}
+  .pc-dock.pc-n2 .pc-wrap,.pc-dock.pc-n3 .pc-wrap,.pc-dock.pc-n4 .pc-wrap{--pc-size:72px;}
+  .pc-dock.pc-n2 .pc-icon,.pc-dock.pc-n3 .pc-icon,.pc-dock.pc-n4 .pc-icon{width:38px; height:38px;}
+  .pc-dock.pc-n2 .pc-label,.pc-dock.pc-n3 .pc-label,.pc-dock.pc-n4 .pc-label{font-size:7.5px; letter-spacing:.9px;}
+  .pc-dock .pc-face{inset:7px;}
+  .pc-dock-info{justify-content:flex-start;}
+  .pc-dock .pc-cap{font-size:10.5px;}
 }
 @media (prefers-reduced-motion:reduce){
   .pc-btn::before,.pc-wrap.is-playing .pc-btn::before{animation:none;}
   .pc-wrap:not(.is-playing) .pc-arc{animation:none;}
   .pc-btn,.pc-ring-fill{transition:none;}
-  .pc-wrap.has-started .pc-controls,.pc-wrap.has-started .pc-seek{animation:none;}
+  .pc-wrap.has-started .pc-controls,.pc-wrap.has-started .pc-seek,.pc-info.has-started .pc-controls,.pc-info.has-started .pc-seek{animation:none;}
 }
-
-/* ---------- IB: one button per presentation, on the right of the presentation title ---------- */
-.pc-deckhead{display:flex; align-items:center; justify-content:space-between; gap:18px; margin-bottom:12px;}
-.pc-deckhead > h3{margin:0; flex:1 1 auto; min-width:0;}
-.pc-wrap.pc-inline{--pc-size:92px; position:static; width:auto; flex:0 0 auto; flex-direction:row-reverse; align-items:center; gap:14px;}
-.pc-inline .pc-info{align-items:flex-end;}
-.pc-inline .pc-status{text-align:right; white-space:nowrap;}
-.pc-inline .pc-seek{width:150px;}
-.pc-inline .pc-icon{width:50px; height:50px;}
-.pc-inline .pc-label{font-size:9.5px; letter-spacing:1.4px;}
-@media (max-width:640px){
-  .pc-deckhead{gap:10px;}
-  .pc-wrap.pc-inline{--pc-size:68px; gap:8px; width:auto;}
-  .pc-inline .pc-icon{width:34px; height:34px;}
-  .pc-inline .pc-label{font-size:7.5px; letter-spacing:1px;}
-  .pc-inline .pc-seek{width:92px;}
-  .pc-inline .pc-status{font-size:10px;}
-  .pc-inline:not(.has-started) .pc-status{display:none;}
-  .pc-deckhead:has(.pc-wrap.has-started){flex-wrap:wrap;}
-  .pc-deckhead:has(.pc-wrap.has-started) > h3{flex-basis:100%;}
-  .pc-deckhead:has(.pc-wrap.has-started) .pc-wrap{margin-left:auto;}
-}
-
-/* ---------- several episodes under one button ---------- */
-.pc-tracks{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:0 0 14px;}
-.pc-tracks-label{font-size:11px; font-weight:800; letter-spacing:1.2px; text-transform:uppercase; color:var(--amber-light,#F5C866); margin-right:2px;}
-.pc-chip{font:inherit; font-size:12.5px; font-weight:700; color:var(--grey-light,#D4D0EA); background:rgba(255,255,255,.07); border:1px solid var(--border,#33275F); border-radius:99px; padding:6px 13px 6px 6px; cursor:pointer; display:inline-flex; align-items:center; gap:7px; line-height:1.2;}
-.pc-chip:hover{background:rgba(255,255,255,.15); color:#fff;}
-.pc-chip:focus-visible{outline:2px solid var(--cyan,#22D3EE); outline-offset:2px;}
-.pc-chip-n{display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%; background:rgba(255,255,255,.14); font-size:11px; font-weight:800;}
-.pc-chip small{font-size:10.5px; font-weight:600; opacity:.75; margin-left:1px;}
-.pc-chip.is-active{background:linear-gradient(135deg,#8A4DFF,#D7309F); border-color:transparent; color:#fff;}
-.pc-chip.is-active .pc-chip-n{background:rgba(255,255,255,.28);}
-@media (max-width:640px){ .pc-chip{font-size:11.5px; padding:5px 11px 5px 5px;} .pc-tracks{gap:6px;} }
