@@ -23,7 +23,7 @@
 /* progress ring */
 .pc-ring{position:absolute; inset:0; width:100%; height:100%; transform:rotate(-90deg); overflow:visible;}
 .pc-ring-track{fill:none; stroke:rgba(255,255,255,.16); stroke-width:5;}
-.pc-ring-fill{fill:none; stroke:url(#pc-grad); stroke-width:5; stroke-linecap:round; stroke-dasharray:339.292; stroke-dashoffset:339.292; transition:stroke-dashoffset .25s linear;}
+.pc-ring-fill{fill:none; stroke-width:5; stroke-linecap:round; stroke-dasharray:339.292; stroke-dashoffset:339.292; transition:stroke-dashoffset .25s linear;}
 
 /* face */
 .pc-face{
@@ -52,6 +52,9 @@
 .pc-wrap.is-playing .pc-icon-pause{display:block;}
 .pc-wrap.is-playing .pc-btn::before{animation:pcHalo 1.8s ease-in-out infinite;}
 @keyframes pcHalo{0%,100%{box-shadow:0 0 0 0 rgba(34,211,238,.45);}50%{box-shadow:0 0 0 14px rgba(34,211,238,0);}}
+
+/* info block (status, seek, controls) */
+.pc-info{display:flex; flex-direction:column; align-items:center; gap:8px;}
 
 /* status + controls */
 .pc-status{font-size:12px; font-weight:700; color:var(--grey-light,#D4D0EA); text-align:center; line-height:1.25; min-height:15px;}
@@ -94,4 +97,26 @@
   .pc-wrap:not(.is-playing) .pc-arc{animation:none;}
   .pc-btn,.pc-ring-fill{transition:none;}
   .pc-wrap.has-started .pc-controls,.pc-wrap.has-started .pc-seek{animation:none;}
+}
+
+/* ---------- IB: one button per presentation, on the right of the presentation title ---------- */
+.pc-deckhead{display:flex; align-items:center; justify-content:space-between; gap:18px; margin-bottom:12px;}
+.pc-deckhead > h3{margin:0; flex:1 1 auto; min-width:0;}
+.pc-wrap.pc-inline{--pc-size:92px; position:static; width:auto; flex:0 0 auto; flex-direction:row-reverse; align-items:center; gap:14px;}
+.pc-inline .pc-info{align-items:flex-end;}
+.pc-inline .pc-status{text-align:right; white-space:nowrap;}
+.pc-inline .pc-seek{width:150px;}
+.pc-inline .pc-icon{width:50px; height:50px;}
+.pc-inline .pc-label{font-size:9.5px; letter-spacing:1.4px;}
+@media (max-width:640px){
+  .pc-deckhead{gap:10px;}
+  .pc-wrap.pc-inline{--pc-size:68px; gap:8px; width:auto;}
+  .pc-inline .pc-icon{width:34px; height:34px;}
+  .pc-inline .pc-label{font-size:7.5px; letter-spacing:1px;}
+  .pc-inline .pc-seek{width:92px;}
+  .pc-inline .pc-status{font-size:10px;}
+  .pc-inline:not(.has-started) .pc-status{display:none;}
+  .pc-deckhead:has(.pc-wrap.has-started){flex-wrap:wrap;}
+  .pc-deckhead:has(.pc-wrap.has-started) > h3{flex-basis:100%;}
+  .pc-deckhead:has(.pc-wrap.has-started) .pc-wrap{margin-left:auto;}
 }
