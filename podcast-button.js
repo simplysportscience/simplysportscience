@@ -57,7 +57,7 @@
           '<button class="pc-mini pc-speed" type="button" aria-label="Playback speed">1×</button>'+
           '<button class="pc-mini pc-fwd" type="button" aria-label="Forward 15 seconds">+15s</button></div></div>'+
       '<audio preload="none"></audio>';
-    var info=wrap.querySelector('.pc-info');
+    var info=wrap.querySelector('.pc-info'), capEl=wrap.querySelector('.pc-cap');
     var dots=[];
     if(multi){
       var dotsEl=document.createElement('div'); dotsEl.className='pc-dots'; dotsEl.setAttribute('role','group'); dotsEl.setAttribute('aria-label','Podcast episodes');
@@ -77,7 +77,7 @@
 
     function fmt(s){ if(!isFinite(s)) return '0:00'; s=Math.max(0,Math.round(s)); var m=Math.floor(s/60), r=s%60; return m+':'+(r<10?'0':'')+r; }
     function savedPos(){ var v=0; try{ v=parseFloat(localStorage.getItem(store)||'0'); }catch(e){} return v||0; }
-    function epTag(){ return multi?('Ep '+(cur+1)+'/'+tracks.length+' · '):''; }
+    function epTag(){ return (multi&&!capEl)?('Ep '+(cur+1)+'/'+tracks.length+' · '):''; }
     function idleText(){
       var s=savedPos();
       if(s>5 && (!isFinite(audio.duration)||s<audio.duration-5)) return epTag()+'Resume from <b>'+fmt(s)+'</b>';
@@ -93,7 +93,7 @@
       var d=audio.duration, t=audio.currentTime, f=(d&&isFinite(d))?t/d:0;
       fill.style.strokeDashoffset=C*(1-f);
       if(!seeking) seek.value=Math.round(f*1000);
-      if(wrap.classList.contains('has-started')) status.innerHTML=(multi?('<span class="pc-ep">'+esc(tracks[cur].label||tracks[cur].title)+'</span> · '):'')+'<b>'+fmt(t)+'</b> / '+fmt(d);
+      if(wrap.classList.contains('has-started')) status.innerHTML=((multi&&!capEl)?('<span class="pc-ep">'+esc(tracks[cur].label||tracks[cur].title)+'</span> · '):'')+'<b>'+fmt(t)+'</b> / '+fmt(d);
     }
     function makeCurrent(){
       if(!opts.infoSlot) return;
@@ -116,6 +116,7 @@
       audio.pause(); setStarted(false); wrap.classList.remove('is-unavailable'); btn.disabled=false;
       fill.style.strokeDashoffset=C; seek.value=0; audio.src=src; try{audio.load();}catch(e){}
       dots.forEach(function(d,k){ d.classList.toggle('is-active',k===i); d.setAttribute('aria-pressed',k===i?'true':'false'); });
+      if(capEl && multi) capEl.textContent=opts.caption+' · '+(t.label||t.title);
       setPlaying(false); status.innerHTML=idleText();
       if(autoplay) startPlay();
     }
@@ -186,7 +187,10 @@
         var hr=hero.getBoundingClientRect(), ir=inner.getBoundingClientRect();
         if(mode==='center'){
           box.style.top='0px';
-          var bt=(box.querySelector('.pc-dock-row')||box.querySelector('.pc-btn')).getBoundingClientRect();   /* centre the whole row/grid of circles */
+          /* centre the whole group of circles (with their captions and episode dots) on the text midline */
+          var gEls=box.classList.contains('pc-wrap')?box.querySelectorAll('.pc-btn,.pc-cap,.pc-dots'):[box.querySelector('.pc-dock-row')];
+          var gt=1e9,gb=-1e9; for(var g=0;g<gEls.length;g++){ var gr=gEls[g].getBoundingClientRect(); if(!gr.height) continue; gt=Math.min(gt,gr.top); gb=Math.max(gb,gr.bottom); }
+          var bt={top:gt,height:gb-gt};
           box.style.top=((ir.top+ir.height/2)-(bt.top+bt.height/2))+'px';
         } else { box.style.top=(8-(ir.top-hr.top))+'px'; }
       }
