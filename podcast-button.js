@@ -2,7 +2,7 @@
    Circular "Podcast" buttons in the page header, shown only when an episode exists.
    Episodes live in the separate audio site; podcasts.json there lists which episodes exist.
    BTEC pages → one button in the header   (btec-learn-u01-… → btec-u01 | btec-unit-08-… → btec-old-08)
-   IB / AS Level pages → one button per presentation, all in the header (named after the presentation's slide folder, e.g. ib-a2-3-2 or cam-1-1-synovial-joints).
+   IB / AS Level pages → one button per presentation (AS Level topics may also have one whole-topic episode, named cam-N), all in the header (named after the presentation's slide folder, e.g. ib-a2-3-2 or cam-1-1-synovial-joints).
                 One button = full-size circle; 2-4 buttons = a row of smaller circles with a shared player strip.
    Change window.SSS_PODCAST_BASE (before this script) or the default below to move the audio to a new host. */
 (function(){
@@ -249,16 +249,19 @@
       var text=h3.textContent.trim();
       items.push({tracks:tracksFor(e,key,text),code:codeOf(text)});
     });
+    /* AS Level: a whole-topic episode (named after the page, e.g. cam-3) gets its own button, shown first */
+    var hasTopic=false, topicE=/^cam-/.test(file)?manifest.episodes[pageKey()]:null;
+    if(topicE){ var th1=hp.hero.querySelector('h1'); items.unshift({tracks:tracksFor(topicE,pageKey(),th1?th1.textContent.trim():'this topic'),code:'Topic'}); hasTopic=true; }
     if(!items.length) return;
     var multiPage=list.length>1;
     var anyMulti=items.some(function(x){ return x.tracks.length>1; });
     if(items.length===1){
       var it=items[0];
-      var w1=build(it.tracks,{caption:multiPage?it.code:null,place:function(w){ hp.inner.insertBefore(w,hp.inner.firstChild); hp.hero.classList.add('has-podcast'); }});
+      var w1=build(it.tracks,{caption:(multiPage&&!(hasTopic&&items.length===1))?it.code:null,place:function(w){ hp.inner.insertBefore(w,hp.inner.firstChild); hp.hero.classList.add('has-podcast'); }});
       registerFit(w1,it.tracks.length>1?84:116,hp);
       return;
     }
-    var n=Math.min(items.length,5);
+    var n=Math.min(items.length,6);
     var dock=document.createElement('div'); dock.className='pc-dock pc-n'+n;
     var row=document.createElement('div'); row.className='pc-dock-row';
     var slot=document.createElement('div'); slot.className='pc-dock-info';
@@ -267,7 +270,7 @@
       build(it.tracks,{caption:it.code,infoSlot:slot,place:function(w){ row.appendChild(w); }});
     });
     hp.inner.insertBefore(dock,hp.inner.firstChild); hp.hero.classList.add('has-podcast-dock','pc-n'+n);
-    registerFit(dock,{2:92,3:72,4:60,5:52}[n],hp);
+    registerFit(dock,{2:92,3:72,4:60,5:52,6:52}[n],hp);
   }
 
   /* ---------- BTEC (and any other header page): one button in the header ---------- */

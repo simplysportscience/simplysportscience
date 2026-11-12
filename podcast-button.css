@@ -104,9 +104,9 @@
 .pc-dock{position:absolute; right:0; top:0; z-index:3; display:flex; flex-direction:column; align-items:flex-end; gap:8px; font-family:'Segoe UI',system-ui,sans-serif;}
 .pc-dock-row{display:flex; align-items:flex-start; justify-content:flex-end; gap:8px;}
 .pc-dock .pc-wrap{position:static; width:calc(var(--pc-size) + 6px); gap:5px;}
-.pc-dock.pc-n2{--pc-fit:92px;} .pc-dock.pc-n3{--pc-fit:72px;} .pc-dock.pc-n4{--pc-fit:60px;} .pc-dock.pc-n5{--pc-fit:52px;}
+.pc-dock.pc-n2{--pc-fit:92px;} .pc-dock.pc-n3{--pc-fit:72px;} .pc-dock.pc-n4{--pc-fit:60px;} .pc-dock.pc-n5,.pc-dock.pc-n6{--pc-fit:52px;}
 /* five presentations: a neat 3-over-2 grid */
-.pc-dock.pc-n5 .pc-dock-row{flex-wrap:wrap; max-width:calc(3 * (var(--pc-fit) + 6px) + 16px); gap:4px 8px;}
+.pc-dock.pc-n5 .pc-dock-row,.pc-dock.pc-n6 .pc-dock-row{flex-wrap:wrap; max-width:calc(3 * (var(--pc-fit) + 6px) + 16px); gap:4px 8px;}
 .pc-dock .pc-dots{gap:3px;}
 .pc-dock .pc-dot{width:17px; height:17px; font-size:9px;}
 .pc-dock-info{display:flex; justify-content:flex-end; width:100%;}
@@ -120,7 +120,7 @@
   .pc-wrap{--pc-fit:64px; position:relative; float:right; top:auto; right:auto; width:auto; margin:0 0 6px 12px; gap:4px;}
   .pc-dock{position:relative; float:right; top:auto; right:auto; margin:0 0 6px 12px; align-items:flex-end; gap:0;}
   .pc-dock-row{flex-wrap:wrap; justify-content:flex-end; max-width:128px; gap:4px 6px;}
-  .pc-dock.pc-n5 .pc-dock-row{max-width:128px; gap:4px 6px;}
+  .pc-dock.pc-n5 .pc-dock-row,.pc-dock.pc-n6 .pc-dock-row{max-width:128px; gap:4px 6px;}
   .pc-dock.pc-n2,.pc-dock.pc-n3,.pc-dock.pc-n4{--pc-fit:56px;}
   .pc-dock .pc-wrap{--pc-fit:52px; float:none; margin:0; width:calc(var(--pc-size) + 4px);}
   .pc-cap,.pc-dock .pc-cap{font-size:10px;}
