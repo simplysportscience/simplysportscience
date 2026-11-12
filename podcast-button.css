@@ -120,3 +120,15 @@
   .pc-deckhead:has(.pc-wrap.has-started) > h3{flex-basis:100%;}
   .pc-deckhead:has(.pc-wrap.has-started) .pc-wrap{margin-left:auto;}
 }
+
+/* ---------- several episodes under one button ---------- */
+.pc-tracks{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:0 0 14px;}
+.pc-tracks-label{font-size:11px; font-weight:800; letter-spacing:1.2px; text-transform:uppercase; color:var(--amber-light,#F5C866); margin-right:2px;}
+.pc-chip{font:inherit; font-size:12.5px; font-weight:700; color:var(--grey-light,#D4D0EA); background:rgba(255,255,255,.07); border:1px solid var(--border,#33275F); border-radius:99px; padding:6px 13px 6px 6px; cursor:pointer; display:inline-flex; align-items:center; gap:7px; line-height:1.2;}
+.pc-chip:hover{background:rgba(255,255,255,.15); color:#fff;}
+.pc-chip:focus-visible{outline:2px solid var(--cyan,#22D3EE); outline-offset:2px;}
+.pc-chip-n{display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%; background:rgba(255,255,255,.14); font-size:11px; font-weight:800;}
+.pc-chip small{font-size:10.5px; font-weight:600; opacity:.75; margin-left:1px;}
+.pc-chip.is-active{background:linear-gradient(135deg,#8A4DFF,#D7309F); border-color:transparent; color:#fff;}
+.pc-chip.is-active .pc-chip-n{background:rgba(255,255,255,.28);}
+@media (max-width:640px){ .pc-chip{font-size:11.5px; padding:5px 11px 5px 5px;} .pc-tracks{gap:6px;} }
