@@ -122,6 +122,7 @@
       if(loadedSrc!==null && loadedSrc!==src){ audio.removeAttribute('src'); loadedSrc=null; try{audio.load();}catch(e){} }   /* nothing is downloaded until play is pressed */
       dots.forEach(function(d,k){ d.classList.toggle('is-active',k===i); d.setAttribute('aria-pressed',k===i?'true':'false'); });
       if(capLabel) capEl.textContent=opts.caption+' · '+(t.label||t.title);
+      if(capDock) capEl.title=t.title;
       setPlaying(false); status.innerHTML=idleText();
       if(autoplay) startPlay();
     }
@@ -199,17 +200,23 @@
           box.style.top=((ir.top+ir.height/2)-(bt.top+bt.height/2))+'px';
         } else { box.style.top=(8-(ir.top-hr.top))+'px'; }
       }
-      function fits(){
-        var hr=hero.getBoundingClientRect(), r=box.getBoundingClientRect();
+      function fits(circlesOnly){
+        /* circlesOnly: in the top-band fallback the player strip is tucked into the bottom corner, so only the circles must fit */
+        var hr=hero.getBoundingClientRect(), r;
+        if(circlesOnly){
+          var cs=box.querySelectorAll('.pc-dock-row,.pc-btn,.pc-cap,.pc-dots'), t=1e9, bt=-1e9;
+          for(var c=0;c<cs.length;c++){ var q=cs[c].getBoundingClientRect(); if(q.height){ t=Math.min(t,q.top); bt=Math.max(bt,q.bottom); } }
+          r={top:t,bottom:bt};
+        } else r=box.getBoundingClientRect();
         if(r.top<hr.top+8 || r.bottom>hr.bottom-8) return false;
-        var parts=box.querySelectorAll('.pc-dock-row,.pc-btn,.pc-cap,.pc-dots,.pc-info');
+        var parts=box.querySelectorAll(circlesOnly?'.pc-dock-row,.pc-btn,.pc-cap,.pc-dots':'.pc-dock-row,.pc-btn,.pc-cap,.pc-dots,.pc-info');
         for(var k=0;k<parts.length;k++){ var pr=parts[k].getBoundingClientRect(); if((pr.width||pr.height) && collides(pr,lines)) return false; }
         return true;
       }
       box.classList.remove('pc-strip-low'); box.style.removeProperty('--pc-low-top');
       var done=false, modes=['center','top'], usedMode='center';
       for(var m=0;m<modes.length && !done;m++){
-        for(var size=maxSize; size>=44; size-=4){ place(modes[m],size); usedMode=modes[m]; if(fits()){ done=true; break; } }
+        for(var size=maxSize; size>=44; size-=4){ place(modes[m],size); usedMode=modes[m]; if(fits(modes[m]==='top')){ done=true; break; } }
       }
       if(!done){ place('top',44); usedMode='top'; }
       /* top-band fallback: if the player strip would run into the title, tuck it into the bottom-right corner */
