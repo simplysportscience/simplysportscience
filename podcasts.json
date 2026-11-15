@@ -1,0 +1,455 @@
+{
+  "episodes": {
+    "ib-a1-1-1": {
+      "file": "ib-a1-1-1.mp3",
+      "title": "A.1.1.1 The Nervous System",
+      "minutes": 18
+    },
+    "ib-a1-1-2": {
+      "file": "ib-a1-1-2.mp3",
+      "title": "A.1.1.2 The Endocrine System",
+      "minutes": 18
+    },
+    "ib-a1-2": {
+      "tracks": [
+        {
+          "file": "ib-a1-2-1.mp3",
+          "title": "A.1.2.1 Homeostasis",
+          "label": "Homeostasis",
+          "minutes": 9
+        },
+        {
+          "file": "ib-a1-2-2-environment.mp3",
+          "title": "A.1.2.2 Acute Responses to Environment",
+          "label": "Environment",
+          "minutes": 19
+        },
+        {
+          "file": "ib-a1-2-2-altitude.mp3",
+          "title": "A.1.2.2 Acute Response to Altitude",
+          "label": "Altitude",
+          "minutes": 19
+        },
+        {
+          "file": "ib-a1-2-2-heat.mp3",
+          "title": "A.1.2.2 Acute Response to Heat",
+          "label": "Heat",
+          "minutes": 15
+        },
+        {
+          "file": "ib-a1-2-2-cold.mp3",
+          "title": "A.1.2.2 Acute Responses to Cold",
+          "label": "Cold",
+          "minutes": 18
+        }
+      ]
+    },
+    "ib-a1-3": {
+      "tracks": [
+        {
+          "file": "ib-a1-3-cardiovascular.mp3",
+          "title": "A.1.3.1 The Cardiovascular System",
+          "label": "Cardiovascular System",
+          "minutes": 12
+        },
+        {
+          "file": "ib-a1-3-heart.mp3",
+          "title": "A.1.3.1 The Heart",
+          "label": "The Heart",
+          "minutes": 22
+        },
+        {
+          "file": "ib-a1-3-blood-vessels.mp3",
+          "title": "A.1.3.1 Blood Vessels",
+          "label": "Blood Vessels",
+          "minutes": 15
+        },
+        {
+          "file": "ib-a1-3-cardiac-control.mp3",
+          "title": "A.1.3.1 Cardiac Control",
+          "label": "Cardiac Control",
+          "minutes": 12
+        }
+      ]
+    },
+    "ib-a2-1-1": {
+      "file": "ib-a2-1-1.mp3",
+      "title": "A.2.1.1 Water and Electrolyte Balance",
+      "minutes": 21
+    },
+    "ib-a2-2-1": {
+      "tracks": [
+        {
+          "file": "ib-a2-2-1-nutrition.mp3",
+          "title": "A.2.2.1 Nutrition",
+          "label": "Nutrition",
+          "minutes": 20
+        },
+        {
+          "file": "ib-a2-2-1-macronutrients.mp3",
+          "title": "A.2.2.1 Macronutrients",
+          "label": "Macros",
+          "minutes": 18
+        },
+        {
+          "file": "ib-a2-2-1-carbohydrates.mp3",
+          "title": "A.2.2.1 Carbohydrates",
+          "label": "Carbs",
+          "minutes": 18
+        },
+        {
+          "file": "ib-a2-2-1-lipids.mp3",
+          "title": "A.2.2.1 Lipids",
+          "label": "Lipids",
+          "minutes": 15
+        },
+        {
+          "file": "ib-a2-2-1-proteins.mp3",
+          "title": "A.2.2.1 Proteins",
+          "label": "Proteins",
+          "minutes": 19
+        }
+      ]
+    },
+    "ib-a2-2-3": {
+      "file": "ib-a2-2-3.mp3",
+      "title": "A.2.2.3 The Gut Microbiome",
+      "minutes": 12
+    },
+    "ib-a2-3-1": {
+      "tracks": [
+        {
+          "file": "ib-a2-3-1-energy-systems.mp3",
+          "title": "A.2.3.1 Energy Systems",
+          "label": "Overview",
+          "minutes": 22
+        },
+        {
+          "file": "ib-a2-3-1-phosphagen.mp3",
+          "title": "A.2.3.1 The Phosphagen Energy System",
+          "label": "ATP-PC",
+          "minutes": 14
+        },
+        {
+          "file": "ib-a2-3-1-glycolytic.mp3",
+          "title": "A.2.3.1 The Glycolytic System",
+          "label": "Glycolytic",
+          "minutes": 12
+        },
+        {
+          "file": "ib-a2-3-1-oxidative.mp3",
+          "title": "A.2.3.1 The Oxidative Energy System",
+          "label": "Oxidative",
+          "minutes": 20
+        }
+      ]
+    },
+    "ib-a2-3-2": {
+      "file": "ib-a2-3-2.mp3",
+      "title": "A.2.3.2 VO₂ Max",
+      "minutes": 18
+    },
+    "ib-a2-3-3": {
+      "file": "ib-a2-3-3.mp3",
+      "title": "A.2.3.3 The Lactate Inflection Point",
+      "minutes": 12
+    },
+    "ib-a2-3-4": {
+      "file": "ib-a2-3-4.mp3",
+      "title": "A.2.3.4 Excess Post-exercise Oxygen Consumption (EPOC)",
+      "minutes": 18
+    },
+    "ib-a3-1-1": {
+      "file": "ib-a3-1-1.mp3",
+      "title": "A.3.1.1 Training Design",
+      "minutes": 16
+    },
+    "ib-a3-2-1": {
+      "file": "ib-a3-2-1.mp3",
+      "title": "A.3.2.1 Active Lifestyle",
+      "minutes": 20
+    },
+    "ib-a3-2-2": {
+      "file": "ib-a3-2-2.mp3",
+      "title": "A.3.2.2 Prescribing Exercise",
+      "minutes": 18
+    },
+    "ib-a3-3-1": {
+      "file": "ib-a3-3-1.mp3",
+      "title": "A.3.3.1 Fatigue",
+      "minutes": 21
+    },
+    "ib-a3-3-2": {
+      "file": "ib-a3-3-2.mp3",
+      "title": "A.3.3.2 Recovery from Exercise",
+      "minutes": 22
+    },
+    "ib-b1-1-1": {
+      "tracks": [
+        {
+          "file": "ib-b1-1-1-skeletal-system.mp3",
+          "title": "B.1.1.1 The Skeletal System",
+          "label": "Skeleton",
+          "minutes": 12
+        },
+        {
+          "file": "ib-b1-1-1-anatomical-structures.mp3",
+          "title": "B.1.1.1 Anatomical Structures of the Skeleton",
+          "label": "Structures",
+          "minutes": 8
+        }
+      ]
+    },
+    "ib-b1-1-2": {
+      "file": "ib-b1-1-2.mp3",
+      "title": "B.1.1.2 Axes and Planes",
+      "minutes": 17
+    },
+    "ib-b1-1-3": {
+      "tracks": [
+        {
+          "file": "ib-b1-1-3-anthropometry.mp3",
+          "title": "B.1.1.3 Anthropometry",
+          "label": "Body Size",
+          "minutes": 19
+        },
+        {
+          "file": "ib-b1-1-3-ergonomic-design.mp3",
+          "title": "B.1.1.3 Ergonomic Design",
+          "label": "Ergonomics",
+          "minutes": 16
+        }
+      ]
+    },
+    "ib-b1-2-1": {
+      "file": "ib-b1-2-1.mp3",
+      "title": "B.1.2 Connective Tissues and Joints",
+      "minutes": 19
+    },
+    "ib-b1-3-1": {
+      "tracks": [
+        {
+          "file": "ib-b1-3-1-muscular-contraction.mp3",
+          "title": "B.1.3.1 Muscular Contraction",
+          "label": "Contraction",
+          "minutes": 18
+        },
+        {
+          "file": "ib-b1-3-1-antagonistic-muscles.mp3",
+          "title": "B.1.3.1 Antagonistic Muscles",
+          "label": "Antagonists",
+          "minutes": 14
+        }
+      ]
+    },
+    "ib-b1-3-2": {
+      "file": "ib-b1-3-2.mp3",
+      "title": "B.1.3.2 Sliding Filament Theory",
+      "minutes": 16
+    },
+    "ib-b1-4-1": {
+      "file": "ib-b1-4-1.mp3",
+      "title": "B.1.4.1 Levers",
+      "minutes": 22
+    },
+    "ib-b2-1-1": {
+      "tracks": [
+        {
+          "file": "ib-b2-1-1-newtons-laws.mp3",
+          "title": "B.2.1.1 Linear and Angular Momentum and Newton's Laws",
+          "label": "Newton's",
+          "minutes": 19
+        },
+        {
+          "file": "ib-b2-1-1-acceleration.mp3",
+          "title": "B.2.1.1 Acceleration and Speed in Sports",
+          "label": "Speed",
+          "minutes": 12
+        },
+        {
+          "file": "ib-b2-1-1-angular-motion.mp3",
+          "title": "B.2.1.1 Angular Motion",
+          "label": "Angular",
+          "minutes": 19
+        }
+      ]
+    },
+    "ib-b2-1-2": {
+      "file": "ib-b2-1-2.mp3",
+      "title": "B.2.1.2 Momentum and Collisions in Sports",
+      "minutes": 13
+    },
+    "ib-b2-1-3": {
+      "file": "ib-b2-1-3.mp3",
+      "title": "B.2.1.3 Friction",
+      "minutes": 15
+    },
+    "ib-b2-1-4": {
+      "file": "ib-b2-1-4.mp3",
+      "title": "B.2.1.4 Work",
+      "minutes": 15
+    },
+    "ib-b2-2-1": {
+      "tracks": [
+        {
+          "file": "ib-b2-2-1-projectile-motion.mp3",
+          "title": "B.2.2.1 Projectile Motion",
+          "label": "Projectile",
+          "minutes": 11
+        },
+        {
+          "file": "ib-b2-2-1-air-resistance.mp3",
+          "title": "B.2.2.1 Air Resistance in Sports",
+          "label": "Resistance",
+          "minutes": 12
+        }
+      ]
+    },
+    "ib-b2-2-2": {
+      "tracks": [
+        {
+          "file": "ib-b2-2-2-fluid-mechanics.mp3",
+          "title": "B.2.2.2 Fluid Mechanics",
+          "label": "Fluids",
+          "minutes": 15
+        },
+        {
+          "file": "ib-b2-2-2-environmental-forces.mp3",
+          "title": "B.2.2.2 Environmental Forces on Sports Performance",
+          "label": "Forces",
+          "minutes": 12
+        }
+      ]
+    },
+    "ib-b2-2-3": {
+      "file": "ib-b2-2-3.mp3",
+      "title": "B.2.2.3 Buoyancy, Lift and Drag",
+      "minutes": 12
+    },
+    "ib-b2-3-1": {
+      "file": "ib-b2-3-1.mp3",
+      "title": "B.2.3.1 Phases of Movement",
+      "minutes": 14
+    },
+    "cam-1": {
+      "file": "cam-1.mp3",
+      "title": "Topic 1: Joints, Movements and Muscles",
+      "minutes": 21
+    },
+    "cam-2": {
+      "file": "cam-2.mp3",
+      "title": "Topic 2: Biomechanics",
+      "minutes": 19
+    },
+    "cam-3": {
+      "file": "cam-3.mp3",
+      "title": "Topic 3: The Cardiovascular System",
+      "minutes": 19
+    },
+    "cam-4": {
+      "file": "cam-4.mp3",
+      "title": "Topic 4: The Respiratory System",
+      "minutes": 24
+    },
+    "cam-5": {
+      "file": "cam-5.mp3",
+      "title": "Topic 5: Skill and Ability",
+      "minutes": 21
+    },
+    "cam-6": {
+      "file": "cam-6.mp3",
+      "title": "Topic 6: Theories of Learning",
+      "minutes": 24
+    },
+    "cam-7": {
+      "file": "cam-7.mp3",
+      "title": "Topic 7: Information Processing",
+      "minutes": 23
+    },
+    "cam-8": {
+      "file": "cam-8.mp3",
+      "title": "Topic 8: Practice and Learning",
+      "minutes": 23
+    },
+    "cam-9": {
+      "file": "cam-9.mp3",
+      "title": "Topic 9: Sociocultural Issues",
+      "minutes": 24
+    },
+    "cam-10": {
+      "file": "cam-10.mp3",
+      "title": "Topic 10: Ethics and Deviance",
+      "minutes": 17
+    },
+    "cam-11": {
+      "file": "cam-11.mp3",
+      "title": "Topic 11: Commercialisation and the Media",
+      "minutes": 22
+    },
+    "cam-12": {
+      "file": "cam-12.mp3",
+      "title": "Topic 12: The Use of Technology",
+      "minutes": 24
+    },
+    "btec-u01": {
+      "file": "btec-u01.mp3",
+      "title": "Why Being Fit Doesn't Mean Healthy",
+      "minutes": 20
+    },
+    "btec-u02": {
+      "file": "btec-u02.mp3",
+      "title": "Fitness Training Survival Guide",
+      "minutes": 19
+    },
+    "btec-u05": {
+      "file": "btec-old-08.mp3",
+      "title": "How Body Systems Adapt to Exercise",
+      "minutes": 23
+    },
+    "btec-u08": {
+      "file": "btec-old-03.mp3",
+      "title": "Apply Sports Research to Your Career",
+      "minutes": 22
+    },
+    "btec-u11": {
+      "file": "btec-old-03.mp3",
+      "title": "Apply Sports Research to Your Career",
+      "minutes": 22
+    },
+    "btec-u12": {
+      "file": "btec-old-05.mp3",
+      "title": "From Sports Coach to Business Owner",
+      "minutes": 22
+    },
+    "btec-u18": {
+      "file": "btec-old-04.mp3",
+      "title": "Sports Ethics and Leadership Under Pressure",
+      "minutes": 22
+    },
+    "btec-old-01": {
+      "file": "btec-u01.mp3",
+      "title": "Why Being Fit Doesn't Mean Healthy",
+      "minutes": 20
+    },
+    "btec-old-03": {
+      "file": "btec-old-03.mp3",
+      "title": "Apply Sports Research to Your Career",
+      "minutes": 22
+    },
+    "btec-old-04": {
+      "file": "btec-old-04.mp3",
+      "title": "Sports Ethics and Leadership Under Pressure",
+      "minutes": 22
+    },
+    "btec-old-05": {
+      "file": "btec-old-05.mp3",
+      "title": "From Sports Coach to Business Owner",
+      "minutes": 22
+    },
+    "btec-old-08": {
+      "file": "btec-old-08.mp3",
+      "title": "How Body Systems Adapt to Exercise",
+      "minutes": 23
+    }
+  }
+}
