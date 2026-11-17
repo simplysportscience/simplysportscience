@@ -1,16 +1,18 @@
-/* Simply Sport Science – podcast button (production)
-   Circular "Podcast" buttons in the page header, shown only when an episode exists.
+/* Simply Sport Science – podcast panel (production)
+   A neat stacked panel on the right of the page header, shown only when an episode exists.
+   One row per presentation (IB / AS Level), or a single row (BTEC). A row with several episodes shows numbered squares.
+   One shared player for the page: the panel's title line becomes the player (time + controls) while something plays,
+   and a slim bar at the bottom of the screen keeps the controls in reach once the panel has scrolled out of view.
    Episodes live in the separate audio site; podcasts.json there lists which episodes exist.
-   BTEC pages → one button in the header   (btec-learn-u01-… → btec-u01 | btec-unit-08-… → btec-old-08)
-   IB / AS Level pages → one button per presentation (AS Level topics may also have one whole-topic episode, named cam-N), all in the header (named after the presentation's slide folder, e.g. ib-a2-3-2 or cam-1-1-synovial-joints).
-                One button = full-size circle; 2-4 buttons = a row of smaller circles with a shared player strip.
+   BTEC pages → one row                       (btec-learn-u01-… → btec-u01 | btec-unit-08-… → btec-old-08)
+   IB / AS Level pages → one row per presentation (named after the slide folder, e.g. ib-a2-3-2 or cam-1-1-synovial-joints);
+                AS Level topics may also have one whole-topic episode, named cam-N, shown as the first row.
    Change window.SSS_PODCAST_BASE (before this script) or the default below to move the audio to a new host. */
 (function(){
   var BASE=window.SSS_PODCAST_BASE||'https://simplysportscience.github.io/podcasts/';
   if(BASE.slice(-1)!=='/') BASE+='/';
   var file=(location.pathname.split('/').pop()||'index.html').replace(/\.html?$/,'');
-  var isIB=/^(ib-[a-d]\d+-\d+|cam-\d+)-/.test(file);   /* IB and AS Level (Cambridge) topic pages: one button per presentation */
-  var uidN=0;
+  var isIB=/^(ib-[a-d]\d+-\d+|cam-\d+)-/.test(file);
 
   function pageKey(){
     var m=file.match(/^btec-learn-u(\d+)-/); if(m) return 'btec-u'+m[1];
@@ -20,225 +22,158 @@
     return file;
   }
   function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;'); }
+  function fmt(s){ if(!isFinite(s)) return '0:00'; s=Math.max(0,Math.round(s)); var m=Math.floor(s/60), r=s%60; return m+':'+(r<10?'0':'')+r; }
 
-  function ringSvg(u){
-    return '<svg class="pc-ring" viewBox="0 0 120 120" aria-hidden="true"><defs>'+
-      '<linearGradient id="pc-grad'+u+'" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F5C866"/><stop offset="1" stop-color="#22D3EE"/></linearGradient>'+
-      '<linearGradient id="pc-ig'+u+'" gradientUnits="userSpaceOnUse" x1="14" y1="8" x2="50" y2="58"><stop offset="0" stop-color="#FFF6D6"/><stop offset="1" stop-color="#F5B840"/></linearGradient>'+
-      '<linearGradient id="pc-ag'+u+'" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="54" y2="0"><stop offset="0" stop-color="#E0FBFF"/><stop offset="1" stop-color="#22D3EE"/></linearGradient></defs>'+
-      '<circle class="pc-ring-track" cx="60" cy="60" r="54"/><circle class="pc-ring-fill" cx="60" cy="60" r="54" stroke="url(#pc-grad'+u+')"/></svg>';
-  }
-  function iconPodcast(u){
-    return '<svg class="pc-icon pc-icon-podcast" viewBox="0 0 64 64" aria-hidden="true" focusable="false">'+
-      '<path class="pc-arc pc-arc-outer" d="M15.15 39.14A22 22 0 1 1 48.85 39.14" fill="none" stroke="url(#pc-ag'+u+')" stroke-width="4.6" stroke-linecap="round"/>'+
-      '<path class="pc-arc pc-arc-inner" d="M21.66 33.68A13.5 13.5 0 1 1 42.34 33.68" fill="none" stroke="#FFFFFF" stroke-width="4.6" stroke-linecap="round"/>'+
-      '<circle cx="32" cy="25" r="6.6" fill="url(#pc-ig'+u+')"/>'+
-      '<path d="M32 33.8c-2.5 0-4.2 1.7-4.4 4.1l-.8 12.4c-.2 2.9 2 5.2 5.2 5.2s5.4-2.3 5.2-5.2l-.8-12.4c-.2-2.4-1.9-4.1-4.4-4.1z" fill="url(#pc-ig'+u+')"/></svg>';
-  }
-  function iconPause(u){
-    return '<svg class="pc-icon pc-icon-pause" viewBox="0 0 64 64" aria-hidden="true" focusable="false">'+
-      '<rect x="16" y="13" width="12" height="38" rx="3.6" fill="url(#pc-ig'+u+')"/><rect x="36" y="13" width="12" height="38" rx="3.6" fill="url(#pc-ig'+u+')"/></svg>';
-  }
-
-  /* Builds one button + audio.
-     tracks = [{src,title,label,minutes}, ...]   (one or more episodes behind the one button)
-     opts   = { place:function(wrap), caption:'A.2.3.2' (small text under the circle), infoSlot:element (shared player strip) } */
-  function build(tracks,opts){
-    var u=++uidN, cur=0, store='', title=tracks[0].title, minutes=tracks[0].minutes, src=tracks[0].src, multi=tracks.length>1;
-    var wrap=document.createElement('div'); wrap.className='pc-wrap'+(opts.infoSlot?' pc-in-dock':'');
-    wrap.innerHTML=
-      '<button class="pc-btn" type="button" aria-pressed="false" aria-label="Play podcast episode: '+esc(title)+'">'+ringSvg(u)+
-        '<span class="pc-face">'+iconPodcast(u)+iconPause(u)+'<span class="pc-label">Podcast</span></span></button>'+
-      (opts.caption?'<div class="pc-cap">'+esc(opts.caption)+'</div>':'')+
-      '<div class="pc-info">'+
-        '<div class="pc-status" role="status" aria-live="polite"></div>'+
-        '<input class="pc-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Seek within podcast episode">'+
-        '<div class="pc-controls"><button class="pc-mini pc-back" type="button" aria-label="Back 15 seconds">−15s</button>'+
-          '<button class="pc-mini pc-speed" type="button" aria-label="Playback speed">1×</button>'+
-          '<button class="pc-mini pc-fwd" type="button" aria-label="Forward 15 seconds">+15s</button></div></div>'+
-      '<audio preload="none"></audio>';
-    var info=wrap.querySelector('.pc-info'), capEl=wrap.querySelector('.pc-cap');
-    var capLabel=!!(capEl && multi && !opts.infoSlot);   /* a single circle shows the episode name in its caption */
-    var capDock=!!(capEl && multi && opts.infoSlot);       /* a circle in a row shows its code, then the episode name while it plays */
-    var dots=[];
-    if(multi){
-      var dotsEl=document.createElement('div'); dotsEl.className='pc-dots'+(tracks.length===4?' pc-dots-4':'')+(tracks.length>=5?' pc-dots-many':''); dotsEl.setAttribute('role','group'); dotsEl.setAttribute('aria-label','Podcast episodes');
-      tracks.forEach(function(t,i){
-        var d=document.createElement('button'); d.type='button'; d.className='pc-dot'; d.textContent=String(i+1);
-        d.title=(t.label||t.title)+(t.minutes?' · '+t.minutes+' min':''); d.setAttribute('aria-label','Episode '+(i+1)+': '+t.title);
-        d.addEventListener('click',function(){ loadTrack(i,true); });
-        dotsEl.appendChild(d); dots.push(d);
-      });
-      wrap.insertBefore(dotsEl,info);
-    }
-    if(opts.infoSlot){ opts.infoSlot.appendChild(info); }
-    opts.place(wrap);
-    var audio=wrap.querySelector('audio'), btn=wrap.querySelector('.pc-btn'), fill=wrap.querySelector('.pc-ring-fill'),
-        status=info.querySelector('.pc-status'), seek=info.querySelector('.pc-seek'), speedBtn=info.querySelector('.pc-speed');
-    var C=339.292, speeds=[1,1.25,1.5,0.75], si=0, lastSave=0, seeking=false;
-    var loadedSrc=null;
-
-    function fmt(s){ if(!isFinite(s)) return '0:00'; s=Math.max(0,Math.round(s)); var m=Math.floor(s/60), r=s%60; return m+':'+(r<10?'0':'')+r; }
-    function savedPos(){ var v=0; try{ v=parseFloat(localStorage.getItem(store)||'0'); }catch(e){} return v||0; }
-    function epTag(){ return (multi&&!capLabel&&!capDock)?('Ep '+(cur+1)+'/'+tracks.length+' · '):''; }
-    function idleText(){
-      var s=savedPos();
-      if(s>5 && (!isFinite(audio.duration)||s<audio.duration-5)) return epTag()+'Resume from <b>'+fmt(s)+'</b>';
-      if(isFinite(audio.duration)) return epTag()+'Listen · <b>'+fmt(audio.duration)+'</b>';
-      return epTag()+(minutes?('Listen · <b>'+minutes+' min</b>'):'Listen now');
-    }
-    function setStarted(on){ wrap.classList.toggle('has-started',on); info.classList.toggle('has-started',on); if(capDock) capEl.textContent=on?(tracks[cur].label||tracks[cur].title):opts.caption; }
-    function setPlaying(p){
-      wrap.classList.toggle('is-playing',p); btn.setAttribute('aria-pressed',p?'true':'false');
-      btn.setAttribute('aria-label',(p?'Pause':'Play')+' podcast episode: '+title);
-    }
-    function render(){
-      var d=audio.duration, t=audio.currentTime, f=(d&&isFinite(d))?t/d:0;
-      fill.style.strokeDashoffset=C*(1-f);
-      if(!seeking) seek.value=Math.round(f*1000);
-      if(wrap.classList.contains('has-started')) status.innerHTML=((multi&&!capLabel&&!capDock)?('<span class="pc-ep">'+esc(tracks[cur].label||tracks[cur].title)+'</span> · '):'')+'<b>'+fmt(t)+'</b> / '+fmt(d);
-    }
-    function makeCurrent(){
-      if(!opts.infoSlot) return;
-      var kids=opts.infoSlot.children; for(var i=0;i<kids.length;i++) kids[i].classList.remove('is-current');
-      info.classList.add('is-current');
-    }
-    function ensureSrc(){ if(loadedSrc!==src){ audio.src=src; loadedSrc=src; } }
-    function startPlay(){
-      document.dispatchEvent(new CustomEvent('sss-podcast-play',{detail:wrap}));
-      makeCurrent(); ensureSrc();
-      if(!wrap.classList.contains('has-started')){
-        var s=savedPos();
-        var go=function(){ if(s>5 && (!isFinite(audio.duration)||s<audio.duration-5)) { try{audio.currentTime=s;}catch(e){} } };
-        if(audio.readyState>0) go(); else audio.addEventListener('loadedmetadata',go,{once:true});
-        try{ if(window.goatcounter&&window.goatcounter.count){ window.goatcounter.count({path:'podcast/'+src.split('/').pop().replace(/\.\w+$/,''),title:'Podcast play',event:true}); } }catch(e){}
-      }
-      var p=audio.play(); if(p&&p.catch) p.catch(function(){});
-    }
-    function loadTrack(i,autoplay){
-      cur=i; var t=tracks[i]; src=t.src; title=t.title; minutes=t.minutes; store='sss-podcast-pos:'+src;
-      audio.pause(); setStarted(false); wrap.classList.remove('is-unavailable'); btn.disabled=false;
-      fill.style.strokeDashoffset=C; seek.value=0;
-      if(loadedSrc!==null && loadedSrc!==src){ audio.removeAttribute('src'); loadedSrc=null; try{audio.load();}catch(e){} }   /* nothing is downloaded until play is pressed */
-      dots.forEach(function(d,k){ d.classList.toggle('is-active',k===i); d.setAttribute('aria-pressed',k===i?'true':'false'); });
-      if(capLabel) capEl.textContent=opts.caption+' · '+(t.label||t.title);
-      if(capDock) capEl.title=t.title;
-      setPlaying(false); status.innerHTML=idleText();
-      if(autoplay) startPlay();
-    }
-    audio.addEventListener('loadedmetadata',function(){ if(!wrap.classList.contains('has-started')) status.innerHTML=idleText(); });
-    audio.addEventListener('timeupdate',function(){
-      render(); var nowT=Date.now();
-      if(nowT-lastSave>4000){ lastSave=nowT; try{localStorage.setItem(store,String(audio.currentTime));}catch(e){} }
-    });
-    audio.addEventListener('play',function(){ setPlaying(true); setStarted(true); makeCurrent(); render(); });
-    audio.addEventListener('pause',function(){ setPlaying(false); try{localStorage.setItem(store,String(audio.currentTime));}catch(e){} });
-    audio.addEventListener('ended',function(){
-      setPlaying(false); try{localStorage.removeItem(store);}catch(e){}
-      if(multi && cur<tracks.length-1){ loadTrack(cur+1,true); return; }
-      audio.currentTime=0; setStarted(false); fill.style.strokeDashoffset=C; seek.value=0;
-      status.innerHTML=epTag()+'Listen again · <b>'+fmt(audio.duration)+'</b>';
-    });
-    audio.addEventListener('error',function(){ wrap.classList.add('is-unavailable'); btn.disabled=true; status.textContent='Episode coming soon'; });
-
-    btn.addEventListener('click',function(){ if(audio.paused) startPlay(); else audio.pause(); });
-    document.addEventListener('sss-podcast-play',function(e){ if(e.detail!==wrap && !audio.paused) audio.pause(); });
-    info.querySelector('.pc-back').addEventListener('click',function(){ audio.currentTime=Math.max(0,audio.currentTime-15); });
-    info.querySelector('.pc-fwd').addEventListener('click',function(){ audio.currentTime=Math.min(audio.duration||0,audio.currentTime+15); });
-    speedBtn.addEventListener('click',function(){ si=(si+1)%speeds.length; audio.playbackRate=speeds[si]; speedBtn.textContent=speeds[si]+'×'; });
-    seek.addEventListener('input',function(){ seeking=true; if(isFinite(audio.duration)){ audio.currentTime=(seek.value/1000)*audio.duration; render(); } });
-    seek.addEventListener('change',function(){ seeking=false; });
-    loadTrack(0,false);
-    return wrap;
-  }
+  var MARK='<svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M15.15 39.14A22 22 0 1 1 48.85 39.14" fill="none" stroke="#C9F6FF" stroke-width="5.2" stroke-linecap="round"/><path d="M21.66 33.68A13.5 13.5 0 1 1 42.34 33.68" fill="none" stroke="#fff" stroke-width="5.2" stroke-linecap="round"/><circle cx="32" cy="25" r="6.6" fill="#FFD66B"/><path d="M32 33.8c-2.5 0-4.2 1.7-4.4 4.1l-.8 12.4c-.2 2.9 2 5.2 5.2 5.2s5.4-2.3 5.2-5.2l-.8-12.4c-.2-2.4-1.9-4.1-4.4-4.1z" fill="#FFD66B"/></svg>';
+  var I_PLAY='<svg class="pc-i-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>';
+  var I_PAUSE='<svg class="pc-i-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="6" y="5" width="4" height="14" rx="1.2" fill="currentColor"/><rect x="14" y="5" width="4" height="14" rx="1.2" fill="currentColor"/></svg>';
 
   /* An entry in podcasts.json is either one episode {file,title,minutes}
-     or several under one button: {tracks:[{file,title,label,minutes}, ...]} */
+     or several under one row: {tracks:[{file,title,label,minutes}, ...]} */
   function tracksFor(e,key,fallbackTitle){
     if(e.tracks&&e.tracks.length) return e.tracks.map(function(t,i){ return {src:BASE+t.file,title:t.title||(fallbackTitle+' – episode '+(i+1)),label:t.label,minutes:t.minutes}; });
-    return [{src:BASE+(e.file||(key+'.mp3')),title:fallbackTitle,minutes:e.minutes}];
+    return [{src:BASE+(e.file||(key+'.mp3')),title:e.title||fallbackTitle,minutes:e.minutes}];
   }
   function heroParts(){
     var hero=document.querySelector('.topic-hero')||document.querySelector('.lesson-hero'); if(!hero) return null;
     return {hero:hero, inner:hero.querySelector('.topic-hero-inner')||hero.querySelector('.lesson-hero-inner')||hero};
   }
 
-  /* ---------- keep the header at its ORIGINAL height ----------
-     The podcast block floats over the header's own padding. If it would be taller than the header,
-     the circles shrink (never the header grow) until the whole block - including the player strip - fits. */
-  var fitters=[];
-  function textRects(hero){
-    var out=[], t=hero.querySelectorAll('h1,p');
-    for(var i=0;i<t.length;i++){ var r=document.createRange(); r.selectNodeContents(t[i]); var rs=r.getClientRects(); for(var j=0;j<rs.length;j++) if(rs[j].width>0) out.push(rs[j]); }
-    var pills=hero.querySelectorAll('.topic-meta > *, .lesson-eyebrow > *'); for(i=0;i<pills.length;i++) out.push(pills[i].getBoundingClientRect());
-    return out;
-  }
-  function collides(rect,lines){
-    for(var i=0;i<lines.length;i++){ var t=lines[i];
-      if(t.right>rect.left-4 && t.left<rect.right+4 && t.bottom>rect.top-2 && t.top<rect.bottom+2) return true; }
-    return false;
-  }
-  /* Centre the circles vertically on the header text block, in line with the title and paragraph on the left.
-     The circles shrink until they fit without touching any text. On a page whose title runs so far right that
-     centring is impossible, they sit in the free band above the title instead. */
-  function registerFit(box,maxSize,hp){
-    var f=function(){
-      if(window.innerWidth<=640){ box.style.removeProperty('--pc-fit'); box.style.removeProperty('top'); box.style.removeProperty('--pc-low-top'); box.classList.remove('pc-strip-low'); return; }
-      var hero=hp.hero, inner=hp.inner;
-      var infos=box.querySelectorAll('.pc-info'), info0=infos[0], saved=[], lines=textRects(hero);
-      for(var i=0;i<infos.length;i++) saved.push(infos[i].className);
-      if(info0) info0.classList.add('has-started','is-current');       /* measure with the player strip showing, as in real use */
-      function place(mode,size){
-        box.style.setProperty('--pc-fit',size+'px');
-        var hr=hero.getBoundingClientRect(), ir=inner.getBoundingClientRect();
-        if(mode==='center'){
-          box.style.top='0px';
-          /* centre the whole group of circles (with their captions and episode dots) on the text midline */
-          var gEls=box.classList.contains('pc-wrap')?box.querySelectorAll('.pc-btn,.pc-cap,.pc-dots'):[box.querySelector('.pc-dock-row')];
-          var gt=1e9,gb=-1e9; for(var g=0;g<gEls.length;g++){ var gr=gEls[g].getBoundingClientRect(); if(!gr.height) continue; gt=Math.min(gt,gr.top); gb=Math.max(gb,gr.bottom); }
-          var bt={top:gt,height:gb-gt};
-          box.style.top=((ir.top+ir.height/2)-(bt.top+bt.height/2))+'px';
-        } else { box.style.top=(8-(ir.top-hr.top))+'px'; }
-      }
-      function fits(circlesOnly){
-        /* circlesOnly: in the top-band fallback the player strip is tucked into the bottom corner, so only the circles must fit */
-        var hr=hero.getBoundingClientRect(), r;
-        if(circlesOnly){
-          var cs=box.querySelectorAll('.pc-dock-row,.pc-btn,.pc-cap,.pc-dots'), t=1e9, bt=-1e9;
-          for(var c=0;c<cs.length;c++){ var q=cs[c].getBoundingClientRect(); if(q.height){ t=Math.min(t,q.top); bt=Math.max(bt,q.bottom); } }
-          r={top:t,bottom:bt};
-        } else r=box.getBoundingClientRect();
-        if(r.top<hr.top+8 || r.bottom>hr.bottom-8) return false;
-        var parts=box.querySelectorAll(circlesOnly?'.pc-dock-row,.pc-btn,.pc-cap,.pc-dots':'.pc-dock-row,.pc-btn,.pc-cap,.pc-dots,.pc-info');
-        for(var k=0;k<parts.length;k++){ var pr=parts[k].getBoundingClientRect(); if((pr.width||pr.height) && collides(pr,lines)) return false; }
-        return true;
-      }
-      box.classList.remove('pc-strip-low'); box.style.removeProperty('--pc-low-top');
-      var done=false, modes=['center','top'], usedMode='center';
-      for(var m=0;m<modes.length && !done;m++){
-        for(var size=maxSize; size>=44; size-=4){ place(modes[m],size); usedMode=modes[m]; if(fits(modes[m]==='top')){ done=true; break; } }
-      }
-      if(!done){ place('top',44); usedMode='top'; }
-      /* top-band fallback: if the player strip would run into the title, tuck it into the bottom-right corner */
-      if(usedMode==='top' && info0){
-        var ir=info0.getBoundingClientRect(), hr0=hero.getBoundingClientRect(), bx=box.getBoundingClientRect();
-        if(collides(ir,lines) || bx.bottom>hr0.bottom-8){
-          box.classList.add('pc-strip-low');
-          var bb=box.getBoundingClientRect();
-          box.style.setProperty('--pc-low-top',Math.max(0,(hr0.bottom-8-ir.height)-bb.top)+'px');
-        }
-      }
-      for(i=0;i<infos.length;i++) infos[i].className=saved[i];
-    };
-    fitters.push(f); f();
-  }
-  var fitTimer=null;
-  function refit(){ clearTimeout(fitTimer); fitTimer=setTimeout(function(){ fitters.forEach(function(f){ f(); }); },120); }
-  window.addEventListener('resize',refit);
-  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(refit);
-  window.addEventListener('load',refit);
+  /* ---------- the panel ----------
+     items = [{code:'B.2.1.1', name:'Newton\'s Laws of Motion', tracks:[{src,title,label,minutes}, ...]}, ...] */
+  function buildPanel(items,hp){
+    var total=0; items.forEach(function(it){ total+=it.tracks.length; });
+    var panel=document.createElement('div'); panel.className='pc-panel'; panel.setAttribute('role','group'); panel.setAttribute('aria-label','Podcast episodes');
+    var html=
+      '<div class="pc-head"><span class="pc-mark">'+MARK+'</span><span class="pc-htxt">Podcast</span><span class="pc-count">'+total+(total===1?' episode':' episodes')+'</span>'+
+        '<span class="pc-live"><span class="pc-time" role="status" aria-live="off"></span>'+
+          '<button class="pc-mini pc-back" type="button" aria-label="Back 15 seconds">−15</button>'+
+          '<button class="pc-mini pc-speed" type="button" aria-label="Playback speed">1×</button>'+
+          '<button class="pc-mini pc-fwd" type="button" aria-label="Forward 15 seconds">+15</button></span>'+
+        '<input class="pc-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Seek within podcast episode"></div>';
+    items.forEach(function(it,i){
+      var multi=it.tracks.length>1, mins=it.tracks[0].minutes;
+      var sub=[it.code, multi?(it.tracks.length+' episodes'):(mins?(mins+' min'):'')].filter(Boolean).join(' · ');
+      var btns='';
+      it.tracks.forEach(function(t,k){
+        var tip=(t.label||t.title)+(t.minutes?' · '+t.minutes+' min':'');
+        btns+= multi
+          ? '<button class="pc-sq pc-n" type="button" data-i="'+i+'" data-k="'+k+'" title="'+esc(tip)+'" aria-label="Play episode '+(k+1)+': '+esc(t.title)+'">'+(k+1)+'</button>'
+          : '<button class="pc-sq pc-p" type="button" data-i="'+i+'" data-k="'+k+'" aria-label="Play podcast episode: '+esc(t.title)+'">'+I_PLAY+I_PAUSE+'</button>';
+      });
+      html+='<div class="pc-row" data-i="'+i+'"><div class="pc-tx"><span class="pc-cd">'+esc(sub)+'</span>'+(it.name?'<span class="pc-nm" title="'+esc(it.name)+'">'+esc(it.name)+'</span>':'')+'</div><div class="pc-btns">'+btns+'</div></div>';
+    });
+    html+='<audio preload="none"></audio>';
+    panel.innerHTML=html;
 
-  /* ---------- IB: one button per presentation, all in the header ---------- */
+    /* slim bar fixed to the bottom of the screen: appears while playing once the panel is scrolled out of view */
+    var bar=document.createElement('div'); bar.className='pc-fixed'; bar.setAttribute('role','group'); bar.setAttribute('aria-label','Podcast player');
+    bar.innerHTML='<button class="pc-sq pc-p pc-fp" type="button" aria-label="Play or pause podcast">'+I_PLAY+I_PAUSE+'</button>'+
+      '<div class="pc-ftx"><span class="pc-fnm"></span><span class="pc-ftm"></span></div>'+
+      '<button class="pc-mini pc-fback" type="button" aria-label="Back 15 seconds">−15</button><button class="pc-mini pc-ffwd" type="button" aria-label="Forward 15 seconds">+15</button>'+
+      '<input class="pc-seek pc-fseek" type="range" min="0" max="1000" value="0" step="1" aria-label="Seek within podcast episode">';
+    document.body.appendChild(bar);
+
+    var audio=panel.querySelector('audio'), head=panel.querySelector('.pc-head'), htxt=panel.querySelector('.pc-htxt'),
+        timeEl=panel.querySelector('.pc-time'), seek=panel.querySelector('.pc-seek'), speedBtn=panel.querySelector('.pc-speed'),
+        fseek=bar.querySelector('.pc-fseek'), fnm=bar.querySelector('.pc-fnm'), ftm=bar.querySelector('.pc-ftm');
+    var rows=panel.querySelectorAll('.pc-row'), sqs=panel.querySelectorAll('.pc-row .pc-sq');
+    var cur={i:-1,k:0}, loaded=null, started=false, seeking=false, lastSave=0, speeds=[1,1.25,1.5,0.75], si=0, countedSrc={};
+    function track(){ return cur.i<0?null:items[cur.i].tracks[cur.k]; }
+    function store(t){ return 'sss-podcast-pos:'+t.src; }
+    function savedPos(t){ var v=0; try{ v=parseFloat(localStorage.getItem(store(t))||'0'); }catch(e){} return v||0; }
+    function savePos(){ var t=track(); if(t){ try{ localStorage.setItem(store(t),String(audio.currentTime)); }catch(e){} } }
+
+    function paint(){
+      var playing=!audio.paused && started, t=track();
+      panel.classList.toggle('is-started',started); panel.classList.toggle('is-playing',playing);
+      bar.classList.toggle('is-playing',playing);
+      htxt.textContent=started?(playing?'Playing':'Paused'):'Podcast';
+      for(var r=0;r<rows.length;r++){ var on=(r===cur.i); rows[r].classList.toggle('is-on',on); rows[r].classList.toggle('is-playing',on&&playing); }
+      for(var s=0;s<sqs.length;s++){
+        var si_=+sqs[s].getAttribute('data-i'), sk=+sqs[s].getAttribute('data-k'), me=(si_===cur.i&&sk===cur.k);
+        sqs[s].classList.toggle('is-on',me); sqs[s].setAttribute('aria-pressed',(me&&playing)?'true':'false');
+      }
+      if(t){ fnm.textContent=(items[cur.i].code?items[cur.i].code+' · ':'')+(t.label||t.title); }
+    }
+    function render(){
+      var d=audio.duration, tm=audio.currentTime, f=(d&&isFinite(d))?tm/d:0;
+      if(!seeking){ seek.value=Math.round(f*1000); fseek.value=Math.round(f*1000); }
+      var txt=fmt(tm)+' / '+fmt(d);
+      timeEl.textContent=txt; ftm.textContent=txt;
+      seek.style.setProperty('--pc-f',(f*100)+'%'); fseek.style.setProperty('--pc-f',(f*100)+'%');
+    }
+    function ensureSrc(t){ if(loaded!==t.src){ audio.src=t.src; loaded=t.src; } }
+    function startPlay(){
+      var t=track(); if(!t) return;
+      if(loaded!==t.src){
+        var s=savedPos(t);
+        var go=function(){ if(s>5 && (!isFinite(audio.duration)||s<audio.duration-5)){ try{audio.currentTime=s;}catch(e){} } };
+        ensureSrc(t); audio.addEventListener('loadedmetadata',go,{once:true});
+      }
+      if(!countedSrc[t.src]){ countedSrc[t.src]=1; try{ if(window.goatcounter&&window.goatcounter.count){ window.goatcounter.count({path:'podcast/'+t.src.split('/').pop().replace(/\.\w+$/,''),title:'Podcast play',event:true}); } }catch(e){} }
+      var p=audio.play(); if(p&&p.catch) p.catch(function(){});
+    }
+    function choose(i,k){
+      if(cur.i===i && cur.k===k && loaded){ if(audio.paused) startPlay(); else audio.pause(); return; }
+      if(!audio.paused) audio.pause();
+      savePos();
+      cur={i:i,k:k}; started=false; loaded=null; audio.removeAttribute('src'); try{audio.load();}catch(e){}
+      seek.value=0; fseek.value=0; timeEl.textContent=''; ftm.textContent='';
+      panel.classList.remove('is-unavailable');
+      paint(); startPlay();
+    }
+    panel.addEventListener('click',function(e){
+      var b=e.target.closest&&e.target.closest('.pc-sq'); if(!b||b.disabled) return;
+      choose(+b.getAttribute('data-i'),+b.getAttribute('data-k'));
+    });
+    bar.querySelector('.pc-fp').addEventListener('click',function(){ if(audio.paused) startPlay(); else audio.pause(); });
+
+    audio.addEventListener('play',function(){ started=true; paint(); render(); });
+    audio.addEventListener('pause',function(){ savePos(); paint(); });
+    audio.addEventListener('loadedmetadata',render);
+    audio.addEventListener('timeupdate',function(){ render(); var n=Date.now(); if(n-lastSave>4000){ lastSave=n; savePos(); } });
+    audio.addEventListener('ended',function(){
+      var t=track(); try{ localStorage.removeItem(store(t)); }catch(e){}
+      var it=items[cur.i];
+      if(it.tracks.length>1 && cur.k<it.tracks.length-1){ var nk=cur.k+1; loaded=null; cur={i:cur.i,k:nk}; started=false; audio.removeAttribute('src'); paint(); startPlay(); return; }
+      audio.currentTime=0; started=false; paint(); seek.value=0; fseek.value=0;
+      seek.style.setProperty('--pc-f','0%'); fseek.style.setProperty('--pc-f','0%');
+    });
+    audio.addEventListener('error',function(){
+      if(!audio.getAttribute('src')) return;
+      panel.classList.add('is-unavailable'); started=false; paint(); htxt.textContent='Episode coming soon';
+    });
+    function back(){ audio.currentTime=Math.max(0,audio.currentTime-15); }
+    function fwd(){ audio.currentTime=Math.min(audio.duration||0,audio.currentTime+15); }
+    panel.querySelector('.pc-back').addEventListener('click',back); panel.querySelector('.pc-fwd').addEventListener('click',fwd);
+    bar.querySelector('.pc-fback').addEventListener('click',back); bar.querySelector('.pc-ffwd').addEventListener('click',fwd);
+    speedBtn.addEventListener('click',function(){ si=(si+1)%speeds.length; audio.playbackRate=speeds[si]; speedBtn.textContent=speeds[si]+'×'; });
+    [seek,fseek].forEach(function(el){
+      el.addEventListener('input',function(){ seeking=true; if(isFinite(audio.duration)){ audio.currentTime=(el.value/1000)*audio.duration; render(); } });
+      el.addEventListener('change',function(){ seeking=false; });
+    });
+
+    /* the bottom bar shows only while an episode has started and the panel itself is off screen */
+    var panelVisible=true;
+    function syncBar(){ bar.classList.toggle('is-shown',started && !panelVisible); }
+    audio.addEventListener('play',syncBar); audio.addEventListener('pause',syncBar); audio.addEventListener('ended',syncBar);
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(en){ panelVisible=en[0].isIntersecting; syncBar(); },{threshold:0.05}).observe(panel);
+    }
+
+    /* place in the header: first on wide screens (floats right), after the text on phones */
+    function place(){
+      var phone=window.matchMedia&&window.matchMedia('(max-width:640px)').matches;
+      if(phone){ if(panel.parentNode!==hp.inner||panel.nextSibling) hp.inner.appendChild(panel); }
+      else if(hp.inner.firstChild!==panel) hp.inner.insertBefore(panel,hp.inner.firstChild);
+    }
+    hp.hero.classList.add('has-podcast'); place();
+    window.addEventListener('resize',function(){ place(); });
+    paint();
+  }
+
+  /* ---------- IB / AS Level: one row per presentation ---------- */
   function deckKey(block,blocks){
     var d=block.querySelector('.deck'), id=d&&d.id;
     try{
@@ -252,7 +187,10 @@
     }catch(e){}
     return blocks.length===1?pageKey():null;
   }
-  function codeOf(text){ var m=/^[A-D]\.\d+(?:\.\d+){0,2}/.exec(text); return m?m[0]:text.split(' ')[0]; }
+  function splitHeading(text){
+    var m=/^([A-D]\.\d+(?:\.\d+){0,2})\s*(.*)$/.exec(text)||/^(\d+[a-z]?(?:\.\d+[a-z]?)?)\s+(.*)$/.exec(text);
+    return m?{code:m[1],name:m[2]||''}:{code:'',name:text};
+  }
   function initIB(manifest){
     var hp=heroParts(); if(!hp) return;
     var blocks=document.querySelectorAll('.deck-block'); if(!blocks.length) return;
@@ -262,41 +200,24 @@
       var key=deckKey(block,list); if(!key) return;
       var e=manifest.episodes[key]; if(!e) return;
       var h3=block.querySelector('h3'); if(!h3) return;
-      var text=h3.textContent.trim();
-      items.push({tracks:tracksFor(e,key,text),code:codeOf(text)});
+      var text=h3.textContent.replace(/\s+/g,' ').trim(), sp=splitHeading(text);
+      items.push({tracks:tracksFor(e,key,text),code:sp.code,name:sp.name});
     });
-    /* AS Level: a whole-topic episode (named after the page, e.g. cam-3) gets its own button, shown first */
-    var hasTopic=false, topicE=/^cam-/.test(file)?manifest.episodes[pageKey()]:null;
-    if(topicE){ var th1=hp.hero.querySelector('h1'); items.unshift({tracks:tracksFor(topicE,pageKey(),th1?th1.textContent.trim():'this topic'),code:'Topic'}); hasTopic=true; }
+    /* AS Level: a whole-topic episode (named after the page, e.g. cam-3) is the first row */
+    var topicE=/^cam-/.test(file)?manifest.episodes[pageKey()]:null;
+    if(topicE){ var th1=hp.hero.querySelector('h1'), tt=th1?th1.textContent.trim():'this topic'; items.unshift({tracks:tracksFor(topicE,pageKey(),tt),code:'Topic',name:tt}); }
     if(!items.length) return;
-    var multiPage=list.length>1;
-    var anyMulti=items.some(function(x){ return x.tracks.length>1; });
-    if(items.length===1){
-      var it=items[0];
-      var w1=build(it.tracks,{caption:(multiPage&&!(hasTopic&&items.length===1))?it.code:null,place:function(w){ hp.inner.insertBefore(w,hp.inner.firstChild); hp.hero.classList.add('has-podcast'); }});
-      registerFit(w1,it.tracks.length>1?84:116,hp);
-      return;
-    }
-    var n=Math.min(items.length,6);
-    var dock=document.createElement('div'); dock.className='pc-dock pc-n'+n;
-    var row=document.createElement('div'); row.className='pc-dock-row';
-    var slot=document.createElement('div'); slot.className='pc-dock-info';
-    dock.appendChild(row); dock.appendChild(slot);
-    items.forEach(function(it){
-      build(it.tracks,{caption:it.code,infoSlot:slot,place:function(w){ row.appendChild(w); }});
-    });
-    hp.inner.insertBefore(dock,hp.inner.firstChild); hp.hero.classList.add('has-podcast-dock','pc-n'+n);
-    registerFit(dock,{2:92,3:72,4:60,5:52,6:52}[n],hp);
+    buildPanel(items,hp);
   }
 
-  /* ---------- BTEC (and any other header page): one button in the header ---------- */
+  /* ---------- BTEC (and any other header page): one row ---------- */
   function initHero(manifest){
     var hp=heroParts(); if(!hp) return;
     var h1=hp.hero.querySelector('h1'); var title=hp.hero.getAttribute('data-podcast-title')||(h1?h1.textContent.trim():'this topic');
     var forced=hp.hero.getAttribute('data-podcast-src'), key=pageKey(), e=manifest&&manifest.episodes&&manifest.episodes[key];
     var tr=forced?[{src:forced,title:title}]:(e?tracksFor(e,key,title):null); if(!tr) return;
-    var w2=build(tr,{place:function(w){ hp.inner.insertBefore(w,hp.inner.firstChild); hp.hero.classList.add('has-podcast'); }});
-    registerFit(w2,tr.length>1?84:116,hp);
+    var m=/^btec-(?:u|old-)(\d+)$/.exec(key), code=m?('Unit '+parseInt(m[1],10)):'';
+    buildPanel([{tracks:tr,code:code,name:tr.length>1?title:tr[0].title}],hp);
   }
 
   if(!window.fetch) return;
