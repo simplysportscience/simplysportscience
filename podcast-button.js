@@ -62,7 +62,7 @@
     var capDock=!!(capEl && multi && opts.infoSlot);       /* a circle in a row shows its code, then the episode name while it plays */
     var dots=[];
     if(multi){
-      var dotsEl=document.createElement('div'); dotsEl.className='pc-dots'; dotsEl.setAttribute('role','group'); dotsEl.setAttribute('aria-label','Podcast episodes');
+      var dotsEl=document.createElement('div'); dotsEl.className='pc-dots'+(tracks.length===4?' pc-dots-4':'')+(tracks.length>=5?' pc-dots-many':''); dotsEl.setAttribute('role','group'); dotsEl.setAttribute('aria-label','Podcast episodes');
       tracks.forEach(function(t,i){
         var d=document.createElement('button'); d.type='button'; d.className='pc-dot'; d.textContent=String(i+1);
         d.title=(t.label||t.title)+(t.minutes?' · '+t.minutes+' min':''); d.setAttribute('aria-label','Episode '+(i+1)+': '+t.title);

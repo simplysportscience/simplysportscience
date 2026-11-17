@@ -107,12 +107,16 @@
 .pc-dock.pc-n2{--pc-fit:92px;} .pc-dock.pc-n3{--pc-fit:72px;} .pc-dock.pc-n4{--pc-fit:60px;} .pc-dock.pc-n5,.pc-dock.pc-n6{--pc-fit:52px;}
 /* five presentations: a neat 3-over-2 grid */
 .pc-dock.pc-n5 .pc-dock-row,.pc-dock.pc-n6 .pc-dock-row{flex-wrap:wrap; max-width:calc(3 * (var(--pc-fit) + 6px) + 16px); gap:4px 8px;}
-.pc-dock .pc-dots{gap:3px;}
-.pc-dock .pc-dot{width:17px; height:17px; font-size:9px;}
+.pc-dock .pc-dots{gap:3px; flex-wrap:wrap; width:max-content; max-width:calc(var(--pc-size) + 14px);}   /* dots wrap under their own circle instead of spilling into the neighbours */
+.pc-dock .pc-dots.pc-dots-4{max-width:40px;}   /* four episodes sit as 2 + 2 */
+.pc-dock .pc-dot{width:16px; height:16px; font-size:9px;}
+.pc-dock .pc-dots.pc-dots-many{gap:3px;}       /* five or more: one slim row of small dots (name shows on hover) */
+.pc-dock .pc-dots-many .pc-dot{width:9px; height:9px; font-size:0; border-width:1px; background:rgba(255,255,255,.34); border-color:rgba(255,255,255,.45);}
+.pc-dock .pc-dots-many .pc-dot.is-active{background:linear-gradient(135deg,#8A4DFF,#D7309F); border-color:transparent;}
 .pc-dock-info{display:flex; justify-content:flex-end; width:100%;}
 .pc-dock-info .pc-info{display:none;}
 .pc-dock-info .pc-info.is-current{display:grid;}
-.pc-dock .pc-cap{font-size:10.5px;}
+.pc-dock .pc-cap{font-size:10px; letter-spacing:.2px; max-width:calc(var(--pc-size) + 8px); overflow:hidden; text-overflow:ellipsis;}
 
 @media (max-width:640px){
   /* phones: the circles float in the top-right corner and the text wraps around them (header stays as close to its original size as possible) */
@@ -125,7 +129,9 @@
   .pc-dock .pc-wrap{--pc-fit:52px; float:none; margin:0; width:calc(var(--pc-size) + 4px);}
   .pc-cap,.pc-dock .pc-cap{font-size:10px;}
   .pc-status{font-size:10.5px; white-space:nowrap;}
-  .pc-dots{max-width:80px; flex-wrap:wrap;}
+  .pc-dots,.pc-dock .pc-dots{max-width:80px; flex-wrap:wrap;}
+  .pc-dock .pc-dots.pc-dots-4{max-width:80px;}
+  .pc-dock .pc-dots-many .pc-dot{width:14px; height:14px;}   /* bigger tap targets on phones */
   .pc-dock-info{width:auto;}
   /* while playing, the player controls sit in a bar at the bottom of the screen, so the page never jumps */
   .pc-wrap .pc-info.has-started,.pc-dock-info .pc-info.is-current.has-started{
