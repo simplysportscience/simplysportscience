@@ -1094,7 +1094,7 @@ function render(){
         ${group.sort((a,b)=>a.t.localeCompare(b.t)).map(term=>`
           <div class="term-card">
             <div class="term-top">
-              <div class="term-name">${TERM_PAGES.has(termSlug(term.t))?`<a href="term-${termSlug(term.t)}.html" style="color:inherit;text-decoration:none;">${term.t}</a>`:term.t}</div>
+              <div class="term-name">${TERM_PAGES.has(termSlug(term.t))?`<a href="terms/term-${termSlug(term.t)}.html" style="color:inherit;text-decoration:none;">${term.t}</a>`:term.t}</div>
               <div class="term-tags">${term.c.map(courseTag).join("")}</div>
             </div>
             <div class="term-def">${term.d}</div>
