@@ -34,6 +34,11 @@ for d in UNUSED:
     if os.path.isdir(p):
         say(f'delete unused deck: {d}')
         if not DRY: shutil.rmtree(p)
+for dp, _, fs in os.walk(os.path.join(ROOT, 'assets')):
+    for f in fs:
+        if f.endswith('.tmp') and '.jpg' in f:
+            try: os.remove(os.path.join(dp, f))
+            except Exception: pass
 # 4. shrink JPEGs: max 1280px wide, quality 72
 before = after = n = 0
 for dp, _, fs in os.walk(os.path.join(ROOT, 'assets')):
@@ -45,7 +50,7 @@ for dp, _, fs in os.walk(os.path.join(ROOT, 'assets')):
             if w <= 1280 and size < 150_000: after += size; continue
             im = im.convert('RGB')
             if w > 1280: im = im.resize((1280, round(im.height*1280/w)), Image.LANCZOS)
-            tmp = p + '.tmp'
+            tmp = p + '.%d.tmp' % os.getpid()
             im.save(tmp, format='JPEG', quality=72, optimize=True, progressive=True)
             new = os.path.getsize(tmp)
             if new < size:
@@ -54,5 +59,8 @@ for dp, _, fs in os.walk(os.path.join(ROOT, 'assets')):
                 else: os.replace(tmp, p)
             else:
                 os.remove(tmp); after += size
-        except Exception as e: print('could not process', p, e); after += size
+        except Exception as e:
+            print('could not process', p, e); after += size
+            try: os.remove(tmp)
+            except Exception: pass
 print(f'\nImages shrunk: {n}.  Size before: {before/1e6:.0f} MB, after: {after/1e6:.0f} MB')
