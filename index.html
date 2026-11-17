@@ -243,11 +243,17 @@
   .old-site a{position:relative;display:inline-flex;align-items:center;gap:14px;padding:16px 26px;border-radius:18px;text-decoration:none;color:#fff;background:linear-gradient(180deg,#1C1442 0%,#15102F 100%);border:2px solid #E6FF1F;box-shadow:0 0 0 1px rgba(230,255,31,.25),0 0 18px rgba(230,255,31,.45),0 0 46px rgba(230,255,31,.2),inset 0 0 22px rgba(230,255,31,.08);transition:transform .25s ease,box-shadow .25s ease;}
   .old-site a:hover,.old-site a:focus-visible{transform:translateY(-4px);box-shadow:0 0 0 1px rgba(230,255,31,.45),0 0 26px rgba(230,255,31,.7),0 0 64px rgba(230,255,31,.32),inset 0 0 26px rgba(230,255,31,.14);}
   .old-site a:focus-visible{outline:3px solid #fff;outline-offset:4px;}
+  /* Temporary top copy of the old-website button (remove with the bottom one after a few weeks) */
+  .old-site-hero{position:absolute;top:18px;left:0;right:0;margin:0;z-index:3;}
+  .old-site-hero a{padding:9px 18px;border-radius:14px;}
+  .old-site-hero .os-text{font-size:13px;}
+  .old-site-hero .os-arrow{width:24px;height:24px;font-size:13px;}
   .old-site .os-text{font-size:16px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase;color:#F4FF70;text-shadow:0 0 12px rgba(230,255,31,.55);}
   .old-site .os-arrow{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#E6FF1F;color:#15102F;font-size:16px;font-weight:900;transition:transform .25s ease;}
   .old-site a:hover .os-arrow{transform:translateX(4px);}
   @media (prefers-reduced-motion:reduce){.old-site a,.old-site .os-arrow{transition:none;}.old-site a:hover{transform:none;}}
   @media (max-width:480px){.old-site a{padding:14px 18px;gap:10px;}.old-site .os-text{font-size:13px;letter-spacing:1px;}}
+  @media(max-width:700px){.hero{padding-top:92px;}.old-site-hero a{padding:8px 14px;}.old-site-hero .os-text{font-size:12px;letter-spacing:1px;}}
 </style>
 <link rel="canonical" href="https://simplysportscience.co.uk/">
 </head>
@@ -275,6 +281,7 @@
 </nav>
 
 <div class="hero">
+  <div class="old-site old-site-hero"><a href="https://old.simplysportscience.co.uk" target="_blank" rel="noopener" aria-label="Old Simply Sport Science website"><span class="os-text">LOOKING FOR THE OLD WEBSITE?</span><span class="os-arrow" aria-hidden="true">→</span></a></div>
   <div class="glow1"></div>
   <div class="glow2"></div>
   <div class="glow3"></div>
