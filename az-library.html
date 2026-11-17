@@ -4,11 +4,11 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Sport Science A–Z Library | Simply Sport Science</title>
-<meta name="description" content="The most comprehensive sport science A–Z glossary online. Terms covering IB Sport Science, A Level PE, BTEC Sport and General Sport Science — all defined and course-tagged."/>
+<meta name="description" content="The most comprehensive sport science A–Z glossary online. Terms covering IB Sport Science, AS Level PE, BTEC Sport and General Sport Science — all defined and course-tagged."/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Simply Sport Science"/>
 <meta property="og:title" content="Sport Science A–Z Library"/>
-<meta property="og:description" content="The most comprehensive sport science A–Z glossary online. Terms covering IB Sport Science, A Level PE, BTEC Sport and General Sport Science — all defined and course-tagged."/>
+<meta property="og:description" content="The most comprehensive sport science A–Z glossary online. Terms covering IB Sport Science, AS Level PE, BTEC Sport and General Sport Science — all defined and course-tagged."/>
 <meta property="og:url" content="https://simplysportscience.co.uk/az-library.html"/>
 <meta property="og:image" content="https://simplysportscience.co.uk/og-share-image.jpg"/>
 <meta name="twitter:card" content="summary_large_image"/>
@@ -154,7 +154,7 @@
   </div>
   <div class="colour-key">
     <div class="key-item"><div class="key-dot" style="background:#4FA3F7;"></div>IB Sport Science</div>
-    <div class="key-item"><div class="key-dot" style="background:#EF4444;"></div>A Level / Cambridge</div>
+    <div class="key-item"><div class="key-dot" style="background:#EF4444;"></div>AS Level / Cambridge</div>
     <div class="key-item"><div class="key-dot" style="background:#16A34A;"></div>BTEC Sport</div>
     <div class="key-item"><div class="key-dot" style="background:#8B5CF6;"></div>General Sport Science</div>
   </div>
@@ -167,7 +167,7 @@
       <span class="filter-label">Filter:</span>
       <button class="filter-btn active-all" id="btn-all" onclick="setFilter('all',this)">All Terms</button>
       <button class="filter-btn" id="btn-ib" onclick="setFilter('ib',this)">IB Sport Science</button>
-      <button class="filter-btn" id="btn-cam" onclick="setFilter('cam',this)">A Level / Cambridge</button>
+      <button class="filter-btn" id="btn-cam" onclick="setFilter('cam',this)">AS Level / Cambridge</button>
       <button class="filter-btn" id="btn-btec" onclick="setFilter('btec',this)">BTEC Sport</button>
       <button class="filter-btn" id="btn-gen" onclick="setFilter('gen',this)">General</button>
     </div>
@@ -209,7 +209,7 @@ const terms = [
   {t:"Adrenaline (Epinephrine)",c:[IB,CAM,GEN],d:"Hormone released by the adrenal medulla in response to stress or exercise; increases heart rate and prepares the body for action."},
   {t:"Aerobic Capacity",c:[IB,CAM,BTEC,GEN],d:"The maximum ability of the body to take in, transport and utilise oxygen during sustained exercise."},
   {t:"Aerobic Energy System",c:[IB,CAM,BTEC,GEN],d:"Energy pathway using oxygen to produce ATP via the Krebs cycle and electron transport chain; dominant in endurance activities."},
-  {t:"Aerobic Threshold",c:[IB,GEN],d:"Exercise intensity at which the aerobic energy system becomes the primary source of ATP production."},
+  {t:"Aerobic Threshold",c:[IB,GEN],d:"The first threshold: the exercise intensity at which blood lactate first rises above resting levels (also called the first lactate threshold)."},
   {t:"Aerodynamics",c:[IB,GEN],d:"The study of how air resistance and drag affect moving objects, including athletes and sports equipment."},
   {t:"Agility",c:[GEN,BTEC,CAM],d:"The ability to change direction quickly and accurately while maintaining control and balance."},
   {t:"Agonist",c:[IB,CAM,BTEC,GEN],d:"The prime mover muscle that contracts concentrically to produce a movement at a joint."},
@@ -218,7 +218,7 @@ const terms = [
   {t:"Amino Acids",c:[IB,GEN,BTEC],d:"The building blocks of proteins; essential for muscle repair, enzyme production and hormone synthesis."},
   {t:"Anaerobic Capacity",c:[IB,GEN],d:"The total amount of energy that can be produced by the anaerobic energy systems."},
   {t:"Anaerobic Glycolysis",c:[IB,CAM,GEN],d:"Breakdown of glucose to pyruvate producing ATP without oxygen; generates lactate as a by-product."},
-  {t:"Anaerobic Threshold",c:[IB,GEN],d:"The exercise intensity at which lactate begins to accumulate in the blood faster than it can be cleared."},
+  {t:"Anaerobic Threshold",c:[IB,GEN],d:"The second threshold: the highest intensity at which lactate production and clearance stay balanced; above it lactate accumulates rapidly."},
   {t:"Angular Momentum",c:[IB,GEN],d:"The quantity of rotation of a body; product of moment of inertia and angular velocity."},
   {t:"Angular Motion",c:[IB,GEN],d:"Movement of a body around a fixed point or axis, described in terms of angular displacement and velocity."},
   {t:"Angular Velocity",c:[IB,GEN],d:"The rate of rotation of a body; measured in radians per second."},
@@ -229,7 +229,7 @@ const terms = [
   {t:"Appendicular Skeleton",c:[IB,GEN],d:"The part of the skeleton that includes the limbs, shoulder girdle and pelvic girdle."},
   {t:"Arousal",c:[IB,CAM,BTEC,GEN],d:"A physiological and psychological state of alertness and readiness; affects sport performance."},
   {t:"Arteriole",c:[IB,GEN],d:"Small blood vessel branching from an artery that controls blood flow to capillary beds."},
-  {t:"Artery",c:[IB,CAM,GEN],d:"Blood vessel that carries oxygenated blood away from the heart to the body tissues."},
+  {t:"Artery",c:[IB,CAM,GEN],d:"Blood vessel that carries blood away from the heart. Systemic arteries carry oxygenated blood; the pulmonary artery carries deoxygenated blood to the lungs."},
   {t:"Articular Cartilage",c:[IB,CAM,GEN],d:"Smooth hyaline cartilage covering the ends of bones at synovial joints, reducing friction."},
   {t:"Atrial Fibrillation",c:[IB,GEN],d:"An irregular heart rhythm where the atria beat chaotically and out of synchrony with the ventricles."},
   {t:"Atrioventricular Node (AVN)",c:[IB,GEN],d:"Electrical relay node in the heart that delays the impulse between the atria and ventricles."},
@@ -246,7 +246,7 @@ const terms = [
   {t:"Bicarbonate Buffering",c:[IB,GEN],d:"A chemical system in the blood that neutralises excess hydrogen ions produced during anaerobic exercise."},
   {t:"Bilateral Transfer",c:[CAM,GEN],d:"Transfer of a motor skill learned on one side of the body to the other side."},
   {t:"Blood Doping",c:[IB,GEN],d:"Illegal practice of increasing red blood cell concentration to enhance oxygen delivery to muscles."},
-  {t:"Blood Lactate",c:[IB,GEN,BTEC],d:"Lactate produced in the blood as a by-product of anaerobic glycolysis; measured to assess exercise intensity."},
+  {t:"Blood Lactate",c:[IB,GEN,BTEC],d:"Lactate produced mainly in working muscle by anaerobic glycolysis, which then enters the blood; measured to assess exercise intensity."},
   {t:"Blood Pressure",c:[IB,CAM,BTEC,GEN],d:"The force exerted by blood against vessel walls; measured as systolic over diastolic (e.g. 120/80 mmHg)."},
   {t:"Blood Redistribution",c:[IB,CAM,GEN],d:"The process by which blood is directed away from inactive organs towards working muscles during exercise."},
   {t:"Blood Viscosity",c:[IB,GEN],d:"The thickness and stickiness of blood; increased viscosity reduces flow rate through vessels."},
@@ -256,8 +256,8 @@ const terms = [
   {t:"Bone Remodelling",c:[IB,GEN],d:"Continuous process of bone formation and resorption that allows bones to adapt to mechanical loading."},
   {t:"Brachial Artery",c:[IB,GEN],d:"The major artery of the upper arm, commonly used to measure blood pressure."},
   {t:"Bradycardia",c:[IB,GEN,BTEC],d:"A resting heart rate below 60 beats per minute; often seen as a training adaptation in endurance athletes."},
-  {t:"Breathing Rate",c:[IB,CAM,BTEC,GEN],d:"The number of breaths taken per minute; increases proportionally with exercise intensity."},
-  {t:"Buffer",c:[IB,GEN],d:"A chemical that resists changes in pH, such as bicarbonate that neutralises lactic acid in the blood."},
+  {t:"Breathing Rate",c:[IB,CAM,BTEC,GEN],d:"The number of breaths taken per minute; increases with exercise intensity."},
+  {t:"Buffer",c:[IB,GEN],d:"A chemical that resists changes in pH by absorbing excess hydrogen ions, such as bicarbonate in the blood."},
   {t:"Bursa",c:[IB,GEN],d:"A fluid-filled sac near joints that reduces friction between tendons and bones."},
 
   {t:"Capillary",c:[IB,CAM,GEN],d:"The smallest blood vessels where gas, nutrient and waste exchange between blood and tissues occurs."},
@@ -285,7 +285,6 @@ const terms = [
   {t:"Coordination",c:[GEN,BTEC,CAM],d:"The ability to use different parts of the body together smoothly and efficiently to perform a skill."},
   {t:"Coronary Artery",c:[IB,GEN],d:"Blood vessel supplying oxygenated blood to the heart muscle itself."},
   {t:"Cortisol",c:[IB,GEN],d:"Stress hormone released by the adrenal cortex; has catabolic effects on muscle if chronically elevated."},
-  {t:"Creatine Phosphate (PCr)",c:[IB,CAM,GEN],d:"High-energy phosphate compound stored in muscles; rapidly resynthesises ATP during short, maximal exercise."},
   {t:"Cross-Training",c:[GEN,BTEC],d:"Training in multiple exercise modes to improve overall fitness and reduce the risk of overuse injury."},
 
   {t:"Dead Space",c:[IB,GEN],d:"The volume of air in the conducting airways that does not participate in gas exchange; approximately 150ml."},
@@ -378,8 +377,8 @@ const terms = [
   {t:"Knowledge of Results (KR)",c:[CAM,GEN],d:"Feedback about the outcome of a movement, such as whether a shot went in or how far a throw travelled."},
 
   {t:"Lactate",c:[IB,CAM,GEN],d:"A by-product of anaerobic glycolysis; at high intensities it accumulates faster than it can be cleared."},
-  {t:"Lactate Inflection Point",c:[IB,GEN],d:"The exercise intensity at which blood lactate begins to accumulate exponentially; also called the anaerobic threshold."},
-  {t:"Lactate Threshold",c:[IB,CAM,BTEC,GEN],d:"The exercise intensity at which blood lactate begins to rise above resting levels; a key endurance performance marker."},
+  {t:"Lactate Inflection Point",c:[IB,GEN],d:"The second threshold: the intensity at which blood lactate begins to accumulate rapidly, often linked to the anaerobic threshold."},
+  {t:"Lactate Threshold",c:[IB,CAM,BTEC,GEN],d:"The exercise intensity at which blood lactate first rises above resting levels (the first threshold); a key endurance performance marker."},
   {t:"Law of Acceleration",c:[IB,GEN],d:"Newton's second law: the acceleration of a body is proportional to the net force applied and inversely proportional to its mass (F=ma)."},
   {t:"Law of Inertia",c:[IB,GEN],d:"Newton's first law: a body remains at rest or in uniform motion unless acted upon by an external force."},
   {t:"Law of Reaction",c:[IB,GEN],d:"Newton's third law: for every action there is an equal and opposite reaction."},
@@ -408,7 +407,7 @@ const terms = [
   {t:"Newton's Laws of Motion",c:[IB,CAM,GEN],d:"Three fundamental laws (inertia, acceleration, action-reaction) applied to analyse human movement in sport."},
   {t:"Nutrition",c:[IB,CAM,BTEC,GEN],d:"The process of consuming and utilising food and drink to support health, performance and recovery."},
 
-  {t:"Obesity",c:[IB,GEN,BTEC],d:"A condition of excessive body fat (BMI > 30) associated with increased risk of chronic disease and reduced performance."},
+  {t:"Obesity",c:[IB,GEN,BTEC],d:"A condition of excessive body fat (BMI of 30 or more) associated with increased risk of chronic disease and reduced performance."},
   {t:"Open Skill",c:[CAM,BTEC,GEN],d:"A motor skill performed in an unpredictable, changing environment where the performer must adapt continually."},
   {t:"Optimum Arousal",c:[IB,CAM,GEN],d:"The level of physiological and psychological activation at which an individual performs best."},
   {t:"Origin (muscle)",c:[IB,CAM,GEN],d:"The proximal attachment of a muscle; the end attached to the bone that remains stationary during movement."},
@@ -491,7 +490,7 @@ const terms = [
 
   {t:"Vasoconstriction",c:[IB,CAM,GEN],d:"Narrowing of blood vessel diameter, reducing blood flow to inactive organs during exercise."},
   {t:"Vasodilation",c:[IB,CAM,GEN],d:"Widening of blood vessel diameter, increasing blood flow to active muscles during exercise."},
-  {t:"Vein",c:[IB,CAM,GEN],d:"Blood vessel that carries deoxygenated blood from the body tissues back to the heart."},
+  {t:"Vein",c:[IB,CAM,GEN],d:"Blood vessel that carries blood towards the heart. Systemic veins carry deoxygenated blood; the pulmonary veins carry oxygenated blood from the lungs."},
   {t:"Velocity",c:[IB,GEN],d:"The rate of change of displacement in a specified direction; a vector quantity measured in m/s."},
   {t:"Ventilation",c:[IB,CAM,GEN],d:"The mechanical process of moving air into and out of the lungs."},
   {t:"Venous Return",c:[IB,CAM,GEN],d:"The volume of blood returning to the right atrium via the veins; increased by the muscle pump during exercise."},
@@ -546,7 +545,7 @@ const terms = [
   {t:"Complex Skill",c:[CAM,GEN],d:"A skill involving several interrelated parts, high information-processing demands, or fine coordination, such as a gymnastics routine."},
   {t:"Complex Training",c:[IB,GEN,BTEC],d:"A training method pairing a heavy resistance exercise with a biomechanically similar plyometric exercise to enhance power output."},
   {t:"Components of Fitness",c:[GEN,BTEC,CAM],d:"The individual physical qualities, both health-related and skill-related, that together determine an individual's overall fitness."},
-  {t:"Conconi Test",c:[GEN],d:"A field test estimating anaerobic threshold by identifying the point at which heart rate no longer rises in line with increasing exercise speed."},
+  {t:"Conconi Test",c:[GEN],d:"A field test that estimates anaerobic threshold from the point at which heart rate stops rising in line with speed; its validity is debated."},
   {t:"Cooper Test",c:[GEN,BTEC,CAM],d:"A twelve-minute maximal-effort run test in which the distance covered is used to estimate VO₂ max."},
   {t:"CSAI-2",c:[IB,CAM,GEN],d:"The Competitive State Anxiety Inventory-2, a questionnaire measuring an athlete's cognitive anxiety, somatic anxiety and self-confidence before competition."},
   {t:"Deadlift",c:[GEN,BTEC],d:"A compound resistance exercise involving lifting a loaded barbell from the floor to hip level; a key exercise for posterior-chain strength."},
@@ -578,7 +577,7 @@ const terms = [
   {t:"Kolb's Learning Cycle",c:[GEN,BTEC],d:"A model of experiential learning describing four stages, concrete experience, reflective observation, abstract conceptualisation and active experimentation, that coaches use to structure skill development."},
   {t:"Lactate Shuttle",c:[IB,GEN],d:"The process by which lactate produced in one tissue, such as fast-twitch muscle fibre, is transported to another tissue to be used as fuel."},
   {t:"Lean Body Mass",c:[GEN,BTEC],d:"The mass of the body excluding fat tissue, comprising muscle, bone, organs and water."},
-  {t:"Learning Styles",c:[GEN,BTEC],d:"Theoretical categories, such as visual, auditory and kinaesthetic, describing an individual's preferred way of processing new information during skill acquisition."},
+  {t:"Learning Styles",c:[GEN,BTEC],d:"Categories such as visual, auditory and kinaesthetic describing preferred ways of taking in information. Research does not support matching teaching to these styles, so treat them with caution."},
   {t:"Long Term Athlete Development (LTAD)",c:[GEN,BTEC],d:"A multi-stage framework for structuring training and competition around an athlete's physical and psychological maturation from childhood to elite performance."},
   {t:"Macrocycle",c:[IB,GEN,BTEC],d:"The longest phase of a periodised training plan, typically spanning a year or a full competitive season, made up of several mesocycles."},
   {t:"Mesocycle",c:[IB,GEN,BTEC],d:"A mid-length training phase within a periodised plan, typically lasting several weeks and focused on a specific training goal."},
@@ -667,7 +666,7 @@ const terms = [
   {t:"Lift Force",c:[IB,GEN],d:"An aerodynamic or hydrodynamic force acting perpendicular to the direction of motion, important in throwing, swimming and cycling."},
   {t:"Magnus Effect",c:[IB,GEN],d:"The curved flight path of a spinning ball caused by pressure differences around it, seen in football, tennis and cricket."},
   {t:"Bernoulli Principle",c:[IB,GEN],d:"The physical principle that faster-moving fluid exerts lower pressure, used to explain lift on a spinning or shaped projectile."},
-  {t:"Projectile",c:[IB,CAM,GEN],d:"Any body launched into the air and subject only to gravity and air resistance, following a parabolic flight path."},
+  {t:"Projectile",c:[IB,CAM,GEN],d:"Any body launched into the air and subject only to gravity and air resistance, following a flight path that is close to parabolic when air resistance is small."},
   {t:"Angle of Release",c:[IB,CAM,GEN],d:"The angle at which a projectile is launched, a key factor determining the distance or height it achieves."},
   {t:"Stability",c:[IB,CAM,GEN],d:"The resistance of a body to being moved or unbalanced, increased by a low centre of gravity, a large base of support and greater mass."},
   {t:"Base of Support",c:[IB,CAM,GEN],d:"The area beneath a body that includes every point of contact with the supporting surface; a wider base increases stability."},
@@ -739,8 +738,7 @@ const terms = [
   {t:"Angular Acceleration",c:[IB,GEN],d:"The rate of change of angular velocity of a rotating body over time."},
   {t:"Mechanical Advantage",c:[IB,GEN],d:"The ratio of load to effort in a lever system, indicating whether the lever favours force or range and speed of movement."},
   {t:"ATP-PC System",c:[IB,CAM,BTEC,GEN],d:"The immediate anaerobic energy system that regenerates ATP from phosphocreatine, fuelling maximal efforts of up to around ten seconds."},
-  {t:"Lactic Acid System",c:[IB,CAM,BTEC,GEN],d:"The anaerobic glycolytic energy system that breaks down glucose to produce ATP and lactate, dominant in high-intensity efforts up to around three minutes."},
-  {t:"Aerobic System",c:[IB,CAM,BTEC,GEN],d:"The oxygen-dependent energy system that produces large amounts of ATP for prolonged, lower-intensity exercise."},
+  {t:"Lactic Acid System",c:[IB,CAM,BTEC,GEN],d:"The anaerobic glycolytic energy system that breaks down glucose to produce ATP and lactate, dominant in high-intensity efforts lasting roughly 10 seconds to 2 minutes."},
   {t:"Energy Continuum",c:[IB,CAM,GEN],d:"The concept that all three energy systems contribute to ATP production simultaneously, with their relative dominance shifting by intensity and duration."},
   {t:"Onset of Blood Lactate Accumulation (OBLA)",c:[IB,GEN],d:"The exercise intensity at which blood lactate rises sharply, conventionally around 4 mmol per litre; a key endurance marker."},
   {t:"Fuel Utilisation",c:[IB,GEN],d:"The balance of carbohydrate and fat used to produce energy, which shifts toward carbohydrate as exercise intensity increases."},
@@ -807,7 +805,6 @@ const terms = [
   {t:"Adenosine Triphosphatase (ATPase)",c:[IB, CAM],d:"An enzyme that breaks down ATP into ADP and inorganic phosphate, releasing energy."},
   {t:"Adhesion",c:[IB, CAM, GEN],d:"The attraction between unlike molecules, such as water molecules and the walls of a tube."},
   {t:"Adler's Social Interest",c:[BTEC, GEN],d:"Alfred Adler's concept that people are motivated by a sense of belonging and contribution to others."},
-  {t:"Adrenaline",c:[IB, CAM, BTEC],d:"A hormone and neurotransmitter released during stress and exercise, which increases heart rate, breathing and energy availability."},
   {t:"Adrenocorticotropic Hormone (ACTH)",c:[IB, CAM],d:"A hormone released by the pituitary gland that stimulates the adrenal cortex to produce cortisol."},
   {t:"Aerobic Decoupling",c:[CAM, BTEC, GEN],d:"A decline in the relationship between heart rate and power output during prolonged exercise, showing a loss of aerobic efficiency."},
   {t:"Aerobic Glycolysis",c:[IB, CAM],d:"The breakdown of glucose to pyruvate in the presence of oxygen, which then enters the aerobic pathway."},
@@ -815,7 +812,6 @@ const terms = [
   {t:"Afferent Nerves",c:[IB, CAM],d:"Sensory nerves that carry impulses from receptors towards the central nervous system."},
   {t:"Afterload",c:[IB, CAM],d:"The pressure the ventricle must overcome to eject blood into the aorta or pulmonary artery."},
   {t:"Agonist-Antagonist Paired Sets",c:[BTEC, GEN],d:"A training method that alternates exercises for opposing muscle groups, such as biceps and triceps, in consecutive sets."},
-  {t:"Alactic Anaerobic System",c:[IB, CAM, BTEC],d:"The energy system that supplies ATP from phosphocreatine without oxygen, for very short, maximal efforts."},
   {t:"Alcohol in Sport",c:[BTEC, GEN],d:"The effects of alcohol on performance, recovery, health and safety in sport, and the rules and policies that govern its use."},
   {t:"Aldosterone",c:[IB, CAM],d:"A hormone released by the adrenal cortex that increases sodium and water retention in the kidneys."},
   {t:"Alveolar Membrane",c:[IB, CAM],d:"The thin barrier between the alveolar air and the blood in the capillaries, across which gases diffuse."},
@@ -856,8 +852,7 @@ const terms = [
   {t:"Atherosclerosis",c:[IB, CAM, BTEC],d:"A disease in which fatty plaques build up inside the artery walls, narrowing the arteries and reducing blood flow."},
   {t:"Athlete-Centred Coaching",c:[BTEC, GEN],d:"A coaching approach that places the athlete's needs, goals and decisions at the centre of the coaching process."},
   {t:"Athletic Identity",c:[BTEC, GEN],d:"The extent to which a person sees themselves primarily as an athlete, which shapes their sense of self-worth."},
-  {t:"Athletic Triad",c:[BTEC, GEN],d:"The interrelated problems of low energy availability, menstrual disturbance and reduced bone density seen in some female athletes."},
-  {t:"Atrioventricular (AV) Node",c:[IB, CAM, BTEC],d:"The node in the heart that delays the electrical impulse between the atria and the ventricles."},
+  {t:"Athletic Triad",c:[BTEC, GEN],d:"The Female Athlete Triad: the interrelated problems of low energy availability, menstrual disturbance and reduced bone density seen in some female athletes (see RED-S)."},
   {t:"Atrioventricular Valves",c:[IB, CAM, BTEC],d:"The valves between the atria and the ventricles, the tricuspid valve on the right and the bicuspid (mitral) valve on the left."},
   {t:"Atrium",c:[IB, CAM, BTEC],d:"One of the two upper chambers of the heart that receives blood returning to the heart."},
   {t:"Attention Deficit",c:[BTEC, GEN],d:"A reduced ability to sustain focus on relevant information, which in sport can affect performance; in a clinical sense, it is the core feature of ADHD."},
@@ -892,11 +887,9 @@ const terms = [
   {t:"Blood Plasma",c:[IB, CAM, BTEC],d:"The liquid part of the blood, in which the blood cells and dissolved substances are carried."},
   {t:"Blood Volume",c:[IB, CAM, BTEC],d:"The total amount of blood in the circulatory system, which affects venous return, stroke volume and cardiac output."},
   {t:"Behavioral Activation",c:[BTEC, GEN],d:"A therapy technique that increases engagement in rewarding and meaningful activities to improve mood and motivation."},
-  {t:"BMR (Basal Metabolic Rate)",c:[IB, CAM, BTEC],d:"The energy the body uses at complete rest to keep vital functions running, such as breathing, circulation and temperature."},
   {t:"Body Density",c:[IB, CAM, BTEC],d:"The mass of the body divided by its volume, used to estimate body fat percentage."},
   {t:"Bolshevik Physical Culture",c:[GEN],d:"The physical culture movement in early Soviet Russia that promoted exercise, health and collective fitness as part of the revolutionary state."},
   {t:"Bone Mineral Density (BMD)",c:[IB, CAM, BTEC],d:"The amount of mineral, mainly calcium, in a given volume of bone, which indicates bone strength and fracture risk."},
-  {t:"Bone Remodeling",c:[IB, CAM, BTEC],d:"The continuous process by which old bone is removed by osteoclasts and new bone is laid down by osteoblasts."},
   {t:"Brachial Plexus",c:[IB, CAM, BTEC],d:"The network of nerves in the neck and shoulder that supplies the arm, hand and parts of the shoulder."},
   {t:"Brainstem",c:[IB, CAM, BTEC],d:"The lower part of the brain, connecting the cerebrum and cerebellum to the spinal cord, which controls vital functions such as breathing and heart rate."},
   {t:"Brisk Walking",c:[BTEC, GEN],d:"Walking at a pace fast enough to raise the heart rate and breathing, classed as moderate intensity activity."},
@@ -920,7 +913,6 @@ const terms = [
   {t:"Catecholamines",c:[IB, CAM, BTEC],d:"A group of hormones and neurotransmitters, including adrenaline, noradrenaline and dopamine, that are released during stress and exercise."},
   {t:"Cavitation",c:[BTEC, GEN],d:"The formation of gas bubbles in a liquid when pressure drops, which can occur around fast-moving objects such as propellers or in the joints."},
   {t:"Center of Buoyancy",c:[BTEC, GEN],d:"The point through which the upward buoyant force acts on a body in a fluid, equal to the centre of mass of the displaced fluid."},
-  {t:"Center of Gravity",c:[IB, CAM, BTEC, GEN],d:"The point at which the body's weight can be considered to act, around which the body's mass is balanced."},
   {t:"Center of Pressure",c:[BTEC, GEN],d:"The point on a surface through which the resultant force from the surface acts, such as the point where the foot pushes against the ground."},
   {t:"Central Fatigue",c:[IB, CAM, BTEC],d:"A reduction in the ability to produce force that originates in the central nervous system rather than the muscle itself."},
   {t:"Central Governor Theory",c:[IB, CAM, BTEC],d:"A theory proposing that the brain regulates exercise intensity to protect the body from harm, slowing the performer before physical limits are reached."},
@@ -936,7 +928,6 @@ const terms = [
   {t:"Chronotropic State",c:[IB, CAM, BTEC],d:"The state of the heart's rate of beating, which is affected by the autonomic nervous system and hormones."},
   {t:"Circadian Rhythm",c:[BTEC, GEN],d:"The roughly 24-hour cycle of body processes, such as sleep, temperature and hormone release, that is controlled by an internal body clock."},
   {t:"Closed Chain Kinematics",c:[IB, CAM, BTEC],d:"The study of movement in a kinetic chain where the distal segment is fixed, so that the movement is driven from the fixed end."},
-  {t:"Closed Motor Skill",c:[IB, CAM, BTEC],d:"A skill performed in a predictable environment, with no need to respond to changing conditions, such as a golf putt or a free throw."},
   {t:"Cognitive Dissonance",c:[BTEC, GEN],d:"The discomfort a person feels when their beliefs, attitudes or behaviour conflict with one another."},
   {t:"Cognitive Evaluation Theory",c:[BTEC, GEN],d:"A theory proposing that external rewards can reduce intrinsic motivation, because people start to see their behaviour as controlled by the reward."},
   {t:"Cognitive Restructuring",c:[BTEC, GEN],d:"A psychological technique that identifies unhelpful thoughts and replaces them with more balanced, realistic ones."},
@@ -948,13 +939,11 @@ const terms = [
   {t:"Compartment Syndrome",c:[IB, CAM, BTEC],d:"Raised pressure inside a closed muscle compartment, which reduces blood flow and can damage muscle and nerves."},
   {t:"Concurrent Training",c:[IB, CAM, BTEC],d:"Training that combines endurance and strength work in the same programme, which can produce interference effects on adaptation."},
   {t:"Conditioning",c:[BTEC, GEN],d:"The general process of preparing the body through planned training to improve fitness, skill and resilience for sport."},
-  {t:"Conduction",c:[IB, CAM, BTEC],d:"The transfer of heat or electrical impulses through a material, or the passing of an electrical impulse through the heart."},
   {t:"Conservation of Angular Momentum",c:[IB, CAM, BTEC],d:"The principle that the angular momentum of a body stays constant when no external torque acts on it."},
   {t:"Conservation of Energy",c:[IB, CAM, BTEC],d:"The principle that energy cannot be created or destroyed, only converted from one form into another."},
   {t:"Conservation of Momentum",c:[IB, CAM, BTEC],d:"The principle that the total momentum of a system stays constant when no external force acts on it."},
   {t:"Contractility",c:[IB, CAM, BTEC],d:"The inherent ability of heart muscle to contract, which determines the force of each heartbeat independently of preload."},
   {t:"Contrast Water Therapy",c:[BTEC, GEN],d:"A recovery method that alternates immersion in hot and cold water, intended to stimulate circulation and reduce soreness."},
-  {t:"Convection",c:[IB, CAM, BTEC],d:"The transfer of heat by the movement of a fluid, such as air or water, moving over the body surface."},
   {t:"Conversion Disorder",c:[BTEC, GEN],d:"A condition in which neurological symptoms, such as weakness or loss of movement, occur without a known physical cause and are linked to psychological stress."},
   {t:"Co-operativity",c:[IB, CAM],d:"The property of haemoglobin by which binding of one oxygen molecule makes it easier for the next to bind, creating an S-shaped oxygen dissociation curve."},
   {t:"Coronal Plane",c:[IB, CAM, BTEC],d:"The vertical plane that divides the body into front and back halves, along which sideways movements such as abduction and adduction occur."},
@@ -1003,7 +992,7 @@ const terms = [
   {t:"Fascia",c:[IB,CAM,BTEC],d:"A sheet of connective tissue that wraps and connects muscles, organs and other structures, helping to transmit force and support movement."},
   {t:"Trigger Points",c:[IB,BTEC,GEN],d:"Tender, tight spots in a muscle that can cause local pain and pain felt in other areas when pressed."},
   {t:"Muscle Knot",c:[BTEC,GEN],d:"A common name for a tight, tender spot in a muscle, usually linked to overuse, stress or poor posture; see trigger points."},
-  {t:"Cardiac Muscle",c:[IB,CAM,BTEC],d:"The involuntary, striated muscle of the heart wall (myocardium), which contracts rhythmically without conscious control and does not fatigue."},
+  {t:"Cardiac Muscle",c:[IB,CAM,BTEC],d:"The involuntary, striated muscle of the heart wall (myocardium), which contracts rhythmically without conscious control and is highly resistant to fatigue."},
   {t:"Smooth Muscle",c:[IB,CAM,BTEC],d:"Involuntary, non-striated muscle found in the walls of blood vessels and organs such as the gut, which contracts slowly and can stay contracted for long periods."},
   {t:"Hydrogen Ions",c:[IB,CAM],d:"Positively charged particles (H+) released during anaerobic energy production that lower muscle pH and contribute to fatigue."},
   {t:"METS",c:[IB,CAM,BTEC],d:"Metabolic equivalents: a way of describing exercise intensity as a multiple of resting energy use, where 1 MET is about 3.5 ml of oxygen per kg per minute."},
@@ -1028,7 +1017,6 @@ const terms = [
   {t:"Group Dynamics",c:[IB,CAM,BTEC],d:"The interactions and processes that take place within a group, including roles, norms, cohesion and communication, which influence team performance."},
   {t:"Short and Long-term Memory",c:[IB,CAM],d:"The memory stores in the information processing model: short-term memory holds a small amount of information briefly, while long-term memory stores information for long periods."},
   {t:"Injury Prevention",c:[IB,CAM,BTEC],d:"Actions that reduce the chance of injury, including warm-ups, strength and conditioning, correct technique, suitable equipment, and managing training load."},
-  {t:"RAMP Framework",c:[IB,CAM,BTEC],d:"A structured warm-up model with four stages: Raise, Activate and Mobilise, Potentiate."},
   {t:"Heart Rate Monitors",c:[IB,CAM,BTEC],d:"Devices that measure and display heart rate during exercise, using a chest strap or wrist sensor."},
   {t:"Water Intoxication",c:[IB,CAM,BTEC],d:"A dangerous fall in blood sodium (hyponatraemia) caused by drinking too much water, particularly during long endurance events."},
   {t:"Fat-free Body Mass",c:[IB,CAM,BTEC],d:"Everything in the body except fat: muscle, bone, organs, water and other tissues."},
@@ -1047,7 +1035,7 @@ const terms = [
   {t:"Endurance Speed",c:[BTEC,GEN],d:"The ability to maintain a high percentage of top speed over a long distance, important for events from 200m to 800m."},
   {t:"Exercise and Pregnancy",c:[BTEC,GEN],d:"Guidance on safe physical activity before, during and after pregnancy, where moderate regular exercise is generally encouraged with some precautions."},
   {t:"Food Composition",c:[IB,CAM,BTEC],d:"The nutrients that make up a food, such as carbohydrate, protein, fat, vitamins, minerals, fibre and water, usually shown on food labels."},
-  {t:"Frank Horwill's 4-Second Rule",c:[BTEC,GEN],d:"A coaching guide by Frank Horwill that a runner should not train at a pace more than 4 seconds per 400m slower than their best pace for a target event, to keep sessions specific."},
+  {t:"Frank Horwill's 4-Second Rule",c:[BTEC,GEN],d:"A rule of thumb associated with coach Frank Horwill: for each step down in race distance, a runner's pace should be about 4 seconds per 400m faster, which helps set training paces."},
   {t:"Gluteal Muscles",c:[IB,CAM,BTEC],d:"The three muscles of the buttock: gluteus maximus, medius and minimus, which extend, abduct and rotate the hip and stabilise the pelvis."},
   {t:"Gross Motor Abilities",c:[BTEC,GEN],d:"Broad abilities that involve large muscle groups and whole-body movement, such as strength, speed, balance and agility."},
   {t:"GROW Model",c:[BTEC,GEN],d:"A coaching conversation framework with four stages: Goal, Reality, Options and Will, used to help an athlete find their own solutions."},
@@ -1081,46 +1069,46 @@ const terms = [
   {t:"Total Mood Disturbance (TMD)",c:[IB,CAM,BTEC],d:"A single score from the Profile of Mood States questionnaire that combines negative moods (tension, depression, anger, fatigue, confusion) and subtracts vigour."},
   {t:"Total Quality Recovery (TQR)",c:[BTEC,GEN],d:"A 6 to 20 scale used by athletes to rate how well they have recovered, so that training can be matched to recovery."},
   {t:"Use of Ice in Injury Treatment",c:[BTEC,GEN],d:"Applying cold to an acute injury to reduce pain and swelling, usually for 10 to 20 minutes; current guidance emphasises caution and balance with movement."},
-  {t:"Balke Treadmill Test",c:[IB,CAM,BTEC],d:"a graded treadmill test in which speed stays constant while the gradient rises at regular intervals until exhaustion, used to estimate VO2 max."},
-  {t:"Biceps Curl Test",c:[BTEC,GEN],d:"a muscular endurance test in which the athlete performs as many controlled biceps curls as possible with a set weight in a given time."},
-  {t:"Burpee Test",c:[BTEC,GEN],d:"a whole-body endurance test in which the athlete performs as many burpees as possible in a set time."},
-  {t:"Curl-Up Test",c:[BTEC,GEN],d:"an abdominal endurance test in which the athlete performs controlled curl-ups to a set rhythm until they cannot continue or reach the maximum count."},
-  {t:"Chin-up Test",c:[BTEC,GEN],d:"a test of upper-body strength endurance in which the athlete performs as many chin-ups or pull-ups as possible."},
-  {t:"Rowing Step Test",c:[IB,CAM,BTEC],d:"a submaximal test on a rowing ergometer in which the athlete rows through several stages of increasing workload while heart rate is recorded."},
-  {t:"Core Muscle Strength and Stability Test",c:[BTEC,GEN],d:"a progressive test in which the athlete performs increasingly demanding abdominal and trunk exercises while keeping the lower back stable."},
-  {t:"Critical Swim Speed",c:[IB,CAM,BTEC],d:"a measure of the fastest swimming speed an athlete can sustain aerobically, calculated from two timed swims of different distances."},
-  {t:"Cunningham and Faulkner Test",c:[IB,CAM,BTEC],d:"a treadmill test of anaerobic capacity in which the athlete runs at a fixed fast speed up a steep incline until exhaustion."},
-  {t:"Fast Feet Test",c:[BTEC,GEN],d:"a test of foot speed in which the athlete makes as many rapid foot contacts as possible within a short time."},
-  {t:"Flying 30 Metre Speed Test",c:[BTEC,GEN],d:"a sprint test in which the athlete builds up speed over a run-in and is timed over the next 30 metres, measuring maximum running speed."},
-  {t:"Hexagonal Obstacle Agility Test",c:[BTEC,GEN],d:"an agility test in which the athlete jumps in and out of each side of a hexagon marked on the floor in sequence."},
-  {t:"Hip Flexion Test",c:[BTEC,GEN],d:"a flexibility test that measures the range of motion in the hip as the knee is brought towards the chest."},
-  {t:"Knee Extension Test",c:[BTEC,GEN],d:"a test of leg strength or endurance in which the athlete extends the knee against resistance, using a machine or dynamometer."},
-  {t:"L Test (3 Cone Test)",c:[BTEC,GEN],d:"an agility test in which the athlete runs around three cones set out in an L shape, with changes of direction around each."},
-  {t:"Lateral Change of Direction Test",c:[BTEC,GEN],d:"an agility test in which the athlete shuffles sideways between two lines as many times as possible in a set time."},
-  {t:"Maximal Tests",c:[IB,CAM,BTEC],d:"fitness tests in which the athlete exercises to exhaustion or at maximum effort, giving a direct measure of capacity."},
-  {t:"Orthostatic Heart Rate Test",c:[IB,CAM,BTEC],d:"a recovery monitoring test in which heart rate is measured lying down and again after standing up, to check for fatigue or overtraining."},
-  {t:"Press-up Test",c:[BTEC,GEN],d:"a muscular endurance test in which the athlete performs as many press-ups as possible with correct form."},
-  {t:"PWC-170 Test",c:[IB,CAM,BTEC],d:"a submaximal cycle test that estimates the power an athlete can produce when their heart rate is 170 beats per minute."},
-  {t:"Queens College Step Test",c:[IB,CAM,BTEC],d:"a three-minute step test in which the recovery heart rate is used to estimate aerobic fitness."},
-  {t:"RAST (Running-based Anaerobic Sprint Test)",c:[IB,CAM,BTEC],d:"a running test of anaerobic power and fatigue in which the athlete completes six 35 metre sprints with 10 seconds recovery between each."},
-  {t:"Sargent Jump Test",c:[BTEC,GEN],d:"a vertical jump test in which the athlete jumps and touches a wall, the height gained being measured from their standing reach."},
-  {t:"Skinfold Testing (Yuhasz Technique)",c:[IB,CAM,BTEC],d:"a body composition method that measures the thickness of skinfolds at several sites on the body, using callipers, to estimate body fat."},
-  {t:"Static Flexibility Test",c:[BTEC,GEN],d:"a test of the range of motion at a joint when the athlete holds a stretched position, with no movement during the measurement."},
-  {t:"Tecumseh Step Test",c:[IB,CAM,BTEC],d:"a submaximal step test in which the participant steps for a set time and the recovery heart rate is used to estimate aerobic fitness."},
-  {t:"Treadmill VO2 Max Test",c:[IB,CAM,BTEC],d:"a laboratory test in which the athlete runs on a treadmill at increasing speed or gradient while expired gas is analysed to measure VO2 max directly."},
-  {t:"Trunk Flexion Test",c:[BTEC,GEN],d:"a flexibility test that measures how far the athlete can bend forward at the trunk from a standing or seated position."},
-  {t:"VO2 Max from a 1.5 Mile Run Test",c:[IB,CAM,BTEC],d:"a field test in which the athlete runs 1.5 miles (2.4 km) as fast as possible and the finishing time is used to estimate VO2 max."},
-  {t:"VO2 Max from Non-exercise Data",c:[IB,CAM,BTEC],d:"a method of estimating VO2 max without exercise testing, using information such as age, sex, body size, physical activity level and resting heart rate."},
-  {t:"Waist to Hip Ratio Test",c:[BTEC,GEN],d:"a measure of body fat distribution, found by dividing the waist circumference by the hip circumference."},
-  {t:"Wall Squat Test",c:[BTEC,GEN],d:"a muscular endurance test in which the athlete holds a sitting position against a wall with the thighs parallel to the floor for as long as possible."},
-  {t:"Zig-Zag Test",c:[BTEC,GEN],d:"an agility test in which the athlete runs through a zig-zag course of cones, changing direction at each, as fast as possible."},
-  {t:"505 Agility Test",c:[BTEC,GEN],d:"an agility test measuring how fast an athlete can turn 180 degrees, over a 5 metre run to a line, a turn and a 5 metre return."},
-  {t:"300 Yards Shuttle Test",c:[BTEC,GEN],d:"an anaerobic endurance test in which the athlete runs 25 yards back and forth six times as fast as possible."},
-  {t:"2.4km Run Test",c:[IB,CAM,BTEC],d:"a field test in which the athlete runs 2.4 kilometres as fast as possible, used to assess aerobic fitness."},
-  {t:"30m Acceleration Test",c:[BTEC,GEN],d:"a sprint test in which the athlete sprints 30 metres from a standing start, timed to measure acceleration."},
-  {t:"30m Sprint Fatigue (Power Maintenance) Test",c:[BTEC,GEN],d:"a repeated sprint test in which the athlete performs several 30 metre sprints with short recovery and the fall in speed shows fatigue."},
-  {t:"40m Multiple Sprint Test",c:[BTEC,GEN],d:"a repeated sprint test in which the athlete performs several 40 metre sprints with short recovery periods."},
-  {t:"60m Speed Test",c:[BTEC,GEN],d:"a sprint test in which the athlete runs 60 metres as fast as possible, timed with gates or a stopwatch."},
+  {t:"Balke Treadmill Test",c:[IB,CAM,BTEC],d:"A graded treadmill test in which speed stays constant while the gradient rises at regular intervals until exhaustion, used to estimate VO2 max."},
+  {t:"Biceps Curl Test",c:[BTEC,GEN],d:"A muscular endurance test in which the athlete performs as many controlled biceps curls as possible with a set weight in a given time."},
+  {t:"Burpee Test",c:[BTEC,GEN],d:"A whole-body endurance test in which the athlete performs as many burpees as possible in a set time."},
+  {t:"Curl-Up Test",c:[BTEC,GEN],d:"An abdominal endurance test in which the athlete performs controlled curl-ups to a set rhythm until they cannot continue or reach the maximum count."},
+  {t:"Chin-up Test",c:[BTEC,GEN],d:"A test of upper-body strength endurance in which the athlete performs as many chin-ups or pull-ups as possible."},
+  {t:"Rowing Step Test",c:[IB,CAM,BTEC],d:"A submaximal test on a rowing ergometer in which the athlete rows through several stages of increasing workload while heart rate is recorded."},
+  {t:"Core Muscle Strength and Stability Test",c:[BTEC,GEN],d:"A progressive test in which the athlete performs increasingly demanding abdominal and trunk exercises while keeping the lower back stable."},
+  {t:"Critical Swim Speed",c:[IB,CAM,BTEC],d:"A measure of the fastest swimming speed an athlete can sustain aerobically, calculated from two timed swims of different distances."},
+  {t:"Cunningham and Faulkner Test",c:[IB,CAM,BTEC],d:"A treadmill test of anaerobic capacity in which the athlete runs at a fixed fast speed up a steep incline until exhaustion."},
+  {t:"Fast Feet Test",c:[BTEC,GEN],d:"A test of foot speed in which the athlete makes as many rapid foot contacts as possible within a short time."},
+  {t:"Flying 30 Metre Speed Test",c:[BTEC,GEN],d:"A sprint test in which the athlete builds up speed over a run-in and is timed over the next 30 metres, measuring maximum running speed."},
+  {t:"Hexagonal Obstacle Agility Test",c:[BTEC,GEN],d:"An agility test in which the athlete jumps in and out of each side of a hexagon marked on the floor in sequence."},
+  {t:"Hip Flexion Test",c:[BTEC,GEN],d:"A flexibility test that measures the range of motion in the hip as the knee is brought towards the chest."},
+  {t:"Knee Extension Test",c:[BTEC,GEN],d:"A test of leg strength or endurance in which the athlete extends the knee against resistance, using a machine or dynamometer."},
+  {t:"L Test (3 Cone Test)",c:[BTEC,GEN],d:"An agility test in which the athlete runs around three cones set out in an L shape, with changes of direction around each."},
+  {t:"Lateral Change of Direction Test",c:[BTEC,GEN],d:"An agility test in which the athlete shuffles sideways between two lines as many times as possible in a set time."},
+  {t:"Maximal Tests",c:[IB,CAM,BTEC],d:"Fitness tests in which the athlete exercises to exhaustion or at maximum effort, giving a direct measure of capacity."},
+  {t:"Orthostatic Heart Rate Test",c:[IB,CAM,BTEC],d:"A recovery monitoring test in which heart rate is measured lying down and again after standing up, to check for fatigue or overtraining."},
+  {t:"Press-up Test",c:[BTEC,GEN],d:"A muscular endurance test in which the athlete performs as many press-ups as possible with correct form."},
+  {t:"PWC-170 Test",c:[IB,CAM,BTEC],d:"A submaximal cycle test that estimates the power an athlete can produce when their heart rate is 170 beats per minute."},
+  {t:"Queens College Step Test",c:[IB,CAM,BTEC],d:"A three-minute step test in which the recovery heart rate is used to estimate aerobic fitness."},
+  {t:"RAST (Running-based Anaerobic Sprint Test)",c:[IB,CAM,BTEC],d:"A running test of anaerobic power and fatigue in which the athlete completes six 35 metre sprints with 10 seconds recovery between each."},
+  {t:"Sargent Jump Test",c:[BTEC,GEN],d:"A vertical jump test in which the athlete jumps and touches a wall, the height gained being measured from their standing reach."},
+  {t:"Skinfold Testing (Yuhasz Technique)",c:[IB,CAM,BTEC],d:"A body composition method that measures the thickness of skinfolds at several sites on the body, using callipers, to estimate body fat."},
+  {t:"Static Flexibility Test",c:[BTEC,GEN],d:"A test of the range of motion at a joint when the athlete holds a stretched position, with no movement during the measurement."},
+  {t:"Tecumseh Step Test",c:[IB,CAM,BTEC],d:"A submaximal step test in which the participant steps for a set time and the recovery heart rate is used to estimate aerobic fitness."},
+  {t:"Treadmill VO2 Max Test",c:[IB,CAM,BTEC],d:"A laboratory test in which the athlete runs on a treadmill at increasing speed or gradient while expired gas is analysed to measure VO2 max directly."},
+  {t:"Trunk Flexion Test",c:[BTEC,GEN],d:"A flexibility test that measures how far the athlete can bend forward at the trunk from a standing or seated position."},
+  {t:"VO2 Max from a 1.5 Mile Run Test",c:[IB,CAM,BTEC],d:"A field test in which the athlete runs 1.5 miles (2.4 km) as fast as possible and the finishing time is used to estimate VO2 max."},
+  {t:"VO2 Max from Non-exercise Data",c:[IB,CAM,BTEC],d:"A method of estimating VO2 max without exercise testing, using information such as age, sex, body size, physical activity level and resting heart rate."},
+  {t:"Waist to Hip Ratio Test",c:[BTEC,GEN],d:"A measure of body fat distribution, found by dividing the waist circumference by the hip circumference."},
+  {t:"Wall Squat Test",c:[BTEC,GEN],d:"A muscular endurance test in which the athlete holds a sitting position against a wall with the thighs parallel to the floor for as long as possible."},
+  {t:"Zig-Zag Test",c:[BTEC,GEN],d:"An agility test in which the athlete runs through a zig-zag course of cones, changing direction at each, as fast as possible."},
+  {t:"505 Agility Test",c:[BTEC,GEN],d:"An agility test measuring how fast an athlete can turn 180 degrees, over a 5 metre run to a line, a turn and a 5 metre return."},
+  {t:"300 Yards Shuttle Test",c:[BTEC,GEN],d:"An anaerobic endurance test in which the athlete runs 25 yards back and forth six times as fast as possible."},
+  {t:"2.4km Run Test",c:[IB,CAM,BTEC],d:"A field test in which the athlete runs 2.4 kilometres as fast as possible, used to assess aerobic fitness."},
+  {t:"30m Acceleration Test",c:[BTEC,GEN],d:"A sprint test in which the athlete sprints 30 metres from a standing start, timed to measure acceleration."},
+  {t:"30m Sprint Fatigue (Power Maintenance) Test",c:[BTEC,GEN],d:"A repeated sprint test in which the athlete performs several 30 metre sprints with short recovery and the fall in speed shows fatigue."},
+  {t:"40m Multiple Sprint Test",c:[BTEC,GEN],d:"A repeated sprint test in which the athlete performs several 40 metre sprints with short recovery periods."},
+  {t:"60m Speed Test",c:[BTEC,GEN],d:"A sprint test in which the athlete runs 60 metres as fast as possible, timed with gates or a stopwatch."},
   {t:"TEOSQ (Task and Ego Orientation in Sport Questionnaire)",c:[IB,CAM,BTEC],d:"A questionnaire by Duda that measures whether an athlete is mostly task-oriented (self-improvement) or ego-oriented (beating others)."},
   {t:"Aqua Running",c:[BTEC,GEN],d:"Running in deep water using a flotation belt so the feet do not touch the bottom, giving cardiovascular training with very little impact."},
   {t:"Bilateral Exercises",c:[IB,CAM,BTEC],d:"Exercises in which both limbs work together at the same time, such as the squat, deadlift and bench press."},
@@ -1229,7 +1217,7 @@ let currentFilter = "all";
 let currentSearch = "";
 
 function courseTag(c){
-  const labels={ib:"IB",cam:"A Level",btec:"BTEC",gen:"Gen"};
+  const labels={ib:"IB",cam:"AS Level",btec:"BTEC",gen:"Gen"};
   return `<span class="ctag ctag-${c}">${labels[c]}</span>`;
 }
 
@@ -1308,5 +1296,6 @@ render();
 </script>
 <p class="ssc-disclaimer" style="text-align:center;font-size:11px;line-height:1.5;color:#94A3B8;max-width:760px;margin:0 auto;padding:18px 24px 26px;">Simply Sport Science is an independent educational resource. It is not affiliated with, endorsed or sponsored by the International Baccalaureate Organization, Cambridge University Press &amp; Assessment or Pearson/BTEC. All course and exam-board names are used only to identify the specifications the materials support.</p>
 <script data-goatcounter="https://simplysportscience.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script src="nav-menu.js" defer></script>
 </body>
 </html>

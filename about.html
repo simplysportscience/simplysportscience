@@ -183,7 +183,7 @@
     <div class="timeline-item"><div class="timeline-dot"></div>
       <div class="timeline-role">Founded Simply Sport Science</div>
       <div class="timeline-org">simplysportscience.co.uk</div>
-      <div class="timeline-desc">A specification-led learning platform for IB SEHS, A Level PE and BTEC Sport — plus a YouTube channel and podcast.</div>
+      <div class="timeline-desc">A specification-led learning platform for IB SEHS, AS Level PE and BTEC Sport — plus a YouTube channel and podcast.</div>
     </div>
     <div class="timeline-item"><div class="timeline-dot"></div>
       <div class="timeline-role">PGCE Top-Up — Retrieval Practice</div>
@@ -229,13 +229,16 @@
   <div class="divider"></div>
   <div class="contact-grid">
     <div class="contact-form">
-      <h3>Send a Message</h3>
-      <div class="form-group"><label class="form-label">Your Name</label><input class="form-input" type="text"/></div>
-      <div class="form-group"><label class="form-label">Email Address</label><input class="form-input" type="email"/></div>
-      <div class="form-group"><label class="form-label">Message</label><textarea class="form-input"></textarea></div>
-      <button class="form-submit">Send Message →</button>
-    </div>
-    <div class="contact-info">
+<h3>Send a Message</h3>
+<form id="contact-form" onsubmit="return sssSend(event)">
+<div class="form-group"><label class="form-label" for="cf-name">Your Name</label><input class="form-input" id="cf-name" type="text" required/></div>
+<div class="form-group"><label class="form-label" for="cf-email">Email Address</label><input class="form-input" id="cf-email" type="email" required/></div>
+<div class="form-group"><label class="form-label" for="cf-msg">Message</label><textarea class="form-input" id="cf-msg" required></textarea></div>
+<button class="form-submit" type="submit">Send Message →</button>
+<p style="font-size:11px;color:var(--grey);margin-top:8px;">This opens your email app with the message ready to send to hello@simplysportscience.co.uk.</p>
+</form>
+</div>
+<div class="contact-info">
       <div class="contact-card">
         <h4>📧 Email</h4>
         <a href="mailto:hello@simplysportscience.co.uk">hello@simplysportscience.co.uk</a>
@@ -263,6 +266,11 @@
 </div>
 
 <p class="ssc-disclaimer" style="text-align:center;font-size:11px;line-height:1.5;color:#94A3B8;max-width:760px;margin:0 auto;padding:18px 24px 26px;">Simply Sport Science is an independent educational resource. It is not affiliated with, endorsed or sponsored by the International Baccalaureate Organization, Cambridge University Press &amp; Assessment or Pearson/BTEC. All course and exam-board names are used only to identify the specifications the materials support.</p>
+<script>
+function sssSend(e){e.preventDefault();var n=document.getElementById('cf-name').value.trim(),m=document.getElementById('cf-email').value.trim(),b=document.getElementById('cf-msg').value.trim();
+window.location.href='mailto:hello@simplysportscience.co.uk?subject='+encodeURIComponent('Message from '+n+' (Simply Sport Science)')+'&body='+encodeURIComponent(b+'\n\n'+n+'\n'+m);return false;}
+</script>
 <script data-goatcounter="https://simplysportscience.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script src="nav-menu.js" defer></script>
 </body>
 </html>
