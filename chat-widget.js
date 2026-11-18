@@ -1,7 +1,7 @@
 /* Simply Sport Science study assistant. Searches chat-index.json in the browser,
    then asks a small Cloudflare Worker to write a short answer from the best passages. */
 (function () {
-  var WORKER_URL = 'PASTE-YOUR-WORKER-URL-HERE'; // e.g. https://sss-chat.yourname.workers.dev
+  var WORKER_URL = 'https://sss-chat.simply-sport-sci.workers.dev'; // e.g. https://sss-chat.yourname.workers.dev
 
   var STOP = 'a an the of and or to in on for with is are was were be been it its this that these those what which who how why when where do does did can could should would about as at by from into than then there their them they you your i me my we our us not no yes if so but also any all some more most other such very just tell explain describe define please give'.split(' ');
   var STOPSET = {}; STOP.forEach(function (w) { STOPSET[w] = 1; });
