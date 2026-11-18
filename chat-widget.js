@@ -79,9 +79,9 @@
     '#sss-note{padding:0 12px 10px;font-size:11px;color:#94A3B8;text-align:center}';
   var st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
-  var btn = document.createElement('button'); btn.id = 'sss-chat-btn'; btn.type = 'button'; btn.innerHTML = '💬 Ask a question';
+  var btn = document.createElement('button'); btn.id = 'sss-chat-btn'; btn.type = 'button'; btn.innerHTML = '💬 Ask anything about Sport Science';
   var box = document.createElement('div'); box.id = 'sss-chat'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-label', 'Simply Sport Science study assistant');
-  box.innerHTML = '<header><div>Study Assistant<small>Answers from this website</small></div><button type="button" aria-label="Close">×</button></header>' +
+  box.innerHTML = '<header><div>Ask anything about Sport Science<small>Answers from this website</small></div><button type="button" aria-label="Close">×</button></header>' +
     '<div id="sss-msgs"></div><form id="sss-form"><input id="sss-in" maxlength="300" placeholder="Ask about any topic or term…" autocomplete="off"/><button id="sss-go" type="submit">Ask</button></form>' +
     '<div id="sss-note">AI can make mistakes. Check your specification and ask your teacher.</div>';
   document.body.appendChild(btn); document.body.appendChild(box);
